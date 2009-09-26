@@ -1,0 +1,1144 @@
+# Hungarian translation for tangoGPS
+# Copyright (C) 2009 Marcus Bauer
+# This file is distributed under the same license as the tangogps package.
+# György Balló <ballogy@freestart.hu>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tangogps 0.9.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-05 00:51+0100\n"
+"PO-Revision-Date: 2009-07-21 03:15+0100\n"
+"Last-Translator: György Balló <ballogy@freestart.hu>\n"
+"Language-Team: Hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/support.c:90
+#: src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Nem található a pixmap fájl: %s"
+
+#: src/interface.c:258
+msgid "tangoGPS"
+msgstr "tangoGPS"
+
+#: src/interface.c:285
+msgid "fullscreen"
+msgstr "Teljes képernyő"
+
+#: src/interface.c:296
+msgid "      +      "
+msgstr "      +      "
+
+#: src/interface.c:306
+msgid "      -      "
+msgstr "      -      "
+
+#: src/interface.c:316
+msgid "autocenter"
+msgstr "Auto. középre"
+
+#: src/interface.c:326
+msgid "map"
+msgstr "térkép"
+
+#: src/interface.c:348
+msgid "<b>no GPS found</b>"
+msgstr "<b>nem található GPS</b>"
+
+#: src/interface.c:355
+msgid "   Map   "
+msgstr "   Térkép   "
+
+#: src/interface.c:400
+msgid "Distance: "
+msgstr "Távolság: "
+
+#: src/interface.c:408
+msgid "Time:"
+msgstr "Idő:"
+
+#: src/interface.c:415
+msgid "Avg. Speed:"
+msgstr "Átlagsebesség:"
+
+#: src/interface.c:430
+msgid "Max Speed:"
+msgstr "Max. sebesség:"
+
+#: src/interface.c:463
+msgid "      Stop       "
+msgstr "      Leállítás       "
+
+#: src/interface.c:467
+msgid "     Reset     "
+msgstr "     Újraindítás     "
+
+#: src/interface.c:472
+msgid "<b>Trip Meter</b>"
+msgstr "<b>Túra mérése</b>"
+
+#: src/interface.c:499
+msgid "Speed"
+msgstr "Sebesség"
+
+#: src/interface.c:514
+msgid "Altitude:"
+msgstr "Magasság:"
+
+#: src/interface.c:528
+msgid "Heading:"
+msgstr "Irány:"
+
+#: src/interface.c:542
+msgid "GPS Time:"
+msgstr "GPS idő:"
+
+#: src/interface.c:549
+msgid "Lat, Lon:"
+msgstr "Szélesség, hosszúság:"
+
+#: src/interface.c:565
+msgid "Satellites:  "
+msgstr "Műholdak:  "
+
+#: src/interface.c:579
+msgid "<b>GPS Data</b>"
+msgstr "<b>GPS adatok</b>"
+
+#: src/interface.c:588
+msgid "  Trip  "
+msgstr "  Túra  "
+
+#: src/interface.c:613
+msgid "Here you can enable / disable logging of your tracks for later use, i.e. for extending OSM"
+msgstr "Itt kapcsolhatja be / ki a nyomvonal rögzítését későbbi használatra, pl. az OSM kibővítésére"
+
+#: src/interface.c:625
+msgid "            Start            "
+msgstr "            Indítás            "
+
+#: src/interface.c:629
+msgid "           Split           "
+msgstr "           Vágás           "
+
+#: src/interface.c:644
+msgid "      Configure...      "
+msgstr "      Beállítás...      "
+
+#: src/interface.c:648
+#: src/interface.c:2061
+#: src/interface.c:3752
+msgid " "
+msgstr " "
+
+#: src/interface.c:652
+msgid "      Load...     "
+msgstr "      Betöltés...     "
+
+#: src/interface.c:660
+msgid "<b>Track Logging</b>"
+msgstr "<b>Nyomvonal rögzítése</b>"
+
+#: src/interface.c:669
+msgid " Track "
+msgstr " Nyomvonal "
+
+#: src/interface.c:693
+msgid "button35"
+msgstr "gomb35"
+
+#: src/interface.c:696
+msgid "label132\n"
+msgstr "felirat132\n"
+
+#: src/interface.c:718
+msgid ""
+"Update your position to a server\n"
+"and receive your friends positions,\n"
+"shown on the map."
+msgstr ""
+"Az Ön pozíciójának feltöltése szerverre,\n"
+"és barátai pozícióinak fogadása,\n"
+"megjelenítése a térképen."
+
+#: src/interface.c:722
+msgid ""
+"\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+
+#: src/interface.c:733
+msgid "once"
+msgstr "egyszer"
+
+#: src/interface.c:740
+msgid "every"
+msgstr "minden"
+
+#: src/interface.c:750
+msgid "15"
+msgstr "15"
+
+#: src/interface.c:753
+msgid "minutes"
+msgstr ". percben"
+
+#: src/interface.c:766
+msgid "     Update Me!     "
+msgstr "     Feltöltés!     "
+
+#: src/interface.c:771
+msgid "     Stop     "
+msgstr "     Leállítás     "
+
+#: src/interface.c:781
+msgid " ."
+msgstr " ."
+
+#: src/interface.c:792
+msgid "<b>  Position Update  </b>"
+msgstr "<b>  Pozíció feltöltése  </b>"
+
+#: src/interface.c:816
+msgid "Permission to see me for:"
+msgstr "Engedély, hogy lássanak engem, a következőknek:"
+
+#: src/interface.c:822
+msgid "public (you remain anonymous)"
+msgstr "nyilvános (Ön névtelen marad)"
+
+#: src/interface.c:827
+#: src/interface.c:871
+msgid "registered nicks"
+msgstr "regisztrált felhasználók"
+
+#: src/interface.c:832
+#: src/interface.c:876
+msgid "my friends"
+msgstr "barátaim"
+
+#: src/interface.c:837
+msgid " <b>Updating My Position</b> "
+msgstr " <b>Pozícióm feltöltése</b> "
+
+#: src/interface.c:860
+msgid "Show me the positions from:"
+msgstr "A következők pozícióinak megjelenítése:"
+
+#: src/interface.c:866
+#: src/interface.c:2975
+#: src/interface.c:3379
+msgid "public"
+msgstr "nyilvános"
+
+#: src/interface.c:881
+msgid " <b>Getting Other's Positions</b> "
+msgstr " <b>Mások pozícióinak megszerzése</b> "
+
+#: src/interface.c:900
+msgid ""
+"Choose any nickname you want\n"
+"to have. A password is only necessary\n"
+"if you have already registered your \n"
+"nick or you want to register it.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends\n"
+msgstr ""
+"Válasszon egy becenevet, amit\n"
+"szeretne. Jelszó csak akkor szükséges,\n"
+"ha már regisztrálta a becenevét, \n"
+"vagy szeretné regisztrálni azt.\n"
+"\n"
+"További információ itt:\n"
+"http://www.tangogps.org/friends\n"
+
+#: src/interface.c:910
+msgid "Nickname "
+msgstr "Becenév "
+
+#: src/interface.c:917
+msgid "Password"
+msgstr "Jelszó"
+
+#: src/interface.c:929
+msgid "JohnDoe"
+msgstr "JohnDoe"
+
+#: src/interface.c:936
+msgid "foobar"
+msgstr "foobar"
+
+#: src/interface.c:938
+msgid ""
+"\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in case of a lost password."
+msgstr ""
+"\n"
+"\n"
+"Ezen becenév regisztrálásához egyszerűen adja meg az e-mail címét, és kattintson alább!\n"
+"Az Ön e-mail címe nem fog látszani, nem lesz megosztva, és csak abban az esetben lesz használva értesítésre, ha elfelejti a jelszavát."
+
+#: src/interface.c:950
+msgid "EMail        "
+msgstr "E-mail"
+
+#: src/interface.c:963
+msgid "     Register!     "
+msgstr "     Regisztrálás!     "
+
+#: src/interface.c:968
+msgid "   "
+msgstr "   "
+
+#: src/interface.c:973
+#: src/interface.c:2754
+msgid "-"
+msgstr "-"
+
+#: src/interface.c:980
+msgid "<b>  Me  </b>"
+msgstr "<b>  Én  </b>"
+
+#: src/interface.c:989
+msgid " Friends "
+msgstr " Barátaim "
+
+#: src/interface.c:1013
+msgid ""
+"<i>tangoGPS Version:\n"
+"Developer: Marcus Bauer</i>"
+msgstr ""
+"<i>tangoGPS verzió:\n"
+"Fejlesztő: Marcus Bauer</i>"
+
+#: src/interface.c:1033
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+"Hiányzó csempék a gyorsítótárba való\n"
+"automatikus letöltésének be- vagy kikapcsolása"
+
+#: src/interface.c:1038
+msgid "Auto download map tiles"
+msgstr "Térképcsempék automatikus letöltése"
+
+#: src/interface.c:1045
+msgid "<b>Auto Download</b>"
+msgstr "<b>Automatikus letöltés</b>"
+
+#: src/interface.c:1065
+msgid "Current Repository:"
+msgstr "Jelenlegi tároló"
+
+#: src/interface.c:1085
+msgid "      New...       "
+msgstr "      Új...       "
+
+#: src/interface.c:1089
+#: src/interface.c:1323
+msgid "    "
+msgstr "    "
+
+#: src/interface.c:1094
+msgid "      Edit...     "
+msgstr "      Szerkesztés...     "
+
+#: src/interface.c:1108
+#: src/interface.c:2087
+#: src/interface.c:3778
+msgid "xyz instead of zxy"
+msgstr "xyz ehelyett: zxy"
+
+#: src/interface.c:1114
+msgid "URI"
+msgstr "URI"
+
+#: src/interface.c:1121
+msgid "Cache Dir"
+msgstr "Gyorsítótár"
+
+#: src/interface.c:1144
+msgid "    Save Repository Configuration    "
+msgstr "    Tároló beállításainak mentése    "
+
+#: src/interface.c:1150
+msgid "     "
+msgstr "     "
+
+#: src/interface.c:1155
+msgid "<b>Map Repositories</b>"
+msgstr "<b>Térképtárolók</b>"
+
+#: src/interface.c:1174
+msgid "<i>Speed and Distance:</i>"
+msgstr "<i>Sebesség és távolság:</i>"
+
+#: src/interface.c:1186
+msgid "metrical"
+msgstr "metrikus"
+
+#: src/interface.c:1193
+msgid "imperial"
+msgstr "birodalmi"
+
+#: src/interface.c:1199
+msgid "nautical"
+msgstr "hajózási"
+
+#: src/interface.c:1205
+msgid "<i>Altitude:</i>"
+msgstr "<i>Magasság:</i>"
+
+#: src/interface.c:1217
+msgid "meters"
+msgstr "méter"
+
+#: src/interface.c:1224
+msgid "feet"
+msgstr "láb"
+
+#: src/interface.c:1230
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr "<i>Földrajzi szélesség és hosszúság:</i>"
+
+#: src/interface.c:1242
+msgid "d.dd"
+msgstr "d.dd"
+
+#: src/interface.c:1249
+msgid "d m.m'"
+msgstr "d m.m'"
+
+#: src/interface.c:1255
+msgid "d m's.s\""
+msgstr "d m's.s\""
+
+#: src/interface.c:1261
+msgid "<b>Units</b>"
+msgstr "<b>Egységek</b>"
+
+#: src/interface.c:1280
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+"\n"
+"GPSD Host IP beállítása\n"
+
+#: src/interface.c:1290
+msgid " GPSD "
+msgstr " GPSD "
+
+#: src/interface.c:1294
+msgid "Host:"
+msgstr "Host:"
+
+#: src/interface.c:1301
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#: src/interface.c:1304
+msgid " Port:"
+msgstr " Port:"
+
+#: src/interface.c:1311
+msgid "2947"
+msgstr "2947"
+
+#: src/interface.c:1318
+msgid "     Change GPSD     "
+msgstr "     GPSD módosítása     "
+
+#: src/interface.c:1328
+msgid "<b>GPSD</b>"
+msgstr "<b>GPSD</b>"
+
+#: src/interface.c:1346
+msgid ""
+"\n"
+"Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
+msgstr ""
+"\n"
+"gllin és gpsd indítása (Openmoko Neo1973 <i>nem Freerunner</i>).\n"
+
+#: src/interface.c:1361
+msgid "/home/root/gllin/gllin &"
+msgstr "/home/root/gllin/gllin &"
+
+#: src/interface.c:1368
+msgid "     Start gllin and GPSD     "
+msgstr "     gllin és GPSD indítása     "
+
+#: src/interface.c:1373
+msgid "  "
+msgstr "  "
+
+#: src/interface.c:1378
+msgid "<b>gllin and gpsd</b>"
+msgstr "<b>gllin és gpsd</b>"
+
+#: src/interface.c:1386
+msgid ""
+"\n"
+"The following section is \n"
+"for development purposes"
+msgstr ""
+"\n"
+"A következő rész \n"
+"fejlesztési célokat szolgál"
+
+#: src/interface.c:1394
+msgid "/home/root/gprs.sh &"
+msgstr "/home/root/gprs.sh &"
+
+#: src/interface.c:1396
+msgid "Start pppd/gprs"
+msgstr "pppd/gprs indítása"
+
+#: src/interface.c:1403
+msgid "/home/root/other.sh"
+msgstr "/home/root/other.sh"
+
+#: src/interface.c:1405
+msgid "Other stuff"
+msgstr "Egyéb dolgok"
+
+#: src/interface.c:1413
+msgid " Config "
+msgstr " Beállítások "
+
+#: src/interface.c:1856
+msgid "this point"
+msgstr "Ez a pont"
+
+#: src/interface.c:1860
+msgid "show friends"
+msgstr "Barátok megjelenítése"
+
+#: src/interface.c:1864
+msgid "show POIs"
+msgstr "POI-k megjelenítése"
+
+#: src/interface.c:1868
+msgid "show photos"
+msgstr "Fotók megjelenítése"
+
+#: src/interface.c:1872
+msgid "POIs"
+msgstr "POI-k"
+
+#: src/interface.c:1879
+msgid "add POI"
+msgstr "POI hozzáadása"
+
+#: src/interface.c:1883
+msgid "select POIs"
+msgstr "POI-k kiválasztása"
+
+#: src/interface.c:1887
+msgid "waypoints"
+msgstr "Útpontok"
+
+#: src/interface.c:1894
+#: src/interface.c:1920
+msgid "set"
+msgstr "Beállítás"
+
+#: src/interface.c:1898
+#: src/interface.c:1924
+msgid "unset"
+msgstr "Megszűntetés"
+
+#: src/interface.c:1902
+msgid "photos"
+msgstr "Fényképek"
+
+#: src/interface.c:1909
+msgid "geocode"
+msgstr "Geokód"
+
+#: src/interface.c:1913
+msgid "my position"
+msgstr "Pozícióm"
+
+#: src/interface.c:1928
+msgid "map download"
+msgstr "Térkép letöltése"
+
+#: src/interface.c:2025
+msgid "New Repository"
+msgstr "Új tároló"
+
+#: src/interface.c:2049
+#: src/interface.c:3740
+msgid ""
+"You can find more information about repositories on\n"
+"\n"
+"http://www.tangogps.org/\n"
+msgstr ""
+"További információkat találhat a tárolókról itt:\n"
+"\n"
+"http://www.tangogps.org/\n"
+
+#: src/interface.c:2051
+msgid "<b>Name for the new Repository</b>"
+msgstr "<b>Új tároló neve</b>"
+
+#: src/interface.c:2065
+#: src/interface.c:3756
+msgid "<b>URI</b>"
+msgstr "<b>URI</b>"
+
+#: src/interface.c:2076
+#: src/interface.c:3767
+msgid "<b>Cache Dir</b>"
+msgstr "<b>Gyorsítótár könyvtára</b>"
+
+#: src/interface.c:2105
+msgid "All fields must be filled in"
+msgstr "Az összes mező kitöltendő"
+
+#: src/interface.c:2167
+msgid "GPS Info"
+msgstr "GPS információ"
+
+#: src/interface.c:2186
+#: src/interface.c:2484
+#: src/interface.c:3224
+msgid "--"
+msgstr "--"
+
+#: src/interface.c:2194
+#: src/interface.c:2858
+#: src/interface.c:3232
+msgid "Close"
+msgstr "Bezárás"
+
+#: src/interface.c:2228
+msgid "unused"
+msgstr "használatlan"
+
+#: src/interface.c:2265
+msgid "Trackdir Config"
+msgstr "Nyomvonal könyvtárának beállítása"
+
+#: src/interface.c:2275
+msgid "Directory in which the tracks should be written:"
+msgstr "Könyvtár, amelybe a nyomvonal írandó:"
+
+#: src/interface.c:2341
+msgid "Map DL"
+msgstr "Térkép letöltése"
+
+#: src/interface.c:2361
+msgid "Download maps of currently visible area:"
+msgstr "A jelenleg látható terület térképének letöltése:"
+
+#: src/interface.c:2372
+msgid "+ 1 zoom level"
+msgstr "+ 1 nagyítási szint"
+
+#: src/interface.c:2378
+msgid "+ 2 zoom levels"
+msgstr "+ 2 nagyítási szint"
+
+#: src/interface.c:2384
+msgid "+ 3 zoom levels"
+msgstr "+ 3 nagyítási szint"
+
+#: src/interface.c:2390
+msgid "+ 4 zoom levels (~25MB)"
+msgstr "+ 4 nagyítási szint (~25MB)"
+
+#: src/interface.c:2397
+msgid "+ 5 zoom levels (~100MB)"
+msgstr "+ 5 nagyítási szint (~100MB)"
+
+#: src/interface.c:2403
+msgid "+ 6 zoom levels (~400MB)"
+msgstr "+ 6 nagyítási szint (~400MB)"
+
+#: src/interface.c:2409
+msgid "<b> Map Download </b>"
+msgstr "<b> Térkép letöltése </b>"
+
+#: src/interface.c:2471
+msgid "Geo Photo"
+msgstr "Geo fotó"
+
+#: src/interface.c:2503
+msgid "Big"
+msgstr "Nagy"
+
+#: src/interface.c:2507
+msgid "Go To"
+msgstr "Menj ide:"
+
+#: src/interface.c:2549
+#: src/interface.c:2943
+msgid "Add POI"
+msgstr "POI hozzáadása"
+
+#: src/interface.c:2598
+msgid "unused cols"
+msgstr "használatlan oszlopok"
+
+#: src/interface.c:2628
+msgid "Show POIs"
+msgstr "POI-k megjelenítése"
+
+#: src/interface.c:2637
+msgid "-- Show All --"
+msgstr "-- Összes megjelenítése --"
+
+#: src/interface.c:2638
+#: src/interface.c:3021
+#: src/interface.c:3395
+msgid "Accomodation"
+msgstr "Szállás"
+
+#: src/interface.c:2639
+#: src/interface.c:3022
+#: src/interface.c:3396
+msgid "Businesses"
+msgstr "Üzletek"
+
+#: src/interface.c:2640
+#: src/interface.c:3023
+#: src/interface.c:3397
+msgid "Car"
+msgstr "Autó"
+
+#: src/interface.c:2641
+#: src/interface.c:3024
+#: src/interface.c:3398
+msgid "Cultural"
+msgstr "Kulturális"
+
+#: src/interface.c:2642
+#: src/interface.c:3025
+#: src/interface.c:3399
+msgid "Medical"
+msgstr "Egészségügyi"
+
+#: src/interface.c:2643
+#: src/interface.c:3026
+msgid "Cafe / Pub / Nightlife"
+msgstr "Café / Kocsma / Éjszakai élet"
+
+#: src/interface.c:2644
+#: src/interface.c:3027
+#: src/interface.c:3401
+msgid "Place of Worship"
+msgstr "Vallási hely"
+
+#: src/interface.c:2645
+#: src/interface.c:3028
+#: src/interface.c:3402
+msgid "Public Transportation"
+msgstr "Tömegközlekedés"
+
+#: src/interface.c:2646
+msgid "Restaurant"
+msgstr "Étterem"
+
+#: src/interface.c:2647
+#: src/interface.c:3030
+#: src/interface.c:3404
+msgid "Services"
+msgstr "Szolgáltatások"
+
+#: src/interface.c:2648
+msgid "Sights / Leisure"
+msgstr "Látnivalók / Szabadidő"
+
+#: src/interface.c:2649
+#: src/interface.c:3032
+#: src/interface.c:3406
+msgid "Shopping"
+msgstr "Vásárlás"
+
+#: src/interface.c:2650
+#: src/interface.c:3033
+#: src/interface.c:3407
+msgid "Sport"
+msgstr "Sport"
+
+#: src/interface.c:2651
+#: src/interface.c:3034
+msgid "My Personal Places"
+msgstr "Személyes helyek"
+
+#: src/interface.c:2723
+msgid "POI"
+msgstr "POI"
+
+#: src/interface.c:2735
+msgid "<b>-----</b>"
+msgstr "<b>-----</b>"
+
+#: src/interface.c:2763
+#: src/interface.c:3456
+msgid "<b>-</b>"
+msgstr "<b>-</b>"
+
+#: src/interface.c:2792
+msgid "Go To "
+msgstr "Menj ide:"
+
+#: src/interface.c:2814
+msgid "Edit"
+msgstr "Szerkesztés"
+
+#: src/interface.c:2836
+msgid "Delete"
+msgstr "Törlés"
+
+#: src/interface.c:2969
+#: src/interface.c:3373
+msgid "personal"
+msgstr "személyes"
+
+#: src/interface.c:2987
+#: src/interface.c:3341
+msgid "Lat: "
+msgstr "Szélesség: "
+
+#: src/interface.c:2997
+#: src/interface.c:3351
+msgid " Lon: "
+msgstr " Hosszúság: "
+
+#: src/interface.c:3007
+#: src/interface.c:3336
+msgid "GPS"
+msgstr "GPS"
+
+#: src/interface.c:3011
+#: src/interface.c:3387
+msgid "Category:"
+msgstr "Kategória:"
+
+#: src/interface.c:3020
+#: src/interface.c:3394
+msgid "- please choose -"
+msgstr "- kérem, válasszon -"
+
+#: src/interface.c:3029
+#: src/interface.c:3403
+msgid "Restaurant & Food"
+msgstr "Étterem és élelmiszer"
+
+#: src/interface.c:3031
+#: src/interface.c:3405
+msgid "Sights & Leisure"
+msgstr "Látnivalók és szabadidő"
+
+#: src/interface.c:3040
+#: src/interface.c:3361
+msgid "Name - Keywords / Tags:"
+msgstr "Név - Kulcsszavak / Címkék:"
+
+#: src/interface.c:3049
+#: src/interface.c:3413
+msgid "Description:"
+msgstr "Leírás:"
+
+#: src/interface.c:3071
+#: src/interface.c:3434
+msgid "budget"
+msgstr "olcsó"
+
+#: src/interface.c:3077
+#: src/interface.c:3440
+msgid "medium"
+msgstr "közepes"
+
+#: src/interface.c:3084
+#: src/interface.c:3447
+msgid "exclusive"
+msgstr "exkluzív"
+
+#: src/interface.c:3090
+#: src/interface.c:3453
+msgid "extended opening hours"
+msgstr "kiterjesztett nyitva tartás"
+
+#: src/interface.c:3109
+#: src/interface.c:3478
+#: src/interface.c:3985
+msgid "       "
+msgstr "       "
+
+#: src/interface.c:3191
+msgid "window7"
+msgstr "ablak7"
+
+#: src/interface.c:3209
+msgid "Friend Info"
+msgstr "Barát információja"
+
+#: src/interface.c:3256
+msgid "window9"
+msgstr "ablak9"
+
+#: src/interface.c:3308
+msgid "Edit POI"
+msgstr "POI szerkesztése"
+
+#: src/interface.c:3400
+msgid "Nightlife"
+msgstr "Éjszakai élet"
+
+#: src/interface.c:3561
+msgid "window11"
+msgstr "ablak11"
+
+#: src/interface.c:3580
+msgid "Delete POI?"
+msgstr "POI törlése?"
+
+#: src/interface.c:3586
+msgid ""
+"Do you really want to \n"
+"delete this Point of Interest?"
+msgstr ""
+"Biztosan törölni szeretné \n"
+"ezt az érdekes helyet?"
+
+#: src/interface.c:3640
+msgid "Load track..."
+msgstr "Nyomvonal betöltése..."
+
+#: src/interface.c:3646
+msgid "<b>Choose track to open</b>"
+msgstr "<b>Válasszon nyomvonalat a megnyitáshoz</b>"
+
+#: src/interface.c:3721
+msgid "Edit Repository"
+msgstr "Tároló szerkesztése"
+
+#: src/interface.c:3742
+msgid "<b>Repository Name</b>"
+msgstr "<b>Tároló neve</b>"
+
+#: src/interface.c:3844
+msgid "GeoPhoto"
+msgstr "GeoFotó"
+
+#: src/interface.c:3908
+msgid "Photo Correlate"
+msgstr "Fotó megfeleltetése"
+
+#: src/interface.c:3917
+msgid "<b>Geocoding your photos</b>"
+msgstr "<b>Fotók geokódolása</b>"
+
+#: src/interface.c:3935
+msgid "Geocode your photos by correlating them with a gps track. For a tutorial see on http://www.tangogps.org\n"
+msgstr "Fotók geokódolása GPS nyomvonallal való megfeleltetéssel. Útmutatóért lásd a http://www.tangogps.org webhelyet\n"
+
+#: src/interface.c:3941
+msgid "  <b>1. Add Track</b>        "
+msgstr "  <b>1. Nyomvonal hozzáadása</b>        "
+
+#: src/interface.c:3949
+msgid "  <b>2. Add Photos</b> "
+msgstr "  <b>2. Fényképek hozzáadása</b> "
+
+#: src/interface.c:3969
+#: src/interface.c:3977
+msgid "  <span color=\"red\" weight=\"bold\">-</span>"
+msgstr "  <span color=\"red\" weight=\"bold\">-</span>"
+
+#: src/interface.c:3992
+msgid "  <b>3. Adjust Time</b>"
+msgstr "  <b>3. Idő igazítása</b>"
+
+#: src/interface.c:4000
+msgid "View GPS Photo"
+msgstr "GPS fotó megjelenítése"
+
+#: src/interface.c:4007
+msgid "  +00:00h"
+msgstr "  +00:00h"
+
+#: src/interface.c:4014
+msgid "  0 seconds"
+msgstr "  0 másodperc"
+
+#: src/interface.c:4021
+msgid "Correction:"
+msgstr "Korrekció:"
+
+#: src/interface.c:4028
+msgid "Timezone:"
+msgstr "Időzóna:"
+
+#: src/interface.c:4043
+msgid "  add photos to the tangoGPS database"
+msgstr "  fotók hozzáadása a tangoGPS adatbázisához"
+
+#: src/interface.c:4132
+msgid "Please choose"
+msgstr "Kérem válasszon"
+
+#: src/interface.c:4140
+msgid "<b>This is important!</b>\n"
+msgstr "<b>Ez fontos!</b>\n"
+
+#: src/interface.c:4211
+msgid "Image Data"
+msgstr "Kép adatai"
+
+#: src/interface.c:4272
+msgid " <b>GPS:</b> "
+msgstr " <b>GPS:</b> "
+
+#: src/interface.c:4277
+#: src/interface.c:4292
+msgid "      "
+msgstr "      "
+
+#: src/interface.c:4286
+msgid " <b>Camera:</b> "
+msgstr " <b>Kamera:</b> "
+
+#: src/interface.c:4306
+msgid " <b>Correction:</b> "
+msgstr " <b>Korrekció:</b> "
+
+#: src/interface.c:4316
+msgid "0"
+msgstr "0"
+
+#: src/interface.c:4319
+msgid "s   "
+msgstr "mp   "
+
+#: src/interface.c:4327
+msgid " <b>Timezone:</b>  "
+msgstr " <b>Időzóna:</b>  "
+
+#: src/interface.c:4335
+msgid "-12:00"
+msgstr "-12:00"
+
+#: src/interface.c:4336
+msgid "-11:00"
+msgstr "-11:00"
+
+#: src/interface.c:4337
+msgid "-10:00"
+msgstr "-10:00"
+
+#: src/interface.c:4338
+msgid "-09:00"
+msgstr "-09:00"
+
+#: src/interface.c:4339
+msgid "-08:00"
+msgstr "-08:00"
+
+#: src/interface.c:4340
+msgid "-07:00"
+msgstr "-07:00"
+
+#: src/interface.c:4341
+msgid "-06:00"
+msgstr "-06:00"
+
+#: src/interface.c:4342
+msgid "-05:00"
+msgstr "-05:00"
+
+#: src/interface.c:4343
+msgid "-04:00"
+msgstr "-04:00"
+
+#: src/interface.c:4344
+msgid "-03:00"
+msgstr "-03:00"
+
+#: src/interface.c:4345
+msgid "-02:00"
+msgstr "-02:00"
+
+#: src/interface.c:4346
+msgid "-01:00"
+msgstr "-01:00"
+
+#: src/interface.c:4347
+msgid "+00:00"
+msgstr "+00:00"
+
+#: src/interface.c:4348
+msgid "+01:00"
+msgstr "+01:00"
+
+#: src/interface.c:4349
+msgid "+02:00 "
+msgstr "+02:00 "
+
+#: src/interface.c:4350
+msgid "+03:00"
+msgstr "+03:00"
+
+#: src/interface.c:4351
+msgid "+04:00"
+msgstr "+04:00"
+
+#: src/interface.c:4352
+msgid "+05:00"
+msgstr "+05:00"
+
+#: src/interface.c:4353
+msgid "+06:00"
+msgstr "+06:00"
+
+#: src/interface.c:4354
+msgid "+07:00"
+msgstr "+07:00"
+
+#: src/interface.c:4355
+msgid "+08:00"
+msgstr "+08:00"
+
+#: src/interface.c:4356
+msgid "+09:00"
+msgstr "+09:00"
+
+#: src/interface.c:4357
+msgid "+10:00"
+msgstr "+10:00"
+
+#: src/interface.c:4358
+msgid "+11:00"
+msgstr "+11:00"
+
+#: src/interface.c:4359
+msgid "+12:00"
+msgstr "+12:00"
+
+#: src/interface.c:4472
+msgid "Geocode Result"
+msgstr "Geokódolás eredménye"
+
+#: src/interface.c:4482
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr "<b>A GPS megfeleltetés kimenete:</b>"
+
+#: src/interface.c:4488
+msgid "Working...."
+msgstr "Folyamatban..."
+

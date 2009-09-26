@@ -1,0 +1,1191 @@
+# tangogps Finnish translation.
+# Copyright (C) 2008 Timo Jyrinki
+# This file is distributed under the same license as the tangogps package.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tangogps\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-20 16:18+0200\n"
+"PO-Revision-Date: 2008-08-20 17:14+0300\n"
+"Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
+"Language-Team: Finnish <laatu@lokalisointi.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/support.c:90 src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "pixmap-tiedostoa ei löydy: %s"
+
+#: src/interface.c:271
+msgid "tangoGPS"
+msgstr "tangoGPS"
+
+#: src/interface.c:298
+msgid "fullscreen"
+msgstr "kokoruutu"
+
+#: src/interface.c:309
+msgid "      +      "
+msgstr "      +      "
+
+#: src/interface.c:319
+msgid "      -      "
+msgstr "      -      "
+
+#: src/interface.c:329
+msgid "autocenter"
+msgstr "autom.kesk."
+
+#: src/interface.c:339
+msgid "map"
+msgstr "kartta"
+
+#: src/interface.c:361
+msgid "<b>no GPS found</b>"
+msgstr "<b>GPS:ää ei löydy</b>"
+
+#: src/interface.c:368
+msgid "   Map   "
+msgstr "  Kartta  "
+
+#: src/interface.c:414
+msgid "Distance: "
+msgstr "Etäisyys: "
+
+#: src/interface.c:422
+msgid "Time:"
+msgstr "Aika:"
+
+#: src/interface.c:429
+msgid "Avg. Speed:"
+msgstr "Keskinop:"
+
+#: src/interface.c:444
+msgid "Max Speed:"
+msgstr "Maksimin:"
+
+#: src/interface.c:477
+msgid "      Stop       "
+msgstr "     Pysäytä     "
+
+#: src/interface.c:481
+msgid "     Reset     "
+msgstr "     Alusta     "
+
+#: src/interface.c:486
+msgid "<b>Trip Meter</b>"
+msgstr "<b>Matkamittari</b>"
+
+#: src/interface.c:513
+msgid "Speed"
+msgstr "Nopeus"
+
+#: src/interface.c:528
+msgid "Altitude:"
+msgstr "Korkeus:"
+
+#: src/interface.c:542
+msgid "Heading:"
+msgstr "Kulkusuunta:"
+
+#: src/interface.c:556
+msgid "GPS Time:"
+msgstr "GPS-aika:"
+
+#: src/interface.c:563
+msgid "Lat, Lon:"
+msgstr "Lev, pit:"
+
+#: src/interface.c:579
+msgid "Satellites:  "
+msgstr "Satelliitit: "
+
+#: src/interface.c:593
+msgid "<b>GPS Data</b>"
+msgstr "<b>GPS-tiedot</b>"
+
+#: src/interface.c:602
+msgid "  Trip  "
+msgstr " Matka "
+
+#: src/interface.c:627
+msgid ""
+"Here you can enable / disable logging of your tracks for later use, i.e. for "
+"extending OSM"
+msgstr ""
+"Voit ottaa käyttöön / pois käytöstä reittien lokituksen myöhempää käyttöä "
+"varten, esimerkiksi OSM:n laajentamiseksi"
+
+#: src/interface.c:639
+msgid "            Start            "
+msgstr "          Käynnistä          "
+
+#: src/interface.c:643
+msgid "           Split           "
+msgstr "            Jaa            "
+
+#: src/interface.c:658
+msgid "      Configure...      "
+msgstr "      Asetukset...      "
+
+#: src/interface.c:662 src/interface.c:2167 src/interface.c:3890
+#, fuzzy
+msgid " "
+msgstr "  "
+
+#: src/interface.c:666
+#, fuzzy
+msgid "      Load...     "
+msgstr "      Asetukset...      "
+
+#: src/interface.c:674
+msgid "<b>Track Logging</b>"
+msgstr "<b>Reitin lokitus</b>"
+
+#: src/interface.c:683
+msgid " Track "
+msgstr " Reitti "
+
+#: src/interface.c:707
+msgid "button35"
+msgstr ""
+
+#: src/interface.c:710
+msgid "label132\n"
+msgstr ""
+
+#: src/interface.c:732
+msgid ""
+"Update your position to a server\n"
+"and receive your friends positions,\n"
+"shown on the map."
+msgstr ""
+"Päivitä sijaintitiedot palvelimelle\n"
+"ja hae tuttavien sijainnit, jotka\n"
+"näytetään kartalla."
+
+#: src/interface.c:736
+msgid ""
+"\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+
+#: src/interface.c:747
+msgid "once"
+msgstr "kerran"
+
+#: src/interface.c:754
+msgid "every"
+msgstr "joka"
+
+#: src/interface.c:764
+msgid "15"
+msgstr "15"
+
+#: src/interface.c:767
+msgid "minutes"
+msgstr "minuutti"
+
+#: src/interface.c:780
+msgid "     Update Me!     "
+msgstr "   Päivitä minut    "
+
+#: src/interface.c:785
+msgid "     Stop     "
+msgstr "    Pysäytä    "
+
+#: src/interface.c:795
+msgid " ."
+msgstr " ."
+
+#: src/interface.c:807
+msgid "<b>  Position Update  </b>"
+msgstr "<b> Sijainnin päivitys </b>"
+
+#: src/interface.c:827
+msgid ""
+"Decide whom you see and \n"
+"who can see you:"
+msgstr ""
+
+#: src/interface.c:833
+msgid "fun mode"
+msgstr ""
+
+#: src/interface.c:839
+#, fuzzy
+msgid "friend mode"
+msgstr "Tuttavan tiedot"
+
+#: src/interface.c:845
+msgid "private mode"
+msgstr ""
+
+#: src/interface.c:851
+msgid "<i>What are you up to?</i>"
+msgstr ""
+
+#: src/interface.c:861
+msgid "just idle..."
+msgstr ""
+
+#: src/interface.c:864
+#, fuzzy
+msgid " <b>Update Mode</b> "
+msgstr " <b>Päivitetään sijaintia</b> "
+
+#: src/interface.c:886
+msgid "Permission to see me for:"
+msgstr "Lupa nähdä sijainti:"
+
+#: src/interface.c:892
+msgid "public (you remain anonymous)"
+msgstr "julkinen (mutta pysyt anonyyminä)"
+
+#: src/interface.c:897 src/interface.c:940
+msgid "registered nicks"
+msgstr "rekisteröidyt nimimerkit"
+
+#: src/interface.c:902 src/interface.c:945
+msgid "my friends"
+msgstr "tuttavani"
+
+#: src/interface.c:907
+msgid " <b>Updating My Position</b> "
+msgstr " <b>Päivitetään sijaintia</b> "
+
+#: src/interface.c:929
+msgid "Show me the positions from:"
+msgstr "Näytä sijainnit kohteesta:"
+
+#: src/interface.c:935 src/interface.c:3105 src/interface.c:3517
+msgid "public"
+msgstr "julkinen"
+
+#: src/interface.c:950
+msgid " <b>Getting Other's Positions</b> "
+msgstr " <b>Haetaan muiden sijainteja</b> "
+
+#: src/interface.c:973
+msgid "Nickname "
+msgstr "Nimimerkki "
+
+#: src/interface.c:980
+msgid "Password"
+msgstr "Salasana"
+
+#: src/interface.c:992
+msgid "JohnDoe"
+msgstr "MattiMallikas"
+
+#: src/interface.c:999
+msgid "foobar"
+msgstr "huuhaa"
+
+#: src/interface.c:1001
+msgid ""
+"Choose any nickname you want\n"
+"to have. A password is only necessary\n"
+"if you have already registered your \n"
+"nick or you want to register it.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends\n"
+msgstr ""
+"Valitse haluamasi nimimerkki.\n"
+"Salasana tarvitaan vain, jos olet jo\n"
+"rekisteröinyt nimimerkkisi tai haluat\n"
+"rekisteröidä sen.\n"
+"\n"
+"Lisätietoja osoitteessa:\n"
+"http://www.tangogps.org/friends\n"
+
+#: src/interface.c:1006
+msgid ""
+"\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in "
+"case of a lost password."
+msgstr ""
+"\n"
+"\n"
+"Rekisteröidäksesi nimimerkin kirjoita sähköpostiosoitteesi ja napsauta!\n"
+"Sähköpostiosoitettasi ei näytetä tai jaeta, ja sitä käytetään vain hukkuneen "
+"salasanan palauttamiseen."
+
+#: src/interface.c:1028
+#, fuzzy
+msgid ""
+"Choose any nickname you want to have. A password is only necessary if you "
+"have already registered your nick or you want to register it.\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in "
+"case of a lost password.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends"
+msgstr ""
+"Valitse haluamasi nimimerkki.\n"
+"Salasana tarvitaan vain, jos olet jo\n"
+"rekisteröinyt nimimerkkisi tai haluat\n"
+"rekisteröidä sen.\n"
+"\n"
+"Lisätietoja osoitteessa:\n"
+"http://www.tangogps.org/friends\n"
+
+#: src/interface.c:1034
+msgid "EMail        "
+msgstr "Sähköposti   "
+
+#: src/interface.c:1047
+msgid "     Register!     "
+msgstr "    Rekisteröidy    "
+
+#: src/interface.c:1052
+msgid "   "
+msgstr "   "
+
+#: src/interface.c:1057 src/interface.c:2883
+msgid "-"
+msgstr "-"
+
+#: src/interface.c:1065
+msgid "<b>  Me  </b>"
+msgstr "<b> Minä </b>"
+
+#: src/interface.c:1074
+msgid " Friends "
+msgstr " Kaverit "
+
+#: src/interface.c:1098
+msgid ""
+"<i>tangoGPS Version:\n"
+"Developer: Marcus Bauer</i>"
+msgstr ""
+
+#: src/interface.c:1118
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+"Ota käyttöön tai pois automaattinen\n"
+"puuttuvien karttapalojen lataus välimuistiin"
+
+#: src/interface.c:1123
+msgid "Auto download map tiles"
+msgstr "Lataa karttapalat automaattisesti"
+
+#: src/interface.c:1130
+msgid "<b>Auto Download</b>"
+msgstr "<b>Autom. lataus</b>"
+
+#: src/interface.c:1150
+msgid "Current Repository:"
+msgstr "Nykyinen lähde:"
+
+#: src/interface.c:1170
+#, fuzzy
+msgid "      New...       "
+msgstr "   Uusi...   "
+
+#: src/interface.c:1174 src/interface.c:1408
+msgid "    "
+msgstr "    "
+
+#: src/interface.c:1179
+#, fuzzy
+msgid "      Edit...     "
+msgstr "      Asetukset...      "
+
+#: src/interface.c:1193 src/interface.c:2193 src/interface.c:3916
+msgid "xyz instead of zxy"
+msgstr ""
+
+#: src/interface.c:1199
+msgid "URI"
+msgstr "URI"
+
+#: src/interface.c:1206
+msgid "Cache Dir"
+msgstr "Välimuistihak"
+
+#: src/interface.c:1229
+msgid "    Save Repository Configuration    "
+msgstr "    Tallenna lähteiden asetukset     "
+
+#: src/interface.c:1235
+msgid "     "
+msgstr "     "
+
+#: src/interface.c:1240
+msgid "<b>Map Repositories</b>"
+msgstr "<b>Karttalähteet</b>"
+
+#: src/interface.c:1259
+msgid "<i>Speed and Distance:</i>"
+msgstr "<i>Nopeus ja etäisyys:</i>"
+
+#: src/interface.c:1271
+msgid "metrical"
+msgstr "metrij."
+
+#: src/interface.c:1278
+msgid "imperial"
+msgstr "brittiläinen"
+
+#: src/interface.c:1284
+msgid "nautical"
+msgstr "merenkulku"
+
+#: src/interface.c:1290
+msgid "<i>Altitude:</i>"
+msgstr "<i>Korkeus:</i>"
+
+#: src/interface.c:1302
+msgid "meters"
+msgstr "metrit"
+
+#: src/interface.c:1309
+msgid "feet"
+msgstr "jalat"
+
+#: src/interface.c:1315
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr "<i>Lev ja pit:"
+
+#: src/interface.c:1327
+msgid "d.dd"
+msgstr "d.dd"
+
+#: src/interface.c:1334
+msgid "d m.m'"
+msgstr "d m.m'"
+
+#: src/interface.c:1340
+msgid "d m's.s\""
+msgstr "d m's.s\""
+
+#: src/interface.c:1346
+msgid "<b>Units</b>"
+msgstr "<b>Yksiköt</b>"
+
+#: src/interface.c:1365
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+"\n"
+"Aseta GPSD:n palvelin-IP\n"
+
+#: src/interface.c:1375
+msgid " GPSD "
+msgstr " GPSD "
+
+#: src/interface.c:1379
+msgid "Host:"
+msgstr "Palvelin:"
+
+#: src/interface.c:1386
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#: src/interface.c:1389
+msgid " Port:"
+msgstr "Portti:"
+
+#: src/interface.c:1396
+msgid "2947"
+msgstr "2947"
+
+#: src/interface.c:1403
+#, fuzzy
+msgid "     Change GPSD     "
+msgstr " Yhdistä uudelleen GPSD:hen "
+
+#: src/interface.c:1413
+msgid "<b>GPSD</b>"
+msgstr "<b>GPSD</b>"
+
+#: src/interface.c:1431
+msgid ""
+"\n"
+"Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
+msgstr ""
+"\n"
+"Käynnistä gllin ja gpsd (Openmoko Neo1973 <i>ei FreeRunner</i>).\n"
+
+#: src/interface.c:1446
+msgid "/home/root/gllin/gllin &"
+msgstr "/home/root/gllin/gllin &"
+
+#: src/interface.c:1453
+msgid "     Start gllin and GPSD     "
+msgstr "   Käynnistä gllin and GPSD   "
+
+#: src/interface.c:1458
+msgid "  "
+msgstr "  "
+
+#: src/interface.c:1463
+msgid "<b>gllin and gpsd</b>"
+msgstr "<b>gllin ja gpsd</b>"
+
+#: src/interface.c:1471
+msgid ""
+"\n"
+"The following section is \n"
+"for development purposes"
+msgstr ""
+"\n"
+"Seuraava osio on tarkoitettu \n"
+"kehitystarkoituksiin"
+
+#: src/interface.c:1479
+msgid "/home/root/gprs.sh &"
+msgstr "/home/root/gprs.sh &"
+
+#: src/interface.c:1481
+msgid "Start pppd/gprs"
+msgstr "Käynnistä pppd/gprs"
+
+#: src/interface.c:1488
+msgid "/home/root/other.sh"
+msgstr "/home/root/other.sh"
+
+#: src/interface.c:1490
+msgid "Other stuff"
+msgstr "Muuta tavaraa"
+
+#: src/interface.c:1498
+msgid " Config "
+msgstr " Aset. "
+
+#: src/interface.c:1962
+msgid "this point"
+msgstr "tämä piste"
+
+#: src/interface.c:1966
+msgid "show friends"
+msgstr "näytä tuttavat"
+
+#: src/interface.c:1970
+msgid "show POIs"
+msgstr "näytä POIt"
+
+#: src/interface.c:1974
+msgid "show photos"
+msgstr "näytä valokuvat"
+
+#: src/interface.c:1978
+msgid "POIs"
+msgstr "POIt"
+
+#: src/interface.c:1985
+msgid "add POI"
+msgstr "lisää POI"
+
+#: src/interface.c:1989
+msgid "select POIs"
+msgstr "valitse POIt"
+
+#: src/interface.c:1993
+msgid "waypoints"
+msgstr "etapit"
+
+#: src/interface.c:2000 src/interface.c:2026
+msgid "set"
+msgstr "aseta"
+
+#: src/interface.c:2004 src/interface.c:2030
+msgid "unset"
+msgstr "poista"
+
+#: src/interface.c:2008
+#, fuzzy
+msgid "photos"
+msgstr "näytä valokuvat"
+
+#: src/interface.c:2015
+msgid "geocode"
+msgstr ""
+
+#: src/interface.c:2019
+msgid "my position"
+msgstr "sijaintini"
+
+#: src/interface.c:2034
+msgid "map download"
+msgstr "karttojen lataus"
+
+#: src/interface.c:2131
+msgid "New Repository"
+msgstr "Uusi lähde"
+
+#: src/interface.c:2155 src/interface.c:3878
+msgid ""
+"You can find more information about repositories on\n"
+"\n"
+"http://www.tangogps.org/\n"
+msgstr ""
+
+#: src/interface.c:2157
+#, fuzzy
+msgid "<b>Name for the new Repository</b>"
+msgstr "Nimi uudelle lähteelle:"
+
+#: src/interface.c:2171 src/interface.c:3894
+#, fuzzy
+msgid "<b>URI</b>"
+msgstr "<b>-</b>"
+
+#: src/interface.c:2182 src/interface.c:3905
+#, fuzzy
+msgid "<b>Cache Dir</b>"
+msgstr "Välimuistihak"
+
+#: src/interface.c:2211
+msgid "All fields must be filled in"
+msgstr ""
+
+#: src/interface.c:2276
+msgid "GPS Info"
+msgstr "GPS-tiedot"
+
+#: src/interface.c:2295 src/interface.c:2613 src/interface.c:3362
+msgid "--"
+msgstr "--"
+
+#: src/interface.c:2306
+msgid ""
+"Distance to\n"
+"next point"
+msgstr ""
+
+#: src/interface.c:2310
+#, fuzzy
+msgid ""
+"Set point as\n"
+"my position"
+msgstr "sijaintini"
+
+#: src/interface.c:2314 src/interface.c:2987 src/interface.c:3370
+msgid "Close"
+msgstr "Sulje"
+
+#: src/interface.c:2357
+msgid "unused"
+msgstr "käyttämätön"
+
+#: src/interface.c:2394
+msgid "Trackdir Config"
+msgstr "Reittihak-asetus"
+
+#: src/interface.c:2404
+msgid "Directory in which the tracks should be written:"
+msgstr "Hakemisto johon reitit kirjoitetaan:"
+
+#: src/interface.c:2470
+msgid "Map DL"
+msgstr "Karttojen lataus"
+
+#: src/interface.c:2490
+msgid "Download maps of currently visible area:"
+msgstr "Lataa kartat näkyvissä olevasta alueesta:"
+
+#: src/interface.c:2501
+msgid "+ 1 zoom level"
+msgstr "+ 1 zoomaustaso"
+
+#: src/interface.c:2507
+msgid "+ 2 zoom levels"
+msgstr "+ 2 zoomaustasoa"
+
+#: src/interface.c:2513
+msgid "+ 3 zoom levels"
+msgstr "+ 3 zoomaustasoa"
+
+#: src/interface.c:2519
+msgid "+ 4 zoom levels (~25MB)"
+msgstr "+ 4 zoomaustasoa (~25MB)"
+
+#: src/interface.c:2526
+msgid "+ 5 zoom levels (~100MB)"
+msgstr "+ 5 zoomaustasoa (~100MB)"
+
+#: src/interface.c:2532
+msgid "+ 6 zoom levels (~400MB)"
+msgstr "+ 6 zoomaustasoa (~400MB)"
+
+#: src/interface.c:2538
+msgid "<b> Map Download </b>"
+msgstr "<b> Karttojen lataus </b>"
+
+#: src/interface.c:2600
+msgid "Geo Photo"
+msgstr "Geo-valokuva"
+
+#: src/interface.c:2632
+msgid "Big"
+msgstr ""
+
+#: src/interface.c:2636
+msgid "Go To"
+msgstr "Mene"
+
+#: src/interface.c:2678 src/interface.c:3073
+msgid "Add POI"
+msgstr "Lisää POI"
+
+#: src/interface.c:2727
+msgid "unused cols"
+msgstr "käyttäm. sarakk."
+
+#: src/interface.c:2757
+msgid "Show POIs"
+msgstr "Näytä POIt"
+
+#: src/interface.c:2766
+msgid "-- Show All --"
+msgstr "-- Näytä kaikki --"
+
+#: src/interface.c:2767 src/interface.c:3158 src/interface.c:3533
+msgid "Accomodation"
+msgstr "Majoitus"
+
+#: src/interface.c:2768 src/interface.c:3159 src/interface.c:3534
+msgid "Businesses"
+msgstr "Liiketoiminta"
+
+#: src/interface.c:2769 src/interface.c:3160 src/interface.c:3535
+msgid "Car"
+msgstr "Autot"
+
+#: src/interface.c:2770 src/interface.c:3161 src/interface.c:3536
+msgid "Cultural"
+msgstr "Kulttuuri"
+
+#: src/interface.c:2771 src/interface.c:3162 src/interface.c:3537
+msgid "Medical"
+msgstr "Sairaanhoito"
+
+#: src/interface.c:2772 src/interface.c:3163
+msgid "Cafe / Pub / Nightlife"
+msgstr "Kahvila / baari / yöelämä"
+
+#: src/interface.c:2773 src/interface.c:3164 src/interface.c:3539
+msgid "Place of Worship"
+msgstr "Palvontapaikat"
+
+#: src/interface.c:2774 src/interface.c:3165 src/interface.c:3540
+msgid "Public Transportation"
+msgstr "Julkinen liikenne"
+
+#: src/interface.c:2775
+msgid "Restaurant"
+msgstr "Ravintolat"
+
+#: src/interface.c:2776 src/interface.c:3167 src/interface.c:3542
+msgid "Services"
+msgstr "Palvelut"
+
+#: src/interface.c:2777
+msgid "Sights / Leisure"
+msgstr "Nähtävyydet / vapaa-aika"
+
+#: src/interface.c:2778 src/interface.c:3169 src/interface.c:3544
+msgid "Shopping"
+msgstr "Ostokset"
+
+#: src/interface.c:2779 src/interface.c:3170 src/interface.c:3545
+msgid "Sport"
+msgstr "Urheilu"
+
+#: src/interface.c:2780 src/interface.c:3171
+msgid "My Personal Places"
+msgstr ""
+
+#: src/interface.c:2852
+msgid "POI"
+msgstr "POI"
+
+#: src/interface.c:2864
+msgid "<b>-----</b>"
+msgstr "<b>-----</b>"
+
+#: src/interface.c:2892 src/interface.c:3594
+msgid "<b>-</b>"
+msgstr "<b>-</b>"
+
+#: src/interface.c:2921
+msgid "Go To "
+msgstr "Mene "
+
+#: src/interface.c:2943
+msgid "Edit"
+msgstr "Muokkaa"
+
+#: src/interface.c:2965
+#, fuzzy
+msgid "Delete"
+msgstr "jalat"
+
+#: src/interface.c:3099 src/interface.c:3511
+msgid "personal"
+msgstr "henkilökohtainen"
+
+#: src/interface.c:3113
+msgid "Coordinates <b><i>clicked</i></b> on the map:"
+msgstr ""
+
+#: src/interface.c:3124 src/interface.c:3479
+msgid "Lat: "
+msgstr "Lev: "
+
+#: src/interface.c:3134 src/interface.c:3489
+msgid " Lon: "
+msgstr " Pit: "
+
+#: src/interface.c:3144
+msgid "Use current GPS position instead"
+msgstr ""
+
+#: src/interface.c:3148 src/interface.c:3525
+msgid "Category:"
+msgstr "Luokka:"
+
+#: src/interface.c:3157 src/interface.c:3532
+msgid "- please choose -"
+msgstr "- valitse -"
+
+#: src/interface.c:3166 src/interface.c:3541
+msgid "Restaurant & Food"
+msgstr "Ravintolat ja ruoka"
+
+#: src/interface.c:3168 src/interface.c:3543
+msgid "Sights & Leisure"
+msgstr "Nähtävyydet ja vapaa-aika"
+
+#: src/interface.c:3177 src/interface.c:3499
+msgid "Name - Keywords / Tags:"
+msgstr "Nimi - avainsanat / merkinnät:"
+
+#: src/interface.c:3186 src/interface.c:3551
+msgid "Description:"
+msgstr "Kuvaus:"
+
+#: src/interface.c:3208 src/interface.c:3572
+msgid "budget"
+msgstr "edullinen"
+
+#: src/interface.c:3214 src/interface.c:3578
+msgid "medium"
+msgstr "keskitasoa"
+
+#: src/interface.c:3221 src/interface.c:3585
+msgid "exclusive"
+msgstr "korkealuokkainen"
+
+#: src/interface.c:3227 src/interface.c:3591
+msgid "extended opening hours"
+msgstr "laajennetut aukioloajat"
+
+#: src/interface.c:3246 src/interface.c:3616 src/interface.c:4123
+msgid "       "
+msgstr "       "
+
+#: src/interface.c:3329
+msgid "window7"
+msgstr "window7"
+
+#: src/interface.c:3347
+msgid "Friend Info"
+msgstr "Tuttavan tiedot"
+
+#: src/interface.c:3394
+msgid "window9"
+msgstr "window9"
+
+#: src/interface.c:3446
+msgid "Edit POI"
+msgstr "Muokkaa POIta"
+
+#: src/interface.c:3474
+msgid "GPS"
+msgstr "GPS"
+
+#: src/interface.c:3538
+msgid "Nightlife"
+msgstr "Yöelämä"
+
+#: src/interface.c:3699
+msgid "window11"
+msgstr "window11"
+
+#: src/interface.c:3718
+#, fuzzy
+msgid "Delete POI?"
+msgstr "valitse POIt"
+
+#: src/interface.c:3724
+msgid ""
+"Do you really want to \n"
+"delete this Point of Interest?"
+msgstr ""
+
+#: src/interface.c:3778
+msgid "Load track..."
+msgstr ""
+
+#: src/interface.c:3784
+msgid "<b>Choose track to open</b>"
+msgstr ""
+
+#: src/interface.c:3859
+#, fuzzy
+msgid "Edit Repository"
+msgstr "Uusi lähde"
+
+#: src/interface.c:3880
+#, fuzzy
+msgid "<b>Repository Name</b>"
+msgstr "<b>Karttalähteet</b>"
+
+#: src/interface.c:3982
+#, fuzzy
+msgid "GeoPhoto"
+msgstr "Geo-valokuva"
+
+#: src/interface.c:4046
+msgid "Photo Correlate"
+msgstr ""
+
+#: src/interface.c:4055
+#, fuzzy
+msgid "<b>Geocoding your photos</b>"
+msgstr " <b>Haetaan muiden sijainteja</b> "
+
+#: src/interface.c:4073
+msgid ""
+"Geocode your photos by correlating them with a gps track. For a tutorial see "
+"on http://www.tangogps.org\n"
+msgstr ""
+
+#: src/interface.c:4079
+msgid "  <b>1. Add Track</b>        "
+msgstr ""
+
+#: src/interface.c:4087
+msgid "  <b>2. Add Photos</b> "
+msgstr ""
+
+#: src/interface.c:4107 src/interface.c:4115
+msgid "  <span color=\"red\" weight=\"bold\">-</span>"
+msgstr ""
+
+#: src/interface.c:4130
+msgid "  <b>3. Adjust Time</b>"
+msgstr ""
+
+#: src/interface.c:4138
+#, fuzzy
+msgid "View GPS Photo"
+msgstr "Geo-valokuva"
+
+#: src/interface.c:4145
+msgid "  +00:00h"
+msgstr ""
+
+#: src/interface.c:4152
+msgid "  0 seconds"
+msgstr ""
+
+#: src/interface.c:4159
+#, fuzzy
+msgid "Correction:"
+msgstr "Kuvaus:"
+
+#: src/interface.c:4166
+#, fuzzy
+msgid "Timezone:"
+msgstr "Aika:"
+
+#: src/interface.c:4181
+msgid "  add photos to the tangoGPS database"
+msgstr ""
+
+#: src/interface.c:4270
+#, fuzzy
+msgid "Please choose"
+msgstr "- valitse -"
+
+#: src/interface.c:4278
+msgid "<b>This is important!</b>\n"
+msgstr ""
+
+#: src/interface.c:4349
+msgid "Image Data"
+msgstr ""
+
+#: src/interface.c:4410
+#, fuzzy
+msgid " <b>GPS:</b> "
+msgstr "<b>GPSD</b>"
+
+#: src/interface.c:4415 src/interface.c:4430
+#, fuzzy
+msgid "      "
+msgstr "       "
+
+#: src/interface.c:4424
+#, fuzzy
+msgid " <b>Camera:</b> "
+msgstr "Välimuistihak"
+
+#: src/interface.c:4444
+msgid " <b>Correction:</b> "
+msgstr ""
+
+#: src/interface.c:4454
+msgid "0"
+msgstr ""
+
+#: src/interface.c:4457
+#, fuzzy
+msgid "s   "
+msgstr "   "
+
+#: src/interface.c:4465
+#, fuzzy
+msgid " <b>Timezone:</b>  "
+msgstr "<b>Matkamittari</b>"
+
+#: src/interface.c:4473
+msgid "-12:00"
+msgstr ""
+
+#: src/interface.c:4474
+msgid "-11:00"
+msgstr ""
+
+#: src/interface.c:4475
+msgid "-10:00"
+msgstr ""
+
+#: src/interface.c:4476
+msgid "-09:00"
+msgstr ""
+
+#: src/interface.c:4477
+msgid "-08:00"
+msgstr ""
+
+#: src/interface.c:4478
+msgid "-07:00"
+msgstr ""
+
+#: src/interface.c:4479
+msgid "-06:00"
+msgstr ""
+
+#: src/interface.c:4480
+msgid "-05:00"
+msgstr ""
+
+#: src/interface.c:4481
+msgid "-04:00"
+msgstr ""
+
+#: src/interface.c:4482
+msgid "-03:00"
+msgstr ""
+
+#: src/interface.c:4483
+msgid "-02:00"
+msgstr ""
+
+#: src/interface.c:4484
+msgid "-01:00"
+msgstr ""
+
+#: src/interface.c:4485
+msgid "+00:00"
+msgstr ""
+
+#: src/interface.c:4486
+msgid "+01:00"
+msgstr ""
+
+#: src/interface.c:4487
+msgid "+02:00 "
+msgstr ""
+
+#: src/interface.c:4488
+msgid "+03:00"
+msgstr ""
+
+#: src/interface.c:4489
+msgid "+04:00"
+msgstr ""
+
+#: src/interface.c:4490
+msgid "+05:00"
+msgstr ""
+
+#: src/interface.c:4491
+msgid "+06:00"
+msgstr ""
+
+#: src/interface.c:4492
+msgid "+07:00"
+msgstr ""
+
+#: src/interface.c:4493
+msgid "+08:00"
+msgstr ""
+
+#: src/interface.c:4494
+msgid "+09:00"
+msgstr ""
+
+#: src/interface.c:4495
+msgid "+10:00"
+msgstr ""
+
+#: src/interface.c:4496
+msgid "+11:00"
+msgstr ""
+
+#: src/interface.c:4497
+msgid "+12:00"
+msgstr ""
+
+#: src/interface.c:4610
+msgid "Geocode Result"
+msgstr ""
+
+#: src/interface.c:4620
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr ""
+
+#: src/interface.c:4626
+msgid "Working...."
+msgstr ""
+
+#, fuzzy
+#~ msgid "filter POIs"
+#~ msgstr "valitse POIt"
+
+#~ msgid "Inverted Zoom"
+#~ msgstr "Käänteinen zoom"
+
+#~ msgid "version"
+#~ msgstr "versio"

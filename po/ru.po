@@ -1,0 +1,1206 @@
+msgid ""
+msgstr ""
+"Project-Id-Version: tangogps-0.9.2\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-20 16:18+0200\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Evgeny Ginzburg <Nad.Oby@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+
+#: src/support.c:90 src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Не удалось найти файл: %s"
+
+#: src/interface.c:271
+msgid "tangoGPS"
+msgstr "ТангоGPS"
+
+#: src/interface.c:298
+#, fuzzy
+msgid "fullscreen"
+msgstr "во весь экран"
+
+#: src/interface.c:309
+msgid "      +      "
+msgstr "      +      "
+
+#: src/interface.c:319
+msgid "      -      "
+msgstr "      -      "
+
+#: src/interface.c:329
+#, fuzzy
+msgid "autocenter"
+msgstr "автоцентрировать"
+
+#: src/interface.c:339
+msgid "map"
+msgstr "карта"
+
+#: src/interface.c:361
+msgid "<b>no GPS found</b>"
+msgstr "<b>не найдено GPS устройство</b>"
+
+#: src/interface.c:368
+msgid "   Map   "
+msgstr "Карта"
+
+#: src/interface.c:414
+msgid "Distance: "
+msgstr "Дистанция:"
+
+#: src/interface.c:422
+msgid "Time:"
+msgstr "Время:"
+
+#: src/interface.c:429
+msgid "Avg. Speed:"
+msgstr "Средняя скорость:"
+
+#: src/interface.c:444
+msgid "Max Speed:"
+msgstr "Максимальная скорость:"
+
+#: src/interface.c:477
+msgid "      Stop       "
+msgstr "Стоп"
+
+#: src/interface.c:481
+msgid "     Reset     "
+msgstr "Обнулить"
+
+#: src/interface.c:486
+#, fuzzy
+msgid "<b>Trip Meter</b>"
+msgstr "<b>Маршрутомер</b>"
+
+#: src/interface.c:513
+msgid "Speed"
+msgstr "Скорость"
+
+#: src/interface.c:528
+msgid "Altitude:"
+msgstr "Высота:"
+
+#: src/interface.c:542
+#, fuzzy
+msgid "Heading:"
+msgstr "Направление:"
+
+#: src/interface.c:556
+msgid "GPS Time:"
+msgstr "Время GPS;"
+
+#: src/interface.c:563
+msgid "Lat, Lon:"
+msgstr "Широта, Долгота:"
+
+#: src/interface.c:579
+msgid "Satellites:  "
+msgstr "Спутники:"
+
+#: src/interface.c:593
+msgid "<b>GPS Data</b>"
+msgstr "<b>Данные GPS</b>"
+
+#: src/interface.c:602
+#, fuzzy
+msgid "  Trip  "
+msgstr "Маршрут"
+
+#: src/interface.c:627
+#, fuzzy
+msgid ""
+"Here you can enable / disable logging of your tracks for later use, i.e. for "
+"extending OSM"
+msgstr ""
+"Здесь Вы можете включить / отключить логирование ваших маршрутов для "
+"дальнейшего использования, например улучшения карт OSM (openstrretmap.org)"
+
+#: src/interface.c:639
+msgid "            Start            "
+msgstr "Старт"
+
+#: src/interface.c:643
+msgid "           Split           "
+msgstr "Разделить"
+
+#: src/interface.c:658
+msgid "      Configure...      "
+msgstr "Настроить"
+
+#: src/interface.c:662 src/interface.c:2167 src/interface.c:3890
+#, fuzzy
+msgid " "
+msgstr "  "
+
+#: src/interface.c:666
+#, fuzzy
+msgid "      Load...     "
+msgstr "Настроить"
+
+#: src/interface.c:674
+msgid "<b>Track Logging</b>"
+msgstr "<b>Логи трасс</b>"
+
+#: src/interface.c:683
+msgid " Track "
+msgstr "Трасса"
+
+#: src/interface.c:707
+msgid "button35"
+msgstr ""
+
+#: src/interface.c:710
+msgid "label132\n"
+msgstr ""
+
+#: src/interface.c:732
+#, fuzzy
+msgid ""
+"Update your position to a server\n"
+"and receive your friends positions,\n"
+"shown on the map."
+msgstr ""
+"Обновить Ваше местоположение на сервере\n"
+"и получить местоположение Ваших друзей\n"
+"отображённое на карте."
+
+#: src/interface.c:736
+msgid ""
+"\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+
+#: src/interface.c:747
+msgid "once"
+msgstr "один раз"
+
+#: src/interface.c:754
+msgid "every"
+msgstr "каждые"
+
+#: src/interface.c:764
+msgid "15"
+msgstr ""
+
+#: src/interface.c:767
+msgid "minutes"
+msgstr "минут"
+
+#: src/interface.c:780
+#, fuzzy
+msgid "     Update Me!     "
+msgstr "Обновить!"
+
+#: src/interface.c:785
+msgid "     Stop     "
+msgstr "Стоп"
+
+#: src/interface.c:795
+msgid " ."
+msgstr ""
+
+#: src/interface.c:807
+msgid "<b>  Position Update  </b>"
+msgstr "<b>Обновление местоположения</b>"
+
+#: src/interface.c:827
+msgid ""
+"Decide whom you see and \n"
+"who can see you:"
+msgstr ""
+
+#: src/interface.c:833
+msgid "fun mode"
+msgstr ""
+
+#: src/interface.c:839
+#, fuzzy
+msgid "friend mode"
+msgstr "Информация о друзьях"
+
+#: src/interface.c:845
+msgid "private mode"
+msgstr ""
+
+#: src/interface.c:851
+msgid "<i>What are you up to?</i>"
+msgstr ""
+
+#: src/interface.c:861
+msgid "just idle..."
+msgstr ""
+
+#: src/interface.c:864
+#, fuzzy
+msgid " <b>Update Mode</b> "
+msgstr " <b>Обновление моего местоположения</b> "
+
+#: src/interface.c:886
+msgid "Permission to see me for:"
+msgstr "Разрешить видеть меня:"
+
+#: src/interface.c:892
+msgid "public (you remain anonymous)"
+msgstr "всем (Вы остаётесь анонимным)"
+
+#: src/interface.c:897 src/interface.c:940
+#, fuzzy
+msgid "registered nicks"
+msgstr "зарегистрированным пользователям"
+
+#: src/interface.c:902 src/interface.c:945
+#, fuzzy
+msgid "my friends"
+msgstr "моим друзьям"
+
+#: src/interface.c:907
+#, fuzzy
+msgid " <b>Updating My Position</b> "
+msgstr " <b>Обновление моего местоположения</b> "
+
+#: src/interface.c:929
+msgid "Show me the positions from:"
+msgstr "Показать мне местоположение"
+
+#: src/interface.c:935 src/interface.c:3105 src/interface.c:3517
+msgid "public"
+msgstr "всех"
+
+#: src/interface.c:950
+msgid " <b>Getting Other's Positions</b> "
+msgstr " <b>Видеть местоположение других</b> "
+
+#: src/interface.c:973
+msgid "Nickname "
+msgstr "Имя пользователя"
+
+#: src/interface.c:980
+msgid "Password"
+msgstr "Пароль"
+
+#: src/interface.c:992
+msgid "JohnDoe"
+msgstr "ВасяПупкин"
+
+#: src/interface.c:999
+msgid "foobar"
+msgstr "суперпуперпароль"
+
+#: src/interface.c:1001
+msgid ""
+"Choose any nickname you want\n"
+"to have. A password is only necessary\n"
+"if you have already registered your \n"
+"nick or you want to register it.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends\n"
+msgstr ""
+"Выберите имя пользователя\n"
+"Пароль необходим только если\n"
+"Вы уже зарегистрировались\n"
+"или хотите зарегистрироваться.\n"
+"Подробная информация на:\n"
+"http://www.tangogps.org/friends\n"
+
+#: src/interface.c:1006
+msgid ""
+"\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in "
+"case of a lost password."
+msgstr ""
+"\n"
+"\n"
+"Чтобы зарегистрироваться просто заполните Ваш Email адрес  и нажмите кнопку "
+"ниже. Ваш Email нигде не будет отображаться и будет использован только для "
+"напоминания пароля."
+
+#: src/interface.c:1028
+#, fuzzy
+msgid ""
+"Choose any nickname you want to have. A password is only necessary if you "
+"have already registered your nick or you want to register it.\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in "
+"case of a lost password.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends"
+msgstr ""
+"Выберите имя пользователя\n"
+"Пароль необходим только если\n"
+"Вы уже зарегистрировались\n"
+"или хотите зарегистрироваться.\n"
+"Подробная информация на:\n"
+"http://www.tangogps.org/friends\n"
+
+#: src/interface.c:1034
+msgid "EMail        "
+msgstr "EMail"
+
+#: src/interface.c:1047
+msgid "     Register!     "
+msgstr "Зарегистрировать!"
+
+#: src/interface.c:1052
+msgid "   "
+msgstr ""
+
+#: src/interface.c:1057 src/interface.c:2883
+msgid "-"
+msgstr "-"
+
+#: src/interface.c:1065
+msgid "<b>  Me  </b>"
+msgstr "<b>Мои данные</b>"
+
+#: src/interface.c:1074
+msgid " Friends "
+msgstr "Друзья"
+
+#: src/interface.c:1098
+msgid ""
+"<i>tangoGPS Version:\n"
+"Developer: Marcus Bauer</i>"
+msgstr ""
+
+#: src/interface.c:1118
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+"Активация и де-активация автоматического\n"
+"скачивания недостающих частей карт"
+
+#: src/interface.c:1123
+msgid "Auto download map tiles"
+msgstr "Скачивать карты автоматически"
+
+#: src/interface.c:1130
+msgid "<b>Auto Download</b>"
+msgstr "<b>Скачивание карт</b>"
+
+#: src/interface.c:1150
+msgid "Current Repository:"
+msgstr "Репозитарий:"
+
+#: src/interface.c:1170
+#, fuzzy
+msgid "      New...       "
+msgstr "Новый..."
+
+#: src/interface.c:1174 src/interface.c:1408
+msgid "    "
+msgstr ""
+
+#: src/interface.c:1179
+#, fuzzy
+msgid "      Edit...     "
+msgstr "Настроить"
+
+#: src/interface.c:1193 src/interface.c:2193 src/interface.c:3916
+msgid "xyz instead of zxy"
+msgstr ""
+
+#: src/interface.c:1199
+msgid "URI"
+msgstr "Адрес"
+
+#: src/interface.c:1206
+msgid "Cache Dir"
+msgstr "Директория кэш"
+
+#: src/interface.c:1229
+msgid "    Save Repository Configuration    "
+msgstr "Сохранить настройки репозитария "
+
+#: src/interface.c:1235
+msgid "     "
+msgstr ""
+
+#: src/interface.c:1240
+msgid "<b>Map Repositories</b>"
+msgstr "<b>Репозитарии карт</b>"
+
+#: src/interface.c:1259
+msgid "<i>Speed and Distance:</i>"
+msgstr "<i>Скорость и Расстояние:</i>"
+
+#: src/interface.c:1271
+#, fuzzy
+msgid "metrical"
+msgstr "метрическая"
+
+#: src/interface.c:1278
+#, fuzzy
+msgid "imperial"
+msgstr "имперская"
+
+#: src/interface.c:1284
+#, fuzzy
+msgid "nautical"
+msgstr "морская"
+
+#: src/interface.c:1290
+msgid "<i>Altitude:</i>"
+msgstr "<i>Высота:</i>"
+
+#: src/interface.c:1302
+msgid "meters"
+msgstr "метры"
+
+#: src/interface.c:1309
+msgid "feet"
+msgstr "футы"
+
+#: src/interface.c:1315
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr "<i>Широта и Долгота:</i>"
+
+#: src/interface.c:1327
+#, fuzzy
+msgid "d.dd"
+msgstr "d.dd"
+
+#: src/interface.c:1334
+#, fuzzy
+msgid "d m.m'"
+msgstr "d m.m'"
+
+#: src/interface.c:1340
+#, fuzzy
+msgid "d m's.s\""
+msgstr "d m's.s\""
+
+#: src/interface.c:1346
+msgid "<b>Units</b>"
+msgstr "<b>Система единиц</b>"
+
+#: src/interface.c:1365
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+"\n"
+"IP адрес хоста GPSD\n"
+
+#: src/interface.c:1375
+msgid " GPSD "
+msgstr "GPSD"
+
+#: src/interface.c:1379
+msgid "Host:"
+msgstr "хост:"
+
+#: src/interface.c:1386
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#: src/interface.c:1389
+msgid " Port:"
+msgstr "порт:"
+
+#: src/interface.c:1396
+msgid "2947"
+msgstr "2947"
+
+#: src/interface.c:1403
+#, fuzzy
+msgid "     Change GPSD     "
+msgstr " Подключиться к GPSD"
+
+#: src/interface.c:1413
+msgid "<b>GPSD</b>"
+msgstr "<b>GPSD</b>"
+
+#: src/interface.c:1431
+msgid ""
+"\n"
+"Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
+msgstr ""
+"\n"
+"Запуск gllin и gpsd (только Openmoko Neo1973 <i>не Freerunner</i>).\n"
+
+#: src/interface.c:1446
+msgid "/home/root/gllin/gllin &"
+msgstr "/home/root/gllin/gllin &"
+
+#: src/interface.c:1453
+msgid "     Start gllin and GPSD     "
+msgstr "Запустить gllin и GPSD"
+
+#: src/interface.c:1458
+msgid "  "
+msgstr "  "
+
+#: src/interface.c:1463
+msgid "<b>gllin and gpsd</b>"
+msgstr "<b>gllin и gpsd</b>"
+
+#: src/interface.c:1471
+msgid ""
+"\n"
+"The following section is \n"
+"for development purposes"
+msgstr ""
+"\n"
+"Следующая секция\n"
+"для целей разработки"
+
+#: src/interface.c:1479
+msgid "/home/root/gprs.sh &"
+msgstr "/home/root/gprs.sh &"
+
+#: src/interface.c:1481
+msgid "Start pppd/gprs"
+msgstr "Запуск pppd/gprs"
+
+#: src/interface.c:1488
+msgid "/home/root/other.sh"
+msgstr "/home/root/other.sh"
+
+#: src/interface.c:1490
+msgid "Other stuff"
+msgstr "Дополнительно"
+
+#: src/interface.c:1498
+msgid " Config "
+msgstr "Настройка"
+
+#: src/interface.c:1962
+msgid "this point"
+msgstr "эта точка"
+
+#: src/interface.c:1966
+msgid "show friends"
+msgstr "показать друзей"
+
+#: src/interface.c:1970
+msgid "show POIs"
+msgstr "показать POI"
+
+#: src/interface.c:1974
+msgid "show photos"
+msgstr "показать фото"
+
+#: src/interface.c:1978
+msgid "POIs"
+msgstr "POI"
+
+#: src/interface.c:1985
+msgid "add POI"
+msgstr "добавить POI"
+
+#: src/interface.c:1989
+msgid "select POIs"
+msgstr "выбрать POI"
+
+#: src/interface.c:1993
+msgid "waypoints"
+msgstr ""
+
+#: src/interface.c:2000 src/interface.c:2026
+msgid "set"
+msgstr "установить"
+
+#: src/interface.c:2004 src/interface.c:2030
+msgid "unset"
+msgstr "снять"
+
+#: src/interface.c:2008
+#, fuzzy
+msgid "photos"
+msgstr "показать фото"
+
+#: src/interface.c:2015
+msgid "geocode"
+msgstr ""
+
+#: src/interface.c:2019
+msgid "my position"
+msgstr "моё местоположение"
+
+#: src/interface.c:2034
+msgid "map download"
+msgstr "Скачивание карт"
+
+#: src/interface.c:2131
+msgid "New Repository"
+msgstr "Новый репозитарий"
+
+#: src/interface.c:2155 src/interface.c:3878
+msgid ""
+"You can find more information about repositories on\n"
+"\n"
+"http://www.tangogps.org/\n"
+msgstr ""
+
+#: src/interface.c:2157
+#, fuzzy
+msgid "<b>Name for the new Repository</b>"
+msgstr "Название репозитария"
+
+#: src/interface.c:2171 src/interface.c:3894
+#, fuzzy
+msgid "<b>URI</b>"
+msgstr "<b>-</b>"
+
+#: src/interface.c:2182 src/interface.c:3905
+#, fuzzy
+msgid "<b>Cache Dir</b>"
+msgstr "Директория кэш"
+
+#: src/interface.c:2211
+msgid "All fields must be filled in"
+msgstr ""
+
+#: src/interface.c:2276
+msgid "GPS Info"
+msgstr "GPS информация"
+
+#: src/interface.c:2295 src/interface.c:2613 src/interface.c:3362
+msgid "--"
+msgstr "--"
+
+#: src/interface.c:2306
+msgid ""
+"Distance to\n"
+"next point"
+msgstr ""
+
+#: src/interface.c:2310
+#, fuzzy
+msgid ""
+"Set point as\n"
+"my position"
+msgstr "моё местоположение"
+
+#: src/interface.c:2314 src/interface.c:2987 src/interface.c:3370
+msgid "Close"
+msgstr "Закрыть"
+
+#: src/interface.c:2357
+msgid "unused"
+msgstr "не использовано"
+
+#: src/interface.c:2394
+#, fuzzy
+msgid "Trackdir Config"
+msgstr "Треки"
+
+#: src/interface.c:2404
+msgid "Directory in which the tracks should be written:"
+msgstr "Директория сохранения треков"
+
+#: src/interface.c:2470
+msgid "Map DL"
+msgstr "Скачивание карт"
+
+#: src/interface.c:2490
+msgid "Download maps of currently visible area:"
+msgstr "скачать карты для видимого участка"
+
+#: src/interface.c:2501
+msgid "+ 1 zoom level"
+msgstr "+ 1 уровень увеличения"
+
+#: src/interface.c:2507
+msgid "+ 2 zoom levels"
+msgstr "+ 2 уровня увеличения"
+
+#: src/interface.c:2513
+msgid "+ 3 zoom levels"
+msgstr "+ 3 уровня увеличения"
+
+#: src/interface.c:2519
+msgid "+ 4 zoom levels (~25MB)"
+msgstr "+ 4 уровня увеличения (~25MB)"
+
+#: src/interface.c:2526
+msgid "+ 5 zoom levels (~100MB)"
+msgstr "+ 5 уровней увеличения (~100MB)"
+
+#: src/interface.c:2532
+msgid "+ 6 zoom levels (~400MB)"
+msgstr "+ 6 уровней увеличения (~400MB)"
+
+#: src/interface.c:2538
+msgid "<b> Map Download </b>"
+msgstr "<b>Скачивание карт</b>"
+
+#: src/interface.c:2600
+msgid "Geo Photo"
+msgstr "Геотегированная фотографии"
+
+#: src/interface.c:2632
+msgid "Big"
+msgstr ""
+
+#: src/interface.c:2636
+msgid "Go To"
+msgstr "Перейти"
+
+#: src/interface.c:2678 src/interface.c:3073
+msgid "Add POI"
+msgstr "Добавить POI"
+
+#: src/interface.c:2727
+msgid "unused cols"
+msgstr "Неиспользованные колонки"
+
+#: src/interface.c:2757
+msgid "Show POIs"
+msgstr "Показать POI"
+
+#: src/interface.c:2766
+msgid "-- Show All --"
+msgstr "-- Показать всё --"
+
+#: src/interface.c:2767 src/interface.c:3158 src/interface.c:3533
+#, fuzzy
+msgid "Accomodation"
+msgstr "Размещениё"
+
+#: src/interface.c:2768 src/interface.c:3159 src/interface.c:3534
+msgid "Businesses"
+msgstr "Бизнес"
+
+#: src/interface.c:2769 src/interface.c:3160 src/interface.c:3535
+msgid "Car"
+msgstr "Авто"
+
+#: src/interface.c:2770 src/interface.c:3161 src/interface.c:3536
+msgid "Cultural"
+msgstr "Культура"
+
+#: src/interface.c:2771 src/interface.c:3162 src/interface.c:3537
+msgid "Medical"
+msgstr "Медицина"
+
+#: src/interface.c:2772 src/interface.c:3163
+#, fuzzy
+msgid "Cafe / Pub / Nightlife"
+msgstr "Кафе / Бар / Ночной клуб"
+
+#: src/interface.c:2773 src/interface.c:3164 src/interface.c:3539
+msgid "Place of Worship"
+msgstr "Религия"
+
+#: src/interface.c:2774 src/interface.c:3165 src/interface.c:3540
+msgid "Public Transportation"
+msgstr "Общественный транспорт"
+
+#: src/interface.c:2775
+msgid "Restaurant"
+msgstr "Ресторан"
+
+#: src/interface.c:2776 src/interface.c:3167 src/interface.c:3542
+msgid "Services"
+msgstr "Услуги"
+
+#: src/interface.c:2777
+msgid "Sights / Leisure"
+msgstr "Достопримечательности / Досуг"
+
+#: src/interface.c:2778 src/interface.c:3169 src/interface.c:3544
+msgid "Shopping"
+msgstr "Покупки"
+
+#: src/interface.c:2779 src/interface.c:3170 src/interface.c:3545
+msgid "Sport"
+msgstr "Спорт"
+
+#: src/interface.c:2780 src/interface.c:3171
+msgid "My Personal Places"
+msgstr ""
+
+#: src/interface.c:2852
+msgid "POI"
+msgstr "POI"
+
+#: src/interface.c:2864
+msgid "<b>-----</b>"
+msgstr "<b>-----</b>"
+
+#: src/interface.c:2892 src/interface.c:3594
+msgid "<b>-</b>"
+msgstr "<b>-</b>"
+
+#: src/interface.c:2921
+msgid "Go To "
+msgstr "Перейти"
+
+#: src/interface.c:2943
+msgid "Edit"
+msgstr "Редактировать"
+
+#: src/interface.c:2965
+#, fuzzy
+msgid "Delete"
+msgstr "футы"
+
+#: src/interface.c:3099 src/interface.c:3511
+msgid "personal"
+msgstr "личное"
+
+#: src/interface.c:3113
+msgid "Coordinates <b><i>clicked</i></b> on the map:"
+msgstr ""
+
+#: src/interface.c:3124 src/interface.c:3479
+msgid "Lat: "
+msgstr "Широта:"
+
+#: src/interface.c:3134 src/interface.c:3489
+msgid " Lon: "
+msgstr "Долгота:"
+
+#: src/interface.c:3144
+msgid "Use current GPS position instead"
+msgstr ""
+
+#: src/interface.c:3148 src/interface.c:3525
+msgid "Category:"
+msgstr "Категория:"
+
+#: src/interface.c:3157 src/interface.c:3532
+msgid "- please choose -"
+msgstr "- выберите -"
+
+#: src/interface.c:3166 src/interface.c:3541
+msgid "Restaurant & Food"
+msgstr "Рестораны и питание"
+
+#: src/interface.c:3168 src/interface.c:3543
+msgid "Sights & Leisure"
+msgstr "Достопримечательности и Досуг"
+
+#: src/interface.c:3177 src/interface.c:3499
+msgid "Name - Keywords / Tags:"
+msgstr "Название - ключевые слова:"
+
+#: src/interface.c:3186 src/interface.c:3551
+msgid "Description:"
+msgstr "Описание:"
+
+#: src/interface.c:3208 src/interface.c:3572
+msgid "budget"
+msgstr "стоимость"
+
+#: src/interface.c:3214 src/interface.c:3578
+msgid "medium"
+msgstr "средняя"
+
+#: src/interface.c:3221 src/interface.c:3585
+msgid "exclusive"
+msgstr "экслюзивно"
+
+#: src/interface.c:3227 src/interface.c:3591
+msgid "extended opening hours"
+msgstr "Открыто так же в нестандартное время"
+
+#: src/interface.c:3246 src/interface.c:3616 src/interface.c:4123
+msgid "       "
+msgstr ""
+
+#: src/interface.c:3329
+msgid "window7"
+msgstr ""
+
+#: src/interface.c:3347
+msgid "Friend Info"
+msgstr "Информация о друзьях"
+
+#: src/interface.c:3394
+msgid "window9"
+msgstr ""
+
+#: src/interface.c:3446
+msgid "Edit POI"
+msgstr "Редактировать POI"
+
+#: src/interface.c:3474
+msgid "GPS"
+msgstr "GPS"
+
+#: src/interface.c:3538
+#, fuzzy
+msgid "Nightlife"
+msgstr "Ночной клуб"
+
+#: src/interface.c:3699
+msgid "window11"
+msgstr ""
+
+#: src/interface.c:3718
+#, fuzzy
+msgid "Delete POI?"
+msgstr "выбрать POI"
+
+#: src/interface.c:3724
+msgid ""
+"Do you really want to \n"
+"delete this Point of Interest?"
+msgstr ""
+
+#: src/interface.c:3778
+msgid "Load track..."
+msgstr ""
+
+#: src/interface.c:3784
+msgid "<b>Choose track to open</b>"
+msgstr ""
+
+#: src/interface.c:3859
+#, fuzzy
+msgid "Edit Repository"
+msgstr "Новый репозитарий"
+
+#: src/interface.c:3880
+#, fuzzy
+msgid "<b>Repository Name</b>"
+msgstr "<b>Репозитарии карт</b>"
+
+#: src/interface.c:3982
+#, fuzzy
+msgid "GeoPhoto"
+msgstr "Геотегированная фотографии"
+
+#: src/interface.c:4046
+msgid "Photo Correlate"
+msgstr ""
+
+#: src/interface.c:4055
+#, fuzzy
+msgid "<b>Geocoding your photos</b>"
+msgstr " <b>Видеть местоположение других</b> "
+
+#: src/interface.c:4073
+msgid ""
+"Geocode your photos by correlating them with a gps track. For a tutorial see "
+"on http://www.tangogps.org\n"
+msgstr ""
+
+#: src/interface.c:4079
+msgid "  <b>1. Add Track</b>        "
+msgstr ""
+
+#: src/interface.c:4087
+msgid "  <b>2. Add Photos</b> "
+msgstr ""
+
+#: src/interface.c:4107 src/interface.c:4115
+msgid "  <span color=\"red\" weight=\"bold\">-</span>"
+msgstr ""
+
+#: src/interface.c:4130
+msgid "  <b>3. Adjust Time</b>"
+msgstr ""
+
+#: src/interface.c:4138
+#, fuzzy
+msgid "View GPS Photo"
+msgstr "Геотегированная фотографии"
+
+#: src/interface.c:4145
+msgid "  +00:00h"
+msgstr ""
+
+#: src/interface.c:4152
+msgid "  0 seconds"
+msgstr ""
+
+#: src/interface.c:4159
+#, fuzzy
+msgid "Correction:"
+msgstr "Описание:"
+
+#: src/interface.c:4166
+#, fuzzy
+msgid "Timezone:"
+msgstr "Время:"
+
+#: src/interface.c:4181
+msgid "  add photos to the tangoGPS database"
+msgstr ""
+
+#: src/interface.c:4270
+#, fuzzy
+msgid "Please choose"
+msgstr "- выберите -"
+
+#: src/interface.c:4278
+msgid "<b>This is important!</b>\n"
+msgstr ""
+
+#: src/interface.c:4349
+msgid "Image Data"
+msgstr ""
+
+#: src/interface.c:4410
+#, fuzzy
+msgid " <b>GPS:</b> "
+msgstr "<b>GPSD</b>"
+
+#: src/interface.c:4415 src/interface.c:4430
+#, fuzzy
+msgid "      "
+msgstr "Карта"
+
+#: src/interface.c:4424
+#, fuzzy
+msgid " <b>Camera:</b> "
+msgstr "Директория кэш"
+
+#: src/interface.c:4444
+msgid " <b>Correction:</b> "
+msgstr ""
+
+#: src/interface.c:4454
+msgid "0"
+msgstr ""
+
+#: src/interface.c:4457
+#, fuzzy
+msgid "s   "
+msgstr "  "
+
+#: src/interface.c:4465
+#, fuzzy
+msgid " <b>Timezone:</b>  "
+msgstr "<b>Маршрутомер</b>"
+
+#: src/interface.c:4473
+msgid "-12:00"
+msgstr ""
+
+#: src/interface.c:4474
+msgid "-11:00"
+msgstr ""
+
+#: src/interface.c:4475
+msgid "-10:00"
+msgstr ""
+
+#: src/interface.c:4476
+msgid "-09:00"
+msgstr ""
+
+#: src/interface.c:4477
+msgid "-08:00"
+msgstr ""
+
+#: src/interface.c:4478
+msgid "-07:00"
+msgstr ""
+
+#: src/interface.c:4479
+msgid "-06:00"
+msgstr ""
+
+#: src/interface.c:4480
+msgid "-05:00"
+msgstr ""
+
+#: src/interface.c:4481
+msgid "-04:00"
+msgstr ""
+
+#: src/interface.c:4482
+msgid "-03:00"
+msgstr ""
+
+#: src/interface.c:4483
+msgid "-02:00"
+msgstr ""
+
+#: src/interface.c:4484
+msgid "-01:00"
+msgstr ""
+
+#: src/interface.c:4485
+msgid "+00:00"
+msgstr ""
+
+#: src/interface.c:4486
+msgid "+01:00"
+msgstr ""
+
+#: src/interface.c:4487
+msgid "+02:00 "
+msgstr ""
+
+#: src/interface.c:4488
+msgid "+03:00"
+msgstr ""
+
+#: src/interface.c:4489
+msgid "+04:00"
+msgstr ""
+
+#: src/interface.c:4490
+msgid "+05:00"
+msgstr ""
+
+#: src/interface.c:4491
+msgid "+06:00"
+msgstr ""
+
+#: src/interface.c:4492
+msgid "+07:00"
+msgstr ""
+
+#: src/interface.c:4493
+msgid "+08:00"
+msgstr ""
+
+#: src/interface.c:4494
+msgid "+09:00"
+msgstr ""
+
+#: src/interface.c:4495
+msgid "+10:00"
+msgstr ""
+
+#: src/interface.c:4496
+msgid "+11:00"
+msgstr ""
+
+#: src/interface.c:4497
+msgid "+12:00"
+msgstr ""
+
+#: src/interface.c:4610
+msgid "Geocode Result"
+msgstr ""
+
+#: src/interface.c:4620
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr ""
+
+#: src/interface.c:4626
+msgid "Working...."
+msgstr ""
+
+#, fuzzy
+#~ msgid "filter POIs"
+#~ msgstr "выбрать POI"
+
+#~ msgid "Inverted Zoom"
+#~ msgstr "Обращённый Zoom"
+
+#~ msgid "version"
+#~ msgstr "версия"

@@ -1,0 +1,43 @@
+# List of source files containing translatable strings.
+
+## Created by Anjuta - will be overwritten
+## If you don't want it to overwrite it,
+## 	Please disable it in the Anjuta project configuration
+
+# Source files
+src/support.h
+src/support.c
+src/main.c
+src/interface.h
+src/interface.c
+src/callbacks.h
+src/callbacks.c
+src/map_management.c
+src/map_management.h
+src/globals.c
+src/globals.h
+src/converter.c
+src/converter.h
+src/gps_functions.c
+src/gps_functions.h
+src/init.c
+src/init.h
+src/tile_management.c
+src/tile_management.h
+src/friends.c
+src/friends.h
+src/gpsdstart.sh
+src/geo_photos.c
+src/geo_photos.h
+src/poi.c
+src/poi.h
+src/util.c
+src/util.h
+src/wp.c
+src/wp.h
+src/tracks.c
+src/tracks.h
+src/exif.c
+src/exif.h
+
+

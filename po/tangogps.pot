@@ -1,0 +1,1118 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-09-20 16:18+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/support.c:90 src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr ""
+
+#: src/interface.c:271
+msgid "tangoGPS"
+msgstr ""
+
+#: src/interface.c:298
+msgid "fullscreen"
+msgstr ""
+
+#: src/interface.c:309
+msgid "      +      "
+msgstr ""
+
+#: src/interface.c:319
+msgid "      -      "
+msgstr ""
+
+#: src/interface.c:329
+msgid "autocenter"
+msgstr ""
+
+#: src/interface.c:339
+msgid "map"
+msgstr ""
+
+#: src/interface.c:361
+msgid "<b>no GPS found</b>"
+msgstr ""
+
+#: src/interface.c:368
+msgid "   Map   "
+msgstr ""
+
+#: src/interface.c:414
+msgid "Distance: "
+msgstr ""
+
+#: src/interface.c:422
+msgid "Time:"
+msgstr ""
+
+#: src/interface.c:429
+msgid "Avg. Speed:"
+msgstr ""
+
+#: src/interface.c:444
+msgid "Max Speed:"
+msgstr ""
+
+#: src/interface.c:477
+msgid "      Stop       "
+msgstr ""
+
+#: src/interface.c:481
+msgid "     Reset     "
+msgstr ""
+
+#: src/interface.c:486
+msgid "<b>Trip Meter</b>"
+msgstr ""
+
+#: src/interface.c:513
+msgid "Speed"
+msgstr ""
+
+#: src/interface.c:528
+msgid "Altitude:"
+msgstr ""
+
+#: src/interface.c:542
+msgid "Heading:"
+msgstr ""
+
+#: src/interface.c:556
+msgid "GPS Time:"
+msgstr ""
+
+#: src/interface.c:563
+msgid "Lat, Lon:"
+msgstr ""
+
+#: src/interface.c:579
+msgid "Satellites:  "
+msgstr ""
+
+#: src/interface.c:593
+msgid "<b>GPS Data</b>"
+msgstr ""
+
+#: src/interface.c:602
+msgid "  Trip  "
+msgstr ""
+
+#: src/interface.c:627
+msgid ""
+"Here you can enable / disable logging of your tracks for later use, i.e. for "
+"extending OSM"
+msgstr ""
+
+#: src/interface.c:639
+msgid "            Start            "
+msgstr ""
+
+#: src/interface.c:643
+msgid "           Split           "
+msgstr ""
+
+#: src/interface.c:658
+msgid "      Configure...      "
+msgstr ""
+
+#: src/interface.c:662 src/interface.c:2167 src/interface.c:3890
+msgid " "
+msgstr ""
+
+#: src/interface.c:666
+msgid "      Load...     "
+msgstr ""
+
+#: src/interface.c:674
+msgid "<b>Track Logging</b>"
+msgstr ""
+
+#: src/interface.c:683
+msgid " Track "
+msgstr ""
+
+#: src/interface.c:707
+msgid "button35"
+msgstr ""
+
+#: src/interface.c:710
+msgid "label132\n"
+msgstr ""
+
+#: src/interface.c:732
+msgid ""
+"Update your position to a server\n"
+"and receive your friends positions,\n"
+"shown on the map."
+msgstr ""
+
+#: src/interface.c:736
+msgid ""
+"\n"
+"\n"
+msgstr ""
+
+#: src/interface.c:747
+msgid "once"
+msgstr ""
+
+#: src/interface.c:754
+msgid "every"
+msgstr ""
+
+#: src/interface.c:764
+msgid "15"
+msgstr ""
+
+#: src/interface.c:767
+msgid "minutes"
+msgstr ""
+
+#: src/interface.c:780
+msgid "     Update Me!     "
+msgstr ""
+
+#: src/interface.c:785
+msgid "     Stop     "
+msgstr ""
+
+#: src/interface.c:795
+msgid " ."
+msgstr ""
+
+#: src/interface.c:807
+msgid "<b>  Position Update  </b>"
+msgstr ""
+
+#: src/interface.c:827
+msgid ""
+"Decide whom you see and \n"
+"who can see you:"
+msgstr ""
+
+#: src/interface.c:833
+msgid "fun mode"
+msgstr ""
+
+#: src/interface.c:839
+msgid "friend mode"
+msgstr ""
+
+#: src/interface.c:845
+msgid "private mode"
+msgstr ""
+
+#: src/interface.c:851
+msgid "<i>What are you up to?</i>"
+msgstr ""
+
+#: src/interface.c:861
+msgid "just idle..."
+msgstr ""
+
+#: src/interface.c:864
+msgid " <b>Update Mode</b> "
+msgstr ""
+
+#: src/interface.c:886
+msgid "Permission to see me for:"
+msgstr ""
+
+#: src/interface.c:892
+msgid "public (you remain anonymous)"
+msgstr ""
+
+#: src/interface.c:897 src/interface.c:940
+msgid "registered nicks"
+msgstr ""
+
+#: src/interface.c:902 src/interface.c:945
+msgid "my friends"
+msgstr ""
+
+#: src/interface.c:907
+msgid " <b>Updating My Position</b> "
+msgstr ""
+
+#: src/interface.c:929
+msgid "Show me the positions from:"
+msgstr ""
+
+#: src/interface.c:935 src/interface.c:3105 src/interface.c:3517
+msgid "public"
+msgstr ""
+
+#: src/interface.c:950
+msgid " <b>Getting Other's Positions</b> "
+msgstr ""
+
+#: src/interface.c:973
+msgid "Nickname "
+msgstr ""
+
+#: src/interface.c:980
+msgid "Password"
+msgstr ""
+
+#: src/interface.c:992
+msgid "JohnDoe"
+msgstr ""
+
+#: src/interface.c:999
+msgid "foobar"
+msgstr ""
+
+#: src/interface.c:1001
+msgid ""
+"Choose any nickname you want\n"
+"to have. A password is only necessary\n"
+"if you have already registered your \n"
+"nick or you want to register it.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends\n"
+msgstr ""
+
+#: src/interface.c:1006
+msgid ""
+"\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in "
+"case of a lost password."
+msgstr ""
+
+#: src/interface.c:1028
+msgid ""
+"Choose any nickname you want to have. A password is only necessary if you "
+"have already registered your nick or you want to register it.\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in "
+"case of a lost password.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends"
+msgstr ""
+
+#: src/interface.c:1034
+msgid "EMail        "
+msgstr ""
+
+#: src/interface.c:1047
+msgid "     Register!     "
+msgstr ""
+
+#: src/interface.c:1052
+msgid "   "
+msgstr ""
+
+#: src/interface.c:1057 src/interface.c:2883
+msgid "-"
+msgstr ""
+
+#: src/interface.c:1065
+msgid "<b>  Me  </b>"
+msgstr ""
+
+#: src/interface.c:1074
+msgid " Friends "
+msgstr ""
+
+#: src/interface.c:1098
+msgid ""
+"<i>tangoGPS Version:\n"
+"Developer: Marcus Bauer</i>"
+msgstr ""
+
+#: src/interface.c:1118
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+
+#: src/interface.c:1123
+msgid "Auto download map tiles"
+msgstr ""
+
+#: src/interface.c:1130
+msgid "<b>Auto Download</b>"
+msgstr ""
+
+#: src/interface.c:1150
+msgid "Current Repository:"
+msgstr ""
+
+#: src/interface.c:1170
+msgid "      New...       "
+msgstr ""
+
+#: src/interface.c:1174 src/interface.c:1408
+msgid "    "
+msgstr ""
+
+#: src/interface.c:1179
+msgid "      Edit...     "
+msgstr ""
+
+#: src/interface.c:1193 src/interface.c:2193 src/interface.c:3916
+msgid "xyz instead of zxy"
+msgstr ""
+
+#: src/interface.c:1199
+msgid "URI"
+msgstr ""
+
+#: src/interface.c:1206
+msgid "Cache Dir"
+msgstr ""
+
+#: src/interface.c:1229
+msgid "    Save Repository Configuration    "
+msgstr ""
+
+#: src/interface.c:1235
+msgid "     "
+msgstr ""
+
+#: src/interface.c:1240
+msgid "<b>Map Repositories</b>"
+msgstr ""
+
+#: src/interface.c:1259
+msgid "<i>Speed and Distance:</i>"
+msgstr ""
+
+#: src/interface.c:1271
+msgid "metrical"
+msgstr ""
+
+#: src/interface.c:1278
+msgid "imperial"
+msgstr ""
+
+#: src/interface.c:1284
+msgid "nautical"
+msgstr ""
+
+#: src/interface.c:1290
+msgid "<i>Altitude:</i>"
+msgstr ""
+
+#: src/interface.c:1302
+msgid "meters"
+msgstr ""
+
+#: src/interface.c:1309
+msgid "feet"
+msgstr ""
+
+#: src/interface.c:1315
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr ""
+
+#: src/interface.c:1327
+msgid "d.dd"
+msgstr ""
+
+#: src/interface.c:1334
+msgid "d m.m'"
+msgstr ""
+
+#: src/interface.c:1340
+msgid "d m's.s\""
+msgstr ""
+
+#: src/interface.c:1346
+msgid "<b>Units</b>"
+msgstr ""
+
+#: src/interface.c:1365
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+
+#: src/interface.c:1375
+msgid " GPSD "
+msgstr ""
+
+#: src/interface.c:1379
+msgid "Host:"
+msgstr ""
+
+#: src/interface.c:1386
+msgid "127.0.0.1"
+msgstr ""
+
+#: src/interface.c:1389
+msgid " Port:"
+msgstr ""
+
+#: src/interface.c:1396
+msgid "2947"
+msgstr ""
+
+#: src/interface.c:1403
+msgid "     Change GPSD     "
+msgstr ""
+
+#: src/interface.c:1413
+msgid "<b>GPSD</b>"
+msgstr ""
+
+#: src/interface.c:1431
+msgid ""
+"\n"
+"Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
+msgstr ""
+
+#: src/interface.c:1446
+msgid "/home/root/gllin/gllin &"
+msgstr ""
+
+#: src/interface.c:1453
+msgid "     Start gllin and GPSD     "
+msgstr ""
+
+#: src/interface.c:1458
+msgid "  "
+msgstr ""
+
+#: src/interface.c:1463
+msgid "<b>gllin and gpsd</b>"
+msgstr ""
+
+#: src/interface.c:1471
+msgid ""
+"\n"
+"The following section is \n"
+"for development purposes"
+msgstr ""
+
+#: src/interface.c:1479
+msgid "/home/root/gprs.sh &"
+msgstr ""
+
+#: src/interface.c:1481
+msgid "Start pppd/gprs"
+msgstr ""
+
+#: src/interface.c:1488
+msgid "/home/root/other.sh"
+msgstr ""
+
+#: src/interface.c:1490
+msgid "Other stuff"
+msgstr ""
+
+#: src/interface.c:1498
+msgid " Config "
+msgstr ""
+
+#: src/interface.c:1962
+msgid "this point"
+msgstr ""
+
+#: src/interface.c:1966
+msgid "show friends"
+msgstr ""
+
+#: src/interface.c:1970
+msgid "show POIs"
+msgstr ""
+
+#: src/interface.c:1974
+msgid "show photos"
+msgstr ""
+
+#: src/interface.c:1978
+msgid "POIs"
+msgstr ""
+
+#: src/interface.c:1985
+msgid "add POI"
+msgstr ""
+
+#: src/interface.c:1989
+msgid "select POIs"
+msgstr ""
+
+#: src/interface.c:1993
+msgid "waypoints"
+msgstr ""
+
+#: src/interface.c:2000 src/interface.c:2026
+msgid "set"
+msgstr ""
+
+#: src/interface.c:2004 src/interface.c:2030
+msgid "unset"
+msgstr ""
+
+#: src/interface.c:2008
+msgid "photos"
+msgstr ""
+
+#: src/interface.c:2015
+msgid "geocode"
+msgstr ""
+
+#: src/interface.c:2019
+msgid "my position"
+msgstr ""
+
+#: src/interface.c:2034
+msgid "map download"
+msgstr ""
+
+#: src/interface.c:2131
+msgid "New Repository"
+msgstr ""
+
+#: src/interface.c:2155 src/interface.c:3878
+msgid ""
+"You can find more information about repositories on\n"
+"\n"
+"http://www.tangogps.org/\n"
+msgstr ""
+
+#: src/interface.c:2157
+msgid "<b>Name for the new Repository</b>"
+msgstr ""
+
+#: src/interface.c:2171 src/interface.c:3894
+msgid "<b>URI</b>"
+msgstr ""
+
+#: src/interface.c:2182 src/interface.c:3905
+msgid "<b>Cache Dir</b>"
+msgstr ""
+
+#: src/interface.c:2211
+msgid "All fields must be filled in"
+msgstr ""
+
+#: src/interface.c:2276
+msgid "GPS Info"
+msgstr ""
+
+#: src/interface.c:2295 src/interface.c:2613 src/interface.c:3362
+msgid "--"
+msgstr ""
+
+#: src/interface.c:2306
+msgid ""
+"Distance to\n"
+"next point"
+msgstr ""
+
+#: src/interface.c:2310
+msgid ""
+"Set point as\n"
+"my position"
+msgstr ""
+
+#: src/interface.c:2314 src/interface.c:2987 src/interface.c:3370
+msgid "Close"
+msgstr ""
+
+#: src/interface.c:2357
+msgid "unused"
+msgstr ""
+
+#: src/interface.c:2394
+msgid "Trackdir Config"
+msgstr ""
+
+#: src/interface.c:2404
+msgid "Directory in which the tracks should be written:"
+msgstr ""
+
+#: src/interface.c:2470
+msgid "Map DL"
+msgstr ""
+
+#: src/interface.c:2490
+msgid "Download maps of currently visible area:"
+msgstr ""
+
+#: src/interface.c:2501
+msgid "+ 1 zoom level"
+msgstr ""
+
+#: src/interface.c:2507
+msgid "+ 2 zoom levels"
+msgstr ""
+
+#: src/interface.c:2513
+msgid "+ 3 zoom levels"
+msgstr ""
+
+#: src/interface.c:2519
+msgid "+ 4 zoom levels (~25MB)"
+msgstr ""
+
+#: src/interface.c:2526
+msgid "+ 5 zoom levels (~100MB)"
+msgstr ""
+
+#: src/interface.c:2532
+msgid "+ 6 zoom levels (~400MB)"
+msgstr ""
+
+#: src/interface.c:2538
+msgid "<b> Map Download </b>"
+msgstr ""
+
+#: src/interface.c:2600
+msgid "Geo Photo"
+msgstr ""
+
+#: src/interface.c:2632
+msgid "Big"
+msgstr ""
+
+#: src/interface.c:2636
+msgid "Go To"
+msgstr ""
+
+#: src/interface.c:2678 src/interface.c:3073
+msgid "Add POI"
+msgstr ""
+
+#: src/interface.c:2727
+msgid "unused cols"
+msgstr ""
+
+#: src/interface.c:2757
+msgid "Show POIs"
+msgstr ""
+
+#: src/interface.c:2766
+msgid "-- Show All --"
+msgstr ""
+
+#: src/interface.c:2767 src/interface.c:3158 src/interface.c:3533
+msgid "Accomodation"
+msgstr ""
+
+#: src/interface.c:2768 src/interface.c:3159 src/interface.c:3534
+msgid "Businesses"
+msgstr ""
+
+#: src/interface.c:2769 src/interface.c:3160 src/interface.c:3535
+msgid "Car"
+msgstr ""
+
+#: src/interface.c:2770 src/interface.c:3161 src/interface.c:3536
+msgid "Cultural"
+msgstr ""
+
+#: src/interface.c:2771 src/interface.c:3162 src/interface.c:3537
+msgid "Medical"
+msgstr ""
+
+#: src/interface.c:2772 src/interface.c:3163
+msgid "Cafe / Pub / Nightlife"
+msgstr ""
+
+#: src/interface.c:2773 src/interface.c:3164 src/interface.c:3539
+msgid "Place of Worship"
+msgstr ""
+
+#: src/interface.c:2774 src/interface.c:3165 src/interface.c:3540
+msgid "Public Transportation"
+msgstr ""
+
+#: src/interface.c:2775
+msgid "Restaurant"
+msgstr ""
+
+#: src/interface.c:2776 src/interface.c:3167 src/interface.c:3542
+msgid "Services"
+msgstr ""
+
+#: src/interface.c:2777
+msgid "Sights / Leisure"
+msgstr ""
+
+#: src/interface.c:2778 src/interface.c:3169 src/interface.c:3544
+msgid "Shopping"
+msgstr ""
+
+#: src/interface.c:2779 src/interface.c:3170 src/interface.c:3545
+msgid "Sport"
+msgstr ""
+
+#: src/interface.c:2780 src/interface.c:3171
+msgid "My Personal Places"
+msgstr ""
+
+#: src/interface.c:2852
+msgid "POI"
+msgstr ""
+
+#: src/interface.c:2864
+msgid "<b>-----</b>"
+msgstr ""
+
+#: src/interface.c:2892 src/interface.c:3594
+msgid "<b>-</b>"
+msgstr ""
+
+#: src/interface.c:2921
+msgid "Go To "
+msgstr ""
+
+#: src/interface.c:2943
+msgid "Edit"
+msgstr ""
+
+#: src/interface.c:2965
+msgid "Delete"
+msgstr ""
+
+#: src/interface.c:3099 src/interface.c:3511
+msgid "personal"
+msgstr ""
+
+#: src/interface.c:3113
+msgid "Coordinates <b><i>clicked</i></b> on the map:"
+msgstr ""
+
+#: src/interface.c:3124 src/interface.c:3479
+msgid "Lat: "
+msgstr ""
+
+#: src/interface.c:3134 src/interface.c:3489
+msgid " Lon: "
+msgstr ""
+
+#: src/interface.c:3144
+msgid "Use current GPS position instead"
+msgstr ""
+
+#: src/interface.c:3148 src/interface.c:3525
+msgid "Category:"
+msgstr ""
+
+#: src/interface.c:3157 src/interface.c:3532
+msgid "- please choose -"
+msgstr ""
+
+#: src/interface.c:3166 src/interface.c:3541
+msgid "Restaurant & Food"
+msgstr ""
+
+#: src/interface.c:3168 src/interface.c:3543
+msgid "Sights & Leisure"
+msgstr ""
+
+#: src/interface.c:3177 src/interface.c:3499
+msgid "Name - Keywords / Tags:"
+msgstr ""
+
+#: src/interface.c:3186 src/interface.c:3551
+msgid "Description:"
+msgstr ""
+
+#: src/interface.c:3208 src/interface.c:3572
+msgid "budget"
+msgstr ""
+
+#: src/interface.c:3214 src/interface.c:3578
+msgid "medium"
+msgstr ""
+
+#: src/interface.c:3221 src/interface.c:3585
+msgid "exclusive"
+msgstr ""
+
+#: src/interface.c:3227 src/interface.c:3591
+msgid "extended opening hours"
+msgstr ""
+
+#: src/interface.c:3246 src/interface.c:3616 src/interface.c:4123
+msgid "       "
+msgstr ""
+
+#: src/interface.c:3329
+msgid "window7"
+msgstr ""
+
+#: src/interface.c:3347
+msgid "Friend Info"
+msgstr ""
+
+#: src/interface.c:3394
+msgid "window9"
+msgstr ""
+
+#: src/interface.c:3446
+msgid "Edit POI"
+msgstr ""
+
+#: src/interface.c:3474
+msgid "GPS"
+msgstr ""
+
+#: src/interface.c:3538
+msgid "Nightlife"
+msgstr ""
+
+#: src/interface.c:3699
+msgid "window11"
+msgstr ""
+
+#: src/interface.c:3718
+msgid "Delete POI?"
+msgstr ""
+
+#: src/interface.c:3724
+msgid ""
+"Do you really want to \n"
+"delete this Point of Interest?"
+msgstr ""
+
+#: src/interface.c:3778
+msgid "Load track..."
+msgstr ""
+
+#: src/interface.c:3784
+msgid "<b>Choose track to open</b>"
+msgstr ""
+
+#: src/interface.c:3859
+msgid "Edit Repository"
+msgstr ""
+
+#: src/interface.c:3880
+msgid "<b>Repository Name</b>"
+msgstr ""
+
+#: src/interface.c:3982
+msgid "GeoPhoto"
+msgstr ""
+
+#: src/interface.c:4046
+msgid "Photo Correlate"
+msgstr ""
+
+#: src/interface.c:4055
+msgid "<b>Geocoding your photos</b>"
+msgstr ""
+
+#: src/interface.c:4073
+msgid ""
+"Geocode your photos by correlating them with a gps track. For a tutorial see "
+"on http://www.tangogps.org\n"
+msgstr ""
+
+#: src/interface.c:4079
+msgid "  <b>1. Add Track</b>        "
+msgstr ""
+
+#: src/interface.c:4087
+msgid "  <b>2. Add Photos</b> "
+msgstr ""
+
+#: src/interface.c:4107 src/interface.c:4115
+msgid "  <span color=\"red\" weight=\"bold\">-</span>"
+msgstr ""
+
+#: src/interface.c:4130
+msgid "  <b>3. Adjust Time</b>"
+msgstr ""
+
+#: src/interface.c:4138
+msgid "View GPS Photo"
+msgstr ""
+
+#: src/interface.c:4145
+msgid "  +00:00h"
+msgstr ""
+
+#: src/interface.c:4152
+msgid "  0 seconds"
+msgstr ""
+
+#: src/interface.c:4159
+msgid "Correction:"
+msgstr ""
+
+#: src/interface.c:4166
+msgid "Timezone:"
+msgstr ""
+
+#: src/interface.c:4181
+msgid "  add photos to the tangoGPS database"
+msgstr ""
+
+#: src/interface.c:4270
+msgid "Please choose"
+msgstr ""
+
+#: src/interface.c:4278
+msgid "<b>This is important!</b>\n"
+msgstr ""
+
+#: src/interface.c:4349
+msgid "Image Data"
+msgstr ""
+
+#: src/interface.c:4410
+msgid " <b>GPS:</b> "
+msgstr ""
+
+#: src/interface.c:4415 src/interface.c:4430
+msgid "      "
+msgstr ""
+
+#: src/interface.c:4424
+msgid " <b>Camera:</b> "
+msgstr ""
+
+#: src/interface.c:4444
+msgid " <b>Correction:</b> "
+msgstr ""
+
+#: src/interface.c:4454
+msgid "0"
+msgstr ""
+
+#: src/interface.c:4457
+msgid "s   "
+msgstr ""
+
+#: src/interface.c:4465
+msgid " <b>Timezone:</b>  "
+msgstr ""
+
+#: src/interface.c:4473
+msgid "-12:00"
+msgstr ""
+
+#: src/interface.c:4474
+msgid "-11:00"
+msgstr ""
+
+#: src/interface.c:4475
+msgid "-10:00"
+msgstr ""
+
+#: src/interface.c:4476
+msgid "-09:00"
+msgstr ""
+
+#: src/interface.c:4477
+msgid "-08:00"
+msgstr ""
+
+#: src/interface.c:4478
+msgid "-07:00"
+msgstr ""
+
+#: src/interface.c:4479
+msgid "-06:00"
+msgstr ""
+
+#: src/interface.c:4480
+msgid "-05:00"
+msgstr ""
+
+#: src/interface.c:4481
+msgid "-04:00"
+msgstr ""
+
+#: src/interface.c:4482
+msgid "-03:00"
+msgstr ""
+
+#: src/interface.c:4483
+msgid "-02:00"
+msgstr ""
+
+#: src/interface.c:4484
+msgid "-01:00"
+msgstr ""
+
+#: src/interface.c:4485
+msgid "+00:00"
+msgstr ""
+
+#: src/interface.c:4486
+msgid "+01:00"
+msgstr ""
+
+#: src/interface.c:4487
+msgid "+02:00 "
+msgstr ""
+
+#: src/interface.c:4488
+msgid "+03:00"
+msgstr ""
+
+#: src/interface.c:4489
+msgid "+04:00"
+msgstr ""
+
+#: src/interface.c:4490
+msgid "+05:00"
+msgstr ""
+
+#: src/interface.c:4491
+msgid "+06:00"
+msgstr ""
+
+#: src/interface.c:4492
+msgid "+07:00"
+msgstr ""
+
+#: src/interface.c:4493
+msgid "+08:00"
+msgstr ""
+
+#: src/interface.c:4494
+msgid "+09:00"
+msgstr ""
+
+#: src/interface.c:4495
+msgid "+10:00"
+msgstr ""
+
+#: src/interface.c:4496
+msgid "+11:00"
+msgstr ""
+
+#: src/interface.c:4497
+msgid "+12:00"
+msgstr ""
+
+#: src/interface.c:4610
+msgid "Geocode Result"
+msgstr ""
+
+#: src/interface.c:4620
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr ""
+
+#: src/interface.c:4626
+msgid "Working...."
+msgstr ""

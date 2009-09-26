@@ -1,0 +1,12 @@
+[Desktop Entry]
+Name=GPS & Map
+Comment=Display map and GPS position
+Encoding=UTF-8
+Version=1.0
+Type=Application
+Exec=tangogps
+Icon=tangogps
+Terminal=false
+Categories=GTK;Application;PIM
+SingleInstance=true
+StartupNotify=true

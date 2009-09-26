@@ -1,0 +1,1146 @@
+# tangogps Spanish translation.
+# Copyright (C) 2009 Dailos Franchy
+# This file is distributed under the same license as the tangogps package.
+# Dailos Franchy <dfranchy@gmail.com>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: tangogps 0.9.6\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-02-05 00:51+0100\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Dailos Franchy <dfranchy@gmail.com>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Spanish\n"
+"X-Poedit-Basepath: /tmp/tangogps-0.9.6\n"
+
+#: src/support.c:90
+#: src/support.c:114
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "No se pudo encontrar el archivo pixmap: %s"
+
+#: src/interface.c:258
+msgid "tangoGPS"
+msgstr "tangoGPS"
+
+#: src/interface.c:285
+msgid "fullscreen"
+msgstr "pantalla completa"
+
+#: src/interface.c:296
+msgid "      +      "
+msgstr "      +      "
+
+#: src/interface.c:306
+msgid "      -      "
+msgstr "      -      "
+
+#: src/interface.c:316
+msgid "autocenter"
+msgstr "autocentrar"
+
+#: src/interface.c:326
+msgid "map"
+msgstr "mapa"
+
+#: src/interface.c:348
+msgid "<b>no GPS found</b>"
+msgstr "<b>no se encontró el GPS</b>"
+
+#: src/interface.c:355
+msgid "   Map   "
+msgstr "  Mapa   "
+
+#: src/interface.c:400
+msgid "Distance: "
+msgstr "Distancia: "
+
+#: src/interface.c:408
+msgid "Time:"
+msgstr "Duración:"
+
+#: src/interface.c:415
+msgid "Avg. Speed:"
+msgstr "Velocidad media:"
+
+#: src/interface.c:430
+msgid "Max Speed:"
+msgstr "Velocidad máxima:"
+
+#: src/interface.c:463
+msgid "      Stop       "
+msgstr "     Detener     "
+
+#: src/interface.c:467
+msgid "     Reset     "
+msgstr "  Restablecer  "
+
+#: src/interface.c:472
+msgid "<b>Trip Meter</b>"
+msgstr "<b>Datos del recorrido</b>"
+
+#: src/interface.c:499
+msgid "Speed"
+msgstr "Velocidad"
+
+#: src/interface.c:514
+msgid "Altitude:"
+msgstr "Altitud:"
+
+#: src/interface.c:528
+msgid "Heading:"
+msgstr "Rumbo:"
+
+#: src/interface.c:542
+msgid "GPS Time:"
+msgstr "Hora GPS:"
+
+#: src/interface.c:549
+msgid "Lat, Lon:"
+msgstr "Lat, Lon:"
+
+#: src/interface.c:565
+msgid "Satellites:  "
+msgstr "Satélites:  "
+
+#: src/interface.c:579
+msgid "<b>GPS Data</b>"
+msgstr "<b>Datos del GPS</b>"
+
+#: src/interface.c:588
+msgid "  Trip  "
+msgstr "Recorrido"
+
+#: src/interface.c:613
+msgid "Here you can enable / disable logging of your tracks for later use, i.e. for extending OSM"
+msgstr "Aquí puede activar / desactivar el registro de sus tracks para usarlos más tarde, por ej. para mejorar OSM"
+
+#: src/interface.c:625
+msgid "            Start            "
+msgstr "           Iniciar           "
+
+#: src/interface.c:629
+msgid "           Split           "
+msgstr "          Dividir          "
+
+#: src/interface.c:644
+msgid "      Configure...      "
+msgstr "      Configurar...     "
+
+#: src/interface.c:648
+#: src/interface.c:2061
+#: src/interface.c:3752
+msgid " "
+msgstr " "
+
+#: src/interface.c:652
+msgid "      Load...     "
+msgstr "     Cargar...    "
+
+#: src/interface.c:660
+msgid "<b>Track Logging</b>"
+msgstr "<b>Registro de track</b>"
+
+#: src/interface.c:669
+msgid " Track "
+msgstr " Track "
+
+#: src/interface.c:693
+msgid "button35"
+msgstr ""
+
+#: src/interface.c:696
+msgid "label132\n"
+msgstr ""
+
+#: src/interface.c:718
+msgid ""
+"Update your position to a server\n"
+"and receive your friends positions,\n"
+"shown on the map."
+msgstr ""
+"Envíe su posición actual a un servidor\n"
+"y reciba las posiciones de sus amigos,\n"
+"que se muestran en el mapa."
+
+#: src/interface.c:722
+msgid ""
+"\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+
+#: src/interface.c:733
+msgid "once"
+msgstr "una vez"
+
+#: src/interface.c:740
+msgid "every"
+msgstr "cada"
+
+#: src/interface.c:750
+msgid "15"
+msgstr "15"
+
+#: src/interface.c:753
+msgid "minutes"
+msgstr "minutos"
+
+#: src/interface.c:766
+msgid "     Update Me!     "
+msgstr "    ¡Actualízame!   "
+
+#: src/interface.c:771
+msgid "     Stop     "
+msgstr "   Detener    "
+
+#: src/interface.c:781
+msgid " ."
+msgstr " ."
+
+#: src/interface.c:792
+msgid "<b>  Position Update  </b>"
+msgstr "<b>  Actualizar posición  </b>"
+
+#: src/interface.c:816
+msgid "Permission to see me for:"
+msgstr "Permiso para verme:"
+
+#: src/interface.c:822
+msgid "public (you remain anonymous)"
+msgstr "público (se le mantiene anónimo)"
+
+#: src/interface.c:827
+#: src/interface.c:871
+msgid "registered nicks"
+msgstr "usuarios registrados"
+
+#: src/interface.c:832
+#: src/interface.c:876
+msgid "my friends"
+msgstr "mis amigos"
+
+#: src/interface.c:837
+msgid " <b>Updating My Position</b> "
+msgstr " <b>Actualizar mi posición</b> "
+
+#: src/interface.c:860
+msgid "Show me the positions from:"
+msgstr "Mostrarme las posiciones de:"
+
+#: src/interface.c:866
+#: src/interface.c:2975
+#: src/interface.c:3379
+msgid "public"
+msgstr "público"
+
+#: src/interface.c:881
+msgid " <b>Getting Other's Positions</b> "
+msgstr " <b>Obtener posiciones de otros</b> "
+
+#: src/interface.c:900
+msgid ""
+"Choose any nickname you want\n"
+"to have. A password is only necessary\n"
+"if you have already registered your \n"
+"nick or you want to register it.\n"
+"\n"
+"Further info at:\n"
+"http://www.tangogps.org/friends\n"
+msgstr ""
+"Elija el apodo (nickname) que quiera\n"
+"tener. Una contraseña sólo es necesaria\n"
+"si ya registró su apodo o si quiere\n"
+"registrarlo.\n"
+"\n"
+"Más información en:\n"
+"http://www.tangogps.org/friends\n"
+
+#: src/interface.c:910
+msgid "Nickname "
+msgstr "Apodo (nick)"
+
+#: src/interface.c:917
+msgid "Password"
+msgstr "Contraseña"
+
+#: src/interface.c:929
+msgid "JohnDoe"
+msgstr "FulanoDeTal"
+
+#: src/interface.c:936
+msgid "foobar"
+msgstr "algo"
+
+#: src/interface.c:938
+msgid ""
+"\n"
+"\n"
+"To register this nick simply put in your email and click below!\n"
+"Your email will not be shown, nor shared and only used for a reminder in case of a lost password."
+msgstr ""
+"\n"
+"\n"
+"Para registrar este apodo, escriba su email y... ¡pulse abajo!\n"
+"Su email no se mostrará ni se compartirá con nadie, y sólo se usará para recordarle la contraseña si la pierde."
+
+#: src/interface.c:950
+msgid "EMail        "
+msgstr "EMail        "
+
+#: src/interface.c:963
+msgid "     Register!     "
+msgstr "    ¡Registrar!    "
+
+#: src/interface.c:968
+msgid "   "
+msgstr "   "
+
+#: src/interface.c:973
+#: src/interface.c:2754
+msgid "-"
+msgstr "-"
+
+#: src/interface.c:980
+msgid "<b>  Me  </b>"
+msgstr "<b>  Mis datos  </b>"
+
+#: src/interface.c:989
+msgid " Friends "
+msgstr " Amigos "
+
+#: src/interface.c:1013
+msgid ""
+"<i>tangoGPS Version:\n"
+"Developer: Marcus Bauer</i>"
+msgstr ""
+"<i>Versión de tangoGPS:\n"
+"Desarrollador: Marcus Bauer</i>"
+
+#: src/interface.c:1033
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+"Activar o desactivar la descarga\n"
+"automática de teselas faltantes a la caché"
+
+#: src/interface.c:1038
+msgid "Auto download map tiles"
+msgstr "Descargar automáticamente teselas del mapa"
+
+#: src/interface.c:1045
+msgid "<b>Auto Download</b>"
+msgstr "<b>Descarga automática</b>"
+
+#: src/interface.c:1065
+msgid "Current Repository:"
+msgstr "Repositorio actual:"
+
+#: src/interface.c:1085
+msgid "      New...       "
+msgstr "     Nuevo...      "
+
+#: src/interface.c:1089
+#: src/interface.c:1323
+msgid "    "
+msgstr "    "
+
+#: src/interface.c:1094
+msgid "      Edit...     "
+msgstr "     Editar...    "
+
+#: src/interface.c:1108
+#: src/interface.c:2087
+#: src/interface.c:3778
+msgid "xyz instead of zxy"
+msgstr "xyz en vez de zxy"
+
+#: src/interface.c:1114
+msgid "URI"
+msgstr "URI"
+
+#: src/interface.c:1121
+msgid "Cache Dir"
+msgstr "Directorio de caché"
+
+#: src/interface.c:1144
+msgid "    Save Repository Configuration    "
+msgstr "    Guardar configuración de repositorio    "
+
+#: src/interface.c:1150
+msgid "     "
+msgstr "     "
+
+#: src/interface.c:1155
+msgid "<b>Map Repositories</b>"
+msgstr "<b>Repositorios de mapas</b>"
+
+#: src/interface.c:1174
+msgid "<i>Speed and Distance:</i>"
+msgstr "<i>Velocidad y Distancia:</i>"
+
+#: src/interface.c:1186
+msgid "metrical"
+msgstr "métrico"
+
+#: src/interface.c:1193
+msgid "imperial"
+msgstr "imperial"
+
+#: src/interface.c:1199
+msgid "nautical"
+msgstr "náutico"
+
+#: src/interface.c:1205
+msgid "<i>Altitude:</i>"
+msgstr "<i>Altitud:</i>"
+
+#: src/interface.c:1217
+msgid "meters"
+msgstr "metros"
+
+#: src/interface.c:1224
+msgid "feet"
+msgstr "pies"
+
+#: src/interface.c:1230
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr "<i>Lat y Lon:</i>"
+
+#: src/interface.c:1242
+msgid "d.dd"
+msgstr "d.dd"
+
+#: src/interface.c:1249
+msgid "d m.m'"
+msgstr "d m.m'"
+
+#: src/interface.c:1255
+msgid "d m's.s\""
+msgstr "d m's.s\""
+
+#: src/interface.c:1261
+msgid "<b>Units</b>"
+msgstr "<b>Unidades</b>"
+
+#: src/interface.c:1280
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+"\n"
+"Configurar IP de servidor GPSD\n"
+
+#: src/interface.c:1290
+msgid " GPSD "
+msgstr " GPSD "
+
+#: src/interface.c:1294
+msgid "Host:"
+msgstr "Servidor:"
+
+#: src/interface.c:1301
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#: src/interface.c:1304
+msgid " Port:"
+msgstr " Puerto:"
+
+#: src/interface.c:1311
+msgid "2947"
+msgstr "2947"
+
+#: src/interface.c:1318
+msgid "     Change GPSD     "
+msgstr "     Cambiar GPSD     "
+
+#: src/interface.c:1328
+msgid "<b>GPSD</b>"
+msgstr "<b>GPSD</b>"
+
+#: src/interface.c:1346
+msgid ""
+"\n"
+"Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
+msgstr ""
+"\n"
+"Iniciar gllin y gpsd (Openmoko Neo1973, <i>no Freerunner</i>).\n"
+
+#: src/interface.c:1361
+msgid "/home/root/gllin/gllin &"
+msgstr "/home/root/gllin/gllin &"
+
+#: src/interface.c:1368
+msgid "     Start gllin and GPSD     "
+msgstr "     Iniciar gllin y GPSD     "
+
+#: src/interface.c:1373
+msgid "  "
+msgstr "  "
+
+#: src/interface.c:1378
+msgid "<b>gllin and gpsd</b>"
+msgstr "<b>gllin y gpsd</b>"
+
+#: src/interface.c:1386
+msgid ""
+"\n"
+"The following section is \n"
+"for development purposes"
+msgstr ""
+"\n"
+"La siguiente sección es \n"
+"para labores de desarrollo"
+
+#: src/interface.c:1394
+msgid "/home/root/gprs.sh &"
+msgstr "/home/root/gprs.sh &"
+
+#: src/interface.c:1396
+msgid "Start pppd/gprs"
+msgstr "Iniciar pppd/gprs"
+
+#: src/interface.c:1403
+msgid "/home/root/other.sh"
+msgstr "/home/root/other.sh"
+
+#: src/interface.c:1405
+msgid "Other stuff"
+msgstr "Otras cosas"
+
+#: src/interface.c:1413
+msgid " Config "
+msgstr " Config "
+
+#: src/interface.c:1856
+msgid "this point"
+msgstr "este punto"
+
+#: src/interface.c:1860
+msgid "show friends"
+msgstr "mostrar amigos"
+
+#: src/interface.c:1864
+msgid "show POIs"
+msgstr "mostrar POIs"
+
+#: src/interface.c:1868
+msgid "show photos"
+msgstr "mostrar fotos"
+
+#: src/interface.c:1872
+msgid "POIs"
+msgstr "POIs"
+
+#: src/interface.c:1879
+msgid "add POI"
+msgstr "añadir POI"
+
+#: src/interface.c:1883
+msgid "select POIs"
+msgstr "seleccionar POIs"
+
+#: src/interface.c:1887
+msgid "waypoints"
+msgstr "waypoints"
+
+#: src/interface.c:1894
+#: src/interface.c:1920
+msgid "set"
+msgstr "marcar"
+
+#: src/interface.c:1898
+#: src/interface.c:1924
+msgid "unset"
+msgstr "quitar"
+
+#: src/interface.c:1902
+msgid "photos"
+msgstr "fotos"
+
+#: src/interface.c:1909
+msgid "geocode"
+msgstr "geocodificar"
+
+#: src/interface.c:1913
+msgid "my position"
+msgstr "mi posición"
+
+#: src/interface.c:1928
+msgid "map download"
+msgstr "descargar mapa"
+
+#: src/interface.c:2025
+msgid "New Repository"
+msgstr "Nuevo repositorio"
+
+#: src/interface.c:2049
+#: src/interface.c:3740
+msgid ""
+"You can find more information about repositories on\n"
+"\n"
+"http://www.tangogps.org/\n"
+msgstr ""
+"Puede encontrar más información sobre repositorios en\n"
+"\n"
+"http://www.tangogps.org/\n"
+
+#: src/interface.c:2051
+msgid "<b>Name for the new Repository</b>"
+msgstr "<b>Nombre del nuevo repositorio</b>"
+
+#: src/interface.c:2065
+#: src/interface.c:3756
+msgid "<b>URI</b>"
+msgstr "<b>URI</b>"
+
+#: src/interface.c:2076
+#: src/interface.c:3767
+msgid "<b>Cache Dir</b>"
+msgstr "<b>Directorio de caché</b>"
+
+#: src/interface.c:2105
+msgid "All fields must be filled in"
+msgstr "Se deben rellenar todos los campos"
+
+#: src/interface.c:2167
+msgid "GPS Info"
+msgstr "Info del GPS"
+
+#: src/interface.c:2186
+#: src/interface.c:2484
+#: src/interface.c:3224
+msgid "--"
+msgstr "--"
+
+#: src/interface.c:2194
+#: src/interface.c:2858
+#: src/interface.c:3232
+msgid "Close"
+msgstr "Cerrar"
+
+#: src/interface.c:2228
+msgid "unused"
+msgstr "no usado"
+
+#: src/interface.c:2265
+msgid "Trackdir Config"
+msgstr "Config directorio tracks"
+
+#: src/interface.c:2275
+msgid "Directory in which the tracks should be written:"
+msgstr "Directorio donde se guardarán los tracks:"
+
+#: src/interface.c:2341
+msgid "Map DL"
+msgstr "Descargar mapa"
+
+#: src/interface.c:2361
+msgid "Download maps of currently visible area:"
+msgstr "Descargar mapas del área visible actualmente:"
+
+#: src/interface.c:2372
+msgid "+ 1 zoom level"
+msgstr "+ 1 nivel de zoom"
+
+#: src/interface.c:2378
+msgid "+ 2 zoom levels"
+msgstr "+ 2 niveles de zoom"
+
+#: src/interface.c:2384
+msgid "+ 3 zoom levels"
+msgstr "+ 3 niveles de zoom"
+
+#: src/interface.c:2390
+msgid "+ 4 zoom levels (~25MB)"
+msgstr "+ 4 niveles de zoom (~25MB)"
+
+#: src/interface.c:2397
+msgid "+ 5 zoom levels (~100MB)"
+msgstr "+ 5 niveles de zoom (~100MB)"
+
+#: src/interface.c:2403
+msgid "+ 6 zoom levels (~400MB)"
+msgstr "+ 6 niveles de zoom (~400MB)"
+
+#: src/interface.c:2409
+msgid "<b> Map Download </b>"
+msgstr "<b> Descarga de mapa </b>"
+
+#: src/interface.c:2471
+msgid "Geo Photo"
+msgstr "Geo Photo"
+
+#: src/interface.c:2503
+msgid "Big"
+msgstr "Grande"
+
+#: src/interface.c:2507
+msgid "Go To"
+msgstr "Ir a"
+
+#: src/interface.c:2549
+#: src/interface.c:2943
+msgid "Add POI"
+msgstr "Añadir POI"
+
+#: src/interface.c:2598
+msgid "unused cols"
+msgstr ""
+
+#: src/interface.c:2628
+msgid "Show POIs"
+msgstr "Mostrar POIs"
+
+#: src/interface.c:2637
+msgid "-- Show All --"
+msgstr "-- Mostrar todos --"
+
+#: src/interface.c:2638
+#: src/interface.c:3021
+#: src/interface.c:3395
+msgid "Accomodation"
+msgstr "Alojamiento"
+
+#: src/interface.c:2639
+#: src/interface.c:3022
+#: src/interface.c:3396
+msgid "Businesses"
+msgstr "Comercios"
+
+#: src/interface.c:2640
+#: src/interface.c:3023
+#: src/interface.c:3397
+msgid "Car"
+msgstr "Coche"
+
+#: src/interface.c:2641
+#: src/interface.c:3024
+#: src/interface.c:3398
+msgid "Cultural"
+msgstr "Cultural"
+
+#: src/interface.c:2642
+#: src/interface.c:3025
+#: src/interface.c:3399
+msgid "Medical"
+msgstr "Médico"
+
+#: src/interface.c:2643
+#: src/interface.c:3026
+msgid "Cafe / Pub / Nightlife"
+msgstr "Café / Bar / Vida nocturna"
+
+#: src/interface.c:2644
+#: src/interface.c:3027
+#: src/interface.c:3401
+msgid "Place of Worship"
+msgstr "Lugar de culto"
+
+#: src/interface.c:2645
+#: src/interface.c:3028
+#: src/interface.c:3402
+msgid "Public Transportation"
+msgstr "Transporte público"
+
+#: src/interface.c:2646
+msgid "Restaurant"
+msgstr "Restaurante"
+
+#: src/interface.c:2647
+#: src/interface.c:3030
+#: src/interface.c:3404
+msgid "Services"
+msgstr "Servicios"
+
+#: src/interface.c:2648
+msgid "Sights / Leisure"
+msgstr "Sitios de interés / Ocio"
+
+#: src/interface.c:2649
+#: src/interface.c:3032
+#: src/interface.c:3406
+msgid "Shopping"
+msgstr "Compras"
+
+#: src/interface.c:2650
+#: src/interface.c:3033
+#: src/interface.c:3407
+msgid "Sport"
+msgstr "Deporte"
+
+#: src/interface.c:2651
+#: src/interface.c:3034
+msgid "My Personal Places"
+msgstr "Mis sitios personales"
+
+#: src/interface.c:2723
+msgid "POI"
+msgstr "POI"
+
+#: src/interface.c:2735
+msgid "<b>-----</b>"
+msgstr "<b>-----</b>"
+
+#: src/interface.c:2763
+#: src/interface.c:3456
+msgid "<b>-</b>"
+msgstr "<b>-</b>"
+
+#: src/interface.c:2792
+msgid "Go To "
+msgstr "Ir a "
+
+#: src/interface.c:2814
+msgid "Edit"
+msgstr "Editar"
+
+#: src/interface.c:2836
+msgid "Delete"
+msgstr "Eliminar"
+
+#: src/interface.c:2969
+#: src/interface.c:3373
+msgid "personal"
+msgstr "personal"
+
+#: src/interface.c:2987
+#: src/interface.c:3341
+msgid "Lat: "
+msgstr "Lat: "
+
+#: src/interface.c:2997
+#: src/interface.c:3351
+msgid " Lon: "
+msgstr " Lon: "
+
+#: src/interface.c:3007
+#: src/interface.c:3336
+msgid "GPS"
+msgstr "GPS"
+
+#: src/interface.c:3011
+#: src/interface.c:3387
+msgid "Category:"
+msgstr "Categoría:"
+
+#: src/interface.c:3020
+#: src/interface.c:3394
+msgid "- please choose -"
+msgstr "- por favor, elija -"
+
+#: src/interface.c:3029
+#: src/interface.c:3403
+msgid "Restaurant & Food"
+msgstr "Restaurante y comida"
+
+#: src/interface.c:3031
+#: src/interface.c:3405
+msgid "Sights & Leisure"
+msgstr "Sitios de interés y ocio"
+
+#: src/interface.c:3040
+#: src/interface.c:3361
+msgid "Name - Keywords / Tags:"
+msgstr "Nombre - Palabras claves / Etiquetas:"
+
+#: src/interface.c:3049
+#: src/interface.c:3413
+msgid "Description:"
+msgstr "Descripción:"
+
+#: src/interface.c:3071
+#: src/interface.c:3434
+msgid "budget"
+msgstr "económico"
+
+#: src/interface.c:3077
+#: src/interface.c:3440
+msgid "medium"
+msgstr "medio"
+
+#: src/interface.c:3084
+#: src/interface.c:3447
+msgid "exclusive"
+msgstr "exclusivo"
+
+#: src/interface.c:3090
+#: src/interface.c:3453
+msgid "extended opening hours"
+msgstr "horario de apertura ampliado"
+
+#: src/interface.c:3109
+#: src/interface.c:3478
+#: src/interface.c:3985
+msgid "       "
+msgstr "       "
+
+#: src/interface.c:3191
+msgid "window7"
+msgstr ""
+
+#: src/interface.c:3209
+msgid "Friend Info"
+msgstr "Info de amigo"
+
+#: src/interface.c:3256
+msgid "window9"
+msgstr ""
+
+#: src/interface.c:3308
+msgid "Edit POI"
+msgstr "Editar POI"
+
+#: src/interface.c:3400
+msgid "Nightlife"
+msgstr "Vida nocturna"
+
+#: src/interface.c:3561
+msgid "window11"
+msgstr ""
+
+#: src/interface.c:3580
+msgid "Delete POI?"
+msgstr "¿Eliminar POI?"
+
+#: src/interface.c:3586
+msgid ""
+"Do you really want to \n"
+"delete this Point of Interest?"
+msgstr ""
+"¿Está seguro de que quiere \n"
+"eliminar este Punto de Interés (POI)?"
+
+#: src/interface.c:3640
+msgid "Load track..."
+msgstr "Cargar track..."
+
+#: src/interface.c:3646
+msgid "<b>Choose track to open</b>"
+msgstr "<b>Elija el track que desea abrir</b>"
+
+#: src/interface.c:3721
+msgid "Edit Repository"
+msgstr "Editar repositorio"
+
+#: src/interface.c:3742
+msgid "<b>Repository Name</b>"
+msgstr "<b>Nombre del repositorio</b>"
+
+#: src/interface.c:3844
+msgid "GeoPhoto"
+msgstr "GeoFoto"
+
+#: src/interface.c:3908
+msgid "Photo Correlate"
+msgstr "Correlación de fotos"
+
+#: src/interface.c:3917
+msgid "<b>Geocoding your photos</b>"
+msgstr "<b>Geocodificar sus fotos</b>"
+
+#: src/interface.c:3935
+msgid "Geocode your photos by correlating them with a gps track. For a tutorial see on http://www.tangogps.org\n"
+msgstr "Geocodifique sus fotos correlacionándolas con un track gps. Para ver un tutorial vaya a http://www.tangogps.org\n"
+
+#: src/interface.c:3941
+msgid "  <b>1. Add Track</b>        "
+msgstr "  <b>1. Añadir track</b>        "
+
+#: src/interface.c:3949
+msgid "  <b>2. Add Photos</b> "
+msgstr "  <b>2. Añadir fotos</b> "
+
+#: src/interface.c:3969
+#: src/interface.c:3977
+msgid "  <span color=\"red\" weight=\"bold\">-</span>"
+msgstr "  <span color=\"red\" weight=\"bold\">-</span>"
+
+#: src/interface.c:3992
+msgid "  <b>3. Adjust Time</b>"
+msgstr "  <b>3. Ajustar hora</b>"
+
+#: src/interface.c:4000
+msgid "View GPS Photo"
+msgstr "Ver foto de GPS"
+
+#: src/interface.c:4007
+msgid "  +00:00h"
+msgstr "  +00:00h"
+
+#: src/interface.c:4014
+msgid "  0 seconds"
+msgstr "  0 segundos"
+
+#: src/interface.c:4021
+msgid "Correction:"
+msgstr "Corrección:"
+
+#: src/interface.c:4028
+msgid "Timezone:"
+msgstr "Zona horaria:"
+
+#: src/interface.c:4043
+msgid "  add photos to the tangoGPS database"
+msgstr "  añadir fotos a la base de datos de tangoGPS"
+
+#: src/interface.c:4132
+msgid "Please choose"
+msgstr "Por favor, elija"
+
+#: src/interface.c:4140
+msgid "<b>This is important!</b>\n"
+msgstr "<b>¡Esto es importante!</b>\n"
+
+#: src/interface.c:4211
+msgid "Image Data"
+msgstr "Datos de la imagen"
+
+#: src/interface.c:4272
+msgid " <b>GPS:</b> "
+msgstr " <b>GPS:</b> "
+
+#: src/interface.c:4277
+#: src/interface.c:4292
+msgid "      "
+msgstr "      "
+
+#: src/interface.c:4286
+msgid " <b>Camera:</b> "
+msgstr " <b>Cámara:</b> "
+
+#: src/interface.c:4306
+msgid " <b>Correction:</b> "
+msgstr " <b>Corrección:</b> "
+
+#: src/interface.c:4316
+msgid "0"
+msgstr "0"
+
+#: src/interface.c:4319
+msgid "s   "
+msgstr "s   "
+
+#: src/interface.c:4327
+msgid " <b>Timezone:</b>  "
+msgstr " <b>Zona horaria:</b>  "
+
+#: src/interface.c:4335
+msgid "-12:00"
+msgstr "-12:00"
+
+#: src/interface.c:4336
+msgid "-11:00"
+msgstr "-11:00"
+
+#: src/interface.c:4337
+msgid "-10:00"
+msgstr "-10:00"
+
+#: src/interface.c:4338
+msgid "-09:00"
+msgstr "-09:00"
+
+#: src/interface.c:4339
+msgid "-08:00"
+msgstr "-08:00"
+
+#: src/interface.c:4340
+msgid "-07:00"
+msgstr "-07:00"
+
+#: src/interface.c:4341
+msgid "-06:00"
+msgstr "-06:00"
+
+#: src/interface.c:4342
+msgid "-05:00"
+msgstr "-05:00"
+
+#: src/interface.c:4343
+msgid "-04:00"
+msgstr "-04:00"
+
+#: src/interface.c:4344
+msgid "-03:00"
+msgstr "-03:00"
+
+#: src/interface.c:4345
+msgid "-02:00"
+msgstr "-02:00"
+
+#: src/interface.c:4346
+msgid "-01:00"
+msgstr "-01:00"
+
+#: src/interface.c:4347
+msgid "+00:00"
+msgstr "+00:00"
+
+#: src/interface.c:4348
+msgid "+01:00"
+msgstr "+01:00"
+
+#: src/interface.c:4349
+msgid "+02:00 "
+msgstr "+02:00 "
+
+#: src/interface.c:4350
+msgid "+03:00"
+msgstr "+03:00"
+
+#: src/interface.c:4351
+msgid "+04:00"
+msgstr "+04:00"
+
+#: src/interface.c:4352
+msgid "+05:00"
+msgstr "+05:00"
+
+#: src/interface.c:4353
+msgid "+06:00"
+msgstr "+06:00"
+
+#: src/interface.c:4354
+msgid "+07:00"
+msgstr "+07:00"
+
+#: src/interface.c:4355
+msgid "+08:00"
+msgstr "+08:00"
+
+#: src/interface.c:4356
+msgid "+09:00"
+msgstr "+09:00"
+
+#: src/interface.c:4357
+msgid "+10:00"
+msgstr "+10:00"
+
+#: src/interface.c:4358
+msgid "+11:00"
+msgstr "+11:00"
+
+#: src/interface.c:4359
+msgid "+12:00"
+msgstr "+12:00"
+
+#: src/interface.c:4472
+msgid "Geocode Result"
+msgstr "Resultado de la geocodificación"
+
+#: src/interface.c:4482
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr "<b>La salida de gpscorrelate:</b>"
+
+#: src/interface.c:4488
+msgid "Working...."
+msgstr "Trabajando...."
+
