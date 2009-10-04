@@ -19,8 +19,6 @@
 #include "wp.h"
 
 
-static GdkPixbuf	*pixbuf = NULL;
-static GdkPixbuf	*pixbuf_scaled = NULL;
 static GError		*error = NULL;
 static GdkGC		*gc_map = NULL;
 
@@ -42,6 +40,8 @@ load_tile(	gchar *dir,
 	gboolean tile_found = FALSE;
 	repo_t *repo;
 	static gchar filename[256];
+
+	GdkPixbuf	*pixbuf = NULL;
 	
 
 	printf("* load tile()\n");
@@ -54,15 +54,6 @@ load_tile(	gchar *dir,
 		gc_map = gdk_gc_new(pixmap);
 	}
 	else printf("no drawable -> NULL\n");
-
-
-	
-	if (pixbuf)
-		g_object_unref (pixbuf);
-	
-	if (pixbuf_scaled)
-		g_object_unref (pixbuf_scaled);
-
 
 	
 	for(overzoom=0; overzoom<=3; overzoom++)
@@ -83,6 +74,8 @@ load_tile(	gchar *dir,
 	
 	if(pixbuf && overzoom)
 	{
+		GdkPixbuf	*pixbuf_scaled = NULL;
+
 		
 		pixbuf_scaled = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, 256, 256); 
 
@@ -92,6 +85,13 @@ load_tile(	gchar *dir,
 					-TILESIZE*(x%upscale), -TILESIZE*(y%upscale),
 					upscale, upscale,
 					GDK_INTERP_BILINEAR );
+
+		if (pixbuf)
+		{
+			g_object_unref (pixbuf);
+		}
+
+		pixbuf = pixbuf_scaled;
 	}
 
 	if(!tile_found)
@@ -129,12 +129,13 @@ load_tile(	gchar *dir,
 		gdk_draw_pixbuf (
 			pixmap,
 			gc_map,
-			(overzoom ? pixbuf_scaled : pixbuf),
+			pixbuf,
 			0,0,
 			offset_x,offset_y,
 			TILESIZE,TILESIZE,
 			GDK_RGB_DITHER_NONE, 0, 0);
 
+		g_object_unref (pixbuf);
 	}
 
 
