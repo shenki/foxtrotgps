@@ -35,6 +35,7 @@ load_tile(	gchar *dir,
 		int offset_x,
 		int offset_y)
 {
+	int detail_zoom=global_detail_zoom;	/* round (dpi/96.0)? */
 	int overzoom=0;
 	int upscale=1;
 	gboolean tile_found = FALSE;
@@ -55,8 +56,12 @@ load_tile(	gchar *dir,
 	}
 	else printf("no drawable -> NULL\n");
 
-	
-	for(overzoom=0; overzoom<=3; overzoom++)
+
+	upscale = (int) powf (2.0, (float) detail_zoom);
+
+	for(overzoom = detail_zoom;
+	    overzoom <= detail_zoom + 3;
+	    overzoom++)
 	{
 		g_sprintf(filename, "%s/%u/%u/%u.png", dir, zoom-overzoom, x/upscale, y/upscale);
 		printf("** %d. IMG: %s\n", overzoom, filename);
@@ -84,7 +89,7 @@ load_tile(	gchar *dir,
 					TILESIZE, TILESIZE,
 					-TILESIZE*(x%upscale), -TILESIZE*(y%upscale),
 					upscale, upscale,
-					GDK_INTERP_BILINEAR );
+					GDK_INTERP_NEAREST );
 
 		if (pixbuf)
 		{

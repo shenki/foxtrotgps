@@ -686,7 +686,10 @@ pre_init()
 				global_gconfclient, 
 				GCONF"/global_zoom",
 				err);
-	
+	global_detail_zoom = gconf_client_get_int (
+				global_gconfclient,
+				GCONF"/global_detail_zoom",
+				err);
 
 
 
