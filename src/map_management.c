@@ -36,6 +36,7 @@ load_tile(	gchar *dir,
 		int offset_y)
 {
 	int detail_zoom=global_detail_zoom;	/* round (dpi/96.0)? */
+	int detail_scale=(int) pow (2.0, (float) detail_zoom);
 	int overzoom=0;
 	int upscale=1;
 	gboolean tile_found = FALSE;
@@ -57,11 +58,10 @@ load_tile(	gchar *dir,
 	else printf("no drawable -> NULL\n");
 
 
-	upscale = (int) powf (2.0, (float) detail_zoom);
+	upscale = detail_scale;
+	zoom -= detail_zoom;
 
-	for(overzoom = detail_zoom;
-	    overzoom <= detail_zoom + 3;
-	    overzoom++)
+	for(overzoom=0; overzoom<=3; overzoom++)
 	{
 		g_sprintf(filename, "%s/%u/%u/%u.png", dir, zoom-overzoom, x/upscale, y/upscale);
 		printf("** %d. IMG: %s\n", overzoom, filename);
@@ -77,7 +77,7 @@ load_tile(	gchar *dir,
 		upscale *= 2;
 	}
 	
-	if(pixbuf && overzoom)
+	if(pixbuf && upscale > 1)
 	{
 		GdkPixbuf	*pixbuf_scaled = NULL;
 
@@ -89,7 +89,7 @@ load_tile(	gchar *dir,
 					TILESIZE, TILESIZE,
 					-TILESIZE*(x%upscale), -TILESIZE*(y%upscale),
 					upscale, upscale,
-					GDK_INTERP_NEAREST );
+					GDK_INTERP_BILINEAR );
 
 		if (pixbuf)
 		{
@@ -159,7 +159,7 @@ load_tile(	gchar *dir,
 		if (global_auto_download)
 		{
 			repo = global_curr_repo->data;
-			download_tile(repo,zoom,x,y);
+			download_tile(repo,zoom,x/detail_scale,y/detail_scale);
 		}
 		else
 		{
