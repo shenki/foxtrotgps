@@ -774,3 +774,9 @@ gboolean
 on_item18_button_release_event         (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);
+
+void
+activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data);
+
+void
+activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item);

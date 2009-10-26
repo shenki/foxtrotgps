@@ -3910,3 +3910,52 @@ on_item18_button_release_event         (GtkWidget       *widget,
 	repaint_all();
   return FALSE;
 }
+
+void
+activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
+{
+	GError *error = NULL;
+	gboolean success = FALSE;
+
+	printf ("enlarge details\n");
+
+	if (global_detail_zoom > 0) {
+		global_detail_zoom--;
+
+	}
+
+	if (global_detail_zoom == 0) {
+		gtk_widget_set_sensitive (GTK_WIDGET (menu_item), FALSE);
+	}
+
+	success = gconf_client_set_int(
+				global_gconfclient, 
+				GCONF"/global_detail_zoom",
+				global_detail_zoom,
+				&error);
+
+	repaint_all ();
+}
+
+void
+activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item)
+{
+	GError *error = NULL;
+	gboolean success = FALSE;
+
+	printf ("shrink details\n");
+
+	global_detail_zoom++;
+
+	if (global_detail_zoom > 0) {
+		gtk_widget_set_sensitive (GTK_WIDGET (more_item), TRUE);
+	}
+
+	success = gconf_client_set_int(
+				global_gconfclient, 
+				GCONF"/global_detail_zoom",
+				global_detail_zoom,
+				&error);
+
+	repaint_all ();
+}

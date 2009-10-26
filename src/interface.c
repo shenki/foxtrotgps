@@ -16,6 +16,7 @@
 #include "callbacks.h"
 #include "interface.h"
 #include "support.h"
+#include "globals.h"
 
 #define GLADE_HOOKUP_OBJECT(component,widget,name) \
   g_object_set_data_full (G_OBJECT (component), name, \
@@ -1955,6 +1956,11 @@ create_menu1 (void)
   GtkWidget *item7;
   GtkWidget *item8;
 
+  GtkWidget *details_item;
+  GtkWidget *details_menu;
+  GtkWidget *details_item_more;
+  GtkWidget *details_item_bigger;
+
   menu1 = gtk_menu_new ();
 
   item4 = gtk_menu_item_new_with_mnemonic (_("this point"));
@@ -2033,6 +2039,25 @@ create_menu1 (void)
   gtk_widget_show (item8);
   gtk_container_add (GTK_CONTAINER (menu1), item8);
 
+
+  details_item = gtk_menu_item_new_with_mnemonic ("map detail");
+  gtk_container_add (GTK_CONTAINER (menu1), details_item);
+
+  details_menu = gtk_menu_new ();
+  gtk_menu_item_set_submenu (GTK_MENU_ITEM (details_item), details_menu);
+
+  details_item_bigger = gtk_menu_item_new_with_mnemonic ("fewer/larger details");
+  gtk_container_add (GTK_CONTAINER (details_menu), details_item_bigger);
+
+  details_item_more = gtk_menu_item_new_with_mnemonic ("more/smaller details");
+  if (global_detail_zoom == 0) {
+    gtk_widget_set_sensitive (details_item_more, FALSE);
+  }
+  gtk_container_add (GTK_CONTAINER (details_menu), details_item_more);
+
+  gtk_widget_show_all (details_item);
+
+
   g_signal_connect ((gpointer) item4, "activate",
                     G_CALLBACK (on_item4_activate),
                     NULL);
@@ -2076,6 +2101,12 @@ create_menu1 (void)
                     G_CALLBACK (on_item8_activate),
                     NULL);
 
+  g_signal_connect ((gpointer) details_item_more, "activate",
+                    G_CALLBACK (activate_more_map_details),
+                    NULL);
+  g_signal_connect ((gpointer) details_item_bigger, "activate",
+                    G_CALLBACK (activate_larger_map_details),
+                    details_item_more);
   
   GLADE_HOOKUP_OBJECT_NO_REF (menu1, menu1, "menu1");
   GLADE_HOOKUP_OBJECT (menu1, item4, "item4");
