@@ -22,7 +22,6 @@
 #include <libexif/exif-data.h>
 #include <time.h>
 
-
 #define PHOTO_DB "geophoto.db"
 
 GList *geocode_photo_list;

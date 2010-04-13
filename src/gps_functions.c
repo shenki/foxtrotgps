@@ -94,7 +94,7 @@ osd_speed(gboolean force_redraw)
 		layout  = pango_layout_new (context);
 		desc    = pango_font_description_new();
 		
-		pango_font_description_set_size (desc, 50 * PANGO_SCALE);
+		pango_font_description_set_size (desc, 60 * PANGO_SCALE);
 		pango_layout_set_font_description (layout, desc);
 		pango_layout_set_text (layout, buffer, strlen(buffer));
 	
@@ -156,7 +156,7 @@ set_label_nogps()
 	if(num_dl_threads && !global_tiles_in_dl_queue)
 	{	
 		g_sprintf(buffer, 
-			"<b>no GPS found</b> - <span foreground='#0000ff'><b>D%d</b></span>",
+			"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>",
 			num_dl_threads);
 	}
 	else if (num_dl_threads && global_tiles_in_dl_queue)
@@ -164,8 +164,10 @@ set_label_nogps()
 			"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]</b>",
 			num_dl_threads, global_tiles_in_dl_queue);
 	else
-		g_sprintf(buffer,"<b>no GPS found</b>");
+		g_sprintf(buffer,"<b>no GPSD found</b>");
 	
+	if(global_new_msg)
+		g_sprintf(buffer, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
 	
 	gtk_label_set_label(label, buffer);
 
@@ -261,19 +263,25 @@ set_label()
 	
 
 	g_sprintf(buffer, 
-		"%s%s%s%s<b>%4.1f</b> %s  %.0f° a:%.0f%s  t:%.3f%s  %d/%d/%.1f",
+		"%s%s%s%s<b>%4.1f</b>%s "
+		"<small>trp </small><b>%.2f</b>%s "
+		"<small>alt </small><b>%.0f</b>%s "
+		"<small>hdg </small><b>%.0f</b>° "
+		"<small></small>%d/%d/%.1f",
 		numdl_buf,
 		dl_buf,
 		tr_buf,
 		ff_buf,
 		gpsdata->fix.speed * 3.6 * unit_conv,	speedunit,
-		gpsdata->fix.track * unit_conv,
-		gpsdata->fix.altitude * unit_conv_alt,	altunit,
 		trip_distance * unit_conv,		distunit,
+		gpsdata->fix.altitude * unit_conv_alt,	altunit,
+		gpsdata->fix.track * unit_conv,
 		gpsdata->satellites_inview,
 		gpsdata->satellites_used,
 		gpsdata->hdop);
 
+	if(global_new_msg)
+		g_sprintf(buffer, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
 
 	gtk_label_set_label(label, buffer);
 
@@ -286,22 +294,22 @@ set_label()
 	ts = localtime(&time_sec);
 	
 	
-	strftime(buffer, sizeof(buffer), "%a %Y-%m-%d %H:%M:%S ", ts); 
+	strftime(buffer, sizeof(buffer), "<big><b>%a %Y-%m-%d %H:%M:%S</b></big>", ts); 
 	gtk_label_set_label(label41,buffer);
 
 	
 	switch (global_latlon_unit)
 	{
 		case 0:
-			g_sprintf(buffer, "%f - %f", gpsdata->fix.latitude, gpsdata->fix.longitude);
+			g_sprintf(buffer, "<big><b>%f - %f</b></big>", gpsdata->fix.latitude, gpsdata->fix.longitude);
 			break;
 		case 1:
-			g_sprintf(buffer, "%s   %s", 
+			g_sprintf(buffer, "<big><b>%s   %s</b></big>", 
 				  latdeg2latmin(gpsdata->fix.latitude),
 				  londeg2lonmin(gpsdata->fix.longitude));
 			break;
 		case 2:
-			g_sprintf(buffer, "%s   %s", 
+			g_sprintf(buffer, "<big><b>%s   %s</b></big>", 
 				  latdeg2latsec(gpsdata->fix.latitude),
 				  londeg2lonsec(gpsdata->fix.longitude));
 	}
@@ -309,20 +317,20 @@ set_label()
 	
 	
 	g_sprintf(buffer, 
-		"<b><span foreground='#0000ff'><span font_desc='40'>%.1f</span></span></b> %s", 
+		"<b><span foreground='#0000ff'><span font_desc='50'>%.1f</span></span></b> %s", 
 		gpsdata->fix.speed*3.6*unit_conv, speedunit);
 	gtk_label_set_label(label38,buffer);
 
 	
-	g_sprintf(buffer, "%.1f %s", gpsdata->fix.altitude * unit_conv_alt, altunit);
+	g_sprintf(buffer, "<big><b>%.1f %s</b></big>", gpsdata->fix.altitude * unit_conv_alt, altunit);
 	gtk_label_set_label(label39,buffer);
 	
 	
-	g_sprintf(buffer, "%.1f° ", gpsdata->fix.track);
+	g_sprintf(buffer, "<big><b>%.1f°</b></big> ", gpsdata->fix.track);
 	gtk_label_set_label(label42,buffer);
 	
 	
-	g_sprintf(buffer, "%d/%d    HDOP: %.1f ", 
+	g_sprintf(buffer, "<big><b>%d/%d</b>  <small>HDOP</small><b> %.1f</b></big>", 
 			gpsdata->satellites_inview, gpsdata->satellites_used, gpsdata->hdop);
 	gtk_label_set_label(label43,buffer);
 
@@ -331,7 +339,7 @@ set_label()
 	
 
 	
-	g_sprintf(buffer, "%.3f %s", trip_distance*unit_conv,distunit);
+	g_sprintf(buffer, "<big><b>%.3f</b></big> <small>%s</small>", trip_distance*unit_conv,distunit);
 	gtk_label_set_label(label45,buffer);
 
 
@@ -342,23 +350,23 @@ set_label()
 	
 	if (trip_seconds < 10 && trip_minutes < 10)
 	{
-		g_sprintf(buffer, "  %d:0%d:0%d",trip_hours,trip_minutes,trip_seconds);
+		g_sprintf(buffer, "<big><b>%d:0%d:0%d</b></big>",trip_hours,trip_minutes,trip_seconds);
 	}
 	else if (trip_seconds < 10)
-		g_sprintf(buffer, "  %d:%d:0%d",trip_hours,trip_minutes,trip_seconds);
+		g_sprintf(buffer, "<big><b>%d:%d:0%d</b></big>",trip_hours,trip_minutes,trip_seconds);
 	else if (trip_minutes < 10)
-		g_sprintf(buffer, "  %d:0%d:%d",trip_hours,trip_minutes,trip_seconds);
+		g_sprintf(buffer, "<big><b>%d:0%d:%d</b></big>",trip_hours,trip_minutes,trip_seconds);
 	else
-		g_sprintf(buffer, "  %d:%d:%d",trip_hours,trip_minutes,trip_seconds);
+		g_sprintf(buffer, "<big><b>%d:%d:%d</b></big>",trip_hours,trip_minutes,trip_seconds);
 
 	gtk_label_set_label(label66,buffer);
 
 	
-	g_sprintf(buffer, " %.1f %s", trip_distance*3600*unit_conv/(trip_time+2.0), speedunit);
+	g_sprintf(buffer, "<big><b>%.1f</b></big><small> %s</small>", trip_distance*3600*unit_conv/(trip_time+2.0), speedunit);
 	gtk_label_set_label(label68,buffer);
 
 	
-	g_sprintf(buffer, " %.1f %s", trip_maxspeed*3.6*unit_conv, speedunit);
+	g_sprintf(buffer, "<big><b>%.1f</b></big><small> %s</small>", trip_maxspeed*3.6*unit_conv, speedunit);
 	gtk_label_set_label(label70,buffer);
 
 	
@@ -388,7 +396,7 @@ parse_nmea_rmc(char *nmea)
 	while (array[i]) i++;
 
 	g_source_remove(watchdog);
-	watchdog = g_timeout_add_full(G_PRIORITY_DEFAULT_IDLE,10000,reset_gpsd_io,NULL,NULL);
+	watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
 
 
 	
@@ -652,7 +660,7 @@ get_gps()
 			
 			
 			
-			watchdog = g_timeout_add_full(G_PRIORITY_DEFAULT_IDLE,10000,reset_gpsd_io,NULL,NULL);
+			watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
 			
 			
 			gpsd_io_channel = g_io_channel_unix_new(sock);

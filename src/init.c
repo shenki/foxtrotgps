@@ -208,7 +208,7 @@ cb_gps_timer()
 		lat = deg2rad(gpsdata->fix.latitude);
 		lon = deg2rad(gpsdata->fix.longitude);
 		
-		printf("** %s() \n", __PRETTY_FUNCTION__);
+		
 		
 		
 		
@@ -722,15 +722,8 @@ init()
 	gchar buffer[128];
 	gboolean gconf_fftimer_running;
 	char *str = NULL;
-	int screen_height;
 	
-	screen_height = gdk_screen_get_height(gdk_screen_get_default());
-	
-	if(screen_height < 640)
-	{
-		printf("height: %d \n",screen_height);
-		gtk_window_resize(GTK_WINDOW(window1), 480, screen_height-10);
-	}
+
 	
 	tangogps_dir = g_strconcat(global_home_dir, "/.tangogps", NULL);
 	g_mkdir(tangogps_dir, 0700);

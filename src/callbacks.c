@@ -36,6 +36,10 @@ static int wtfcounter=0;
 
 static int friendfinder_timer = 0;
 static gboolean distance_mode = FALSE;
+static int msg_timer = 0;
+static gboolean msg_pane_visible=FALSE;
+static gboolean maximized = FALSE;
+
 
 
 static int local_x = 0;
@@ -513,7 +517,6 @@ on_button1_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
 {
 	GtkWidget *notebook;
-	static int maximized = FALSE;
 	
 	printf("button1 clicked\n");
 	notebook = lookup_widget(GTK_WIDGET(button), "notebook1");
@@ -840,6 +843,7 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 					global_curr_reponame,
 					error);
 	
+	global_repo_nr = gtk_combo_box_get_active(combobox);
 	
 	repaint_all();
 	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")), 0);
@@ -1127,7 +1131,10 @@ on_button11_clicked                    (GtkButton       *button,
 	{
 		
 		update_position();
-		friendfinder_timer = g_timeout_add(global_ffupdate_interval,update_position,NULL);
+		send_message(NULL);
+		friendfinder_timer = g_timeout_add_seconds(global_ffupdate_interval/1000,update_position,NULL);
+		msg_timer = g_timeout_add(global_ffupdate_interval,send_message,NULL);
+
 		global_fftimer_running = TRUE;
 		
 		
@@ -1149,13 +1156,16 @@ on_button11_clicked                    (GtkButton       *button,
 		gtk_label_set_text(GTK_LABEL(widget), "");
 		
 		g_source_remove(friendfinder_timer);
+		g_source_remove(msg_timer);
 		friendfinder_timer = 0;
+		msg_timer =0;
 		global_fftimer_running = FALSE;
 	}
 	
 	else if(!global_ffupdate_auto)
 	{
 		update_position();
+		send_message(NULL);
 		global_fftimer_running = FALSE; 
 	}
 	
@@ -1205,12 +1215,17 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {	
 	GSList *list;
-	GtkWidget *label, *window;
-	gchar buffer[4096];
+	GtkWidget *label, *window, *friend_box, *widget, *hseparator;
+	gchar buffer[8192];
 	gboolean friend_found = FALSE;
 	float lat, lon,lat_deg,lon_deg;
 	float distance=0;
 
+	window = create_window8();
+	widget = lookup_widget(window, "vbox35");
+	gtk_widget_show (window);
+
+	
 	printf("screen x,y: %d %d \n",mouse_x, mouse_y);
 	lat = pixel2lat(global_zoom, global_y+mouse_y);
 	lon = pixel2lon(global_zoom, global_x+mouse_x);
@@ -1244,7 +1259,7 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-	g_sprintf(buffer, "Friends\nDistance: %.3fkm\n",distance);
+	g_sprintf(buffer, "<b><i>Distance:</i></b> %.3fkm\n",distance);
 	
 	for(list = friends_list; list != NULL; list = list->next)
 	{
@@ -1256,14 +1271,15 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 			printf("FOUND FRIEND X: %d %d %s\n\n",f->screen_x, mouse_x,f->nick);
 	
 			
-			g_sprintf(buffer, 
-				"%s \n"
-				"Nickname: <b>%s</b> \n"
-				"Last seen: %s\n<i>'%s'</i>",
-				buffer,
-				f->nick,
-				f->lastseen,
-				f->msg);
+			
+			friend_box = create_friend_box(f);
+			
+			gtk_box_pack_start (GTK_BOX (widget), friend_box, FALSE, FALSE, 0);
+			
+			hseparator = gtk_hseparator_new ();
+			gtk_widget_show (hseparator);
+			gtk_box_pack_start (GTK_BOX (widget), hseparator, FALSE, FALSE, 0);
+			
 			friend_found = TRUE;
 		}
 	
@@ -1272,12 +1288,12 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	if (!friend_found)
 		g_sprintf(buffer,"No friends at or near this position");
 
-	window = create_window8();
+	
 
 	label = lookup_widget(window,"label119");
 	gtk_label_set_label(GTK_LABEL(label),buffer);
 
-	gtk_widget_show (window);
+	
 }
 
 void
@@ -2379,7 +2395,9 @@ on_radiobutton1_toggled                (GtkToggleButton *togglebutton,
 		GtkWidget *widget;
 		
 		if(friendfinder_timer) g_source_remove(friendfinder_timer);
+		if(msg_timer) g_source_remove(msg_timer);
 		friendfinder_timer = 0;
+		msg_timer = 0;
 		global_fftimer_running = FALSE;
 		global_ffupdate_auto = FALSE;
 		
@@ -2445,6 +2463,8 @@ on_entry16_changed                     (GtkEditable     *editable,
 	gtk_widget_set_sensitive(widget, TRUE);
 
 	if(friendfinder_timer) g_source_remove(friendfinder_timer);
+	if(msg_timer) g_source_remove(msg_timer);
+	msg_timer = 0;
 	friendfinder_timer = 0;
 	global_fftimer_running = FALSE;
 	
@@ -2723,6 +2743,8 @@ on_button23_clicked                    (GtkButton       *button,
 
 			
 	g_source_remove(friendfinder_timer);
+	if(msg_timer) g_source_remove(msg_timer);
+	msg_timer = 0;
 	friendfinder_timer = 0;
 	global_fftimer_running = FALSE;
 	
@@ -2817,8 +2839,10 @@ on_item19_activate                     (GtkMenuItem     *menuitem,
 	active = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem));
 	global_show_friends = (active) ? TRUE : FALSE;
 	
-	if(friends_list==NULL)
+	if(friends_list==NULL) {
 		update_position();
+		send_message(NULL);	
+	}
 	repaint_all();
 }
 
@@ -3028,7 +3052,7 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
 		tracks_open_tracks_dialog();
 	else if(event->keyval == GDK_Page_Down || event->keyval == 'o')
 		on_button5_clicked(NULL, NULL);
-	else if(event->keyval == GDK_space)
+	else if(event->keyval == GDK_space || event->keyval == GDK_F11)
 		on_button1_clicked(GTK_BUTTON(window1), NULL);
 	else if(event->keyval == GDK_a)
 		on_button3_clicked(GTK_BUTTON(window1), NULL);
@@ -3161,20 +3185,19 @@ on_button35_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
 	GtkWidget *widget;
-	static gboolean visible=FALSE;
-	widget = lookup_widget(window1, "label132");
+	widget = lookup_widget(window1, "vbox48");
 	
-	if(visible)
+	if(msg_pane_visible)
 	{	
 		gtk_widget_hide(widget);
-		visible = FALSE;
-		gtk_button_set_label(button, "open");
+		msg_pane_visible = FALSE;
+		gtk_button_set_label(button, "show messages");
 	}
 	else
 	{
 		gtk_widget_show(widget);
-		visible = TRUE;
-		gtk_button_set_label(button, "close");
+		msg_pane_visible = TRUE;
+		gtk_button_set_label(button, "hide messages");
 	}
 }
 
@@ -3909,4 +3932,86 @@ on_item18_button_release_event         (GtkWidget       *widget,
 	global_wp_on = FALSE;
 	repaint_all();
   return FALSE;
+}
+
+
+
+
+void
+on_button57_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *combobox;
+	
+	combobox = lookup_widget(window1, "combobox1");
+
+	if(global_repo_cnt-1 > global_repo_nr)
+		gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), global_repo_nr+1);
+	else
+		gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), 0);
+		
+}
+
+
+void
+on_button58_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *combobox;
+	
+	combobox = lookup_widget(window1, "combobox1");
+
+	if (global_repo_nr > 0)
+	{
+		gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), global_repo_nr-1);
+	}
+	else
+		gtk_combo_box_set_active(GTK_COMBO_BOX(combobox), global_repo_cnt-1);
+}
+
+void
+on_entry30_activate                    (GtkEntry        *entry,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+	printf("* %s()\n",__PRETTY_FUNCTION__);
+
+	widget = lookup_widget(GTK_WIDGET(entry), "okbutton10");
+	gtk_button_clicked(GTK_BUTTON(widget));
+}
+
+
+void
+on_cancelbutton9_clicked               (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+			
+	widget = lookup_widget(GTK_WIDGET(button), "dialog9");
+	gtk_widget_destroy(widget);
+}
+
+gboolean
+on_eventbox5_button_release_event      (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data)
+{
+	printf("* %s()\n",__PRETTY_FUNCTION__);
+	if(global_new_msg) 
+	{
+		GtkWidget *widget, *notebook;
+		notebook = lookup_widget(window1, "notebook1");
+		gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), FRIENDS_PAGE);
+		global_new_msg = FALSE;
+		widget = lookup_widget(window1, "button35");
+		if(!msg_pane_visible)
+			gtk_button_clicked(GTK_BUTTON(widget));
+		if(maximized)
+		{
+			gtk_window_unfullscreen(GTK_WINDOW(window1));
+			gtk_notebook_set_show_tabs(GTK_NOTEBOOK(notebook), TRUE);
+		}
+
+	}
+	return FALSE;
 }

@@ -3,7 +3,11 @@
 #include "friends.h"
 #include "globals.h"
 #include "converter.h"
+#include "interface.h"
 #include "support.h"
+#include "wp.h"
+#include "util.h"
+#include "map_management.h"
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -15,6 +19,40 @@
 #include <curl/curl.h>
 #include <curl/types.h>
 #include <curl/easy.h>
+
+
+
+void
+on_msg_friend_clicked(GtkButton *button, gpointer user_data);
+
+void
+on_goto_friend_clicked(GtkButton *button, gpointer user_data);
+
+void
+on_msg_send_clicked(GtkButton *button, gpointer user_data);
+
+gboolean
+send_message(gpointer user_data);
+
+void *
+thread_send_message(void *ptr);
+
+GSList*
+create_msg_postdata(msg_t *m);
+
+void
+process_msg_replydata(postreply_t *postreply);
+
+void
+add_message(msg_t *m);
+
+GtkWidget*
+create_msg_box(msg_t *m);
+
+void
+on_goto_friend2_clicked(GtkButton *button, gpointer user_data);
+
+
 
 
 struct mem_struct {
@@ -42,6 +80,7 @@ cb_write_to_mem(void *ptr, size_t size, size_t nmemb, void *data)
 
 static GdkPixbuf	*friend_icon = NULL;
 static GdkGC		*gc_map = NULL;
+static char		*db_ts_last_request_friends = NULL;
 
 
 
@@ -351,7 +390,7 @@ update_position_thread(void *ptr)
 				friend->lon = atof(g_strdup(array[3]));
 				friend->head = atoi(g_strdup(array[4]));
 				friend->lastseen = g_strdup(array[5]);
-				friend->msg = g_strdup(array[6]);
+				friend->away_msg = g_strdup(array[6]);
 				
 				friends_list = g_slist_append(friends_list, friend);
 			}
@@ -473,7 +512,7 @@ paint_friends()
 					x-12, y-12,
 					24,24);
 			}
-			printf("FRIEND: %s lat %f - lon %f\n",f->nick,f->lat, f->lon);
+			
 		}
 	}
 }
@@ -611,4 +650,411 @@ register_nick_thread(void *ptr)
 	curl_global_cleanup();
 	
 	return NULL;
+}
+
+
+GtkWidget*
+create_friend_box(friend_t *f)
+{
+	GtkWidget *hbox, *label, *vbox, *button;
+	char *label_txt;
+	
+	label_txt = g_strdup_printf("<b>%s</b>\nLast seen:\n%s\n<i>%s</i>",f->nick, f->lastseen, f->away_msg);
+	
+	hbox = gtk_hbox_new (FALSE, 2);
+	gtk_widget_show (hbox);
+	
+	label = gtk_label_new ("");
+	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
+
+	gtk_label_set_label(GTK_LABEL(label), label_txt);
+	
+	gtk_widget_show (label);
+	gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
+	
+	vbox = gtk_vbox_new (FALSE, 0);
+	gtk_widget_show (vbox);
+	gtk_box_pack_start (GTK_BOX (hbox), vbox, TRUE, TRUE, 0);
+	
+	button = gtk_button_new_with_mnemonic (_("Msg"));
+	gtk_widget_show (button);
+	gtk_box_pack_start (GTK_BOX (vbox), button, TRUE, TRUE, 2);
+	
+	g_signal_connect ((gpointer) button, "clicked",
+				G_CALLBACK (on_msg_friend_clicked),
+				(gpointer) f->nick);
+				
+	button = gtk_button_new_with_mnemonic (_("Go To"));
+	gtk_widget_show (button);
+	gtk_box_pack_start (GTK_BOX (vbox), button, TRUE, TRUE, 2);
+	
+	g_signal_connect ((gpointer) button, "clicked",
+				G_CALLBACK (on_goto_friend_clicked),
+				(gpointer) f);
+	return hbox;
+}
+
+
+void
+on_msg_friend_clicked(GtkButton *button, gpointer user_data)
+{
+	GtkWidget *widget, *window;
+	char *label_txt;
+	char *to;
+	
+	to = user_data;
+	label_txt = g_strdup_printf("Send Message To: <b>%s</b>", to);
+	
+	printf("* %s() %s\n", __PRETTY_FUNCTION__, label_txt);
+	
+	widget = lookup_widget(GTK_WIDGET(button), "window8");
+	gtk_widget_destroy(widget);
+	
+	window = create_dialog9();
+	gtk_widget_show(window);
+
+	widget = lookup_widget(window, "label188");	
+	gtk_label_set_label(GTK_LABEL(widget), label_txt);
+
+	widget = lookup_widget(window, "okbutton10");
+	g_signal_connect ((gpointer) GTK_BUTTON(widget), "clicked",
+				G_CALLBACK (on_msg_send_clicked),
+				(gpointer) to);
+
+}
+
+void
+on_goto_friend_clicked(GtkButton *button, gpointer user_data)
+{
+	GtkWidget *widget;
+	
+	friend_t *f;
+	f = user_data;
+	
+	printf("btn42 clicked: %s\n", f->nick);
+	
+	widget = lookup_widget(GTK_WIDGET(button), "window8");
+	set_current_wp(deg2rad(f->lat), deg2rad(f->lon));
+	gtk_widget_destroy(widget);
+}
+
+void
+on_msg_send_clicked(GtkButton *button, gpointer user_data)
+{
+	GtkWidget *widget;
+	char *to;
+	msg_t *m;
+	
+	to = user_data;
+	m = g_new0(msg_t,1);
+	
+	widget = lookup_widget(GTK_WIDGET(button), "entry30");
+	m->txt = g_strdup( gtk_entry_get_text(GTK_ENTRY(widget)) );
+	m->to = g_strdup(to);
+	if (global_myposition.lat && global_myposition.lon)
+	{
+		m->lat = global_myposition.lat;
+		m->lon = global_myposition.lon;
+	}
+	else if (gpsdata)
+	{
+		m->lat = gpsdata->fix.latitude;
+		m->lon = gpsdata->fix.longitude;
+	}
+	else
+	{
+		m->lat = 0;
+		m->lon = 0;
+	}
+		
+	printf("* %s() %s %s %f %f\n", __PRETTY_FUNCTION__, to, m->txt, m->lat,m->lon);
+	
+	add_message(m);
+	send_message((gpointer) m);
+	widget = lookup_widget(GTK_WIDGET(button), "dialog9");
+	gtk_widget_destroy(widget);
+}
+
+gboolean
+send_message(gpointer user_data)
+{
+	GSList *postdata = NULL;
+	msg_t *m;
+	
+	m = user_data;
+	
+	postdata = create_msg_postdata(m);
+	
+	printf("** %s() \n", __PRETTY_FUNCTION__);
+	if (!g_thread_create(&thread_send_message, postdata, FALSE, NULL) != 0)
+		g_warning("### can't create mission thread\n");
+	
+	return TRUE;
+}
+
+void *
+thread_send_message(void *ptr)
+{
+	
+	GSList		*postdata = NULL;
+	postreply_t	*postreply;
+	
+	
+	printf("** %s() \n", __PRETTY_FUNCTION__);
+	
+
+	postdata = ptr;
+
+	
+	postreply = mycurl__do_http_post(MSG_SEND_URL, postdata, VERSION);
+	
+
+	
+	
+	gdk_threads_enter();
+	process_msg_replydata(postreply);
+	gdk_threads_leave();
+
+	
+	
+	g_slist_free(postdata);
+	g_free(postreply);
+	
+	return NULL;
+}
+
+GSList*
+create_msg_postdata(msg_t *m)
+{
+	GSList		*postdata = NULL;
+	const char *n, *p;
+	postdata_item_t *item;
+
+		
+	
+	
+	n = gtk_entry_get_text((GtkEntry *)lookup_widget(window1, "entry7"));
+	p = gtk_entry_get_text((GtkEntry *)lookup_widget(window1, "entry8"));
+	
+	item = g_new0(postdata_item_t, 1);
+	item->name=g_strdup("user");
+	item->value=g_strdup(n);
+	postdata = g_slist_append(postdata, item);
+
+	item = g_new0(postdata_item_t, 1);
+	item->name=g_strdup("pass");
+	item->value=g_strdup(p);
+	postdata = g_slist_append(postdata, item);
+	
+	
+
+	if(m)
+	{
+		
+		item = g_new0(postdata_item_t, 1);
+		item->name=g_strdup("lat");
+		item->value=g_strdup_printf("%f", m->lat);
+		postdata = g_slist_append(postdata, item);
+		
+		item = g_new0(postdata_item_t, 1);
+		item->name=g_strdup("lon");
+		item->value=g_strdup_printf("%f", m->lon);
+		postdata = g_slist_append(postdata, item);	
+		
+		item = g_new0(postdata_item_t, 1);
+		item->name=g_strdup("txt");
+		item->value=g_strdup_printf("%s", m->txt);
+		postdata = g_slist_append(postdata, item);	
+		
+		item = g_new0(postdata_item_t, 1);
+		item->name=g_strdup("to");
+		item->value=g_strdup_printf("%s", m->to);
+		postdata = g_slist_append(postdata, item);	
+	}
+
+	
+	
+	if(db_ts_last_request_friends)
+	{
+		item = g_new0(postdata_item_t, 1);
+		item->name=g_strdup("db_ts_last_request_friends");
+		item->value=g_strdup(db_ts_last_request_friends);
+		postdata = g_slist_append(postdata, item);
+	}
+	
+	return postdata;
+}
+
+
+void
+process_msg_replydata(postreply_t *postreply)
+{
+	GtkWidget *widget;
+	char **arr0 = NULL, **arr = NULL;
+	msg_t *msg = NULL;
+	int i = 1;
+	
+	
+	
+	widget = lookup_widget(window1, "label132");
+	
+	
+	
+	printf("FULLDATA:\n%s\n",postreply->data);
+	if(postreply->status_code == 200 && postreply->size > 0)
+	{
+		arr0 = g_strsplit (postreply->data, "###", -1);
+		
+		
+		
+		if (arr0[0] && strlen(arr0[0]))
+		{
+			char *err_msg;
+			
+			arr = g_strsplit (arr0[0], "|", -1);
+			
+			err_msg	= g_strdup(arr[4]);
+			gtk_label_set_label(GTK_LABEL(widget), err_msg );
+
+			
+			if(atoi(arr[6]) > 0)
+			{
+				GtkWidget *widget;
+				widget = lookup_widget(window1, "notebook1");
+				db_ts_last_request_friends = g_strdup(arr[2]);
+				if (gtk_notebook_get_current_page(GTK_NOTEBOOK(widget)) != FRIENDS_PAGE)
+					global_new_msg = TRUE;
+			}
+			if(arr[7])
+				printf("POSTDATA:\n %s\n", arr[7]); 
+			g_strfreev(arr);
+		}
+		
+		
+		while (arr0[i] && strlen(arr0[i]) )
+		{
+
+			printf("strlen arr: %d\n", strlen(arr0[i]));
+			msg = g_new0(msg_t, 1);
+			
+			
+			arr = g_strsplit (arr0[i], "|||", -1);
+			
+			
+			
+			
+			msg->id 	= atoi(arr[1]);
+			msg->time	= g_strdup(arr[2]);
+			msg->txt	= g_strdup(arr[3]);
+			msg->from	= g_strdup(arr[4]);
+			msg->to		= g_strdup(arr[5]);
+			msg->lat	= atof(arr[6]);
+			msg->lon	= atof(arr[7]);
+			msg->incoming	= TRUE;
+
+
+			add_message(msg);
+			
+			i++;
+			
+			g_strfreev(arr);
+		}
+	}
+	else
+	{
+		gtk_label_set_label(GTK_LABEL(widget), g_strdup_printf("msg-code: %d",(int)postreply->status_code) );
+	}
+	
+	
+	
+	
+	
+	
+
+	
+
+}
+
+void
+add_message(msg_t *m)
+{
+	GtkWidget *msg_box, *widget, *hseparator;
+	msg_list = g_slist_append(msg_list, m);
+	
+	msg_box = create_msg_box(m);
+	
+	widget = lookup_widget(window1, "vbox48");
+	gtk_box_pack_start (GTK_BOX (widget), msg_box, FALSE, FALSE, 0);
+	gtk_box_reorder_child(GTK_BOX(widget),msg_box, 1);
+	hseparator = gtk_hseparator_new ();
+	gtk_widget_show (hseparator);
+	gtk_box_pack_start (GTK_BOX (widget), hseparator, FALSE, FALSE, 0);
+	gtk_box_reorder_child(GTK_BOX(widget),hseparator, 2);
+}
+
+GtkWidget*
+create_msg_box(msg_t *m)
+{
+	GtkWidget *hbox, *label, *vbox, *button;
+	char *label_txt;
+	
+	
+	hbox = gtk_hbox_new (FALSE, 2);
+	gtk_widget_show (hbox);
+	
+	label = gtk_label_new ("");
+	
+	gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
+	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
+	gtk_misc_set_alignment (GTK_MISC (label), 0, 0);
+	gtk_misc_set_padding (GTK_MISC (label), 2, 2);
+	
+	if(m->incoming)
+		label_txt = g_strdup_printf("<i><b>%s</b>, %s</i>\n\n   %s",m->from, m->time, m->txt);
+	else
+		label_txt = g_strdup_printf("<i>-> <b>%s</b></i>\n\n   %s",m->to, m->txt);
+	
+	gtk_label_set_label(GTK_LABEL(label), label_txt);
+	
+	gtk_widget_show (label);
+	gtk_box_pack_start (GTK_BOX (hbox), label, TRUE, TRUE, 0);
+	
+	vbox = gtk_vbox_new (FALSE, 0);
+	gtk_widget_show (vbox);
+	gtk_box_pack_start (GTK_BOX (hbox), vbox, FALSE, FALSE, 0);
+	
+	if(m->incoming)
+	{
+		button = gtk_button_new_with_mnemonic (_("  Reply  "));
+		gtk_widget_show (button);
+		gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 2);
+		
+		g_signal_connect ((gpointer) button, "clicked",
+					G_CALLBACK (on_msg_friend_clicked),
+					(gpointer) m->from);
+					
+		button = gtk_button_new_with_mnemonic (_("  Go To  "));
+		gtk_widget_show (button);
+		gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 2);
+		
+		g_signal_connect ((gpointer) button, "clicked",
+					G_CALLBACK (on_goto_friend2_clicked),
+					(gpointer) m);
+	}
+	
+	return hbox;
+}
+
+void
+on_goto_friend2_clicked(GtkButton *button, gpointer user_data)
+{	
+	msg_t *m;
+	m = user_data;
+	
+	printf("btn42 clicked: %s\n", m->from);
+	
+	set_current_wp(deg2rad(m->lat), deg2rad(m->lon));
+	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")),MAP_PAGE);
+	set_mapcenter(m->lat,m->lon, global_zoom);
+
 }

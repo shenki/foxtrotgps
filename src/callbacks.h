@@ -774,3 +774,25 @@ gboolean
 on_item18_button_release_event         (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);
+
+
+void
+on_button57_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button58_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_entry30_activate                    (GtkEntry        *entry,
+                                        gpointer         user_data);
+
+void
+on_cancelbutton9_clicked               (GtkButton       *button,
+                                        gpointer         user_data);
+
+gboolean
+on_eventbox5_button_release_event      (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data);

@@ -40,6 +40,7 @@ GSList		*trackpoint_list = NULL;
 GSList		*friends_list = NULL;
 GSList		*photo_list = NULL;
 GSList		*poi_list = NULL;
+GSList		*msg_list = NULL;
 float		trip_distance = 0;
 double		trip_maxspeed = 0;
 double		trip_time = 0;
@@ -54,6 +55,7 @@ trackpoint_t	global_myposition;
 
 gchar		*global_curr_reponame = NULL;
 int		global_repo_cnt = 0;
+int		global_repo_nr = 1;
 GSList 		*global_repo_list = NULL;
 GSList		*global_curr_repo = NULL;
 GConfClient	*global_gconfclient = NULL;
@@ -67,10 +69,14 @@ int		global_tiles_in_dl_queue = 0;
 gboolean	global_show_friends = FALSE;
 gboolean	global_show_pois = FALSE;
 gboolean	global_show_photos = FALSE;
+gboolean	global_new_msg = FALSE;
 int		global_poi_cat = 0;
 
 gboolean	global_wp_on = FALSE;
 waypoint_t	global_wp;
+
+char		*global_friend_nick = NULL;
+char		*global_friend_pass = NULL;
 
 gboolean	global_ffupdate_auto = FALSE;
 int		global_ffupdate_interval = 900000;

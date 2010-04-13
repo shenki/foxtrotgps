@@ -294,7 +294,7 @@ void set_combobox_subcat(GtkWidget *widget, int choice)
 					NULL);
 		gtk_combo_box_set_active(GTK_COMBO_BOX(combobox_subcat), 0);
 		printf("reorder\n");
-		gtk_box_reorder_child(GTK_BOX(vbox),combobox_subcat,4);
+		gtk_box_reorder_child(GTK_BOX(vbox),combobox_subcat,6);
 		new_dialog = FALSE;
 	}
 	else if (choice)

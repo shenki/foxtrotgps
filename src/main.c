@@ -47,6 +47,37 @@ main (int argc, char *argv[])
 
   pre_init();
   window1 = create_window1 ();
+
+  	
+	int screen_height, screen_width;
+  	GtkWidget *toolbar;
+
+  	screen_height = gdk_screen_get_height(gdk_screen_get_default());
+	screen_width  = gdk_screen_get_width (gdk_screen_get_default());
+	
+	if (screen_height > screen_width)
+	{
+		toolbar = lookup_widget(window1, "toolbar1");
+	}
+	else
+		toolbar = lookup_widget(window1, "toolbar4");
+
+	gtk_widget_show(toolbar);
+	
+	if(screen_height < 640 && screen_height > screen_width)
+	{
+		printf("height: %d \n",screen_height);
+		gtk_window_resize(GTK_WINDOW(window1), 
+				  (screen_width < 480) ? screen_width : 480, 
+				  screen_height-30);
+	}
+	else if(screen_height < 640 && screen_width <= 1024 && screen_height < screen_width)
+	{
+		gtk_window_resize(GTK_WINDOW(window1), 
+				  (screen_width < 480) ? screen_width : 480, 
+				  screen_height-60);		
+	}
+	
   gtk_widget_show (window1);
 
   if(argc > 1 && strcmp(argv[1], "-fullscreen") == 0)

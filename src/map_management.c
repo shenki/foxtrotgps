@@ -44,7 +44,7 @@ load_tile(	gchar *dir,
 	static gchar filename[256];
 	
 
-	printf("* load tile()\n");
+	
 
 
 	if(gc_map)
@@ -58,17 +58,23 @@ load_tile(	gchar *dir,
 
 	
 	if (pixbuf)
+	{
 		g_object_unref (pixbuf);
+		pixbuf = NULL;
+	}
 	
 	if (pixbuf_scaled)
+	{
 		g_object_unref (pixbuf_scaled);
+		pixbuf_scaled = NULL;
+	}
 
 
 	
 	for(overzoom=0; overzoom<=3; overzoom++)
 	{
 		g_sprintf(filename, "%s/%u/%u/%u.png", dir, zoom-overzoom, x/upscale, y/upscale);
-		printf("** %d. IMG: %s\n", overzoom, filename);
+		
 
 		pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
 
@@ -122,7 +128,7 @@ load_tile(	gchar *dir,
 	}
 	else
 	{
-		printf("PIXBUF: loading okay\n");
+		
 
 	
 		
@@ -221,7 +227,7 @@ fill_tiles_pixel(	int pixel_x,
 	{
 		for (j=tile_y0;  j<(tile_y0+tiles_ny); j++)
 		{
-			printf("---i,j,x,y,offsetx,y: %d,%d -- %d,%d -- %d,%d\n",i,j,pixel_x,pixel_y,offset_x,offset_y);
+			
 
 			if(	j<0			||
 				i<0			||

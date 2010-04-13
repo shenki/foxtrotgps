@@ -179,7 +179,7 @@ osd_wp()
 		layout  = pango_layout_new (context);
 		desc    = pango_font_description_new();
 		
-		pango_font_description_set_size (desc, 16 * PANGO_SCALE);
+		pango_font_description_set_size (desc, 20 * PANGO_SCALE);
 		pango_layout_set_font_description (layout, desc);
 		pango_layout_set_text (layout, buffer, strlen(buffer));
 	

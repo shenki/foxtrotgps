@@ -6,9 +6,14 @@
 #include <gtk/gtk.h>
 #include <gconf/gconf-client.h>
 
+#define MSG_SEND_URL "http://tangogps.org/friends/msg_send.php"
+
 #define GCONF "/apps/tangogps"
 #define TILESIZE 256
 #define PNAME "tangogps"
+#define MAP_PAGE 0
+#define FRIENDS_PAGE 2
+
 
 typedef struct {
 	float lat;
@@ -31,6 +36,7 @@ typedef struct {
 	int inverted_zoom;
 } repo_t;
 
+/*
 typedef struct {
 	int type;
 	char *nick;
@@ -43,6 +49,7 @@ typedef struct {
 	int screen_x;
 	int screen_y;
 } friend_t;
+*/
 
 typedef struct {
 	char *filename;
@@ -124,6 +131,7 @@ extern GSList		*trackpoint_list;
 extern GSList		*friends_list;
 extern GSList		*photo_list;
 extern GSList		*poi_list;
+extern GSList		*msg_list;
 extern float		trip_distance;
 extern double		trip_maxspeed;
 extern double		trip_time;
@@ -134,6 +142,7 @@ extern gboolean		trip_logger_on;
 
 extern gchar		*global_curr_reponame;
 extern int		global_repo_cnt;
+extern int		global_repo_nr;
 extern GSList	 	*global_repo_list, *global_curr_repo;
 extern GConfClient	*global_gconfclient;
 
@@ -146,10 +155,14 @@ extern int		global_tiles_in_dl_queue;
 extern gboolean		global_show_pois;
 extern gboolean		global_show_friends;
 extern gboolean		global_show_photos;
+extern gboolean		global_new_msg;
 extern int		global_poi_cat;
 
 extern gboolean		global_wp_on;
 extern waypoint_t	global_wp;
+
+extern char		*global_friend_nick;
+extern char		*global_friend_pass;
 
 extern gboolean		global_ffupdate_auto;
 extern int		global_ffupdate_interval;
