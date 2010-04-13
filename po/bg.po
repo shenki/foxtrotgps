@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2009-10-30 12:01+0100\n"
+"POT-Creation-Date: 2009-11-05 00:17+0100\n"
 "PO-Revision-Date: 2008-11-28 11:17+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
@@ -984,7 +984,7 @@ msgid "Load track..."
 msgstr ""
 
 #: src/interface.c:4042
-msgid "<b>Choose track to open</b>"
+msgid "<b>Choose track to open (.log / .gpx)</b>"
 msgstr ""
 
 #: src/interface.c:4117

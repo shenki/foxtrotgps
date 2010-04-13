@@ -452,7 +452,7 @@ cb_gps_timer()
 	}
 	else 
 	{
-		printf("no gpsdata for timer\n");
+		
 		set_label_nogps();
 	}
 	return TRUE; 

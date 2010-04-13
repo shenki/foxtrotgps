@@ -19,6 +19,7 @@
 #include "friends.h"
 #include "poi.h"
 #include "wp.h"
+#include "tracks.h"
 
 GtkWidget *Bar = NULL; 
 static GSList *tile_download_list = NULL;
@@ -64,6 +65,7 @@ map_redraw(void *p)
 		printf("REPAINTING.............\n");
 		fill_tiles_pixel(global_x, global_y, global_zoom);
 		print_track();
+		paint_loaded_track();
 		paint_friends();
 		paint_photos();
 		paint_pois();

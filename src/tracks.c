@@ -1,6 +1,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 
 #include <gtk/gtk.h>
 #include <glib.h>
@@ -10,20 +11,42 @@
 #include <sys/stat.h>
 #include <fcntl.h>
 
+#include <libxml/parser.h>
+#include <libxml/tree.h>
+
 #include "globals.h"
 #include "tracks.h"
 #include "interface.h"
 #include "support.h"
 #include "converter.h"
 #include "map_management.h"
+#include "tile_management.h"
 
-GSList *loaded_track;
+GSList *loaded_track = NULL;
 GtkWidget *window12;
+
+
+
 
 GtkWidget *
 make_file_label(const char *file, char *full_file);
 
-					
+bbox_t
+get_track_bbox(GSList *track);
+
+GSList *
+load_log_file_into_list(char *file);
+
+GSList *
+load_gpx_file_into_list(char *file);
+
+GSList *
+parse_nodes(xmlNode *node);
+
+
+
+
+
 void
 tracks_open_tracks_dialog()
 {
@@ -107,18 +130,14 @@ make_file_label(const char *file, char *full_file)
 }
 
 gboolean
-tracks_on_file_button_release_event      (	GtkWidget       *widget,
+tracks_on_file_button_release_event   (	GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
 	GtkWidget *drawingarea, *range;
-	char *file;
-	char line[121];
-	char **arr;
-	FILE *fd;
-	float lat=0, lon=0, max_lat=-90, max_lon=-180, min_lat=90, min_lon=180, lat_tmp, lon_tmp;
-	gboolean first_point = TRUE;
 	int track_zoom, width, height;
+	char *file;
+	bbox_t bbox;
 	
 	drawingarea = lookup_widget(window1, "drawingarea1");
 	width  = drawingarea->allocation.width;
@@ -126,64 +145,39 @@ tracks_on_file_button_release_event      (	GtkWidget       *widget,
 	
 	file = (char *) user_data;
 	
-	g_slist_free(loaded_track);
-	loaded_track = NULL;
-
 	gtk_widget_destroy(window12);
 
-	printf("+++++++++++++++++++++++++++++++++++++++++++ %s \n", file);
-	fd = fopen(file, "r");
-	while(fgets(line,120, fd))
+	if(loaded_track)
+		g_slist_free(loaded_track);
+	loaded_track = NULL;
+
+	if (g_strrstr(file,".gpx") ||
+	    g_strrstr(file,".GPX") ||
+	    g_strrstr(file,".Gpx") )
 	{
-		
-		trackpoint_t *tp = g_new0(trackpoint_t,1);
-		
-		arr = g_strsplit(line, ",", 2);
-		
-		
-		if (arr[0] == NULL || arr[1] == NULL) continue;
-
-		
-		
-		lat_tmp = atof(arr[0]);
-		lon_tmp = atof(arr[1]);
-		
-		tp->lat = deg2rad(lat_tmp);
-		tp->lon = deg2rad(lon_tmp);
-		
-		if(first_point)
-		{
-			lat = atof(arr[0]);
-			lon = atof(arr[1]);
-			first_point = FALSE;
-		}
-		
-		max_lat = (lat_tmp>max_lat) ? lat_tmp : max_lat;
-		min_lat = (lat_tmp<min_lat) ? lat_tmp : min_lat;
-		max_lon = (lon_tmp>max_lon) ? lon_tmp : max_lon;
-		min_lon = (lon_tmp<min_lon) ? lon_tmp : min_lon;
-		
-		
-		loaded_track = g_slist_append(loaded_track, tp);
+		loaded_track = load_gpx_file_into_list(file);
 	}
-	
-	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")), 0);
-
-
+	else
+		loaded_track = load_log_file_into_list(file);
 	
 	
 	
-	track_zoom = get_zoom_covering(width, height, max_lat, min_lon, min_lat, max_lon);
+	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")), 0);	
+	
+	
+	bbox = get_track_bbox(loaded_track);
+	
+	track_zoom = get_zoom_covering(width, height, bbox.lat1, bbox.lon1, bbox.lat2, bbox.lon2);
 	track_zoom = (track_zoom > 15) ? 15 : track_zoom;
 	
-	if(lat!=0 && lon!=0)
-		set_mapcenter((max_lat+min_lat)/2, (max_lon+min_lon)/2, track_zoom);
-
-printf("%.0f - %.0f ## %.0f - %.0f\n",max_lat,max_lon,min_lat,min_lon);
-		
-			range = lookup_widget(window1, "vscale1");
-		gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
 	
+	if(loaded_track)
+		set_mapcenter(rad2deg((bbox.lat1+bbox.lat2)/2), rad2deg((bbox.lon1+bbox.lon2)/2), track_zoom);
+
+	
+	range = lookup_widget(window1, "vscale1");
+	gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
+
 	paint_loaded_track();
 	
 	
@@ -247,4 +241,128 @@ paint_loaded_track()
 		
 		is_line = TRUE;
 	}
+}
+
+bbox_t
+get_track_bbox(GSList *track)
+{
+	GSList *list;
+	bbox_t bbox;
+	double lat, lon;
+	
+	bbox.lat1 =  -90;
+	bbox.lon1 =  180;
+	bbox.lat2 =   90;
+	bbox.lon2 = -180;
+	
+	
+	for(list = track; list != NULL; list = list->next)
+	{
+		trackpoint_t *tp = list->data;
+	
+		lat = tp->lat;
+		lon = tp->lon;
+		bbox.lat1 = (lat > bbox.lat1) ? lat : bbox.lat1;
+		bbox.lat2 = (lat < bbox.lat2) ? lat : bbox.lat2;
+		bbox.lon1 = (lon < bbox.lon1) ? lon : bbox.lon1;
+		bbox.lon2 = (lon > bbox.lon2) ? lon : bbox.lon2;
+	}
+	
+	return bbox;
+}
+
+
+GSList *
+load_log_file_into_list(char *file)
+{
+	GSList *list = NULL;
+	float lat, lon;
+	char line[121];
+	char **arr;
+	FILE *fd;
+
+	fd = fopen(file, "r");
+	while(fgets(line,120, fd))
+	{
+		trackpoint_t *tp = g_new0(trackpoint_t,1);
+		
+		
+		arr = g_strsplit(line, ",", 2);
+		
+		
+		if (arr[0] == NULL || arr[1] == NULL) continue;
+
+		
+		lat = atof(arr[0]);
+		lon = atof(arr[1]);
+		
+		tp->lat = deg2rad(lat);
+		tp->lon = deg2rad(lon);		
+
+		list = g_slist_append(list, tp);
+	}
+	
+	return list;
+}
+
+
+GSList *
+load_gpx_file_into_list(char *file)
+{
+	GSList *list = NULL;
+	xmlDoc *doc = NULL;
+	xmlNode *root_element = NULL;
+	
+	
+	LIBXML_TEST_VERSION
+	
+	doc = xmlReadFile(file, NULL, 0);
+	
+	if (doc == NULL) {
+		printf("error: could not parse file %s\n", file);
+	}
+	
+	root_element = xmlDocGetRootElement(doc);
+	list = parse_nodes(root_element);
+	
+	xmlFreeDoc(doc);
+	xmlCleanupParser();
+	
+	return list;
+}
+
+
+GSList *
+parse_nodes(xmlNode *node)
+{
+	xmlNode *cur_node = NULL;
+	GSList *list = NULL;
+
+
+	for (cur_node = node; cur_node; cur_node = cur_node->next)
+	{
+		if (cur_node->type == XML_ELEMENT_NODE)			
+		{
+			if (xmlStrEqual(cur_node->name, BAD_CAST "trkpt"))
+			{
+				double lat, lon;
+				trackpoint_t *tp = g_new0(trackpoint_t,1);
+				
+				lat = atof((char *)xmlGetProp(cur_node, BAD_CAST "lat"));
+				lon = atof((char *)xmlGetProp(cur_node, BAD_CAST "lon"));
+				
+				tp->lat = deg2rad(lat);
+				tp->lon = deg2rad(lon);		
+		
+				list = g_slist_append(list, tp);
+			}
+			else
+			{
+				printf("  OTHER XML ELEMENT: %s \n", cur_node->name);
+			}
+		}
+		list = g_slist_concat(list, parse_nodes(cur_node->children));
+	}
+	
+	return list;
 }

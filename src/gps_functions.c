@@ -24,7 +24,7 @@
 #include "support.h"
 #include "tile_management.h"
 #include "converter.h"
-
+#define BUFSIZE 512
 char * distance2scale(float distance, float *factor);
 
 
@@ -146,7 +146,7 @@ void
 set_label_nogps()
 {
 	static GtkLabel *label=NULL;
-	static gchar buffer[256];
+	static gchar buffer[BUFSIZE];
 	int num_dl_threads = 0;
 
 	if(label == NULL)
@@ -155,19 +155,19 @@ set_label_nogps()
 	num_dl_threads = update_thread_number(0);
 	if(num_dl_threads && !global_tiles_in_dl_queue)
 	{	
-		g_sprintf(buffer, 
+		g_snprintf(buffer, BUFSIZE,
 			"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>",
 			num_dl_threads);
 	}
 	else if (num_dl_threads && global_tiles_in_dl_queue)
-		g_sprintf(buffer, 
+		g_snprintf(buffer, BUFSIZE,
 			"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]</b>",
 			num_dl_threads, global_tiles_in_dl_queue);
 	else
-		g_sprintf(buffer,"<b>no GPSD found</b>");
+		g_snprintf(buffer, BUFSIZE, "<b>no GPSD found</b>");
 	
 	if(global_new_msg)
-		g_sprintf(buffer, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
+		g_snprintf(buffer, BUFSIZE, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
 	
 	gtk_label_set_label(label, buffer);
 
@@ -178,7 +178,7 @@ set_label()
 	static GtkLabel *label=NULL,   *label31, *label38, *label39;
 	static GtkLabel *label41, *label42, *label43, *label45;
 	static GtkLabel *label66, *label68, *label70;
-	static gchar buffer[256];
+	static gchar buffer[BUFSIZE];
 	static gchar numdl_buf[64], dl_buf[64], ff_buf[64], tr_buf[64];
 	static gchar speedunit[5], distunit[3], altunit[3];
 	int trip_hours, trip_minutes, trip_seconds;
@@ -262,7 +262,7 @@ set_label()
 		g_sprintf(numdl_buf, "%s", "");
 	
 
-	g_sprintf(buffer, 
+	g_snprintf(buffer, BUFSIZE,
 		"%s%s%s%s<b>%4.1f</b>%s "
 		"<small>trp </small><b>%.2f</b>%s "
 		"<small>alt </small><b>%.0f</b>%s "
@@ -281,7 +281,7 @@ set_label()
 		gpsdata->hdop);
 
 	if(global_new_msg)
-		g_sprintf(buffer, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
+		g_snprintf(buffer, BUFSIZE, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
 
 	gtk_label_set_label(label, buffer);
 
@@ -301,36 +301,36 @@ set_label()
 	switch (global_latlon_unit)
 	{
 		case 0:
-			g_sprintf(buffer, "<big><b>%f - %f</b></big>", gpsdata->fix.latitude, gpsdata->fix.longitude);
+			g_snprintf(buffer, BUFSIZE, "<big><b>%f - %f</b></big>", gpsdata->fix.latitude, gpsdata->fix.longitude);
 			break;
 		case 1:
-			g_sprintf(buffer, "<big><b>%s   %s</b></big>", 
+			g_snprintf(buffer, BUFSIZE, "<big><b>%s   %s</b></big>", 
 				  latdeg2latmin(gpsdata->fix.latitude),
 				  londeg2lonmin(gpsdata->fix.longitude));
 			break;
 		case 2:
-			g_sprintf(buffer, "<big><b>%s   %s</b></big>", 
+			g_snprintf(buffer, BUFSIZE, "<big><b>%s   %s</b></big>", 
 				  latdeg2latsec(gpsdata->fix.latitude),
 				  londeg2lonsec(gpsdata->fix.longitude));
 	}
 	gtk_label_set_label(label31,buffer);
 	
 	
-	g_sprintf(buffer, 
+	g_snprintf(buffer, BUFSIZE, 
 		"<b><span foreground='#0000ff'><span font_desc='50'>%.1f</span></span></b> %s", 
 		gpsdata->fix.speed*3.6*unit_conv, speedunit);
 	gtk_label_set_label(label38,buffer);
 
 	
-	g_sprintf(buffer, "<big><b>%.1f %s</b></big>", gpsdata->fix.altitude * unit_conv_alt, altunit);
+	g_snprintf(buffer, BUFSIZE, "<big><b>%.1f %s</b></big>", gpsdata->fix.altitude * unit_conv_alt, altunit);
 	gtk_label_set_label(label39,buffer);
 	
 	
-	g_sprintf(buffer, "<big><b>%.1f°</b></big> ", gpsdata->fix.track);
+	g_snprintf(buffer, BUFSIZE, "<big><b>%.1f°</b></big> ", gpsdata->fix.track);
 	gtk_label_set_label(label42,buffer);
 	
 	
-	g_sprintf(buffer, "<big><b>%d/%d</b>  <small>HDOP</small><b> %.1f</b></big>", 
+	g_snprintf(buffer, BUFSIZE, "<big><b>%d/%d</b>  <small>HDOP</small><b> %.1f</b></big>", 
 			gpsdata->satellites_inview, gpsdata->satellites_used, gpsdata->hdop);
 	gtk_label_set_label(label43,buffer);
 
@@ -339,7 +339,7 @@ set_label()
 	
 
 	
-	g_sprintf(buffer, "<big><b>%.3f</b></big> <small>%s</small>", trip_distance*unit_conv,distunit);
+	g_snprintf(buffer, BUFSIZE, "<big><b>%.3f</b></big> <small>%s</small>", trip_distance*unit_conv,distunit);
 	gtk_label_set_label(label45,buffer);
 
 
@@ -618,7 +618,7 @@ get_gps()
 
 	if(!gpsdata  || global_reconnect_gpsd)
 	{
-		printf("reconnecting to gpsd\n");
+		
 				
 		if (sock) sock = close(sock);
 			
@@ -692,7 +692,7 @@ get_gps()
 		
 	
 	}
-	else printf("NOGPS");
+	
 
 	
 

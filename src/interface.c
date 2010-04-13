@@ -4037,7 +4037,7 @@ create_window12 (void)
   gtk_widget_show (vbox38);
   gtk_container_add (GTK_CONTAINER (window12), vbox38);
 
-  label134 = gtk_label_new (_("<b>Choose track to open</b>"));
+  label134 = gtk_label_new (_("<b>Choose track to open (.log / .gpx)</b>"));
   gtk_widget_show (label134);
   gtk_box_pack_start (GTK_BOX (vbox38), label134, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label134), TRUE);

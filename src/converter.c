@@ -204,11 +204,11 @@ get_zoom_covering(int width, int height, double lat_max, double lon_min, double 
 	while (zoom>=2)
 	{
 		
-		pixel_x1 = lon2pixel((float)zoom, deg2rad(lon_min));
-		pixel_y1 = lat2pixel((float)zoom, deg2rad(lat_max));
+		pixel_x1 = lon2pixel((float)zoom, lon_min);
+		pixel_y1 = lat2pixel((float)zoom, lat_max);
 		
-		pixel_x2 = lon2pixel((float)zoom, deg2rad(lon_max));
-		pixel_y2 = lat2pixel((float)zoom, deg2rad(lat_min));
+		pixel_x2 = lon2pixel((float)zoom, lon_max);
+		pixel_y2 = lat2pixel((float)zoom, lat_min);
 		
 		
 		if( 	(pixel_x1+width)  > pixel_x2	&&

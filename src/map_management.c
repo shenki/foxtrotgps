@@ -17,6 +17,7 @@
 #include "geo_photos.h"
 #include "poi.h"
 #include "wp.h"
+#include "tracks.h"
 
 
 static GdkPixbuf	*pixbuf = NULL;
@@ -319,6 +320,7 @@ set_mapcenter(	float lat,
 				pixel_y - global_drawingarea_height/2,
 				zoom);
 	print_track();
+	paint_loaded_track();
 	paint_friends();
 	paint_photos();
 	paint_pois();
