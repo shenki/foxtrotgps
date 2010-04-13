@@ -633,7 +633,8 @@ get_gps()
 		conn = connect(sock, (struct sockaddr *)&server, sizeof(struct sockaddr));
 		if (conn < 0)
 		{
-			fprintf(stderr, "connection to gpsd FAILED \n");
+			
+			conn = -1;
 		}
 		else
 		{
@@ -701,7 +702,7 @@ get_gps()
 void
 map_scale_indicator()
 {
-	printf("%s():\n",__PRETTY_FUNCTION__);
+	
 	
 	
 	

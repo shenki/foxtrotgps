@@ -4,7 +4,7 @@ dnl If you don't want it to overwrite it,
 dnl 	Please disable it in the Anjuta project configuration
 
 AC_INIT(configure.in)
-AM_INIT_AUTOMAKE(tangogps, 0.9.9)
+AM_INIT_AUTOMAKE(tangogps, 0.99.1)
 AM_CONFIG_HEADER(config.h)
 AM_MAINTAINER_MODE
 
@@ -18,7 +18,7 @@ AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Package name for gettext])
 
 dnl Languages which your application supports
-ALL_LINGUAS="bg cs de es fi fr hu ru"
+ALL_LINGUAS="bg cs de es fi fr hu ru sk"
 AM_GLIB_GNU_GETTEXT
 
 AM_PROG_LIBTOOL

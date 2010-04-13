@@ -58,7 +58,7 @@ track_log()
 				gpsdata->hdop,
 				buffer);
 		
-		if (fp) fprintf(fp,data);
+		if (fp) fprintf(fp, "%s", data);
 	}
 }
 
@@ -476,7 +476,7 @@ gconf_get_repolist()
 	{
 		repo_t *repo1 = g_new0(repo_t, 1);
 		repo_t *repo2 = g_new0(repo_t, 1);
-		repo_t *repo3 = g_new0(repo_t, 1);
+
 		repo_t *repo4 = g_new0(repo_t, 1);
 		repo_t *repo5 = g_new0(repo_t, 1);
 
@@ -494,11 +494,6 @@ gconf_get_repolist()
 		repo2->inverted_zoom = 0;
 		global_repo_list = g_slist_append(global_repo_list, repo2);
 		
-		repo3->name = g_strdup("Aerial");
-		repo3->uri  = g_strdup("openaerial");
-		repo3->dir  = g_strdup_printf("%s/Maps/openaerial",global_home_dir);
-		repo3->inverted_zoom = 0;
-		global_repo_list = g_slist_append(global_repo_list, repo3);
 		
 		repo4->name = g_strdup("Opencyclemap");
 		repo4->uri  = g_strdup("http://a.andy.sandbox.cloudmade.com/tiles/cycle/%d/%d/%d.png");
@@ -594,6 +589,7 @@ repoconfig__set_current_list_pointer()
 	
 	GSList		*list;
 	const gchar	*reponame;
+	int unused;
 	
 	for(list = global_repo_list; list != NULL; list = list->next)
 	{
@@ -614,7 +610,7 @@ repoconfig__set_current_list_pointer()
 		printf("Resetting repo_name and exiting now.\n\n");
 		printf("If problem persists after restart, \n");
 		printf("execute in a terminal: gconftool-2 -u /apps/tangogps/repos");
-		system("gconftool-2 -u /apps/tangogps/repo_name");
+		unused = system("gconftool-2 -u /apps/tangogps/repo_name");
 		exit(EXIT_FAILURE);		
 	}
 }
@@ -900,7 +896,7 @@ init()
 	
 	widget = lookup_widget(window1, "label117");
 #ifdef VERSION
-	gtk_label_set_label(GTK_LABEL(widget), "<i>tangoGPS version: " VERSION "\nDeveloper: Marcus Bauer</i>");
+	gtk_label_set_label(GTK_LABEL(widget), "<i><small>tangoGPS version: " VERSION "\nDeveloper: Marcus Bauer</small></i>");
 #endif
 
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_host",&err);

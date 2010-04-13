@@ -422,7 +422,7 @@ set_poi(GtkWidget *dialog)
 			keyword, desc, price_range, extended_open);
 		  
 printf("SQL: %s\n",sql);
-printf("size of gdouble: %d",sizeof(double));
+printf("size of gdouble: %d", (int)sizeof(double));
 
 	res = sql_execute(db, sql, NULL);
 	
@@ -719,7 +719,7 @@ printf("%s %s \n",buffer, buffer2);
 	}
 	
 	if(!poi_found)
-		g_sprintf(buffer, "<b>No POI found</b>\n");
+		buffer = g_strdup("<b>No POI found</b>\n");
 	
 	gtk_label_set_label(GTK_LABEL(label),buffer);
 	

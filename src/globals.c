@@ -15,6 +15,8 @@ GtkWidget *dialog8 = NULL;
 GtkWidget *window3 = NULL;
 GtkWidget *menu1 = NULL;
 
+GList	*global_infopane_widgets = NULL;
+GList	*global_infopane_current = NULL;
 
 char *global_track_dir = NULL;
 
@@ -51,8 +53,6 @@ gboolean	trip_logger_on = FALSE;
 trackpoint_t	global_myposition;
 
 
-
-
 gchar		*global_curr_reponame = NULL;
 int		global_repo_cnt = 0;
 int		global_repo_nr = 1;
@@ -60,6 +60,8 @@ GSList 		*global_repo_list = NULL;
 GSList		*global_curr_repo = NULL;
 GConfClient	*global_gconfclient = NULL;
 
+gboolean	global_infopane_visible = FALSE;
+gboolean	global_landscape;
 gboolean	global_auto_download = TRUE;
 gboolean	global_mapmode = TRUE;
 gboolean	global_autocenter = FALSE;

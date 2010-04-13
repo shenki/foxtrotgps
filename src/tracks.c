@@ -2,6 +2,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
+#include <errno.h>
 
 #include <gtk/gtk.h>
 #include <glib.h>
@@ -14,6 +16,7 @@
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
+
 #include "globals.h"
 #include "tracks.h"
 #include "interface.h"
@@ -21,10 +24,11 @@
 #include "converter.h"
 #include "map_management.h"
 #include "tile_management.h"
+#include "util.h"
 
 GSList *loaded_track = NULL;
 GtkWidget *window12;
-
+GtkWidget *dialog10;
 
 
 
@@ -42,6 +46,9 @@ load_gpx_file_into_list(char *file);
 
 GSList *
 parse_nodes(xmlNode *node);
+
+void *
+fetch_track_thread(void *ptr);
 
 
 
@@ -162,7 +169,7 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	
 	
 	
-	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")), 0);	
+	
 	
 	
 	bbox = get_track_bbox(loaded_track);
@@ -331,6 +338,32 @@ load_gpx_file_into_list(char *file)
 	return list;
 }
 
+GSList *
+load_gpx_string_into_list(char *gpx_string)
+{
+	GSList *list = NULL;
+	xmlDoc *doc = NULL;
+	xmlNode *root_element = NULL;
+	
+	if(!gpx_string) return NULL;
+	
+	LIBXML_TEST_VERSION
+	
+	doc = xmlReadMemory(gpx_string, strlen(gpx_string), "noname.xml", NULL, 0);
+	
+	if (doc == NULL) {
+		fprintf(stderr, "Failed to parse document\n");
+	}
+	
+	root_element = xmlDocGetRootElement(doc);
+	list = parse_nodes(root_element);
+
+	xmlFreeDoc(doc);	
+	xmlCleanupParser();
+	
+	return list;
+}
+
 
 GSList *
 parse_nodes(xmlNode *node)
@@ -365,4 +398,134 @@ parse_nodes(xmlNode *node)
 	}
 	
 	return list;
+}
+
+
+void
+fetch_track(GtkWidget *widget, int service, char *start, char *end)
+{
+	char *url;
+	
+	dialog10 = widget;
+	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
+	
+	url = g_strdup_printf("www.tangogps.org/friends/navtrack.php?service=%d&start=%s&end=%s",service,start,end);
+	
+	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
+		g_warning("### can't create route thread\n");
+
+}
+
+
+void *
+fetch_track_thread(void *ptr)
+{
+	postreply_t *reply = NULL;
+	char *url;
+	GtkWidget *range, *drawingarea;
+	int track_zoom, width, height;
+	bbox_t bbox;
+	
+	drawingarea = lookup_widget(window1, "drawingarea1");
+	width  = drawingarea->allocation.width;
+	height = drawingarea->allocation.height;
+	
+	url = ptr;
+	
+	printf("URL ROUTE %s \n", url);
+	
+	reply = mycurl__do_http_get(url, NULL); 
+
+	printf("HTTP-GET: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
+
+	loaded_track = load_gpx_string_into_list(reply->data);
+	
+	if(loaded_track)
+	{
+		FILE *fp = NULL;
+		time_t time_epoch_sec;
+		struct tm  *tm_struct;
+		gchar buffer[256];
+		gchar *filename = NULL;
+		
+		
+		time_epoch_sec = time(NULL);
+		tm_struct = localtime(&time_epoch_sec);
+		strftime(buffer, sizeof(buffer), "nav%Y%m%d_%H%M%S.gpx", tm_struct);
+		
+		filename = g_strconcat(global_track_dir, buffer,NULL);
+	
+		fp = fopen(filename,"w");
+		if(!fp)
+		{
+			printf("oops: %s \n",strerror(errno));
+			perror("navtrack open failed: ");
+		}
+		else
+		{
+			fprintf(fp,"%s", reply->data);
+			fclose(fp);			
+		}
+		
+		g_free(filename);
+		
+		
+		bbox = get_track_bbox(loaded_track);
+		
+		track_zoom = get_zoom_covering(width, height, bbox.lat1, bbox.lon1, bbox.lat2, bbox.lon2);
+		track_zoom = (track_zoom > 15) ? 15 : track_zoom;
+	
+		gdk_threads_enter();
+		{
+			
+			if(loaded_track)
+				set_mapcenter(rad2deg((bbox.lat1+bbox.lat2)/2), rad2deg((bbox.lon1+bbox.lon2)/2), track_zoom);
+		
+			paint_loaded_track();
+			gtk_widget_hide(dialog10);
+			
+			
+			
+			range = lookup_widget(window1, "vscale1");
+			gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
+		}
+		gdk_threads_leave();
+	}
+	else
+	{
+		const char *err_msg;
+		
+		
+		
+		if(reply->status_code == 200)
+			err_msg = g_strdup("<span color='#aa0000'><b>Oops! No Route found</b></span>\nTry with another Start/End");
+		
+		
+		else if(reply->status_code == 203)
+			err_msg = g_strdup(reply->data);
+		
+		
+		else if (reply->status_code)
+			err_msg = g_strdup("<span color='#aa0000'><b>Duh! A Server Error</b></span>\nMaybe try later again...");
+		
+		
+		else
+			err_msg = g_strdup("<span color='#aa0000'><b>Oh! A Network Error</b></span>\nCheck the internet!");
+		
+		gdk_threads_enter();
+		{
+			GtkWidget *widget;
+
+			widget = lookup_widget(dialog10, "label190");
+			gtk_label_set_label(GTK_LABEL(widget), err_msg);
+			
+			widget = lookup_widget(dialog10, "okbutton11");
+			gtk_widget_set_sensitive(widget, TRUE);			
+		}
+		gdk_threads_leave();
+	
+	}
+	
+	
+	return NULL;
 }

@@ -36,10 +36,14 @@ static int wtfcounter=0;
 
 static int friendfinder_timer = 0;
 static gboolean distance_mode = FALSE;
+static gboolean pickpoint_mode = FALSE;
+static int pickpoint;
 static int msg_timer = 0;
 static gboolean msg_pane_visible=FALSE;
 static gboolean maximized = FALSE;
 
+
+GtkWidget *dialog10 = NULL;
 
 
 static int local_x = 0;
@@ -52,6 +56,7 @@ static	GdkPixmap *pixmap_photo = NULL;
 static	GdkPixmap *pixmap_photo_big = NULL;
 
 void do_distance();
+void do_pickpoint();
 
 void
 set_cursor(int type)
@@ -330,7 +335,8 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 			}
 			
 			
-			if (!friend_found && !photo_found && !poi_found && !distance_mode)
+			if (!friend_found && !photo_found && !poi_found && 
+				!distance_mode && !pickpoint_mode)
 			{	
 	
 				gtk_widget_show(menu1);
@@ -342,6 +348,8 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 			
 			if(distance_mode)
 				do_distance();
+			else if (pickpoint_mode)
+				do_pickpoint();
 			else
 			{
 				if (friend_found)
@@ -515,17 +523,9 @@ on_drawingarea1_expose_event           (GtkWidget       *widget,
 void
 on_button1_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
-{
-	GtkWidget *notebook;
-	
-	printf("button1 clicked\n");
-	notebook = lookup_widget(GTK_WIDGET(button), "notebook1");
-	
+{	
 	if(!maximized)
-	{
-		
-			
-		gtk_notebook_set_show_tabs(GTK_NOTEBOOK(notebook), FALSE);
+	{		
 		gtk_window_fullscreen(GTK_WINDOW(window1));
 		fill_tiles_pixel(global_x, global_y, global_zoom);
 
@@ -534,13 +534,9 @@ on_button1_clicked                     (GtkButton       *button,
 	else
 	{
 		gtk_window_unfullscreen(GTK_WINDOW(window1));
-		gtk_notebook_set_show_tabs(GTK_NOTEBOOK(notebook), TRUE);
-		
-		
 
 		maximized = FALSE;
 	}
-	
 }
 
 void
@@ -1099,13 +1095,14 @@ on_button10_clicked                    (GtkButton       *button,
 {
 	GtkWidget	*entry_command;
 	const gchar	*command;
+	int r;
 	
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	entry_command = lookup_widget(window1, "entry6");
 	command = gtk_entry_get_text(GTK_ENTRY(entry_command));
 	printf("cmd: %s\n",command);
-	system(command);
+	r = system(command);
 	
 }
 
@@ -1742,13 +1739,14 @@ on_button16_clicked                    (GtkButton       *button,
 {
 	GtkWidget	*entry_command;
 	const gchar	*command;
+	int unused;
 	
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	entry_command = lookup_widget(window1, "entry10");
 	command = gtk_entry_get_text(GTK_ENTRY(entry_command));
 	printf("cmd: %s\n",command);
-	system(command);
+	unused = system(command);
 }
 
 void
@@ -1757,13 +1755,14 @@ on_button17_clicked                    (GtkButton       *button,
 {
 	GtkWidget	*entry_command;
 	const gchar	*command;
+	int unused;
 	
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	entry_command = lookup_widget(window1, "entry11");
 	command = gtk_entry_get_text(GTK_ENTRY(entry_command));
 	printf("cmd: %s\n",command);
-	system(command);
+	unused = system(command);
 }
 
 void
@@ -3042,20 +3041,21 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
                                         gpointer         user_data)
 {
 	if (event->keyval == GDK_Page_Up || event->keyval == GDK_KP_Up || event->keyval == 'i')
-	{
-		printf("up/dn key pressed\n");	
 		on_button4_clicked(NULL, NULL);
-	}
 	else if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK && event->keyval == 'p')
 		geo_photos_open_dialog_photo_correlate();
 	else if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK && event->keyval == 't')
 		tracks_open_tracks_dialog();
 	else if(event->keyval == GDK_Page_Down || event->keyval == 'o')
 		on_button5_clicked(NULL, NULL);
+	else if(event->keyval == 'm')
+		on_button76_clicked(NULL, NULL);
 	else if(event->keyval == GDK_space || event->keyval == GDK_F11)
 		on_button1_clicked(GTK_BUTTON(window1), NULL);
 	else if(event->keyval == GDK_a)
 		on_button3_clicked(GTK_BUTTON(window1), NULL);
+	else if(event->keyval == GDK_r)
+		on_item23_button_release_event(NULL, NULL, NULL);
 	else if(event->keyval == GDK_1)
 	{
 		GtkWidget *widget;
@@ -3430,7 +3430,7 @@ on_entry21_changed                     (GtkEditable     *editable,
 	widget = lookup_widget(GTK_WIDGET(editable), "entry21");
 	txt3 = gtk_entry_get_text(GTK_ENTRY(widget));
 
-	printf("strlen: %d \n", strlen(txt1));
+	printf("strlen: %d \n", (int)strlen(txt1));
 	
 	widget = lookup_widget(GTK_WIDGET(editable), "okbutton1");
 	
@@ -3527,7 +3527,7 @@ on_entry26_changed                     (GtkEditable     *editable,
 	widget = lookup_widget(GTK_WIDGET(editable), "entry26");
 	txt3 = gtk_entry_get_text(GTK_ENTRY(widget));
 
-	printf("strlen: %d \n", strlen(txt1));
+	printf("strlen: %d \n", (int)strlen(txt1));
 	
 	widget = lookup_widget(GTK_WIDGET(editable), "okbutton7");
 	
@@ -3999,19 +3999,296 @@ on_eventbox5_button_release_event      (GtkWidget       *widget,
 	printf("* %s()\n",__PRETTY_FUNCTION__);
 	if(global_new_msg) 
 	{
-		GtkWidget *widget, *notebook;
-		notebook = lookup_widget(window1, "notebook1");
-		gtk_notebook_set_current_page(GTK_NOTEBOOK(notebook), FRIENDS_PAGE);
-		global_new_msg = FALSE;
+		GtkWidget *widget;
+		
+		if(!global_infopane_visible)
+		{
+			widget = lookup_widget(window1, "button76");
+			gtk_button_clicked(GTK_BUTTON(widget));
+		}
+		
+		gtk_widget_hide(global_infopane_current->data);
+	
+		gtk_widget_show(g_list_nth_data(global_infopane_widgets, FRIENDS_PAGE));
+		global_infopane_current = g_list_nth(global_infopane_widgets, FRIENDS_PAGE);
+		
 		widget = lookup_widget(window1, "button35");
+		
 		if(!msg_pane_visible)
 			gtk_button_clicked(GTK_BUTTON(widget));
-		if(maximized)
-		{
-			gtk_window_unfullscreen(GTK_WINDOW(window1));
-			gtk_notebook_set_show_tabs(GTK_NOTEBOOK(notebook), TRUE);
-		}
-
+		
+		global_new_msg = FALSE;
 	}
 	return FALSE;
+}
+
+gboolean
+on_item22_button_release_event         (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data)
+{
+
+	return FALSE;
+}
+
+
+gboolean
+on_item23_button_release_event         (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data)
+{
+	GtkWidget *label, *button, *entry, *cbox;
+	
+	if (!dialog10)
+		dialog10 = create_dialog10();	
+
+	gtk_widget_show(dialog10);
+	
+	label = lookup_widget(dialog10, "label190");
+	gtk_label_set_label(GTK_LABEL(label),"");
+
+	entry = lookup_widget(dialog10, "entry31");
+	gtk_entry_set_text(GTK_ENTRY(entry),"");
+	entry = lookup_widget(dialog10, "entry32");
+	gtk_entry_set_text(GTK_ENTRY(entry),"");	
+	
+	button = lookup_widget(dialog10, "okbutton11");
+	gtk_widget_set_sensitive(button, TRUE);
+	
+	cbox = lookup_widget(GTK_WIDGET(button), "combobox8");
+	gtk_combo_box_set_active(GTK_COMBO_BOX(cbox), 0);	
+	
+	if (gpsdata && gpsdata->fix.latitude !=0)
+	{
+		button = lookup_widget(dialog10, "button61");
+		gtk_widget_set_sensitive(button, TRUE);
+	}
+
+	return FALSE;
+}
+
+
+void
+on_button59_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+	
+	widget = lookup_widget(GTK_WIDGET(button), "dialog10");
+	
+	gtk_widget_hide(widget);
+	
+	pickpoint_mode = TRUE;
+	pickpoint = 1;
+}
+
+
+void
+on_button60_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{		
+	gtk_widget_hide(dialog10);
+	
+	pickpoint_mode = TRUE;
+	pickpoint = 2;
+}
+
+
+void
+on_button61_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget = NULL;
+	
+	widget = lookup_widget(dialog10, "entry31");
+	
+	gtk_entry_set_text(GTK_ENTRY(widget), 
+		g_strdup_printf("%f,%f",gpsdata->fix.latitude,gpsdata->fix.longitude));
+}
+
+
+void
+on_cancelbutton10_clicked              (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+	
+	widget = lookup_widget(GTK_WIDGET(button), "dialog10");
+	gtk_widget_hide(widget);
+}
+
+
+void
+on_okbutton11_clicked                  (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+	char *start=NULL, *end=NULL;
+	int service;
+	
+	gtk_widget_set_sensitive(GTK_WIDGET(button),FALSE);
+	
+	widget = lookup_widget(GTK_WIDGET(button), "label190");
+	
+	gtk_label_set_label(GTK_LABEL(widget),"<b><i>Connecting...</i></b>");
+	
+	widget = lookup_widget(GTK_WIDGET(button), "entry31");
+	start = g_strdup( gtk_entry_get_text(GTK_ENTRY(widget)) );
+	
+	widget = lookup_widget(GTK_WIDGET(button), "entry32");
+	end   = g_strdup( gtk_entry_get_text(GTK_ENTRY(widget)) );
+	
+	widget = lookup_widget(GTK_WIDGET(button), "combobox8");
+	service = gtk_combo_box_get_active(GTK_COMBO_BOX(widget));
+	
+	fetch_track(dialog10, service, start, end);
+}
+
+void
+do_pickpoint()
+{
+	GtkWidget *widget = NULL;
+	float lat=0, lon=0;
+	printf("%s():\n",__PRETTY_FUNCTION__);
+	
+	
+	
+	lat = rad2deg( pixel2lat(global_zoom, global_y+mouse_y) );
+	lon = rad2deg( pixel2lon(global_zoom, global_x+mouse_x) );
+	
+	if (pickpoint == 1)
+		widget = lookup_widget(dialog10, "entry31");
+	if (pickpoint == 2)
+		widget = lookup_widget(dialog10, "entry32");
+	
+	gtk_entry_set_text(GTK_ENTRY(widget), g_strdup_printf("%f,%f",lat,lon));
+	
+	if (pickpoint == 2)
+		gtk_widget_grab_focus(widget);
+	
+	gtk_widget_show(dialog10);
+
+	pickpoint_mode = FALSE;
+}
+
+gboolean
+on_dialog10_delete_event               (GtkWidget       *widget,
+                                        GdkEvent        *event,
+                                        gpointer         user_data)
+{
+	
+	gtk_widget_hide_on_delete(widget);
+	return TRUE;
+}
+
+void
+on_entry32_activate                    (GtkEntry        *entry,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+	
+	printf("ACTIVATED\n");
+	
+	widget = lookup_widget(dialog10, "okbutton11");
+	gtk_button_clicked(GTK_BUTTON(widget));
+}
+
+void
+on_combobox8_changed                   (GtkComboBox     *combobox,
+                                        gpointer         user_data)
+{
+	
+	
+	
+}
+
+
+void
+on_button76_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	
+
+	GtkWidget *widget, *widget1, *draw_widget, *toolbar;
+
+	widget  = lookup_widget(window1, "vbox53");  
+	widget1 = lookup_widget(window1, "hbox52");
+
+	if(!global_infopane_visible)
+	{
+		if(window1->allocation.width <= 480)
+		{
+			gtk_widget_hide(widget1);
+			gtk_widget_set_size_request(widget, window1->allocation.width, -1);
+		}
+		else
+			gtk_widget_set_size_request(widget, 360, -1);
+		
+		gtk_widget_show(widget);
+		
+		if(!global_landscape) {
+			toolbar = lookup_widget(window1, "toolbar1");
+			gtk_widget_hide(toolbar);
+		}
+		
+		if(!global_infopane_current) {
+			gtk_widget_show((GtkWidget *) global_infopane_widgets->data);
+			global_infopane_current = global_infopane_widgets;
+		}
+
+		global_infopane_visible = TRUE;
+	}
+	else {
+		draw_widget = lookup_widget(window1, "drawingarea1");
+		
+		gtk_widget_hide(widget);
+		gtk_widget_show(widget1);
+		gtk_widget_grab_focus(draw_widget);
+
+		if(!global_landscape) {
+			toolbar = lookup_widget(window1, "toolbar1");
+			gtk_widget_show(toolbar);
+		}
+		
+		global_infopane_visible = FALSE;		
+	}
+}
+
+
+void
+on_button69_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+	gtk_widget_hide(global_infopane_current->data);
+	
+	if(global_infopane_current->prev) {
+		gtk_widget_show(global_infopane_current->prev->data);
+		global_infopane_current = global_infopane_current->prev;
+	}
+	else {
+		gtk_widget_show(g_list_last(global_infopane_widgets)->data);
+		global_infopane_current = g_list_last(global_infopane_widgets);
+	}
+
+}
+
+
+
+
+void
+on_button70_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+	gtk_widget_hide(global_infopane_current->data);
+	
+	if(global_infopane_current->next) {
+		gtk_widget_show(global_infopane_current->next->data);
+		global_infopane_current = global_infopane_current->next;
+	}
+	else {
+		gtk_widget_show(global_infopane_widgets->data);
+		global_infopane_current = global_infopane_widgets;
+	}
+		
 }

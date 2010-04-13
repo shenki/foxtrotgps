@@ -20,6 +20,7 @@
 #include <sqlite3.h>
 #include <stdlib.h>
 #include <libexif/exif-data.h>
+
 #include <time.h>
 
 #define PHOTO_DB "geophoto.db"
@@ -522,7 +523,7 @@ geo_photo_dialog_image_data_next(GtkWidget *widget, gpointer user_data, geo_phot
 	GError *err = NULL;
 	int height, img_width;
 	gboolean fullsize = FALSE;
-	char *datetime;
+	const char *datetime;
 	ExifData *ed;
 	
 	image = lookup_widget(widget, "image5");
@@ -799,6 +800,7 @@ prepare_perl()
 {
 char *command;
 FILE *fp;
+int unused;
 
 {
 	printf("* %s\n", __PRETTY_FUNCTION__);
@@ -1131,6 +1133,6 @@ if (fp==0)
 fprintf(fp, "%s", command);
 fclose(fp);
 
-system ("chmod 700 /tmp/tangogps_geocode.pl");
+unused = system ("chmod 700 /tmp/tangogps_geocode.pl");
 
 }

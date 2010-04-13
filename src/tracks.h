@@ -9,3 +9,6 @@ gboolean
 tracks_on_file_button_release_event      (	GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);
+
+void
+fetch_track(GtkWidget *widget, int service, char *start, char *end);

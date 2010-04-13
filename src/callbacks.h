@@ -796,3 +796,66 @@ gboolean
 on_eventbox5_button_release_event      (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);
+
+gboolean
+on_item22_button_release_event         (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data);
+
+gboolean
+on_item23_button_release_event         (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data);
+
+void
+on_button59_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button60_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button61_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_cancelbutton10_clicked              (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_okbutton11_clicked                  (GtkButton       *button,
+                                        gpointer         user_data);
+
+gboolean
+on_dialog10_delete_event               (GtkWidget       *widget,
+                                        GdkEvent        *event,
+                                        gpointer         user_data);
+
+void
+on_entry32_activate                    (GtkEntry        *entry,
+                                        gpointer         user_data);
+
+void
+on_combobox8_changed                   (GtkComboBox     *combobox,
+                                        gpointer         user_data);
+
+void
+on_button76_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button69_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button71_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button70_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_button76_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);

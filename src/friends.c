@@ -31,8 +31,6 @@ on_goto_friend_clicked(GtkButton *button, gpointer user_data);
 void
 on_msg_send_clicked(GtkButton *button, gpointer user_data);
 
-gboolean
-send_message(gpointer user_data);
 
 void *
 thread_send_message(void *ptr);
@@ -152,7 +150,8 @@ update_position_thread(void *ptr)
 	
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-
+gdk_threads_enter();
+	
 	label_msg = (GtkLabel *)lookup_widget(window1, "label51");
 
 	
@@ -193,6 +192,8 @@ update_position_thread(void *ptr)
 	e = gtk_entry_get_text(email);
 	m = gtk_entry_get_text(msg);
 
+gdk_threads_leave();
+	
 	
 	if (global_myposition.lat && global_myposition.lon)
 	{
@@ -346,7 +347,7 @@ update_position_thread(void *ptr)
 	
 	curl_easy_cleanup(curl_handle);
 	
-	printf("REPLY: %s - response: %d\n",chunk.memory, (int)response_code);
+	
 	
 	
 	
@@ -386,7 +387,7 @@ update_position_thread(void *ptr)
 			{
 				friend->type = atoi(g_strdup(array[0]));
 				friend->nick  = g_strdup(array[1]);
-				friend->lat = atof(g_strdup(array[2]));printf("##%f\n",friend->lat);
+				friend->lat = atof(g_strdup(array[2]));
 				friend->lon = atof(g_strdup(array[3]));
 				friend->head = atoi(g_strdup(array[4]));
 				friend->lastseen = g_strdup(array[5]);
@@ -919,11 +920,9 @@ process_msg_replydata(postreply_t *postreply)
 			
 			if(atoi(arr[6]) > 0)
 			{
-				GtkWidget *widget;
-				widget = lookup_widget(window1, "notebook1");
+				
 				db_ts_last_request_friends = g_strdup(arr[2]);
-				if (gtk_notebook_get_current_page(GTK_NOTEBOOK(widget)) != FRIENDS_PAGE)
-					global_new_msg = TRUE;
+				global_new_msg = TRUE;
 			}
 			if(arr[7])
 				printf("POSTDATA:\n %s\n", arr[7]); 
@@ -934,7 +933,7 @@ process_msg_replydata(postreply_t *postreply)
 		while (arr0[i] && strlen(arr0[i]) )
 		{
 
-			printf("strlen arr: %d\n", strlen(arr0[i]));
+			printf("strlen arr: %d\n", (int)strlen(arr0[i]));
 			msg = g_new0(msg_t, 1);
 			
 			
@@ -1000,10 +999,12 @@ create_msg_box(msg_t *m)
 	
 	
 	hbox = gtk_hbox_new (FALSE, 2);
+	gtk_widget_set_size_request(hbox, 340, -1);
 	gtk_widget_show (hbox);
 	
 	label = gtk_label_new ("");
-	
+	gtk_widget_set_size_request(label, 270, -1);
+
 	gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (label), 0, 0);
@@ -1054,7 +1055,7 @@ on_goto_friend2_clicked(GtkButton *button, gpointer user_data)
 	printf("btn42 clicked: %s\n", m->from);
 	
 	set_current_wp(deg2rad(m->lat), deg2rad(m->lon));
-	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")),MAP_PAGE);
+	
 	set_mapcenter(m->lat,m->lon, global_zoom);
 
 }

@@ -57,7 +57,7 @@ map_redraw(void *p)
 	
 	if (number_threads > 1)
 	{
-		printf("map_redraw: SHOULD NEVER COME HERE - still one thread running\n");
+		printf("map_redraw: hmm, in the last 500ms another DL started - still one thread running\n");
 		return TRUE;
 	}
 	else if (number_threads == 0)
@@ -83,7 +83,7 @@ map_redraw(void *p)
 size_t 
 cb_write_func(void *ptr, size_t size, size_t nmemb, FILE *stream)
 {
-	printf("%s() %i bytes %i\n", __PRETTY_FUNCTION__,size, nmemb );
+	
 	
 	return 
 	fwrite(ptr, size, nmemb, stream); 
@@ -103,7 +103,7 @@ cb_progress_func(GtkWidget *Bar,
                      double ultotal,
                      double ulnow)
 {
-  printf("progress: %f / %f (%.0f%%)\n", d, t, d*100.0/t);
+  
 
   return 0;
 

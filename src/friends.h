@@ -50,3 +50,6 @@ register_nick_thread(void *ptr);
 
 GtkWidget*
 create_friend_box(friend_t *f);
+
+gboolean
+send_message(gpointer user_data);

@@ -1,24 +1,25 @@
-# tangogps french translation 
-# Copyright (C) 2008
-# This file is distributed under the same license as the tangogps package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Copyright (C) 2009
+# This file is distributed under the same license as the PACKAGE package.
 #
+# kayle.sk <webmaster@kayle.sk>, 2009.
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.9.3\n"
+"Project-Id-Version: \n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2009-11-22 13:32+0100\n"
-"PO-Revision-Date: 2008-10-19 21:32+0100\n"
-"Last-Translator: Steve Petruzzello <dlist@bluewin.ch>\n"
-"Language-Team: french <debian-l10n-french@lists.debian.org>\n"
+"PO-Revision-Date: 2009-11-20 21:46+0100\n"
+"Last-Translator: kayle.sk <webmaster@kayle.sk>\n"
+"Language-Team: Slovenský <>\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Lokalize 1.0\n"
+"Plural-Forms: nplurals=3; plural=(n==1) ? 0 : (n>=2 && n<=4) ? 1 : 2;\n"
 
 #: src/support.c:90 src/support.c:114
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Fichier %s des images introuvable"
+msgstr "Nemôžem nájsť súbor: %s"
 
 #: src/interface.c:312
 msgid "tangoGPS"
@@ -26,67 +27,63 @@ msgstr "tangoGPS"
 
 #: src/interface.c:421
 msgid "Fullscreen (F11 or Space)"
-msgstr ""
+msgstr "Celá obr. (F11 alebo Medzerník)"
 
 #: src/interface.c:446
 #, fuzzy
 msgid "Show Info"
-msgstr "Info GPS"
+msgstr "GPS informácie"
 
 #: src/interface.c:470
 msgid "Zoom in"
-msgstr ""
+msgstr "Priblížiť"
 
 #: src/interface.c:486
 msgid "Zoom out"
-msgstr ""
+msgstr "Oddialiť"
 
 #: src/interface.c:511
-#, fuzzy
 msgid "Autocenter On"
-msgstr "autocentrer"
+msgstr "Autocentrovanie zapnuté"
 
 #: src/interface.c:536
 msgid "Next map repo"
-msgstr ""
+msgstr "Nasledujúci mapový zdroj"
 
 #: src/interface.c:552
 msgid "Previous map repo"
-msgstr ""
+msgstr "Predchádzajúci mapový zdroj"
 
 #: src/interface.c:654
 msgid "Speed"
-msgstr "Vitesse :"
+msgstr "Rýchlosť"
 
 #: src/interface.c:660
 msgid "   <span font_desc='40'> -- </span>"
-msgstr ""
+msgstr "   <span font_desc='40'> -- </span>"
 
 #: src/interface.c:678
-#, fuzzy
 msgid "Trip "
-msgstr "Trajet"
+msgstr "Výlet "
 
 #: src/interface.c:686
 msgid "Average "
-msgstr ""
+msgstr "Priemer "
 
 #: src/interface.c:694 src/interface.c:702 src/interface.c:724
 #: src/interface.c:732 src/interface.c:812 src/interface.c:820
 #: src/interface.c:828 src/interface.c:836 src/interface.c:844
 #: src/interface.c:4868
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: src/interface.c:710
-#, fuzzy
 msgid "Max "
-msgstr "Carte DL"
+msgstr "Max "
 
 #: src/interface.c:717
-#, fuzzy
 msgid "Time "
-msgstr "Durée : "
+msgstr "Čas "
 
 #: src/interface.c:745
 msgid "      Stop       "
@@ -94,41 +91,36 @@ msgstr "      Stop       "
 
 #: src/interface.c:750
 msgid "     Reset     "
-msgstr " Mettre à zéro "
+msgstr "     Reset     "
 
 #: src/interface.c:756
 #, fuzzy
 msgid "<big><b>Trip Meter</b></big>"
-msgstr "<b>Calculateur de voyage</b>"
+msgstr "<b>Informácia o výlete</b>"
 
 #: src/interface.c:777
-#, fuzzy
 msgid "Altitude"
-msgstr "Altitude :"
+msgstr "Výška"
 
 #: src/interface.c:784
-#, fuzzy
 msgid "Heading"
-msgstr "Direction :"
+msgstr "Azimut"
 
 #: src/interface.c:791
-#, fuzzy
 msgid "Lat - Lon"
-msgstr "Lat, Lon :"
+msgstr "z. šírka - z. dĺžka"
 
 #: src/interface.c:798
-#, fuzzy
 msgid "GPS Time"
-msgstr "Heure GPS :"
+msgstr "GPS čas"
 
 #: src/interface.c:805
-#, fuzzy
 msgid "Satellites  "
-msgstr "Satellites : "
+msgstr "Satelity"
 
 #: src/interface.c:852
 msgid "<b>GPS Data</b>"
-msgstr "<b>Données GPS</b>"
+msgstr "<b>GPS dáta</b>"
 
 #: src/interface.c:871
 msgid "<big><b>Friends</b></big>"
@@ -136,16 +128,15 @@ msgstr ""
 
 #: src/interface.c:878
 msgid "Show Messages"
-msgstr ""
+msgstr "Zobraziť správy"
 
 #: src/interface.c:889
 msgid "<i>No Messages</i>"
-msgstr ""
+msgstr "<i>Žiadne správy</i>"
 
 #: src/interface.c:895
-#, fuzzy
 msgid "---"
-msgstr "--"
+msgstr "---"
 
 #: src/interface.c:918
 msgid ""
@@ -153,8 +144,9 @@ msgid ""
 "and receive your friends positions,\n"
 "shown on the map."
 msgstr ""
-"Mettre vos positions à jour vers un serveur\n"
-"et recevoir la position de vos amis sur la carte."
+"Aktualizuje Vašu pozíciu na serveri\n"
+"a načíta pozície Vašich priateľov\n"
+"zobrazených na mape."
 
 #: src/interface.c:922
 msgid ""
@@ -166,11 +158,11 @@ msgstr ""
 
 #: src/interface.c:933
 msgid "once"
-msgstr "une fois"
+msgstr "raz"
 
 #: src/interface.c:941
 msgid "every"
-msgstr "toujours "
+msgstr "každých"
 
 #: src/interface.c:953
 msgid "15"
@@ -178,42 +170,43 @@ msgstr "15"
 
 #: src/interface.c:956
 msgid "minutes"
-msgstr "minutes"
+msgstr "minút"
 
 #: src/interface.c:969
 msgid "     Update Me!     "
-msgstr "Mettez-moi à jour !"
+msgstr "   Aktualizovať!    "
 
 #: src/interface.c:975
 msgid "     Stop     "
-msgstr "Stop"
+msgstr "     Stop     "
 
 #: src/interface.c:986
 msgid " ."
-msgstr ""
+msgstr " ."
 
 #: src/interface.c:998
 msgid "<b>  Position Update  </b>"
-msgstr "<b> Mise à jour de la position </b>"
+msgstr "<b> Aktualizácia pozície </b>"
 
 #: src/interface.c:1019
 msgid ""
 "Decide whom you see and \n"
 "who can see you:"
 msgstr ""
+"Rozhodnite sa koho chcete vidieť \n"
+"a kto môže vidieť Vás:"
 
 #: src/interface.c:1025
 msgid "fun mode"
-msgstr ""
+msgstr "zábavný mód"
 
 #: src/interface.c:1032
-#, fuzzy
 msgid "friend mode"
-msgstr "Info ami"
+msgstr ""
 
 #: src/interface.c:1039
 msgid "private mode"
-msgstr ""
+msgstr "súkromný mód"
 
 #: src/interface.c:1046
 msgid "<i>What are you up to?</i>"
@@ -224,60 +217,58 @@ msgid "just idle..."
 msgstr ""
 
 #: src/interface.c:1060
-#, fuzzy
 msgid " <b>Update Mode</b> "
-msgstr "<b>Mise à jour de ma position</b>"
+msgstr " <b>Mód obnovovania</b> "
 
 #: src/interface.c:1083
 msgid "Permission to see me for:"
-msgstr "Autorisation de me voir pour :"
+msgstr "Oprávnenie vidieť ma pre:"
 
 #: src/interface.c:1089
 msgid "public (you remain anonymous)"
-msgstr "le public (vous restez anonyme)"
+msgstr "verejné (ostanete anonymný)"
 
 #: src/interface.c:1094 src/interface.c:1138
 msgid "registered nicks"
-msgstr "mes surnoms enregistrés"
+msgstr "registrované prezývky"
 
 #: src/interface.c:1099 src/interface.c:1143
 msgid "my friends"
-msgstr "mes amis"
+msgstr "moji priatelia"
 
 #: src/interface.c:1104
 msgid " <b>Updating My Position</b> "
-msgstr "<b>Mise à jour de ma position</b>"
+msgstr " <b>Aktualizácia mojej pozície</b> "
 
 #: src/interface.c:1127
 msgid "Show me the positions from:"
-msgstr "Montrer les positions :"
+msgstr "Ukáž mi pozíciu od:"
 
 #: src/interface.c:1133 src/interface.c:3498 src/interface.c:3931
 msgid "public"
-msgstr "publique"
+msgstr "verejné"
 
 #: src/interface.c:1148
 msgid " <b>Getting Other's Positions</b> "
-msgstr " <b>Obtenir la position des autres</b> "
+msgstr " <b>Získať polohu ostatných</b> "
 
 #: src/interface.c:1172
 msgid "Nickname "
-msgstr "Surnom"
+msgstr "Prezývka"
 
 #: src/interface.c:1179
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "Heslo"
 
 #: src/interface.c:1191
 msgid "foobar"
-msgstr "toto"
+msgstr ""
 
 #: src/interface.c:1198
 msgid "JohnDoe"
-msgstr "MichelDupont"
+msgstr ""
 
 #: src/interface.c:1215
-#, fuzzy
 msgid ""
 "Choose any nickname you want to have. A password is only necessary if you "
 "have already registered your nick or you want to register it.\n"
@@ -289,19 +280,23 @@ msgid ""
 "Further info at:\n"
 "http://www.tangogps.org/friends"
 msgstr ""
-"Choisissez votre surnom.\n"
-"Un mot de passe n'est nécessaire que si\n"
-"vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
-"Plus d'info sur :\n"
-"http://www.tangogps.org/friends\n"
+"Zvolte si prezývku akú chcete. Heslo je potrebné iba v prípade, že máte "
+"prezývku registrovanú, alebo si ju chcete zaregistrovať.\n"
+"\n"
+"Pre zaregistrovanie prezývky stačí zadať email a kliknúť dole.\n"
+"Váš email za nezobrazí ani nebude zdielaný. Slúži len na pripomienku v "
+"prípade zabudnutia hesla.\n"
+"\n"
+"Viac informácií na:\n"
+"http://www.tangogps.org/friends"
 
 #: src/interface.c:1221
 msgid "EMail        "
-msgstr "Courriel "
+msgstr "EMail        "
 
 #: src/interface.c:1234
 msgid "     Register!     "
-msgstr "Enregistrez-vous "
+msgstr "   Registrovať!    "
 
 #: src/interface.c:1239
 msgid "   "
@@ -309,41 +304,39 @@ msgstr "   "
 
 #: src/interface.c:1244 src/interface.c:3276
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: src/interface.c:1252
 msgid "<b>  Me  </b>"
-msgstr "<b> Moi </b>"
+msgstr "<b>  Ja  </b>"
 
 #: src/interface.c:1271
 msgid ""
 "Here you can enable / disable logging of your tracks for later use, i.e. for "
 "extending OSM"
 msgstr ""
-"Activation et désactivation de la journalisation de vos parcours pour une "
-"utilisation ultérieure, par ex. avec OSM"
+"Tu môžete povoliť/zakázať záznam Vašej trasy pre neskoršie použitie napr.v "
+"projekte OSM"
 
 #: src/interface.c:1283
 msgid "            Start            "
-msgstr "Démarrer"
+msgstr "            Štart            "
 
 #: src/interface.c:1288
 msgid "           Split           "
-msgstr "Découper"
+msgstr "          Rozdeliť         "
 
 #: src/interface.c:1304
 msgid "      Configure...      "
-msgstr "Configurer"
+msgstr "     Konfigurovať...    "
 
 #: src/interface.c:1308 src/interface.c:2511 src/interface.c:4304
-#, fuzzy
 msgid " "
-msgstr "  "
+msgstr " "
 
 #: src/interface.c:1312
-#, fuzzy
 msgid "      Load...     "
-msgstr "Configurer"
+msgstr "    Nahrať...     "
 
 #: src/interface.c:1320
 msgid "<big><b>Tracks</b></big>"
@@ -359,58 +352,56 @@ msgid ""
 "<small><i>tangoGPS Version:\n"
 "Developer: Marcus Bauer</i></small>"
 msgstr ""
-"<i>Version de tangoGPS :\n"
-"Développeur : Marcus Bauer</i>"
+"<i>tangoGPS Version:\n"
+"Developer: Marcus Bauer</i>"
 
 #: src/interface.c:1367
 msgid ""
 "Activate or deactivate automatic\n"
 "download of missing tiles into cache"
 msgstr ""
-"Activation ou désactivation du téléchargement automatique\n"
-"des cartes dans le cache"
+"Aktivácia alebo deaktivácia automatického\n"
+"sťahovania chýbajúci mapových dlaždíc do cache"
 
 #: src/interface.c:1372
 msgid "Auto download map tiles"
-msgstr "Téléchargement automatique des cartes"
+msgstr "Automatické sťahovanie mapových dlaždíc"
 
 #: src/interface.c:1379
 msgid "<b>Auto Download</b>"
-msgstr "<b>Téléchargement automatique</b>"
+msgstr "<b>Automatické sťahovanie</b>"
 
 #: src/interface.c:1400
 msgid "Current Repository:"
-msgstr "Dépôt courant :"
+msgstr "Aktuálny zdroj:"
 
 #: src/interface.c:1420
-#, fuzzy
 msgid "      New...       "
-msgstr "Nouveau"
+msgstr "      Nový...      "
 
 #: src/interface.c:1424 src/interface.c:1659
 msgid "    "
 msgstr "    "
 
 #: src/interface.c:1429
-#, fuzzy
 msgid "      Edit...     "
-msgstr "Configurer"
+msgstr "    Upraviť...    "
 
 #: src/interface.c:1443 src/interface.c:2537 src/interface.c:4330
 msgid "xyz instead of zxy"
-msgstr ""
+msgstr "xyz namiesto zxy"
 
 #: src/interface.c:1449
 msgid "URI"
-msgstr "URI :"
+msgstr "URI"
 
 #: src/interface.c:1456
 msgid "Cache Dir"
-msgstr "Répertoire des cartes :"
+msgstr "Cache priečinok"
 
 #: src/interface.c:1478
 msgid "    Save Repository Configuration    "
-msgstr "Enregistrer la configuration du dépôt"
+msgstr "  Uložiť nastavenia mapového zdroja  "
 
 #: src/interface.c:1484
 msgid "     "
@@ -418,39 +409,39 @@ msgstr "     "
 
 #: src/interface.c:1489
 msgid "<b>Map Repositories</b>"
-msgstr "<b>Dépôts de cartes</b>"
+msgstr "<b>Mapové zdroje</b>"
 
 #: src/interface.c:1509
 msgid "<i>Speed and Distance:</i>"
-msgstr "<i>Vitesse et distance</i>"
+msgstr "<i>Rýchlosť a vzdialenosť:</i>"
 
 #: src/interface.c:1521
 msgid "metrical"
-msgstr "métrique"
+msgstr "metrické"
 
 #: src/interface.c:1528
 msgid "imperial"
-msgstr "impérial"
+msgstr "imperiálne"
 
 #: src/interface.c:1534
 msgid "nautical"
-msgstr "nautique"
+msgstr "námorné"
 
 #: src/interface.c:1540
 msgid "<i>Altitude:</i>"
-msgstr "<i>Altitude</i>"
+msgstr "<i>Výška:</i>"
 
 #: src/interface.c:1552
 msgid "meters"
-msgstr "mètres"
+msgstr "v metroch"
 
 #: src/interface.c:1559
 msgid "feet"
-msgstr "pieds"
+msgstr "v stopách"
 
 #: src/interface.c:1565
 msgid "<i>Lat &amp; Lon:</i>"
-msgstr "<i>Lat &amp; Lon</i>"
+msgstr "<i>Z. šírka &amp; Z. dĺžka</i>"
 
 #: src/interface.c:1577
 msgid "d.dd"
@@ -466,7 +457,7 @@ msgstr "d m's.s\""
 
 #: src/interface.c:1596
 msgid "<b>Units</b>"
-msgstr "<b>Unités</b>"
+msgstr "<b>Jednotky</b>"
 
 #: src/interface.c:1616
 msgid ""
@@ -474,15 +465,15 @@ msgid ""
 "Set GPSD Host IP\n"
 msgstr ""
 "\n"
-"IP de l'hôte gpsd\n"
+"IP adresa GPSD servera\n"
 
 #: src/interface.c:1626
 msgid " GPSD "
-msgstr "GPSD"
+msgstr " GPSD "
 
 #: src/interface.c:1630
 msgid "Host:"
-msgstr "Hôte :"
+msgstr "Server:"
 
 #: src/interface.c:1637
 msgid "127.0.0.1"
@@ -490,7 +481,7 @@ msgstr "127.0.0.1"
 
 #: src/interface.c:1640
 msgid " Port:"
-msgstr " Ports :"
+msgstr " Port:"
 
 #: src/interface.c:1647
 msgid "2947"
@@ -498,7 +489,7 @@ msgstr "2947"
 
 #: src/interface.c:1654
 msgid "     Change GPSD     "
-msgstr "Modifier GPSD"
+msgstr "     Zmeniť GPSD     "
 
 #: src/interface.c:1664
 msgid "<b>GPSD</b>"
@@ -510,8 +501,7 @@ msgid ""
 "Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
 msgstr ""
 "\n"
-"Démarrer gllin et gpsd (pour Openmoko Neo1973 et <i>non pas pour Freerunner</"
-"i>).\n"
+"Spustiť gllin a GPSD (Openmoko Neo1973 <i>nie Freerunner</i>).\n"
 
 #: src/interface.c:1698
 msgid "/home/root/gllin/gllin &"
@@ -519,7 +509,7 @@ msgstr "/home/root/gllin/gllin &"
 
 #: src/interface.c:1705
 msgid "     Start gllin and GPSD     "
-msgstr "Démarrer gllin et GPSD"
+msgstr "     Spustiť gllin a GPSD     "
 
 #: src/interface.c:1710 src/interface.c:5243
 msgid "  "
@@ -527,7 +517,7 @@ msgstr "  "
 
 #: src/interface.c:1715
 msgid "<b>gllin and gpsd</b>"
-msgstr "<b>gllin et gpsd</b>"
+msgstr "<b>gllin a GPSD</b>"
 
 #: src/interface.c:1723
 msgid ""
@@ -536,7 +526,8 @@ msgid ""
 "for development purposes"
 msgstr ""
 "\n"
-"La section suivante est seulement pour le développement."
+"Nasledujúca sekcia je \n"
+"pre účely vývoja"
 
 #: src/interface.c:1731
 msgid "/home/root/gprs.sh &"
@@ -544,7 +535,7 @@ msgstr "/home/root/gprs.sh &"
 
 #: src/interface.c:1733
 msgid "Start pppd/gprs"
-msgstr "Démarrer pppd/gprs"
+msgstr "Spustiť pppd/gprs"
 
 #: src/interface.c:1740
 msgid "/home/root/other.sh"
@@ -552,27 +543,27 @@ msgstr "/home/root/other.sh"
 
 #: src/interface.c:1742
 msgid "Other stuff"
-msgstr "Autres trucs"
+msgstr "Ostatné"
 
 #: src/interface.c:1750
 msgid "<b>no GPS found</b>"
-msgstr "<b>aucun GPS trouvé</b>"
+msgstr "<b>GPS nenájdené</b>"
 
 #: src/interface.c:2291
 msgid "this point"
-msgstr "Ce point"
+msgstr "tento bod"
 
 #: src/interface.c:2295
 msgid "show friends"
-msgstr "montrer les amis"
+msgstr "zobraziť priateľov"
 
 #: src/interface.c:2299
 msgid "show POIs"
-msgstr "montrer les PdI"
+msgstr "zobraziť POI"
 
 #: src/interface.c:2303
 msgid "show photos"
-msgstr "montrer les photos"
+msgstr "zobraziť fotky"
 
 #: src/interface.c:2307
 msgid "ways & routes"
@@ -589,54 +580,52 @@ msgstr ""
 #: src/interface.c:2321
 #, fuzzy
 msgid "set WP"
-msgstr "activer"
+msgstr "nastaviť"
 
 #: src/interface.c:2325
 #, fuzzy
 msgid "unset WP"
-msgstr "désactiver"
+msgstr "zrušiť"
 
 #: src/interface.c:2329
 msgid "POIs"
-msgstr "PdI"
+msgstr "POI"
 
 #: src/interface.c:2336
 msgid "add POI"
-msgstr "ajouter PdI"
+msgstr "pridať POI"
 
 #: src/interface.c:2340
-#, fuzzy
 msgid "select POIs"
-msgstr "Supprimer PdI ?"
+msgstr "vybrať POI"
 
 #: src/interface.c:2344
-#, fuzzy
 msgid "photos"
-msgstr "montrer les photos"
+msgstr "fotky"
 
 #: src/interface.c:2351
 msgid "geocode"
-msgstr ""
+msgstr "geokódovanie"
 
 #: src/interface.c:2355
 msgid "my position"
-msgstr "ma position"
+msgstr "moja pozícia"
 
 #: src/interface.c:2362
 msgid "set"
-msgstr "activer"
+msgstr "nastaviť"
 
 #: src/interface.c:2366
 msgid "unset"
-msgstr "désactiver"
+msgstr "zrušiť"
 
 #: src/interface.c:2370
 msgid "map download"
-msgstr "télécharger les cartes"
+msgstr "stiahnuť mapu"
 
 #: src/interface.c:2475
 msgid "New Repository"
-msgstr "Nouveau dépôt"
+msgstr "Nový zdroj"
 
 #: src/interface.c:2499 src/interface.c:4292
 msgid ""
@@ -644,29 +633,29 @@ msgid ""
 "\n"
 "http://www.tangogps.org/\n"
 msgstr ""
+"Viac informácií o zdrojoch môžete nájsť na stránke\n"
+"\n"
+"http://www.tangogps.org/\n"
 
 #: src/interface.c:2501
-#, fuzzy
 msgid "<b>Name for the new Repository</b>"
-msgstr "Nom du nouveau dépôt"
+msgstr "<b>Názov pre nový zdroj</b>"
 
 #: src/interface.c:2515 src/interface.c:4308
-#, fuzzy
 msgid "<b>URI</b>"
-msgstr "<b>-</b>"
+msgstr "<b>URI</b>"
 
 #: src/interface.c:2526 src/interface.c:4319
-#, fuzzy
 msgid "<b>Cache Dir</b>"
-msgstr "Répertoire des cartes :"
+msgstr "<b>Cache priečinok</b>"
 
 #: src/interface.c:2555
 msgid "All fields must be filled in"
-msgstr ""
+msgstr "Všetky polia musia byť vyplnené"
 
 #: src/interface.c:2620
 msgid "GPS Info"
-msgstr "Info GPS"
+msgstr "GPS informácie"
 
 #: src/interface.c:2639 src/interface.c:2957 src/interface.c:3769
 msgid "--"
@@ -677,90 +666,93 @@ msgid ""
 "Distance to\n"
 "next point"
 msgstr ""
+"Vzdialenosť k\n"
+"ďalšiemu bodu"
 
 #: src/interface.c:2654
-#, fuzzy
 msgid ""
 "Set point as\n"
 "my position"
-msgstr "ma position"
+msgstr ""
+"Nastaviť bod ako\n"
+"moju pozíciu"
 
 #: src/interface.c:2658 src/interface.c:3380 src/interface.c:3781
 msgid "Close"
-msgstr "Fermer"
+msgstr "Zavrieť"
 
 #: src/interface.c:2701
 msgid "unused"
-msgstr "inutilisé"
+msgstr "nepoužité"
 
 #: src/interface.c:2738
 msgid "Trackdir Config"
-msgstr "Configuration du Trackdir"
+msgstr "Nastavenie priečinka pre stopy"
 
 #: src/interface.c:2748
 msgid "Directory in which the tracks should be written:"
-msgstr "Répertoire contenant les parcours :"
+msgstr "Priečinok kam sa majú ukladať zaznamenané stopy:"
 
 #: src/interface.c:2814
 msgid "Map DL"
-msgstr "Carte DL"
+msgstr "Stiahnutie mapy"
 
 #: src/interface.c:2834
 msgid "Download maps of currently visible area:"
-msgstr "Télécharger les cartes de l'espace visible :"
+msgstr "Stiahne mapové dlaždice pre viditeľnú časť:"
 
 #: src/interface.c:2845
 msgid "+ 1 zoom level"
-msgstr "+ 1 niveau de zoom"
+msgstr "+1 priblíženie"
 
 #: src/interface.c:2851
 msgid "+ 2 zoom levels"
-msgstr "+ 2 niveau de zoom"
+msgstr "+2 priblíženie"
 
 #: src/interface.c:2857
 msgid "+ 3 zoom levels"
-msgstr "+ 3 niveau de zoom"
+msgstr "+3 priblíženie"
 
 #: src/interface.c:2863
 msgid "+ 4 zoom levels (~25MB)"
-msgstr "+ 4 niveau de zoom (~25Mb)"
+msgstr "+4 priblíženie (~25MB)"
 
 #: src/interface.c:2870
 msgid "+ 5 zoom levels (~100MB)"
-msgstr "+ 5 niveau de zoom (~100Mb)"
+msgstr "+5 priblíženie (~100MB)"
 
 #: src/interface.c:2876
 msgid "+ 6 zoom levels (~400MB)"
-msgstr "+ 6 niveau de zoom (~400Mb)"
+msgstr "+6 priblíženie (~400MB)"
 
 #: src/interface.c:2882
 msgid "<b> Map Download </b>"
-msgstr "<b> Téléchargement de la carte </b>"
+msgstr "<b> Stiahnutie mapy </b>"
 
 #: src/interface.c:2944
 msgid "Geo Photo"
-msgstr "Photo Geo"
+msgstr "Geo Fotky"
 
 #: src/interface.c:2976
 msgid "Big"
-msgstr ""
+msgstr "Veľké"
 
 #: src/interface.c:2980 src/friends.c:707
 msgid "Go To"
-msgstr "Aller à"
+msgstr "Ísť na"
 
 #: src/interface.c:3022 src/interface.c:3466
 msgid "Add POI"
-msgstr "Ajouter PdI"
+msgstr "Pridať POI"
 
 #: src/interface.c:3078
 msgid "unused cols"
-msgstr "cols inutilisées"
+msgstr ""
 
 #: src/interface.c:3098
 #, fuzzy
 msgid "unused window"
-msgstr "cols inutilisées"
+msgstr "nepoužité"
 
 #: src/interface.c:3108
 msgid "62"
@@ -776,71 +768,71 @@ msgstr ""
 
 #: src/interface.c:3150
 msgid "Show POIs"
-msgstr "Montrer PdI"
+msgstr "Zobraziť POI"
 
 #: src/interface.c:3159
 msgid "-- Show All --"
-msgstr "-- Tout montrer --"
+msgstr "-- Zobraziť všetko --"
 
 #: src/interface.c:3160 src/interface.c:3551 src/interface.c:3947
 msgid "Accomodation"
-msgstr "Hébergement"
+msgstr "Ubytovanie"
 
 #: src/interface.c:3161 src/interface.c:3552 src/interface.c:3948
 msgid "Businesses"
-msgstr "Boutiques"
+msgstr "Pracovné"
 
 #: src/interface.c:3162 src/interface.c:3553 src/interface.c:3949
 msgid "Car"
-msgstr "Voiture"
+msgstr "Autá"
 
 #: src/interface.c:3163 src/interface.c:3554 src/interface.c:3950
 msgid "Cultural"
-msgstr "Culturel"
+msgstr "Kultúra"
 
 #: src/interface.c:3164 src/interface.c:3555 src/interface.c:3951
 msgid "Medical"
-msgstr "Médical"
+msgstr "Zdravotníctvo"
 
 #: src/interface.c:3165 src/interface.c:3556
 msgid "Cafe / Pub / Nightlife"
-msgstr "Café / Pub / Club"
+msgstr "Cafe/Pub/Nočný klub"
 
 #: src/interface.c:3166 src/interface.c:3557 src/interface.c:3953
 msgid "Place of Worship"
-msgstr "Lieu de culte"
+msgstr ""
 
 #: src/interface.c:3167 src/interface.c:3558 src/interface.c:3954
 msgid "Public Transportation"
-msgstr "Transports publics"
+msgstr "Verejná doprava"
 
 #: src/interface.c:3168
 msgid "Restaurant"
-msgstr "Restaurant"
+msgstr "Reštaurácie"
 
 #: src/interface.c:3169 src/interface.c:3560 src/interface.c:3956
 msgid "Services"
-msgstr "Services"
+msgstr "Služby"
 
 #: src/interface.c:3170
 msgid "Sights / Leisure"
-msgstr "Visites et loisirs"
+msgstr "Pamiatky / Voľný čas"
 
 #: src/interface.c:3171 src/interface.c:3562 src/interface.c:3958
 msgid "Shopping"
-msgstr "Shopping"
+msgstr "Nakupovanie"
 
 #: src/interface.c:3172 src/interface.c:3563 src/interface.c:3959
 msgid "Sport"
-msgstr "Sport"
+msgstr "Šport"
 
 #: src/interface.c:3173 src/interface.c:3564
 msgid "My Personal Places"
-msgstr "Mes endroits personnels"
+msgstr "Moje osobné miesta"
 
 #: src/interface.c:3245
 msgid "POI"
-msgstr "PdI"
+msgstr "POI"
 
 #: src/interface.c:3257
 msgid "<b>-----</b>"
@@ -852,76 +844,75 @@ msgstr "<b>-</b>"
 
 #: src/interface.c:3314
 msgid "Go To "
-msgstr "Aller à"
+msgstr ""
 
 #: src/interface.c:3336
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Upraviť"
 
 #: src/interface.c:3358
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Zmazať"
 
 #: src/interface.c:3492 src/interface.c:3925
 msgid "personal"
-msgstr "personnel"
+msgstr "osobné"
 
 #: src/interface.c:3506
 msgid "Coordinates <b><i>clicked</i></b> on the map:"
-msgstr ""
+msgstr "Koordináty na ktoré sa <b><i>kliklo</b></i> na mape:"
 
 #: src/interface.c:3517 src/interface.c:3893
 msgid "Lat: "
-msgstr "Lat : "
+msgstr "Zem. šírka: "
 
 #: src/interface.c:3527 src/interface.c:3903
-#, fuzzy
 msgid " Lon: "
-msgstr "Lon : "
+msgstr " Zem. dĺžka: "
 
 #: src/interface.c:3537
 msgid "Use current GPS position instead"
-msgstr ""
+msgstr "Použiť aktuálnu GPS pozíciu"
 
 #: src/interface.c:3541 src/interface.c:3939
 msgid "Category:"
-msgstr "Catégorie :"
+msgstr "Kategória:"
 
 #: src/interface.c:3550 src/interface.c:3946
 msgid "- please choose -"
-msgstr "Veuillez choisir"
+msgstr "- prosím vyberte si -"
 
 #: src/interface.c:3559 src/interface.c:3955
 msgid "Restaurant & Food"
-msgstr "Restaurant et nourriture"
+msgstr "Reštaurácie & Jedlo"
 
 #: src/interface.c:3561 src/interface.c:3957
 msgid "Sights & Leisure"
-msgstr "Visites et loisirs"
+msgstr "Pamiatky & Voľný čas"
 
 #: src/interface.c:3570 src/interface.c:3913
 msgid "Name - Keywords / Tags:"
-msgstr "Nom - Mots-clé / tags :"
+msgstr "Názov - kľúčové slová / Značky:"
 
 #: src/interface.c:3579 src/interface.c:3965
 msgid "Description:"
-msgstr "Description :"
+msgstr "Popis:"
 
 #: src/interface.c:3601 src/interface.c:3986
 msgid "budget"
-msgstr "économique"
+msgstr "úsporné"
 
 #: src/interface.c:3607 src/interface.c:3992
 msgid "medium"
-msgstr "intermédiaire"
+msgstr "stredne"
 
 #: src/interface.c:3614 src/interface.c:3999
 msgid "exclusive"
-msgstr "haut de gamme"
+msgstr "exkluzívne"
 
 #: src/interface.c:3620 src/interface.c:4005
 msgid "extended opening hours"
-msgstr "heures d'ouverture étendues"
+msgstr "rozšírené otváracie hodiny"
 
 #: src/interface.c:3639 src/interface.c:4030 src/interface.c:4537
 msgid "       "
@@ -929,19 +920,19 @@ msgstr "       "
 
 #: src/interface.c:3722
 msgid "window7"
-msgstr "window7"
+msgstr ""
 
 #: src/interface.c:3744
 msgid "Friend Info"
-msgstr "Info ami"
+msgstr "Informácia o priateľovi"
 
 #: src/interface.c:3808
 msgid "window9"
-msgstr "window9"
+msgstr ""
 
 #: src/interface.c:3860
 msgid "Edit POI"
-msgstr "Modifier PdI"
+msgstr "Upraviť POI"
 
 #: src/interface.c:3888
 msgid "GPS"
@@ -949,264 +940,255 @@ msgstr "GPS"
 
 #: src/interface.c:3952
 msgid "Nightlife"
-msgstr "Vie nocturne"
+msgstr "Nočná zábava"
 
 #: src/interface.c:4113
 msgid "window11"
-msgstr "window11"
+msgstr ""
 
 #: src/interface.c:4132
 msgid "Delete POI?"
-msgstr "Supprimer PdI ?"
+msgstr "Zmazať POI?"
 
 #: src/interface.c:4138
 msgid ""
 "Do you really want to \n"
 "delete this Point of Interest?"
-msgstr "Voulez-vous vraiment supprimer ce point d'intérêt ?"
+msgstr ""
+"Naozaj si želáte zmazať\n"
+"tento POI?"
 
 #: src/interface.c:4192
 msgid "Load track..."
-msgstr ""
+msgstr "Nahrať stopu..."
 
 #: src/interface.c:4198
 msgid "<b>Choose track to open (.log / .gpx)</b>"
-msgstr ""
+msgstr "<b>Vyberte stopu na otvorenie (.log / .gpx)</b>"
 
 #: src/interface.c:4273
-#, fuzzy
 msgid "Edit Repository"
-msgstr "Nouveau dépôt"
+msgstr "Upraviť zdroj"
 
 #: src/interface.c:4294
-#, fuzzy
 msgid "<b>Repository Name</b>"
-msgstr "<b>Dépôts de cartes</b>"
+msgstr "<b>Názov zdroja</b>"
 
 #: src/interface.c:4396
-#, fuzzy
 msgid "GeoPhoto"
-msgstr "Photo Geo"
+msgstr "GeoFoto"
 
 #: src/interface.c:4460
 msgid "Photo Correlate"
-msgstr ""
+msgstr "Korelácie fotiek"
 
 #: src/interface.c:4469
-#, fuzzy
 msgid "<b>Geocoding your photos</b>"
-msgstr " <b>Obtenir la position des autres</b> "
+msgstr "<b>Geokódovanie Vašich fotiek</b>"
 
 #: src/interface.c:4487
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
 "on http://www.tangogps.org\n"
 msgstr ""
+"Geokódovanie Vašich fotiek za pomoci GPS stopy. Pre ďalšie informácie "
+"pozrite na http://www.tangogps.org\n"
 
 #: src/interface.c:4493
 msgid "  <b>1. Add Track</b>        "
-msgstr ""
+msgstr "  <b>1.Pridať stopu</b>        "
 
 #: src/interface.c:4501
 msgid "  <b>2. Add Photos</b> "
-msgstr ""
+msgstr "  <b>2. Pridať fotky</b> "
 
 #: src/interface.c:4521 src/interface.c:4529
 msgid "  <span color=\"red\" weight=\"bold\">-</span>"
-msgstr ""
+msgstr "  <span color=\"red\" weight=\"bold\">-</span>"
 
 #: src/interface.c:4544
 msgid "  <b>3. Adjust Time</b>"
-msgstr ""
+msgstr "  <b>3. Upraviť čas</b>"
 
 #: src/interface.c:4552
-#, fuzzy
 msgid "View GPS Photo"
-msgstr "Photo Geo"
+msgstr "Zobraziť GPS fotku"
 
 #: src/interface.c:4559
 msgid "  +00:00h"
-msgstr ""
+msgstr "  +00:00h"
 
 #: src/interface.c:4566
 msgid "  0 seconds"
-msgstr ""
+msgstr "  0 sekúnd"
 
 #: src/interface.c:4573
-#, fuzzy
 msgid "Correction:"
-msgstr "Description :"
+msgstr "Korekcia:"
 
 #: src/interface.c:4580
-#, fuzzy
 msgid "Timezone:"
-msgstr "Durée : "
+msgstr "Časová zóna:"
 
 #: src/interface.c:4595
 msgid "  add photos to the tangoGPS database"
-msgstr ""
+msgstr "  pridať fotky do tangoGPS databázy"
 
 #: src/interface.c:4684
-#, fuzzy
 msgid "Please choose"
-msgstr "Veuillez choisir"
+msgstr "Prosím vyberte si"
 
 #: src/interface.c:4692
 msgid "<b>This is important!</b>\n"
-msgstr ""
+msgstr "<b>Toto je dôležité!</b>\n"
 
 #: src/interface.c:4763
 msgid "Image Data"
 msgstr ""
 
 #: src/interface.c:4824
-#, fuzzy
 msgid " <b>GPS:</b> "
-msgstr "<b>GPSD</b>"
+msgstr " <b>GPS:</b> "
 
 #: src/interface.c:4829 src/interface.c:4844
-#, fuzzy
 msgid "      "
-msgstr "       "
+msgstr "      "
 
 #: src/interface.c:4838
-#, fuzzy
 msgid " <b>Camera:</b> "
-msgstr "Répertoire des cartes :"
+msgstr " <b>Fotoaparát:</b> "
 
 #: src/interface.c:4858
 msgid " <b>Correction:</b> "
-msgstr ""
+msgstr " <b>Korekcia:</b> "
 
 #: src/interface.c:4871
-#, fuzzy
 msgid "s   "
-msgstr "   "
+msgstr "s   "
 
 #: src/interface.c:4879
-#, fuzzy
 msgid " <b>Timezone:</b>  "
-msgstr "<b>Calculateur de voyage</b>"
+msgstr " <b>Časová zóna:</b> "
 
 #: src/interface.c:4887
 msgid "-12:00"
-msgstr ""
+msgstr "-12:00"
 
 #: src/interface.c:4888
 msgid "-11:00"
-msgstr ""
+msgstr "-11:00"
 
 #: src/interface.c:4889
 msgid "-10:00"
-msgstr ""
+msgstr "-10:00"
 
 #: src/interface.c:4890
 msgid "-09:00"
-msgstr ""
+msgstr "-09:00"
 
 #: src/interface.c:4891
 msgid "-08:00"
-msgstr ""
+msgstr "-08:00"
 
 #: src/interface.c:4892
 msgid "-07:00"
-msgstr ""
+msgstr "-07:00"
 
 #: src/interface.c:4893
 msgid "-06:00"
-msgstr ""
+msgstr "-06:00"
 
 #: src/interface.c:4894
 msgid "-05:00"
-msgstr ""
+msgstr "-05:00"
 
 #: src/interface.c:4895
 msgid "-04:00"
-msgstr ""
+msgstr "-04:00"
 
 #: src/interface.c:4896
 msgid "-03:00"
-msgstr ""
+msgstr "-03:00"
 
 #: src/interface.c:4897
 msgid "-02:00"
-msgstr ""
+msgstr "-02:00"
 
 #: src/interface.c:4898
 msgid "-01:00"
-msgstr ""
+msgstr "-01:00"
 
 #: src/interface.c:4899
 msgid "+00:00"
-msgstr ""
+msgstr "+00:00"
 
 #: src/interface.c:4900
 msgid "+01:00"
-msgstr ""
+msgstr "+01:00"
 
 #: src/interface.c:4901
 msgid "+02:00 "
-msgstr ""
+msgstr "+02:00"
 
 #: src/interface.c:4902
 msgid "+03:00"
-msgstr ""
+msgstr "+03:00"
 
 #: src/interface.c:4903
 msgid "+04:00"
-msgstr ""
+msgstr "+04:00"
 
 #: src/interface.c:4904
 msgid "+05:00"
-msgstr ""
+msgstr "+05:00"
 
 #: src/interface.c:4905
 msgid "+06:00"
-msgstr ""
+msgstr "+06:00"
 
 #: src/interface.c:4906
 msgid "+07:00"
-msgstr ""
+msgstr "+07:00"
 
 #: src/interface.c:4907
 msgid "+08:00"
-msgstr ""
+msgstr "+08:00"
 
 #: src/interface.c:4908
 msgid "+09:00"
-msgstr ""
+msgstr "+09:00"
 
 #: src/interface.c:4909
 msgid "+10:00"
-msgstr ""
+msgstr "+10:00"
 
 #: src/interface.c:4910
 msgid "+11:00"
-msgstr ""
+msgstr "+11:00"
 
 #: src/interface.c:4911
 msgid "+12:00"
-msgstr ""
+msgstr "+12:00"
 
 #: src/interface.c:5024
 msgid "Geocode Result"
-msgstr ""
+msgstr "Výsledok geokódovania"
 
 #: src/interface.c:5034
 msgid "<b>The output from gpscorrelate:</b>"
-msgstr ""
+msgstr "<b>Výstup z gpscorrelate:</b>"
 
 #: src/interface.c:5040
 msgid "Working...."
-msgstr ""
+msgstr "Pracujem..."
 
 #: src/interface.c:5084
 msgid "Message"
-msgstr ""
+msgstr "Správa"
 
 #: src/interface.c:5094
 msgid "Send Message to:"
-msgstr ""
+msgstr "Poslať správu:"
 
 #: src/interface.c:5168
 msgid "Get Route"
@@ -1219,12 +1201,12 @@ msgstr ""
 #: src/interface.c:5198
 #, fuzzy
 msgid " GPS "
-msgstr "GPSD"
+msgstr " GPSD "
 
 #: src/interface.c:5205
 #, fuzzy
 msgid "<b>Start</b> "
-msgstr "<b>Données GPS</b>"
+msgstr "<b>GPS dáta</b>"
 
 #: src/interface.c:5213
 #, fuzzy
@@ -1234,7 +1216,7 @@ msgstr "<b>-</b>"
 #: src/interface.c:5221
 #, fuzzy
 msgid " Pick "
-msgstr "Parcours"
+msgstr " Trasa "
 
 #: src/interface.c:5226
 msgid "Pick Start on Map"
@@ -1251,7 +1233,7 @@ msgstr ""
 #: src/interface.c:5235
 #, fuzzy
 msgid "<b>Service </b>"
-msgstr "Répertoire des cartes :"
+msgstr "<b>Cache priečinok</b>"
 
 #: src/interface.c:5257
 msgid "yournavigation.org"
@@ -1277,43 +1259,36 @@ msgstr ""
 
 #: src/friends.c:699
 msgid "Msg"
-msgstr ""
+msgstr "Správa"
 
 #: src/friends.c:1055
-#, fuzzy
 msgid "  Reply  "
-msgstr "    "
+msgstr " Odpovedať "
 
 #: src/friends.c:1063
-#, fuzzy
 msgid "  Go To  "
-msgstr "Aller à"
+msgstr " Ísť "
 
 #~ msgid "fullscreen"
-#~ msgstr "plein écran"
+#~ msgstr "celá obr."
 
 #~ msgid "      +      "
-#~ msgstr "     +       "
+#~ msgstr "      +      "
 
 #~ msgid "      -      "
 #~ msgstr "      -      "
 
-#, fuzzy
-#~ msgid "   info   "
-#~ msgstr "       "
-
-#, fuzzy
-#~ msgid " center "
-#~ msgstr "autocentrer"
+#~ msgid "autocenter"
+#~ msgstr "auto centrovať"
 
 #~ msgid "map"
-#~ msgstr "carte"
+#~ msgstr "mapa"
 
 #~ msgid "   Map   "
-#~ msgstr "    Carte   "
+#~ msgstr " Mapa  "
 
 #~ msgid "  Trip  "
-#~ msgstr "Trajet"
+#~ msgstr " Výlet  "
 
 #~ msgid ""
 #~ "Choose any nickname you want\n"
@@ -1324,10 +1299,12 @@ msgstr "Aller à"
 #~ "Further info at:\n"
 #~ "http://www.tangogps.org/friends\n"
 #~ msgstr ""
-#~ "Choisissez votre surnom.\n"
-#~ "Un mot de passe n'est nécessaire que si\n"
-#~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
-#~ "Plus d'info sur :\n"
+#~ "Zvolte si prezývku akú chcete.\n"
+#~ "Heslo je potrebné iba v prípade \n"
+#~ "ak ste si prezývku zaregistrovali\n"
+#~ "alebo ju chcete zaregistrovať.\n"
+#~ "\n"
+#~ "Viac informácií na stránke:\n"
 #~ "http://www.tangogps.org/friends\n"
 
 #~ msgid ""
@@ -1339,59 +1316,16 @@ msgstr "Aller à"
 #~ msgstr ""
 #~ "\n"
 #~ "\n"
-#~ "Pour enregistrer ce surnom, entrez votre courriel et cliquez ci-dessous.\n"
-#~ "IL ne sera ni divulgué ni partagé, mais utilisé que dans le cas de perte "
-#~ "du mot de passe."
+#~ "Pre zaregistrovanie prezývky zadajte Váš email a kliknite na tlačítko "
+#~ "dole.\n"
+#~ "Vaša email adresa nebude zobrazená ani zdielaná s inými subjektmi, je "
+#~ "použitá len na pripomienku v prípade straty hesla."
 
 #~ msgid " Friends "
-#~ msgstr "Amis"
+#~ msgstr "priatelia"
 
 #~ msgid "<b>Track Logging</b>"
-#~ msgstr "<b>Journalisation des parcours</b>"
+#~ msgstr "<b>Záznam trasy</b>"
 
 #~ msgid " Config "
-#~ msgstr "Configuration"
-
-#~ msgid "waypoints"
-#~ msgstr "étape"
-
-#~ msgid "button35"
-#~ msgstr "button35"
-
-#, fuzzy
-#~ msgid "Distance "
-#~ msgstr "Distance : "
-
-#~ msgid "Avg. Speed:"
-#~ msgstr "Vitesse moyenne : "
-
-#~ msgid "Max Speed:"
-#~ msgstr "Vitesse max :"
-
-#, fuzzy
-#~ msgid "filter POIs"
-#~ msgstr "choisir Pdi"
-
-#~ msgid ""
-#~ "label132\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sadf\n"
-#~ "safsdf\n"
-#~ "sdfsadf\n"
-#~ "sdfsadfadf\n"
-#~ "asdf"
-#~ msgstr ""
-#~ "label132\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sadf\n"
-#~ "safsdf\n"
-#~ "sdfsadf\n"
-#~ "sdfsadfadf\n"
-#~ "asdf"
-
-#~ msgid "Inverted Zoom"
-#~ msgstr "Zoom inversé"
+#~ msgstr " Konfigurácia "

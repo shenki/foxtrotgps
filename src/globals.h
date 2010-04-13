@@ -12,7 +12,7 @@
 #define TILESIZE 256
 #define PNAME "tangogps"
 #define MAP_PAGE 0
-#define FRIENDS_PAGE 2
+#define FRIENDS_PAGE 1
 
 
 typedef struct {
@@ -36,20 +36,7 @@ typedef struct {
 	int inverted_zoom;
 } repo_t;
 
-/*
-typedef struct {
-	int type;
-	char *nick;
-	float lat;
-	float lon;
-	int head;
-	int speed;
-	char *lastseen;
-	char *msg;
-	int screen_x;
-	int screen_y;
-} friend_t;
-*/
+
 
 typedef struct {
 	char *filename;
@@ -104,7 +91,9 @@ extern GtkWidget	*dialog1;
 extern GtkWidget	*dialog8;
 extern GtkWidget	*window3;
 extern GtkWidget	*menu1;
-//extern char repo_dir[]; //FIXME: delete me
+extern GList		*global_infopane_widgets;
+extern GList		*global_infopane_current;
+
 extern char *global_track_dir;
 
 extern int global_x;
@@ -125,7 +114,6 @@ extern int global_drawingarea_height;
 
 extern gps_data_t *gpsdata;
 
-//extern trackpoint_t global_track_arr[10];
 
 extern GSList		*trackpoint_list;
 extern GSList		*friends_list;
@@ -146,6 +134,8 @@ extern int		global_repo_nr;
 extern GSList	 	*global_repo_list, *global_curr_repo;
 extern GConfClient	*global_gconfclient;
 
+extern gboolean		global_infopane_visible;
+extern gboolean		global_landscape;
 extern gboolean		global_auto_download;
 extern gboolean		global_mapmode;
 extern gboolean		global_autocenter;
