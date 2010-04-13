@@ -10,3 +10,12 @@ po/Makefile.in
 po/POTFILES
 src/tangogps
 ./autom4te.cache
+config.guess
+config.sub
+depcomp
+install-sh
+missing
+mkinstalldirs
+aclocal.m4
+config.h.in
+configure
