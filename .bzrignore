@@ -1,0 +1,11 @@
+Makefile
+.deps
+.libs
+./config.h
+./config.log
+./config.status
+./libtool
+./stamp-h1
+po/Makefile.in
+po/POTFILES
+src/tangogps
