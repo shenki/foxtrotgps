@@ -13,17 +13,14 @@ load_tile(	gchar *dir,
 void
 fill_tiles_pixel(	int pixel_x,
 			int pixel_y,
-			int zoom);
+			int zoom,
+			gboolean force_redraw);
 
 void
 fill_tiles_latlon(	float lat,
 			float lon,
 			int zoom);
 			
-void
-fill_tiles_latlon_hack(	float lat,
-			float lon,
-			int zoom);
 			
 void
 set_mapcenter(	float lat,

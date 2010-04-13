@@ -117,7 +117,6 @@ paint_pois()
 	static GdkPixbuf *photo_icon = NULL;
 	static GdkGC *gc;
 	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	if (!gc)
 		gc = gdk_gc_new(pixmap); 

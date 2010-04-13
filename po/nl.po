@@ -1,37 +1,35 @@
-# tangogps french translation 
-# Copyright (C) 2008
-# This file is distributed under the same license as the tangogps package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
-#
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.9.3\n"
+"Project-Id-Version: tangogps 0.99.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-14 16:12+0100\n"
-"PO-Revision-Date: 2008-10-19 21:32+0100\n"
-"Last-Translator: Steve Petruzzello <dlist@bluewin.ch>\n"
-"Language-Team: french <debian-l10n-french@lists.debian.org>\n"
+"PO-Revision-Date: \n"
+"Last-Translator: Sander van Grieken <sander@3v8.net>\n"
+"Language-Team: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals-2; plural=(n != 1);\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+"X-Poedit-SourceCharset: iso-8859-1\n"
 
 #: src/support.c:90 src/support.c:114
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Fichier %s des images introuvable"
+msgstr "Kon pixmap bestand niet vinden: %s"
 
 #: src/interface.c:278
 msgid "tangoGPS"
-msgstr "tangoGPS"
+msgstr ""
 
 #: src/interface.c:387
-#, fuzzy
 msgid "Show Info"
-msgstr "Info GPS"
+msgstr "Toon Info"
 
 #: src/interface.c:411
 msgid "Fullscreen (F11 or Space)"
-msgstr ""
+msgstr "Volledig scherm (F11 of spatie)"
 
 #: src/interface.c:436
 msgid "Zoom in"
@@ -39,49 +37,47 @@ msgstr ""
 
 #: src/interface.c:452
 msgid "Zoom out"
-msgstr ""
+msgstr "Zoom uit"
 
 #: src/interface.c:477
-#, fuzzy
 msgid "Autocenter On"
-msgstr "autocentrer"
+msgstr "Autocentreer aan"
 
 #: src/interface.c:502
 msgid "Next map repo"
-msgstr ""
+msgstr "Volgend kaart archief"
 
 #: src/interface.c:518
 msgid "Previous map repo"
-msgstr ""
+msgstr "Vorig kaart archief"
 
 #: src/interface.c:551
 msgid "Go to Previous Page"
-msgstr ""
+msgstr "Ga naar vorige pagina"
 
 #: src/interface.c:562
 msgid "Close Info Area"
-msgstr ""
+msgstr "Sluit Info Paneel"
 
 #: src/interface.c:572
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Ga naar volgende pagina"
 
 #: src/interface.c:623
 msgid "Speed"
-msgstr "Vitesse :"
+msgstr "Snelheid"
 
 #: src/interface.c:629
 msgid "   <span font_desc='40'> -- </span>"
 msgstr ""
 
 #: src/interface.c:647
-#, fuzzy
 msgid "Trip "
-msgstr "Trajet"
+msgstr ""
 
 #: src/interface.c:655
 msgid "Average "
-msgstr ""
+msgstr "Gemiddeld"
 
 #: src/interface.c:663 src/interface.c:671 src/interface.c:693
 #: src/interface.c:701 src/interface.c:782 src/interface.c:790
@@ -91,14 +87,12 @@ msgid "0"
 msgstr ""
 
 #: src/interface.c:679
-#, fuzzy
 msgid "Max "
-msgstr "Carte DL"
+msgstr ""
 
 #: src/interface.c:686
-#, fuzzy
 msgid "Time "
-msgstr "Durée : "
+msgstr "Tijd"
 
 #: src/interface.c:714
 msgid "Stop"
@@ -107,148 +101,138 @@ msgstr ""
 #: src/interface.c:720
 #, fuzzy
 msgid "Reset"
-msgstr "activer"
+msgstr "zet"
 
 #: src/interface.c:726
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
-msgstr "<b>Calculateur de voyage</b>"
+msgstr ""
 
 #: src/interface.c:747
-#, fuzzy
 msgid "Altitude"
-msgstr "Altitude :"
+msgstr "Hoogte"
 
 #: src/interface.c:754
-#, fuzzy
 msgid "Heading"
-msgstr "Direction :"
+msgstr "Koers"
 
 #: src/interface.c:761
-#, fuzzy
 msgid "Lat - Lon"
-msgstr "Lat, Lon :"
+msgstr ""
 
 #: src/interface.c:768
-#, fuzzy
 msgid "GPS Time"
-msgstr "Heure GPS :"
+msgstr "GPS Tijd"
 
 #: src/interface.c:775
-#, fuzzy
 msgid "Satellites  "
-msgstr "Satellites : "
+msgstr "Satellieten"
 
 #: src/interface.c:822
 msgid "<b>GPS Data</b>"
-msgstr "<b>Données GPS</b>"
+msgstr ""
 
 #: src/interface.c:841
 msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
-msgstr ""
+msgstr "<big><b>Vrienden</b></big>   <small>[2/4]</small>"
 
 #: src/interface.c:848
 msgid "Hide Messages"
-msgstr ""
+msgstr "Verberg Berichten"
 
 #: src/interface.c:858
 msgid "<i>No Messages</i>"
-msgstr ""
+msgstr "<i>Geen Berichten</i>"
 
 #: src/interface.c:888
 msgid ""
 "Enable position sharing and\n"
 "messaging with your friends"
 msgstr ""
+"Aanzetten van positie delen en\n"
+"berichten uitwisselen met vrienden"
 
 #: src/interface.c:893
 msgid ""
 "\n"
 "\n"
 msgstr ""
-"\n"
-"\n"
 
 #: src/interface.c:904
 msgid "Update interval  "
-msgstr ""
+msgstr "Ververs interval"
 
 #: src/interface.c:912
-#, fuzzy
 msgid "5"
-msgstr "15"
+msgstr ""
 
 #: src/interface.c:915
 msgid "minutes"
-msgstr "minutes"
+msgstr "minuten"
 
 #: src/interface.c:928
-#, fuzzy
 msgid "     Share!     "
-msgstr "Stop"
+msgstr ""
 
 #: src/interface.c:934 src/interface.c:1112 src/interface.c:1154
 #: src/interface.c:1368
 msgid "     "
-msgstr "     "
+msgstr ""
 
 #: src/interface.c:949
-#, fuzzy
 msgid "<b>Position Sharing  </b>"
-msgstr "<b> Mise à jour de la position </b>"
+msgstr "<b>Positie Delen  </b>"
 
 #: src/interface.c:971
 msgid ""
 "Decide whom you see and \n"
 "who can see you:"
 msgstr ""
+"Bepaal wie u ziet en\n"
+"wie u kan zien:"
 
 #: src/interface.c:977
 msgid "fun mode"
-msgstr ""
+msgstr "pret mode"
 
 #: src/interface.c:984
-#, fuzzy
 msgid "friend mode"
-msgstr "Info ami"
+msgstr "vriend mode"
 
 #: src/interface.c:991
 msgid "private mode"
-msgstr ""
+msgstr "privé mode"
 
 #: src/interface.c:998
 msgid "<i>What are you up to?</i>"
-msgstr ""
+msgstr "<i>Wat ben je aan het doen?</i>"
 
 #: src/interface.c:1008
 msgid "just idle..."
 msgstr ""
 
 #: src/interface.c:1011
-#, fuzzy
 msgid "<b>Sharing Mode</b> "
-msgstr "<b>Mise à jour de ma position</b>"
+msgstr "<b>Delen Mode</b>"
 
 #: src/interface.c:1037
 msgid "Nickname "
-msgstr "Surnom"
+msgstr "Gebruikersnaam"
 
 #: src/interface.c:1044
 msgid "Password"
-msgstr "Mot de passe"
+msgstr "Wachtwoord"
 
 #: src/interface.c:1057
 msgid "foobar"
-msgstr "toto"
+msgstr ""
 
 #: src/interface.c:1064
 msgid "JohnDoe"
-msgstr "MichelDupont"
+msgstr ""
 
 #: src/interface.c:1066
-#, fuzzy
 msgid "Show password"
-msgstr "Mot de passe"
+msgstr "Toon wachtwoord"
 
 #: src/interface.c:1087
 msgid ""
@@ -256,38 +240,38 @@ msgid ""
 "\n"
 "Before first use register them by clicking on the button below. "
 msgstr ""
+"Voer uw gebruikersnaam en wachtwoord in.\n"
+"\n"
+"Voordat u het kunt gebruiken moet u eerst registreren, door op de knop "
+"hieronder te drukken."
 
 #: src/interface.c:1093
-#, fuzzy
 msgid "Email        "
-msgstr "Courriel "
+msgstr ""
 
 #: src/interface.c:1107
 msgid "     Register!     "
-msgstr "Enregistrez-vous "
+msgstr "     Registreer!     "
 
 #: src/interface.c:1120
-#, fuzzy
 msgid "<b>Me</b>"
-msgstr "<b>-</b>"
+msgstr "<b>Mijn Identiteit</b>"
 
 #: src/interface.c:1140 src/interface.c:1308 src/interface.c:1544
 msgid "    "
-msgstr "    "
+msgstr ""
 
 #: src/interface.c:1145
-#, fuzzy
 msgid "Enable Track Logging"
-msgstr "<b>Journalisation des parcours</b>"
+msgstr ""
 
 #: src/interface.c:1150
 msgid "Enable Live Tracking"
 msgstr ""
 
 #: src/interface.c:1163
-#, fuzzy
 msgid "Split"
-msgstr "Sport"
+msgstr ""
 
 #: src/interface.c:1180
 msgid "Load"
@@ -296,133 +280,127 @@ msgstr ""
 #: src/interface.c:1186
 #, fuzzy
 msgid "Clear"
-msgstr "Voiture"
+msgstr "Auto"
 
 #: src/interface.c:1190
 msgid "Upload"
 msgstr ""
 
 #: src/interface.c:1198
-#, fuzzy
 msgid "Configure"
-msgstr "Configuration"
+msgstr ""
 
 #: src/interface.c:1204
 msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
-msgstr ""
+msgstr "<big><b>Sporen</b></big>   <small>[3/4]</small>"
 
 #: src/interface.c:1222
 msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
-msgstr ""
+msgstr "<big><b>Instellingen</b></big>   <small>[4/4]</small>"
 
 #: src/interface.c:1229
-#, fuzzy
 msgid ""
 "<small><i>tangoGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>Version de tangoGPS :\n"
-"Développeur : Marcus Bauer</i>"
+"<small><i>tangoGPS Versie:\n"
+"Ontwikkelaar: Marcus Bauer &amp; Gemeenschap</i></small>"
 
 #: src/interface.c:1251
 msgid ""
 "Activate or deactivate automatic\n"
 "download of missing tiles into cache"
 msgstr ""
-"Activation ou désactivation du téléchargement automatique\n"
-"des cartes dans le cache"
+"Activeer of deactiveer automatisch\n"
+"downloaden van ontbrekende tegels"
 
 #: src/interface.c:1256
 msgid "Auto download map tiles"
-msgstr "Téléchargement automatique des cartes"
+msgstr "Automatisch downloaden van kaart tegels"
 
 #: src/interface.c:1263
 msgid "<b>Auto Download</b>"
-msgstr "<b>Téléchargement automatique</b>"
+msgstr ""
 
 #: src/interface.c:1284
-#, fuzzy
 msgid "Current Map:"
-msgstr "Dépôt courant :"
+msgstr "Huidige kaart:"
 
 #: src/interface.c:1304
-#, fuzzy
 msgid "      New...       "
-msgstr "Nouveau"
+msgstr "      Nieuw...       "
 
 #: src/interface.c:1313
-#, fuzzy
 msgid "      Edit...     "
-msgstr "Configurer"
+msgstr "      Bewerk...     "
 
 #: src/interface.c:1327 src/interface.c:2292 src/interface.c:3916
 msgid "xyz instead of zxy"
-msgstr ""
+msgstr "xyz in plaats van zxy"
 
 #: src/interface.c:1333
 msgid "URI"
-msgstr "URI :"
+msgstr ""
 
 #: src/interface.c:1340
 msgid "Cache Dir"
-msgstr "Répertoire des cartes :"
+msgstr ""
 
 #: src/interface.c:1362
 msgid "    Save Repository Configuration    "
-msgstr "Enregistrer la configuration du dépôt"
+msgstr "    Opslaan Archief Instellingen    "
 
 #: src/interface.c:1373
-#, fuzzy
 msgid "<b>Map Types</b>"
-msgstr "<b>Dépôts de cartes</b>"
+msgstr "<b>Kaarten</b>"
 
 #: src/interface.c:1394
 msgid "<i>Speed and Distance:</i>"
-msgstr "<i>Vitesse et distance</i>"
+msgstr "<i>Snelheid en Afstand:</i>"
 
 #: src/interface.c:1406
 msgid "metrical"
-msgstr "métrique"
+msgstr "metrisch"
 
 #: src/interface.c:1413
 msgid "imperial"
-msgstr "impérial"
+msgstr "imperisch"
 
 #: src/interface.c:1419
 msgid "nautical"
-msgstr "nautique"
+msgstr "nautisch"
 
 #: src/interface.c:1425
 msgid "<i>Altitude:</i>"
-msgstr "<i>Altitude</i>"
+msgstr "<i>Hoogte:</i>"
 
 #: src/interface.c:1437
 msgid "meters"
-msgstr "mètres"
+msgstr ""
 
 #: src/interface.c:1444
 msgid "feet"
-msgstr "pieds"
+msgstr "voet"
 
 #: src/interface.c:1450
 msgid "<i>Lat &amp; Lon:</i>"
-msgstr "<i>Lat &amp; Lon</i>"
+msgstr ""
 
 #: src/interface.c:1462
 msgid "d.dd"
-msgstr "d.dd"
+msgstr ""
 
 #: src/interface.c:1469
 msgid "d m.m'"
-msgstr "d m.m'"
+msgstr ""
 
 #: src/interface.c:1475
 msgid "d m's.s\""
-msgstr "d m's.s\""
+msgstr ""
 
 #: src/interface.c:1481
 msgid "<b>Units</b>"
-msgstr "<b>Unités</b>"
+msgstr "<b>Eenheden</b>"
 
 #: src/interface.c:1501
 msgid ""
@@ -430,119 +408,115 @@ msgid ""
 "Set GPSD Host IP\n"
 msgstr ""
 "\n"
-"IP de l'hôte gpsd\n"
+"Opgeven GPSD Host IP\n"
 
 #: src/interface.c:1511
 msgid " GPSD "
-msgstr "GPSD"
+msgstr ""
 
 #: src/interface.c:1515
 msgid "Host:"
-msgstr "Hôte :"
+msgstr ""
 
 #: src/interface.c:1522
 msgid "127.0.0.1"
-msgstr "127.0.0.1"
+msgstr ""
 
 #: src/interface.c:1525
 msgid " Port:"
-msgstr " Ports :"
+msgstr "Poort:"
 
 #: src/interface.c:1532
 msgid "2947"
-msgstr "2947"
+msgstr ""
 
 #: src/interface.c:1539
 msgid "     Change GPSD     "
-msgstr "Modifier GPSD"
+msgstr "     Aanpassen GPSD     "
 
 #: src/interface.c:1549
 msgid "<b>GPSD</b>"
-msgstr "<b>GPSD</b>"
+msgstr ""
 
 #: src/interface.c:1559
 msgid "<b>no GPS found</b>"
-msgstr "<b>aucun GPS trouvé</b>"
+msgstr ""
 
 #: src/interface.c:2046
 msgid "this point"
-msgstr "Ce point"
+msgstr "dit punt"
 
 #: src/interface.c:2050
 msgid "show friends"
-msgstr "montrer les amis"
+msgstr "toon vrienden"
 
 #: src/interface.c:2054
 msgid "show POIs"
-msgstr "montrer les PdI"
+msgstr "toon POIs"
 
 #: src/interface.c:2058
 msgid "show photos"
-msgstr "montrer les photos"
+msgstr "toon fotos"
 
 #: src/interface.c:2062
 msgid "ways & routes"
-msgstr ""
+msgstr "wegen & routes"
 
 #: src/interface.c:2069
 msgid "get route"
-msgstr ""
+msgstr "ophalen route"
 
 #: src/interface.c:2073
 msgid "create way"
-msgstr ""
+msgstr "maak weg"
 
 #: src/interface.c:2076
-#, fuzzy
 msgid "set WP"
-msgstr "activer"
+msgstr "zet WP"
 
 #: src/interface.c:2080
-#, fuzzy
 msgid "unset WP"
-msgstr "désactiver"
+msgstr "verwijder WP"
 
 #: src/interface.c:2084
 msgid "POIs"
-msgstr "PdI"
+msgstr ""
 
 #: src/interface.c:2091
 msgid "add POI"
-msgstr "ajouter PdI"
+msgstr "toevoegen POI"
 
 #: src/interface.c:2095
-#, fuzzy
 msgid "select POIs"
-msgstr "Supprimer PdI ?"
+msgstr "kiezen POIs"
 
 #: src/interface.c:2099
-#, fuzzy
 msgid "photos"
-msgstr "montrer les photos"
+msgstr "fotos"
 
 #: src/interface.c:2106
 msgid "geocode"
-msgstr ""
+msgstr "geocoderen"
 
 #: src/interface.c:2110
 msgid "my position"
-msgstr "ma position"
+msgstr "mijn positie"
 
 #: src/interface.c:2117
 msgid "set"
-msgstr "activer"
+msgstr "zet"
 
 #: src/interface.c:2121
 msgid "unset"
-msgstr "désactiver"
+msgstr "verwijder"
 
 #: src/interface.c:2125
 msgid "map download"
-msgstr "télécharger les cartes"
+msgstr "kaart download"
 
 #: src/interface.c:2230
 msgid "New Repository"
-msgstr "Nouveau dépôt"
+msgstr "Nieuw Archief"
 
 #: src/interface.c:2254 src/interface.c:3878
 msgid ""
@@ -550,187 +524,189 @@ msgid ""
 "\n"
 "http://www.tangogps.org/\n"
 msgstr ""
+"U kunt meer informatie over archieven vinden op\n"
+"\n"
+"http://www.tangogps.org/\n"
 
 #: src/interface.c:2256
-#, fuzzy
 msgid "<b>Name for the new Repository</b>"
-msgstr "Nom du nouveau dépôt"
+msgstr "<b>Naam voor nieuw Archief</b>"
 
 #: src/interface.c:2266 src/interface.c:3890
-#, fuzzy
 msgid " "
-msgstr "  "
+msgstr ""
 
 #: src/interface.c:2270 src/interface.c:3894
-#, fuzzy
 msgid "<b>URI</b>"
-msgstr "<b>-</b>"
+msgstr ""
 
 #: src/interface.c:2281 src/interface.c:3905
-#, fuzzy
 msgid "<b>Cache Dir</b>"
-msgstr "Répertoire des cartes :"
+msgstr ""
 
 #: src/interface.c:2310
 msgid "All fields must be filled in"
-msgstr ""
+msgstr "Alle velden moeten ingevuld zijn"
 
 #: src/interface.c:2375
 msgid "GPS Info"
-msgstr "Info GPS"
+msgstr ""
 
 #: src/interface.c:2394 src/interface.c:2712 src/interface.c:3383
 msgid "--"
-msgstr "--"
+msgstr ""
 
 #: src/interface.c:2405
 msgid ""
 "Distance to\n"
 "next point"
 msgstr ""
+"Afstand tot\n"
+"volgend punt"
 
 #: src/interface.c:2409
-#, fuzzy
 msgid ""
 "Set point as\n"
 "my position"
-msgstr "ma position"
+msgstr ""
+"Zet punt als\n"
+"mijn positie"
 
 #: src/interface.c:2413 src/interface.c:3008 src/interface.c:3395
 msgid "Close"
-msgstr "Fermer"
+msgstr "Sluiten"
 
 #: src/interface.c:2456
 msgid "unused"
-msgstr "inutilisé"
+msgstr "niet gebruikt"
 
 #: src/interface.c:2493
 msgid "Trackdir Config"
-msgstr "Configuration du Trackdir"
+msgstr "Sporen Directory Instelling"
 
 #: src/interface.c:2503
 msgid "Directory in which the tracks should be written:"
-msgstr "Répertoire contenant les parcours :"
+msgstr "Directory waarin de sporen geschreven moet worden"
 
 #: src/interface.c:2569
 msgid "Map DL"
-msgstr "Carte DL"
+msgstr ""
 
 #: src/interface.c:2589
 msgid "Download maps of currently visible area:"
-msgstr "Télécharger les cartes de l'espace visible :"
+msgstr "Download kaart van huidig zichtbaar gebied"
 
 #: src/interface.c:2600
 msgid "+ 1 zoom level"
-msgstr "+ 1 niveau de zoom"
+msgstr "+ 1 zoom niveau"
 
 #: src/interface.c:2606
 msgid "+ 2 zoom levels"
-msgstr "+ 2 niveau de zoom"
+msgstr "+ 2 zoom niveaus"
 
 #: src/interface.c:2612
 msgid "+ 3 zoom levels"
-msgstr "+ 3 niveau de zoom"
+msgstr "+ 3 zoom niveaus"
 
 #: src/interface.c:2618
 msgid "+ 4 zoom levels (~25MB)"
-msgstr "+ 4 niveau de zoom (~25Mb)"
+msgstr "+ 4 zoom niveaus (~25MB)"
 
 #: src/interface.c:2625
 msgid "+ 5 zoom levels (~100MB)"
-msgstr "+ 5 niveau de zoom (~100Mb)"
+msgstr "+ 5 zoom niveaus (~100MB)"
 
 #: src/interface.c:2631
 msgid "+ 6 zoom levels (~400MB)"
-msgstr "+ 6 niveau de zoom (~400Mb)"
+msgstr "+ 6 zoom niveaus (~400MB)"
 
 #: src/interface.c:2637
 msgid "<b> Map Download </b>"
-msgstr "<b> Téléchargement de la carte </b>"
+msgstr "<b> Kaart Download </b>"
 
 #: src/interface.c:2699
 msgid "Geo Photo"
-msgstr "Photo Geo"
+msgstr "Geo Foto"
 
 #: src/interface.c:2731
 msgid "Big"
-msgstr ""
+msgstr "Groot"
 
 #: src/interface.c:2735 src/friends.c:618
 msgid "Go To"
-msgstr "Aller à"
+msgstr "Ga Naar"
 
 #: src/interface.c:2778
 msgid "Show POIs"
-msgstr "Montrer PdI"
+msgstr "Toon POIs"
 
 #: src/interface.c:2787
 msgid "-- Show All --"
-msgstr "-- Tout montrer --"
+msgstr "-- Toon Alle --"
 
 #: src/interface.c:2788 src/interface.c:3179 src/interface.c:3547
 msgid "Accomodation"
-msgstr "Hébergement"
+msgstr "Accomodatie"
 
 #: src/interface.c:2789 src/interface.c:3180 src/interface.c:3548
 msgid "Businesses"
-msgstr "Boutiques"
+msgstr "Zakelijk"
 
 #: src/interface.c:2790 src/interface.c:3181 src/interface.c:3549
 msgid "Car"
-msgstr "Voiture"
+msgstr "Auto"
 
 #: src/interface.c:2791 src/interface.c:3182 src/interface.c:3550
 msgid "Cultural"
-msgstr "Culturel"
+msgstr "Cultureel"
 
 #: src/interface.c:2792 src/interface.c:3183 src/interface.c:3551
 msgid "Medical"
-msgstr "Médical"
+msgstr "Medisch"
 
 #: src/interface.c:2793 src/interface.c:3184
 msgid "Cafe / Pub / Nightlife"
-msgstr "Café / Pub / Club"
+msgstr "Café / Pub / Nachtleven"
 
 #: src/interface.c:2794 src/interface.c:3185 src/interface.c:3553
 msgid "Place of Worship"
-msgstr "Lieu de culte"
+msgstr "Plaats voor Gelovigen"
 
 #: src/interface.c:2795 src/interface.c:3186 src/interface.c:3554
 msgid "Public Transportation"
-msgstr "Transports publics"
+msgstr "Openbaar Vervoer"
 
 #: src/interface.c:2796
 msgid "Restaurant"
-msgstr "Restaurant"
+msgstr ""
 
 #: src/interface.c:2797 src/interface.c:3188 src/interface.c:3556
 msgid "Services"
-msgstr "Services"
+msgstr "Diensten"
 
 #: src/interface.c:2798
 msgid "Sights / Leisure"
-msgstr "Visites et loisirs"
+msgstr "Uitzicht / Vrije tijd"
 
 #: src/interface.c:2799 src/interface.c:3190 src/interface.c:3558
 msgid "Shopping"
-msgstr "Shopping"
+msgstr "Winkelen"
 
 #: src/interface.c:2800 src/interface.c:3191 src/interface.c:3559
 msgid "Sport"
-msgstr "Sport"
+msgstr ""
 
 #: src/interface.c:2801 src/interface.c:3192
 msgid "My Personal Places"
-msgstr "Mes endroits personnels"
+msgstr "Mijn Persoonlijke Plaatsen"
 
 #: src/interface.c:2873
 msgid "POI"
-msgstr "PdI"
+msgstr ""
 
 #: src/interface.c:2885
 msgid "<b>-----</b>"
-msgstr "<b>-----</b>"
+msgstr ""
 
 #: src/interface.c:2904
 msgid "-"
@@ -738,164 +714,163 @@ msgstr ""
 
 #: src/interface.c:2913 src/interface.c:3608
 msgid "<b>-</b>"
-msgstr "<b>-</b>"
+msgstr ""
 
 #: src/interface.c:2942
 msgid "Go To "
-msgstr "Aller à"
+msgstr "Ga Naar"
 
 #: src/interface.c:2964
 msgid "Edit"
-msgstr "Modifier"
+msgstr "Bewerken"
 
 #: src/interface.c:2986
 msgid "Delete"
-msgstr "Supprimer"
+msgstr "Verwijderen"
 
 #: src/interface.c:3094
 msgid "Add POI"
-msgstr "Ajouter PdI"
+msgstr "Toevoegen POI"
 
 #: src/interface.c:3120 src/interface.c:3525
 msgid "personal"
-msgstr "personnel"
+msgstr "persoonlijk"
 
 #: src/interface.c:3126 src/interface.c:3531
 msgid "public"
-msgstr "publique"
+msgstr "publiek"
 
 #: src/interface.c:3134
 msgid "Coordinates <b><i>clicked</i></b> on the map:"
-msgstr ""
+msgstr "Coördinaten <b><i>aangeklikt</i></b> op de kaart:"
 
 #: src/interface.c:3145 src/interface.c:3493
 msgid "Lat: "
-msgstr "Lat : "
+msgstr ""
 
 #: src/interface.c:3155 src/interface.c:3503
-#, fuzzy
 msgid " Lon: "
-msgstr "Lon : "
+msgstr ""
 
 #: src/interface.c:3165
 msgid "Use current GPS position instead"
-msgstr ""
+msgstr "Gebruik huidige GPS positie"
 
 #: src/interface.c:3169 src/interface.c:3539
 msgid "Category:"
-msgstr "Catégorie :"
+msgstr "Categorie:"
 
 #: src/interface.c:3178 src/interface.c:3546
 msgid "- please choose -"
-msgstr "Veuillez choisir"
+msgstr "- maak een keuze -"
 
 #: src/interface.c:3187 src/interface.c:3555
 msgid "Restaurant & Food"
-msgstr "Restaurant et nourriture"
+msgstr "Restaurant & Eten"
 
 #: src/interface.c:3189 src/interface.c:3557
 msgid "Sights & Leisure"
-msgstr "Visites et loisirs"
+msgstr "Uitzicht & Vrije tijd"
 
 #: src/interface.c:3198 src/interface.c:3513
 msgid "Name - Keywords / Tags:"
-msgstr "Nom - Mots-clé / tags :"
+msgstr "Naam - Sleutelwoorden / Tags:"
 
 #: src/interface.c:3207 src/interface.c:3565
 msgid "Description:"
-msgstr "Description :"
+msgstr "Omschrijving:"
 
 #: src/interface.c:3229 src/interface.c:3586
 msgid "budget"
-msgstr "économique"
+msgstr ""
 
 #: src/interface.c:3235 src/interface.c:3592
 msgid "medium"
-msgstr "intermédiaire"
+msgstr ""
 
 #: src/interface.c:3242 src/interface.c:3599
 msgid "exclusive"
-msgstr "haut de gamme"
+msgstr "exclusief"
 
 #: src/interface.c:3248 src/interface.c:3605
 msgid "extended opening hours"
-msgstr "heures d'ouverture étendues"
+msgstr "uitgebreide openingstijden"
 
 #: src/interface.c:3267 src/interface.c:3630 src/interface.c:4123
 msgid "       "
-msgstr "       "
+msgstr ""
 
 #: src/interface.c:3358
 msgid "Friend Info"
-msgstr "Info ami"
+msgstr "Vriend Info"
 
 #: src/interface.c:3460
 msgid "Edit POI"
-msgstr "Modifier PdI"
+msgstr "Bewerk POI"
 
 #: src/interface.c:3488
 msgid "GPS"
-msgstr "GPS"
+msgstr ""
 
 #: src/interface.c:3552
 msgid "Nightlife"
-msgstr "Vie nocturne"
+msgstr "Nachtleven"
 
 #: src/interface.c:3718
 msgid "Delete POI?"
-msgstr "Supprimer PdI ?"
+msgstr "Verwijder POI?"
 
 #: src/interface.c:3724
 msgid ""
 "Do you really want to \n"
 "delete this Point of Interest?"
-msgstr "Voulez-vous vraiment supprimer ce point d'intérêt ?"
+msgstr ""
+"Wilt u echt dit Interessant Punt (POI)\n"
+"verwijderen?"
 
 #: src/interface.c:3778
 msgid "Load track..."
-msgstr ""
+msgstr "Laad spoor..."
 
 #: src/interface.c:3784
 msgid "<b>Choose track to open (.log / .gpx)</b>"
-msgstr ""
+msgstr "<b>Kies het te openen spoor (.log / .gpx)</b>"
 
 #: src/interface.c:3859
-#, fuzzy
 msgid "Edit Repository"
-msgstr "Nouveau dépôt"
+msgstr "Bewerk Archief"
 
 #: src/interface.c:3880
-#, fuzzy
 msgid "<b>Repository Name</b>"
-msgstr "<b>Dépôts de cartes</b>"
+msgstr "<b>Archief Naam</b>"
 
 #: src/interface.c:3982
-#, fuzzy
 msgid "GeoPhoto"
-msgstr "Photo Geo"
+msgstr "GeoFoto"
 
 #: src/interface.c:4046
 msgid "Photo Correlate"
-msgstr ""
+msgstr "Correleer Foto"
 
 #: src/interface.c:4055
-#, fuzzy
 msgid "<b>Geocoding your photos</b>"
-msgstr " <b>Obtenir la position des autres</b> "
+msgstr "<b>Geocoderen van uw fotos</b>"
 
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
 "on http://www.tangogps.org\n"
 msgstr ""
+"Geocodeer uw fotos door ze te correleren met een GPS spoor. Voor nadere "
+"uitleg, zie http://www.tangogps.org\n"
 
 #: src/interface.c:4079
 msgid "  <b>1. Add Track</b>        "
-msgstr ""
+msgstr "  <b>1. Toevoegen Spoor</b>        "
 
 #: src/interface.c:4087
 msgid "  <b>2. Add Photos</b> "
-msgstr ""
+msgstr "  <b>2. Toevoegen Fotos</b> "
 
 #: src/interface.c:4107 src/interface.c:4115
 msgid "  <span color=\"red\" weight=\"bold\">-</span>"
@@ -903,12 +878,11 @@ msgstr ""
 
 #: src/interface.c:4130
 msgid "  <b>3. Adjust Time</b>"
-msgstr ""
+msgstr "  <b>3. Aanpassen Tijd</b>"
 
 #: src/interface.c:4138
-#, fuzzy
 msgid "View GPS Photo"
-msgstr "Photo Geo"
+msgstr "Bekijk GPS Foto"
 
 #: src/interface.c:4145
 msgid "  +00:00h"
@@ -916,63 +890,55 @@ msgstr ""
 
 #: src/interface.c:4152
 msgid "  0 seconds"
-msgstr ""
+msgstr "  0 seconden"
 
 #: src/interface.c:4159
-#, fuzzy
 msgid "Correction:"
-msgstr "Description :"
+msgstr "Correctie:"
 
 #: src/interface.c:4166
-#, fuzzy
 msgid "Timezone:"
-msgstr "Durée : "
+msgstr "Tijdzone:"
 
 #: src/interface.c:4181
 msgid "  add photos to the tangoGPS database"
-msgstr ""
+msgstr "  voeg fotos toe aan de tangoGPS database"
 
 #: src/interface.c:4270
-#, fuzzy
 msgid "Please choose"
-msgstr "Veuillez choisir"
+msgstr "Maak een keuze"
 
 #: src/interface.c:4278
 msgid "<b>This is important!</b>\n"
-msgstr ""
+msgstr "<b>Dit is belangrijk!</b>\n"
 
 #: src/interface.c:4349
 msgid "Image Data"
 msgstr ""
 
 #: src/interface.c:4410
-#, fuzzy
 msgid " <b>GPS:</b> "
-msgstr "<b>GPSD</b>"
+msgstr ""
 
 #: src/interface.c:4415 src/interface.c:4430
-#, fuzzy
 msgid "      "
-msgstr "       "
+msgstr ""
 
 #: src/interface.c:4424
-#, fuzzy
 msgid " <b>Camera:</b> "
-msgstr "Répertoire des cartes :"
+msgstr ""
 
 #: src/interface.c:4444
 msgid " <b>Correction:</b> "
-msgstr ""
+msgstr " <b>Correctie:</b> "
 
 #: src/interface.c:4457
-#, fuzzy
 msgid "s   "
-msgstr "   "
+msgstr ""
 
 #: src/interface.c:4465
-#, fuzzy
 msgid " <b>Timezone:</b>  "
-msgstr "<b>Calculateur de voyage</b>"
+msgstr " <b>Tijdzone:</b>  "
 
 #: src/interface.c:4473
 msgid "-12:00"
@@ -1076,72 +1042,67 @@ msgstr ""
 
 #: src/interface.c:4610
 msgid "Geocode Result"
-msgstr ""
+msgstr "Geocodeer Resultaat"
 
 #: src/interface.c:4620
 msgid "<b>The output from gpscorrelate:</b>"
-msgstr ""
+msgstr "<b>De uitvoer van gpscorrelate:</b>"
 
 #: src/interface.c:4626
 msgid "Working...."
-msgstr ""
+msgstr "Bezig...."
 
 #: src/interface.c:4670
 msgid "Message"
-msgstr ""
+msgstr "Bericht"
 
 #: src/interface.c:4680
 msgid "Send Message to:"
-msgstr ""
+msgstr "Stuur Bericht naar:"
 
 #: src/interface.c:4754
 msgid "Get Route"
-msgstr ""
+msgstr "Ophalen Route"
 
 #: src/interface.c:4774
 msgid "Street,City,Country"
-msgstr ""
+msgstr "Straat,Stad,Land"
 
 #: src/interface.c:4784
-#, fuzzy
 msgid " GPS "
-msgstr "GPSD"
+msgstr ""
 
 #: src/interface.c:4791
-#, fuzzy
 msgid "<b>Start</b> "
-msgstr "<b>Données GPS</b>"
+msgstr ""
 
 #: src/interface.c:4799
-#, fuzzy
 msgid "<b>End</b>"
-msgstr "<b>-</b>"
+msgstr "<b>Eind</b>"
 
 #: src/interface.c:4807
-#, fuzzy
 msgid " Pick "
-msgstr "Parcours"
+msgstr " Kies "
 
 #: src/interface.c:4812
 msgid "Pick Start on Map"
-msgstr ""
+msgstr "Kies Startpunt op Kaart"
 
 #: src/interface.c:4814
 msgid "Pick"
-msgstr ""
+msgstr "Kies"
 
 #: src/interface.c:4819
 msgid "Pick End on Map"
-msgstr ""
+msgstr "Kies Eindpunt op Kaart"
 
 #: src/interface.c:4821
-#, fuzzy
 msgid "<b>Service </b>"
-msgstr "Répertoire des cartes :"
+msgstr "<b>Dienst </b>"
 
 #: src/interface.c:4829
 msgid "  "
-msgstr "  "
+msgstr ""
 
 #: src/interface.c:4843
 msgid "yournavigation.org"
@@ -1163,263 +1124,30 @@ msgstr ""
 
 #: src/interface.c:4855
 msgid "<i><b>Connecting...</b></i>"
-msgstr ""
+msgstr "<i><b>Verbinden...</b></i>"
 
 #: src/friends.c:610
 msgid "Msg"
 msgstr ""
 
 #: src/friends.c:977
-#, fuzzy
 msgid "  Reply  "
-msgstr "    "
+msgstr "  Antwoord  "
 
 #: src/friends.c:985
-#, fuzzy
 msgid "  Go To  "
-msgstr "Aller à"
+msgstr "  Ga Naar  "
 
-#~ msgid "      Stop       "
-#~ msgstr "      Stop       "
-
-#~ msgid "     Reset     "
-#~ msgstr " Mettre à zéro "
-
-#, fuzzy
 #~ msgid "Enable logging of your tracks for later use, i.e. for extending OSM"
 #~ msgstr ""
-#~ "Activation et désactivation de la journalisation de vos parcours pour une "
-#~ "utilisation ultérieure, par ex. avec OSM"
-
-#~ msgid "            Start            "
-#~ msgstr "Démarrer"
+#~ "Aanzetten opslaan van uw sporen voor later gebruik, bijv. voor verbeteren "
+#~ "van OSM"
 
 #~ msgid "           Split           "
-#~ msgstr "Découper"
+#~ msgstr "           Splitsen           "
 
 #~ msgid "      Configure...      "
-#~ msgstr "Configurer"
+#~ msgstr "      Instellen...      "
 
-#, fuzzy
 #~ msgid "      Load...     "
-#~ msgstr "Configurer"
-
-#~ msgid "unused cols"
-#~ msgstr "cols inutilisées"
-
-#, fuzzy
-#~ msgid "unused window"
-#~ msgstr "cols inutilisées"
-
-#~ msgid "window7"
-#~ msgstr "window7"
-
-#~ msgid "window9"
-#~ msgstr "window9"
-
-#~ msgid "window11"
-#~ msgstr "window11"
-
-#, fuzzy
-#~ msgid "---"
-#~ msgstr "--"
-
-#~ msgid ""
-#~ "Update your position to a server\n"
-#~ "and receive your friends positions,\n"
-#~ "shown on the map."
-#~ msgstr ""
-#~ "Mettre vos positions à jour vers un serveur\n"
-#~ "et recevoir la position de vos amis sur la carte."
-
-#~ msgid "once"
-#~ msgstr "une fois"
-
-#~ msgid "every"
-#~ msgstr "toujours "
-
-#~ msgid "     Update Me!     "
-#~ msgstr "Mettez-moi à jour !"
-
-#~ msgid "Permission to see me for:"
-#~ msgstr "Autorisation de me voir pour :"
-
-#~ msgid "public (you remain anonymous)"
-#~ msgstr "le public (vous restez anonyme)"
-
-#~ msgid "registered nicks"
-#~ msgstr "mes surnoms enregistrés"
-
-#~ msgid "my friends"
-#~ msgstr "mes amis"
-
-#~ msgid " <b>Updating My Position</b> "
-#~ msgstr "<b>Mise à jour de ma position</b>"
-
-#~ msgid "Show me the positions from:"
-#~ msgstr "Montrer les positions :"
-
-#~ msgid " <b>Getting Other's Positions</b> "
-#~ msgstr " <b>Obtenir la position des autres</b> "
-
-#, fuzzy
-#~ msgid ""
-#~ "Choose any nickname you want to have. A password is only necessary if you "
-#~ "have already registered your nick or you want to register it.\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
-#~ msgstr ""
-#~ "Choisissez votre surnom.\n"
-#~ "Un mot de passe n'est nécessaire que si\n"
-#~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
-#~ "Plus d'info sur :\n"
-#~ "http://www.tangogps.org/friends\n"
-
-#~ msgid "   "
-#~ msgstr "   "
-
-#~ msgid "<b>  Me  </b>"
-#~ msgstr "<b> Moi </b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Démarrer gllin et gpsd (pour Openmoko Neo1973 et <i>non pas pour "
-#~ "Freerunner</i>).\n"
-
-#~ msgid "/home/root/gllin/gllin &"
-#~ msgstr "/home/root/gllin/gllin &"
-
-#~ msgid "     Start gllin and GPSD     "
-#~ msgstr "Démarrer gllin et GPSD"
-
-#~ msgid "<b>gllin and gpsd</b>"
-#~ msgstr "<b>gllin et gpsd</b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "The following section is \n"
-#~ "for development purposes"
-#~ msgstr ""
-#~ "\n"
-#~ "La section suivante est seulement pour le développement."
-
-#~ msgid "/home/root/gprs.sh &"
-#~ msgstr "/home/root/gprs.sh &"
-
-#~ msgid "Start pppd/gprs"
-#~ msgstr "Démarrer pppd/gprs"
-
-#~ msgid "/home/root/other.sh"
-#~ msgstr "/home/root/other.sh"
-
-#~ msgid "Other stuff"
-#~ msgstr "Autres trucs"
-
-#~ msgid "fullscreen"
-#~ msgstr "plein écran"
-
-#~ msgid "      +      "
-#~ msgstr "     +       "
-
-#~ msgid "      -      "
-#~ msgstr "      -      "
-
-#, fuzzy
-#~ msgid "   info   "
-#~ msgstr "       "
-
-#, fuzzy
-#~ msgid " center "
-#~ msgstr "autocentrer"
-
-#~ msgid "map"
-#~ msgstr "carte"
-
-#~ msgid "   Map   "
-#~ msgstr "    Carte   "
-
-#~ msgid "  Trip  "
-#~ msgstr "Trajet"
-
-#~ msgid ""
-#~ "Choose any nickname you want\n"
-#~ "to have. A password is only necessary\n"
-#~ "if you have already registered your \n"
-#~ "nick or you want to register it.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
-#~ msgstr ""
-#~ "Choisissez votre surnom.\n"
-#~ "Un mot de passe n'est nécessaire que si\n"
-#~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
-#~ "Plus d'info sur :\n"
-#~ "http://www.tangogps.org/friends\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Pour enregistrer ce surnom, entrez votre courriel et cliquez ci-dessous.\n"
-#~ "IL ne sera ni divulgué ni partagé, mais utilisé que dans le cas de perte "
-#~ "du mot de passe."
-
-#~ msgid " Friends "
-#~ msgstr "Amis"
-
-#~ msgid "waypoints"
-#~ msgstr "étape"
-
-#~ msgid "button35"
-#~ msgstr "button35"
-
-#, fuzzy
-#~ msgid "Distance "
-#~ msgstr "Distance : "
-
-#~ msgid "Avg. Speed:"
-#~ msgstr "Vitesse moyenne : "
-
-#~ msgid "Max Speed:"
-#~ msgstr "Vitesse max :"
-
-#, fuzzy
-#~ msgid "filter POIs"
-#~ msgstr "choisir Pdi"
-
-#~ msgid ""
-#~ "label132\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sadf\n"
-#~ "safsdf\n"
-#~ "sdfsadf\n"
-#~ "sdfsadfadf\n"
-#~ "asdf"
-#~ msgstr ""
-#~ "label132\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sadf\n"
-#~ "safsdf\n"
-#~ "sdfsadf\n"
-#~ "sdfsadfadf\n"
-#~ "asdf"
-
-#~ msgid "Inverted Zoom"
-#~ msgstr "Zoom inversé"
+#~ msgstr "      Inladen...     "

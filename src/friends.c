@@ -97,22 +97,12 @@ static char		*db_ts_last_request_friends = NULL;
 
 
 
-
-
-
-
-
-
-
-
 gboolean
 update_position()
 {		
 	GtkLabel *label_msg;
 	label_msg = (GtkLabel *)lookup_widget(window1, "label51");
 	gtk_label_set_label(label_msg, "Connecting...");
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	if (!g_thread_create(&update_position_thread, NULL, FALSE, NULL) != 0)
 		g_warning("### can't create friend thread\n");
@@ -146,7 +136,6 @@ update_position_thread(void *ptr)
 	chunk.memory=NULL;
 	chunk.size = 0;
 	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 gdk_threads_enter();
 	
@@ -201,16 +190,13 @@ gdk_threads_leave();
 		g_sprintf(lat, "%f", tmplat);
 		g_sprintf(lon, "%f", tmplon);
 		g_sprintf(mode, "%s|%dx%d", "atm", global_drawingarea_width, global_drawingarea_height);		
-
-		printf("## friends: neither fix, no manual position %f %f\n", tmplat, tmplon);
-
 	}
 	
 	
 	if(gpsdata)
 	{
 		g_snprintf(alt, 16, "%.1f", gpsdata->fix.altitude);
-		g_snprintf(head, 16, "%.1f", gpsdata->fix.track);
+		g_snprintf(head, 16, "%.1f", gpsdata->fix.heading);
 		g_snprintf(speed, 16, "%.1f", gpsdata->fix.speed);
 	}
 	
@@ -400,9 +386,6 @@ paint_friends()
 		gc_map = gdk_gc_new(pixmap);
 		
 	
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 	if (global_show_friends)
 		{
 		for(list = friends_list; list != NULL; list = list->next)
@@ -723,10 +706,9 @@ send_message(gpointer user_data)
 	msg_t *m;
 	
 	m = user_data;
-	
+
 	postdata = create_msg_postdata(m);
-	
-	printf("** %s() \n", __PRETTY_FUNCTION__);
+
 	if (!g_thread_create(&thread_send_message, postdata, FALSE, NULL) != 0)
 		g_warning("### can't create mission thread\n");
 	
@@ -740,9 +722,7 @@ thread_send_message(void *ptr)
 	GSList		*postdata = NULL;
 	postreply_t	*postreply;
 	
-	
-	printf("** %s() \n", __PRETTY_FUNCTION__);
-	
+		
 
 	postdata = ptr;
 
@@ -877,8 +857,8 @@ process_msg_replydata(postreply_t *postreply)
 					global_new_msg = TRUE;
 			}
 			
-			if(arr[7])
-				printf("POSTDATA:\n %s\n", arr[7]); 
+			
+			
 			g_strfreev(arr);
 		}
 		
@@ -937,11 +917,12 @@ add_message(msg_t *m)
 	
 	widget = lookup_widget(window1, "vbox48");
 	gtk_box_pack_start (GTK_BOX (widget), msg_box, FALSE, FALSE, 0);
-	gtk_box_reorder_child(GTK_BOX(widget),msg_box, 1);
+	
 	hseparator = gtk_hseparator_new ();
 	gtk_widget_show (hseparator);
 	gtk_box_pack_start (GTK_BOX (widget), hseparator, FALSE, FALSE, 0);
-	gtk_box_reorder_child(GTK_BOX(widget),hseparator, 2);
+	
+
 }
 
 GtkWidget*

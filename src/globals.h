@@ -14,19 +14,26 @@
 #define MAP_PAGE 0
 #define FRIENDS_PAGE 1
 
+#define TRACKPOINT_LIST_MAX_LENGTH 10000	/* max points to keep in mem */
+#define TRIP_DELTA_MIN 0.005			/* min distance between points to log: 5m */
+#define SEGMENT_DISTANCE 100			/* start a new segment when distance exceeds: 100m */
 
 typedef struct {
+	int   time;
 	float lat;
 	float lon;
-//	int pixel_x;
-//	int pixel_y;
+	float lat_deg;
+	float lon_deg;
+	float alt;
+	float speed;
+	float head;
+	float hdop;
+	int   heart;
 } trackpoint_t;
 
 typedef struct {
 	double lat;
 	double lon;
-//	int pixel_x;
-//	int pixel_y;
 } waypoint_t;
 
 typedef struct {
@@ -35,7 +42,6 @@ typedef struct {
 	char *dir;
 	int inverted_zoom;
 } repo_t;
-
 
 
 typedef struct {
@@ -65,14 +71,14 @@ typedef struct {
 } poi_t;
 
 typedef struct {
-    double time;        /* Time of update, seconds since Unix epoch */
-    int    mode;        /* Mode of fix */
-    double latitude;    /* Latitude in degrees (valid if mode >= 2) */
-    double longitude;   /* Longitude in degrees (valid if mode >= 2) */
-    double altitude;    /* Altitude in meters (valid if mode == 3) */
-    double track;       /* Course made good (relative to true north) */
-    double speed;       /* Speed over ground, meters/sec */
-    double bearing;	/* in radian */
+	double time;		/* Time of update, seconds since Unix epoch */
+	int    mode;		/* Mode of fix */
+	double latitude;	/* Latitude in degrees (valid if mode >= 2) */
+	double longitude;	/* Longitude in degrees (valid if mode >= 2) */
+	double altitude;	/* Altitude in meters (valid if mode == 3) */
+	double heading;
+	double speed;		/* Speed over ground, meters/sec */
+	double bearing;		/* in radian, calculated by tangogps */
 } gps_fix_t;
 
 typedef struct {
@@ -115,7 +121,7 @@ extern int global_drawingarea_height;
 extern gps_data_t *gpsdata;
 
 
-extern GSList		*trackpoint_list;
+extern GQueue		*trackpoint_list;
 extern GSList		*friends_list;
 extern GSList		*photo_list;
 extern GSList		*poi_list;
@@ -127,6 +133,7 @@ extern double		trip_starttime;
 extern gboolean		trip_counter_on;
 extern trackpoint_t	global_myposition;
 extern gboolean		trip_logger_on;
+extern gboolean		trip_livelog_on;
 
 extern gchar		*global_curr_reponame;
 extern int		global_repo_cnt;

@@ -19,15 +19,51 @@
 #include "wp.h"
 #include "tracks.h"
 
+typedef struct {
+	GdkPixbuf *pixbuf;
+	gboolean reused;
+} tile_hash_t;
 
-static GdkPixbuf	*pixbuf = NULL;
-static GdkPixbuf	*pixbuf_scaled = NULL;
-static GError		*error = NULL;
+
 static GdkGC		*gc_map = NULL;
 
 static GtkWidget	*drawingarea11 = NULL;
+static GHashTable	*hash_table = NULL;
 
- 
+void hash_destroy_key_func   (gpointer data);
+void hash_destroy_value_func (gpointer data);
+gboolean hash_sieve_func (gpointer key, gpointer value, gpointer user_data);
+
+void
+hash_destroy_key_func   (gpointer data)
+{
+	g_free(data);
+}
+
+void
+hash_destroy_value_func (gpointer data)
+{
+	tile_hash_t *tile_hash = data;
+
+	g_object_unref(tile_hash->pixbuf);
+	g_free(data);
+}
+
+gboolean
+hash_sieve_func (gpointer key, gpointer value, gpointer user_data)
+{
+	gboolean remove = TRUE;
+	
+	tile_hash_t *tile_hash = value;
+	
+	if(tile_hash->reused)
+	{
+		tile_hash->reused = FALSE;
+		remove = FALSE;
+	}
+
+	return remove;
+}
 
 
 void
@@ -38,16 +74,18 @@ load_tile(	gchar *dir,
 		int offset_x,
 		int offset_y)
 {
-	int overzoom=0;
-	int upscale=1;
-	gboolean tile_found = FALSE;
-	repo_t *repo;
-	static gchar filename[256];
-	
+	int 		overzoom	= 0;
+	int 		upscale		= 1;
+	gboolean	hash_not_found = TRUE;
+	static gchar 	filename[256];
+	static gchar	wanted_filename[256];
+
+	GdkPixbuf	*pixbuf		= NULL;
+	GdkPixbuf	*pixbuf_scaled	= NULL;
+	repo_t 		*repo;
+	tile_hash_t	*tile_hash;
 
 	
-
-
 	if(gc_map)
 		g_object_unref(gc_map);
 	if(pixmap)
@@ -57,51 +95,47 @@ load_tile(	gchar *dir,
 	else printf("no drawable -> NULL\n");
 
 
+	g_snprintf(wanted_filename, 255, "%s/%u/%u/%u.png", dir, zoom, x, y);
+	tile_hash = g_hash_table_lookup(hash_table, wanted_filename);
 	
-	if (pixbuf)
+	if(tile_hash)
 	{
-		g_object_unref (pixbuf);
-		pixbuf = NULL;
-	}
-	
-	if (pixbuf_scaled)
-	{
-		g_object_unref (pixbuf_scaled);
-		pixbuf_scaled = NULL;
-	}
-
-
-	
-	for(overzoom=0; overzoom<=3; overzoom++)
-	{
-		g_sprintf(filename, "%s/%u/%u/%u.png", dir, zoom-overzoom, x/upscale, y/upscale);
+		pixbuf = tile_hash->pixbuf;
 		
-
-		pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
-
-		if(pixbuf)
+		tile_hash->reused = TRUE;
+		hash_not_found	  = FALSE;
+	}
+	
+	else
+	{
+		
+		for(overzoom=0; overzoom<=3; overzoom++)
 		{
-			tile_found = TRUE;
-			break;
-		}		
-
-		upscale *= 2;
+			g_snprintf(filename, 255, "%s/%u/%u/%u.png", dir, zoom-overzoom, x/upscale, y/upscale);
+	
+			pixbuf = gdk_pixbuf_new_from_file (filename, NULL);
+	
+			if(pixbuf)
+				break;
+	
+			upscale *= 2;
+		}
+		
+		if(pixbuf && overzoom)
+		{
+			
+			pixbuf_scaled = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, 256, 256); 
+	
+			gdk_pixbuf_scale (	pixbuf, pixbuf_scaled,
+						0, 0,
+						TILESIZE, TILESIZE,
+						-TILESIZE*(x%upscale), -TILESIZE*(y%upscale),
+						upscale, upscale,
+						GDK_INTERP_BILINEAR );
+		}
 	}
 	
-	if(pixbuf && overzoom)
-	{
-		
-		pixbuf_scaled = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, 256, 256); 
-
-		gdk_pixbuf_scale (	pixbuf, pixbuf_scaled,
-					0, 0,
-					TILESIZE, TILESIZE,
-					-TILESIZE*(x%upscale), -TILESIZE*(y%upscale),
-					upscale, upscale,
-					GDK_INTERP_BILINEAR );
-	}
-
-	if(!tile_found)
+	if(!pixbuf)
 	{
 		
 		GtkWidget *widget;
@@ -117,21 +151,12 @@ load_tile(	gchar *dir,
 			256);
 						
 		gtk_widget_queue_draw_area (
-			widget, 
+			widget,
 			offset_x,offset_y,256,256);
-		
-		
-		
-		printf("PIXBUF: error loading png\n");
-		error = NULL;
-		
-
 	}
+	
 	else
 	{
-		
-
-	
 		
 		gdk_draw_pixbuf (
 			pixmap,
@@ -142,11 +167,21 @@ load_tile(	gchar *dir,
 			TILESIZE,TILESIZE,
 			GDK_RGB_DITHER_NONE, 0, 0);
 
+		
+		if(hash_not_found)
+		{
+			tile_hash = g_new0(tile_hash_t,1);
+			tile_hash->pixbuf = (overzoom ? pixbuf_scaled : pixbuf);
+			tile_hash->reused = TRUE;
+	
+			g_hash_table_insert(hash_table, g_strdup(wanted_filename), tile_hash);
+			
+			if (overzoom)
+				g_object_unref(pixbuf);
+
+		}
 	}
 
-
-		
-	
 	
 	drawingarea11 = lookup_widget(window1, "drawingarea1");
 	
@@ -155,19 +190,11 @@ load_tile(	gchar *dir,
 		offset_x,offset_y,
 		TILESIZE,TILESIZE);
 
-	if(overzoom)
+	if(overzoom && global_auto_download)
 	{
-		if (global_auto_download)
-		{
-			repo = global_curr_repo->data;
-			download_tile(repo,zoom,x,y);
-		}
-		else
-		{
-			printf("*** Not downloading tile \n");
-		}
+		repo = global_curr_repo->data;
+		download_tile(repo,zoom,x,y);
 	}	
-
 }
 
 
@@ -175,10 +202,12 @@ load_tile(	gchar *dir,
 void
 fill_tiles_pixel(	int pixel_x,
 			int pixel_y,
-			int zoom)
+			int zoom,
+			gboolean force_refresh)
 {
 	GtkWidget *widget;
-	int i,j, width, height, tile_x0, tile_y0, tiles_nx, tiles_ny;
+	int i,j, i_corrected, width, height, tile_x0, tile_y0, tiles_nx, tiles_ny;
+	int max_pixel;
 	int offset_xn = 0;
 	int offset_yn = 0;
 	int offset_x;
@@ -187,14 +216,33 @@ fill_tiles_pixel(	int pixel_x,
 	GError **error = NULL;
 	repo_t *repo = g_new0(repo_t, 1);
 	
-	printf("*** %s(): xyz %d %d %d\n",__PRETTY_FUNCTION__,pixel_x,pixel_y,zoom);
-
+	
+	if (!hash_table)
+	{
+		hash_table = g_hash_table_new_full (g_str_hash,
+						    g_str_equal,
+						    hash_destroy_key_func,
+						    hash_destroy_value_func);
+	}
+	
+	if(force_refresh)
+	{
+		g_hash_table_remove_all(hash_table);	
+	}
 	
 	widget = lookup_widget(window1,"drawingarea1");
 	
 	repo = global_curr_repo->data;
-	printf("---repo dir: %s \n",g_strdup(repo->dir));
+
 	
+	max_pixel = (int) exp2(zoom) * TILESIZE; 
+
+	if(pixel_x < 0)
+		pixel_x += max_pixel;
+	
+	else if (pixel_x > max_pixel)
+		pixel_x -= max_pixel;	
+
 	
 	offset_x = - pixel_x % TILESIZE;
 	offset_y = - pixel_y % TILESIZE;
@@ -207,33 +255,27 @@ fill_tiles_pixel(	int pixel_x,
 	
 	offset_xn = offset_x; 
 	offset_yn = offset_y;
-	
+
 	width  = map_drawable->allocation.width;
 	height = map_drawable->allocation.height;
 
 	tiles_nx = floor((width  - offset_x) / TILESIZE) + 1;
 	tiles_ny = floor((height - offset_y) / TILESIZE) + 1;
 	
-	
-
-	
 	tile_x0 =  floor((float)pixel_x / (float)TILESIZE);
 	tile_y0 =  floor((float)pixel_y / (float)TILESIZE);
 	
 	
-	
-	
 
-	for (i=tile_x0; i<(tile_x0+tiles_nx);i++)
+	for (i=tile_x0; i<(tile_x0+tiles_nx); i++)
 	{
 		for (j=tile_y0;  j<(tile_y0+tiles_ny); j++)
 		{
 			
+			
 
-			if(	j<0			||
-				i<0			||
-				i>=exp(zoom * M_LN2)	||
-				j>=exp(zoom * M_LN2))
+			
+			if(j<0 || j>=exp2(zoom))
 			{
 				gdk_draw_rectangle (
 					pixmap,
@@ -247,14 +289,15 @@ fill_tiles_pixel(	int pixel_x,
 					widget, 
 					offset_xn,offset_yn,
 					TILESIZE,TILESIZE);
-				
 			}
 			else
-			{
+			{	
+				i_corrected = (i>=exp2(zoom)) ? i-exp2(zoom) : i;
+				
 				load_tile(
 					repo->dir,
 					zoom,
-					i,j,
+					i_corrected,j,
 					offset_xn,offset_yn);
 			}
 			offset_yn += TILESIZE;
@@ -262,6 +305,10 @@ fill_tiles_pixel(	int pixel_x,
 		offset_xn += TILESIZE;
 		offset_yn = offset_y;
 	}
+
+	
+	g_hash_table_foreach_remove (hash_table, hash_sieve_func, NULL);
+	
 	
 	success = gconf_client_set_int(
 				global_gconfclient, 
@@ -295,7 +342,7 @@ fill_tiles_latlon(	float lat,
 	printf("fill_tiles_latlon(): lat %f  %i -- lon %f  %i\n",
 	lat,pixel_y,lon,pixel_x);
 	
-	fill_tiles_pixel (pixel_x, pixel_y, zoom);
+	fill_tiles_pixel (pixel_x, pixel_y, zoom, FALSE);
 }
 
 void
@@ -312,41 +359,17 @@ set_mapcenter(	float lat,
 	pixel_x = lon2pixel(zoom, lon);
 	pixel_y = lat2pixel(zoom, lat);
 
-	printf("fill_tiles_latlon(): lat %f  %i -- lon %f  %i\n",
-	lat,pixel_y,lon,pixel_x);
 	
 	osd_speed(TRUE);
 	fill_tiles_pixel (	pixel_x - global_drawingarea_width/2, 
 				pixel_y - global_drawingarea_height/2,
-				zoom);
+				zoom, FALSE);
 	print_track();
 	paint_loaded_track();
 	paint_friends();
 	paint_photos();
 	paint_pois();
 	paint_wp();
-	osd_speed(TRUE); 
-	
-
-
-}
-
-
-
-void
-fill_tiles_latlon_hack(	float lat,
-			float lon,
-			int zoom)
-{
-	int pixel_x, pixel_y;
 	
 	
-	pixel_x = lon2pixel(zoom, lon);
-
-	pixel_y = lat2pixel(zoom, lat);
-
-	printf("fill_tiles_latlon(): lat %f  %i -- lon %f  %i\n",
-	lat,pixel_y,lon,pixel_x);
-	
-	fill_tiles_pixel (pixel_x - 240, pixel_y - 300, zoom);
 }

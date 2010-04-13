@@ -1,4 +1,5 @@
-
+gboolean
+cb_gps_timer();
 
 void
 get_gps();

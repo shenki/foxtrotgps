@@ -1,3 +1,14 @@
+void
+print_track();
+
+void
+track_log();
+
+void
+track_log_open();
+
+void
+track_log_close();
 
 void
 tracks_open_tracks_dialog();

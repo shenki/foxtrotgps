@@ -14,13 +14,11 @@
 #include "tile_management.h"
 
 #include <glib.h>
-
 #include <glib/gprintf.h>
 #include <stdio.h>
 #include <sqlite3.h>
 #include <stdlib.h>
 #include <libexif/exif-data.h>
-
 #include <time.h>
 
 #define PHOTO_DB "geophoto.db"
@@ -90,9 +88,6 @@ paint_photos()
 	static GdkPixbuf *photo_icon = NULL;
 	static GdkGC *gc;
 	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-
 	
 	if (!gc)
 		gc = gdk_gc_new(pixmap); 
@@ -205,19 +200,15 @@ get_photos()
 	photo_list = NULL;
 	
 	
-	
 	sql = g_strdup_printf(	
 			"SELECT * FROM photo "
 			"WHERE lat<%f AND lat>%f AND lon>%f AND lon<%f "
 			"LIMIT 500;",
 			bbox.lat1,bbox.lat2,
 			bbox.lon1, bbox.lon2	);
-printf("%s \n",sql);
-	
-	sql_execute(db, sql, sql_cb__photo);	
 	
 	
-	
+	sql_execute(db, sql, sql_cb__photo);		
 }
 
 void
@@ -226,7 +217,7 @@ geo_photos_open_dialog_photo_correlate()
 	GtkWidget *label1, *label2;
 	char *label_txt;
 	int tmp;
-printf("%s\n",__PRETTY_FUNCTION__);	
+
 	if(!dialog_photo_correlate)
 	{
 		dialog_photo_correlate = create_dialog_geocode();

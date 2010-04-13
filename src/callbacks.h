@@ -821,3 +821,23 @@ on_button76_clicked                    (GtkButton       *button,
 void
 on_checkbutton15_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
+
+void
+on_button78_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_checkbutton16_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_checkbutton17_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_button79_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_entry29_changed                     (GtkEditable     *editable,
+                                        gpointer         user_data);

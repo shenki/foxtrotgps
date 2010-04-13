@@ -79,97 +79,6 @@ set_cursor(int type)
 }
 
 
-void
-print_track()
-{	
-	GSList *list;
-	int pixel_x, pixel_y, x,y, last_x = 0, last_y = 0;
-	float lat, lon;
-	GdkColor color;
-	GdkGC *gc;
-	gboolean is_line = FALSE;
-	
-	gc = gdk_gc_new(pixmap);
-	color.green = 0;
-	color.blue = 0;
-	color.red = 60000;
-	gdk_gc_set_rgb_fg_color(gc, &color);
-	gdk_gc_set_line_attributes(gc,
-		5, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
-
-	
-			
-		
-		
-		
-	
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-	for(list = trackpoint_list; list != NULL; list = list->next)
-	{
-		trackpoint_t *tp = list->data;
-	
-		lat = tp->lat;
-		lon = tp->lon;
-		
-		
-		
-		
-		pixel_x = lon2pixel(global_zoom, lon);
-		pixel_y = lat2pixel(global_zoom, lat);
-		
-		x = pixel_x - global_x;
-		y = pixel_y - global_y;
-		
-		
-
-
-		if(is_line)
-		{
-			gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
-			gtk_widget_queue_draw_area (
-				map_drawable, 
-				x-4, y-4,
-				8,8);
-		}
-		
-		last_x = x;
-		last_y = y;
-		
-		
-		is_line = TRUE;
-	}
-	
-	
-	
-	
-	
-	if(	
-		gpsdata && 
-		gpsdata->fix.longitude !=0 &&  
-		gpsdata->fix.latitude != 0 &&
-		last_x != 0 &&
-		last_y != 0
-		)
-	{
-		pixel_x = lon2pixel(global_zoom, deg2rad(gpsdata->fix.longitude));
-		pixel_y = lat2pixel(global_zoom, deg2rad(gpsdata->fix.latitude));
-			
-		x = pixel_x - global_x;
-		y = pixel_y - global_y;
-
-	
-		gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
-printf("LINE x y lx ly: %d %d %d %d\n",x,y,last_x,last_y);	
-			gtk_widget_queue_draw_area (
-			map_drawable, 
-			x-4, y-4,
-			8,8);
-	}
-	
-}
-
 gboolean
 on_drawingarea1_button_press_event     (GtkWidget       *widget,
                                         GdkEventButton  *event,
@@ -182,20 +91,14 @@ on_drawingarea1_button_press_event     (GtkWidget       *widget,
 		printf("double click\n");
 		
 		
-		
-			
 	}
 	
 	mouse_x = (int) event->x;
 	mouse_y = (int) event->y;
 	local_x = global_x;
 	local_y = global_y;
-
-	
-	
 		
-		
-  return FALSE;
+	return FALSE;
 }
 
 gboolean
@@ -203,11 +106,8 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 	if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
-		printf("CONTROL WAS PRESSED\n");
+		
 		GtkWidget *range;
 		int zoom_old;
 		double factor;
@@ -221,9 +121,7 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 			
 			width_center  = map_drawable->allocation.width 	/ 2;
 			height_center = map_drawable->allocation.height / 2;
-			
-			printf("x vorher: %d, %f, %f\n",global_x,event->x,event->y);
-			
+						
 			zoom_old = global_zoom;
 		
 			global_zoom++;
@@ -291,7 +189,7 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 				for(list = friends_list; list != NULL && !friend_found; list = list->next)
 				{
 					friend_t *f = list->data;
-					
+
 					if( 	abs(f->screen_x - mouse_x) < 15 &&
 						abs(f->screen_y - mouse_y) < 15)
 					{
@@ -377,13 +275,11 @@ on_drawingarea1_motion_notify_event    (GtkWidget       *widget,
 {
 	if(global_mapmode)
 	{
-		
-
 		int x, y, width, height;
 		GdkModifierType state;
 		
-		width  = map_drawable->allocation.width;
-		height = map_drawable->allocation.height;
+		width  = map_drawable->allocation.width;  
+		height = map_drawable->allocation.height; 
 		
 		if (event->is_hint)
 			gdk_window_get_pointer (event->window, &x, &y, &state);
@@ -437,11 +333,6 @@ on_drawingarea1_motion_notify_event    (GtkWidget       *widget,
 					mouse_dy);
 					
 
-
-
-			
-			
-			
 		}	
 		else
 			wtfcounter++;
@@ -463,6 +354,7 @@ on_drawingarea1_configure_event        (GtkWidget         *widget,
 	global_drawingarea_width  = widget->allocation.width;
 	global_drawingarea_height = widget->allocation.height;
 	
+	
 	if (pixmap)
 		g_object_unref (pixmap);
 
@@ -471,10 +363,9 @@ on_drawingarea1_configure_event        (GtkWidget         *widget,
 			widget->allocation.width+260, 
 			widget->allocation.height+260,
 			-1);
-
-
-if(pixmap) printf("pixmap created\n");
-else printf("aieee: pixmap NULL\n");
+	
+	if(pixmap) printf("pixmap created\n");
+	else printf("aieee: pixmap NULL\n");
 
 	
 	gdk_draw_rectangle (
@@ -489,12 +380,9 @@ else printf("aieee: pixmap NULL\n");
 		widget, 
 		0,0,widget->allocation.width+260,widget->allocation.height+260);
 
-
+	repaint_all();	
 	
-	
-
-repaint_all();	
-return FALSE;
+	return FALSE;
 }
 
 
@@ -504,7 +392,7 @@ on_drawingarea1_expose_event           (GtkWidget       *widget,
                                         gpointer         user_data)
 {
 	
-	printf("** expose event %d %d %d %d\n", event->area.x, event->area.y, event->area.width, event->area.height);
+	
 	
 	gdk_draw_drawable (
 		widget->window,
@@ -527,7 +415,7 @@ on_button1_clicked                     (GtkButton       *button,
 	if(!maximized)
 	{		
 		gtk_window_fullscreen(GTK_WINDOW(window1));
-		fill_tiles_pixel(global_x, global_y, global_zoom);
+		fill_tiles_pixel(global_x, global_y, global_zoom, FALSE);
 
 		maximized = TRUE;
 	}
@@ -557,36 +445,10 @@ void
 on_vscale1_value_changed               (GtkRange        *range,
                                         gpointer         user_data)
 {
-#if 0
-	int zoom_old;
-	float factor;
-	int width_center, height_center;
-	
-	width_center  = map_drawable->allocation.width 	/ 2;
-	height_center = map_drawable->allocation.height / 2;
-	
-	printf("x vorher: %d",global_x);
-	
-	zoom_old = global_zoom;
 
-	global_zoom = gtk_range_get_value(range);
-	factor = exp2(global_zoom)/exp2(zoom_old);
 
-	
-	
-	
-	
-	global_x = ((global_x + width_center) * factor) - width_center;
-	global_y = ((global_y + height_center) * factor) - height_center;
-	
-	
-	fill_tiles_pixel(global_x, global_y, global_zoom);
-
-	
-	printf("zoom changed from %d to %d factor: %f x: %d\n",
-	zoom_old,global_zoom, factor, global_x);
-#endif
 }
+
 void
 on_button4_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
@@ -604,30 +466,18 @@ on_button4_clicked                     (GtkButton       *button,
 		
 		width_center  = map_drawable->allocation.width 	/ 2;
 		height_center = map_drawable->allocation.height / 2;
-		
-		printf("x vorher: %d",global_x);
-		
+				
 		zoom_old = global_zoom;
 	
 		global_zoom++;
 		gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
-		factor = exp(global_zoom * M_LN2)/exp(zoom_old * M_LN2);
-	
-		
-		
-		
+		factor = exp(global_zoom * M_LN2)/exp2(zoom_old);
 		
 		global_x = ((global_x + width_center) * factor) - width_center;
 		global_y = ((global_y + height_center) * factor) - height_center;
 		
 		
 		repaint_all();
-		
-		
-		printf("zoom changed from %d to %d factor: %f x: %d\n",
-		zoom_old,global_zoom, factor, global_x);
-	
-
 	}
 }
 
@@ -687,30 +537,18 @@ on_button5_clicked                     (GtkButton       *button,
 	
 		width_center  = map_drawable->allocation.width 	/ 2;
 		height_center = map_drawable->allocation.height / 2;
-		
-		printf("x vorher: %d",global_x);
-		
+				
 		zoom_old = global_zoom;
 	
 		global_zoom--;
 		gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
 	
 		factor = exp(global_zoom * M_LN2)/exp(zoom_old * M_LN2);
-	
-		
-		
-		
 		
 		global_x = ((global_x + width_center) * factor) - width_center;
 		global_y = ((global_y + height_center) * factor) - height_center;
 		
-		
 		repaint_all();
-		
-		
-		printf("zoom changed from %d to %d factor: %f x: %d\n",
-		zoom_old,global_zoom, factor, global_x);
-
 	}
 }
 
@@ -753,40 +591,25 @@ gboolean
 on_vscale1_button_release_event        (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
-{
-	printf("%s(): \n", __PRETTY_FUNCTION__);
-	
-		int zoom_old;
+{	
+	int zoom_old;
 	float factor;
 	int width_center, height_center;
 	
 	width_center  = map_drawable->allocation.width 	/ 2;
 	height_center = map_drawable->allocation.height / 2;
-	
-	printf("x vorher: %d",global_x);
-	
+		
 	zoom_old = global_zoom;
 
 	global_zoom = gtk_range_get_value(GTK_RANGE(widget));
 	factor = exp(global_zoom * M_LN2)/exp(zoom_old * M_LN2);
-
-	
-	
-	
 	
 	global_x = ((global_x + width_center) * factor) - width_center;
 	global_y = ((global_y + height_center) * factor) - height_center;
 	
-	
-	
 	repaint_all();
-
 	
-	printf("zoom changed from %d to %d factor: %f x: %d\n",
-	zoom_old,global_zoom, factor, global_x);
-	
-	
-  return FALSE;
+	return FALSE;
 }
 
 
@@ -800,10 +623,9 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 	gboolean success = FALSE;
 	static gboolean first_run = TRUE;
 
-	printf("%s():\n",__PRETTY_FUNCTION__);
 	
 	reponame_combo = gtk_combo_box_get_active_text(combobox);
-	
+
 	global_curr_reponame = g_strdup(reponame_combo);
 	
 	
@@ -821,16 +643,13 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 
 		repo = list->data;
 		reponame = g_strdup(repo->name);
-		printf("*** %s(): reponame: %s %s\n",__PRETTY_FUNCTION__,reponame,repo->uri);
 		
 		if(	g_strrstr(reponame,global_curr_reponame) != NULL &&
 			strlen(reponame) == strlen(global_curr_reponame)	
 		) 
 		{
-			
 			global_curr_repo = list;
 		}
-		
 	}
 	
 	
@@ -1046,13 +865,10 @@ void
 on_button8_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
 {
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	g_slist_free(trackpoint_list);
-	trackpoint_list = NULL;
-	trip_distance = 0;
-	trip_starttime = 0;
-	trip_time =0;
-	trip_maxspeed = 0;
+	trip_distance	= 0;
+	trip_starttime	= 0;
+	trip_time	= 0;
+	trip_maxspeed	= 0;
 }
 
 void
@@ -1229,14 +1045,12 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	for(list = friends_list; list != NULL; list = list->next)
 	{
 		friend_t *f = list->data;
-		printf("PIXEL FRIENDS: %d %d   \n",f->screen_x,f->screen_y);
+
 		if( 	abs(f->screen_x - mouse_x) < 15 &&
 			abs(f->screen_y - mouse_y) < 15)
 		{
 			printf("FOUND FRIEND X: %d %d %s\n\n",f->screen_x, mouse_x,f->nick);
 	
-			
-			
 			friend_box = create_friend_box(f);
 			
 			gtk_box_pack_start (GTK_BOX (widget), friend_box, FALSE, FALSE, 0);
@@ -1253,12 +1067,9 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	if (!friend_found)
 		g_sprintf(buffer,"No friends at or near this position");
 
-	
 
 	label = lookup_widget(window,"label119");
 	gtk_label_set_label(GTK_LABEL(label),buffer);
-
-	
 }
 
 void
@@ -1556,8 +1367,6 @@ on_drawinarea1_scroll_event            (GtkWidget       *widget,
                                         GdkEventScroll  *event,
                                         gpointer         user_data)
 {
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
 		if (event->direction == GDK_SCROLL_UP) {
 			printf("SCROLL UP+Ctrl\n");
@@ -1574,23 +1383,17 @@ on_drawinarea1_scroll_event            (GtkWidget       *widget,
 		int width_center, height_center;
 		static int slowpad = 0;
 		
-		if (event->direction == GDK_SCROLL_UP && slowpad % 1 ==0)
+		if (event->direction == GDK_SCROLL_UP && slowpad % 2 ==0)
 		{
 			slowpad++;
-			
-		
-			printf("SCROLL UP\n");
-			
-			
+						
 			if(global_zoom<global_zoom_max)
 			{	
 				range = lookup_widget(window1, "vscale1");
 				
 				width_center  = map_drawable->allocation.width 	/ 2;
 				height_center = map_drawable->allocation.height / 2;
-				
-				printf("x vorher: %d, %f, %f\n",global_x,event->x,event->y);
-				
+								
 				zoom_old = global_zoom;
 			
 				global_zoom++;
@@ -1608,38 +1411,29 @@ on_drawinarea1_scroll_event            (GtkWidget       *widget,
 				repaint_all();
 			}
 		}
-		else if (event->direction == GDK_SCROLL_DOWN && slowpad % 1 ==0)
+		else if (event->direction == GDK_SCROLL_DOWN && slowpad % 2 ==0)
 		{
 			slowpad++;
-			printf("SCROLL DOWN\n");
-			
+
 			if(global_zoom>2)
 			{
 				range = lookup_widget(window1, "vscale1");
 			
 				width_center  = map_drawable->allocation.width 	/ 2;
 				height_center = map_drawable->allocation.height / 2;
-				
-				printf("x vorher: %d",global_x);
-				
+								
 				zoom_old = global_zoom;
 			
 				global_zoom--;
 				gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
 			
 				factor = exp(global_zoom * M_LN2)/exp(zoom_old * M_LN2);
-			
-				
-				
-				
 				
 				global_x = global_x/2 - (int)event->x/2;
 				global_y = global_y/2 - (int)event->y/2;
 				
 				repaint_all();
-
 			}
-
 		}
 		else slowpad++;
 			
@@ -1656,9 +1450,9 @@ on_button15_clicked                    (GtkButton       *button,
 	trip_counter_on = (trip_counter_on) ? FALSE : TRUE;
 	
 	if(trip_counter_on)
-		gtk_button_set_label(button, "      Stop      ");
+		gtk_button_set_label(button, "Stop");
 	else
-		gtk_button_set_label(button, "      Start      ");
+		gtk_button_set_label(button, "Resume");
 }
 
 void
@@ -1711,34 +1505,6 @@ on_button13_clicked                    (GtkButton       *button,
 	register_nick();
 }
 
-
-
-void
-on_button18_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	trip_logger_on = (trip_logger_on) ? FALSE : TRUE;
-	
-	
-	if(trip_logger_on)
-	{
-		gtk_button_set_label(button, "            Stop              ");
-		track_log_open();
-		gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/tracklog_on",
-				TRUE, NULL);
-	}
-	else
-	{
-		gtk_button_set_label(button, "            Start             ");
-		track_log_close();
-		gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/tracklog_on",
-				FALSE, NULL);
-	}
-}
 
 
 void
@@ -2271,13 +2037,10 @@ on_okbutton5_clicked                   (GtkButton       *button,
 	
 	dialog = lookup_widget(GTK_WIDGET(button), "dialog6");
 	
-	
 	combobox = lookup_widget(GTK_WIDGET(button), "combobox4");
 	global_poi_cat = gtk_combo_box_get_active(GTK_COMBO_BOX(combobox));
 
 	gtk_widget_destroy(dialog);
-
-
 	
 	widget = lookup_widget(menu1, "item20");
 	pois_shown = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget));
@@ -2520,10 +2283,7 @@ on_button11_expose_event               (GtkWidget       *widget,
                                         GdkEventExpose  *event,
                                         gpointer         user_data)
 {
-
-
-	
-  return FALSE;
+	return FALSE;
 }
 
 void
@@ -2682,7 +2442,10 @@ on_item9_activate                      (GtkMenuItem     *menuitem,
 void
 repaint_all()
 {
-	fill_tiles_pixel(global_x, global_y, global_zoom);
+	
+
+
+	fill_tiles_pixel(global_x, global_y, global_zoom, FALSE);
 	print_track();
 	paint_loaded_track();
 	paint_friends();
@@ -2690,8 +2453,7 @@ repaint_all()
 	paint_pois();
 	paint_wp();
 	paint_myposition();
-	osd_speed(TRUE);
-
+	
 }
 
 void
@@ -2700,11 +2462,9 @@ on_button29_clicked                    (GtkButton       *button,
 {
 	GtkWidget *window;
 	waypoint_t *wp;
-printf("DEBUG\n");	
+	
 	wp = user_data;
-printf("hello, world, %f %f\n", wp->lat, wp->lon);
 	set_current_wp(wp->lat, wp->lon);
-printf("DEBUG\n");	
 
 	window = lookup_widget(GTK_WIDGET(button), "window3");
 	gtk_widget_hide(window);
@@ -2714,7 +2474,6 @@ void
 on_button28_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
-	
 	GtkWidget *entry14, *entry15;
 
 	char buf[64];
@@ -2744,7 +2503,6 @@ on_button33_clicked                    (GtkButton       *button,
 	GtkWidget *window;
 
 	poi_t *p;
-
 	
 	p = user_data;
 	tbuffer = gtk_text_buffer_new(NULL);
@@ -2813,7 +2571,6 @@ void
 on_button30_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
-	
 	GtkWidget *entry17, *entry18;
 
 	char buf[64];
@@ -2919,10 +2676,8 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
 		gtk_combo_box_set_active(GTK_COMBO_BOX(widget), 7);
 		repaint_all();
 	}
-	else
-		printf("some key pressed\n");
-	
-  return TRUE;
+
+	return TRUE;
 }
 
 void
@@ -2952,7 +2707,7 @@ on_dialog7_delete_event                (GtkWidget       *widget,
 {
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-  return FALSE;
+	return FALSE;
 }
 
 
@@ -3217,7 +2972,6 @@ on_entry21_changed                     (GtkEditable     *editable,
 	GtkWidget	*widget;
 	const char	*txt1, *txt2, *txt3;
 	const gchar	*dir;
-
 	int result;
 	
 	dir = gtk_entry_get_text(GTK_ENTRY(editable));
@@ -3225,8 +2979,6 @@ on_entry21_changed                     (GtkEditable     *editable,
 	result = strncmp(dir, "~", 1);
 	if(!result)
 		gtk_entry_set_text(GTK_ENTRY(editable), g_strdup(getenv("HOME")));
-
-
 
 
 	
@@ -3246,7 +2998,6 @@ on_entry21_changed                     (GtkEditable     *editable,
 	else
 		gtk_widget_set_sensitive (widget, FALSE);
 	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 }
 
 
@@ -4143,6 +3894,65 @@ move_map(int i)
 		widget, 
 		0,0,widget->allocation.width+260,widget->allocation.height+260);
 	
-
+	global_autocenter = FALSE;
+	
 	repaint_all();
+}
+
+void
+on_button78_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+
+void
+on_checkbutton16_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+	trip_livelog_on = gtk_toggle_button_get_active(togglebutton);
+}
+
+void
+on_checkbutton17_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+	trip_logger_on = gtk_toggle_button_get_active(togglebutton);
+
+	
+	if(trip_logger_on)
+	{
+		track_log_open();
+		gconf_client_set_bool(
+				global_gconfclient, 
+				GCONF"/tracklog_on",
+				TRUE, NULL);
+	}
+	else
+	{
+		track_log_close();
+		gconf_client_set_bool(
+				global_gconfclient, 
+				GCONF"/tracklog_on",
+				FALSE, NULL);
+	}
+}
+
+
+void
+on_button79_clicked                    (GtkButton       *button,
+                                        gpointer         user_data)
+{
+
+}
+
+void
+on_entry29_changed                     (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+	const char *me_msg;
+
+	me_msg = gtk_entry_get_text(GTK_ENTRY(editable));
+	gconf_client_set_string(global_gconfclient, GCONF"/me_msg", me_msg, NULL);
 }

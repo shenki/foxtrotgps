@@ -4,6 +4,7 @@
 #include <string.h>
 #include <time.h>
 #include <errno.h>
+#include <math.h>
 
 #include <gtk/gtk.h>
 #include <glib.h>
@@ -42,6 +43,260 @@ GSList *	parse_nodes(xmlNode *node);
 
 void *		fetch_track_thread(void *ptr);
 
+
+
+void
+print_track()
+{	
+	GList *list;
+	int pixel_x, pixel_y, x,y, last_x = 0, last_y = 0;
+	int counter = -1, modulo, j=0;
+	float lat, lon;
+	GdkColor color;
+	GdkGC *gc;
+	gboolean is_line = FALSE;
+	
+	gc = gdk_gc_new(pixmap);
+	color.green = 0;
+	color.blue = 0;
+	color.red = 60000;
+	gdk_gc_set_rgb_fg_color(gc, &color);
+	gdk_gc_set_line_attributes(gc,
+		5, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+
+	if (global_zoom < 16 && global_zoom > 10)
+		modulo = exp2(16-global_zoom);
+	else if (global_zoom <= 10)
+		modulo = 32;
+	else
+		modulo = 1;
+	
+	for(list = trackpoint_list->tail; list != NULL; list = list->prev)
+	{
+		counter++;
+		
+		if (counter % modulo == 0)
+		{
+			j++;
+			if (j > 300) 
+			{
+				break; 
+			}
+			
+			trackpoint_t *tp = list->data;
+		
+			lat = tp->lat;
+			lon = tp->lon;
+			
+			
+			
+			pixel_x = lon2pixel(global_zoom, lon);
+			pixel_y = lat2pixel(global_zoom, lat);
+			
+			x = pixel_x - global_x;
+			y = pixel_y - global_y;
+			
+	
+			if(is_line)
+			{
+				gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
+				gtk_widget_queue_draw_area (
+					map_drawable, 
+					x-4, y-4,
+					8,8);
+			}
+			
+			last_x = x;
+			last_y = y;
+			
+			is_line = TRUE;
+		}
+	}
+	
+	
+	if(	
+		gpsdata && 7==6 &&
+		gpsdata->fix.longitude !=0 &&  
+		gpsdata->fix.latitude != 0 &&
+		last_x != 0 &&
+		last_y != 0
+		)
+	{
+		pixel_x = lon2pixel(global_zoom, deg2rad(gpsdata->fix.longitude));
+		pixel_y = lat2pixel(global_zoom, deg2rad(gpsdata->fix.latitude));
+			
+		x = pixel_x - global_x;
+		y = pixel_y - global_y;
+
+	
+		gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
+		gtk_widget_queue_draw_area (
+			map_drawable, 
+			x-4, y-4,
+			8,8);		
+	}
+	
+}
+
+
+void
+paint_loaded_track()
+{
+	
+	GSList *list;
+	int pixel_x, pixel_y, x,y, last_x = 0, last_y = 0;
+	float lat, lon;
+	GdkColor color;
+	GdkGC *gc;
+	gboolean is_line = FALSE;
+	
+	gc = gdk_gc_new(pixmap);
+	color.green = 50000;
+	color.blue = 0;
+	color.red = 0;
+	gdk_gc_set_rgb_fg_color(gc, &color);
+	gdk_gc_set_line_attributes(gc,
+		5, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+
+	
+	for(list = loaded_track; list != NULL; list = list->next)
+	{
+		trackpoint_t *tp = list->data;
+	
+		lat = tp->lat;
+		lon = tp->lon;
+		
+		
+		
+		
+		pixel_x = lon2pixel(global_zoom, lon);
+		pixel_y = lat2pixel(global_zoom, lat);
+		
+		x = pixel_x - global_x;
+		y = pixel_y - global_y;
+		
+
+		if(is_line)
+		{
+			gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
+			gtk_widget_queue_draw_area (
+				map_drawable, 
+				x-4, y-4,
+				8,8);
+			
+		}
+		
+		last_x = x;
+		last_y = y;
+		
+		
+		is_line = TRUE;
+	}
+}
+
+
+FILE *fp = NULL;
+
+
+
+void
+track_log()
+{
+	gchar buffer[256];
+	gchar data[256];
+	time_t time_sec;
+	struct tm *ts;
+	
+	
+	if(gpsdata->valid)
+	{
+		
+		time_sec = (time_t)gpsdata->fix.time;
+		ts = localtime(&time_sec);
+		
+		
+		strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", ts);
+		
+		
+		sprintf(data, "%f,%f,%.1f,%.1f,%.1f,%.1f,%s\n",
+				gpsdata->fix.latitude,
+				gpsdata->fix.longitude,
+				gpsdata->fix.altitude,
+				gpsdata->fix.speed,
+				gpsdata->fix.heading,
+				gpsdata->hdop,
+				buffer);
+		
+		if (fp) fprintf(fp, "%s", data);
+	}
+}
+
+void
+track_log_open()
+{
+	time_t time_epoch_sec;
+	struct tm  *tm_struct;
+	gchar buffer[256];
+	gchar *filename = NULL;
+	GtkLabel *label76;
+	gchar *labeltext;
+	
+	label76 = GTK_LABEL(lookup_widget(window1, "label76"));
+	
+	
+	time_epoch_sec = time(NULL);
+	tm_struct = localtime(&time_epoch_sec);
+	
+	
+	
+
+	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S.log", tm_struct);
+	
+
+	
+	filename = g_strconcat(global_track_dir, buffer,NULL);
+	
+	printf("*** %s(): %s\n",__PRETTY_FUNCTION__,filename);
+	
+	if(fp==NULL && trip_logger_on)
+	{
+		fp = fopen(filename,"w");
+		if(!fp)
+		{
+			printf("oops: %s \n",strerror(errno));
+			perror("Triplog open failed: ");
+			gtk_label_set_label(label76,"<span foreground='#ff0000'>Error opening logfile</span>");
+		}
+		else 
+		{
+			labeltext = g_strconcat("<b><span foreground='#0000ff'>Log: ",buffer,"</span></b>",NULL);
+			gtk_label_set_label(label76,labeltext);
+			g_free(labeltext);	
+		}
+	}
+	
+	g_free(filename);
+}
+
+
+void
+track_log_close()
+{
+	int ret;
+	GtkLabel *label76;
+	label76 = GTK_LABEL(lookup_widget(window1, "label76"));
+	gtk_label_set_label(label76,"");
+	
+	printf("*** %s(): \n",__PRETTY_FUNCTION__);
+	
+	if(fp) {
+		printf("closing FP\n");
+		ret = fclose(fp);
+		fp = NULL;
+	
+		if(ret) printf("ERROR closing file\n");
+	}
+}
 
 
 
@@ -184,63 +439,6 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 }
 
 
-void
-paint_loaded_track()
-{
-	
-	GSList *list;
-	int pixel_x, pixel_y, x,y, last_x = 0, last_y = 0;
-	float lat, lon;
-	GdkColor color;
-	GdkGC *gc;
-	gboolean is_line = FALSE;
-	
-	gc = gdk_gc_new(pixmap);
-	color.green = 50000;
-	color.blue = 0;
-	color.red = 0;
-	gdk_gc_set_rgb_fg_color(gc, &color);
-	gdk_gc_set_line_attributes(gc,
-		5, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
-
-	
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-	for(list = loaded_track; list != NULL; list = list->next)
-	{
-		trackpoint_t *tp = list->data;
-	
-		lat = tp->lat;
-		lon = tp->lon;
-		
-		
-		
-		
-		pixel_x = lon2pixel(global_zoom, lon);
-		pixel_y = lat2pixel(global_zoom, lat);
-		
-		x = pixel_x - global_x;
-		y = pixel_y - global_y;
-		
-
-		if(is_line)
-		{
-			gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
-			gtk_widget_queue_draw_area (
-				map_drawable, 
-				x-4, y-4,
-				8,8);
-			
-		}
-		
-		last_x = x;
-		last_y = y;
-		
-		
-		is_line = TRUE;
-	}
-}
 
 bbox_t
 get_track_bbox(GSList *track)

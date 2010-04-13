@@ -23,9 +23,14 @@
 #include "globals.h"
 #include "support.h"
 #include "tile_management.h"
+#include "map_management.h"
 #include "converter.h"
+#include "wp.h"
+#include "tracks.h"
+
 #define BUFSIZE 512
 char * distance2scale(float distance, float *factor);
+void * get_gps_thread(void *ptr);
 
 
 static GIOChannel *gpsd_io_channel =NULL;
@@ -33,7 +38,322 @@ static GIOChannel *gpsd_io_channel =NULL;
 static guint sid1,  sid3; 
 guint watchdog;
 
+gboolean
+cb_gps_timer()
+{
+	
+	
+	int pixel_x, pixel_y, x, y, last_x, last_y;
+	static float lat, lon, lat_tmp=0, lon_tmp=0;
+	float trip_delta=0;
 
+	static double trip_time_accumulated = 0;
+	static gboolean trip_counter_got_stopped = FALSE;
+
+	GdkColor color;
+	static GdkGC *gc=NULL, *gc_2=NULL, *gc_3=NULL, *gc_4=NULL, *gc_5=NULL;
+	
+	if(gc == NULL)
+	{
+		gc   = gdk_gc_new(pixmap);
+		gc_2 = gdk_gc_new(pixmap);
+		gc_3 = gdk_gc_new(pixmap);
+		gc_4 = gdk_gc_new(pixmap);
+		gc_5 = gdk_gc_new(pixmap);
+		
+		
+		color.red = 60000;
+		color.green = 0;
+		color.blue = 0;
+		gdk_gc_set_rgb_fg_color(gc, &color);
+		gdk_gc_set_line_attributes(gc,
+				5, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+		
+		
+		color.red = 5000;
+		color.green = 5000;
+		color.blue = 55000;
+		gdk_gc_set_rgb_fg_color(gc_2, &color);
+		gdk_gc_set_line_attributes(gc_2,
+				6, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+	
+		
+		color.red = 25500; 
+		color.green = 35000;
+		color.blue = 65500;
+		gdk_gc_set_rgb_fg_color(gc_3, &color);
+		gdk_gc_set_line_attributes(gc_3,
+				7, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+		
+		
+		color.red = 35500; 
+		color.green = 5000;
+		color.blue = 500;
+		gdk_gc_set_rgb_fg_color(gc_4, &color);
+		gdk_gc_set_line_attributes(gc_4,
+				7, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+				
+		
+		color.red = 65500; 
+		color.green = 65500;
+		color.blue = 65500;
+		gdk_gc_set_rgb_fg_color(gc_5, &color);
+		gdk_gc_set_line_attributes(gc_5,
+				11, GDK_LINE_SOLID, GDK_CAP_ROUND, GDK_JOIN_ROUND);
+				
+	}
+	
+	
+	if(!gpsdata  || global_reconnect_gpsd)
+		get_gps();
+	
+
+	if(gpsdata)
+	{
+		trackpoint_t *tp = g_new0(trackpoint_t,1);
+		
+		lat = deg2rad(gpsdata->fix.latitude);
+		lon = deg2rad(gpsdata->fix.longitude);		
+		
+		
+		pixel_x = lon2pixel(global_zoom, lon);
+		pixel_y = lat2pixel(global_zoom, lat);
+		
+		x = pixel_x - global_x;
+		y = pixel_y - global_y;
+		
+		
+		pixel_x = lon2pixel(global_zoom, lon_tmp);
+		pixel_y = lat2pixel(global_zoom, lat_tmp);
+		
+		last_x = pixel_x - global_x;
+		last_y = pixel_y - global_y;
+
+
+		
+		if(gpsdata->seen_vaild)
+		{
+			int hand_x, hand_y, hand_wp_x, hand_wp_y;
+			double heading_rad, bearing;
+			
+			heading_rad = (gpsdata->fix.heading * (1.0 / 180.0)) * M_PI;
+
+			if(gpsdata->fix.speed>0.3) 
+			{
+				hand_x =  25 * sinf(heading_rad);
+				hand_y = -25 * cosf(heading_rad);
+			}
+			else
+			{
+				hand_x = 0;
+				hand_y = 0;
+			}
+
+
+			
+			gdk_draw_drawable (
+				map_drawable->window,
+				map_drawable->style->fg_gc[GTK_WIDGET_STATE (map_drawable)],
+				pixmap,
+				last_x-29, last_y-29,
+				last_x-29 + mouse_dx, last_y-29 + mouse_dy,
+				58,58);
+
+		
+			if (lat_tmp && lon_tmp)
+				gdk_draw_line(pixmap, gc, last_x, last_y, x, y);
+			
+			
+			gdk_window_process_all_updates();
+
+			
+			if(mouse_dx == 0 && mouse_dy == 0)
+			{
+				
+				gdk_draw_arc (
+					map_drawable->window,
+					gc_2,
+					FALSE,		
+					x-15 + mouse_dx,
+					y-15 + mouse_dy,
+					30,30,		
+					0, 360*64);	
+				
+				
+				if(global_wp_on && gpsdata->valid)
+				{
+					
+					bearing = get_bearing(lat, lon, global_wp.lat, global_wp.lon);
+					gpsdata->fix.bearing = bearing;
+
+					hand_wp_x =  25 * sinf(bearing);
+					hand_wp_y = -25 * cosf(bearing);
+					
+					gdk_draw_line(map_drawable->window,
+							gc_5,
+							x + mouse_dx,
+							y + mouse_dy,
+							x + mouse_dx + hand_wp_x,
+							y + mouse_dy + hand_wp_y);
+
+					gdk_draw_line(map_drawable->window,
+							gc_4,
+							x + mouse_dx,
+							y + mouse_dy,
+							x + mouse_dx + hand_wp_x,
+							y + mouse_dy + hand_wp_y);
+					
+					osd_wp();
+					
+				}
+				
+				
+				gdk_draw_line(map_drawable->window,
+						gc_5,
+						x + mouse_dx,
+						y + mouse_dy,
+						x + mouse_dx + hand_x,
+						y + mouse_dy + hand_y);
+				
+				gdk_draw_line(map_drawable->window,
+						gc_3,
+						x + mouse_dx,
+						y + mouse_dy,
+						x + mouse_dx + hand_x,
+						y + mouse_dy + hand_y);
+			}
+		}
+		
+		
+		if(global_autocenter)
+		{
+			if(    (x < (global_drawingarea_width /2 - global_drawingarea_width /8) ||
+				x > (global_drawingarea_width /2 + global_drawingarea_width /8) ||
+				y < (global_drawingarea_height /2 - global_drawingarea_height /8) ||
+				y > (global_drawingarea_height /2 + global_drawingarea_height /8) ) &&
+			
+				
+				isnan(gpsdata->fix.latitude) ==0 &&
+				isnan(gpsdata->fix.longitude)==0 &&
+				gpsdata->fix.latitude  !=0 &&
+				gpsdata->fix.longitude !=0
+				)
+			{
+				set_mapcenter(gpsdata->fix.latitude, gpsdata->fix.longitude, global_zoom);
+			}
+		}
+		
+
+		
+
+		
+		if( gpsdata->valid && lat_tmp!=0 && lon_tmp!=0)
+		{
+			trip_delta = 6371.0 *  acos(sin(lat) * sin(lat_tmp) + 
+				     cos(lat) * cos(lat_tmp) * cos(lon_tmp-lon) );
+			
+			if(isnan(trip_delta))
+			{
+				
+				trip_delta = 0;
+			}
+			
+			if(trip_delta > TRIP_DELTA_MIN)
+			{
+					tp->time    = gpsdata->fix.time;
+					tp->lat     = lat;
+					tp->lon     = lon;
+					tp->lat_deg = gpsdata->fix.latitude;
+					tp->lat_deg = gpsdata->fix.longitude;
+					tp->alt     = gpsdata->fix.altitude;
+					tp->speed   = gpsdata->fix.speed;
+					tp->head    = gpsdata->fix.heading;
+					tp->hdop    = gpsdata->hdop;
+					tp->heart   = 0;
+					
+					if (trip_delta > SEGMENT_DISTANCE)
+						tp->hdop = 999;
+
+					
+					if (trackpoint_list->length > TRACKPOINT_LIST_MAX_LENGTH)
+						g_free(g_queue_pop_head(trackpoint_list));
+						
+					g_queue_push_tail(trackpoint_list, tp);
+			}
+		}
+			
+		if(trip_counter_on)
+		{
+			trip_distance += trip_delta;
+
+			
+			if(gpsdata->valid && gpsdata->fix.speed > trip_maxspeed)
+				trip_maxspeed = gpsdata->fix.speed;
+			
+			
+			
+			
+			if(trip_time == 0) 
+				trip_time_accumulated = 0;
+			
+			if(trip_counter_got_stopped)
+			{
+				printf("counter had been stopped \n");
+				trip_counter_got_stopped = FALSE;
+				trip_time_accumulated = trip_time;
+				trip_starttime = 0;
+			}
+			
+			
+			if(trip_starttime == 0 && gpsdata->seen_vaild)
+			{
+				trip_starttime = gpsdata->fix.time;
+			}
+			
+			
+			if(trip_starttime > 0 && gpsdata->seen_vaild)
+			{
+				trip_time = gpsdata->fix.time - trip_starttime + trip_time_accumulated;				
+			}
+			
+			if(trip_time < 0)
+			{
+				trip_time = 0;
+				trip_starttime = 0;
+				trip_distance = 0;
+				trip_maxspeed = 0;
+			}
+
+		}
+
+		else
+		{
+			printf("trip counter halted\n");
+			trip_counter_got_stopped = TRUE;
+			lat_tmp = lon_tmp = 0;
+		}
+		
+		
+		
+		set_label();
+		
+		
+		if(trip_logger_on && gpsdata->valid)
+			track_log();
+		
+		if(gpsdata->valid)
+		{	
+			lat_tmp = lat;
+			lon_tmp = lon;
+		}
+	}
+	else 
+	{
+		set_label_nogps();
+	}
+	
+	return TRUE; 
+}
 
 gboolean
 reset_gpsd_io()
@@ -53,6 +373,7 @@ reset_gpsd_io()
 void
 osd_speed(gboolean force_redraw)
 {
+	
 	PangoContext		*context = NULL;
 	PangoLayout		*layout  = NULL;
 	PangoFontDescription	*desc    = NULL;
@@ -68,8 +389,6 @@ osd_speed(gboolean force_redraw)
 	
 	double unit_conv = 1;
 		
-
-
 	if(gpsdata && mouse_dx == 0 && mouse_dy == 0) 
 	{
 		switch (global_speed_unit)
@@ -94,7 +413,7 @@ osd_speed(gboolean force_redraw)
 		layout  = pango_layout_new (context);
 		desc    = pango_font_description_new();
 		
-		pango_font_description_set_size (desc, 60 * PANGO_SCALE);
+		pango_font_description_set_absolute_size (desc, 80 * PANGO_SCALE);
 		pango_layout_set_font_description (layout, desc);
 		pango_layout_set_text (layout, buffer, strlen(buffer));
 	
@@ -106,10 +425,7 @@ osd_speed(gboolean force_redraw)
 		color.blue = 0;
 		
 		gdk_gc_set_rgb_fg_color (gc, &color);
-	
-	
-		
-		
+
 		
 		
 		if(speed_tmp != floor(gpsdata->fix.speed*3.6*unit_conv) || force_redraw)
@@ -267,7 +583,7 @@ set_label()
 		"<small>trp </small><b>%.2f</b>%s "
 		"<small>alt </small><b>%.0f</b>%s "
 		"<small>hdg </small><b>%.0f</b>° "
-		"<small></small>%d/%d/%.1f",
+		"<small></small>%d/%.1f",
 		numdl_buf,
 		dl_buf,
 		tr_buf,
@@ -275,8 +591,7 @@ set_label()
 		gpsdata->fix.speed * 3.6 * unit_conv,	speedunit,
 		trip_distance * unit_conv,		distunit,
 		gpsdata->fix.altitude * unit_conv_alt,	altunit,
-		gpsdata->fix.track * unit_conv,
-		gpsdata->satellites_inview,
+		gpsdata->fix.heading * unit_conv,
 		gpsdata->satellites_used,
 		gpsdata->hdop);
 
@@ -285,93 +600,93 @@ set_label()
 
 	gtk_label_set_label(label, buffer);
 
-	
-	
-	
-	
-	
-	time_sec = (time_t)gpsdata->fix.time;
-	ts = localtime(&time_sec);
-	
-	
-	strftime(buffer, sizeof(buffer), "<big><b>%a %Y-%m-%d %H:%M:%S</b></big>", ts); 
-	gtk_label_set_label(label41,buffer);
 
-	
-	switch (global_latlon_unit)
+	if(global_infopane_visible)
 	{
-		case 0:
-			g_snprintf(buffer, BUFSIZE, "<big><b>%f - %f</b></big>", gpsdata->fix.latitude, gpsdata->fix.longitude);
-			break;
-		case 1:
-			g_snprintf(buffer, BUFSIZE, "<big><b>%s   %s</b></big>", 
-				  latdeg2latmin(gpsdata->fix.latitude),
-				  londeg2lonmin(gpsdata->fix.longitude));
-			break;
-		case 2:
-			g_snprintf(buffer, BUFSIZE, "<big><b>%s   %s</b></big>", 
-				  latdeg2latsec(gpsdata->fix.latitude),
-				  londeg2lonsec(gpsdata->fix.longitude));
+		
+		
+		
+		
+		
+		time_sec = (time_t)gpsdata->fix.time;
+		ts = localtime(&time_sec);
+		
+		
+		strftime(buffer, sizeof(buffer), "<big><b>%a %Y-%m-%d %H:%M:%S</b></big>", ts); 
+		gtk_label_set_label(label41,buffer);
+	
+		
+		switch (global_latlon_unit)
+		{
+			case 0:
+				g_snprintf(buffer, BUFSIZE, "<big><b>%f - %f</b></big>", gpsdata->fix.latitude, gpsdata->fix.longitude);
+				break;
+			case 1:
+				g_snprintf(buffer, BUFSIZE, "<big><b>%s   %s</b></big>", 
+					  latdeg2latmin(gpsdata->fix.latitude),
+					  londeg2lonmin(gpsdata->fix.longitude));
+				break;
+			case 2:
+				g_snprintf(buffer, BUFSIZE, "<big><b>%s   %s</b></big>", 
+					  latdeg2latsec(gpsdata->fix.latitude),
+					  londeg2lonsec(gpsdata->fix.longitude));
+		}
+		gtk_label_set_label(label31,buffer);
+		
+		
+		g_snprintf(buffer, BUFSIZE, 
+			"<b><span foreground='#0000ff'><span font_desc='50'>%.1f</span></span></b> %s", 
+			gpsdata->fix.speed*3.6*unit_conv, speedunit);
+		gtk_label_set_label(label38,buffer);
+	
+		
+		g_snprintf(buffer, BUFSIZE, "<big><b>%.1f %s</b></big>", gpsdata->fix.altitude * unit_conv_alt, altunit);
+		gtk_label_set_label(label39,buffer);
+		
+		
+		g_snprintf(buffer, BUFSIZE, "<big><b>%.1f°</b></big> ", gpsdata->fix.heading);
+		gtk_label_set_label(label42,buffer);
+		
+		
+		g_snprintf(buffer, BUFSIZE, "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>", 
+				gpsdata->satellites_used, gpsdata->hdop);
+		gtk_label_set_label(label43,buffer);
+	
+		
+		
+		
+	
+		
+		g_snprintf(buffer, BUFSIZE, "<big><b>%.3f</b></big> <small>%s</small>", trip_distance*unit_conv,distunit);
+		gtk_label_set_label(label45,buffer);
+	
+	
+		
+		trip_hours   = trip_time / 3600;
+		trip_minutes = ((int)trip_time%3600)/60;
+		trip_seconds = (int)trip_time % 60;
+		
+		if (trip_seconds < 10 && trip_minutes < 10)
+		{
+			g_sprintf(buffer, "<big><b>%d:0%d:0%d</b></big>",trip_hours,trip_minutes,trip_seconds);
+		}
+		else if (trip_seconds < 10)
+			g_sprintf(buffer, "<big><b>%d:%d:0%d</b></big>",trip_hours,trip_minutes,trip_seconds);
+		else if (trip_minutes < 10)
+			g_sprintf(buffer, "<big><b>%d:0%d:%d</b></big>",trip_hours,trip_minutes,trip_seconds);
+		else
+			g_sprintf(buffer, "<big><b>%d:%d:%d</b></big>",trip_hours,trip_minutes,trip_seconds);
+	
+		gtk_label_set_label(label66,buffer);
+	
+		
+		g_sprintf(buffer, "<big><b>%.1f</b></big><small> %s</small>", trip_distance*3600*unit_conv/(trip_time+2.0), speedunit);
+		gtk_label_set_label(label68,buffer);
+	
+		
+		g_sprintf(buffer, "<big><b>%.1f</b></big><small> %s</small>", trip_maxspeed*3.6*unit_conv, speedunit);
+		gtk_label_set_label(label70,buffer);
 	}
-	gtk_label_set_label(label31,buffer);
-	
-	
-	g_snprintf(buffer, BUFSIZE, 
-		"<b><span foreground='#0000ff'><span font_desc='50'>%.1f</span></span></b> %s", 
-		gpsdata->fix.speed*3.6*unit_conv, speedunit);
-	gtk_label_set_label(label38,buffer);
-
-	
-	g_snprintf(buffer, BUFSIZE, "<big><b>%.1f %s</b></big>", gpsdata->fix.altitude * unit_conv_alt, altunit);
-	gtk_label_set_label(label39,buffer);
-	
-	
-	g_snprintf(buffer, BUFSIZE, "<big><b>%.1f°</b></big> ", gpsdata->fix.track);
-	gtk_label_set_label(label42,buffer);
-	
-	
-	g_snprintf(buffer, BUFSIZE, "<big><b>%d/%d</b>  <small>HDOP</small><b> %.1f</b></big>", 
-			gpsdata->satellites_inview, gpsdata->satellites_used, gpsdata->hdop);
-	gtk_label_set_label(label43,buffer);
-
-	
-	
-	
-
-	
-	g_snprintf(buffer, BUFSIZE, "<big><b>%.3f</b></big> <small>%s</small>", trip_distance*unit_conv,distunit);
-	gtk_label_set_label(label45,buffer);
-
-
-	
-	trip_hours   = trip_time / 3600;
-	trip_minutes = ((int)trip_time%3600)/60;
-	trip_seconds = (int)trip_time % 60;
-	
-	if (trip_seconds < 10 && trip_minutes < 10)
-	{
-		g_sprintf(buffer, "<big><b>%d:0%d:0%d</b></big>",trip_hours,trip_minutes,trip_seconds);
-	}
-	else if (trip_seconds < 10)
-		g_sprintf(buffer, "<big><b>%d:%d:0%d</b></big>",trip_hours,trip_minutes,trip_seconds);
-	else if (trip_minutes < 10)
-		g_sprintf(buffer, "<big><b>%d:0%d:%d</b></big>",trip_hours,trip_minutes,trip_seconds);
-	else
-		g_sprintf(buffer, "<big><b>%d:%d:%d</b></big>",trip_hours,trip_minutes,trip_seconds);
-
-	gtk_label_set_label(label66,buffer);
-
-	
-	g_sprintf(buffer, "<big><b>%.1f</b></big><small> %s</small>", trip_distance*3600*unit_conv/(trip_time+2.0), speedunit);
-	gtk_label_set_label(label68,buffer);
-
-	
-	g_sprintf(buffer, "<big><b>%.1f</b></big><small> %s</small>", trip_maxspeed*3.6*unit_conv, speedunit);
-	gtk_label_set_label(label70,buffer);
-
-	
-	
-
 }
 
 
@@ -384,9 +699,8 @@ parse_nmea_rmc(char *nmea)
 	double	lat_min, lat=0, lon_min,lon=0;
 	gchar hour[3],min[3],sec[3],year[3],month[3],day[3];
 	int i=0;
-	
-	typedef struct tm tm_t;
-	
+
+	typedef struct tm tm_t;	
 	static tm_t *tm = NULL;
 
 	if(!tm) tm = g_new0(tm_t,1);
@@ -397,8 +711,6 @@ parse_nmea_rmc(char *nmea)
 
 	g_source_remove(watchdog);
 	watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
-
-
 	
 	if(i>=9)
 	{
@@ -434,7 +746,6 @@ parse_nmea_rmc(char *nmea)
 			gpsdata->fix.time = (double) mktime(tm);
 			
 			
-			
 		}
 		
 		
@@ -461,7 +772,6 @@ parse_nmea_rmc(char *nmea)
 			{
 				lon = -lon;
 			}
-
 		}
 		
 		gpsdata->valid = (strcmp(array[2],"A")==0) ? TRUE : FALSE;
@@ -472,14 +782,13 @@ parse_nmea_rmc(char *nmea)
 			gpsdata->fix.latitude = lat;
 			gpsdata->fix.longitude = lon;
 			gpsdata->fix.speed = atof(array[7])*0.514444; 
-			gpsdata->fix.track = atof(array[8]);
+			gpsdata->fix.heading = atof(array[8]);
 		}
 	}
 	else
 		printf("%s(): YIKES. not enough fields. GPS receiver broken?\n",__PRETTY_FUNCTION__);
 	
 	g_strfreev(array);
-
 }
 
 
@@ -490,16 +799,9 @@ parse_nmea_gga(char *nmea)
 	gchar **array;
 	int i=0;
 
-
 	array = g_strsplit(nmea,",",0);
-
 	
-	while (array[i]) {
-		
-		i++;
-	}
-
-	
+	while (array[i]) i++;
 
 	if(i>=9)
 	{
@@ -512,7 +814,6 @@ parse_nmea_gga(char *nmea)
 		}
 	}
 	g_strfreev(array);
-
 }
 
 void
@@ -520,21 +821,14 @@ parse_nmea_gsv(char *nmea)
 {		
 	gchar **array;
 	int i=0;
-	
-
-	
-	array = g_strsplit(nmea,",",0);
-
-	while (array[i]) i++;
 		
-
-	
-	
+	array = g_strsplit(nmea,",",0);
+	while (array[i]) i++;
+			
 	if (i>=3)
 		gpsdata->satellites_inview = atoi(array[3]);
 
 	g_strfreev(array);
-
 }
 
 
@@ -573,22 +867,14 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 
 	if(status == G_IO_STATUS_NORMAL)
 	{		
-	
-		if (strncmp(str_return,"$GPGSV",6)==0)
-		{
-			parse_nmea_gsv(str_return);
-		}
-		else if(strncmp(str_return,"$GPGGA",6)==0)
+		if(strncmp(str_return,"$GPGGA",6)==0)
 		{
 			parse_nmea_gga(str_return);
 		}
 		else if (strncmp(str_return,"$GPRMC",6)==0)
 		{
 			parse_nmea_rmc(str_return);
-		}
-
-		
-		
+		}	
 	}
 	else
 	{
@@ -603,11 +889,16 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 	return TRUE;
 }
 
-void
+
+void 
 get_gps()
 {
-	int res;
+	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
+}
 
+void *
+get_gps_thread(void *ptr)
+{
 	
 	static int sock = 0;
 	int conn, len;
@@ -615,101 +906,63 @@ get_gps()
 	struct sockaddr_in server;
 	char buffer_send[] = "r";
 
-
-	if(!gpsdata  || global_reconnect_gpsd)
-	{
+			
+	if (sock) sock = close(sock);
 		
-				
-		if (sock) sock = close(sock);
-			
-		
-		server.sin_family	= AF_INET;
-		server.sin_addr.s_addr	= inet_addr(global_server);
-		server.sin_port		= htons (atoi(global_port));
-		memset(&(server.sin_zero), '\0', 8);		
-		
-		
-		sock = socket(AF_INET, SOCK_STREAM, 0);
-		conn = connect(sock, (struct sockaddr *)&server, sizeof(struct sockaddr));
-		if (conn < 0)
-		{
-			
-			conn = -1;
-		}
-		else
-		{
-			fprintf(stderr, "connection to gpsd SUCCEEDED \n");
-			
-			global_reconnect_gpsd = FALSE;
-			
-			if(!gpsdata)
-			{
-				gpsdata = g_new0(gps_data_t,1);
-			}
-			
-			len = write(sock, buffer_send, strlen(buffer_send));
-			if (len < 0)
-				perror("ERROR writing to socket");
-			
-			
-			len = recv(sock, buffer, 500, 0);
-			
-			buffer[len]='\0'; 
-			
-			fprintf(stderr, "Rcvd: %s",buffer);
-		
-			
-			
-			
-			watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
-			
-			
-			gpsd_io_channel = g_io_channel_unix_new(sock);
-			g_io_channel_set_flags(gpsd_io_channel, G_IO_FLAG_NONBLOCK, NULL);
-			
-			
-			sid1 = g_io_add_watch_full(gpsd_io_channel, G_PRIORITY_HIGH_IDLE+200, G_IO_ERR | G_IO_HUP, cb_gpsd_io_error, NULL, NULL);
-			
-			
-			sid3 = g_io_add_watch_full(gpsd_io_channel, G_PRIORITY_HIGH_IDLE+200, G_IO_IN | G_IO_PRI, cb_gpsd_data, NULL, NULL);
-		
-			
-		}
-			
-	}
+	
+	server.sin_family	= AF_INET;
+	server.sin_addr.s_addr	= inet_addr(global_server);
+	server.sin_port		= htons (atoi(global_port));
+	memset(&(server.sin_zero), '\0', 8);		
 	
 	
-	if(gpsdata)
+	sock = socket(AF_INET, SOCK_STREAM, 0);
+	conn = connect(sock, (struct sockaddr *)&server, sizeof(struct sockaddr));
+
+	if(conn == 0)
 	{
+		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
 		
+		global_reconnect_gpsd = FALSE;
 		
-
-		res = 5;
-
-		if (res==-1){
-			printf("POLL ERROR \n");
-			gpsdata=NULL;
+		if(!gpsdata)
+		{
+			gpsdata = g_new0(gps_data_t,1);
 		}
 		
+		len = write(sock, buffer_send, strlen(buffer_send));
+		if (len < 0)
+			perror("ERROR writing to socket");
+		
+		
+		len = recv(sock, buffer, 500, 0);
+		
+		buffer[len]='\0'; 
+		
+		fprintf(stderr, "Rcvd: %s",buffer);
+	
+		
+		watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
+		
+		
+		gpsd_io_channel = g_io_channel_unix_new(sock);
+		g_io_channel_set_flags(gpsd_io_channel, G_IO_FLAG_NONBLOCK, NULL);
+		
+		
+		sid1 = g_io_add_watch_full(gpsd_io_channel, G_PRIORITY_HIGH_IDLE+200, G_IO_ERR | G_IO_HUP, cb_gpsd_io_error, NULL, NULL);
+		
+		
+		sid3 = g_io_add_watch_full(gpsd_io_channel, G_PRIORITY_HIGH_IDLE+200, G_IO_IN | G_IO_PRI, cb_gpsd_data, NULL, NULL);
 	
 	}
 	
-
-	
-
+	return NULL;
 }
 
 void
 map_scale_indicator()
 {
-	
-	
-	
-	
-	
-	
-
-	int y, width, height, bar_length=200;
+	int y, width, height, max_bar_length=250;
 	float distance, factor, lat, lon1, lon2;
 	char *buffer=NULL;
 	GdkColor color;
@@ -746,22 +999,22 @@ map_scale_indicator()
 
 	lat   = pixel2lat(global_zoom, global_y+y);
 	lon1  = pixel2lon(global_zoom, 0);
-	lon2  = pixel2lon(global_zoom, 200);
+	lon2  = pixel2lon(global_zoom, max_bar_length);
 
 	distance = get_distance(lat, lon1, lat, lon2);
 	
 	buffer = distance2scale(distance, &factor);
-	bar_length *= factor;
+	max_bar_length *= factor;
 	
-	gdk_draw_line(map_drawable->window, gc, 4, y, bar_length+6, y);
-	gdk_draw_line(map_drawable->window, gc1,5, y, bar_length+5, y);	
+	gdk_draw_line(map_drawable->window, gc, 4, y, max_bar_length+6, y);
+	gdk_draw_line(map_drawable->window, gc1,5, y, max_bar_length+5, y);	
 
 	
 	context = gtk_widget_get_pango_context (map_drawable);
 	layout  = pango_layout_new (context);
 	desc    = pango_font_description_new();
 	
-	pango_font_description_set_size (desc, 9 * PANGO_SCALE);
+	pango_font_description_set_absolute_size (desc, 12 * PANGO_SCALE);
 	pango_layout_set_font_description (layout, desc);
 	pango_layout_set_text (layout, buffer, strlen(buffer));
 

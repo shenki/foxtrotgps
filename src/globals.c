@@ -38,7 +38,7 @@ int global_latlon_unit	= 0;
 
 gps_data_t *gpsdata = NULL;
 
-GSList		*trackpoint_list = NULL;
+GQueue		*trackpoint_list = NULL;
 GSList		*friends_list = NULL;
 GSList		*photo_list = NULL;
 GSList		*poi_list = NULL;
@@ -49,6 +49,7 @@ double		trip_time = 0;
 double		trip_starttime = 0;
 gboolean	trip_counter_on = TRUE;
 gboolean	trip_logger_on = FALSE;
+gboolean	trip_livelog_on = FALSE;
 
 trackpoint_t	global_myposition;
 
@@ -64,7 +65,7 @@ gboolean	global_infopane_visible = FALSE;
 gboolean	global_landscape;
 gboolean	global_auto_download = TRUE;
 gboolean	global_mapmode = TRUE;
-gboolean	global_autocenter = FALSE;
+gboolean	global_autocenter = TRUE;
 gboolean	global_reconnect_gpsd = TRUE;
 int		global_tiles_in_dl_queue = 0;
 

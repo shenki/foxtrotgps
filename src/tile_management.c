@@ -51,7 +51,6 @@ map_redraw(void *p)
 {
 	int number_threads;
 	number_threads = update_thread_number(0);
-	printf("** map_redraw(): %i\n", number_threads);
 	
 	
 	
@@ -62,8 +61,7 @@ map_redraw(void *p)
 	}
 	else if (number_threads == 0)
 	{
-		printf("REPAINTING.............\n");
-		fill_tiles_pixel(global_x, global_y, global_zoom);
+		fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
 		print_track();
 		paint_loaded_track();
 		paint_friends();
@@ -72,7 +70,7 @@ map_redraw(void *p)
 		paint_wp();
 		paint_myposition();
 		osd_speed(TRUE);
-
+		
 		return FALSE;
 	}
 	else
@@ -103,10 +101,8 @@ cb_progress_func(GtkWidget *Bar,
                      double ultotal,
                      double ulnow)
 {
-  
 
   return 0;
-
 
 }
 
@@ -177,20 +173,10 @@ download_tile(	repo_t *repo,
 	key = g_strdup_printf("%s/%d/%d/%d", repo->dir, zoom, x, y);
 	found = g_hash_table_lookup (ht, key);
 
-	if(found)	
+	if(!found && zoom <=maxzoom)
 	{
-
-		printf("### Download of tile %s already tried\n", key);
-		
-	}
-	else if(zoom <=maxzoom)
-	{
-		printf("### tile %s not found in hash, trying DL \n", key);
 		g_hash_table_insert(ht, key, &value);
-	
-		
-		printf("%s(): %s######################\n",__PRETTY_FUNCTION__,tile_data);
-		
+			
 		if (!g_thread_create(&dl_thread, (void *)tile_data, FALSE, NULL) != 0)
 			g_warning("can't create DL thread");
 		
@@ -219,37 +205,30 @@ dl_thread(void *ptr)
 	char err_buffer[CURL_ERROR_SIZE];
 	int number_threads;
 
-	const gchar *tile_data; 
+	const gchar *tile_data;
 	gchar **arr1;
 
 	int mkres;
 	tile_data = ptr;
 	
 	number_threads = update_thread_number(1);
-	printf("\n\n # of threads: %i \n\n", number_threads );
-	
-	
 	
 	arr1 = g_strsplit(tile_data,"|",3);
 
 	
 	
 	mkres = g_mkdir_with_parents(arr1[2],0700);
-	if(mkres==-1) {
-		perror("mkdir()");
-		printf("MKDIR ERROR: %s\n", arr1[2]);
-	}
 	
-	printf( "\n\n************************************\n"
-		"tile_data: %s \n URL: %s \n FILE: %s \n DIR: %s\n",
-		tile_data, arr1[0],arr1[1],arr1[2]);
+	
+	
+	
 	
 	
 	outfile = fopen(arr1[1], "w");
 	if (outfile==NULL)
 	{
 		perror("###### ERROR - Could not open OUTFILE");
-		printf("aieeeeeeeeeeeee: outfile=NULL\n");
+		printf("aieee: outfile=NULL\n");
 	}
 
 	curl = curl_easy_init();
@@ -259,34 +238,35 @@ dl_thread(void *ptr)
 		
 		curl_easy_setopt(curl, CURLOPT_URL, arr1[0]);
 		curl_easy_setopt(curl, CURLOPT_USERAGENT, 
-		"libcurl-agent/1.0 | tangogps " VERSION " | " __VERSION__);
+			"libcurl-agent/1.0 | tangogps " VERSION " | " __VERSION__);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, outfile);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION,	 cb_write_func);
 		curl_easy_setopt(curl, CURLOPT_READFUNCTION,	 cb_read_func);
-
-		curl_easy_setopt(curl, CURLOPT_NOPROGRESS, FALSE);
-		curl_easy_setopt(curl, CURLOPT_PROGRESSFUNCTION, cb_progress_func);
-		curl_easy_setopt(curl, CURLOPT_PROGRESSDATA, Bar);
+		
+		
+		
 		curl_easy_setopt(curl, CURLOPT_ERRORBUFFER, err_buffer);
 		curl_easy_setopt(curl, CURLOPT_FAILONERROR, 1); 
+		
 		res = curl_easy_perform(curl);
-		if (res==0)
-			printf("########## curl res=0, tile download ok\n");
-		else
-			printf("TILE DL PROBLEM: %s\n",err_buffer);
+		
+		if (res!=0)
+			printf("TILE DL PROBLEM: %s\n   %s\n",err_buffer,tile_data);
 		
 		
 		
 		curl_easy_cleanup(curl);
 
 		number_threads = update_thread_number(-1);
-		printf("curl END: # of running threads: %i \n\n", number_threads );
 		
 		
-		if (number_threads == 0) g_timeout_add(500, map_redraw, NULL);
 		
-		
-
+		if (number_threads == 0)
+		{
+			gdk_threads_enter();
+			g_timeout_add(500, map_redraw, NULL); 
+			gdk_threads_leave();
+		}
 	}
 	if(outfile != NULL)
 		fclose(outfile);
