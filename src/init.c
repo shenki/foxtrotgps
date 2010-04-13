@@ -502,7 +502,7 @@ gconf_get_repolist()
 		global_repo_list = g_slist_append(global_repo_list, repo4);
 		
 		repo5->name = g_strdup("Google Sat (testing only)");
-		repo5->uri  = g_strdup("http://khm.google.com/kh/v=45&x=%d&y=%d&z=%d");
+		repo5->uri  = g_strdup("http://khm.google.com/kh/v=49&x=%d&y=%d&z=%d");
 		repo5->dir  = g_strdup_printf("%s/Maps/googlesat",global_home_dir);
 		repo5->inverted_zoom = 1;
 		global_repo_list = g_slist_append(global_repo_list, repo5);
@@ -770,8 +770,10 @@ init()
 			break;
 	}
 	
-	gtk_entry_set_text( GTK_ENTRY(nick_entry), nick );
-	gtk_entry_set_text( GTK_ENTRY(pass_entry), pass );
+	if(nick)
+		gtk_entry_set_text( GTK_ENTRY(nick_entry), nick );
+	if(pass)
+		gtk_entry_set_text( GTK_ENTRY(pass_entry), pass );
 	
 	widget = lookup_widget(window1, "vscale1");
 	gtk_range_set_value(GTK_RANGE(widget), (double) global_zoom);
@@ -795,21 +797,20 @@ init()
 	
 	
 	global_ffupdate_interval_minutes = gconf_client_get_float(global_gconfclient, GCONF"/ffupdate_interval_minutes",&err);
-	global_ffupdate_interval = (int)floor(global_ffupdate_interval_minutes) * 60000;
-	widget = lookup_widget(window1, "entry16");
-	if (global_ffupdate_interval_minutes<10)
+	
+	if(!global_ffupdate_interval_minutes)
+		global_ffupdate_interval_minutes = 5;
+	
+	global_ffupdate_interval = global_ffupdate_interval_minutes * 60000;
+
+	if (global_ffupdate_interval_minutes<5)
 		g_sprintf(buffer, "%.1f", global_ffupdate_interval_minutes);
 	else
 		g_sprintf(buffer, "%.0f", global_ffupdate_interval_minutes);
+
+	widget = lookup_widget(window1, "entry16");
 	gtk_entry_set_text( GTK_ENTRY(widget), buffer );
 	
-	
-	global_ffupdate_auto	= gconf_client_get_bool(global_gconfclient, GCONF"/ffupdate_auto",&err);
-	if(global_ffupdate_auto)
-	{
-		widget = lookup_widget(window1, "radiobutton13");
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),TRUE);
-	}
 
 	
 	if(gconf_fftimer_running)
@@ -819,94 +820,21 @@ init()
 	}
 		
 	
-	global_ffcm_public	= gconf_client_get_bool(global_gconfclient, GCONF"/ffcm_public",&err);
-	global_ffcm_registered	= gconf_client_get_bool(global_gconfclient, GCONF"/ffcm_registered",&err);
-	global_ffcm_friends	= gconf_client_get_bool(global_gconfclient, GCONF"/ffcm_friends",&err);
-	
-	widget = lookup_widget(window1, "checkbutton3");
-	if(global_ffcm_public)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
-	}
-	else
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), FALSE);
-	}
-
-
-	widget = lookup_widget(window1, "checkbutton4");
-	if(global_ffcm_registered)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
-	}
-	else
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), FALSE);
-	}
-
-	
-	widget = lookup_widget(window1, "checkbutton5");
-	if(global_ffcm_friends)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
-	}
-	else
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), FALSE);
-	}	
-	
-	
-	
-	
-	global_ffcu_public	= gconf_client_get_bool(global_gconfclient, GCONF"/ffcu_public",&err);
-	global_ffcu_registered	= gconf_client_get_bool(global_gconfclient, GCONF"/ffcu_registered",&err);
-	global_ffcu_friends	= gconf_client_get_bool(global_gconfclient, GCONF"/ffcu_friends",&err);
-	
-	widget = lookup_widget(window1, "checkbutton6");
-	if(global_ffcu_public)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
-	}
-	else
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), FALSE);
-	}
-	
-	
-	widget = lookup_widget(window1, "checkbutton7");
-	if(global_ffcu_registered)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
-	}
-	else
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), FALSE);
-	}
-
-	
-	widget = lookup_widget(window1, "checkbutton8");
-	if(global_ffcu_friends)
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
-	}
-	else
-	{
-		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), FALSE);
-	}	
-	
 	widget = lookup_widget(window1, "label117");
 #ifdef VERSION
-	gtk_label_set_label(GTK_LABEL(widget), "<i><small>tangoGPS version: " VERSION "\nDeveloper: Marcus Bauer</small></i>");
+	gtk_label_set_label(GTK_LABEL(widget), "<i><small>tangoGPS version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
 #endif
 
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_host",&err);
 	widget = lookup_widget(window1, "entry3");
-	gtk_entry_set_text(GTK_ENTRY(widget), g_strdup(str));
+	if(str)
+		gtk_entry_set_text(GTK_ENTRY(widget), g_strdup(str));
 	g_free(str);
 	
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_port",&err);
 	widget = lookup_widget(window1, "entry4");
-	gtk_entry_set_text(GTK_ENTRY(widget), g_strdup(str));
+	if(str)
+		gtk_entry_set_text(GTK_ENTRY(widget), g_strdup(str));
 	g_free(str);
 	
 	if (gconf_client_get_bool(global_gconfclient, GCONF"/tracklog_on", NULL))
@@ -920,4 +848,9 @@ init()
 		fprintf (stderr, "Failed to load pixbuf file:  %s\n", err->message);
 		g_error_free (err);
 	}
+	
+	
+	global_myposition.lat = gconf_client_get_float(global_gconfclient, GCONF"/myposition_lat", NULL);
+	global_myposition.lon = gconf_client_get_float(global_gconfclient, GCONF"/myposition_lon", NULL);
+	paint_myposition();
 }

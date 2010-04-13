@@ -34,12 +34,12 @@
 
 static int wtfcounter=0; 
 
-static int friendfinder_timer = 0;
+static int	friendfinder_timer = 0;
 static gboolean distance_mode = FALSE;
 static gboolean pickpoint_mode = FALSE;
-static int pickpoint;
-static int msg_timer = 0;
-static gboolean msg_pane_visible=FALSE;
+static int	pickpoint;
+static int	msg_timer = 0;
+static gboolean msg_pane_visible=TRUE;
 static gboolean maximized = FALSE;
 
 
@@ -57,6 +57,7 @@ static	GdkPixmap *pixmap_photo_big = NULL;
 
 void do_distance();
 void do_pickpoint();
+void move_map(int i);
 
 void
 set_cursor(int type)
@@ -275,7 +276,6 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 			
 		
 			repaint_all();
-			
 		}
 		
 		if (abs(mouse_x - (int) event->x) < 10 && abs(mouse_y - (int) event->y) < 10)
@@ -492,8 +492,8 @@ else printf("aieee: pixmap NULL\n");
 
 	
 	
-	fill_tiles_pixel(global_x, global_y, global_zoom);
-	
+
+repaint_all();	
 return FALSE;
 }
 
@@ -798,6 +798,7 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 	gchar *reponame_combo;
 	GError **error = NULL;
 	gboolean success = FALSE;
+	static gboolean first_run = TRUE;
 
 	printf("%s():\n",__PRETTY_FUNCTION__);
 	
@@ -841,9 +842,13 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 	
 	global_repo_nr = gtk_combo_box_get_active(combobox);
 	
-	repaint_all();
-	gtk_notebook_set_current_page(GTK_NOTEBOOK(lookup_widget(window1,"notebook1")), 0);
-
+	 
+	
+	if(first_run) {
+		first_run = FALSE;
+	}
+	else
+		repaint_all();
 }
 
 void
@@ -1089,94 +1094,57 @@ on_button9_clicked                     (GtkButton       *button,
 	global_reconnect_gpsd = TRUE;
 }
 
-void
-on_button10_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_command;
-	const gchar	*command;
-	int r;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-	entry_command = lookup_widget(window1, "entry6");
-	command = gtk_entry_get_text(GTK_ENTRY(entry_command));
-	printf("cmd: %s\n",command);
-	r = system(command);
-	
-}
 
 void
 on_button11_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
-	
-	
-	
-	
-	
-	
-
 	GtkWidget *widget;
 	gboolean success = FALSE;
 	GError **error = NULL;
 	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 	
-	if(global_ffupdate_auto && !global_fftimer_running)
+	if(!global_fftimer_running)
 	{
-		
 		update_position();
 		send_message(NULL);
 		friendfinder_timer = g_timeout_add_seconds(global_ffupdate_interval/1000,update_position,NULL);
-		msg_timer = g_timeout_add(global_ffupdate_interval,send_message,NULL);
+		msg_timer	   = g_timeout_add_seconds(global_ffupdate_interval/1000,send_message,NULL);
 
+		widget = lookup_widget(window1, "image24");
+		gtk_widget_show(widget);
+		
+		gtk_button_set_label(button, "Stop");
+		
+		widget = lookup_widget(menu1, "item19");
+		gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(widget), TRUE);
+		
 		global_fftimer_running = TRUE;
-		
-		
-		
-		
-		widget = lookup_widget(window1, "button23");
-		gtk_widget_set_sensitive(widget, TRUE);
-		gtk_widget_set_sensitive(GTK_WIDGET(button), FALSE);
-		
-		printf("TIMER FF called\n");
-
 	}
 	
 	
 	
-	else if(global_ffupdate_auto && global_fftimer_running)
+	else
 	{
-		widget = lookup_widget(window1, "label97");
-		gtk_label_set_text(GTK_LABEL(widget), "");
+		widget = lookup_widget(window1, "image24");
+		gtk_widget_hide(widget);
 		
 		g_source_remove(friendfinder_timer);
 		g_source_remove(msg_timer);
 		friendfinder_timer = 0;
 		msg_timer =0;
 		global_fftimer_running = FALSE;
+		
+		gtk_button_set_label(button, "Share!");
 	}
-	
-	else if(!global_ffupdate_auto)
-	{
-		update_position();
-		send_message(NULL);
-		global_fftimer_running = FALSE; 
-	}
+
 	
 	success = gconf_client_set_bool(
 		global_gconfclient, 
 		GCONF"/fftimer_running",
 		global_fftimer_running,
 		error);
-	
-	success = gconf_client_set_bool(
-			global_gconfclient, 
-			GCONF"/ffupdate_auto",
-			global_ffupdate_auto,
-			error);
 	
 	global_show_friends = TRUE;
 }
@@ -1550,7 +1518,6 @@ on_item5_activate                      (GtkWidget       *widget,
 	
 	lat_deg = rad2deg(lat);
 	lon_deg = rad2deg(lon);
-	printf ("##### Lonitude: %f %f - %f %f \n", lat, lon, lat_deg, lon_deg);
 	
 	global_myposition.lat = lat_deg;
 	global_myposition.lon = lon_deg;
@@ -1567,7 +1534,18 @@ on_item5_activate                      (GtkWidget       *widget,
 	gtk_label_set_label(GTK_LABEL(label),buffer);
 	gtk_widget_show (window2);
 	
-	
+	gconf_client_set_float(
+		global_gconfclient, 
+		GCONF"/myposition_lat",
+		global_myposition.lat,
+		NULL);
+
+	gconf_client_set_float(
+		global_gconfclient, 
+		GCONF"/myposition_lon",
+		global_myposition.lon,
+		NULL);
+		
 	paint_myposition();
 	
 	return FALSE;
@@ -1733,37 +1711,7 @@ on_button13_clicked                    (GtkButton       *button,
 	register_nick();
 }
 
-void
-on_button16_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_command;
-	const gchar	*command;
-	int unused;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-	entry_command = lookup_widget(window1, "entry10");
-	command = gtk_entry_get_text(GTK_ENTRY(entry_command));
-	printf("cmd: %s\n",command);
-	unused = system(command);
-}
-
-void
-on_button17_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_command;
-	const gchar	*command;
-	int unused;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-	entry_command = lookup_widget(window1, "entry11");
-	command = gtk_entry_get_text(GTK_ENTRY(entry_command));
-	printf("cmd: %s\n",command);
-	unused = system(command);
-}
 
 void
 on_button18_clicked                    (GtkButton       *button,
@@ -1900,6 +1848,20 @@ on_item7_activate                      (GtkWidget       *widget,
                                         gpointer         user_data)
 {
 	global_myposition.lat = global_myposition.lon = 0;
+	
+	gconf_client_set_float(
+		global_gconfclient, 
+		GCONF"/myposition_lat",
+		0,
+		NULL);
+
+	gconf_client_set_float(
+		global_gconfclient, 
+		GCONF"/myposition_lon",
+		0,
+		NULL);
+	
+	repaint_all();
 	
 	return FALSE;
 }
@@ -2159,8 +2121,6 @@ printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	}
 	else
 	{
-printf("*** %s():22 \n",__PRETTY_FUNCTION__);
-
 		gc = gdk_gc_new(pixmap_photo);
 		
 		gdk_draw_rectangle (
@@ -2195,10 +2155,6 @@ printf("*** %s():22 \n",__PRETTY_FUNCTION__);
 
 	}
 
-printf("*** %s(): 33\n",__PRETTY_FUNCTION__);
-
-	
-		
 
 	
 	
@@ -2382,60 +2338,6 @@ on_button22_clicked                    (GtkButton       *button,
 	gtk_widget_destroy(window);
 }
 
-void
-on_radiobutton1_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
-	if (gtk_toggle_button_get_active(togglebutton))
-	{
-		GtkWidget *widget;
-		
-		if(friendfinder_timer) g_source_remove(friendfinder_timer);
-		if(msg_timer) g_source_remove(msg_timer);
-		friendfinder_timer = 0;
-		msg_timer = 0;
-		global_fftimer_running = FALSE;
-		global_ffupdate_auto = FALSE;
-		
-		widget = lookup_widget(window1, "button23");
-		gtk_widget_set_sensitive(widget,FALSE);
-		widget = lookup_widget(window1, "button11");
-		gtk_widget_set_sensitive(widget, TRUE);
-	}
-	
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffupdate_auto",
-				global_ffupdate_auto,
-				error);
-	
-	success = gconf_client_set_bool(
-		global_gconfclient, 
-		GCONF"/fftimer_running",
-		global_fftimer_running,
-		error);
-}
-
-
-void
-on_radiobutton13_toggled               (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
-	global_ffupdate_auto = (gtk_toggle_button_get_active(togglebutton)) ? TRUE : global_ffupdate_auto;
-
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffupdate_auto",
-				global_ffupdate_auto,
-				error);
-}
 
 
 void
@@ -2443,43 +2345,38 @@ on_entry16_changed                     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
 	gboolean success = FALSE;
-	GError **error = NULL;
-		
-	GtkWidget *widget;
-	
-	
+	GError **error = NULL;		
+
 	
 	global_ffupdate_interval_minutes = atof(gtk_entry_get_text(GTK_ENTRY(editable)));
-	global_ffupdate_interval = (int)floor(global_ffupdate_interval_minutes) * 60000;
-	if (global_ffupdate_interval<10000) global_ffupdate_interval = 10000;
+	global_ffupdate_interval = global_ffupdate_interval_minutes * 60000;
 	
-	
-	
-	
-	widget = lookup_widget(window1, "button23");
-	gtk_widget_set_sensitive(widget,FALSE);
-	widget = lookup_widget(window1, "button11");
-	gtk_widget_set_sensitive(widget, TRUE);
+	if (global_ffupdate_interval < 30000)
+		global_ffupdate_interval = 30000;
 
-	if(friendfinder_timer) g_source_remove(friendfinder_timer);
-	if(msg_timer) g_source_remove(msg_timer);
-	msg_timer = 0;
-	friendfinder_timer = 0;
-	global_fftimer_running = FALSE;
+	if(global_fftimer_running)
+	{
+		if(friendfinder_timer) {
+			g_source_remove(friendfinder_timer);
+			friendfinder_timer = 0;
+		}
+		
+		if(msg_timer) {
+			g_source_remove(msg_timer);
+			msg_timer = 0;
+		}
+		
+		friendfinder_timer = g_timeout_add_seconds(global_ffupdate_interval/1000, update_position, NULL);
+		msg_timer	   = g_timeout_add_seconds(global_ffupdate_interval/1000, send_message, NULL);
+	}
+	
 	
 	success = gconf_client_set_float(
 			global_gconfclient, 
 			GCONF"/ffupdate_interval_minutes",
 			global_ffupdate_interval_minutes,
 			error);
-	
-	success = gconf_client_set_bool(
-			global_gconfclient, 
-			GCONF"/fftimer_running",
-			global_fftimer_running,
-			error);
 
-	printf("*%s(): ffinterval: %d\n",__PRETTY_FUNCTION__, global_ffupdate_interval );
 }
 
 
@@ -2617,106 +2514,6 @@ on_radiobutton21_toggled               (GtkToggleButton *togglebutton,
 				error);
 }
 
-void
-on_checkbutton3_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-
-	global_ffcm_public = gtk_toggle_button_get_active(togglebutton);
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffcm_public",
-				global_ffcm_public,
-				error);
-}
-
-
-void
-on_checkbutton4_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-
-	global_ffcm_registered = gtk_toggle_button_get_active(togglebutton);
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffcm_registered",
-				global_ffcm_registered,
-				error);
-}
-
-
-void
-on_checkbutton5_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-
-	global_ffcm_friends = gtk_toggle_button_get_active(togglebutton);
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffcm_friends",
-				global_ffcm_friends,
-				error);
-}
-
-
-void
-on_checkbutton6_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-
-	global_ffcu_public = gtk_toggle_button_get_active(togglebutton);
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffcu_public",
-				global_ffcu_public,
-				error);
-}
-
-
-void
-on_checkbutton7_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-
-	global_ffcu_registered = gtk_toggle_button_get_active(togglebutton);
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffcu_registered",
-				global_ffcu_registered,
-				error);
-}
-
-
-void
-on_checkbutton8_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	gboolean success = FALSE;
-	GError **error = NULL;
-
-	global_ffcu_friends = gtk_toggle_button_get_active(togglebutton);
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/ffcu_friends",
-				global_ffcu_friends,
-				error);
-}
 
 gboolean
 on_button11_expose_event               (GtkWidget       *widget,
@@ -2833,14 +2630,16 @@ on_item19_activate                     (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {
 	gboolean active;
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
 	active = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(menuitem));
 	global_show_friends = (active) ? TRUE : FALSE;
 	
-	if(friends_list==NULL) {
-		update_position();
-		send_message(NULL);	
+	
+	if(global_show_friends && !global_fftimer_running) {
+		GtkWidget *widget = NULL;
+		
+		widget = lookup_widget(window1, "button11");
+		gtk_button_clicked(GTK_BUTTON(widget));
 	}
 	repaint_all();
 }
@@ -3051,9 +2850,17 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
 	else if(event->keyval == 'm')
 		on_button76_clicked(NULL, NULL);
 	else if(event->keyval == GDK_space || event->keyval == GDK_F11)
-		on_button1_clicked(GTK_BUTTON(window1), NULL);
+		on_button1_clicked(GTK_BUTTON(lookup_widget(window1, "button1")), NULL);
+	else if(event->keyval == GDK_Right)
+		move_map(1);
+	else if(event->keyval == GDK_Down)
+		move_map(2);
+	else if(event->keyval == GDK_Left)
+		move_map(3);
+	else if(event->keyval == GDK_Up)
+		move_map(4);
 	else if(event->keyval == GDK_a)
-		on_button3_clicked(GTK_BUTTON(window1), NULL);
+		on_button3_clicked(GTK_BUTTON(lookup_widget(window1,"button3")), NULL);
 	else if(event->keyval == GDK_r)
 		on_item23_button_release_event(NULL, NULL, NULL);
 	else if(event->keyval == GDK_1)
@@ -3191,13 +2998,13 @@ on_button35_clicked                    (GtkButton       *button,
 	{	
 		gtk_widget_hide(widget);
 		msg_pane_visible = FALSE;
-		gtk_button_set_label(button, "show messages");
+		gtk_button_set_label(button, "Show Messages");
 	}
 	else
 	{
 		gtk_widget_show(widget);
 		msg_pane_visible = TRUE;
-		gtk_button_set_label(button, "hide messages");
+		gtk_button_set_label(button, "Hide Messages");
 	}
 }
 
@@ -4291,4 +4098,51 @@ on_button70_clicked                    (GtkButton       *button,
 		global_infopane_current = global_infopane_widgets;
 	}
 		
+}
+
+void
+on_checkbutton15_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget = NULL;
+	gboolean active;
+	
+	active = gtk_toggle_button_get_active(togglebutton);
+
+	widget = lookup_widget(window1, "entry8");
+	gtk_entry_set_visibility (GTK_ENTRY (widget), active);
+
+}
+
+void
+move_map(int i)
+{
+	GtkWidget *widget = NULL;
+
+	widget = lookup_widget(window1, "drawingarea1");
+	
+	if(i == 1)
+		global_x += 80;
+	else if(i == 3)
+		global_x -= 80;
+	else if(i == 2)
+		global_y += 80;
+	else if(i == 4)
+		global_y -= 80;
+
+		
+	gdk_draw_rectangle (
+		pixmap,
+		widget->style->white_gc,
+		TRUE,
+		0, 0,
+		widget->allocation.width+260,
+		widget->allocation.height+260);
+				
+	gtk_widget_queue_draw_area (
+		widget, 
+		0,0,widget->allocation.width+260,widget->allocation.height+260);
+	
+
+	repaint_all();
 }

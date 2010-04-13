@@ -148,10 +148,6 @@ on_button9_clicked                     (GtkButton       *button,
                                         gpointer         user_data);
 
 void
-on_button10_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
 on_button11_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
 
@@ -196,14 +192,6 @@ on_entry8_changed                      (GtkEditable     *editable,
 
 void
 on_button13_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_button16_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_button17_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
 
 void
@@ -349,13 +337,6 @@ on_item14_activate                     (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);
 
-void
-on_radiobutton1_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_radiobutton13_toggled               (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
 
 void
 on_entry16_changed                     (GtkEditable     *editable,
@@ -393,29 +374,6 @@ void
 on_radiobutton21_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
 
-void
-on_checkbutton3_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_checkbutton4_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_checkbutton5_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_checkbutton6_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_checkbutton7_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
-
-void
-on_checkbutton8_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data);
 
 gboolean
 on_button11_expose_event               (GtkWidget       *widget,
@@ -858,4 +816,8 @@ on_button70_clicked                    (GtkButton       *button,
 
 void
 on_button76_clicked                    (GtkButton       *button,
+                                        gpointer         user_data);
+
+void
+on_checkbutton15_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data);

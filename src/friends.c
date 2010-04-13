@@ -125,12 +125,10 @@ update_position_thread(void *ptr)
 {
 	int i=1;
 	
-	GtkToggleButton *v_public, *v_member, *v_friend;
-	GtkToggleButton *g_public, *g_member, *g_friend;
 	GtkEntry *nick, *pass, *email, *msg;
 	GtkLabel *label_msg;
 	const gchar *n, *p, *e, *m;	
-	gchar *vp, *vm, *vf, *gp, *gm, *gf, *ff_mode;
+	gchar *ff_mode;
 	static gchar lat[64], lon[64], mode[64];
 	static gchar alt[16] = "0", speed[16] = "0", head[16]="0";
 	
@@ -155,23 +153,10 @@ gdk_threads_enter();
 	label_msg = (GtkLabel *)lookup_widget(window1, "label51");
 
 	
-	v_public = (GtkToggleButton *)lookup_widget(window1, "checkbutton3");
-	v_member = (GtkToggleButton *)lookup_widget(window1, "checkbutton4");
-	v_friend = (GtkToggleButton *)lookup_widget(window1, "checkbutton5");
-	g_public = (GtkToggleButton *)lookup_widget(window1, "checkbutton6");
-	g_member = (GtkToggleButton *)lookup_widget(window1, "checkbutton7");
-	g_friend = (GtkToggleButton *)lookup_widget(window1, "checkbutton8");
 	nick  = (GtkEntry *)lookup_widget(window1, "entry7");
 	pass  = (GtkEntry *)lookup_widget(window1, "entry8");
 	email = (GtkEntry *)lookup_widget(window1, "entry9");
 	msg   = (GtkEntry *)lookup_widget(window1, "entry29");
-
-	vp = (gtk_toggle_button_get_active(v_public)) ? g_strdup("y") : g_strdup("n");
-	vm = (gtk_toggle_button_get_active(v_member)) ? g_strdup("y") : g_strdup("n");
-	vf = (gtk_toggle_button_get_active(v_friend)) ? g_strdup("y") : g_strdup("n");
-	gp = (gtk_toggle_button_get_active(g_public)) ? g_strdup("y") : g_strdup("n");
-	gm = (gtk_toggle_button_get_active(g_member)) ? g_strdup("y") : g_strdup("n");
-	gf = (gtk_toggle_button_get_active(g_friend)) ? g_strdup("y") : g_strdup("n");
 
 	switch (global_ff_mode) {
 	case PRIVATE_MODE: 
@@ -290,45 +275,6 @@ gdk_threads_leave();
                CURLFORM_COPYNAME, "msg",
                CURLFORM_COPYCONTENTS, m,
                CURLFORM_END);
-
-	curl_formadd(&formdata,
-               &lastptr,
-               CURLFORM_COPYNAME, "v_public",
-               CURLFORM_COPYCONTENTS, vp,
-               CURLFORM_END);
-
-	curl_formadd(&formdata,
-               &lastptr,
-               CURLFORM_COPYNAME, "v_member",
-               CURLFORM_COPYCONTENTS, vm,
-               CURLFORM_END);
-	       	
-		
-	curl_formadd(&formdata,
-               &lastptr,
-               CURLFORM_COPYNAME, "v_friend",
-               CURLFORM_COPYCONTENTS, vf,
-               CURLFORM_END);
-	       
-	       
-	curl_formadd(&formdata,
-               &lastptr,
-               CURLFORM_COPYNAME, "g_public",
-               CURLFORM_COPYCONTENTS, gp,
-               CURLFORM_END);
-
-	curl_formadd(&formdata,
-               &lastptr,
-               CURLFORM_COPYNAME, "g_member",
-               CURLFORM_COPYCONTENTS, gm,
-               CURLFORM_END);
-	       	
-		
-	curl_formadd(&formdata,
-               &lastptr,
-               CURLFORM_COPYNAME, "g_friend",
-               CURLFORM_COPYCONTENTS, gf,
-               CURLFORM_END);
 	       
 	       
 	curl_handle = curl_easy_init();
@@ -422,12 +368,6 @@ gdk_threads_leave();
 	
 	curl_global_cleanup();
 	
-	g_free(vp);
-	g_free(vm);
-	g_free(vf);
-	g_free(gp);
-	g_free(gm);
-	g_free(gf);
 	g_free(ff_mode);
 
 	return NULL;
@@ -894,6 +834,7 @@ process_msg_replydata(postreply_t *postreply)
 	char **arr0 = NULL, **arr = NULL;
 	msg_t *msg = NULL;
 	int i = 1;
+	static gboolean first_call = TRUE;
 	
 	
 	
@@ -901,7 +842,7 @@ process_msg_replydata(postreply_t *postreply)
 	
 	
 	
-	printf("FULLDATA:\n%s\n",postreply->data);
+	
 	if(postreply->status_code == 200 && postreply->size > 0)
 	{
 		arr0 = g_strsplit (postreply->data, "###", -1);
@@ -922,8 +863,20 @@ process_msg_replydata(postreply_t *postreply)
 			{
 				
 				db_ts_last_request_friends = g_strdup(arr[2]);
-				global_new_msg = TRUE;
+				
+				if(first_call)
+				{
+					GtkWidget *widget = NULL;
+					
+					widget = lookup_widget(window1, "button35");
+					gtk_widget_show(widget);
+					
+					first_call = FALSE;
+				}
+				else
+					global_new_msg = TRUE;
 			}
+			
 			if(arr[7])
 				printf("POSTDATA:\n %s\n", arr[7]); 
 			g_strfreev(arr);
@@ -933,7 +886,7 @@ process_msg_replydata(postreply_t *postreply)
 		while (arr0[i] && strlen(arr0[i]) )
 		{
 
-			printf("strlen arr: %d\n", (int)strlen(arr0[i]));
+			
 			msg = g_new0(msg_t, 1);
 			
 			
@@ -1003,17 +956,17 @@ create_msg_box(msg_t *m)
 	gtk_widget_show (hbox);
 	
 	label = gtk_label_new ("");
-	gtk_widget_set_size_request(label, 270, -1);
+	gtk_widget_set_size_request(label, 260, -1);
 
 	gtk_label_set_line_wrap (GTK_LABEL (label), TRUE);
 	gtk_label_set_use_markup (GTK_LABEL (label), TRUE);
 	gtk_misc_set_alignment (GTK_MISC (label), 0, 0);
-	gtk_misc_set_padding (GTK_MISC (label), 2, 2);
+	gtk_misc_set_padding (GTK_MISC (label), 5, 2);
 	
 	if(m->incoming)
-		label_txt = g_strdup_printf("<i><b>%s</b>, %s</i>\n\n   %s",m->from, m->time, m->txt);
+		label_txt = g_strdup_printf("<i><b>%s</b>, %s</i>\n\n%s",m->from, m->time, m->txt);
 	else
-		label_txt = g_strdup_printf("<i>-> <b>%s</b></i>\n\n   %s",m->to, m->txt);
+		label_txt = g_strdup_printf("<i><small>To: </small><b>%s</b></i>\n\n%s",m->to, m->txt);
 	
 	gtk_label_set_label(GTK_LABEL(label), label_txt);
 	

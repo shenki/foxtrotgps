@@ -32,23 +32,15 @@ GtkWidget *dialog10;
 
 
 
-GtkWidget *
-make_file_label(const char *file, char *full_file);
+GtkWidget *	make_file_label(const char *file, char *full_file);
 
-bbox_t
-get_track_bbox(GSList *track);
+bbox_t		get_track_bbox(GSList *track);
 
-GSList *
-load_log_file_into_list(char *file);
+GSList *	load_log_file_into_list(char *file);
+GSList *	load_gpx_file_into_list(char *file);
+GSList *	parse_nodes(xmlNode *node);
 
-GSList *
-load_gpx_file_into_list(char *file);
-
-GSList *
-parse_nodes(xmlNode *node);
-
-void *
-fetch_track_thread(void *ptr);
+void *		fetch_track_thread(void *ptr);
 
 
 

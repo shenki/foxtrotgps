@@ -154,16 +154,9 @@ extern waypoint_t	global_wp;
 extern char		*global_friend_nick;
 extern char		*global_friend_pass;
 
-extern gboolean		global_ffupdate_auto;
 extern int		global_ffupdate_interval;
 extern double		global_ffupdate_interval_minutes;
 extern gboolean		global_fftimer_running;
-extern gboolean		global_ffcm_public;
-extern gboolean		global_ffcm_registered;
-extern gboolean		global_ffcm_friends;
-extern gboolean		global_ffcu_public;
-extern gboolean		global_ffcu_registered;
-extern gboolean		global_ffcu_friends;
 extern int		global_ff_mode;
 
 extern gchar		*global_server;

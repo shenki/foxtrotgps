@@ -1,5 +1,6 @@
 
 
+
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
 #endif
@@ -143,17 +144,14 @@ create_window1 (void)
   GtkWidget *label101;
   GtkWidget *label99;
   GtkWidget *hbox4;
-  GtkWidget *radiobutton1;
-  GSList *radiobutton1_group = NULL;
-  GtkWidget *radiobutton13;
+  GtkWidget *label202;
   GtkWidget *entry16;
   GtkWidget *label113;
   GtkWidget *vbox8;
   GtkWidget *hbox14;
   GtkWidget *button11;
-  GtkWidget *button23;
-  GtkWidget *alignment13;
   GtkWidget *label97;
+  GtkWidget *image24;
   GtkWidget *label51;
   GtkWidget *label61;
   GtkWidget *frame14;
@@ -167,24 +165,6 @@ create_window1 (void)
   GtkWidget *label182;
   GtkWidget *entry29;
   GtkWidget *label179;
-  GtkWidget *frame3;
-  GtkWidget *alignment3;
-  GtkWidget *vbox6;
-  GtkWidget *vbox7;
-  GtkWidget *label52;
-  GtkWidget *checkbutton3;
-  GtkWidget *checkbutton4;
-  GtkWidget *checkbutton5;
-  GtkWidget *label50;
-  GtkWidget *frame4;
-  GtkWidget *alignment4;
-  GtkWidget *vbox9;
-  GtkWidget *vbox11;
-  GtkWidget *label54;
-  GtkWidget *checkbutton6;
-  GtkWidget *checkbutton7;
-  GtkWidget *checkbutton8;
-  GtkWidget *label53;
   GtkWidget *frame5;
   GtkWidget *alignment5;
   GtkWidget *vbox13;
@@ -193,6 +173,7 @@ create_window1 (void)
   GtkWidget *label58;
   GtkWidget *entry8;
   GtkWidget *entry7;
+  GtkWidget *checkbutton15;
   GtkWidget *scrolledwindow14;
   GtkWidget *textview6;
   GtkWidget *hbox18;
@@ -200,7 +181,6 @@ create_window1 (void)
   GtkWidget *entry9;
   GtkWidget *hbox15;
   GtkWidget *button13;
-  GtkWidget *label98;
   GtkWidget *label62;
   GtkWidget *label56;
   GtkWidget *frame7;
@@ -284,22 +264,6 @@ create_window1 (void)
   GtkWidget *button9;
   GtkWidget *label92;
   GtkWidget *label90;
-  GtkWidget *frame10;
-  GtkWidget *alignment10;
-  GtkWidget *vbox20;
-  GtkWidget *label83;
-  GtkWidget *hbox31;
-  GtkWidget *entry6;
-  GtkWidget *hbox16;
-  GtkWidget *button10;
-  GtkWidget *label96;
-  GtkWidget *label82;
-  GtkWidget *vbox31;
-  GtkWidget *label84;
-  GtkWidget *entry10;
-  GtkWidget *button16;
-  GtkWidget *entry11;
-  GtkWidget *button17;
   GtkWidget *eventbox5;
   GtkWidget *label4;
   GtkTooltips *tooltips;
@@ -580,6 +544,7 @@ create_window1 (void)
   gtk_box_pack_start (GTK_BOX (hbox50), button69, TRUE, TRUE, 3);
   gtk_widget_set_size_request (button69, -1, 40);
   GTK_WIDGET_UNSET_FLAGS (button69, GTK_CAN_FOCUS);
+  gtk_tooltips_set_tip (tooltips, button69, _("Go to Previous Page"), NULL);
 
   image17 = gtk_image_new_from_stock ("gtk-go-back", GTK_ICON_SIZE_BUTTON);
   gtk_widget_show (image17);
@@ -590,6 +555,7 @@ create_window1 (void)
   gtk_box_pack_start (GTK_BOX (hbox50), button71, FALSE, TRUE, 0);
   gtk_widget_set_size_request (button71, 80, -1);
   GTK_WIDGET_UNSET_FLAGS (button71, GTK_CAN_FOCUS);
+  gtk_tooltips_set_tip (tooltips, button71, _("Close Info Area"), NULL);
 
   image14 = gtk_image_new_from_stock ("gtk-close", GTK_ICON_SIZE_BUTTON);
   gtk_widget_show (image14);
@@ -599,6 +565,7 @@ create_window1 (void)
   gtk_widget_show (button70);
   gtk_box_pack_start (GTK_BOX (hbox50), button70, TRUE, TRUE, 3);
   GTK_WIDGET_UNSET_FLAGS (button70, GTK_CAN_FOCUS);
+  gtk_tooltips_set_tip (tooltips, button70, _("Go to Next Page"), NULL);
 
   alignment20 = gtk_alignment_new (0.5, 0.5, 0, 0);
   gtk_widget_show (alignment20);
@@ -751,7 +718,7 @@ create_window1 (void)
   gtk_widget_set_size_request (button8, -1, 40);
   GTK_WIDGET_UNSET_FLAGS (button8, GTK_CAN_FOCUS);
 
-  label47 = gtk_label_new (_("<big><b>Trip Meter</b></big>"));
+  label47 = gtk_label_new (_("<big><b>Trip Meter</b></big>   <small>[1/4]</small>"));
   gtk_widget_show (label47);
   gtk_frame_set_label_widget (GTK_FRAME (frame1), label47);
   gtk_label_set_use_markup (GTK_LABEL (label47), TRUE);
@@ -855,7 +822,7 @@ create_window1 (void)
   scrolledwindow2 = gtk_scrolled_window_new (NULL, NULL);
   gtk_box_pack_start (GTK_BOX (hbox49a), scrolledwindow2, TRUE, TRUE, 0);
   gtk_widget_set_size_request (scrolledwindow2, 300, -1);
-  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow2), GTK_POLICY_AUTOMATIC, GTK_POLICY_ALWAYS);
+  gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow2), GTK_POLICY_NEVER, GTK_POLICY_ALWAYS);
 
   viewport2 = gtk_viewport_new (NULL, NULL);
   gtk_widget_show (viewport2);
@@ -866,15 +833,14 @@ create_window1 (void)
   gtk_widget_show (vbox5);
   gtk_container_add (GTK_CONTAINER (viewport2), vbox5);
 
-  label200 = gtk_label_new (_("<big><b>Friends</b></big>"));
+  label200 = gtk_label_new (_("<big><b>Friends</b></big>   <small>[2/4]</small>"));
   gtk_widget_show (label200);
   gtk_box_pack_start (GTK_BOX (vbox5), label200, FALSE, FALSE, 4);
   gtk_label_set_use_markup (GTK_LABEL (label200), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label200), 0, 0.5);
   gtk_misc_set_padding (GTK_MISC (label200), 9, 0);
 
-  button35 = gtk_button_new_with_mnemonic (_("Show Messages"));
-  gtk_widget_show (button35);
+  button35 = gtk_button_new_with_mnemonic (_("Hide Messages"));
   gtk_box_pack_start (GTK_BOX (vbox5), button35, FALSE, FALSE, 0);
   gtk_widget_set_size_request (button35, -1, 55);
   gtk_container_set_border_width (GTK_CONTAINER (button35), 5);
@@ -889,8 +855,9 @@ create_window1 (void)
   gtk_label_set_use_markup (GTK_LABEL (label132), TRUE);
   gtk_label_set_line_wrap (GTK_LABEL (label132), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label132), 0.02, 0.5);
+  gtk_misc_set_padding (GTK_MISC (label132), 5, 0);
 
-  label187 = gtk_label_new (_("---"));
+  label187 = gtk_label_new ("");
   gtk_widget_show (label187);
   gtk_box_pack_start (GTK_BOX (vbox5), label187, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label187), TRUE);
@@ -903,7 +870,7 @@ create_window1 (void)
   alignment6 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment6);
   gtk_container_add (GTK_CONTAINER (frame6), alignment6);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment6), 0, 0, 12, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment6), 0, 0, 5, 0);
 
   vbox14 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox14);
@@ -913,9 +880,10 @@ create_window1 (void)
   gtk_widget_show (hbox17);
   gtk_box_pack_start (GTK_BOX (vbox14), hbox17, TRUE, TRUE, 0);
 
-  label101 = gtk_label_new (_("Update your position to a server\nand receive your friends positions,\nshown on the map."));
+  label101 = gtk_label_new (_("Enable position sharing and\nmessaging with your friends"));
   gtk_widget_show (label101);
   gtk_box_pack_start (GTK_BOX (hbox17), label101, FALSE, FALSE, 0);
+  gtk_label_set_line_wrap (GTK_LABEL (label101), TRUE);
 
   label99 = gtk_label_new (_("\n\n"));
   gtk_widget_show (label99);
@@ -928,32 +896,20 @@ create_window1 (void)
   gtk_widget_show (hbox4);
   gtk_box_pack_start (GTK_BOX (vbox14), hbox4, FALSE, FALSE, 2);
 
-  radiobutton1 = gtk_radio_button_new_with_mnemonic (NULL, _("once"));
-  gtk_widget_show (radiobutton1);
-  gtk_box_pack_start (GTK_BOX (hbox4), radiobutton1, FALSE, FALSE, 5);
-  gtk_container_set_border_width (GTK_CONTAINER (radiobutton1), 2);
-  GTK_WIDGET_UNSET_FLAGS (radiobutton1, GTK_CAN_FOCUS);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton1), radiobutton1_group);
-  radiobutton1_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton1));
-
-  radiobutton13 = gtk_radio_button_new_with_mnemonic (NULL, _("every"));
-  gtk_widget_show (radiobutton13);
-  gtk_box_pack_start (GTK_BOX (hbox4), radiobutton13, FALSE, FALSE, 0);
-  GTK_WIDGET_UNSET_FLAGS (radiobutton13, GTK_CAN_FOCUS);
-  gtk_radio_button_set_group (GTK_RADIO_BUTTON (radiobutton13), radiobutton1_group);
-  radiobutton1_group = gtk_radio_button_get_group (GTK_RADIO_BUTTON (radiobutton13));
+  label202 = gtk_label_new (_("Update interval  "));
+  gtk_widget_show (label202);
+  gtk_box_pack_start (GTK_BOX (hbox4), label202, FALSE, FALSE, 0);
 
   entry16 = gtk_entry_new ();
   gtk_widget_show (entry16);
-  gtk_box_pack_start (GTK_BOX (hbox4), entry16, FALSE, TRUE, 1);
-  GTK_WIDGET_UNSET_FLAGS (entry16, GTK_CAN_FOCUS);
+  gtk_box_pack_start (GTK_BOX (hbox4), entry16, FALSE, FALSE, 0);
   gtk_entry_set_max_length (GTK_ENTRY (entry16), 4);
-  gtk_entry_set_text (GTK_ENTRY (entry16), _("15"));
+  gtk_entry_set_text (GTK_ENTRY (entry16), _("5"));
   gtk_entry_set_width_chars (GTK_ENTRY (entry16), 4);
 
   label113 = gtk_label_new (_("minutes"));
   gtk_widget_show (label113);
-  gtk_box_pack_start (GTK_BOX (hbox4), label113, TRUE, TRUE, 0);
+  gtk_box_pack_start (GTK_BOX (hbox4), label113, FALSE, FALSE, 1);
   gtk_misc_set_alignment (GTK_MISC (label113), 0, 0.5);
 
   vbox8 = gtk_vbox_new (FALSE, 0);
@@ -962,30 +918,22 @@ create_window1 (void)
 
   hbox14 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox14);
-  gtk_box_pack_start (GTK_BOX (vbox8), hbox14, FALSE, FALSE, 6);
+  gtk_box_pack_start (GTK_BOX (vbox8), hbox14, TRUE, FALSE, 8);
 
-  button11 = gtk_button_new_with_mnemonic (_("     Update Me!     "));
+  button11 = gtk_button_new_with_mnemonic (_("     Share!     "));
   gtk_widget_show (button11);
-  gtk_box_pack_start (GTK_BOX (hbox14), button11, FALSE, FALSE, 4);
-  gtk_widget_set_size_request (button11, -1, 50);
+  gtk_box_pack_start (GTK_BOX (hbox14), button11, FALSE, FALSE, 0);
+  gtk_widget_set_size_request (button11, 100, 50);
   GTK_WIDGET_UNSET_FLAGS (button11, GTK_CAN_FOCUS);
 
-  button23 = gtk_button_new_with_mnemonic (_("     Stop     "));
-  gtk_widget_show (button23);
-  gtk_box_pack_start (GTK_BOX (hbox14), button23, FALSE, FALSE, 0);
-  gtk_widget_set_sensitive (button23, FALSE);
-  GTK_WIDGET_UNSET_FLAGS (button23, GTK_CAN_FOCUS);
-
-  alignment13 = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_show (alignment13);
-  gtk_box_pack_start (GTK_BOX (hbox14), alignment13, TRUE, TRUE, 0);
-  gtk_widget_set_size_request (alignment13, -1, 50);
-
-  label97 = gtk_label_new (_(" ."));
+  label97 = gtk_label_new (_("     "));
   gtk_widget_show (label97);
-  gtk_container_add (GTK_CONTAINER (alignment13), label97);
-  gtk_widget_set_size_request (label97, -1, 50);
+  gtk_box_pack_start (GTK_BOX (hbox14), label97, FALSE, FALSE, 0);
   gtk_misc_set_alignment (GTK_MISC (label97), 0, 0.5);
+
+  image24 = gtk_image_new_from_icon_name ("gtk-ok", GTK_ICON_SIZE_BUTTON);
+  gtk_image_set_pixel_size (image24, 50);
+  gtk_box_pack_start (GTK_BOX (hbox14), image24, FALSE, FALSE, 0);
 
   label51 = gtk_label_new ("");
   gtk_widget_show (label51);
@@ -993,22 +941,23 @@ create_window1 (void)
   gtk_label_set_use_markup (GTK_LABEL (label51), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label51), 0, 0.5);
 
-  label61 = gtk_label_new (_("<b>  Position Update  </b>"));
+  label61 = gtk_label_new (_("<b>Position Sharing  </b>"));
   gtk_widget_show (label61);
   gtk_frame_set_label_widget (GTK_FRAME (frame6), label61);
   gtk_label_set_use_markup (GTK_LABEL (label61), TRUE);
-  gtk_misc_set_padding (GTK_MISC (label61), 0, 3);
+  gtk_misc_set_alignment (GTK_MISC (label61), 0.18, 0.5);
+  gtk_misc_set_padding (GTK_MISC (label61), 3, 8);
 
   frame14 = gtk_frame_new (NULL);
   gtk_widget_show (frame14);
-  gtk_box_pack_start (GTK_BOX (vbox5), frame14, TRUE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame14), 10);
+  gtk_box_pack_start (GTK_BOX (vbox5), frame14, TRUE, TRUE, 5);
+  gtk_container_set_border_width (GTK_CONTAINER (frame14), 4);
   gtk_frame_set_shadow_type (GTK_FRAME (frame14), GTK_SHADOW_NONE);
 
   alignment19 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment19);
   gtk_container_add (GTK_CONTAINER (frame14), alignment19);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment19), 4, 5, 14, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment19), 4, 5, 2, 0);
 
   vbox47 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox47);
@@ -1051,119 +1000,32 @@ create_window1 (void)
   entry29 = gtk_entry_new ();
   gtk_widget_show (entry29);
   gtk_box_pack_start (GTK_BOX (vbox47), entry29, FALSE, FALSE, 0);
-  GTK_WIDGET_UNSET_FLAGS (entry29, GTK_CAN_FOCUS);
   gtk_entry_set_text (GTK_ENTRY (entry29), _("just idle..."));
   gtk_entry_set_invisible_char (GTK_ENTRY (entry29), 9679);
 
-  label179 = gtk_label_new (_(" <b>Update Mode</b> "));
+  label179 = gtk_label_new (_("<b>Sharing Mode</b> "));
   gtk_widget_show (label179);
   gtk_frame_set_label_widget (GTK_FRAME (frame14), label179);
   gtk_label_set_use_markup (GTK_LABEL (label179), TRUE);
-
-  frame3 = gtk_frame_new (NULL);
-  gtk_box_pack_start (GTK_BOX (vbox5), frame3, FALSE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame3), 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame3), GTK_SHADOW_NONE);
-
-  alignment3 = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_show (alignment3);
-  gtk_container_add (GTK_CONTAINER (frame3), alignment3);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment3), 0, 0, 12, 0);
-
-  vbox6 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_show (vbox6);
-  gtk_container_add (GTK_CONTAINER (alignment3), vbox6);
-
-  vbox7 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_show (vbox7);
-  gtk_box_pack_start (GTK_BOX (vbox6), vbox7, FALSE, TRUE, 0);
-
-  label52 = gtk_label_new (_("Permission to see me for:"));
-  gtk_widget_show (label52);
-  gtk_box_pack_start (GTK_BOX (vbox7), label52, FALSE, FALSE, 0);
-  gtk_misc_set_alignment (GTK_MISC (label52), 0, 0.5);
-  gtk_misc_set_padding (GTK_MISC (label52), 0, 4);
-
-  checkbutton3 = gtk_check_button_new_with_mnemonic (_("public (you remain anonymous)"));
-  gtk_widget_show (checkbutton3);
-  gtk_box_pack_start (GTK_BOX (vbox7), checkbutton3, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton3), TRUE);
-
-  checkbutton4 = gtk_check_button_new_with_mnemonic (_("registered nicks"));
-  gtk_widget_show (checkbutton4);
-  gtk_box_pack_start (GTK_BOX (vbox7), checkbutton4, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton4), TRUE);
-
-  checkbutton5 = gtk_check_button_new_with_mnemonic (_("my friends"));
-  gtk_widget_show (checkbutton5);
-  gtk_box_pack_start (GTK_BOX (vbox7), checkbutton5, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton5), TRUE);
-
-  label50 = gtk_label_new (_(" <b>Updating My Position</b> "));
-  gtk_widget_show (label50);
-  gtk_frame_set_label_widget (GTK_FRAME (frame3), label50);
-  gtk_label_set_use_markup (GTK_LABEL (label50), TRUE);
-
-  frame4 = gtk_frame_new (NULL);
-  gtk_box_pack_start (GTK_BOX (vbox5), frame4, FALSE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame4), 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame4), GTK_SHADOW_NONE);
-
-  alignment4 = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_show (alignment4);
-  gtk_container_add (GTK_CONTAINER (frame4), alignment4);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment4), 0, 0, 12, 0);
-
-  vbox9 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_show (vbox9);
-  gtk_container_add (GTK_CONTAINER (alignment4), vbox9);
-
-  vbox11 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_show (vbox11);
-  gtk_box_pack_start (GTK_BOX (vbox9), vbox11, FALSE, TRUE, 0);
-
-  label54 = gtk_label_new (_("Show me the positions from:"));
-  gtk_widget_show (label54);
-  gtk_box_pack_start (GTK_BOX (vbox11), label54, FALSE, FALSE, 0);
-  gtk_misc_set_alignment (GTK_MISC (label54), 0, 0.5);
-  gtk_misc_set_padding (GTK_MISC (label54), 0, 4);
-
-  checkbutton6 = gtk_check_button_new_with_mnemonic (_("public"));
-  gtk_widget_show (checkbutton6);
-  gtk_box_pack_start (GTK_BOX (vbox11), checkbutton6, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton6), TRUE);
-
-  checkbutton7 = gtk_check_button_new_with_mnemonic (_("registered nicks"));
-  gtk_widget_show (checkbutton7);
-  gtk_box_pack_start (GTK_BOX (vbox11), checkbutton7, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton7), TRUE);
-
-  checkbutton8 = gtk_check_button_new_with_mnemonic (_("my friends"));
-  gtk_widget_show (checkbutton8);
-  gtk_box_pack_start (GTK_BOX (vbox11), checkbutton8, FALSE, FALSE, 0);
-  gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton8), TRUE);
-
-  label53 = gtk_label_new (_(" <b>Getting Other's Positions</b> "));
-  gtk_widget_show (label53);
-  gtk_frame_set_label_widget (GTK_FRAME (frame4), label53);
-  gtk_label_set_use_markup (GTK_LABEL (label53), TRUE);
+  gtk_misc_set_padding (GTK_MISC (label179), 0, 14);
 
   frame5 = gtk_frame_new (NULL);
   gtk_widget_show (frame5);
-  gtk_box_pack_start (GTK_BOX (vbox5), frame5, FALSE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame5), 10);
+  gtk_box_pack_start (GTK_BOX (vbox5), frame5, FALSE, TRUE, 10);
+  gtk_widget_set_size_request (frame5, 300, -1);
+  gtk_container_set_border_width (GTK_CONTAINER (frame5), 1);
   gtk_frame_set_shadow_type (GTK_FRAME (frame5), GTK_SHADOW_NONE);
 
   alignment5 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment5);
   gtk_container_add (GTK_CONTAINER (frame5), alignment5);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment5), 0, 0, 12, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment5), 0, 0, 2, 0);
 
   vbox13 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox13);
   gtk_container_add (GTK_CONTAINER (alignment5), vbox13);
 
-  table5 = gtk_table_new (2, 2, FALSE);
+  table5 = gtk_table_new (3, 2, FALSE);
   gtk_widget_show (table5);
   gtk_box_pack_start (GTK_BOX (vbox13), table5, FALSE, TRUE, 10);
 
@@ -1186,6 +1048,7 @@ create_window1 (void)
   gtk_table_attach (GTK_TABLE (table5), entry8, 1, 2, 1, 2,
                     (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
                     (GtkAttachOptions) (0), 0, 0);
+  gtk_entry_set_visibility (GTK_ENTRY (entry8), FALSE);
   gtk_entry_set_text (GTK_ENTRY (entry8), _("foobar"));
 
   entry7 = gtk_entry_new ();
@@ -1195,10 +1058,16 @@ create_window1 (void)
                     (GtkAttachOptions) (0), 0, 0);
   gtk_entry_set_text (GTK_ENTRY (entry7), _("JohnDoe"));
 
+  checkbutton15 = gtk_check_button_new_with_mnemonic (_("Show password"));
+  gtk_widget_show (checkbutton15);
+  gtk_table_attach (GTK_TABLE (table5), checkbutton15, 1, 2, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+
   scrolledwindow14 = gtk_scrolled_window_new (NULL, NULL);
   gtk_widget_show (scrolledwindow14);
-  gtk_box_pack_start (GTK_BOX (vbox13), scrolledwindow14, TRUE, TRUE, 0);
-  gtk_widget_set_size_request (scrolledwindow14, 300, 235);
+  gtk_box_pack_start (GTK_BOX (vbox13), scrolledwindow14, TRUE, TRUE, 3);
+  gtk_widget_set_size_request (scrolledwindow14, -1, 75);
   GTK_WIDGET_UNSET_FLAGS (scrolledwindow14, GTK_CAN_FOCUS);
   gtk_scrolled_window_set_policy (GTK_SCROLLED_WINDOW (scrolledwindow14), GTK_POLICY_NEVER, GTK_POLICY_AUTOMATIC);
 
@@ -1210,15 +1079,16 @@ create_window1 (void)
   gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (textview6), GTK_WRAP_WORD);
   gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview6), FALSE);
   gtk_text_view_set_left_margin (GTK_TEXT_VIEW (textview6), 4);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview6)), _("Choose any nickname you want to have. A password is only necessary if you have already registered your nick or you want to register it.\n\nTo register this nick simply put in your email and click below!\nYour email will not be shown, nor shared and only used for a reminder in case of a lost password.\n\nFurther info at:\nhttp://www.tangogps.org/friends"), -1);
+  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview6)), _("Simply choose any nickname and password.\n\nBefore first use register them by clicking on the button below. "), -1);
 
   hbox18 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox18);
   gtk_box_pack_start (GTK_BOX (vbox13), hbox18, TRUE, TRUE, 10);
 
-  label59 = gtk_label_new (_("EMail        "));
+  label59 = gtk_label_new (_("Email        "));
   gtk_widget_show (label59);
   gtk_box_pack_start (GTK_BOX (hbox18), label59, FALSE, FALSE, 0);
+  gtk_label_set_use_markup (GTK_LABEL (label59), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label59), 0, 0.5);
 
   entry9 = gtk_entry_new ();
@@ -1232,41 +1102,37 @@ create_window1 (void)
   button13 = gtk_button_new_with_mnemonic (_("     Register!     "));
   gtk_widget_show (button13);
   gtk_box_pack_start (GTK_BOX (hbox15), button13, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (button13), 4);
+  gtk_widget_set_size_request (button13, -1, 45);
 
-  label98 = gtk_label_new (_("   "));
-  gtk_widget_show (label98);
-  gtk_box_pack_start (GTK_BOX (hbox15), label98, FALSE, FALSE, 0);
-  gtk_widget_set_size_request (label98, -1, 50);
-
-  label62 = gtk_label_new (_("-"));
+  label62 = gtk_label_new (_("     "));
   gtk_widget_show (label62);
   gtk_box_pack_start (GTK_BOX (vbox13), label62, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label62), TRUE);
   gtk_label_set_justify (GTK_LABEL (label62), GTK_JUSTIFY_CENTER);
   gtk_misc_set_alignment (GTK_MISC (label62), 0, 0);
-  gtk_misc_set_padding (GTK_MISC (label62), 3, 0);
+  gtk_misc_set_padding (GTK_MISC (label62), 3, 5);
 
-  label56 = gtk_label_new (_("<b>  Me  </b>"));
+  label56 = gtk_label_new (_("<b>Me</b>"));
   gtk_widget_show (label56);
   gtk_frame_set_label_widget (GTK_FRAME (frame5), label56);
   gtk_label_set_use_markup (GTK_LABEL (label56), TRUE);
+  gtk_misc_set_padding (GTK_MISC (label56), 0, 4);
 
   frame7 = gtk_frame_new (NULL);
   gtk_box_pack_start (GTK_BOX (hbox49a), frame7, TRUE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame7), 9);
+  gtk_container_set_border_width (GTK_CONTAINER (frame7), 5);
   gtk_frame_set_shadow_type (GTK_FRAME (frame7), GTK_SHADOW_NONE);
 
   alignment7 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment7);
   gtk_container_add (GTK_CONTAINER (frame7), alignment7);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment7), 0, 0, 9, 9);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment7), 0, 0, 2, 9);
 
   vbox17 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox17);
   gtk_container_add (GTK_CONTAINER (alignment7), vbox17);
 
-  label75 = gtk_label_new (_("Here you can enable / disable logging of your tracks for later use, i.e. for extending OSM"));
+  label75 = gtk_label_new (_("Enable logging of your tracks for later use, i.e. for extending OSM"));
   gtk_widget_show (label75);
   gtk_box_pack_start (GTK_BOX (vbox17), label75, FALSE, FALSE, 12);
   gtk_widget_set_size_request (label75, 334, -1);
@@ -1276,7 +1142,7 @@ create_window1 (void)
   hbox6 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox6);
   gtk_box_pack_start (GTK_BOX (vbox17), hbox6, FALSE, TRUE, 0);
-  gtk_widget_set_size_request (hbox6, -1, 90);
+  gtk_widget_set_size_request (hbox6, -1, 70);
 
   button18 = gtk_button_new_with_mnemonic (_("            Start            "));
   gtk_widget_show (button18);
@@ -1297,11 +1163,12 @@ create_window1 (void)
   hbox7 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox7);
   gtk_box_pack_start (GTK_BOX (vbox17), hbox7, FALSE, TRUE, 0);
-  gtk_widget_set_size_request (hbox7, -1, 70);
+  gtk_widget_set_size_request (hbox7, -1, 50);
 
   button20 = gtk_button_new_with_mnemonic (_("      Configure...      "));
   gtk_widget_show (button20);
   gtk_box_pack_start (GTK_BOX (hbox7), button20, FALSE, FALSE, 0);
+  GTK_WIDGET_UNSET_FLAGS (button20, GTK_CAN_FOCUS);
 
   label133 = gtk_label_new (_(" "));
   gtk_widget_show (label133);
@@ -1310,12 +1177,13 @@ create_window1 (void)
   button36 = gtk_button_new_with_mnemonic (_("      Load...     "));
   gtk_widget_show (button36);
   gtk_box_pack_start (GTK_BOX (hbox7), button36, FALSE, FALSE, 2);
+  GTK_WIDGET_UNSET_FLAGS (button36, GTK_CAN_FOCUS);
 
   label77 = gtk_label_new ("");
   gtk_widget_show (label77);
   gtk_box_pack_start (GTK_BOX (vbox17), label77, TRUE, FALSE, 0);
 
-  label74 = gtk_label_new (_("<big><b>Tracks</b></big>"));
+  label74 = gtk_label_new (_("<big><b>Tracks</b></big>   <small>[3/4]</small>"));
   gtk_widget_show (label74);
   gtk_frame_set_label_widget (GTK_FRAME (frame7), label74);
   gtk_label_set_use_markup (GTK_LABEL (label74), TRUE);
@@ -1329,18 +1197,18 @@ create_window1 (void)
   gtk_container_add (GTK_CONTAINER (scrolledwindow1), viewport1);
   gtk_viewport_set_shadow_type (GTK_VIEWPORT (viewport1), GTK_SHADOW_NONE);
 
-  vbox2 = gtk_vbox_new (FALSE, 0);
+  vbox2 = gtk_vbox_new (FALSE, 1);
   gtk_widget_show (vbox2);
   gtk_container_add (GTK_CONTAINER (viewport1), vbox2);
 
-  label201 = gtk_label_new (_("<big><b>Configuration</b></big>"));
+  label201 = gtk_label_new (_("<big><b>Configuration</b></big>   <small>[4/4]</small>"));
   gtk_widget_show (label201);
   gtk_box_pack_start (GTK_BOX (vbox2), label201, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label201), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label201), 0, 0.5);
   gtk_misc_set_padding (GTK_MISC (label201), 2, 2);
 
-  label117 = gtk_label_new (_("<small><i>tangoGPS Version:\nDeveloper: Marcus Bauer</i></small>"));
+  label117 = gtk_label_new (_("<small><i>tangoGPS Version:\nDeveloper: Marcus Bauer &amp; Community</i></small>"));
   gtk_widget_show (label117);
   gtk_box_pack_start (GTK_BOX (vbox2), label117, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label117), TRUE);
@@ -1349,14 +1217,14 @@ create_window1 (void)
 
   frame9 = gtk_frame_new (NULL);
   gtk_widget_show (frame9);
-  gtk_box_pack_start (GTK_BOX (vbox2), frame9, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame9), 10);
+  gtk_box_pack_start (GTK_BOX (vbox2), frame9, FALSE, FALSE, 9);
+  gtk_container_set_border_width (GTK_CONTAINER (frame9), 1);
   gtk_frame_set_shadow_type (GTK_FRAME (frame9), GTK_SHADOW_NONE);
 
   alignment9 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment9);
   gtk_container_add (GTK_CONTAINER (frame9), alignment9);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment9), 0, 0, 12, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment9), 0, 0, 3, 0);
 
   vbox19 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox19);
@@ -1378,24 +1246,24 @@ create_window1 (void)
   gtk_widget_show (label80);
   gtk_frame_set_label_widget (GTK_FRAME (frame9), label80);
   gtk_label_set_use_markup (GTK_LABEL (label80), TRUE);
+  gtk_misc_set_padding (GTK_MISC (label80), 0, 6);
 
   frame8 = gtk_frame_new (NULL);
   gtk_widget_show (frame8);
   gtk_box_pack_start (GTK_BOX (vbox2), frame8, FALSE, FALSE, 0);
   gtk_widget_set_size_request (frame8, 350, -1);
-  gtk_container_set_border_width (GTK_CONTAINER (frame8), 11);
   gtk_frame_set_shadow_type (GTK_FRAME (frame8), GTK_SHADOW_NONE);
 
   alignment8 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment8);
   gtk_container_add (GTK_CONTAINER (frame8), alignment8);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment8), 0, 0, 12, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment8), 0, 0, 3, 0);
 
   vbox18 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox18);
   gtk_container_add (GTK_CONTAINER (alignment8), vbox18);
 
-  label86 = gtk_label_new (_("Current Repository:"));
+  label86 = gtk_label_new (_("Current Map:"));
   gtk_widget_show (label86);
   gtk_box_pack_start (GTK_BOX (vbox18), label86, FALSE, FALSE, 0);
   gtk_misc_set_alignment (GTK_MISC (label86), 0, 0.5);
@@ -1407,8 +1275,8 @@ create_window1 (void)
 
   combobox1 = gtk_combo_box_new_text ();
   gtk_widget_show (combobox1);
-  gtk_box_pack_start (GTK_BOX (hbox3), combobox1, TRUE, TRUE, 1);
-  gtk_widget_set_size_request (combobox1, 200, 44);
+  gtk_box_pack_start (GTK_BOX (hbox3), combobox1, FALSE, FALSE, 1);
+  gtk_widget_set_size_request (combobox1, 320, 44);
   gtk_container_set_border_width (GTK_CONTAINER (combobox1), 8);
 
   hbox37 = gtk_hbox_new (FALSE, 0);
@@ -1484,21 +1352,22 @@ create_window1 (void)
   gtk_box_pack_start (GTK_BOX (hbox8), label89, FALSE, FALSE, 0);
   gtk_widget_set_size_request (label89, -1, 50);
 
-  label78 = gtk_label_new (_("<b>Map Repositories</b>"));
+  label78 = gtk_label_new (_("<b>Map Types</b>"));
   gtk_widget_show (label78);
   gtk_frame_set_label_widget (GTK_FRAME (frame8), label78);
   gtk_label_set_use_markup (GTK_LABEL (label78), TRUE);
+  gtk_misc_set_padding (GTK_MISC (label78), 0, 5);
 
   frame11 = gtk_frame_new (NULL);
   gtk_widget_show (frame11);
   gtk_box_pack_start (GTK_BOX (vbox2), frame11, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame11), 12);
+  gtk_container_set_border_width (GTK_CONTAINER (frame11), 1);
   gtk_frame_set_shadow_type (GTK_FRAME (frame11), GTK_SHADOW_NONE);
 
   alignment11 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment11);
   gtk_container_add (GTK_CONTAINER (frame11), alignment11);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment11), 0, 0, 12, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment11), 0, 0, 3, 0);
 
   vbox32 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox32);
@@ -1545,7 +1414,7 @@ create_window1 (void)
   hbox23 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox23);
   gtk_box_pack_start (GTK_BOX (vbox32), hbox23, TRUE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (hbox23), 3);
+  gtk_container_set_border_width (GTK_CONTAINER (hbox23), 5);
 
   radiobutton17 = gtk_radio_button_new_with_mnemonic (NULL, _("meters"));
   gtk_widget_show (radiobutton17);
@@ -1570,7 +1439,7 @@ create_window1 (void)
   hbox24 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox24);
   gtk_box_pack_start (GTK_BOX (vbox32), hbox24, TRUE, TRUE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (hbox24), 3);
+  gtk_container_set_border_width (GTK_CONTAINER (hbox24), 5);
 
   radiobutton19 = gtk_radio_button_new_with_mnemonic (NULL, _("d.dd"));
   gtk_widget_show (radiobutton19);
@@ -1595,17 +1464,17 @@ create_window1 (void)
   gtk_widget_show (label87);
   gtk_frame_set_label_widget (GTK_FRAME (frame11), label87);
   gtk_label_set_use_markup (GTK_LABEL (label87), TRUE);
+  gtk_misc_set_padding (GTK_MISC (label87), 0, 10);
 
   frame12 = gtk_frame_new (NULL);
   gtk_widget_show (frame12);
   gtk_box_pack_start (GTK_BOX (vbox2), frame12, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame12), 12);
   gtk_frame_set_shadow_type (GTK_FRAME (frame12), GTK_SHADOW_NONE);
 
   alignment12 = gtk_alignment_new (0.5, 0.5, 1, 1);
   gtk_widget_show (alignment12);
   gtk_container_add (GTK_CONTAINER (frame12), alignment12);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment12), 0, 0, 12, 0);
+  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment12), 0, 0, 3, 0);
 
   vbox22 = gtk_vbox_new (FALSE, 0);
   gtk_widget_show (vbox22);
@@ -1663,83 +1532,7 @@ create_window1 (void)
   gtk_widget_show (label90);
   gtk_frame_set_label_widget (GTK_FRAME (frame12), label90);
   gtk_label_set_use_markup (GTK_LABEL (label90), TRUE);
-
-  frame10 = gtk_frame_new (NULL);
-  gtk_box_pack_start (GTK_BOX (vbox2), frame10, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (frame10), 10);
-  gtk_frame_set_shadow_type (GTK_FRAME (frame10), GTK_SHADOW_NONE);
-
-  alignment10 = gtk_alignment_new (0.5, 0.5, 1, 1);
-  gtk_widget_show (alignment10);
-  gtk_container_add (GTK_CONTAINER (frame10), alignment10);
-  gtk_alignment_set_padding (GTK_ALIGNMENT (alignment10), 0, 0, 12, 0);
-
-  vbox20 = gtk_vbox_new (FALSE, 0);
-  gtk_widget_show (vbox20);
-  gtk_container_add (GTK_CONTAINER (alignment10), vbox20);
-
-  label83 = gtk_label_new (_("\nStart gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"));
-  gtk_widget_show (label83);
-  gtk_box_pack_start (GTK_BOX (vbox20), label83, FALSE, FALSE, 0);
-  gtk_widget_set_size_request (label83, 270, -1);
-  gtk_label_set_use_markup (GTK_LABEL (label83), TRUE);
-  gtk_label_set_line_wrap (GTK_LABEL (label83), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label83), 0, 0);
-
-  hbox31 = gtk_hbox_new (FALSE, 0);
-  gtk_widget_show (hbox31);
-  gtk_box_pack_start (GTK_BOX (vbox20), hbox31, FALSE, FALSE, 0);
-
-  entry6 = gtk_entry_new ();
-  gtk_widget_show (entry6);
-  gtk_box_pack_start (GTK_BOX (hbox31), entry6, FALSE, FALSE, 0);
-  gtk_entry_set_text (GTK_ENTRY (entry6), _("/home/root/gllin/gllin &"));
-  gtk_entry_set_width_chars (GTK_ENTRY (entry6), 28);
-
-  hbox16 = gtk_hbox_new (FALSE, 0);
-  gtk_widget_show (hbox16);
-  gtk_box_pack_start (GTK_BOX (vbox20), hbox16, FALSE, FALSE, 1);
-
-  button10 = gtk_button_new_with_mnemonic (_("     Start gllin and GPSD     "));
-  gtk_widget_show (button10);
-  gtk_box_pack_start (GTK_BOX (hbox16), button10, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (button10), 4);
-
-  label96 = gtk_label_new (_("  "));
-  gtk_widget_show (label96);
-  gtk_box_pack_start (GTK_BOX (hbox16), label96, FALSE, FALSE, 0);
-  gtk_widget_set_size_request (label96, -1, 50);
-
-  label82 = gtk_label_new (_("<b>gllin and gpsd</b>"));
-  gtk_widget_show (label82);
-  gtk_frame_set_label_widget (GTK_FRAME (frame10), label82);
-  gtk_label_set_use_markup (GTK_LABEL (label82), TRUE);
-
-  vbox31 = gtk_vbox_new (FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox2), vbox31, FALSE, FALSE, 6);
-
-  label84 = gtk_label_new (_("\nThe following section is \nfor development purposes"));
-  gtk_widget_show (label84);
-  gtk_box_pack_start (GTK_BOX (vbox31), label84, FALSE, FALSE, 0);
-  gtk_misc_set_alignment (GTK_MISC (label84), 0, 0.5);
-
-  entry10 = gtk_entry_new ();
-  gtk_widget_show (entry10);
-  gtk_box_pack_start (GTK_BOX (vbox31), entry10, FALSE, FALSE, 0);
-  gtk_entry_set_text (GTK_ENTRY (entry10), _("/home/root/gprs.sh &"));
-
-  button16 = gtk_button_new_with_mnemonic (_("Start pppd/gprs"));
-  gtk_widget_show (button16);
-  gtk_box_pack_start (GTK_BOX (vbox31), button16, FALSE, FALSE, 0);
-
-  entry11 = gtk_entry_new ();
-  gtk_widget_show (entry11);
-  gtk_box_pack_start (GTK_BOX (vbox31), entry11, FALSE, FALSE, 0);
-  gtk_entry_set_text (GTK_ENTRY (entry11), _("/home/root/other.sh"));
-
-  button17 = gtk_button_new_with_mnemonic (_("Other stuff"));
-  gtk_widget_show (button17);
-  gtk_box_pack_start (GTK_BOX (vbox31), button17, FALSE, FALSE, 0);
+  gtk_misc_set_padding (GTK_MISC (label90), 0, 10);
 
   eventbox5 = gtk_event_box_new ();
   gtk_widget_show (eventbox5);
@@ -1845,12 +1638,6 @@ create_window1 (void)
   g_signal_connect ((gpointer) button35, "clicked",
                     G_CALLBACK (on_button35_clicked),
                     NULL);
-  g_signal_connect ((gpointer) radiobutton1, "toggled",
-                    G_CALLBACK (on_radiobutton1_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) radiobutton13, "toggled",
-                    G_CALLBACK (on_radiobutton13_toggled),
-                    NULL);
   g_signal_connect ((gpointer) entry16, "changed",
                     G_CALLBACK (on_entry16_changed),
                     NULL);
@@ -1859,9 +1646,6 @@ create_window1 (void)
                     NULL);
   g_signal_connect ((gpointer) button11, "expose_event",
                     G_CALLBACK (on_button11_expose_event),
-                    NULL);
-  g_signal_connect ((gpointer) button23, "clicked",
-                    G_CALLBACK (on_button23_clicked),
                     NULL);
   g_signal_connect ((gpointer) radiobutton27, "toggled",
                     G_CALLBACK (on_radiobutton27_toggled),
@@ -1872,29 +1656,14 @@ create_window1 (void)
   g_signal_connect ((gpointer) radiobutton29, "toggled",
                     G_CALLBACK (on_radiobutton29_toggled),
                     NULL);
-  g_signal_connect ((gpointer) checkbutton3, "toggled",
-                    G_CALLBACK (on_checkbutton3_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) checkbutton4, "toggled",
-                    G_CALLBACK (on_checkbutton4_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) checkbutton5, "toggled",
-                    G_CALLBACK (on_checkbutton5_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) checkbutton6, "toggled",
-                    G_CALLBACK (on_checkbutton6_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) checkbutton7, "toggled",
-                    G_CALLBACK (on_checkbutton7_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) checkbutton8, "toggled",
-                    G_CALLBACK (on_checkbutton8_toggled),
-                    NULL);
   g_signal_connect ((gpointer) entry8, "changed",
                     G_CALLBACK (on_entry8_changed),
                     NULL);
   g_signal_connect ((gpointer) entry7, "changed",
                     G_CALLBACK (on_entry7_changed),
+                    NULL);
+  g_signal_connect ((gpointer) checkbutton15, "toggled",
+                    G_CALLBACK (on_checkbutton15_toggled),
                     NULL);
   g_signal_connect ((gpointer) button13, "clicked",
                     G_CALLBACK (on_button13_clicked),
@@ -1967,15 +1736,6 @@ create_window1 (void)
                     NULL);
   g_signal_connect ((gpointer) button9, "clicked",
                     G_CALLBACK (on_button9_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) button10, "clicked",
-                    G_CALLBACK (on_button10_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) button16, "clicked",
-                    G_CALLBACK (on_button16_clicked),
-                    NULL);
-  g_signal_connect ((gpointer) button17, "clicked",
-                    G_CALLBACK (on_button17_clicked),
                     NULL);
   g_signal_connect ((gpointer) eventbox5, "button_release_event",
                     G_CALLBACK (on_eventbox5_button_release_event),
@@ -2097,16 +1857,14 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, label101, "label101");
   GLADE_HOOKUP_OBJECT (window1, label99, "label99");
   GLADE_HOOKUP_OBJECT (window1, hbox4, "hbox4");
-  GLADE_HOOKUP_OBJECT (window1, radiobutton1, "radiobutton1");
-  GLADE_HOOKUP_OBJECT (window1, radiobutton13, "radiobutton13");
+  GLADE_HOOKUP_OBJECT (window1, label202, "label202");
   GLADE_HOOKUP_OBJECT (window1, entry16, "entry16");
   GLADE_HOOKUP_OBJECT (window1, label113, "label113");
   GLADE_HOOKUP_OBJECT (window1, vbox8, "vbox8");
   GLADE_HOOKUP_OBJECT (window1, hbox14, "hbox14");
   GLADE_HOOKUP_OBJECT (window1, button11, "button11");
-  GLADE_HOOKUP_OBJECT (window1, button23, "button23");
-  GLADE_HOOKUP_OBJECT (window1, alignment13, "alignment13");
   GLADE_HOOKUP_OBJECT (window1, label97, "label97");
+  GLADE_HOOKUP_OBJECT (window1, image24, "image24");
   GLADE_HOOKUP_OBJECT (window1, label51, "label51");
   GLADE_HOOKUP_OBJECT (window1, label61, "label61");
   GLADE_HOOKUP_OBJECT (window1, frame14, "frame14");
@@ -2119,24 +1877,6 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, label182, "label182");
   GLADE_HOOKUP_OBJECT (window1, entry29, "entry29");
   GLADE_HOOKUP_OBJECT (window1, label179, "label179");
-  GLADE_HOOKUP_OBJECT (window1, frame3, "frame3");
-  GLADE_HOOKUP_OBJECT (window1, alignment3, "alignment3");
-  GLADE_HOOKUP_OBJECT (window1, vbox6, "vbox6");
-  GLADE_HOOKUP_OBJECT (window1, vbox7, "vbox7");
-  GLADE_HOOKUP_OBJECT (window1, label52, "label52");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton3, "checkbutton3");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton4, "checkbutton4");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton5, "checkbutton5");
-  GLADE_HOOKUP_OBJECT (window1, label50, "label50");
-  GLADE_HOOKUP_OBJECT (window1, frame4, "frame4");
-  GLADE_HOOKUP_OBJECT (window1, alignment4, "alignment4");
-  GLADE_HOOKUP_OBJECT (window1, vbox9, "vbox9");
-  GLADE_HOOKUP_OBJECT (window1, vbox11, "vbox11");
-  GLADE_HOOKUP_OBJECT (window1, label54, "label54");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton6, "checkbutton6");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton7, "checkbutton7");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton8, "checkbutton8");
-  GLADE_HOOKUP_OBJECT (window1, label53, "label53");
   GLADE_HOOKUP_OBJECT (window1, frame5, "frame5");
   GLADE_HOOKUP_OBJECT (window1, alignment5, "alignment5");
   GLADE_HOOKUP_OBJECT (window1, vbox13, "vbox13");
@@ -2145,6 +1885,7 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, label58, "label58");
   GLADE_HOOKUP_OBJECT (window1, entry8, "entry8");
   GLADE_HOOKUP_OBJECT (window1, entry7, "entry7");
+  GLADE_HOOKUP_OBJECT (window1, checkbutton15, "checkbutton15");
   GLADE_HOOKUP_OBJECT (window1, scrolledwindow14, "scrolledwindow14");
   GLADE_HOOKUP_OBJECT (window1, textview6, "textview6");
   GLADE_HOOKUP_OBJECT (window1, hbox18, "hbox18");
@@ -2152,7 +1893,6 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, entry9, "entry9");
   GLADE_HOOKUP_OBJECT (window1, hbox15, "hbox15");
   GLADE_HOOKUP_OBJECT (window1, button13, "button13");
-  GLADE_HOOKUP_OBJECT (window1, label98, "label98");
   GLADE_HOOKUP_OBJECT (window1, label62, "label62");
   GLADE_HOOKUP_OBJECT (window1, label56, "label56");
   GLADE_HOOKUP_OBJECT (window1, frame7, "frame7");
@@ -2233,22 +1973,6 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, button9, "button9");
   GLADE_HOOKUP_OBJECT (window1, label92, "label92");
   GLADE_HOOKUP_OBJECT (window1, label90, "label90");
-  GLADE_HOOKUP_OBJECT (window1, frame10, "frame10");
-  GLADE_HOOKUP_OBJECT (window1, alignment10, "alignment10");
-  GLADE_HOOKUP_OBJECT (window1, vbox20, "vbox20");
-  GLADE_HOOKUP_OBJECT (window1, label83, "label83");
-  GLADE_HOOKUP_OBJECT (window1, hbox31, "hbox31");
-  GLADE_HOOKUP_OBJECT (window1, entry6, "entry6");
-  GLADE_HOOKUP_OBJECT (window1, hbox16, "hbox16");
-  GLADE_HOOKUP_OBJECT (window1, button10, "button10");
-  GLADE_HOOKUP_OBJECT (window1, label96, "label96");
-  GLADE_HOOKUP_OBJECT (window1, label82, "label82");
-  GLADE_HOOKUP_OBJECT (window1, vbox31, "vbox31");
-  GLADE_HOOKUP_OBJECT (window1, label84, "label84");
-  GLADE_HOOKUP_OBJECT (window1, entry10, "entry10");
-  GLADE_HOOKUP_OBJECT (window1, button16, "button16");
-  GLADE_HOOKUP_OBJECT (window1, entry11, "entry11");
-  GLADE_HOOKUP_OBJECT (window1, button17, "button17");
   GLADE_HOOKUP_OBJECT (window1, eventbox5, "eventbox5");
   GLADE_HOOKUP_OBJECT (window1, label4, "label4");
   GLADE_HOOKUP_OBJECT_NO_REF (window1, tooltips, "tooltips");

@@ -80,16 +80,9 @@ waypoint_t	global_wp;
 char		*global_friend_nick = NULL;
 char		*global_friend_pass = NULL;
 
-gboolean	global_ffupdate_auto = FALSE;
 int		global_ffupdate_interval = 900000;
 double		global_ffupdate_interval_minutes = 15;
 gboolean 	global_fftimer_running = FALSE;
-gboolean	global_ffcm_public = TRUE;
-gboolean	global_ffcm_registered = TRUE;
-gboolean	global_ffcm_friends = TRUE;
-gboolean	global_ffcu_public = TRUE;
-gboolean	global_ffcu_registered = TRUE;
-gboolean	global_ffcu_friends = TRUE;
 int		global_ff_mode = 3;
 
 gchar		*global_server	= NULL;

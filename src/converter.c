@@ -72,10 +72,7 @@ pixel2lat(	float zoom,
 	lat_m = (-( pixel_y - ( exp(zoom * M_LN2) * (TILESIZE/2) ) ) * (2*M_PI)) /
 				(TILESIZE * exp(zoom * M_LN2));
 	
-	lat = asin(tanh(lat_m));
-	
-	printf("lat %f => lat_m %f \n", lat,lat_m);
-	
+	lat = asin(tanh(lat_m));	
 	
 	return lat;
 }
