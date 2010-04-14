@@ -273,7 +273,7 @@ create_window1 (void)
   tooltips = gtk_tooltips_new ();
 
   window1 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (window1), _("tangoGPS"));
+  gtk_window_set_title (GTK_WINDOW (window1), _("foxtrotGPS"));
   gtk_window_set_default_size (GTK_WINDOW (window1), 700, 480);
 
   vbox1 = gtk_vbox_new (FALSE, 0);
@@ -1224,7 +1224,7 @@ create_window1 (void)
   gtk_misc_set_alignment (GTK_MISC (label201), 0, 0.5);
   gtk_misc_set_padding (GTK_MISC (label201), 2, 2);
 
-  label117 = gtk_label_new (_("<small><i>tangoGPS Version:\nDeveloper: Marcus Bauer &amp; Community</i></small>"));
+  label117 = gtk_label_new (_("<small><i>foxtrotGPS Version:\nDeveloper: Marcus Bauer &amp; Community</i></small>"));
   gtk_widget_show (label117);
   gtk_box_pack_start (GTK_BOX (vbox2), label117, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label117), TRUE);
@@ -2249,7 +2249,7 @@ create_dialog1 (void)
   gtk_text_view_set_justification (GTK_TEXT_VIEW (textview3), GTK_JUSTIFY_CENTER);
   gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (textview3), GTK_WRAP_WORD);
   gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview3), FALSE);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview3)), _("You can find more information about repositories on\n\nhttp://www.tangogps.org/\n"), -1);
+  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview3)), _("You can find more information about repositories on\n\nhttp://www.foxtrotgps.org/\n"), -1);
 
   label26 = gtk_label_new (_("<b>Name for the new Repository</b>"));
   gtk_widget_show (label26);
@@ -3873,7 +3873,7 @@ create_dialog8 (void)
   gtk_text_view_set_justification (GTK_TEXT_VIEW (textview4), GTK_JUSTIFY_CENTER);
   gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (textview4), GTK_WRAP_WORD);
   gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview4), FALSE);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview4)), _("You can find more information about repositories on\n\nhttp://www.tangogps.org/\n"), -1);
+  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview4)), _("You can find more information about repositories on\n\nhttp://www.foxtrotgps.org/\n"), -1);
 
   label144 = gtk_label_new (_("<b>Repository Name</b>"));
   gtk_widget_show (label144);
@@ -4068,7 +4068,7 @@ create_dialog_geocode (void)
   gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview5), FALSE);
   gtk_text_view_set_pixels_above_lines (GTK_TEXT_VIEW (textview5), 3);
   gtk_text_view_set_left_margin (GTK_TEXT_VIEW (textview5), 5);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview5)), _("Geocode your photos by correlating them with a gps track. For a tutorial see on http://www.tangogps.org\n"), -1);
+  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview5)), _("Geocode your photos by correlating them with a gps track. For a tutorial see on http://www.foxtrotgps.org\n"), -1);
 
   table7 = gtk_table_new (5, 3, FALSE);
   gtk_widget_show (table7);
@@ -4176,7 +4176,7 @@ create_dialog_geocode (void)
   gtk_widget_show (label160);
   gtk_box_pack_start (GTK_BOX (hbox38), label160, FALSE, TRUE, 0);
 
-  checkbutton14 = gtk_check_button_new_with_mnemonic (_("  add photos to the tangoGPS database"));
+  checkbutton14 = gtk_check_button_new_with_mnemonic (_("  add photos to the foxtrotGPS database"));
   gtk_widget_show (checkbutton14);
   gtk_box_pack_start (GTK_BOX (hbox38), checkbutton14, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton14), TRUE);

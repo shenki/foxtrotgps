@@ -100,7 +100,7 @@ paint_photos()
 	if(!photo_icon)
 	{
 		photo_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/tangogps-photo.png", 24,24,
+			PACKAGE_PIXMAPS_DIR "/foxtrotgps-photo.png", 24,24,
 			&error);
 	}
 
@@ -191,7 +191,7 @@ get_photos()
 	char *sql, *db;
 	bbox_t bbox = get_bbox_deg();
 	
-	db = g_strconcat(tangogps_dir,"/", PHOTO_DB, NULL);
+	db = g_strconcat(foxtrotgps_dir,"/", PHOTO_DB, NULL);
 	
 	
 	
@@ -300,7 +300,7 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 
 	filter = gtk_file_filter_new ();
 	gtk_file_filter_add_pattern (filter, "*.log");
-	gtk_file_filter_set_name (filter, "tangoGPS log files (*.log)");
+	gtk_file_filter_set_name (filter, "foxtrotGPS log files (*.log)");
 	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(widget), filter);
 
 	gtk_file_chooser_set_filter (GTK_FILE_CHOOSER(widget), filter);
@@ -684,7 +684,7 @@ geo_photo_close_dialog_photo_correlate()
 	gtk_widget_show(dialog_geocode_result);
 	gtk_widget_hide(dialog_photo_correlate);
 
-	command_line = g_strdup_printf("/tmp/tangogps_geocode.pl '%s' '%s' '%d' '%d' '%d'", 
+	command_line = g_strdup_printf("/tmp/foxtrotgps_geocode.pl '%s' '%s' '%d' '%d' '%d'", 
 					geocode_trackname, 
 					geocode_photodir,
 					geocode_timezone,
@@ -761,7 +761,7 @@ printf("commandline in thread: %s\n", command_line);
 	
 	if(!res)
 	{
-		fprintf (stderr, "Error running tangogps_geocode.pl: %s\n", err->message);
+		fprintf (stderr, "Error running foxtrotgps_geocode.pl: %s\n", err->message);
 		g_error_free (err);
 	}
 	
@@ -809,7 +809,7 @@ command = g_strdup(
 "# (C)2008 Marcus Bauer, License: GPLv2, marus.bauer@gmail.com\n"
 "\n"
 "#\n"
-"# helper for tangoGPS to geocode photos\n"
+"# helper for foxtrotGPS to geocode photos\n"
 "#\n"
 "\n"
 "# needs: gpscorrelate, sqlite3, jhead\n"
@@ -824,7 +824,7 @@ command = g_strdup(
 "# logic:\n"
 "# - convert to gpx\n"
 "# - correlate\n"
-"# - in2db tangogps\n"
+"# - in2db foxtrotgps\n"
 "\n"
 "# gpscorrelate -g foo.gpx -z timezone --max-dist 120 --photooffset 5 p1.jpg ...\n"
 "\n"
@@ -834,7 +834,7 @@ command = g_strdup(
 "$correction    = $ARGV[3];\n"
 "$do_insert2db  = $ARGV[4];\n"
 "\n"
-"$db = \"~/.tangogps/geophoto.db\";\n"
+"$db = \"~/.foxtrotgps/geophoto.db\";\n"
 "\n"
 "#===================  MAIN  ====================\n"
 "\n"
@@ -938,7 +938,7 @@ command = g_strdup(
 "	}\n"
 "	else\n"
 "	{\n"
-"		print STDERR \"Not adding to tangoGPS database\\n\";\n"
+"		print STDERR \"Not adding to foxtrotGPS database\\n\";\n"
 "	}\n"
 "\n"
 "}\n"
@@ -962,7 +962,7 @@ command = g_strdup(
 "$gpx = <<EOT\n"
 "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
 "<gpx	version=\"1.0\"\n"
-"	creator=\"convert2gpx.pl http://www.tangogps.org\"\n"
+"	creator=\"convert2gpx.pl http://www.foxtrotgps.org\"\n"
 "	xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
 "	xmlns=\"http://www.topografix.com/GPX/1/0\"\n"
 "	xsi:schemaLocation=\"http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd\">\n"
@@ -1117,13 +1117,13 @@ command = g_strdup(
 }
 
 
-fp = fopen("/tmp/tangogps_geocode.pl", "w+");
+fp = fopen("/tmp/foxtrotgps_geocode.pl", "w+");
 if (fp==0) 
 	printf("could not open tmp\n");	
 
 fprintf(fp, "%s", command);
 fclose(fp);
 
-unused = system ("chmod 700 /tmp/tangogps_geocode.pl");
+unused = system ("chmod 700 /tmp/foxtrotgps_geocode.pl");
 
 }

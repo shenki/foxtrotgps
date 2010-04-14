@@ -1,11 +1,11 @@
-# tangogps Finnish translation.
+# foxtrotgps Finnish translation.
 # Copyright (C) 2008 Timo Jyrinki
-# This file is distributed under the same license as the tangogps package.
+# This file is distributed under the same license as the foxtrotgps package.
 # Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tangogps\n"
+"Project-Id-Version: foxtrotgps\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-14 16:12+0100\n"
 "PO-Revision-Date: 2008-08-20 17:14+0300\n"
@@ -22,8 +22,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "pixmap-tiedostoa ei löydy: %s"
 
 #: src/interface.c:278
-msgid "tangoGPS"
-msgstr "tangoGPS"
+msgid "foxtrotGPS"
+msgstr "foxtrotGPS"
 
 #: src/interface.c:387
 #, fuzzy
@@ -318,7 +318,7 @@ msgstr ""
 
 #: src/interface.c:1229
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
 
@@ -546,7 +546,7 @@ msgstr "Uusi lähde"
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -885,7 +885,7 @@ msgstr " <b>Haetaan muiden sijainteja</b> "
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -928,7 +928,7 @@ msgid "Timezone:"
 msgstr "Aika:"
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270
@@ -1275,7 +1275,7 @@ msgstr "Mene "
 #~ "case of a lost password.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
+#~ "http://www.foxtrotgps.org/friends"
 #~ msgstr ""
 #~ "Valitse haluamasi nimimerkki.\n"
 #~ "Salasana tarvitaan vain, jos olet jo\n"
@@ -1283,7 +1283,7 @@ msgstr "Mene "
 #~ "rekisteröidä sen.\n"
 #~ "\n"
 #~ "Lisätietoja osoitteessa:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid "   "
 #~ msgstr "   "
@@ -1361,7 +1361,7 @@ msgstr "Mene "
 #~ "nick or you want to register it.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 #~ msgstr ""
 #~ "Valitse haluamasi nimimerkki.\n"
 #~ "Salasana tarvitaan vain, jos olet jo\n"
@@ -1369,7 +1369,7 @@ msgstr "Mene "
 #~ "rekisteröidä sen.\n"
 #~ "\n"
 #~ "Lisätietoja osoitteessa:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid ""
 #~ "\n"

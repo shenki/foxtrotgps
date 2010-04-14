@@ -265,7 +265,7 @@ gdk_threads_leave();
 	       
 	curl_handle = curl_easy_init();
 	
-	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.tangogps.org/friends/update_pos.php");
+	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.foxtrotgps.org/friends/update_pos.php");
 	curl_easy_setopt(curl_handle, CURLOPT_HTTPPOST, formdata);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, cb_write_to_mem);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
@@ -379,7 +379,7 @@ paint_friends()
 	if(!friend_icon)
 	{
 		friend_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/tangogps-friend.png", 24,24,
+			PACKAGE_PIXMAPS_DIR "/foxtrotgps-friend.png", 24,24,
 			&error);
 	}
 	if (pixmap && !gc_map)	
@@ -544,7 +544,7 @@ register_nick_thread(void *ptr)
 	       
 	curl_handle = curl_easy_init();
 	
-	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.tangogps.org/friends/register_nick.php");
+	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.foxtrotgps.org/friends/register_nick.php");
 	curl_easy_setopt(curl_handle, CURLOPT_HTTPPOST, formdata);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, cb_write_to_mem);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);

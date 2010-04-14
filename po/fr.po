@@ -1,6 +1,6 @@
-# tangogps french translation 
+# foxtrotgps french translation 
 # Copyright (C) 2008
-# This file is distributed under the same license as the tangogps package.
+# This file is distributed under the same license as the foxtrotgps package.
 # FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
 #
 msgid ""
@@ -21,8 +21,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "Fichier %s des images introuvable"
 
 #: src/interface.c:278
-msgid "tangoGPS"
-msgstr "tangoGPS"
+msgid "foxtrotGPS"
+msgstr "foxtrotGPS"
 
 #: src/interface.c:387
 #, fuzzy
@@ -318,10 +318,10 @@ msgstr ""
 #: src/interface.c:1229
 #, fuzzy
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>Version de tangoGPS :\n"
+"<i>Version de foxtrotGPS :\n"
 "Développeur : Marcus Bauer</i>"
 
 #: src/interface.c:1251
@@ -548,7 +548,7 @@ msgstr "Nouveau dépôt"
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -886,7 +886,7 @@ msgstr " <b>Obtenir la position des autres</b> "
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -929,7 +929,7 @@ msgid "Timezone:"
 msgstr "Durée : "
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270
@@ -1272,13 +1272,13 @@ msgstr "Aller à"
 #~ "case of a lost password.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
+#~ "http://www.foxtrotgps.org/friends"
 #~ msgstr ""
 #~ "Choisissez votre surnom.\n"
 #~ "Un mot de passe n'est nécessaire que si\n"
 #~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
 #~ "Plus d'info sur :\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid "   "
 #~ msgstr "   "
@@ -1356,13 +1356,13 @@ msgstr "Aller à"
 #~ "nick or you want to register it.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 #~ msgstr ""
 #~ "Choisissez votre surnom.\n"
 #~ "Un mot de passe n'est nécessaire que si\n"
 #~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
 #~ "Plus d'info sur :\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid ""
 #~ "\n"

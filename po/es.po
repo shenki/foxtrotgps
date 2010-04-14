@@ -1,11 +1,11 @@
-# tangogps Spanish translation.
+# foxtrotgps Spanish translation.
 # Copyright (C) 2009 Dailos Franchy
-# This file is distributed under the same license as the tangogps package.
+# This file is distributed under the same license as the foxtrotgps package.
 # Dailos Franchy <dfranchy@gmail.com>, 2009.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tangogps 0.9.6\n"
+"Project-Id-Version: foxtrotgps 0.9.6\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-14 16:12+0100\n"
 "PO-Revision-Date: \n"
@@ -15,7 +15,7 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-Language: Spanish\n"
-"X-Poedit-Basepath: /tmp/tangogps-0.9.6\n"
+"X-Poedit-Basepath: /tmp/foxtrotgps-0.9.6\n"
 
 #: src/support.c:90 src/support.c:114
 #, c-format
@@ -23,8 +23,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "No se pudo encontrar el archivo pixmap: %s"
 
 #: src/interface.c:278
-msgid "tangoGPS"
-msgstr "tangoGPS"
+msgid "foxtrotGPS"
+msgstr "foxtrotGPS"
 
 #: src/interface.c:387
 #, fuzzy
@@ -320,10 +320,10 @@ msgstr ""
 #: src/interface.c:1229
 #, fuzzy
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>Versión de tangoGPS:\n"
+"<i>Versión de foxtrotGPS:\n"
 "Desarrollador: Marcus Bauer</i>"
 
 #: src/interface.c:1251
@@ -546,11 +546,11 @@ msgstr "Nuevo repositorio"
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 "Puede encontrar más información sobre repositorios en\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 
 #: src/interface.c:2256
 msgid "<b>Name for the new Repository</b>"
@@ -881,10 +881,10 @@ msgstr "<b>Geocodificar sus fotos</b>"
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 "Geocodifique sus fotos correlacionándolas con un track gps. Para ver un "
-"tutorial vaya a http://www.tangogps.org\n"
+"tutorial vaya a http://www.foxtrotgps.org\n"
 
 #: src/interface.c:4079
 msgid "  <b>1. Add Track</b>        "
@@ -923,8 +923,8 @@ msgid "Timezone:"
 msgstr "Zona horaria:"
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
-msgstr "  añadir fotos a la base de datos de tangoGPS"
+msgid "  add photos to the foxtrotGPS database"
+msgstr "  añadir fotos a la base de datos de foxtrotGPS"
 
 #: src/interface.c:4270
 msgid "Please choose"
@@ -1251,7 +1251,7 @@ msgstr "Ir a "
 #~ "case of a lost password.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
+#~ "http://www.foxtrotgps.org/friends"
 #~ msgstr ""
 #~ "Elija el apodo (nickname) que quiera\n"
 #~ "tener. Una contraseña sólo es necesaria\n"
@@ -1259,7 +1259,7 @@ msgstr "Ir a "
 #~ "registrarlo.\n"
 #~ "\n"
 #~ "Más información en:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid "   "
 #~ msgstr "   "
@@ -1337,7 +1337,7 @@ msgstr "Ir a "
 #~ "nick or you want to register it.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 #~ msgstr ""
 #~ "Elija el apodo (nickname) que quiera\n"
 #~ "tener. Una contraseña sólo es necesaria\n"
@@ -1345,7 +1345,7 @@ msgstr "Ir a "
 #~ "registrarlo.\n"
 #~ "\n"
 #~ "Más información en:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid ""
 #~ "\n"

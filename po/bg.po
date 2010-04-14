@@ -23,8 +23,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "Не може да се открие файл pixmap: %s"
 
 #: src/interface.c:278
-msgid "tangoGPS"
-msgstr "tangoGPS"
+msgid "foxtrotGPS"
+msgstr "foxtrotGPS"
 
 #: src/interface.c:387
 #, fuzzy
@@ -320,10 +320,10 @@ msgstr ""
 #: src/interface.c:1229
 #, fuzzy
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>tangoGPS версия:\n"
+"<i>foxtrotGPS версия:\n"
 "Разработчик: Marcus Bauer</i>"
 
 #: src/interface.c:1251
@@ -547,7 +547,7 @@ msgstr "Ново хранилище"
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -886,7 +886,7 @@ msgstr " <b>Получаване на позиции на другите</b> "
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -929,7 +929,7 @@ msgid "Timezone:"
 msgstr "Време:"
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270
@@ -1259,14 +1259,14 @@ msgstr "Отиване до"
 #~ "case of a lost password.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
+#~ "http://www.foxtrotgps.org/friends"
 #~ msgstr ""
 #~ "Изберете си псевдоним. Паролата е необходима\n"
 #~ "само ако вече сте го регистрирали или желаете\n"
 #~ "да го регистрирате.\n"
 #~ "\n"
 #~ "Допълнителна информация на:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid "   "
 #~ msgstr "   "
@@ -1335,14 +1335,14 @@ msgstr "Отиване до"
 #~ "nick or you want to register it.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 #~ msgstr ""
 #~ "Изберете си псевдоним. Паролата е необходима\n"
 #~ "само ако вече сте го регистрирали или желаете\n"
 #~ "да го регистрирате.\n"
 #~ "\n"
 #~ "Допълнителна информация на:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid ""
 #~ "\n"

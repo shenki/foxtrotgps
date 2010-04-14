@@ -2,8 +2,8 @@
 
 SUBDIRS = po src pixmaps data
 
-tangogpsdocdir = ${prefix}/doc/tangogps
-tangogpsdoc_DATA = \
+foxtrotgpsdocdir = ${prefix}/doc/foxtrotgps
+foxtrotgpsdoc_DATA = \
 	README\
 	COPYING\
 	AUTHORS\
@@ -12,7 +12,7 @@ tangogpsdoc_DATA = \
 	NEWS\
 	TODO
 
-EXTRA_DIST = $(tangogpsdoc_DATA)
+EXTRA_DIST = $(foxtrotgpsdoc_DATA)
 
 
 

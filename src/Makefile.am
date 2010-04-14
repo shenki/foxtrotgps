@@ -9,9 +9,9 @@ AM_CFLAGS =\
 	 -O2\
 	 -g
 
-bin_PROGRAMS = tangogps
+bin_PROGRAMS = foxtrotgps
 
-tangogps_SOURCES = \
+foxtrotgps_SOURCES = \
 	support.h\
 	support.c\
 	main.c\
@@ -47,9 +47,9 @@ tangogps_SOURCES = \
 	exif.c\
 	exif.h
 
-tangogps_LDFLAGS = 
+foxtrotgps_LDFLAGS = 
 
-tangogps_LDADD =  \
+foxtrotgps_LDADD =  \
 	$(PACKAGE_LIBS)\
 	 -lcurl -lgthread-2.0 -lgconf-2 -lsqlite3 -lexif -lxml2
 

@@ -8,7 +8,7 @@ Makefile.in
 ./libtool
 ./stamp-h1
 po/POTFILES
-src/tangogps
+src/foxtrotgps
 ./autom4te.cache
 config.guess
 config.sub

@@ -1,6 +1,6 @@
 msgid ""
 msgstr ""
-"Project-Id-Version: tangogps-0.9.2\n"
+"Project-Id-Version: foxtrotgps-0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-14 16:12+0100\n"
 "PO-Revision-Date: \n"
@@ -18,7 +18,7 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "Не удалось найти файл: %s"
 
 #: src/interface.c:278
-msgid "tangoGPS"
+msgid "foxtrotGPS"
 msgstr "ТангоGPS"
 
 #: src/interface.c:387
@@ -313,7 +313,7 @@ msgstr ""
 
 #: src/interface.c:1229
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
 
@@ -547,7 +547,7 @@ msgstr "Новый репозитарий"
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -890,7 +890,7 @@ msgstr " <b>Видеть местоположение других</b> "
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -933,7 +933,7 @@ msgid "Timezone:"
 msgstr "Время:"
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270
@@ -1272,14 +1272,14 @@ msgstr "Перейти"
 #~ "case of a lost password.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
+#~ "http://www.foxtrotgps.org/friends"
 #~ msgstr ""
 #~ "Выберите имя пользователя\n"
 #~ "Пароль необходим только если\n"
 #~ "Вы уже зарегистрировались\n"
 #~ "или хотите зарегистрироваться.\n"
 #~ "Подробная информация на:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid "<b>  Me  </b>"
 #~ msgstr "<b>Мои данные</b>"
@@ -1356,14 +1356,14 @@ msgstr "Перейти"
 #~ "nick or you want to register it.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 #~ msgstr ""
 #~ "Выберите имя пользователя\n"
 #~ "Пароль необходим только если\n"
 #~ "Вы уже зарегистрировались\n"
 #~ "или хотите зарегистрироваться.\n"
 #~ "Подробная информация на:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid ""
 #~ "\n"

@@ -104,8 +104,8 @@ init()
 	char *str = NULL;
 	
 	
-	tangogps_dir = g_strconcat(global_home_dir, "/.tangogps", NULL);
-	g_mkdir(tangogps_dir, 0700);
+	foxtrotgps_dir = g_strconcat(global_home_dir, "/.foxtrotgps", NULL);
+	g_mkdir(foxtrotgps_dir, 0700);
 
 	repoconfig__create_dropdown();
 
@@ -211,7 +211,7 @@ init()
 	
 	widget = lookup_widget(window1, "label117");
 #ifdef VERSION
-	gtk_label_set_label(GTK_LABEL(widget), "<i><small>tangoGPS version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
+	gtk_label_set_label(GTK_LABEL(widget), "<i><small>foxtrotGPS version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
 #endif
 
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_host",&err);
@@ -397,8 +397,8 @@ repoconfig__set_current_list_pointer()
 		
 		printf("Resetting repo_name and exiting now.\n\n");
 		printf("If problem persists after restart, \n");
-		printf("execute in a terminal: gconftool-2 -u /apps/tangogps/repos");
-		unused = system("gconftool-2 -u /apps/tangogps/repo_name");
+		printf("execute in a terminal: gconftool-2 -u /apps/foxtrotgps/repos");
+		unused = system("gconftool-2 -u /apps/foxtrotgps/repo_name");
 		exit(EXIT_FAILURE);		
 	}
 }
