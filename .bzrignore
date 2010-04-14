@@ -1,4 +1,5 @@
 Makefile
+Makefile.in
 .deps
 .libs
 ./config.h
@@ -6,7 +7,6 @@ Makefile
 ./config.status
 ./libtool
 ./stamp-h1
-po/Makefile.in
 po/POTFILES
 src/tangogps
 ./autom4te.cache
