@@ -6,11 +6,11 @@
 #include <gtk/gtk.h>
 #include <gconf/gconf-client.h>
 
-#define MSG_SEND_URL "http://tangogps.org/friends/msg_send.php"
+#define MSG_SEND_URL "http://foxtrotgps.org/friends/msg_send.php"
 
-#define GCONF "/apps/tangogps"
+#define GCONF "/apps/foxtrotgps"
 #define TILESIZE 256
-#define PNAME "tangogps"
+#define PNAME "foxtrotgps"
 #define MAP_PAGE 0
 #define FRIENDS_PAGE 1
 
@@ -78,7 +78,7 @@ typedef struct {
 	double altitude;	/* Altitude in meters (valid if mode == 3) */
 	double heading;
 	double speed;		/* Speed over ground, meters/sec */
-	double bearing;		/* in radian, calculated by tangogps */
+	double bearing;		/* in radian, calculated by foxtrotgps */
 } gps_fix_t;
 
 typedef struct {
@@ -170,7 +170,7 @@ extern gchar		*global_server;
 extern gchar		*global_port;
 
 extern gchar		*global_home_dir;
-extern gchar		*tangogps_dir;
+extern gchar		*foxtrotgps_dir;
 
 extern int		mouse_x;
 extern int		mouse_y;

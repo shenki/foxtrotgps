@@ -1,11 +1,11 @@
-# German translations for tangogps package.
-# Copyright (C) 2008 THE tangogps'S COPYRIGHT HOLDER
-# This file is distributed under the same license as the tangogps package.
+# German translations for foxtrotgps package.
+# Copyright (C) 2008 THE foxtrotgps'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the foxtrotgps package.
 # m <marcus.bauer@gmail.com>, 2008.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tangogps 0.9.3\n"
+"Project-Id-Version: foxtrotgps 0.9.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-14 16:12+0100\n"
 "PO-Revision-Date: 2008-07-22 17:00+0200\n"
@@ -22,7 +22,7 @@ msgid "Couldn't find pixmap file: %s"
 msgstr ""
 
 #: src/interface.c:278
-msgid "tangoGPS"
+msgid "foxtrotGPS"
 msgstr ""
 
 #: src/interface.c:387
@@ -295,7 +295,7 @@ msgstr ""
 
 #: src/interface.c:1229
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
 
@@ -511,7 +511,7 @@ msgstr ""
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -839,7 +839,7 @@ msgstr ""
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -879,7 +879,7 @@ msgid "Timezone:"
 msgstr ""
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270

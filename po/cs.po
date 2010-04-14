@@ -5,7 +5,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: tangogps 0.9.3\n"
+"Project-Id-Version: foxtrotgps 0.9.3\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-02-14 16:12+0100\n"
 "PO-Revision-Date: 2008-08-21 00:11+0100\n"
@@ -23,8 +23,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "Nenalezen soubor: %s"
 
 #: src/interface.c:278
-msgid "tangoGPS"
-msgstr "tangoGPS"
+msgid "foxtrotGPS"
+msgstr "foxtrotGPS"
 
 #: src/interface.c:387
 #, fuzzy
@@ -319,7 +319,7 @@ msgstr ""
 
 #: src/interface.c:1229
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
 
@@ -547,7 +547,7 @@ msgstr "Nový zdroj"
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -886,7 +886,7 @@ msgstr " <b>Zobrazení pozice jiných</b> "
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -929,7 +929,7 @@ msgid "Timezone:"
 msgstr "Čas:"
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270
@@ -1276,7 +1276,7 @@ msgstr "Jít na"
 #~ "case of a lost password.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends"
+#~ "http://www.foxtrotgps.org/friends"
 #~ msgstr ""
 #~ "Zvolte si libovolnou přezdívku.\n"
 #~ "Heslo je nutné pouze v případě,\n"
@@ -1284,7 +1284,7 @@ msgstr "Jít na"
 #~ "nebo si ji chcete registrovat\n"
 #~ "\n"
 #~ "Více informací naleznete na:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid "   "
 #~ msgstr "   "
@@ -1362,7 +1362,7 @@ msgstr "Jít na"
 #~ "nick or you want to register it.\n"
 #~ "\n"
 #~ "Further info at:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 #~ msgstr ""
 #~ "Zvolte si libovolnou přezdívku.\n"
 #~ "Heslo je nutné pouze v případě,\n"
@@ -1370,7 +1370,7 @@ msgstr "Jít na"
 #~ "nebo si ji chcete registrovat\n"
 #~ "\n"
 #~ "Více informací naleznete na:\n"
-#~ "http://www.tangogps.org/friends\n"
+#~ "http://www.foxtrotgps.org/friends\n"
 
 #~ msgid ""
 #~ "\n"

@@ -22,7 +22,7 @@ msgid "Couldn't find pixmap file: %s"
 msgstr ""
 
 #: src/interface.c:278
-msgid "tangoGPS"
+msgid "foxtrotGPS"
 msgstr ""
 
 #: src/interface.c:387
@@ -292,7 +292,7 @@ msgstr ""
 
 #: src/interface.c:1229
 msgid ""
-"<small><i>tangoGPS Version:\n"
+"<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
 
@@ -508,7 +508,7 @@ msgstr ""
 msgid ""
 "You can find more information about repositories on\n"
 "\n"
-"http://www.tangogps.org/\n"
+"http://www.foxtrotgps.org/\n"
 msgstr ""
 
 #: src/interface.c:2256
@@ -836,7 +836,7 @@ msgstr ""
 #: src/interface.c:4073
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
-"on http://www.tangogps.org\n"
+"on http://www.foxtrotgps.org\n"
 msgstr ""
 
 #: src/interface.c:4079
@@ -876,7 +876,7 @@ msgid "Timezone:"
 msgstr ""
 
 #: src/interface.c:4181
-msgid "  add photos to the tangoGPS database"
+msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: src/interface.c:4270

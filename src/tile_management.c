@@ -238,7 +238,7 @@ dl_thread(void *ptr)
 		
 		curl_easy_setopt(curl, CURLOPT_URL, arr1[0]);
 		curl_easy_setopt(curl, CURLOPT_USERAGENT, 
-			"libcurl-agent/1.0 | tangogps " VERSION " | " __VERSION__);
+			"libcurl-agent/1.0 | foxtrotgps " VERSION " | " __VERSION__);
 		curl_easy_setopt(curl, CURLOPT_WRITEDATA, outfile);
 		curl_easy_setopt(curl, CURLOPT_WRITEFUNCTION,	 cb_write_func);
 		curl_easy_setopt(curl, CURLOPT_READFUNCTION,	 cb_read_func);
