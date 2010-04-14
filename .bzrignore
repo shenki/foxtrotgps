@@ -21,3 +21,6 @@ configure
 *.gmo
 *.mo
 ./ltmain.sh
+po/stamp-it
+po/.intltool-merge-cache
+data/foxtrotgps.desktop
