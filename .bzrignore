@@ -20,3 +20,4 @@ config.h.in
 configure
 *.gmo
 *.mo
+./ltmain.sh
