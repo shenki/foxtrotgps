@@ -599,7 +599,7 @@ fetch_track(GtkWidget *widget, int service, char *start, char *end)
 	dialog10 = widget;
 	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
 	
-	url = g_strdup_printf("www.foxtrotgps.org/friends/navtrack.php?service=%d&start=%s&end=%s",service,start,end);
+	url = g_strdup_printf("www.tangogps.org/friends/navtrack.php?service=%d&start=%s&end=%s",service,start,end);
 	
 	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
 		g_warning("### can't create route thread\n");
