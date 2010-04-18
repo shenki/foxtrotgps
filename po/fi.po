@@ -1,14 +1,14 @@
 # foxtrotgps Finnish translation.
 # Copyright (C) 2008 Timo Jyrinki
 # This file is distributed under the same license as the foxtrotgps package.
-# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008-2010.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-04-14 08:29+0300\n"
-"PO-Revision-Date: 2008-08-20 17:14+0300\n"
+"POT-Creation-Date: 2010-04-18 12:43+0300\n"
+"PO-Revision-Date: 2010-04-18 12:43+0300\n"
 "Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
 "MIME-Version: 1.0\n"
@@ -26,46 +26,44 @@ msgid "foxtrotGPS"
 msgstr "foxtrotGPS"
 
 #: ../src/interface.c:385
-#, fuzzy
 msgid "Show Info"
-msgstr "GPS-tiedot"
+msgstr "Näytä tiedot"
 
 #: ../src/interface.c:409
 msgid "Fullscreen (F11 or Space)"
-msgstr ""
+msgstr "Kokoruutu (F11 tai välilyönti)"
 
 #: ../src/interface.c:434
 msgid "Zoom in"
-msgstr ""
+msgstr "Lähennä"
 
 #: ../src/interface.c:450
 msgid "Zoom out"
-msgstr ""
+msgstr "Loitonna"
 
 #: ../src/interface.c:475
-#, fuzzy
 msgid "Autocenter On"
-msgstr "autom.kesk."
+msgstr "Autom. kesk."
 
 #: ../src/interface.c:500
 msgid "Next map repo"
-msgstr ""
+msgstr "Seuraava karttavarasto"
 
 #: ../src/interface.c:516
 msgid "Previous map repo"
-msgstr ""
+msgstr "Edellinen karttavarasto"
 
 #: ../src/interface.c:549
 msgid "Go to Previous Page"
-msgstr ""
+msgstr "Siirry edelliselle sivulle"
 
 #: ../src/interface.c:560
 msgid "Close Info Area"
-msgstr ""
+msgstr "Sulje tietoalue"
 
 #: ../src/interface.c:570
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Siirry seuraavalle sivulle"
 
 #: ../src/interface.c:621
 msgid "Speed"
@@ -73,72 +71,62 @@ msgstr "Nopeus"
 
 #: ../src/interface.c:627
 msgid "   <span font_desc='40'> -- </span>"
-msgstr ""
+msgstr "   <span font_desc='40'> -- </span>"
 
 #: ../src/interface.c:645
-#, fuzzy
 msgid "Trip "
-msgstr " Matka "
+msgstr "Matka "
 
 #: ../src/interface.c:653
 msgid "Average "
-msgstr ""
+msgstr "Keskinopeus "
 
 #: ../src/interface.c:661 ../src/interface.c:669 ../src/interface.c:691
 #: ../src/interface.c:699 ../src/interface.c:780 ../src/interface.c:788
 #: ../src/interface.c:796 ../src/interface.c:804 ../src/interface.c:812
 #: ../src/interface.c:4452
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../src/interface.c:677
-#, fuzzy
 msgid "Max "
-msgstr "Karttojen lataus"
+msgstr "Suurin "
 
 #: ../src/interface.c:684
-#, fuzzy
 msgid "Time "
-msgstr "Aika:"
+msgstr "Aika "
 
 #: ../src/interface.c:712
 msgid "Stop"
-msgstr ""
+msgstr "Pysäytä"
 
 #: ../src/interface.c:718
-#, fuzzy
 msgid "Reset"
-msgstr "aseta"
+msgstr "Palauta"
 
 #: ../src/interface.c:724
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
-msgstr "<b>Matkamittari</b>"
+msgstr "<big><b>Matkamittari</b></big>   <small>[1/4]</small>"
 
 #: ../src/interface.c:745
-#, fuzzy
 msgid "Altitude"
-msgstr "Korkeus:"
+msgstr "Korkeus"
 
 #: ../src/interface.c:752
-#, fuzzy
 msgid "Heading"
-msgstr "Kulkusuunta:"
+msgstr "Kulkusuunta"
 
 #: ../src/interface.c:759
-#, fuzzy
 msgid "Lat - Lon"
-msgstr "Lev, pit:"
+msgstr "Lev - pit"
 
 #: ../src/interface.c:766
-#, fuzzy
 msgid "GPS Time"
 msgstr "GPS-aika:"
 
 #: ../src/interface.c:773
-#, fuzzy
 msgid "Satellites  "
-msgstr "Satelliitit: "
+msgstr "Satelliitit  "
 
 #: ../src/interface.c:820
 msgid "<b>GPS Data</b>"
@@ -146,21 +134,23 @@ msgstr "<b>GPS-tiedot</b>"
 
 #: ../src/interface.c:839
 msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
-msgstr ""
+msgstr "<big><b>Ystävät</b></big>   <small>[2/4]</small>"
 
 #: ../src/interface.c:846
 msgid "Hide Messages"
-msgstr ""
+msgstr "Piilota viestit"
 
 #: ../src/interface.c:856
 msgid "<i>No Messages</i>"
-msgstr ""
+msgstr "<i>Ei viestejä</i>"
 
 #: ../src/interface.c:886
 msgid ""
 "Enable position sharing and\n"
 "messaging with your friends"
 msgstr ""
+"Ota käyttöön sijainnin jakaminen\n"
+"ja viestit tuttavien kanssa"
 
 #: ../src/interface.c:891
 msgid ""
@@ -172,21 +162,19 @@ msgstr ""
 
 #: ../src/interface.c:902
 msgid "Update interval  "
-msgstr ""
+msgstr "Päivityksen aikaväli "
 
 #: ../src/interface.c:910
-#, fuzzy
 msgid "5"
-msgstr "15"
+msgstr "5"
 
 #: ../src/interface.c:913
 msgid "minutes"
-msgstr "minuutti"
+msgstr "minuuttia"
 
 #: ../src/interface.c:926
-#, fuzzy
 msgid "     Share!     "
-msgstr "    Pysäytä    "
+msgstr "      Jaa       "
 
 #: ../src/interface.c:932 ../src/interface.c:1110 ../src/interface.c:1152
 #: ../src/interface.c:1366
@@ -194,9 +182,8 @@ msgid "     "
 msgstr "     "
 
 #: ../src/interface.c:947
-#, fuzzy
 msgid "<b>Position Sharing  </b>"
-msgstr "<b> Sijainnin päivitys </b>"
+msgstr "<b>Sijainnin jakaminen  </b>"
 
 #: ../src/interface.c:969
 msgid ""
@@ -206,29 +193,27 @@ msgstr ""
 
 #: ../src/interface.c:975
 msgid "fun mode"
-msgstr ""
+msgstr "hauska tila"
 
 #: ../src/interface.c:982
-#, fuzzy
 msgid "friend mode"
-msgstr "Tuttavan tiedot"
+msgstr "tuttavatila"
 
 #: ../src/interface.c:989
 msgid "private mode"
-msgstr ""
+msgstr "yksityinen tila"
 
 #: ../src/interface.c:996
 msgid "<i>What are you up to?</i>"
-msgstr ""
+msgstr "<i>Mitä teet paraikaa?</i>"
 
 #: ../src/interface.c:1006
 msgid "just idle..."
-msgstr ""
+msgstr "joutenoloa..."
 
 #: ../src/interface.c:1009
-#, fuzzy
 msgid "<b>Sharing Mode</b> "
-msgstr " <b>Päivitetään sijaintia</b> "
+msgstr " <b>Jakamistila</b> "
 
 #: ../src/interface.c:1035
 msgid "Nickname "
@@ -247,9 +232,8 @@ msgid "JohnDoe"
 msgstr "MattiMallikas"
 
 #: ../src/interface.c:1064
-#, fuzzy
 msgid "Show password"
-msgstr "Salasana"
+msgstr "Näytä salasana"
 
 #: ../src/interface.c:1085
 msgid ""
@@ -259,7 +243,6 @@ msgid ""
 msgstr ""
 
 #: ../src/interface.c:1091
-#, fuzzy
 msgid "Email        "
 msgstr "Sähköposti   "
 
@@ -268,59 +251,56 @@ msgid "     Register!     "
 msgstr "    Rekisteröidy    "
 
 #: ../src/interface.c:1118
-#, fuzzy
 msgid "<b>Me</b>"
-msgstr "<b>-</b>"
+msgstr "<b>Minä</b>"
 
 #: ../src/interface.c:1138 ../src/interface.c:1306 ../src/interface.c:1542
 msgid "    "
 msgstr "    "
 
 #: ../src/interface.c:1143
-#, fuzzy
 msgid "Enable Track Logging"
-msgstr "<b>Reitin lokitus</b>"
+msgstr "Ota reitin lokitus käyttöön"
 
 #: ../src/interface.c:1148
 msgid "Enable Live Tracking"
-msgstr ""
+msgstr "Ota live-seuranta käyttöön"
 
 #: ../src/interface.c:1161
-#, fuzzy
 msgid "Split"
-msgstr "Urheilu"
+msgstr "Jaa"
 
 #: ../src/interface.c:1178
 msgid "Load"
-msgstr ""
+msgstr "Lataa"
 
 #: ../src/interface.c:1184
-#, fuzzy
 msgid "Clear"
-msgstr "Autot"
+msgstr "Tyhjennä"
 
 #: ../src/interface.c:1188
 msgid "Upload"
-msgstr ""
+msgstr "Lähetä"
 
 #: ../src/interface.c:1196
-#, fuzzy
 msgid "Configure"
-msgstr " Aset. "
+msgstr "Asetukset"
 
 #: ../src/interface.c:1202
 msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
-msgstr ""
+msgstr "<big><b>Reitit</b></big>   <small>[3/4]</small>"
 
 #: ../src/interface.c:1220
 msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
-msgstr ""
+msgstr "<big><b>Asetukset</b></big>   <small>[4/4]</small>"
 
 #: ../src/interface.c:1227
 msgid ""
 "<small><i>foxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
+"<small><i>foxtrotGPS-versio:\n"
+"Kehittäjä: Marcus Bauer &amp; yhteisö</i></small>"
 
 #: ../src/interface.c:1249
 msgid ""
@@ -339,23 +319,20 @@ msgid "<b>Auto Download</b>"
 msgstr "<b>Autom. lataus</b>"
 
 #: ../src/interface.c:1282
-#, fuzzy
 msgid "Current Map:"
-msgstr "Nykyinen lähde:"
+msgstr "Nykyinen kartta:"
 
 #: ../src/interface.c:1302
-#, fuzzy
 msgid "      New...       "
-msgstr "   Uusi...   "
+msgstr "      Uusi...      "
 
 #: ../src/interface.c:1311
-#, fuzzy
 msgid "      Edit...     "
-msgstr "      Asetukset...      "
+msgstr "    Muokkaa...    "
 
 #: ../src/interface.c:1325 ../src/interface.c:2290 ../src/interface.c:3914
 msgid "xyz instead of zxy"
-msgstr ""
+msgstr "xyz (ei zxy)"
 
 #: ../src/interface.c:1331
 msgid "URI"
@@ -370,9 +347,8 @@ msgid "    Save Repository Configuration    "
 msgstr "    Tallenna lähteiden asetukset     "
 
 #: ../src/interface.c:1371
-#, fuzzy
 msgid "<b>Map Types</b>"
-msgstr "<b>Karttalähteet</b>"
+msgstr "<b>Karttatyypit</b>"
 
 #: ../src/interface.c:1392
 msgid "<i>Speed and Distance:</i>"
@@ -451,9 +427,8 @@ msgid "2947"
 msgstr "2947"
 
 #: ../src/interface.c:1537
-#, fuzzy
 msgid "     Change GPSD     "
-msgstr " Yhdistä uudelleen GPSD:hen "
+msgstr "     Vaihda GPSD     "
 
 #: ../src/interface.c:1547
 msgid "<b>GPSD</b>"
@@ -481,25 +456,23 @@ msgstr "näytä valokuvat"
 
 #: ../src/interface.c:2060
 msgid "ways & routes"
-msgstr ""
+msgstr "suunnat ja reitit"
 
 #: ../src/interface.c:2067
 msgid "get route"
-msgstr ""
+msgstr "hae reitti"
 
 #: ../src/interface.c:2071
 msgid "create way"
-msgstr ""
+msgstr "luo suunta"
 
 #: ../src/interface.c:2074
-#, fuzzy
 msgid "set WP"
-msgstr "aseta"
+msgstr "aseta etappi"
 
 #: ../src/interface.c:2078
-#, fuzzy
 msgid "unset WP"
-msgstr "poista"
+msgstr "poista etappi"
 
 #: ../src/interface.c:2082
 msgid "POIs"
@@ -514,13 +487,12 @@ msgid "select POIs"
 msgstr "valitse POIt"
 
 #: ../src/interface.c:2097
-#, fuzzy
 msgid "photos"
-msgstr "näytä valokuvat"
+msgstr "valokuvat"
 
 #: ../src/interface.c:2104
 msgid "geocode"
-msgstr ""
+msgstr "geokoodaus"
 
 #: ../src/interface.c:2108
 msgid "my position"
@@ -550,28 +522,24 @@ msgid ""
 msgstr ""
 
 #: ../src/interface.c:2254
-#, fuzzy
 msgid "<b>Name for the new Repository</b>"
-msgstr "Nimi uudelle lähteelle:"
+msgstr "<b>Nimi uudelle lähteelle</b>"
 
 #: ../src/interface.c:2264 ../src/interface.c:3888
-#, fuzzy
 msgid " "
-msgstr "  "
+msgstr " "
 
 #: ../src/interface.c:2268 ../src/interface.c:3892
-#, fuzzy
 msgid "<b>URI</b>"
-msgstr "<b>-</b>"
+msgstr "<b>URI</b>"
 
 #: ../src/interface.c:2279 ../src/interface.c:3903
-#, fuzzy
 msgid "<b>Cache Dir</b>"
-msgstr "Välimuistihak"
+msgstr "<b>Välimuistihak</b>"
 
 #: ../src/interface.c:2308
 msgid "All fields must be filled in"
-msgstr ""
+msgstr "Kaikki kentät tulee täyttää"
 
 #: ../src/interface.c:2373
 msgid "GPS Info"
@@ -586,13 +554,16 @@ msgid ""
 "Distance to\n"
 "next point"
 msgstr ""
+"Etäisyys seur.\n"
+"pisteeseen"
 
 #: ../src/interface.c:2407
-#, fuzzy
 msgid ""
 "Set point as\n"
 "my position"
-msgstr "sijaintini"
+msgstr ""
+"Aseta piste\n"
+"sijainnikseni"
 
 #: ../src/interface.c:2411 ../src/interface.c:3006 ../src/interface.c:3393
 msgid "Close"
@@ -652,7 +623,7 @@ msgstr "Geo-valokuva"
 
 #: ../src/interface.c:2729
 msgid "Big"
-msgstr ""
+msgstr "Suuri"
 
 #: ../src/interface.c:2733 ../src/friends.c:611
 msgid "Go To"
@@ -720,7 +691,7 @@ msgstr "Urheilu"
 
 #: ../src/interface.c:2799 ../src/interface.c:3190
 msgid "My Personal Places"
-msgstr ""
+msgstr "Omat paikat"
 
 #: ../src/interface.c:2871
 msgid "POI"
@@ -747,9 +718,8 @@ msgid "Edit"
 msgstr "Muokkaa"
 
 #: ../src/interface.c:2984
-#, fuzzy
 msgid "Delete"
-msgstr "jalat"
+msgstr "Poista"
 
 #: ../src/interface.c:3092
 msgid "Add POI"
@@ -777,7 +747,7 @@ msgstr " Pit: "
 
 #: ../src/interface.c:3163
 msgid "Use current GPS position instead"
-msgstr ""
+msgstr "Käytä sen sijaan nykyistä GPS-sijaintia"
 
 #: ../src/interface.c:3167 ../src/interface.c:3537
 msgid "Category:"
@@ -840,36 +810,34 @@ msgid "Nightlife"
 msgstr "Yöelämä"
 
 #: ../src/interface.c:3716
-#, fuzzy
 msgid "Delete POI?"
-msgstr "valitse POIt"
+msgstr "Poista POI?"
 
 #: ../src/interface.c:3722
 msgid ""
 "Do you really want to \n"
 "delete this Point of Interest?"
 msgstr ""
+"Haluatko todella poistaa tämän\n"
+"POIn (Point of Interest)?"
 
 #: ../src/interface.c:3776
 msgid "Load track..."
-msgstr ""
+msgstr "Lataa reitti..."
 
 #: ../src/interface.c:3782
 msgid "<b>Choose track to open (.log / .gpx)</b>"
 msgstr ""
 
 #: ../src/interface.c:3857
-#, fuzzy
 msgid "Edit Repository"
-msgstr "Uusi lähde"
+msgstr "Muokkaa lähdettä"
 
 #: ../src/interface.c:3878
-#, fuzzy
 msgid "<b>Repository Name</b>"
-msgstr "<b>Karttalähteet</b>"
+msgstr "<b>Lähteen nimi</b>"
 
 #: ../src/interface.c:3980
-#, fuzzy
 msgid "GeoPhoto"
 msgstr "Geo-valokuva"
 
@@ -878,9 +846,8 @@ msgid "Photo Correlate"
 msgstr ""
 
 #: ../src/interface.c:4053
-#, fuzzy
 msgid "<b>Geocoding your photos</b>"
-msgstr " <b>Haetaan muiden sijainteja</b> "
+msgstr " <b>Geokoodataan valokuvia</b>"
 
 #: ../src/interface.c:4071
 msgid ""
@@ -890,192 +857,183 @@ msgstr ""
 
 #: ../src/interface.c:4077
 msgid "  <b>1. Add Track</b>        "
-msgstr ""
+msgstr "  <b>1. Lisää reitti</b>        "
 
 #: ../src/interface.c:4085
 msgid "  <b>2. Add Photos</b> "
-msgstr ""
+msgstr "  <b>2. Lisää valokuvia</b> "
 
 #: ../src/interface.c:4105 ../src/interface.c:4113
 msgid "  <span color=\"red\" weight=\"bold\">-</span>"
-msgstr ""
+msgstr "  <span color=\"red\" weight=\"bold\">-</span>"
 
 #: ../src/interface.c:4128
 msgid "  <b>3. Adjust Time</b>"
-msgstr ""
+msgstr "  <b>3. Säädä kellonaikaa</b>"
 
 #: ../src/interface.c:4136
-#, fuzzy
 msgid "View GPS Photo"
-msgstr "Geo-valokuva"
+msgstr "Näytä GPS-valokuva"
 
 #: ../src/interface.c:4143
 msgid "  +00:00h"
-msgstr ""
+msgstr "  +00:00h"
 
 #: ../src/interface.c:4150
 msgid "  0 seconds"
-msgstr ""
+msgstr "  0 sekuntia"
 
 #: ../src/interface.c:4157
-#, fuzzy
 msgid "Correction:"
-msgstr "Kuvaus:"
+msgstr "Korjaus:"
 
 #: ../src/interface.c:4164
-#, fuzzy
 msgid "Timezone:"
-msgstr "Aika:"
+msgstr "Aikavyöhyke:"
 
 #: ../src/interface.c:4179
 msgid "  add photos to the foxtrotGPS database"
 msgstr ""
 
 #: ../src/interface.c:4268
-#, fuzzy
 msgid "Please choose"
-msgstr "- valitse -"
+msgstr "Valitse"
 
 #: ../src/interface.c:4276
 msgid "<b>This is important!</b>\n"
-msgstr ""
+msgstr "<b>Tämä on tärkeää</b>\n"
 
 #: ../src/interface.c:4347
 msgid "Image Data"
-msgstr ""
+msgstr "Kuvatiedot"
 
 #: ../src/interface.c:4408
-#, fuzzy
 msgid " <b>GPS:</b> "
-msgstr "<b>GPSD</b>"
+msgstr " <b>GPS:</b> "
 
 #: ../src/interface.c:4413 ../src/interface.c:4428
-#, fuzzy
 msgid "      "
-msgstr "       "
+msgstr "      "
 
 #: ../src/interface.c:4422
-#, fuzzy
 msgid " <b>Camera:</b> "
-msgstr "Välimuistihak"
+msgstr " <b>Kamera:</b> "
 
 #: ../src/interface.c:4442
 msgid " <b>Correction:</b> "
-msgstr ""
+msgstr " <b>Korjaus:</b> "
 
 #: ../src/interface.c:4455
-#, fuzzy
 msgid "s   "
-msgstr "   "
+msgstr "s   "
 
 #: ../src/interface.c:4463
-#, fuzzy
 msgid " <b>Timezone:</b>  "
-msgstr "<b>Matkamittari</b>"
+msgstr "<b>Aikavyöhyke:</b> "
 
 #: ../src/interface.c:4471
 msgid "-12:00"
-msgstr ""
+msgstr "-12:00"
 
 #: ../src/interface.c:4472
 msgid "-11:00"
-msgstr ""
+msgstr "-11:00"
 
 #: ../src/interface.c:4473
 msgid "-10:00"
-msgstr ""
+msgstr "-10:00"
 
 #: ../src/interface.c:4474
 msgid "-09:00"
-msgstr ""
+msgstr "-09:00"
 
 #: ../src/interface.c:4475
 msgid "-08:00"
-msgstr ""
+msgstr "-08:00"
 
 #: ../src/interface.c:4476
 msgid "-07:00"
-msgstr ""
+msgstr "-07:00"
 
 #: ../src/interface.c:4477
 msgid "-06:00"
-msgstr ""
+msgstr "-06:00"
 
 #: ../src/interface.c:4478
 msgid "-05:00"
-msgstr ""
+msgstr "-05:00"
 
 #: ../src/interface.c:4479
 msgid "-04:00"
-msgstr ""
+msgstr "-04:00"
 
 #: ../src/interface.c:4480
 msgid "-03:00"
-msgstr ""
+msgstr "-03:00"
 
 #: ../src/interface.c:4481
 msgid "-02:00"
-msgstr ""
+msgstr "-02:00"
 
 #: ../src/interface.c:4482
 msgid "-01:00"
-msgstr ""
+msgstr "-01:00"
 
 #: ../src/interface.c:4483
 msgid "+00:00"
-msgstr ""
+msgstr "+00:00"
 
 #: ../src/interface.c:4484
 msgid "+01:00"
-msgstr ""
+msgstr "+01:00"
 
 #: ../src/interface.c:4485
 msgid "+02:00 "
-msgstr ""
+msgstr "+02:00 "
 
 #: ../src/interface.c:4486
 msgid "+03:00"
-msgstr ""
+msgstr "+03:00"
 
 #: ../src/interface.c:4487
 msgid "+04:00"
-msgstr ""
+msgstr "+04:00"
 
 #: ../src/interface.c:4488
 msgid "+05:00"
-msgstr ""
+msgstr "+05:00"
 
 #: ../src/interface.c:4489
 msgid "+06:00"
-msgstr ""
+msgstr "+06:00"
 
 #: ../src/interface.c:4490
 msgid "+07:00"
-msgstr ""
+msgstr "+07:00"
 
 #: ../src/interface.c:4491
 msgid "+08:00"
-msgstr ""
+msgstr "+08:00"
 
 #: ../src/interface.c:4492
 msgid "+09:00"
-msgstr ""
+msgstr "+09:00"
 
 #: ../src/interface.c:4493
 msgid "+10:00"
-msgstr ""
+msgstr "+10:00"
 
 #: ../src/interface.c:4494
 msgid "+11:00"
-msgstr ""
+msgstr "+11:00"
 
 #: ../src/interface.c:4495
 msgid "+12:00"
-msgstr ""
+msgstr "+12:00"
 
 #: ../src/interface.c:4608
 msgid "Geocode Result"
-msgstr ""
+msgstr "Geokoodauksen tulos"
 
 #: ../src/interface.c:4618
 msgid "<b>The output from gpscorrelate:</b>"
@@ -1083,11 +1041,11 @@ msgstr ""
 
 #: ../src/interface.c:4624
 msgid "Working...."
-msgstr ""
+msgstr "Työskennellään..."
 
 #: ../src/interface.c:4668
 msgid "Message"
-msgstr ""
+msgstr "Viesti"
 
 #: ../src/interface.c:4678
 msgid "Send Message to:"
@@ -1095,48 +1053,43 @@ msgstr ""
 
 #: ../src/interface.c:4752
 msgid "Get Route"
-msgstr ""
+msgstr "Hae reitti"
 
 #: ../src/interface.c:4772
 msgid "Street,City,Country"
-msgstr ""
+msgstr "Katu,Kaupunki,Maa"
 
 #: ../src/interface.c:4782
-#, fuzzy
 msgid " GPS "
-msgstr " GPSD "
+msgstr " GPS "
 
 #: ../src/interface.c:4789
-#, fuzzy
 msgid "<b>Start</b> "
-msgstr "<b>GPS-tiedot</b>"
+msgstr "<b>Alku</b>"
 
 #: ../src/interface.c:4797
-#, fuzzy
 msgid "<b>End</b>"
-msgstr "<b>-</b>"
+msgstr "<b>Loppu</b>"
 
 #: ../src/interface.c:4805
-#, fuzzy
 msgid " Pick "
-msgstr " Reitti "
+msgstr " Valitse "
 
 #: ../src/interface.c:4810
 msgid "Pick Start on Map"
-msgstr ""
+msgstr "Valitse alku kartalta"
 
 #: ../src/interface.c:4812
 msgid "Pick"
-msgstr ""
+msgstr "Valitse"
 
 #: ../src/interface.c:4817
 msgid "Pick End on Map"
-msgstr ""
+msgstr "Valitse loppu kartalta"
 
 #: ../src/interface.c:4819
-#, fuzzy
 msgid "<b>Service </b>"
-msgstr "Välimuistihak"
+msgstr "<b>Palvelu </b>"
 
 #: ../src/interface.c:4827
 msgid "  "
@@ -1144,15 +1097,15 @@ msgstr "  "
 
 #: ../src/interface.c:4841
 msgid "yournavigation.org"
-msgstr ""
+msgstr "yournavigation.org"
 
 #: ../src/interface.c:4842
 msgid "openrouteservice.org"
-msgstr ""
+msgstr "openrouteservice.org"
 
 #: ../src/interface.c:4843
 msgid "gnuite.com"
-msgstr ""
+msgstr "gnuite.com"
 
 #: ../src/interface.c:4845
 msgid ""
@@ -1162,29 +1115,27 @@ msgstr ""
 
 #: ../src/interface.c:4853
 msgid "<i><b>Connecting...</b></i>"
-msgstr ""
+msgstr "<i><b>Yhdistetään...</b></i>"
 
 #: ../src/friends.c:603
 msgid "Msg"
-msgstr ""
+msgstr "Viesti"
 
 #: ../src/friends.c:963
-#, fuzzy
 msgid "  Reply  "
-msgstr "    "
+msgstr "  Vastaa  "
 
 #: ../src/friends.c:971
-#, fuzzy
 msgid "  Go To  "
-msgstr "Mene "
+msgstr "  Mene  "
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "Display map and GPS position"
-msgstr ""
+msgstr "Näytä kartta ja GPS-sijainti"
 
 #: ../data/foxtrotgps.desktop.in.h:2
 msgid "GPS and Map"
-msgstr ""
+msgstr "GPS ja kartta"
 
 #~ msgid "      Stop       "
 #~ msgstr "     Pysäytä     "
