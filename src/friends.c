@@ -265,7 +265,7 @@ gdk_threads_leave();
 	       
 	curl_handle = curl_easy_init();
 	
-	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.foxtrotgps.org/friends/update_pos.php");
+	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.tangogps.org/friends/update_pos.php");
 	curl_easy_setopt(curl_handle, CURLOPT_HTTPPOST, formdata);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, cb_write_to_mem);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
@@ -544,7 +544,7 @@ register_nick_thread(void *ptr)
 	       
 	curl_handle = curl_easy_init();
 	
-	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.foxtrotgps.org/friends/register_nick.php");
+	curl_easy_setopt(curl_handle, CURLOPT_URL, "http://www.tangogps.org/friends/register_nick.php");
 	curl_easy_setopt(curl_handle, CURLOPT_HTTPPOST, formdata);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, cb_write_to_mem);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);

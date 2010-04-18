@@ -6,7 +6,7 @@
 #include <gtk/gtk.h>
 #include <gconf/gconf-client.h>
 
-#define MSG_SEND_URL "http://foxtrotgps.org/friends/msg_send.php"
+#define MSG_SEND_URL "http://tangogps.org/friends/msg_send.php"
 
 #define GCONF "/apps/foxtrotgps"
 #define TILESIZE 256
