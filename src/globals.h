@@ -78,7 +78,7 @@ typedef struct {
 	double altitude;	/* Altitude in meters (valid if mode == 3) */
 	double heading;
 	double speed;		/* Speed over ground, meters/sec */
-	double bearing;		/* in radian, calculated by foxtrotgps */
+	double bearing;		/* in radian, calculated by tangogps */
 } gps_fix_t;
 
 typedef struct {
