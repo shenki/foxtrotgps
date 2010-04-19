@@ -2,6 +2,7 @@
 
 INCLUDES = \
 	$(LIBCURL_CFLAGS) \
+	$(SQLITE_CFLAGS) \
 	$(LIBEXIF_CFLAGS) \
 	$(PACKAGE_CFLAGS)
 
@@ -53,6 +54,7 @@ foxtrotgps_LDFLAGS =
 
 foxtrotgps_LDADD =  \
 	$(LIBCURL_LIBS) \
+	$(SQLITE_LIBS) \
 	$(LIBEXIF_LIBS) \
 	$(PACKAGE_LIBS) \
-	-lgthread-2.0 -lgconf-2 -lsqlite3 -lxml2
+	-lgthread-2.0 -lgconf-2 -lxml2
