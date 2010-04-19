@@ -1,10 +1,12 @@
 ## Process this file with automake to produce Makefile.in
 
 INCLUDES = \
+	$(GTK_CFLAGS) \
+	$(GCONF_CFLAGS) \
 	$(LIBCURL_CFLAGS) \
 	$(SQLITE_CFLAGS) \
 	$(LIBEXIF_CFLAGS) \
-	$(PACKAGE_CFLAGS)
+	$(LIBXML_CFLAGS)
 
 AM_CFLAGS =\
 	 -DRELEASE -DHAVE_CONFIG_H\
@@ -53,8 +55,10 @@ foxtrotgps_SOURCES = \
 foxtrotgps_LDFLAGS = 
 
 foxtrotgps_LDADD =  \
+	$(GTK_LIBS) \
+	$(GCONF_LIBS) \
 	$(LIBCURL_LIBS) \
 	$(SQLITE_LIBS) \
 	$(LIBEXIF_LIBS) \
-	$(PACKAGE_LIBS) \
-	-lgthread-2.0 -lgconf-2 -lxml2
+	$(LIBXML_LIBS) \
+	-lgthread-2.0
