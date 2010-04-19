@@ -1,6 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
 INCLUDES = \
+	$(LIBEXIF_CFLAGS) \
 	$(PACKAGE_CFLAGS)
 
 AM_CFLAGS =\
@@ -50,6 +51,6 @@ foxtrotgps_SOURCES = \
 foxtrotgps_LDFLAGS = 
 
 foxtrotgps_LDADD =  \
-	$(PACKAGE_LIBS)\
-	 -lcurl -lgthread-2.0 -lgconf-2 -lsqlite3 -lexif -lxml2
-
+	$(LIBEXIF_LIBS) \
+	$(PACKAGE_LIBS) \
+	 -lcurl -lgthread-2.0 -lgconf-2 -lsqlite3 -lxml2
