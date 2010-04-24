@@ -1,4 +1,4 @@
 #!/bin/sh
 
-autoreconf --install --verbose \
-&& intltoolize
+intltoolize \
+&& autoreconf --install --verbose
