@@ -220,16 +220,6 @@ create_window1 (void)
   GtkWidget *button7;
   GtkWidget *label140;
   GtkWidget *button38;
-  GtkWidget *table1;
-  GtkWidget *label20;
-  GtkWidget *checkbutton1;
-  GtkWidget *label18;
-  GtkWidget *label19;
-  GtkWidget *entry2;
-  GtkWidget *entry1;
-  GtkWidget *hbox8;
-  GtkWidget *button6;
-  GtkWidget *label89;
   GtkWidget *label78;
   GtkWidget *frame11;
   GtkWidget *alignment11;
@@ -1312,62 +1302,6 @@ create_window1 (void)
   gtk_widget_show (button38);
   gtk_box_pack_start (GTK_BOX (hbox37), button38, FALSE, FALSE, 0);
 
-  table1 = gtk_table_new (3, 2, FALSE);
-  gtk_box_pack_start (GTK_BOX (vbox18), table1, TRUE, TRUE, 6);
-
-  label20 = gtk_label_new ("");
-  gtk_widget_show (label20);
-  gtk_table_attach (GTK_TABLE (table1), label20, 0, 1, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 0, 0);
-  gtk_misc_set_alignment (GTK_MISC (label20), 0, 0.5);
-
-  checkbutton1 = gtk_check_button_new_with_mnemonic (_("xyz instead of zxy"));
-  gtk_widget_show (checkbutton1);
-  gtk_table_attach (GTK_TABLE (table1), checkbutton1, 1, 2, 2, 3,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 7, 7);
-
-  label18 = gtk_label_new (_("URI"));
-  gtk_widget_show (label18);
-  gtk_table_attach (GTK_TABLE (table1), label18, 0, 1, 0, 1,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 3, 0);
-  gtk_misc_set_alignment (GTK_MISC (label18), 0, 0.5);
-
-  label19 = gtk_label_new (_("Cache Dir"));
-  gtk_widget_show (label19);
-  gtk_table_attach (GTK_TABLE (table1), label19, 0, 1, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 3, 0);
-  gtk_misc_set_alignment (GTK_MISC (label19), 0, 0.5);
-
-  entry2 = gtk_entry_new ();
-  gtk_widget_show (entry2);
-  gtk_table_attach (GTK_TABLE (table1), entry2, 1, 2, 1, 2,
-                    (GtkAttachOptions) (GTK_FILL),
-                    (GtkAttachOptions) (0), 7, 0);
-
-  entry1 = gtk_entry_new ();
-  gtk_widget_show (entry1);
-  gtk_table_attach (GTK_TABLE (table1), entry1, 1, 2, 0, 1,
-                    (GtkAttachOptions) (GTK_EXPAND | GTK_FILL),
-                    (GtkAttachOptions) (GTK_EXPAND), 7, 0);
-
-  hbox8 = gtk_hbox_new (FALSE, 0);
-  gtk_box_pack_start (GTK_BOX (vbox18), hbox8, TRUE, TRUE, 0);
-
-  button6 = gtk_button_new_with_mnemonic (_("    Save Repository Configuration    "));
-  gtk_widget_show (button6);
-  gtk_box_pack_start (GTK_BOX (hbox8), button6, FALSE, FALSE, 0);
-  gtk_container_set_border_width (GTK_CONTAINER (button6), 4);
-  gtk_widget_set_sensitive (button6, FALSE);
-
-  label89 = gtk_label_new (_("     "));
-  gtk_widget_show (label89);
-  gtk_box_pack_start (GTK_BOX (hbox8), label89, FALSE, FALSE, 0);
-  gtk_widget_set_size_request (label89, -1, 50);
-
   label78 = gtk_label_new (_("<b>Map Types</b>"));
   gtk_widget_show (label78);
   gtk_frame_set_label_widget (GTK_FRAME (frame8), label78);
@@ -1720,18 +1654,6 @@ create_window1 (void)
   g_signal_connect ((gpointer) button38, "clicked",
                     G_CALLBACK (on_button38_clicked),
                     NULL);
-  g_signal_connect ((gpointer) checkbutton1, "toggled",
-                    G_CALLBACK (on_checkbutton1_toggled),
-                    NULL);
-  g_signal_connect ((gpointer) entry2, "changed",
-                    G_CALLBACK (on_entry2_changed),
-                    NULL);
-  g_signal_connect ((gpointer) entry1, "changed",
-                    G_CALLBACK (on_entry1_changed),
-                    NULL);
-  g_signal_connect ((gpointer) button6, "clicked",
-                    G_CALLBACK (on_button6_clicked),
-                    NULL);
   g_signal_connect ((gpointer) radiobutton14, "toggled",
                     G_CALLBACK (on_radiobutton14_toggled),
                     NULL);
@@ -1961,16 +1883,6 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, button7, "button7");
   GLADE_HOOKUP_OBJECT (window1, label140, "label140");
   GLADE_HOOKUP_OBJECT (window1, button38, "button38");
-  GLADE_HOOKUP_OBJECT (window1, table1, "table1");
-  GLADE_HOOKUP_OBJECT (window1, label20, "label20");
-  GLADE_HOOKUP_OBJECT (window1, checkbutton1, "checkbutton1");
-  GLADE_HOOKUP_OBJECT (window1, label18, "label18");
-  GLADE_HOOKUP_OBJECT (window1, label19, "label19");
-  GLADE_HOOKUP_OBJECT (window1, entry2, "entry2");
-  GLADE_HOOKUP_OBJECT (window1, entry1, "entry1");
-  GLADE_HOOKUP_OBJECT (window1, hbox8, "hbox8");
-  GLADE_HOOKUP_OBJECT (window1, button6, "button6");
-  GLADE_HOOKUP_OBJECT (window1, label89, "label89");
   GLADE_HOOKUP_OBJECT (window1, label78, "label78");
   GLADE_HOOKUP_OBJECT (window1, frame11, "frame11");
   GLADE_HOOKUP_OBJECT (window1, alignment11, "alignment11");

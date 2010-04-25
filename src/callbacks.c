@@ -671,25 +671,6 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 }
 
 void
-on_checkbutton1_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	GtkWidget	*button6;
-	gboolean	toggled;
-	repo_t *repo;
-	
-	repo = global_curr_repo->data;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	toggled = gtk_toggle_button_get_active(togglebutton);
-	repo->inverted_zoom = toggled;
-	
-	button6 = lookup_widget(GTK_WIDGET(togglebutton), "button6");
-	gtk_widget_set_sensitive (button6, TRUE);
-}
-
-
-void
 on_dialog1_close                       (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
@@ -782,83 +763,6 @@ on_button7_clicked                     (GtkButton       *button,
 
 	gtk_widget_show(dialog1);
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-}
-
-void
-on_entry1_changed                      (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_uri, *button6;
-	const gchar	*uri;
-	repo_t *repo;
-	
-	entry_uri = lookup_widget(window1, "entry1");
-	uri = gtk_entry_get_text(GTK_ENTRY(entry_uri));
-
-	repo = global_curr_repo->data;
-	repo->uri = g_strdup(uri);
-	global_curr_repo->data = repo;
-
-	button6 = lookup_widget(GTK_WIDGET(editable), "button6");
-	gtk_widget_set_sensitive (button6, TRUE);
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-}
-
-
-void
-on_entry2_changed                      (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_dir, *button6;
-	const gchar	*dir;
-	repo_t *repo;
-	int result;
-	
-	entry_dir = lookup_widget(window1, "entry2");
-	dir = gtk_entry_get_text(GTK_ENTRY(entry_dir));
-
-	result = strncmp(dir, "~", 1);
-	if(!result)
-	{
-		char *curr_dir, *sub_home, *home_dir, *full_dir;
-		
-		curr_dir = g_strdup(dir);
-		
-		strsep(&curr_dir, "~");
-		sub_home = g_strdup(strsep(&curr_dir, "~"));
-		home_dir = getenv("HOME");
-		
-		full_dir = g_strconcat(home_dir, sub_home, NULL);
-		
-		gtk_entry_set_text(GTK_ENTRY(entry_dir), g_strdup(full_dir));
-		
-		
-		
-		g_free(curr_dir),
-		g_free(sub_home);
-		g_free(full_dir);
-	}
-	
-	repo = global_curr_repo->data;
-	repo->dir = g_strdup(dir);
-	global_curr_repo->data = repo;
-	
-	button6 = lookup_widget(GTK_WIDGET(editable), "button6");
-	gtk_widget_set_sensitive (button6, TRUE);
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-}
-
-void
-on_button6_clicked                     (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	gconf_set_repolist();
-
-	gtk_widget_set_sensitive (GTK_WIDGET(button), FALSE);
 }
 
 void
