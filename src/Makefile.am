@@ -53,7 +53,7 @@ foxtrotgps_SOURCES = \
 	exif.c\
 	exif.h
 
-foxtrotgps_LDFLAGS = 
+foxtrotgps_LDFLAGS = -export-dynamic
 
 foxtrotgps_LDADD =  \
 	$(GTK_LIBS) \
