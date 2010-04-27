@@ -11,6 +11,7 @@
 #include <stdio.h>
 
 #include <gtk/gtk.h>
+#include <glade/glade.h>
 
 #include "support.h"
 
@@ -19,6 +20,14 @@ lookup_widget                          (GtkWidget       *widget,
                                         const gchar     *widget_name)
 {
   GtkWidget *parent, *found_widget;
+  GladeXML *gladexml;
+
+  if ((gladexml = glade_get_widget_tree (widget)))
+    {
+      found_widget = glade_xml_get_widget (gladexml, widget_name);
+
+      return found_widget;
+    }
 
   for (;;)
     {
