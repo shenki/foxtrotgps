@@ -2343,39 +2343,6 @@ create_window2 (void)
 }
 
 GtkWidget*
-create_dialog2 (void)
-{
-  GtkWidget *dialog2;
-  GtkWidget *dialog_vbox2;
-  GtkWidget *dialog_action_area2;
-  GtkWidget *closebutton1;
-
-  dialog2 = gtk_dialog_new ();
-  gtk_window_set_title (GTK_WINDOW (dialog2), _("unused"));
-  gtk_window_set_type_hint (GTK_WINDOW (dialog2), GDK_WINDOW_TYPE_HINT_DIALOG);
-
-  dialog_vbox2 = GTK_DIALOG (dialog2)->vbox;
-  gtk_widget_show (dialog_vbox2);
-
-  dialog_action_area2 = GTK_DIALOG (dialog2)->action_area;
-  gtk_widget_show (dialog_action_area2);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (dialog_action_area2), GTK_BUTTONBOX_END);
-
-  closebutton1 = gtk_button_new_from_stock ("gtk-close");
-  gtk_widget_show (closebutton1);
-  gtk_dialog_add_action_widget (GTK_DIALOG (dialog2), closebutton1, GTK_RESPONSE_CLOSE);
-  GTK_WIDGET_SET_FLAGS (closebutton1, GTK_CAN_DEFAULT);
-
-  
-  GLADE_HOOKUP_OBJECT_NO_REF (dialog2, dialog2, "dialog2");
-  GLADE_HOOKUP_OBJECT_NO_REF (dialog2, dialog_vbox2, "dialog_vbox2");
-  GLADE_HOOKUP_OBJECT_NO_REF (dialog2, dialog_action_area2, "dialog_action_area2");
-  GLADE_HOOKUP_OBJECT (dialog2, closebutton1, "closebutton1");
-
-  return dialog2;
-}
-
-GtkWidget*
 create_dialog3 (void)
 {
   GtkWidget *dialog3;
