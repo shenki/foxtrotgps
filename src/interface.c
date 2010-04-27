@@ -4144,56 +4144,6 @@ create_dialog_geocode (void)
 }
 
 GtkWidget*
-create_filechooserdialog1 (void)
-{
-  GtkWidget *filechooserdialog1;
-  GtkWidget *dialog_vbox10;
-  GtkWidget *filechooser_label;
-  GtkWidget *dialog_action_area11;
-  GtkWidget *button42;
-  GtkWidget *button43;
-
-  filechooserdialog1 = gtk_file_chooser_dialog_new (_("Please choose"), NULL, GTK_FILE_CHOOSER_ACTION_OPEN, NULL);
-  gtk_widget_set_size_request (filechooserdialog1, 450, -1);
-  gtk_container_set_border_width (GTK_CONTAINER (filechooserdialog1), 5);
-  gtk_window_set_type_hint (GTK_WINDOW (filechooserdialog1), GDK_WINDOW_TYPE_HINT_DIALOG);
-
-  dialog_vbox10 = GTK_DIALOG (filechooserdialog1)->vbox;
-  gtk_widget_show (dialog_vbox10);
-
-  filechooser_label = gtk_label_new (_("<b>This is important!</b>\n"));
-  gtk_widget_show (filechooser_label);
-  gtk_box_pack_start (GTK_BOX (dialog_vbox10), filechooser_label, FALSE, FALSE, 0);
-  gtk_label_set_use_markup (GTK_LABEL (filechooser_label), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (filechooser_label), 0.02, 0.5);
-
-  dialog_action_area11 = GTK_DIALOG (filechooserdialog1)->action_area;
-  gtk_widget_show (dialog_action_area11);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (dialog_action_area11), GTK_BUTTONBOX_END);
-
-  button42 = gtk_button_new_from_stock ("gtk-cancel");
-  gtk_widget_show (button42);
-  gtk_dialog_add_action_widget (GTK_DIALOG (filechooserdialog1), button42, GTK_RESPONSE_CANCEL);
-  GTK_WIDGET_SET_FLAGS (button42, GTK_CAN_DEFAULT);
-
-  button43 = gtk_button_new_from_stock ("gtk-open");
-  gtk_widget_show (button43);
-  gtk_dialog_add_action_widget (GTK_DIALOG (filechooserdialog1), button43, GTK_RESPONSE_OK);
-  GTK_WIDGET_SET_FLAGS (button43, GTK_CAN_DEFAULT);
-
-  
-  GLADE_HOOKUP_OBJECT_NO_REF (filechooserdialog1, filechooserdialog1, "filechooserdialog1");
-  GLADE_HOOKUP_OBJECT_NO_REF (filechooserdialog1, dialog_vbox10, "dialog_vbox10");
-  GLADE_HOOKUP_OBJECT (filechooserdialog1, filechooser_label, "filechooser_label");
-  GLADE_HOOKUP_OBJECT_NO_REF (filechooserdialog1, dialog_action_area11, "dialog_action_area11");
-  GLADE_HOOKUP_OBJECT (filechooserdialog1, button42, "button42");
-  GLADE_HOOKUP_OBJECT (filechooserdialog1, button43, "button43");
-
-  gtk_widget_grab_default (button43);
-  return filechooserdialog1;
-}
-
-GtkWidget*
 create_dialog_image_data (void)
 {
   GtkWidget *dialog_image_data;
