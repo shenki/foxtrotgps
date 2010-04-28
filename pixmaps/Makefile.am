@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-foxtrotgps_pixmapsdir = $(prefix)/@NO_PREFIX_PACKAGE_PIXMAPS_DIR@
+foxtrotgps_pixmapsdir = $(datadir)/pixmaps
 
 foxtrotgps_pixmaps_DATA = \
 	foxtrotgps.png\
