@@ -1,13 +1,5 @@
 ## Process this file with automake to produce Makefile.in
 
-INCLUDES = \
-	$(GTK_CFLAGS) \
-	$(GCONF_CFLAGS) \
-	$(LIBCURL_CFLAGS) \
-	$(SQLITE_CFLAGS) \
-	$(LIBEXIF_CFLAGS) \
-	$(LIBXML_CFLAGS)
-
 AM_CFLAGS =\
 	 -DRELEASE -DHAVE_CONFIG_H\
 	 -Wall\
@@ -17,7 +9,14 @@ AM_CFLAGS =\
 AM_CPPFLAGS = \
 	-DPACKAGE_DATA_DIR="\"$(datadir)\"" \
 	-DPACKAGE_PIXMAPS_DIR="\"$(datadir)/pixmaps\"" \
-	-DPACKAGE_LOCALE_DIR="\"$(localedir)\""
+	-DPACKAGE_LOCALE_DIR="\"$(localedir)\"" \
+	\
+	$(GTK_CFLAGS) \
+	$(GCONF_CFLAGS) \
+	$(LIBCURL_CFLAGS) \
+	$(SQLITE_CFLAGS) \
+	$(LIBEXIF_CFLAGS) \
+	$(LIBXML_CFLAGS)
 
 bin_PROGRAMS = foxtrotgps
 
