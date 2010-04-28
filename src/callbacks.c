@@ -427,18 +427,6 @@ on_button1_clicked                     (GtkButton       *button,
 	}
 }
 
-void
-on_button2_clicked                     (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	float lat, lon;
-	printf("button2 clicked\n");
-	
-	lat = deg2rad(51.52468);
-	lon = deg2rad(-0.13762);
-	fill_tiles_latlon(lat, lon, 15);
-}
-
 
 
 void
@@ -552,21 +540,6 @@ on_button5_clicked                     (GtkButton       *button,
 	}
 }
 
-void
-on_item1_activate                      (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
-{
-
-}
-
-
-void
-on_item2_activate                      (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
-{
-
-}
-
 gboolean
 on_vscale1_change_value                (GtkRange        *range,
                                         GtkScrollType    scroll,
@@ -671,25 +644,6 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 }
 
 void
-on_checkbutton1_toggled                (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	GtkWidget	*button6;
-	gboolean	toggled;
-	repo_t *repo;
-	
-	repo = global_curr_repo->data;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	toggled = gtk_toggle_button_get_active(togglebutton);
-	repo->inverted_zoom = toggled;
-	
-	button6 = lookup_widget(GTK_WIDGET(togglebutton), "button6");
-	gtk_widget_set_sensitive (button6, TRUE);
-}
-
-
-void
 on_dialog1_close                       (GtkDialog       *dialog,
                                         gpointer         user_data)
 {
@@ -782,83 +736,6 @@ on_button7_clicked                     (GtkButton       *button,
 
 	gtk_widget_show(dialog1);
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-}
-
-void
-on_entry1_changed                      (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_uri, *button6;
-	const gchar	*uri;
-	repo_t *repo;
-	
-	entry_uri = lookup_widget(window1, "entry1");
-	uri = gtk_entry_get_text(GTK_ENTRY(entry_uri));
-
-	repo = global_curr_repo->data;
-	repo->uri = g_strdup(uri);
-	global_curr_repo->data = repo;
-
-	button6 = lookup_widget(GTK_WIDGET(editable), "button6");
-	gtk_widget_set_sensitive (button6, TRUE);
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-}
-
-
-void
-on_entry2_changed                      (GtkEditable     *editable,
-                                        gpointer         user_data)
-{
-	GtkWidget	*entry_dir, *button6;
-	const gchar	*dir;
-	repo_t *repo;
-	int result;
-	
-	entry_dir = lookup_widget(window1, "entry2");
-	dir = gtk_entry_get_text(GTK_ENTRY(entry_dir));
-
-	result = strncmp(dir, "~", 1);
-	if(!result)
-	{
-		char *curr_dir, *sub_home, *home_dir, *full_dir;
-		
-		curr_dir = g_strdup(dir);
-		
-		strsep(&curr_dir, "~");
-		sub_home = g_strdup(strsep(&curr_dir, "~"));
-		home_dir = getenv("HOME");
-		
-		full_dir = g_strconcat(home_dir, sub_home, NULL);
-		
-		gtk_entry_set_text(GTK_ENTRY(entry_dir), g_strdup(full_dir));
-		
-		
-		
-		g_free(curr_dir),
-		g_free(sub_home);
-		g_free(full_dir);
-	}
-	
-	repo = global_curr_repo->data;
-	repo->dir = g_strdup(dir);
-	global_curr_repo->data = repo;
-	
-	button6 = lookup_widget(GTK_WIDGET(editable), "button6");
-	gtk_widget_set_sensitive (button6, TRUE);
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-}
-
-void
-on_button6_clicked                     (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	gconf_set_repolist();
-
-	gtk_widget_set_sensitive (GTK_WIDGET(button), FALSE);
 }
 
 void
@@ -965,31 +842,6 @@ on_button11_clicked                    (GtkButton       *button,
 	global_show_friends = TRUE;
 }
 
-
-void
-on_button12_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	
-	
-	
-	
-	
-	
-	
-	
-}
-
-void
-on_togglebutton1_toggled               (GtkToggleButton *togglebutton,
-                                        gpointer         user_data)
-{
-	global_mapmode = (gtk_toggle_button_get_active(togglebutton)) ? FALSE : TRUE;
-	if(!global_mapmode)
-		gtk_button_set_label(GTK_BUTTON(togglebutton), "tap");
-	else
-		gtk_button_set_label(GTK_BUTTON(togglebutton), "map");
-}
 
 void
 on_item3_activate                      (GtkMenuItem     *menuitem,
@@ -1928,16 +1780,6 @@ printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 }
 
-gboolean
-on_item9_button_release_event          (GtkWidget       *widget,
-                                        GdkEventButton  *event,
-                                        gpointer         user_data)
-{
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-  return FALSE;
-}
-
 
 
 gboolean
@@ -1970,15 +1812,6 @@ on_item14_activate                     (GtkWidget       *widget,
 
 
 void
-on_dialog5_close                       (GtkDialog       *dialog,
-                                        gpointer         user_data)
-{
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-}
-
-
-void
 on_cancelbutton4_clicked               (GtkButton       *button,
                                         gpointer         user_data)
 {
@@ -2000,15 +1833,6 @@ on_okbutton4_clicked                   (GtkButton       *button,
 
 	global_show_pois = TRUE; 
 	repaint_all();
-}
-
-
-void
-on_dialog6_close                       (GtkDialog       *dialog,
-                                        gpointer         user_data)
-{
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 }
 
 
@@ -2060,20 +1884,6 @@ on_dialog6_delete_event                (GtkWidget       *widget,
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
   return FALSE;
-}
-
-gboolean
-on_dialog5_delete_event                (GtkWidget       *widget,
-                                        GdkEvent        *event,
-                                        gpointer         user_data)
-{
-	GtkWidget	*dialog;
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-	dialog = lookup_widget(widget, "dialog5");
-	gtk_widget_destroy(dialog);
-
-	return FALSE;
 }
 
 
@@ -2284,56 +2094,6 @@ on_button11_expose_event               (GtkWidget       *widget,
                                         gpointer         user_data)
 {
 	return FALSE;
-}
-
-void
-on_button23_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-	GtkWidget *widget;
-	GError **error = NULL;
-	
-	gtk_widget_set_sensitive(GTK_WIDGET(button),FALSE);
-	widget = lookup_widget(window1, "button11");
-	gtk_widget_set_sensitive(widget, TRUE);
-
-			
-	g_source_remove(friendfinder_timer);
-	if(msg_timer) g_source_remove(msg_timer);
-	msg_timer = 0;
-	friendfinder_timer = 0;
-	global_fftimer_running = FALSE;
-	
-	gconf_client_set_bool(
-		global_gconfclient, 
-		GCONF"/fftimer_running",
-		global_fftimer_running,
-		error);
-}
-
-void
-on_item17_activate                     (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
-{
-	float lat, lon;
-	
-	
-	printf("screen x,y: %d %d \n",mouse_x, mouse_y);
-	lat = pixel2lat(global_zoom, global_y+mouse_y);
-	lon = pixel2lon(global_zoom, global_x+mouse_x);
-	
-	set_current_wp(lat, lon);	
-	
-}
-
-
-void
-on_item18_activate                     (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
-{
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	global_wp_on = FALSE;
-	repaint_all();
 }
 
 
@@ -3216,22 +2976,6 @@ on_itemgeocode1_activate               (GtkWidget       *widget,
 
 
 void
-on_itemimport1_activate                (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
-{
-
-}
-
-
-void
-on_itemselect1_activate                (GtkMenuItem     *menuitem,
-                                        gpointer         user_data)
-{
-
-}
-
-
-void
 on_button39_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
@@ -3244,14 +2988,6 @@ on_button40_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
 	geo_photos_geocode_dir_select_dialog(button, user_data);
-}
-
-
-void
-on_button41_clicked                    (GtkButton       *button,
-                                        gpointer         user_data)
-{
-
 }
 
 

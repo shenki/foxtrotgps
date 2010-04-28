@@ -27,10 +27,6 @@ void
 on_button1_clicked                     (GtkButton       *button,
                                         gpointer         user_data);
 
-void
-on_button2_clicked                     (GtkButton       *button,
-                                        gpointer         user_data);
-
 gboolean
 on_drawingarea1_button_release_event   (GtkWidget       *widget,
                                         GdkEventButton  *event,
@@ -60,14 +56,6 @@ on_button4_clicked                     (GtkButton       *button,
 
 void
 on_button5_clicked                     (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_item1_activate                      (GtkMenuItem     *menuitem,
-                                        gpointer         user_data);
-
-void
-on_item2_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
 
 gboolean
@@ -149,14 +137,6 @@ on_button9_clicked                     (GtkButton       *button,
 
 void
 on_button11_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_button12_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_togglebutton1_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data);
 
 void
@@ -262,29 +242,12 @@ void
 on_button21_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
 
-gboolean
-on_item9_button_release_event          (GtkWidget       *widget,
-                                        GdkEventButton  *event,
-                                        gpointer         user_data);
-
-
-
-
-
-void
-on_dialog5_close                       (GtkDialog       *dialog,
-                                        gpointer         user_data);
-
 void
 on_cancelbutton4_clicked               (GtkButton       *button,
                                         gpointer         user_data);
 
 void
 on_okbutton4_clicked                   (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_dialog6_close                       (GtkDialog       *dialog,
                                         gpointer         user_data);
 
 void
@@ -297,11 +260,6 @@ on_okbutton5_clicked                   (GtkButton       *button,
 
 gboolean
 on_dialog6_delete_event                (GtkWidget       *widget,
-                                        GdkEvent        *event,
-                                        gpointer         user_data);
-
-gboolean
-on_dialog5_delete_event                (GtkWidget       *widget,
                                         GdkEvent        *event,
                                         gpointer         user_data);
 
@@ -378,18 +336,6 @@ on_radiobutton21_toggled               (GtkToggleButton *togglebutton,
 gboolean
 on_button11_expose_event               (GtkWidget       *widget,
                                         GdkEventExpose  *event,
-                                        gpointer         user_data);
-
-void
-on_button23_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_item17_activate                     (GtkMenuItem     *menuitem,
-                                        gpointer         user_data);
-
-void
-on_item18_activate                     (GtkMenuItem     *menuitem,
                                         gpointer         user_data);
 
 void
@@ -603,23 +549,11 @@ on_drawingarea3_expose_event           (GtkWidget       *widget,
 //                                        gpointer         user_data);
 
 void
-on_itemimport1_activate                (GtkMenuItem     *menuitem,
-                                        gpointer         user_data);
-
-void
-on_itemselect1_activate                (GtkMenuItem     *menuitem,
-                                        gpointer         user_data);
-
-void
 on_button39_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
 
 void
 on_button40_clicked                    (GtkButton       *button,
-                                        gpointer         user_data);
-
-void
-on_button41_clicked                    (GtkButton       *button,
                                         gpointer         user_data);
 
 void
