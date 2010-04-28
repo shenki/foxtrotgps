@@ -2,6 +2,7 @@
 
 INCLUDES = \
 	$(GTK_CFLAGS) \
+	$(GLADE_CFLAGS) \
 	$(GCONF_CFLAGS) \
 	$(LIBCURL_CFLAGS) \
 	$(SQLITE_CFLAGS) \
@@ -52,10 +53,11 @@ foxtrotgps_SOURCES = \
 	exif.c\
 	exif.h
 
-foxtrotgps_LDFLAGS = 
+foxtrotgps_LDFLAGS = -export-dynamic
 
 foxtrotgps_LDADD =  \
 	$(GTK_LIBS) \
+	$(GLADE_LIBS) \
 	$(GCONF_LIBS) \
 	$(LIBCURL_LIBS) \
 	$(SQLITE_LIBS) \
