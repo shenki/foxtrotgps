@@ -103,7 +103,7 @@ main (int argc, char *argv[])
 	
 	window2 = create_window2();
 	window3 = create_window3();
-	menu1 = create_menu1();
+	menu1 = glade_xml_get_widget (gladexml, "menu1");
 	
 	
 	init();
