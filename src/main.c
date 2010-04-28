@@ -10,6 +10,8 @@
 #include <string.h>
 #include <gtk/gtk.h>
 
+#include <glade/glade.h>
+
 #include "interface.h"
 #include "support.h"
 #include "init.h"
@@ -20,6 +22,7 @@ int
 main (int argc, char *argv[])
 {
 	
+	GladeXML *gladexml;
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -45,8 +48,13 @@ main (int argc, char *argv[])
 	global_port	= g_strdup("2947");
 	
 	
+        glade_init ();
+        
+        gladexml = glade_xml_new (PACKAGE_DATA_DIR "/" PACKAGE "/" PACKAGE ".glade", NULL, GETTEXT_PACKAGE);
+        glade_xml_signal_autoconnect (gladexml);
+
 	pre_init();
-	window1 = create_window1 ();
+	window1 = glade_xml_get_widget (gladexml, "window1");
 	
 
 
@@ -95,7 +103,7 @@ main (int argc, char *argv[])
 	
 	window2 = create_window2();
 	window3 = create_window3();
-	menu1 = create_menu1();
+	menu1 = glade_xml_get_widget (gladexml, "menu1");
 	
 	
 	init();
