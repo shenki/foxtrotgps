@@ -14,6 +14,11 @@ AM_CFLAGS =\
 	 -O2\
 	 -g
 
+AM_CPPFLAGS = \
+	-DPACKAGE_DATA_DIR="\"$(PACKAGE_DATA_DIR)\"" \
+	-DPACKAGE_PIXMAPS_DIR="\"$(PACKAGE_PIXMAPS_DIR)\"" \
+	-DPACKAGE_LOCALE_DIR="\"${prefix}/${DATADIRNAME}/locale\""
+
 bin_PROGRAMS = foxtrotgps
 
 foxtrotgps_SOURCES = \
