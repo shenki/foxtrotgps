@@ -1,10 +1,5 @@
 ## Process this file with automake to produce Makefile.in
 
-AM_CFLAGS =\
-	 -Wall\
-	 -O2\
-	 -g
-
 AM_CPPFLAGS = \
 	-DPACKAGE_DATA_DIR="\"$(datadir)\"" \
 	-DPACKAGE_PIXMAPS_DIR="\"$(datadir)/pixmaps\"" \
