@@ -1,7 +1,7 @@
 ## Process this file with automake to produce Makefile.in
 
 AM_CFLAGS =\
-	 -DRELEASE -DHAVE_CONFIG_H\
+	 -DHAVE_CONFIG_H\
 	 -Wall\
 	 -O2\
 	 -g
