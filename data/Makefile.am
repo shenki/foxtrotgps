@@ -8,3 +8,5 @@ dist_foxtrotgps_data_DATA = $(foxtrotgps_data_in_files:.desktop.in=.desktop)
 
 
 dist_pkgdata_DATA = foxtrotgps.glade
+
+EXTRA_DIST = $(foxtrotgps_data_in_files)
