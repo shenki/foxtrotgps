@@ -2,8 +2,7 @@
 
 SUBDIRS = po src pixmaps data
 
-foxtrotgpsdocdir = ${prefix}/doc/foxtrotgps
-dist_foxtrotgpsdoc_DATA = \
+dist_doc_DATA = \
 	README\
 	COPYING\
 	AUTHORS\
