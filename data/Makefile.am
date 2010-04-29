@@ -2,8 +2,6 @@
 
 foxtrotgps_datadir = $(datadir)/applications
 foxtrotgps_data_in_files = foxtrotgps.desktop.in
-foxtrotgps_data_DATA = $(foxtrotgps_data_in_files:.desktop.in=.desktop)
+dist_foxtrotgps_data_DATA = $(foxtrotgps_data_in_files:.desktop.in=.desktop)
+
 @INTLTOOL_DESKTOP_RULE@
-
-EXTRA_DIST = $(foxtrotgps_data_DATA)
-
