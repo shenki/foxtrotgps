@@ -3917,7 +3917,7 @@ activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
 	GError *error = NULL;
 	gboolean success = FALSE;
 
-	printf ("enlarge details\n");
+	printf ("shrink details\n");
 
 	if (global_detail_zoom > 0) {
 		global_detail_zoom--;
@@ -3943,7 +3943,7 @@ activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item)
 	GError *error = NULL;
 	gboolean success = FALSE;
 
-	printf ("shrink details\n");
+	printf ("enlarge details\n");
 
 	global_detail_zoom++;
 
