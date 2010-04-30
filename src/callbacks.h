@@ -776,6 +776,9 @@ on_item18_button_release_event         (GtkWidget       *widget,
                                         gpointer         user_data);
 
 void
+set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu);
+
+void
 activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data);
 
 void

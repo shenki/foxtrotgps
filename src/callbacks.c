@@ -3912,6 +3912,13 @@ on_item18_button_release_event         (GtkWidget       *widget,
 }
 
 void
+set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu)
+{
+	gtk_widget_set_sensitive (GTK_WIDGET (zoomout),
+				  global_detail_zoom != 0);
+}
+
+void
 activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
 {
 	GError *error = NULL;
@@ -3922,10 +3929,6 @@ activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
 	if (global_detail_zoom > 0) {
 		global_detail_zoom--;
 
-	}
-
-	if (global_detail_zoom == 0) {
-		gtk_widget_set_sensitive (GTK_WIDGET (menu_item), FALSE);
 	}
 
 	success = gconf_client_set_int(
@@ -3946,10 +3949,6 @@ activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item)
 	printf ("enlarge details\n");
 
 	global_detail_zoom++;
-
-	if (global_detail_zoom > 0) {
-		gtk_widget_set_sensitive (GTK_WIDGET (more_item), TRUE);
-	}
 
 	success = gconf_client_set_int(
 				global_gconfclient, 

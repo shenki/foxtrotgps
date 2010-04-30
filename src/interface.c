@@ -2050,9 +2050,7 @@ create_menu1 (void)
   gtk_container_add (GTK_CONTAINER (details_menu), details_item_bigger);
 
   details_item_more = gtk_menu_item_new_with_mnemonic ("more/smaller details");
-  if (global_detail_zoom == 0) {
-    gtk_widget_set_sensitive (details_item_more, FALSE);
-  }
+
   gtk_container_add (GTK_CONTAINER (details_menu), details_item_more);
 
   gtk_widget_show_all (details_item);
@@ -2101,12 +2099,15 @@ create_menu1 (void)
                     G_CALLBACK (on_item8_activate),
                     NULL);
 
+  g_signal_connect_swapped ((gpointer) details_item, "activate",
+                            G_CALLBACK (set_map_detail_menuitem_sensitivity),
+                            details_item_more);
   g_signal_connect ((gpointer) details_item_more, "activate",
                     G_CALLBACK (activate_more_map_details),
                     NULL);
   g_signal_connect ((gpointer) details_item_bigger, "activate",
                     G_CALLBACK (activate_larger_map_details),
-                    details_item_more);
+                    NULL);
   
   GLADE_HOOKUP_OBJECT_NO_REF (menu1, menu1, "menu1");
   GLADE_HOOKUP_OBJECT (menu1, item4, "item4");
