@@ -1460,7 +1460,7 @@ download of missing tiles into cache</property>
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="border_width">10</property>
-                                                <property name="label" translatable="yes">checkbutton</property>
+                                                <property name="label" translatable="yes">Auto download map tiles</property>
                                                 <property name="response_id">0</property>
                                                 <property name="draw_indicator">True</property>
                                                 <signal name="toggled" handler="on_checkbutton2_toggled"/>
