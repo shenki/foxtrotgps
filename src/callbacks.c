@@ -732,7 +732,7 @@ void
 on_button7_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
 {
-	dialog1 = create_dialog1();
+	dialog1 = glade_xml_get_widget (gladexml, "dialog1");
 
 	gtk_widget_show(dialog1);
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
