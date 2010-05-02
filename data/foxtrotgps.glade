@@ -1460,7 +1460,7 @@ download of missing tiles into cache</property>
                                                 <property name="visible">True</property>
                                                 <property name="can_focus">True</property>
                                                 <property name="border_width">10</property>
-                                                <property name="label" translatable="yes">checkbutton</property>
+                                                <property name="label" translatable="yes">Auto download map tiles</property>
                                                 <property name="response_id">0</property>
                                                 <property name="draw_indicator">True</property>
                                                 <signal name="toggled" handler="on_checkbutton2_toggled"/>
@@ -2060,7 +2060,7 @@ Set GPSD Host IP
       </widget>
     </child>
     <child>
-      <widget class="GtkMenuItem" id="item19">
+      <widget class="GtkCheckMenuItem" id="item19">
         <property name="visible">True</property>
         <property name="label" translatable="yes">show friends</property>
         <property name="use_underline">True</property>
@@ -2068,7 +2068,7 @@ Set GPSD Host IP
       </widget>
     </child>
     <child>
-      <widget class="GtkMenuItem" id="item20">
+      <widget class="GtkCheckMenuItem" id="item20">
         <property name="visible">True</property>
         <property name="label" translatable="yes">show POIs</property>
         <property name="use_underline">True</property>
@@ -2076,7 +2076,7 @@ Set GPSD Host IP
       </widget>
     </child>
     <child>
-      <widget class="GtkMenuItem" id="item9">
+      <widget class="GtkCheckMenuItem" id="item9">
         <property name="visible">True</property>
         <property name="label" translatable="yes">show photos</property>
         <property name="use_underline">True</property>
