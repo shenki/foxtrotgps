@@ -2149,11 +2149,6 @@ Set GPSD Host IP
                 <property name="label" translatable="yes">select POIs</property>
                 <property name="use_underline">True</property>
                 <signal name="activate" handler="on_item14_activate"/>
-                <child>
-                  <widget class="GtkMenu" id="item14_menu">
-                    <property name="visible">True</property>
-                  </widget>
-                </child>
               </widget>
             </child>
           </widget>
