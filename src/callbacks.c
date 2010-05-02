@@ -717,7 +717,7 @@ on_okbutton1_clicked                   (GtkButton       *button,
 	
 	gconf_set_repolist();
 
-	gtk_widget_destroy(dialog1);
+	gtk_widget_hide(dialog1);
 
 	
 	
