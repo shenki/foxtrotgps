@@ -5,6 +5,9 @@
 
 
 GdkPixmap *pixmap = NULL;
+
+GladeXML *gladexml = NULL;
+
 GtkWidget *window1 = NULL;
 GtkWidget *window2 = NULL;
 GtkWidget *map_drawable = NULL;
