@@ -2608,7 +2608,7 @@ on_button38_clicked                    (GtkButton       *button,
 	GtkWidget	*togglebutton;
 	repo_t		*repo;
 		
-	dialog8 = create_dialog8();
+	dialog8 = glade_xml_get_widget (gladexml, "dialog8");
 		
 	entry_repo = lookup_widget(dialog8, "entry24");
 	entry_uri = lookup_widget(dialog8, "entry25");
@@ -2635,7 +2635,7 @@ on_cancelbutton7_clicked               (GtkButton       *button,
 
 	widget = lookup_widget(GTK_WIDGET(button), "dialog8");
 	
-	gtk_widget_destroy(dialog8);
+	gtk_widget_hide(dialog8);
 }
 
 
@@ -2679,7 +2679,7 @@ on_okbutton7_clicked                   (GtkButton       *button,
 	printf("*** %s(): new repo: %s %s\n",__PRETTY_FUNCTION__, repo->name, global_curr_reponame);
 	gconf_set_repolist();
 
-	gtk_widget_destroy(dialog8);
+	gtk_widget_hide(dialog8);
 
 }
 
