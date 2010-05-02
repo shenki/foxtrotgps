@@ -666,11 +666,6 @@ void
 on_cancelbutton1_clicked               (GtkButton       *button,
                                         gpointer         user_data)
 {
-	GtkWidget	*entry;
-
-	entry = lookup_widget(dialog1, "entry5");
-	
-	gtk_entry_set_text(GTK_ENTRY(entry),"");
 	gtk_widget_hide(dialog1);
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
@@ -717,7 +712,7 @@ on_okbutton1_clicked                   (GtkButton       *button,
 	
 	gconf_set_repolist();
 
-	gtk_widget_destroy(dialog1);
+	gtk_widget_hide(dialog1);
 
 	
 	
@@ -732,7 +727,22 @@ void
 on_button7_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
 {
-	dialog1 = create_dialog1();
+	GtkWidget	*entry_repo;
+	GtkWidget	*entry_uri;
+	GtkWidget	*entry_dir;
+	GtkWidget	*togglebutton;
+
+	dialog1 = glade_xml_get_widget (gladexml, "dialog1");
+
+	entry_repo = lookup_widget(dialog1, "entry5");
+	entry_uri = lookup_widget(dialog1, "entry20");
+	entry_dir = lookup_widget(dialog1, "entry21");
+	togglebutton = lookup_widget(dialog1, "checkbutton12");
+
+	gtk_entry_set_text(GTK_ENTRY(entry_repo), "");
+	gtk_entry_set_text(GTK_ENTRY(entry_uri), "");
+	gtk_entry_set_text(GTK_ENTRY(entry_dir), "");
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(togglebutton), FALSE);
 
 	gtk_widget_show(dialog1);
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
@@ -2598,7 +2608,7 @@ on_button38_clicked                    (GtkButton       *button,
 	GtkWidget	*togglebutton;
 	repo_t		*repo;
 		
-	dialog8 = create_dialog8();
+	dialog8 = glade_xml_get_widget (gladexml, "dialog8");
 		
 	entry_repo = lookup_widget(dialog8, "entry24");
 	entry_uri = lookup_widget(dialog8, "entry25");
@@ -2625,7 +2635,7 @@ on_cancelbutton7_clicked               (GtkButton       *button,
 
 	widget = lookup_widget(GTK_WIDGET(button), "dialog8");
 	
-	gtk_widget_destroy(dialog8);
+	gtk_widget_hide(dialog8);
 }
 
 
@@ -2669,7 +2679,7 @@ on_okbutton7_clicked                   (GtkButton       *button,
 	printf("*** %s(): new repo: %s %s\n",__PRETTY_FUNCTION__, repo->name, global_curr_reponame);
 	gconf_set_repolist();
 
-	gtk_widget_destroy(dialog8);
+	gtk_widget_hide(dialog8);
 
 }
 
