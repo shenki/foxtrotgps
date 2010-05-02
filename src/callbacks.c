@@ -666,11 +666,6 @@ void
 on_cancelbutton1_clicked               (GtkButton       *button,
                                         gpointer         user_data)
 {
-	GtkWidget	*entry;
-
-	entry = lookup_widget(dialog1, "entry5");
-	
-	gtk_entry_set_text(GTK_ENTRY(entry),"");
 	gtk_widget_hide(dialog1);
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
