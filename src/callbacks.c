@@ -732,7 +732,22 @@ void
 on_button7_clicked                     (GtkButton       *button,
                                         gpointer         user_data)
 {
+	GtkWidget	*entry_repo;
+	GtkWidget	*entry_uri;
+	GtkWidget	*entry_dir;
+	GtkWidget	*togglebutton;
+
 	dialog1 = glade_xml_get_widget (gladexml, "dialog1");
+
+	entry_repo = lookup_widget(dialog1, "entry5");
+	entry_uri = lookup_widget(dialog1, "entry20");
+	entry_dir = lookup_widget(dialog1, "entry21");
+	togglebutton = lookup_widget(dialog1, "checkbutton12");
+
+	gtk_entry_set_text(GTK_ENTRY(entry_repo), "");
+	gtk_entry_set_text(GTK_ENTRY(entry_uri), "");
+	gtk_entry_set_text(GTK_ENTRY(entry_dir), "");
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(togglebutton), FALSE);
 
 	gtk_widget_show(dialog1);
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
