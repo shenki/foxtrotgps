@@ -14,10 +14,7 @@
 #include <string.h>
 #include <math.h>
 
-#include <sys/types.h>
-#include <sys/socket.h>
-#include <netinet/in.h>
-#include <arpa/inet.h>
+#include <gps.h>
 
 #include "gps_functions.h"
 #include "globals.h"
@@ -34,6 +31,7 @@ void * get_gps_thread(void *ptr);
 
 
 static GIOChannel *gpsd_io_channel =NULL;
+static struct gps_data_t *libgps_gpsdata = NULL;
 
 static guint sid1,  sid3; 
 guint watchdog;
@@ -691,145 +689,6 @@ set_label()
 
 
 
-void
-parse_nmea_rmc(char *nmea)
-{
-	gchar **array;
-	gchar lat_dec[3], lon_dec[4];
-	double	lat_min, lat=0, lon_min,lon=0;
-	gchar hour[3],min[3],sec[3],year[3],month[3],day[3];
-	int i=0;
-
-	typedef struct tm tm_t;	
-	static tm_t *tm = NULL;
-
-	if(!tm) tm = g_new0(tm_t,1);
-		
-	array = g_strsplit(nmea,",",0);
-
-	while (array[i]) i++;
-
-	g_source_remove(watchdog);
-	watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
-	
-	if(i>=9)
-	{
-		
-		if (strlen(array[1]) >= 6)
-		{
-			strncpy(hour, array[1],2);
-			hour[2]='\0';
-			strncpy(min, array[1]+2,2);
-			min[2]='\0';
-			strncpy(sec, array[1]+4,2);
-			sec[2]='\0';
-		}
-		
-		
-		if (strlen(array[9]) == 6)
-		{
-			strncpy(day, array[9],2);
-			day[2]='\0';
-			strncpy(month, array[9]+2,2);
-			month[2]='\0';
-			strncpy(year, array[9]+4,2);
-			year[2]='\0';
-
-			tm->tm_sec = atoi(sec);
-			tm->tm_min = atoi(min);
-			tm->tm_hour= atoi(hour);
-			tm->tm_mday= atoi(day);
-			tm->tm_mon = atoi(month)-1;
-			tm->tm_year= atoi(year)+100;
-	
-			
-			gpsdata->fix.time = (double) mktime(tm);
-			
-			
-		}
-		
-		
-		if (strlen(array[3]) >= 3)
-		{
-			strncpy(lat_dec, array[3], 2);
-			lat_dec[2]='\0';
-			lat_min = atof(array[3]+2);
-			lat = atof(lat_dec) + (lat_min/60);
-			if (strcmp(array[4],"S")==0)
-			{
-				lat = -lat;
-			}
-		}
-		
-		
-		if (strlen(array[5]) >= 4)
-		{
-			strncpy(lon_dec, array[5], 3);
-			lon_dec[3]='\0';
-			lon_min = atof(array[5]+3);
-			lon = atof(lon_dec) + (lon_min/60);
-			if (strcmp(array[6],"W")==0)
-			{
-				lon = -lon;
-			}
-		}
-		
-		gpsdata->valid = (strcmp(array[2],"A")==0) ? TRUE : FALSE;
-		
-		if(gpsdata->valid)
-		{
-			gpsdata->seen_vaild = TRUE;
-			gpsdata->fix.latitude = lat;
-			gpsdata->fix.longitude = lon;
-			gpsdata->fix.speed = atof(array[7])*0.514444; 
-			gpsdata->fix.heading = atof(array[8]);
-		}
-	}
-	else
-		printf("%s(): YIKES. not enough fields. GPS receiver broken?\n",__PRETTY_FUNCTION__);
-	
-	g_strfreev(array);
-}
-
-
-
-void
-parse_nmea_gga(char *nmea)
-{		
-	gchar **array;
-	int i=0;
-
-	array = g_strsplit(nmea,",",0);
-	
-	while (array[i]) i++;
-
-	if(i>=9)
-	{
-		gpsdata->satellites_used = atoi(array[7]);
-		
-		if(atoi(array[6])>0)  
-		{
-			gpsdata->hdop = atof(array[8]);
-			gpsdata->fix.altitude = atof(array[9]);
-		}
-	}
-	g_strfreev(array);
-}
-
-void
-parse_nmea_gsv(char *nmea)
-{		
-	gchar **array;
-	int i=0;
-		
-	array = g_strsplit(nmea,",",0);
-	while (array[i]) i++;
-			
-	if (i>=3)
-		gpsdata->satellites_inview = atoi(array[3]);
-
-	g_strfreev(array);
-}
 
 
 static gboolean
@@ -840,6 +699,8 @@ cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 	gpsdata = NULL;
 	g_source_remove(sid1); 
 	g_source_remove(sid3); 
+	gps_close(libgps_gpsdata);
+	libgps_gpsdata = NULL;
 	
 	
 	return FALSE; 
@@ -850,42 +711,32 @@ cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 static gboolean
 cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 {
+	int ret;
 
-	gsize length;
-	GError *error = NULL;
-	gchar *str_return;
-	GIOStatus status;
-
-	
-
-	status =  g_io_channel_read_line(
-				gpsd_io_channel,
-				&str_return,
-				&length,
-				NULL,
-				&error);
-
-	if(status == G_IO_STATUS_NORMAL)
-	{		
-		if(strncmp(str_return,"$GPGGA",6)==0)
+	ret = gps_poll(libgps_gpsdata);
+	if (ret)
+	{
+		gpsdata->satellites_used = libgps_gpsdata->satellites_used;
+		gpsdata->hdop = libgps_gpsdata->dop.hdop;
+		gpsdata->fix.time = libgps_gpsdata->fix.time;
+		gpsdata->valid = (libgps_gpsdata->status != STATUS_NO_FIX);
+		if (gpsdata->valid)
 		{
-			parse_nmea_gga(str_return);
+			gpsdata->seen_vaild = TRUE;
+			gpsdata->fix.latitude = libgps_gpsdata->fix.latitude;
+			gpsdata->fix.longitude = libgps_gpsdata->fix.longitude;
+			gpsdata->fix.speed = libgps_gpsdata->fix.speed;
+			gpsdata->fix.heading = libgps_gpsdata->fix.track;
+			gpsdata->fix.altitude = libgps_gpsdata->fix.altitude;
 		}
-		else if (strncmp(str_return,"$GPRMC",6)==0)
-		{
-			parse_nmea_rmc(str_return);
-		}	
+		
+		g_source_remove(watchdog);
+		watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
 	}
 	else
 	{
-		if (error)
-			printf("%s \n", error->message);
-		
-		
+		printf("gps_poll returned %d\n", ret);
 	}
-	
-	g_free(str_return);
-
 	return TRUE;
 }
 
@@ -899,27 +750,8 @@ get_gps()
 void *
 get_gps_thread(void *ptr)
 {
-	
-	static int sock = 0;
-	int conn, len;
-	char buffer[501]; 
-	struct sockaddr_in server;
-	char buffer_send[] = "r";
-
-			
-	if (sock) sock = close(sock);
-		
-	
-	server.sin_family	= AF_INET;
-	server.sin_addr.s_addr	= inet_addr(global_server);
-	server.sin_port		= htons (atoi(global_port));
-	memset(&(server.sin_zero), '\0', 8);		
-	
-	
-	sock = socket(AF_INET, SOCK_STREAM, 0);
-	conn = connect(sock, (struct sockaddr *)&server, sizeof(struct sockaddr));
-
-	if(conn == 0)
+	libgps_gpsdata = gps_open(global_server, global_port);
+	if (libgps_gpsdata)
 	{
 		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
 		
@@ -930,22 +762,13 @@ get_gps_thread(void *ptr)
 			gpsdata = g_new0(tangogps_gps_data_t,1);
 		}
 		
-		len = write(sock, buffer_send, strlen(buffer_send));
-		if (len < 0)
-			perror("ERROR writing to socket");
-		
-		
-		len = recv(sock, buffer, 500, 0);
-		
-		buffer[len]='\0'; 
-		
-		fprintf(stderr, "Rcvd: %s",buffer);
 	
+		gps_stream(libgps_gpsdata, WATCH_ENABLE | POLL_NONBLOCK, NULL);
 		
 		watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
 		
 		
-		gpsd_io_channel = g_io_channel_unix_new(sock);
+		gpsd_io_channel = g_io_channel_unix_new(libgps_gpsdata->gps_fd);
 		g_io_channel_set_flags(gpsd_io_channel, G_IO_FLAG_NONBLOCK, NULL);
 		
 		
