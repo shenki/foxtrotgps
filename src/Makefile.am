@@ -51,5 +51,5 @@ tangogps_LDFLAGS =
 
 tangogps_LDADD =  \
 	$(PACKAGE_LIBS)\
-	 -lcurl -lgthread-2.0 -lgconf-2 -lsqlite3 -lexif -lxml2
+	 -lcurl -lgthread-2.0 -lgconf-2 -lsqlite3 -lexif -lxml2 -lgps
 
