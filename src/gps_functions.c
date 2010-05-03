@@ -927,7 +927,7 @@ get_gps_thread(void *ptr)
 		
 		if(!gpsdata)
 		{
-			gpsdata = g_new0(gps_data_t,1);
+			gpsdata = g_new0(tangogps_gps_data_t,1);
 		}
 		
 		len = write(sock, buffer_send, strlen(buffer_send));
