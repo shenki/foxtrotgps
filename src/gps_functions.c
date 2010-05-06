@@ -719,6 +719,10 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 		gpsdata->satellites_used = libgps_gpsdata->satellites_used;
 		gpsdata->hdop = libgps_gpsdata->dop.hdop;
 		gpsdata->fix.time = libgps_gpsdata->fix.time;
+		if (isnan(gpsdata->fix.time))
+		{
+			gpsdata->fix.time = (time_t) 0;
+		}
 		gpsdata->valid = (libgps_gpsdata->status != STATUS_NO_FIX);
 		if (gpsdata->valid)
 		{
