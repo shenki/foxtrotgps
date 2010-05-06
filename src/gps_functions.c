@@ -714,7 +714,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 	int ret;
 
 	ret = gps_poll(libgps_gpsdata);
-	if (ret)
+	if (ret == 0)
 	{
 		gpsdata->satellites_used = libgps_gpsdata->satellites_used;
 		gpsdata->hdop = libgps_gpsdata->dop.hdop;
