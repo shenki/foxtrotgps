@@ -27,6 +27,7 @@ int global_x = 890;
 int global_y = 515;
 int global_zoom = 3;
 int global_zoom_max = 20;
+int global_detail_zoom = 0;
 		
 int mouse_dx = 0; 
 int mouse_dy = 0;

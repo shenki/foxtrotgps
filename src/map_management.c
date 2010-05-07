@@ -74,6 +74,8 @@ load_tile(	gchar *dir,
 		int offset_x,
 		int offset_y)
 {
+	int		detail_zoom	= global_detail_zoom; /* round (dpi/96.0) */
+	int		detail_scale	= (int) pow (2.0, (float) detail_zoom);
 	int 		overzoom	= 0;
 	int 		upscale		= 1;
 	gboolean	hash_not_found = TRUE;
@@ -93,6 +95,8 @@ load_tile(	gchar *dir,
 	}
 	else printf("no drawable -> NULL\n");
 
+	upscale = detail_scale;
+	zoom -= detail_zoom;
 
 	g_snprintf(wanted_filename, 255, "%s/%u/%u/%u.png", dir, zoom, x, y);
 	tile_hash = g_hash_table_lookup(hash_table, wanted_filename);
@@ -120,7 +124,7 @@ load_tile(	gchar *dir,
 			upscale *= 2;
 		}
 		
-		if(pixbuf && overzoom)
+		if(pixbuf && upscale > 1)
 		{
 			GdkPixbuf	*pixbuf_scaled	= NULL;
 			pixbuf_scaled = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, 256, 256); 
@@ -194,7 +198,7 @@ load_tile(	gchar *dir,
 	if(overzoom && global_auto_download)
 	{
 		repo = global_curr_repo->data;
-		download_tile(repo,zoom,x,y);
+		download_tile(repo,zoom,x/detail_scale,y/detail_scale);
 	}	
 }
 

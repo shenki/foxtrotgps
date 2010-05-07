@@ -110,6 +110,7 @@ extern int global_x;
 extern int global_y;
 extern int global_zoom;
 extern int global_zoom_max;
+extern int global_detail_zoom;
 
 extern int mouse_dx; // for mouse move pixmap
 extern int mouse_dy;
