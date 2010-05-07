@@ -80,16 +80,16 @@ typedef struct {
 	double heading;
 	double speed;		/* Speed over ground, meters/sec */
 	double bearing;		/* in radian, calculated by tangogps */
-} gps_fix_t;
+} tangogps_gps_fix_t;
 
 typedef struct {
-	gps_fix_t fix;
+	tangogps_gps_fix_t fix;
 	int satellites_used;
 	int satellites_inview;
 	double hdop;
 	gboolean valid;
 	gboolean seen_vaild; /* ever had a vaild fix? */
-} gps_data_t;
+} tangogps_gps_data_t;
 
 extern GdkPixmap 	*pixmap;
 
@@ -122,7 +122,7 @@ extern int global_drawingarea_width;
 extern int global_drawingarea_height;
 
 
-extern gps_data_t *gpsdata;
+extern tangogps_gps_data_t *gpsdata;
 
 
 extern GQueue		*trackpoint_list;

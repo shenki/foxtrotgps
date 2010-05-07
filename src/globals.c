@@ -39,7 +39,7 @@ int global_alt_unit	= 0;
 int global_latlon_unit	= 0;	
 
 
-gps_data_t *gpsdata = NULL;
+tangogps_gps_data_t *gpsdata = NULL;
 
 GQueue		*trackpoint_list = NULL;
 GSList		*friends_list = NULL;
