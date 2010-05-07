@@ -66,9 +66,6 @@ pre_init()
 				global_gconfclient, 
 				GCONF"/global_zoom",
 				err);
-	
-
-
 
 	if(global_zoom <= 2) 
 	{
@@ -76,7 +73,10 @@ pre_init()
 		global_y = 515;
 		global_zoom = 3;
 	}
-	
+
+	global_server	= g_strdup("127.0.0.1");
+	global_port	= g_strdup("2947");
+
 	if(gconf_client_get_bool(global_gconfclient, GCONF"/started_before", err))	
 		global_auto_download = gconf_client_get_bool(
 					global_gconfclient, 

@@ -43,10 +43,6 @@ main (int argc, char *argv[])
 	add_pixmap_directory (PACKAGE_DATA_DIR "/" PACKAGE "/pixmaps");
 	
 	
-	global_server	= g_strdup("127.0.0.1");
-	global_port	= g_strdup("2947");
-	
-	
         glade_init ();
         
         gladexml = glade_xml_new (PACKAGE_DATA_DIR "/" PACKAGE "/" PACKAGE ".glade", NULL, GETTEXT_PACKAGE);
