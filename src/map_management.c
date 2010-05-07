@@ -81,7 +81,6 @@ load_tile(	gchar *dir,
 	static gchar	wanted_filename[256];
 
 	GdkPixbuf	*pixbuf		= NULL;
-	GdkPixbuf	*pixbuf_scaled	= NULL;
 	repo_t 		*repo;
 	tile_hash_t	*tile_hash;
 
@@ -123,7 +122,7 @@ load_tile(	gchar *dir,
 		
 		if(pixbuf && overzoom)
 		{
-			
+			GdkPixbuf	*pixbuf_scaled	= NULL;
 			pixbuf_scaled = gdk_pixbuf_new(GDK_COLORSPACE_RGB, TRUE, 8, 256, 256); 
 	
 			gdk_pixbuf_scale (	pixbuf, pixbuf_scaled,
@@ -132,6 +131,12 @@ load_tile(	gchar *dir,
 						-TILESIZE*(x%upscale), -TILESIZE*(y%upscale),
 						upscale, upscale,
 						GDK_INTERP_BILINEAR );
+
+			if (pixbuf) {
+				g_object_unref (pixbuf);
+			}
+
+			pixbuf = pixbuf_scaled;
 		}
 	}
 	
@@ -161,7 +166,7 @@ load_tile(	gchar *dir,
 		gdk_draw_pixbuf (
 			pixmap,
 			gc_map,
-			(overzoom ? pixbuf_scaled : pixbuf),
+			pixbuf,
 			0,0,
 			offset_x,offset_y,
 			TILESIZE,TILESIZE,
@@ -171,14 +176,10 @@ load_tile(	gchar *dir,
 		if(hash_not_found)
 		{
 			tile_hash = g_new0(tile_hash_t,1);
-			tile_hash->pixbuf = (overzoom ? pixbuf_scaled : pixbuf);
+			tile_hash->pixbuf = pixbuf;
 			tile_hash->reused = TRUE;
 	
 			g_hash_table_insert(hash_table, g_strdup(wanted_filename), tile_hash);
-			
-			if (overzoom)
-				g_object_unref(pixbuf);
-
 		}
 	}
 
