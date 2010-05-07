@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Sun May  2 02:35:02 2010 -->
+<!--Generated with glade3 3.4.5 on Fri May  7 08:22:35 2010 -->
 <glade-interface>
   <widget class="GtkWindow" id="window1">
     <property name="title" translatable="yes">foxtrotGPS</property>
@@ -2233,6 +2233,35 @@ Set GPSD Host IP
         <property name="label" translatable="yes">map download</property>
         <property name="use_underline">True</property>
         <signal name="activate" handler="on_item8_activate"/>
+      </widget>
+    </child>
+    <child>
+      <widget class="GtkMenuItem" id="detail_scale_menuitem">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">map detail</property>
+        <property name="use_underline">True</property>
+        <signal name="activate" handler="set_map_detail_menuitem_sensitivity" object="details_item_more"/>
+        <child>
+          <widget class="GtkMenu" id="detail_scale_menu">
+            <property name="visible">True</property>
+            <child>
+              <widget class="GtkMenuItem" id="details_item_bigger">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">fewer/larger details</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="activate_larger_map_details" object="details_item_more"/>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="details_item_more">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">more/smaller details</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="activate_more_map_details"/>
+              </widget>
+            </child>
+          </widget>
+        </child>
       </widget>
     </child>
   </widget>

@@ -3702,3 +3702,51 @@ on_entry29_changed                     (GtkEditable     *editable,
 	me_msg = gtk_entry_get_text(GTK_ENTRY(editable));
 	gconf_client_set_string(global_gconfclient, GCONF"/me_msg", me_msg, NULL);
 }
+
+void
+set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu)
+{
+	gtk_widget_set_sensitive (GTK_WIDGET (zoomout),
+				  global_detail_zoom != 0);
+}
+
+void
+activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
+{
+	GError *error = NULL;
+	gboolean success = FALSE;
+
+	printf ("shrink details\n");
+
+	if (global_detail_zoom > 0) {
+		global_detail_zoom--;
+
+	}
+
+	success = gconf_client_set_int(
+				global_gconfclient, 
+				GCONF"/global_detail_zoom",
+				global_detail_zoom,
+				&error);
+
+	repaint_all ();
+}
+
+void
+activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item)
+{
+	GError *error = NULL;
+	gboolean success = FALSE;
+
+	printf ("enlarge details\n");
+
+	global_detail_zoom++;
+
+	success = gconf_client_set_int(
+				global_gconfclient, 
+				GCONF"/global_detail_zoom",
+				global_detail_zoom,
+				&error);
+
+	repaint_all ();
+}

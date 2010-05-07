@@ -775,3 +775,12 @@ on_button79_clicked                    (GtkButton       *button,
 void
 on_entry29_changed                     (GtkEditable     *editable,
                                         gpointer         user_data);
+
+void
+set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu);
+
+void
+activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data);
+
+void
+activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item);
