@@ -74,8 +74,24 @@ pre_init()
 		global_zoom = 3;
 	}
 
-	global_server	= g_strdup("127.0.0.1");
-	global_port	= g_strdup("2947");
+
+	global_server = gconf_client_get_string (global_gconfclient,
+						 GCONF "/gpsd_host",
+						 err);
+	if (global_server == NULL)
+	{
+		printf("gconf GPSD address not set\n");
+		global_server	= g_strdup("127.0.0.1");
+	}
+
+	global_port = gconf_client_get_string (global_gconfclient,
+					       GCONF "/gpsd_port",
+					       err);
+	if (global_port == NULL)
+	{
+		printf("gconf GPSD port not set\n");
+		global_port	= g_strdup("2947");
+	}
 
 	if(gconf_client_get_bool(global_gconfclient, GCONF"/started_before", err))	
 		global_auto_download = gconf_client_get_bool(
