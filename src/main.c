@@ -21,7 +21,9 @@
 int
 main (int argc, char *argv[])
 {
-	
+	const char *gladefile =
+		PACKAGE_DATA_DIR "/" PACKAGE "/" PACKAGE ".glade";
+
 #ifdef ENABLE_NLS
 	bindtextdomain (GETTEXT_PACKAGE, PACKAGE_LOCALE_DIR);
 	bind_textdomain_codeset (GETTEXT_PACKAGE, "UTF-8");
@@ -44,8 +46,31 @@ main (int argc, char *argv[])
 	
 	
         glade_init ();
-        
-        gladexml = glade_xml_new (PACKAGE_DATA_DIR "/" PACKAGE "/" PACKAGE ".glade", NULL, GETTEXT_PACKAGE);
+
+        gladexml = glade_xml_new (gladefile, NULL, GETTEXT_PACKAGE);
+
+	if (!gladexml)
+	{
+		/* Developers may run into this if they're naively
+		   trying to run from the build-tree without having
+		   specifically configured the build to allow that,
+		   so we need to actually catch this error and output
+		   an informative message.
+
+		   This is, however, not an error that end users should face;
+		   if they do, then someone upstream from them messed up--
+		   either `make install' worked only half-way, or a packager
+		   left something critical out of the package. In either case,
+		   we want to fail in a way that indicates to the user
+		   that something is really wrong and they should report
+		   a bug.
+		*/
+
+		g_error (_("%s could not load its user interface; "
+			   "%s does not not appear to be properly installed."),
+			 PACKAGE, PACKAGE);
+	}
+
         glade_xml_signal_autoconnect (gladexml);
 
 	pre_init();
