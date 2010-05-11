@@ -2589,7 +2589,7 @@ on_window12_delete_event               (GtkWidget       *widget,
 			       (GtkCallback) gtk_widget_destroy,
 			       NULL);
 
-	return FALSE;
+	return TRUE;
 }
 
 void
