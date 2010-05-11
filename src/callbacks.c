@@ -2578,12 +2578,17 @@ on_window12_delete_event               (GtkWidget       *widget,
                                         GdkEvent        *event,
                                         gpointer         user_data)
 {
-	GtkWidget *window;
+	GtkWidget *window, *vbox;
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	window = lookup_widget(widget, "window12");
 	gtk_widget_hide(window);
-	
+
+	vbox = lookup_widget(window, "vbox39");		
+	gtk_container_foreach (GTK_CONTAINER (vbox),
+			       (GtkCallback) gtk_widget_destroy,
+			       NULL);
+
 	return FALSE;
 }
 
@@ -2591,11 +2596,16 @@ void
 on_button37_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
-	GtkWidget *widget;
+	GtkWidget *widget, *vbox;
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	widget = lookup_widget(GTK_WIDGET(button), "window12");
 	gtk_widget_hide(widget);
+
+	vbox = lookup_widget(widget, "vbox39");		
+	gtk_container_foreach (GTK_CONTAINER (vbox),
+			       (GtkCallback) gtk_widget_destroy,
+			       NULL);
 }
 
 void

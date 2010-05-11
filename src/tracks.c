@@ -388,7 +388,7 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
-	GtkWidget *drawingarea, *range;
+	GtkWidget *drawingarea, *range, *vbox;
 	int track_zoom, width, height;
 	char *file;
 	bbox_t bbox;
@@ -400,6 +400,11 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	file = (char *) user_data;
 	
 	gtk_widget_hide(window12);
+
+	vbox = lookup_widget(window12, "vbox39");		
+	gtk_container_foreach (GTK_CONTAINER (vbox),
+			       (GtkCallback) gtk_widget_destroy,
+			       NULL);
 
 	if(loaded_track)
 		g_slist_free(loaded_track);
