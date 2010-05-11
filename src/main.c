@@ -163,7 +163,7 @@ main (int argc, char *argv[])
 		on_button1_clicked(GTK_BUTTON(window1), NULL);
 	}
 
-	window2 = create_window2();
+	window2 = glade_xml_get_widget (gladexml, "window2");
 	window3 = create_window3();
 	menu1 = glade_xml_get_widget (gladexml, "menu1");
 	
