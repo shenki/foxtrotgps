@@ -1,4 +1,27 @@
+FoxtrotGPS is an easy-to-use graphical tool that can be used
+to track the position of a GPS receiver on a map in relation to
+user-defined points of interest (POIs), a destination and waypoints,
+and tracks loaded from files or internet routing-services.
 
-Licence: GPL version 2
+FoxtrotGPS also allows internet-connected users to share their position
+with other users and send messages.
 
+For installation instructions, see the file named "INSTALL".
 
+FoxtrotGPS is Free Software; you can redistribute and/or modify it
+under the terms of the GNU General Public License version 2,
+as published by the Free Software Foundation.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.
+See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with this program; see the file COPYING. If not, see
+<http://www.gnu.org/licenses/> or write to:
+
+    The Free Software Foundation, inc.
+    51 Franklin Street, Fifth Floor
+    Boston, MA 02110-1301
+    USA
