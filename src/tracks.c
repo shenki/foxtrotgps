@@ -324,7 +324,7 @@ tracks_open_tracks_dialog()
 	
 	
 	
-	window12 = create_window12();
+	window12 = glade_xml_get_widget(gladexml, "window12");
 	gtk_widget_show(window12);
 	
 	vbox = lookup_widget(window12, "vbox39");		
@@ -399,7 +399,7 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	
 	file = (char *) user_data;
 	
-	gtk_widget_destroy(window12);
+	gtk_widget_hide(window12);
 
 	if(loaded_track)
 		g_slist_free(loaded_track);

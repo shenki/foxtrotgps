@@ -2582,7 +2582,7 @@ on_window12_delete_event               (GtkWidget       *widget,
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	window = lookup_widget(widget, "window12");
-	gtk_widget_destroy(window);
+	gtk_widget_hide(window);
 	
 	return FALSE;
 }
@@ -2595,7 +2595,7 @@ on_button37_clicked                    (GtkButton       *button,
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	widget = lookup_widget(GTK_WIDGET(button), "window12");
-	gtk_widget_destroy(widget);
+	gtk_widget_hide(widget);
 }
 
 void
