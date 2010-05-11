@@ -1387,7 +1387,7 @@ on_button20_clicked                    (GtkButton       *button,
 	GtkWidget *dialog3, *entry;
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-	dialog3 = create_dialog3();
+	dialog3 = glade_xml_get_widget (gladexml, "dialog3");
 	entry = lookup_widget(dialog3, "entry12");
 	gtk_entry_set_text(GTK_ENTRY(entry), global_track_dir);
 	
@@ -1402,7 +1402,7 @@ on_cancelbutton2_clicked               (GtkButton       *button,
 
 	dialog3 = lookup_widget(GTK_WIDGET(button), "dialog3");
 	
-	gtk_widget_destroy(dialog3);
+	gtk_widget_hide(dialog3);
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 }
@@ -1457,7 +1457,7 @@ on_okbutton2_clicked                   (GtkButton       *button,
 	
 	dialog3 = lookup_widget(GTK_WIDGET(button), "dialog3");
 	
-	gtk_widget_destroy(dialog3);
+	gtk_widget_hide(dialog3);
 }
 
 
