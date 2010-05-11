@@ -32,6 +32,8 @@ main (int argc, char *argv[])
 	{
 		{"fullscreen", 0, 0, G_OPTION_ARG_NONE, &fullscreen,
 		 "Start in fullscreen mode", NULL},
+		{"gui", 0, 0, G_OPTION_ARG_FILENAME, &gladefile,
+		 "Load the GUI from this GladeXML file", "GLADEFILE"},
                 {NULL}
 	};
 
@@ -90,7 +92,8 @@ main (int argc, char *argv[])
 	{
 		/* Developers may run into this if they're naively
 		   trying to run from the build-tree without having
-		   specifically configured the build to allow that,
+		   specifically configured the build to allow that or
+		   having passed a "--gui=..." option to the program,
 		   so we need to actually catch this error and output
 		   an informative message.
 
