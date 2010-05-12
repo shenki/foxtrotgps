@@ -1500,7 +1500,7 @@ on_item8_activate                      (GtkMenuItem     *menuitem,
 {
 	GtkWidget *dialog4;
 	
-	dialog4 = create_dialog4();
+	dialog4 = glade_xml_get_widget (gladexml, "dialog4");
 	gtk_widget_show(dialog4);
 }
 
@@ -1511,7 +1511,7 @@ on_cancelbutton3_clicked               (GtkButton       *button,
 	GtkWidget	*dialog;
 
 	dialog = lookup_widget(GTK_WIDGET(button), "dialog4");
-	gtk_widget_destroy(dialog);
+	gtk_widget_hide(dialog);
 }
 
 

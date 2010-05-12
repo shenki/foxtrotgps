@@ -303,7 +303,7 @@ cb_download_maps(GtkWidget *dialog)
 
 	download_maps(bbox, global_zoom+1, zoom_end);
 
-	gtk_widget_destroy(dialog);
+	gtk_widget_hide(dialog);
 }
 
 

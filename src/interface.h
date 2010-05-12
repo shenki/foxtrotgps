@@ -1,4 +1,3 @@
-GtkWidget* create_dialog4 (void);
 GtkWidget* create_window3 (void);
 GtkWidget* create_dialog6 (void);
 GtkWidget* create_window5 (void);
