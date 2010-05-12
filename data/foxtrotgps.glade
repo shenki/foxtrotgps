@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!DOCTYPE glade-interface SYSTEM "glade-2.0.dtd">
-<!--Generated with glade3 3.4.5 on Tue May 11 22:15:54 2010 -->
+<!--Generated with glade3 3.4.5 on Tue May 11 22:33:09 2010 -->
 <glade-interface>
   <widget class="GtkWindow" id="window1">
     <property name="title" translatable="yes">foxtrotGPS</property>
@@ -2277,6 +2277,7 @@ Set GPSD Host IP
     <property name="skip_pager_hint">True</property>
     <property name="has_separator">False</property>
     <signal name="close" handler="on_dialog1_close"/>
+    <signal name="delete_event" handler="gtk_widget_hide_on_delete"/>
     <signal name="response" handler="on_dialog1_response"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog_vbox1">
@@ -2445,6 +2446,7 @@ Set GPSD Host IP
     <property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
+    <signal name="delete_event" handler="gtk_widget_hide_on_delete"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog_vbox8">
         <property name="visible">True</property>
@@ -2706,6 +2708,7 @@ as my position</property>
     <property name="window_position">GTK_WIN_POS_CENTER_ON_PARENT</property>
     <property name="type_hint">GDK_WINDOW_TYPE_HINT_DIALOG</property>
     <property name="has_separator">False</property>
+    <signal name="delete_event" handler="gtk_widget_hide_on_delete"/>
     <child internal-child="vbox">
       <widget class="GtkVBox" id="dialog_vbox3">
         <property name="visible">True</property>
