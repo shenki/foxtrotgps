@@ -38,4 +38,5 @@ src/exif.h
 
 # Data files
 data/foxtrotgps.desktop.in
+data/foxtrotgps.glade
 
