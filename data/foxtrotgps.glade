@@ -2715,7 +2715,7 @@ as my position</property>
           </packing>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area3">
+          <widget class="GtkHButtonBox" id="dialog_action_area3">
             <property name="visible">True</property>
             <property name="layout_style">GTK_BUTTONBOX_END</property>
             <child>
