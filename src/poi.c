@@ -324,6 +324,7 @@ on_combobox_cat_changed(GtkComboBox     *combobox)
 void
 show_window6()
 {
+	GladeXML *gladexml;
 	GtkWidget *dialog;
 	GtkWidget *entry14, *entry15, *combobox2;
 
@@ -331,7 +332,12 @@ show_window6()
 	char buf[64];
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	dialog = create_window6();
+
+	gladexml = glade_xml_new (gladefile, "window6", GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+	dialog = glade_xml_get_widget (gladexml, "window6");
+	g_signal_connect_swapped (dialog, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
 	gtk_widget_show(dialog);
 	new_dialog = TRUE;
 	
