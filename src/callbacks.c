@@ -2269,6 +2269,8 @@ void
 on_button33_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
+	GladeXML *gladexml;
+
 	GtkWidget *widget;
 	GtkTextBuffer *tbuffer;
 	GtkWidget *window;
@@ -2282,7 +2284,12 @@ on_button33_clicked                    (GtkButton       *button,
 	
 	
 	
-	window = create_window10();
+        
+	gladexml = glade_xml_new (gladefile, "window10", GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+	window = glade_xml_get_widget (gladexml, "window10");
+	g_signal_connect_swapped (window, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
 	gtk_widget_show(window);
 	
 	
