@@ -764,62 +764,6 @@ create_window10 (void)
 }
 
 GtkWidget*
-create_dialog7 (void)
-{
-  GtkWidget *dialog7;
-  GtkWidget *dialog_vbox7;
-  GtkWidget *label131;
-  GtkWidget *dialog_action_area7;
-  GtkWidget *cancelbutton6;
-  GtkWidget *okbutton6;
-
-  dialog7 = gtk_dialog_new ();
-  gtk_window_set_title (GTK_WINDOW (dialog7), _("Delete POI?"));
-  gtk_window_set_type_hint (GTK_WINDOW (dialog7), GDK_WINDOW_TYPE_HINT_DIALOG);
-
-  dialog_vbox7 = GTK_DIALOG (dialog7)->vbox;
-  gtk_widget_show (dialog_vbox7);
-
-  label131 = gtk_label_new (_("Do you really want to \ndelete this Point of Interest?"));
-  gtk_widget_show (label131);
-  gtk_box_pack_start (GTK_BOX (dialog_vbox7), label131, TRUE, TRUE, 0);
-  gtk_label_set_line_wrap (GTK_LABEL (label131), TRUE);
-  gtk_misc_set_alignment (GTK_MISC (label131), 0, 0);
-  gtk_misc_set_padding (GTK_MISC (label131), 8, 8);
-
-  dialog_action_area7 = GTK_DIALOG (dialog7)->action_area;
-  gtk_widget_show (dialog_action_area7);
-  gtk_button_box_set_layout (GTK_BUTTON_BOX (dialog_action_area7), GTK_BUTTONBOX_END);
-
-  cancelbutton6 = gtk_button_new_from_stock ("gtk-cancel");
-  gtk_widget_show (cancelbutton6);
-  gtk_dialog_add_action_widget (GTK_DIALOG (dialog7), cancelbutton6, GTK_RESPONSE_CANCEL);
-  GTK_WIDGET_SET_FLAGS (cancelbutton6, GTK_CAN_DEFAULT);
-
-  okbutton6 = gtk_button_new_from_stock ("gtk-ok");
-  gtk_widget_show (okbutton6);
-  gtk_dialog_add_action_widget (GTK_DIALOG (dialog7), okbutton6, GTK_RESPONSE_OK);
-  GTK_WIDGET_SET_FLAGS (okbutton6, GTK_CAN_DEFAULT);
-
-  g_signal_connect ((gpointer) dialog7, "delete_event",
-                    G_CALLBACK (on_dialog7_delete_event),
-                    NULL);
-  g_signal_connect ((gpointer) cancelbutton6, "clicked",
-                    G_CALLBACK (on_cancelbutton6_clicked),
-                    NULL);
-
-  
-  GLADE_HOOKUP_OBJECT_NO_REF (dialog7, dialog7, "dialog7");
-  GLADE_HOOKUP_OBJECT_NO_REF (dialog7, dialog_vbox7, "dialog_vbox7");
-  GLADE_HOOKUP_OBJECT (dialog7, label131, "label131");
-  GLADE_HOOKUP_OBJECT_NO_REF (dialog7, dialog_action_area7, "dialog_action_area7");
-  GLADE_HOOKUP_OBJECT (dialog7, cancelbutton6, "cancelbutton6");
-  GLADE_HOOKUP_OBJECT (dialog7, okbutton6, "okbutton6");
-
-  return dialog7;
-}
-
-GtkWidget*
 create_win13_biggeo (void)
 {
   GtkWidget *win13_biggeo;

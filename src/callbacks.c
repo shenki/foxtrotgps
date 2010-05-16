@@ -2455,13 +2455,20 @@ void
 on_button34_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
+	GladeXML *gladexml;
 	GtkWidget *widget, *widget2;
 	poi_t *p;
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
 	p = user_data;
-	widget = create_dialog7();
+	gladexml = glade_xml_new (gladefile,
+				  "dialog7",
+				  GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+	widget = glade_xml_get_widget (gladexml, "dialog7");
+	g_signal_connect_swapped (widget, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
 	gtk_widget_show(widget);
 	
 	widget2 = lookup_widget(widget, "okbutton6");
