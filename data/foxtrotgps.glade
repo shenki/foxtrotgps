@@ -255,7 +255,7 @@
                         <property name="response_id">0</property>
                         <signal name="clicked" handler="on_button70_clicked"/>
                         <child>
-                          <widget class="GtkImage" id="image3">
+                          <widget class="GtkImage" id="image12">
                             <property name="visible">True</property>
                             <property name="stock">gtk-go-forward</property>
                           </widget>
@@ -2563,7 +2563,7 @@ Set GPSD Host IP
           </packing>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area2">
+          <widget class="GtkHButtonBox" id="dialog_action_area9">
             <property name="visible">True</property>
             <property name="layout_style">GTK_BUTTONBOX_END</property>
             <child>
@@ -2744,7 +2744,7 @@ as my position</property>
           </packing>
         </child>
         <child internal-child="action_area">
-          <widget class="GtkHButtonBox" id="dialog-action_area3">
+          <widget class="GtkHButtonBox" id="dialog_action_area3">
             <property name="visible">True</property>
             <property name="layout_style">GTK_BUTTONBOX_END</property>
             <child>
