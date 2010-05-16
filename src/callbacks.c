@@ -1811,7 +1811,7 @@ on_item14_activate                     (GtkWidget       *widget,
 	GtkWidget *dialog, *combobox;
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	dialog = create_dialog6();
+	dialog = glade_xml_get_widget (gladexml, "dialog6");
 	gtk_widget_show(dialog);
 	
 	combobox = lookup_widget(dialog, "combobox4");
@@ -1855,7 +1855,7 @@ on_cancelbutton5_clicked               (GtkButton       *button,
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
 	dialog = lookup_widget(GTK_WIDGET(button), "dialog6");
-	gtk_widget_destroy(dialog);
+	gtk_widget_hide(dialog);
 
 }
 
@@ -1874,7 +1874,7 @@ on_okbutton5_clicked                   (GtkButton       *button,
 	combobox = lookup_widget(GTK_WIDGET(button), "combobox4");
 	global_poi_cat = gtk_combo_box_get_active(GTK_COMBO_BOX(combobox));
 
-	gtk_widget_destroy(dialog);
+	gtk_widget_hide(dialog);
 	
 	widget = lookup_widget(menu1, "item20");
 	pois_shown = gtk_check_menu_item_get_active(GTK_CHECK_MENU_ITEM(widget));
@@ -1893,7 +1893,8 @@ on_dialog6_delete_event                (GtkWidget       *widget,
 {
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-  return FALSE;
+  gtk_widget_hide (widget);
+  return TRUE;
 }
 
 
