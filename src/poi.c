@@ -640,7 +640,12 @@ show_poi_detail()
 	waypoint_t *wp = g_new0(waypoint_t, 1);
 	poi_t *p, *this_poi = NULL;
 	
-	window = create_window5();
+	GladeXML *gladexml = glade_xml_new (gladefile,
+					    "window5",
+					    GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+
+	window = glade_xml_get_widget (gladexml, "window5");
 	
 	printf("screen x,y: %d %d \n",mouse_x, mouse_y);
 	lat = pixel2lat(global_zoom, global_y+mouse_y);
