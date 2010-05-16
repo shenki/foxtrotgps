@@ -93,6 +93,7 @@ typedef struct {
 
 extern GdkPixmap 	*pixmap;
 
+extern const char	*gladefile;
 extern GladeXML		*gladexml;
 
 extern GtkWidget	*window1, *window2;
