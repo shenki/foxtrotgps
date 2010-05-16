@@ -644,8 +644,9 @@ show_poi_detail()
 					    "window5",
 					    GETTEXT_PACKAGE);
 	glade_xml_signal_autoconnect (gladexml);
-
 	window = glade_xml_get_widget (gladexml, "window5");
+	g_signal_connect_swapped (window, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
 	
 	printf("screen x,y: %d %d \n",mouse_x, mouse_y);
 	lat = pixel2lat(global_zoom, global_y+mouse_y);
