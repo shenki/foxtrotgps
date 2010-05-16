@@ -21,9 +21,6 @@
 int
 main (int argc, char *argv[])
 {
-	const char *gladefile =
-		PACKAGE_DATA_DIR "/" PACKAGE "/" PACKAGE ".glade";
-
 	GError *error = NULL;
 
 	gboolean fullscreen = FALSE;

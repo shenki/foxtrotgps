@@ -6,6 +6,8 @@
 
 GdkPixmap *pixmap = NULL;
 
+const char *gladefile =
+	PACKAGE_DATA_DIR "/" PACKAGE "/" PACKAGE ".glade";
 GladeXML *gladexml = NULL;
 
 GtkWidget *window1 = NULL;
