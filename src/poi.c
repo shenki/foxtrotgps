@@ -324,6 +324,7 @@ on_combobox_cat_changed(GtkComboBox     *combobox)
 void
 show_window6()
 {
+	GladeXML *gladexml;
 	GtkWidget *dialog;
 	GtkWidget *entry14, *entry15, *combobox2;
 
@@ -331,7 +332,12 @@ show_window6()
 	char buf[64];
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	dialog = create_window6();
+
+	gladexml = glade_xml_new (gladefile, "window6", GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+	dialog = glade_xml_get_widget (gladexml, "window6");
+	g_signal_connect_swapped (dialog, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
 	gtk_widget_show(dialog);
 	new_dialog = TRUE;
 	
@@ -640,7 +646,13 @@ show_poi_detail()
 	waypoint_t *wp = g_new0(waypoint_t, 1);
 	poi_t *p, *this_poi = NULL;
 	
-	window = create_window5();
+	GladeXML *gladexml = glade_xml_new (gladefile,
+					    "window5",
+					    GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+	window = glade_xml_get_widget (gladexml, "window5");
+	g_signal_connect_swapped (window, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
 	
 	printf("screen x,y: %d %d \n",mouse_x, mouse_y);
 	lat = pixel2lat(global_zoom, global_y+mouse_y);

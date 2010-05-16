@@ -1,10 +1,5 @@
 GtkWidget* create_window3 (void);
-GtkWidget* create_dialog6 (void);
-GtkWidget* create_window5 (void);
-GtkWidget* create_window6 (void);
 GtkWidget* create_window8 (void);
-GtkWidget* create_window10 (void);
-GtkWidget* create_dialog7 (void);
 GtkWidget* create_win13_biggeo (void);
 GtkWidget* create_dialog_geocode (void);
 GtkWidget* create_dialog_image_data (void);
