@@ -83,7 +83,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button76">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Show Info</property>
+                        <property name="tooltip" translatable="yes">Show Info</property>
                         <property name="stock_id">gtk-info</property>
                         <signal name="clicked" handler="on_button76_clicked"/>
                       </widget>
@@ -94,7 +94,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button53">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Fullscreen (F11 or Space)</property>
+                        <property name="tooltip" translatable="yes">Fullscreen (F11 or Space)</property>
                         <property name="stock_id">gtk-fullscreen</property>
                         <signal name="clicked" handler="on_button1_clicked"/>
                       </widget>
@@ -105,7 +105,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button54">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Zoom in</property>
+                        <property name="tooltip" translatable="yes">Zoom in</property>
                         <property name="stock_id">gtk-zoom-in</property>
                         <signal name="clicked" handler="on_button4_clicked"/>
                       </widget>
@@ -116,7 +116,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button55">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Zoom out</property>
+                        <property name="tooltip" translatable="yes">Zoom out</property>
                         <property name="stock_id">gtk-zoom-out</property>
                         <signal name="clicked" handler="on_button5_clicked"/>
                       </widget>
@@ -127,7 +127,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button56">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Autocenter On</property>
+                        <property name="tooltip" translatable="yes">Autocenter On</property>
                         <property name="stock_id">gtk-jump-to</property>
                         <signal name="clicked" handler="on_button3_clicked"/>
                       </widget>
@@ -138,7 +138,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button57">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Next map repo</property>
+                        <property name="tooltip" translatable="yes">Next map repo</property>
                         <property name="stock_id">gtk-go-forward</property>
                         <signal name="clicked" handler="on_button57_clicked"/>
                       </widget>
@@ -149,7 +149,7 @@
                     <child>
                       <widget class="GtkToolButton" id="button58">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">Previous map repo</property>
+                        <property name="tooltip" translatable="yes">Previous map repo</property>
                         <property name="stock_id">gtk-go-back</property>
                         <signal name="clicked" handler="on_button58_clicked"/>
                       </widget>
