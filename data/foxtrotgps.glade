@@ -3822,6 +3822,7 @@ Sport</property>
               </widget>
               <packing>
                 <property name="expand">False</property>
+                <property name="homogeneous">False</property>
               </packing>
             </child>
             <child>
@@ -3842,6 +3843,7 @@ Sport</property>
               </widget>
               <packing>
                 <property name="expand">False</property>
+                <property name="homogeneous">False</property>
               </packing>
             </child>
           </widget>
