@@ -858,13 +858,19 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
                                         gpointer         user_data)
 {	
 	GSList *list;
+	GladeXML *gladexml;
 	GtkWidget *label, *window, *friend_box, *widget, *hseparator;
 	gchar buffer[8192];
 	gboolean friend_found = FALSE;
 	float lat, lon,lat_deg,lon_deg;
 	float distance=0;
 
-	window = create_window8();
+	gladexml = glade_xml_new (gladefile, "window8", GETTEXT_PACKAGE);
+	glade_xml_signal_autoconnect (gladexml);
+	window = glade_xml_get_widget (gladexml, "window8");
+	g_signal_connect_swapped (window, "destroy",
+				  G_CALLBACK (g_object_unref), gladexml);
+
 	widget = lookup_widget(window, "vbox35");
 	gtk_widget_show (window);
 
