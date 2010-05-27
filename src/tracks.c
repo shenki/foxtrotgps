@@ -388,7 +388,7 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
-	GtkWidget *drawingarea, *range, *vbox;
+	GtkWidget *drawingarea, *range;
 	int track_zoom, width, height;
 	char *file;
 	bbox_t bbox;
@@ -398,13 +398,29 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	height = drawingarea->allocation.height;
 	
 	file = (char *) user_data;
-	
-	gtk_widget_hide(window12);
 
-	vbox = lookup_widget(window12, "vbox39");		
-	gtk_container_foreach (GTK_CONTAINER (vbox),
-			       (GtkCallback) gtk_widget_destroy,
-			       NULL);
+	if (widget && window12) {
+		/* Note that this function is also called from
+		   geo_photos_geocode_track_select_dialog(),
+		   not just as a GTK+ callback!
+
+		   In this case, all arguments except for user_data
+		   are NULL and we have not been called as a result of
+		   anything actually involving window12, and we should
+		   avoid messing with it. In fact, we *must* avoid it:
+		   the window12 object may not even exist, since it's
+		   created only on demand.
+		*/
+
+		GtkWidget *vbox;
+
+		gtk_widget_hide(window12);
+
+		vbox = lookup_widget(window12, "vbox39");		
+		gtk_container_foreach (GTK_CONTAINER (vbox),
+				       (GtkCallback) gtk_widget_destroy,
+				       NULL);
+	}
 
 	if(loaded_track)
 		g_slist_free(loaded_track);
