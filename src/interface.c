@@ -25,45 +25,6 @@
   g_object_set_data (G_OBJECT (component), name, widget)
 
 GtkWidget*
-create_win13_biggeo (void)
-{
-  GtkWidget *win13_biggeo;
-  GtkWidget *eventbox2;
-  GtkWidget *drawingarea3;
-
-  win13_biggeo = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (win13_biggeo), _("GeoPhoto"));
-  gtk_window_set_position (GTK_WINDOW (win13_biggeo), GTK_WIN_POS_MOUSE);
-  gtk_window_set_type_hint (GTK_WINDOW (win13_biggeo), GDK_WINDOW_TYPE_HINT_MENU);
-
-  eventbox2 = gtk_event_box_new ();
-  gtk_widget_show (eventbox2);
-  gtk_container_add (GTK_CONTAINER (win13_biggeo), eventbox2);
-
-  drawingarea3 = gtk_drawing_area_new ();
-  gtk_widget_show (drawingarea3);
-  gtk_container_add (GTK_CONTAINER (eventbox2), drawingarea3);
-  gtk_widget_set_size_request (drawingarea3, 640, 480);
-
-  g_signal_connect ((gpointer) eventbox2, "button_release_event",
-                    G_CALLBACK (on_eventbox2_button_release_event),
-                    NULL);
-  g_signal_connect ((gpointer) drawingarea3, "configure_event",
-                    G_CALLBACK (on_drawingarea3_configure_event),
-                    NULL);
-  g_signal_connect ((gpointer) drawingarea3, "expose_event",
-                    G_CALLBACK (on_drawingarea3_expose_event),
-                    NULL);
-
-  
-  GLADE_HOOKUP_OBJECT_NO_REF (win13_biggeo, win13_biggeo, "win13_biggeo");
-  GLADE_HOOKUP_OBJECT (win13_biggeo, eventbox2, "eventbox2");
-  GLADE_HOOKUP_OBJECT (win13_biggeo, drawingarea3, "drawingarea3");
-
-  return win13_biggeo;
-}
-
-GtkWidget*
 create_dialog_geocode (void)
 {
   GtkWidget *dialog_geocode;
