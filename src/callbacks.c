@@ -2957,7 +2957,7 @@ on_eventbox2_button_release_event      (GtkWidget       *widget,
 	
 	window = lookup_widget(widget, "win13_biggeo");
 	
-	gtk_widget_hide(window);
+	gtk_widget_destroy(window);
 	
   return FALSE;
 }
