@@ -220,7 +220,8 @@ geo_photos_open_dialog_photo_correlate()
 
 	if(!dialog_photo_correlate)
 	{
-		dialog_photo_correlate = create_dialog_geocode();
+		dialog_photo_correlate =
+			glade_xml_get_widget (gladexml, "dialog_geocode");
 		
 		
 		tmp   = gconf_client_get_int(global_gconfclient, GCONF"/geocode_timezone", NULL);
