@@ -251,7 +251,8 @@ geo_photos_open_dialog_image_data()
 
 	if(!dialog_image_data)
 	{
-		dialog_image_data = create_dialog_image_data();
+		dialog_image_data = glade_xml_get_widget (gladexml,
+							  "dialog_image_data");
 		gtk_widget_show(dialog_image_data);
 		
 		combobox = lookup_widget(dialog_image_data, "combobox7");
