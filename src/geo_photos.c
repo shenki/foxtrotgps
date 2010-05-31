@@ -677,10 +677,15 @@ void
 geo_photo_close_dialog_photo_correlate()
 {
 	gchar *command_line;
+	GtkWidget *label;
 
 	prepare_perl();
 	
-	dialog_geocode_result = create_dialog_geocode_result();
+	dialog_geocode_result = glade_xml_get_widget (gladexml,
+						      "dialog_geocode_result");
+
+	label = lookup_widget(dialog_geocode_result, "label177");
+	gtk_label_set_text(GTK_LABEL(label), _("Working...."));
 
 	gtk_widget_show(dialog_geocode_result);
 	gtk_widget_hide(dialog_photo_correlate);
