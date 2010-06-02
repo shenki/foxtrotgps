@@ -300,7 +300,7 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 
 	filter = gtk_file_filter_new ();
 	gtk_file_filter_add_pattern (filter, "*.log");
-	gtk_file_filter_set_name (filter, "FoxtrotGPS log files (*.log)");
+	gtk_file_filter_set_name (filter, PACKAGE_NAME " log files (*.log)");
 	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(widget), filter);
 
 	gtk_file_chooser_set_filter (GTK_FILE_CHOOSER(widget), filter);
@@ -938,7 +938,7 @@ command = g_strdup(
 "	}\n"
 "	else\n"
 "	{\n"
-"		print STDERR \"Not adding to FoxtrotGPS database\\n\";\n"
+"		print STDERR \"Not adding to " PACKAGE_NAME " database\\n\";\n"
 "	}\n"
 "\n"
 "}\n"

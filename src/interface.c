@@ -273,7 +273,7 @@ create_window1 (void)
   tooltips = gtk_tooltips_new ();
 
   window1 = gtk_window_new (GTK_WINDOW_TOPLEVEL);
-  gtk_window_set_title (GTK_WINDOW (window1), _("FoxtrotGPS"));
+  gtk_window_set_title (GTK_WINDOW (window1), _(PACKAGE_NAME));
   gtk_window_set_default_size (GTK_WINDOW (window1), 700, 480);
 
   vbox1 = gtk_vbox_new (FALSE, 0);
@@ -1224,7 +1224,7 @@ create_window1 (void)
   gtk_misc_set_alignment (GTK_MISC (label201), 0, 0.5);
   gtk_misc_set_padding (GTK_MISC (label201), 2, 2);
 
-  label117 = gtk_label_new (_("<small><i>FoxtrotGPS Version:\nDeveloper: Marcus Bauer &amp; Community</i></small>"));
+  label117 = gtk_label_new (_("<small><i>" PACKAGE_NAME " Version:\nDeveloper: Marcus Bauer &amp; Community</i></small>"));
   gtk_widget_show (label117);
   gtk_box_pack_start (GTK_BOX (vbox2), label117, FALSE, FALSE, 0);
   gtk_label_set_use_markup (GTK_LABEL (label117), TRUE);
@@ -4152,7 +4152,7 @@ create_dialog_geocode (void)
   gtk_widget_show (label160);
   gtk_box_pack_start (GTK_BOX (hbox38), label160, FALSE, TRUE, 0);
 
-  checkbutton14 = gtk_check_button_new_with_mnemonic (_("  add photos to the FoxtrotGPS database"));
+  checkbutton14 = gtk_check_button_new_with_mnemonic (_("  add photos to the " PACKAGE_NAME " database"));
   gtk_widget_show (checkbutton14);
   gtk_box_pack_start (GTK_BOX (hbox38), checkbutton14, FALSE, FALSE, 0);
   gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (checkbutton14), TRUE);
