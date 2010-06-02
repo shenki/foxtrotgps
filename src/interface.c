@@ -2207,7 +2207,6 @@ create_dialog1 (void)
   GtkWidget *dialog1;
   GtkWidget *dialog_vbox1;
   GtkWidget *vbox3;
-  GtkWidget *textview3;
   GtkWidget *label26;
   GtkWidget *entry5;
   GtkWidget *label136;
@@ -2240,16 +2239,6 @@ create_dialog1 (void)
   gtk_widget_show (vbox3);
   gtk_box_pack_start (GTK_BOX (dialog_vbox1), vbox3, FALSE, TRUE, 0);
   gtk_container_set_border_width (GTK_CONTAINER (vbox3), 8);
-
-  textview3 = gtk_text_view_new ();
-  gtk_widget_show (textview3);
-  gtk_box_pack_start (GTK_BOX (vbox3), textview3, TRUE, TRUE, 5);
-  gtk_text_view_set_editable (GTK_TEXT_VIEW (textview3), FALSE);
-  gtk_text_view_set_accepts_tab (GTK_TEXT_VIEW (textview3), FALSE);
-  gtk_text_view_set_justification (GTK_TEXT_VIEW (textview3), GTK_JUSTIFY_CENTER);
-  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (textview3), GTK_WRAP_WORD);
-  gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview3), FALSE);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview3)), _("You can find more information about repositories on\n\nhttp://www.foxtrotgps.org/\n"), -1);
 
   label26 = gtk_label_new (_("<b>Name for the new Repository</b>"));
   gtk_widget_show (label26);
@@ -2339,7 +2328,6 @@ create_dialog1 (void)
   GLADE_HOOKUP_OBJECT_NO_REF (dialog1, dialog1, "dialog1");
   GLADE_HOOKUP_OBJECT_NO_REF (dialog1, dialog_vbox1, "dialog_vbox1");
   GLADE_HOOKUP_OBJECT (dialog1, vbox3, "vbox3");
-  GLADE_HOOKUP_OBJECT (dialog1, textview3, "textview3");
   GLADE_HOOKUP_OBJECT (dialog1, label26, "label26");
   GLADE_HOOKUP_OBJECT (dialog1, entry5, "entry5");
   GLADE_HOOKUP_OBJECT (dialog1, label136, "label136");
@@ -3838,7 +3826,6 @@ create_dialog8 (void)
   GtkWidget *dialog8;
   GtkWidget *dialog_vbox8;
   GtkWidget *vbox41;
-  GtkWidget *textview4;
   GtkWidget *label144;
   GtkWidget *entry24;
   GtkWidget *label145;
@@ -3864,16 +3851,6 @@ create_dialog8 (void)
   gtk_widget_show (vbox41);
   gtk_box_pack_start (GTK_BOX (dialog_vbox8), vbox41, TRUE, TRUE, 0);
   gtk_container_set_border_width (GTK_CONTAINER (vbox41), 8);
-
-  textview4 = gtk_text_view_new ();
-  gtk_widget_show (textview4);
-  gtk_box_pack_start (GTK_BOX (vbox41), textview4, TRUE, TRUE, 5);
-  gtk_text_view_set_editable (GTK_TEXT_VIEW (textview4), FALSE);
-  gtk_text_view_set_accepts_tab (GTK_TEXT_VIEW (textview4), FALSE);
-  gtk_text_view_set_justification (GTK_TEXT_VIEW (textview4), GTK_JUSTIFY_CENTER);
-  gtk_text_view_set_wrap_mode (GTK_TEXT_VIEW (textview4), GTK_WRAP_WORD);
-  gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview4), FALSE);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview4)), _("You can find more information about repositories on\n\nhttp://www.foxtrotgps.org/\n"), -1);
 
   label144 = gtk_label_new (_("<b>Repository Name</b>"));
   gtk_widget_show (label144);
@@ -3953,7 +3930,6 @@ create_dialog8 (void)
   GLADE_HOOKUP_OBJECT_NO_REF (dialog8, dialog8, "dialog8");
   GLADE_HOOKUP_OBJECT_NO_REF (dialog8, dialog_vbox8, "dialog_vbox8");
   GLADE_HOOKUP_OBJECT (dialog8, vbox41, "vbox41");
-  GLADE_HOOKUP_OBJECT (dialog8, textview4, "textview4");
   GLADE_HOOKUP_OBJECT (dialog8, label144, "label144");
   GLADE_HOOKUP_OBJECT (dialog8, entry24, "entry24");
   GLADE_HOOKUP_OBJECT (dialog8, label145, "label145");
@@ -4068,7 +4044,7 @@ create_dialog_geocode (void)
   gtk_text_view_set_cursor_visible (GTK_TEXT_VIEW (textview5), FALSE);
   gtk_text_view_set_pixels_above_lines (GTK_TEXT_VIEW (textview5), 3);
   gtk_text_view_set_left_margin (GTK_TEXT_VIEW (textview5), 5);
-  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview5)), _("Geocode your photos by correlating them with a gps track. For a tutorial see on http://www.foxtrotgps.org\n"), -1);
+  gtk_text_buffer_set_text (gtk_text_view_get_buffer (GTK_TEXT_VIEW (textview5)), _("Geocode your photos by correlating them with a gps track.\n"), -1);
 
   table7 = gtk_table_new (5, 3, FALSE);
   gtk_widget_show (table7);
