@@ -22,7 +22,7 @@ msgid "Couldn't find pixmap file: %s"
 msgstr ""
 
 #: ../src/interface.c:276
-msgid "foxtrotGPS"
+msgid "FoxtrotGPS"
 msgstr ""
 
 #: ../src/interface.c:385
@@ -295,7 +295,7 @@ msgstr ""
 
 #: ../src/interface.c:1227
 msgid ""
-"<small><i>foxtrotGPS Version:\n"
+"<small><i>FoxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
 
@@ -879,7 +879,7 @@ msgid "Timezone:"
 msgstr ""
 
 #: ../src/interface.c:4179
-msgid "  add photos to the foxtrotGPS database"
+msgid "  add photos to the FoxtrotGPS database"
 msgstr ""
 
 #: ../src/interface.c:4268

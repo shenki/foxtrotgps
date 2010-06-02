@@ -22,8 +22,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "pixmap-tiedostoa ei löydy: %s"
 
 #: ../src/interface.c:276
-msgid "foxtrotGPS"
-msgstr "foxtrotGPS"
+msgid "FoxtrotGPS"
+msgstr "FoxtrotGPS"
 
 #: ../src/interface.c:385
 msgid "Show Info"
@@ -296,10 +296,10 @@ msgstr "<big><b>Asetukset</b></big>   <small>[4/4]</small>"
 
 #: ../src/interface.c:1227
 msgid ""
-"<small><i>foxtrotGPS Version:\n"
+"<small><i>FoxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<small><i>foxtrotGPS-versio:\n"
+"<small><i>FoxtrotGPS-versio:\n"
 "Kehittäjä: Marcus Bauer &amp; yhteisö</i></small>"
 
 #: ../src/interface.c:1249
@@ -892,7 +892,7 @@ msgid "Timezone:"
 msgstr "Aikavyöhyke:"
 
 #: ../src/interface.c:4179
-msgid "  add photos to the foxtrotGPS database"
+msgid "  add photos to the FoxtrotGPS database"
 msgstr ""
 
 #: ../src/interface.c:4268

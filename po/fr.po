@@ -21,8 +21,8 @@ msgid "Couldn't find pixmap file: %s"
 msgstr "Fichier %s des images introuvable"
 
 #: ../src/interface.c:276
-msgid "foxtrotGPS"
-msgstr "foxtrotGPS"
+msgid "FoxtrotGPS"
+msgstr "FoxtrotGPS"
 
 #: ../src/interface.c:385
 #, fuzzy
@@ -318,10 +318,10 @@ msgstr ""
 #: ../src/interface.c:1227
 #, fuzzy
 msgid ""
-"<small><i>foxtrotGPS Version:\n"
+"<small><i>FoxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>Version de foxtrotGPS :\n"
+"<i>Version de FoxtrotGPS :\n"
 "Développeur : Marcus Bauer</i>"
 
 #: ../src/interface.c:1249
@@ -929,7 +929,7 @@ msgid "Timezone:"
 msgstr "Durée : "
 
 #: ../src/interface.c:4179
-msgid "  add photos to the foxtrotGPS database"
+msgid "  add photos to the FoxtrotGPS database"
 msgstr ""
 
 #: ../src/interface.c:4268

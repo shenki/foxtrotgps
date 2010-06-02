@@ -211,7 +211,7 @@ init()
 	
 	widget = lookup_widget(window1, "label117");
 #ifdef VERSION
-	gtk_label_set_label(GTK_LABEL(widget), "<i><small>foxtrotGPS version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
+	gtk_label_set_label(GTK_LABEL(widget), "<i><small>FoxtrotGPS version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
 #endif
 
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_host",&err);
