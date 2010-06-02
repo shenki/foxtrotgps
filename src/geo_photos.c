@@ -100,7 +100,7 @@ paint_photos()
 	if(!photo_icon)
 	{
 		photo_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/foxtrotgps-photo.png", 24,24,
+			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-photo.png", 24,24,
 			&error);
 	}
 
@@ -684,7 +684,7 @@ geo_photo_close_dialog_photo_correlate()
 	gtk_widget_show(dialog_geocode_result);
 	gtk_widget_hide(dialog_photo_correlate);
 
-	command_line = g_strdup_printf("/tmp/foxtrotgps_geocode.pl '%s' '%s' '%d' '%d' '%d'", 
+	command_line = g_strdup_printf("/tmp/" PACKAGE "_geocode.pl '%s' '%s' '%d' '%d' '%d'", 
 					geocode_trackname, 
 					geocode_photodir,
 					geocode_timezone,
@@ -761,7 +761,7 @@ printf("commandline in thread: %s\n", command_line);
 	
 	if(!res)
 	{
-		fprintf (stderr, "Error running foxtrotgps_geocode.pl: %s\n", err->message);
+		fprintf (stderr, "Error running " PACKAGE "_geocode.pl: %s\n", err->message);
 		g_error_free (err);
 	}
 	
@@ -834,7 +834,7 @@ command = g_strdup(
 "$correction    = $ARGV[3];\n"
 "$do_insert2db  = $ARGV[4];\n"
 "\n"
-"$db = \"~/.foxtrotgps/geophoto.db\";\n"
+"$db = \"~/." PACKAGE "/geophoto.db\";\n"
 "\n"
 "#===================  MAIN  ====================\n"
 "\n"
@@ -1117,13 +1117,13 @@ command = g_strdup(
 }
 
 
-fp = fopen("/tmp/foxtrotgps_geocode.pl", "w+");
+fp = fopen("/tmp/" PACKAGE "_geocode.pl", "w+");
 if (fp==0) 
 	printf("could not open tmp\n");	
 
 fprintf(fp, "%s", command);
 fclose(fp);
 
-unused = system ("chmod 700 /tmp/foxtrotgps_geocode.pl");
+unused = system ("chmod 700 /tmp/" PACKAGE "_geocode.pl");
 
 }

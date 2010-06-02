@@ -104,7 +104,7 @@ init()
 	char *str = NULL;
 	
 	
-	foxtrotgps_dir = g_strconcat(global_home_dir, "/.foxtrotgps", NULL);
+	foxtrotgps_dir = g_strconcat(global_home_dir, "/." PACKAGE, NULL);
 	g_mkdir(foxtrotgps_dir, 0700);
 
 	repoconfig__create_dropdown();
