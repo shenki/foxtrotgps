@@ -8,7 +8,7 @@
 
 #define MSG_SEND_URL "http://tangogps.org/friends/msg_send.php"
 
-#define GCONF "/apps/foxtrotgps"
+#define GCONF "/apps/" PACKAGE
 #define TILESIZE 256
 #define MAP_PAGE 0
 #define FRIENDS_PAGE 1
