@@ -233,7 +233,7 @@ init()
 	
 	timer = g_timeout_add (1000,cb_gps_timer,data);
 	
-	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PNAME ".png" ,&err);
+	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PACKAGE ".png" ,&err);
 	if (err)
 	{
 		fprintf (stderr, "Failed to load pixbuf file:  %s\n", err->message);

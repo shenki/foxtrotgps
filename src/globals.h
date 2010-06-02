@@ -10,7 +10,6 @@
 
 #define GCONF "/apps/foxtrotgps"
 #define TILESIZE 256
-#define PNAME "foxtrotgps"
 #define MAP_PAGE 0
 #define FRIENDS_PAGE 1
 
