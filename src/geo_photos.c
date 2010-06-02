@@ -3,6 +3,8 @@
 #  include <config.h>
 #endif
 
+#define _XOPEN_SOURCE
+
 #include "globals.h"
 #include "geo_photos.h"
 #include "converter.h"
