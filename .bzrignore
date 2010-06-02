@@ -24,3 +24,4 @@ configure
 po/stamp-it
 po/.intltool-merge-cache
 data/foxtrotgps.desktop
+po/Makefile.in.in

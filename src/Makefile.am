@@ -1,18 +1,16 @@
 ## Process this file with automake to produce Makefile.in
 
-INCLUDES = \
+AM_CPPFLAGS = \
+	-DPACKAGE_DATA_DIR="\"$(datadir)\"" \
+	-DPACKAGE_PIXMAPS_DIR="\"$(datadir)/pixmaps\"" \
+	-DPACKAGE_LOCALE_DIR="\"$(localedir)\"" \
+	\
 	$(GTK_CFLAGS) \
 	$(GCONF_CFLAGS) \
 	$(LIBCURL_CFLAGS) \
 	$(SQLITE_CFLAGS) \
 	$(LIBEXIF_CFLAGS) \
 	$(LIBXML_CFLAGS)
-
-AM_CFLAGS =\
-	 -DRELEASE -DHAVE_CONFIG_H\
-	 -Wall\
-	 -O2\
-	 -g
 
 bin_PROGRAMS = foxtrotgps
 
@@ -60,4 +58,5 @@ foxtrotgps_LDADD =  \
 	$(LIBCURL_LIBS) \
 	$(SQLITE_LIBS) \
 	$(LIBEXIF_LIBS) \
-	$(LIBXML_LIBS)
+	$(LIBXML_LIBS) \
+	-lm
