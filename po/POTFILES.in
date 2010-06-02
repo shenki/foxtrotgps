@@ -36,4 +36,6 @@ src/tracks.h
 src/exif.c
 src/exif.h
 
+# Data files
+data/foxtrotgps.desktop.in
 
