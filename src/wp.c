@@ -58,7 +58,7 @@ do_paint_wp()
 	if(!wp_icon)
 	{
 		wp_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/foxtrotgps-wp.png", 36,36,
+			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-wp.png", 36,36,
 			&error);
 		if (error)
 		{
@@ -259,7 +259,7 @@ do_paint_myposition()
 	if(!myposition_icon)
 	{
 		myposition_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/foxtrotgps-myposition.png", 36,36,
+			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-myposition.png", 36,36,
 			&error);
 		if (error)
 		{

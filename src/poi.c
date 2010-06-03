@@ -129,7 +129,7 @@ paint_pois()
 	if(!photo_icon)
 	{
 		photo_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/foxtrotgps-poi.png", 25,25,
+			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-poi.png", 25,25,
 			&error);
 	}
 

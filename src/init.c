@@ -125,7 +125,7 @@ init()
 	char *str = NULL;
 	
 	
-	foxtrotgps_dir = g_strconcat(global_home_dir, "/.foxtrotgps", NULL);
+	foxtrotgps_dir = g_strconcat(global_home_dir, "/." PACKAGE, NULL);
 	g_mkdir(foxtrotgps_dir, 0700);
 
 	repoconfig__create_dropdown();
@@ -232,7 +232,7 @@ init()
 	
 	widget = lookup_widget(window1, "label117");
 #ifdef VERSION
-	gtk_label_set_label(GTK_LABEL(widget), "<i><small>FoxtrotGPS version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
+	gtk_label_set_label(GTK_LABEL(widget), "<i><small>" PACKAGE_NAME " version: " VERSION "\nDeveloper: Marcus Bauer &amp; community</small></i>");
 #endif
 
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_host",&err);
@@ -254,7 +254,7 @@ init()
 	
 	timer = g_timeout_add (1000,cb_gps_timer,data);
 	
-	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PNAME ".png" ,&err);
+	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PACKAGE ".png" ,&err);
 	if (err)
 	{
 		fprintf (stderr, "Failed to load pixbuf file:  %s\n", err->message);
@@ -418,8 +418,8 @@ repoconfig__set_current_list_pointer()
 		
 		printf("Resetting repo_name and exiting now.\n\n");
 		printf("If problem persists after restart, \n");
-		printf("execute in a terminal: gconftool-2 -u /apps/foxtrotgps/repos");
-		unused = system("gconftool-2 -u /apps/foxtrotgps/repo_name");
+		printf("execute in a terminal: gconftool-2 -u " GCONF "/repos");
+		unused = system("gconftool-2 -u " GCONF "/repo_name");
 		exit(EXIT_FAILURE);		
 	}
 }
