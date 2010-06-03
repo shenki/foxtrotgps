@@ -304,7 +304,7 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 
 	filter = gtk_file_filter_new ();
 	gtk_file_filter_add_pattern (filter, "*.log");
-	gtk_file_filter_set_name (filter, "foxtrotGPS log files (*.log)");
+	gtk_file_filter_set_name (filter, "FoxtrotGPS log files (*.log)");
 	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(widget), filter);
 
 	gtk_file_chooser_set_filter (GTK_FILE_CHOOSER(widget), filter);
@@ -818,7 +818,7 @@ command = g_strdup(
 "# (C)2008 Marcus Bauer, License: GPLv2, marus.bauer@gmail.com\n"
 "\n"
 "#\n"
-"# helper for foxtrotGPS to geocode photos\n"
+"# helper for FoxtrotGPS to geocode photos\n"
 "#\n"
 "\n"
 "# needs: gpscorrelate, sqlite3, jhead\n"
@@ -947,7 +947,7 @@ command = g_strdup(
 "	}\n"
 "	else\n"
 "	{\n"
-"		print STDERR \"Not adding to foxtrotGPS database\\n\";\n"
+"		print STDERR \"Not adding to FoxtrotGPS database\\n\";\n"
 "	}\n"
 "\n"
 "}\n"

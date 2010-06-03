@@ -3,7 +3,7 @@
 <!--Generated with glade3 3.4.5 on Mon May 31 00:53:06 2010 -->
 <glade-interface>
   <widget class="GtkWindow" id="window1">
-    <property name="title" translatable="yes">foxtrotGPS</property>
+    <property name="title" translatable="yes">FoxtrotGPS</property>
     <property name="default_width">700</property>
     <property name="default_height">480</property>
     <signal name="delete_event" handler="on_window1_delete_event"/>
@@ -1478,7 +1478,7 @@ Before first use register them by clicking on the button below.</property>
                                     <property name="xalign">0.0099999997764825821</property>
                                     <property name="yalign">0</property>
                                     <property name="ypad">4</property>
-                                    <property name="label" translatable="yes">&lt;small&gt;&lt;i&gt;foxtrotGPS Version:
+                                    <property name="label" translatable="yes">&lt;small&gt;&lt;i&gt;FoxtrotGPS Version:
 Developer: Marcus Bauer &amp;amp; Community&lt;/i&gt;&lt;/small&gt;</property>
                                     <property name="use_markup">True</property>
                                   </widget>
@@ -5105,7 +5105,7 @@ gnuite.com</property>
                   <widget class="GtkCheckButton" id="checkbutton14">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
-                    <property name="label" translatable="yes">add photos to the foxtrotGPS database</property>
+                    <property name="label" translatable="yes">add photos to the FoxtrotGPS database</property>
                     <property name="response_id">0</property>
                     <property name="active">True</property>
                     <property name="draw_indicator">True</property>
