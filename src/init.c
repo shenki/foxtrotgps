@@ -414,7 +414,7 @@ repoconfig__set_current_list_pointer()
 		
 		printf("Resetting repo_name and exiting now.\n\n");
 		printf("If problem persists after restart, \n");
-		printf("execute in a terminal: gconftool-2 -u " GCONF "/repos");
+		printf("execute in a terminal: gconftool-2 -u " GCONF "/repos\n");
 		unused = system("gconftool-2 -u " GCONF "/repo_name");
 		exit(EXIT_FAILURE);		
 	}
