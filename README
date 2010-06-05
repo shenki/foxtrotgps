@@ -8,6 +8,28 @@ with other users and send messages.
 
 For installation instructions, see the file named "INSTALL".
 
+Note that the following packages must be installed before this one
+can be built or installed:
+
+    * pkg-config <http://pkg-config.freedesktop.org/>
+    * GLib 2.x <http://www.gtk.org/>
+    * GTK+ 2.x <http://www.gtk.org/>
+    * libglade 2.x <http://ftp.acc.umu.se/pub/GNOME/sources/libglade/2.6/>
+    * GConf 2.x <http://www.gnome.org/projects/gconf/>
+    * libcurl <http://curl.haxx.se/>
+    * SQLite 3 <http://www.sqlite.org/>
+    * libexif <http://libexif.sourceforge.net/>
+    * libxml2 <http://xmlsoft.org/>
+    * libgps >= 2.90 <http://gpsd.berlios.de/>
+
+In order to make use of the photo-geotagging features in FoxtrotGPS,
+the following additional packages must also be installed for use at
+run-time:
+
+    * gpscorrelate <http://freefoote.dview.net/linux_gpscorr.html>
+    * jhead <http://www.sentex.net/~mwandel/jhead/>
+
+
 FoxtrotGPS is Free Software; you can redistribute and/or modify it
 under the terms of the GNU General Public License version 2,
 as published by the Free Software Foundation.
