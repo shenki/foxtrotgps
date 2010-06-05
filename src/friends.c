@@ -966,7 +966,7 @@ create_msg_box(msg_t *m)
 	
 	if(m->incoming)
 	{
-		button = gtk_button_new_with_mnemonic (_("  Reply  "));
+		button = gtk_button_new_with_mnemonic (_("Reply"));
 		gtk_widget_show (button);
 		gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 2);
 		
@@ -974,7 +974,7 @@ create_msg_box(msg_t *m)
 					G_CALLBACK (on_msg_friend_clicked),
 					(gpointer) m->from);
 					
-		button = gtk_button_new_with_mnemonic (_("  Go To  "));
+		button = gtk_button_new_with_mnemonic (_("Go To"));
 		gtk_widget_show (button);
 		gtk_box_pack_start (GTK_BOX (vbox), button, FALSE, FALSE, 2);
 		
