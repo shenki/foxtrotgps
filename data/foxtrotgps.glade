@@ -1610,7 +1610,7 @@ download of missing tiles into cache</property>
                                                     <property name="visible">True</property>
                                                     <property name="can_focus">True</property>
                                                     <property name="receives_default">True</property>
-                                                    <property name="label" translatable="yes">New</property>
+                                                    <property name="label" translatable="yes">New...</property>
                                                     <property name="response_id">0</property>
                                                     <signal name="clicked" handler="on_button7_clicked"/>
                                                   </widget>
