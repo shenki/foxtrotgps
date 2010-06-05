@@ -2669,8 +2669,8 @@ next point</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">Set point
-as my position</property>
+                    <property name="label" translatable="yes">Set point as
+my position</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button52_clicked"/>
                   </widget>
