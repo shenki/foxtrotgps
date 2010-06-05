@@ -4457,7 +4457,7 @@ gnuite.com</property>
                   <widget class="GtkLabel" id="label194">
                     <property name="height_request">8</property>
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">	</property>
+                    <property name="label" translatable="yes"></property>
                   </widget>
                   <packing>
                     <property name="left_attach">1</property>
