@@ -1432,7 +1432,7 @@ Before first use register them by clicking on the button below.</property>
                         <child>
                           <widget class="GtkLabel" id="label74">
                             <property name="visible">True</property>
-                            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Tracks&lt;/b&gt;&lt;/big&gt;    &lt;small&gt;[3/4]&lt;/small&gt;</property>
+                            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Tracks&lt;/b&gt;&lt;/big&gt;   &lt;small&gt;[3/4]&lt;/small&gt;</property>
                             <property name="use_markup">True</property>
                           </widget>
                           <packing>
