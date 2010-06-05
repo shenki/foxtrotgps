@@ -2917,7 +2917,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton2">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+1 zoom level</property>
+                            <property name="label" translatable="yes">+ 1 zoom level</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                           </widget>
@@ -2930,7 +2930,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton3">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+2 zoom levels</property>
+                            <property name="label" translatable="yes">+ 2 zoom levels</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -2945,7 +2945,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton4">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+3 zoom levels</property>
+                            <property name="label" translatable="yes">+ 3 zoom levels</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -2960,7 +2960,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton5">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+4 zoom levels</property>
+                            <property name="label" translatable="yes">+ 4 zoom levels (~25MB)</property>
                             <property name="response_id">0</property>
                             <property name="active">True</property>
                             <property name="draw_indicator">True</property>
@@ -2976,7 +2976,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton6">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+5 zoom levels</property>
+                            <property name="label" translatable="yes">+ 5 zoom levels (~100MB)</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -2991,7 +2991,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton7">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+6 zoom levels</property>
+                            <property name="label" translatable="yes">+ 6 zoom levels (~400MB)</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
