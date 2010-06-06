@@ -7,10 +7,32 @@ Software Foundation, Inc.
 This file is free documentation; the Free Software Foundation gives
 unlimited permission to copy, distribute and modify it.
 
+Prerequisites
+=============
+
+The following packages must be installed before this one can be built
+or installed:
+
+    * pkg-config <http://pkg-config.freedesktop.org/>
+    * GLib 2.x <http://www.gtk.org/>
+    * GTK+ 2.x <http://www.gtk.org/>
+    * libglade 2.x <http://ftp.acc.umu.se/pub/GNOME/sources/libglade/2.6/>
+    * GConf 2.x <http://www.gnome.org/projects/gconf/>
+    * libcurl <http://curl.haxx.se/>
+    * SQLite 3 <http://www.sqlite.org/>
+    * libexif <http://libexif.sourceforge.net/>
+    * libxml2 <http://xmlsoft.org/>
+    * libgps >= 2.90 <http://gpsd.berlios.de/>
+
+In order to make use of the photo-geotagging features in this package,
+the following additional packages must also be installed for use at
+run-time:
+
+    * gpscorrelate <http://freefoote.dview.net/linux_gpscorr.html>
+    * jhead <http://www.sentex.net/~mwandel/jhead/>
+
 Basic Installation
 ==================
-
-These are generic installation instructions.
 
    The `configure' shell script attempts to guess correct values for
 various system-dependent variables used during compilation.  It uses
