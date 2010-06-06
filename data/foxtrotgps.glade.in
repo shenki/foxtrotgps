@@ -1432,7 +1432,7 @@ Before first use register them by clicking on the button below.</property>
                         <child>
                           <widget class="GtkLabel" id="label74">
                             <property name="visible">True</property>
-                            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Tracks&lt;/b&gt;&lt;/big&gt;    &lt;small&gt;[3/4]&lt;/small&gt;</property>
+                            <property name="label" translatable="yes">&lt;big&gt;&lt;b&gt;Tracks&lt;/b&gt;&lt;/big&gt;   &lt;small&gt;[3/4]&lt;/small&gt;</property>
                             <property name="use_markup">True</property>
                           </widget>
                           <packing>
@@ -1609,7 +1609,7 @@ download of missing tiles into cache</property>
                                                     <property name="visible">True</property>
                                                     <property name="can_focus">True</property>
                                                     <property name="receives_default">True</property>
-                                                    <property name="label" translatable="yes">New</property>
+                                                    <property name="label" translatable="yes">New...</property>
                                                     <property name="response_id">0</property>
                                                     <signal name="clicked" handler="on_button7_clicked"/>
                                                   </widget>
@@ -1818,7 +1818,7 @@ download of missing tiles into cache</property>
                                                 <property name="visible">True</property>
                                                 <property name="xalign">0</property>
                                                 <property name="ypad">2</property>
-                                                <property name="label" translatable="yes">&lt;i&gt;Lat &amp;amp; Lon&lt;/i&gt;</property>
+                                                <property name="label" translatable="yes">&lt;i&gt;Lat &amp;amp; Lon:&lt;/i&gt;</property>
                                                 <property name="use_markup">True</property>
                                               </widget>
                                               <packing>
@@ -2697,8 +2697,8 @@ next point</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">Set point
-as my position</property>
+                    <property name="label" translatable="yes">Set point as
+my position</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button52_clicked"/>
                   </widget>
@@ -2945,7 +2945,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton2">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+1 zoom level</property>
+                            <property name="label" translatable="yes">+ 1 zoom level</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                           </widget>
@@ -2958,7 +2958,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton3">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+2 zoom levels</property>
+                            <property name="label" translatable="yes">+ 2 zoom levels</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -2973,7 +2973,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton4">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+3 zoom levels</property>
+                            <property name="label" translatable="yes">+ 3 zoom levels</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -2988,7 +2988,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton5">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+4 zoom levels</property>
+                            <property name="label" translatable="yes">+ 4 zoom levels (~25MB)</property>
                             <property name="response_id">0</property>
                             <property name="active">True</property>
                             <property name="draw_indicator">True</property>
@@ -3004,7 +3004,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton6">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+5 zoom levels</property>
+                            <property name="label" translatable="yes">+ 5 zoom levels (~100MB)</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -3019,7 +3019,7 @@ as my position</property>
                           <widget class="GtkRadioButton" id="radiobutton7">
                             <property name="visible">True</property>
                             <property name="can_focus">True</property>
-                            <property name="label" translatable="yes">+6 zoom levels</property>
+                            <property name="label" translatable="yes">+ 6 zoom levels (~400MB)</property>
                             <property name="response_id">0</property>
                             <property name="draw_indicator">True</property>
                             <property name="group">radiobutton2</property>
@@ -4485,7 +4485,7 @@ gnuite.com</property>
                   <widget class="GtkLabel" id="label194">
                     <property name="height_request">8</property>
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes">	</property>
+                    <property name="label" translatable="yes"></property>
                   </widget>
                   <packing>
                     <property name="left_attach">1</property>
