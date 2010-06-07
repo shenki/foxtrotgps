@@ -1623,7 +1623,7 @@ download of missing tiles into cache</property>
                                                   <widget class="GtkLabel" id="label140">
                                                     <property name="height_request">50</property>
                                                     <property name="visible">True</property>
-                                                    <property name="label" translatable="yes">    </property>
+                                                    <property name="label" translatable="no">    </property>
                                                   </widget>
                                                   <packing>
                                                     <property name="expand">False</property>
@@ -4457,7 +4457,7 @@ gnuite.com</property>
                   <widget class="GtkLabel" id="label194">
                     <property name="height_request">8</property>
                     <property name="visible">True</property>
-                    <property name="label" translatable="yes"></property>
+                    <property name="label" translatable="no"></property>
                   </widget>
                   <packing>
                     <property name="left_attach">1</property>
@@ -5365,7 +5365,7 @@ gnuite.com</property>
                     <child>
                       <widget class="GtkLabel" id="label171">
                         <property name="visible">True</property>
-                        <property name="label" translatable="yes">      </property>
+                        <property name="label" translatable="no">      </property>
                         <property name="use_markup">True</property>
                       </widget>
                       <packing>
@@ -5395,7 +5395,7 @@ gnuite.com</property>
                       <widget class="GtkLabel" id="label163">
                         <property name="visible">True</property>
                         <property name="xalign">0</property>
-                        <property name="label" translatable="yes">      </property>
+                        <property name="label" translatable="no">      </property>
                         <property name="use_markup">True</property>
                       </widget>
                       <packing>
