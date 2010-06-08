@@ -2415,7 +2415,7 @@ Set GPSD Host IP
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton1_clicked"/>
@@ -2429,7 +2429,7 @@ Set GPSD Host IP
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
                 <property name="tooltip" translatable="yes">All fields must be filled in</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton1_clicked"/>
@@ -2581,7 +2581,7 @@ Set GPSD Host IP
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton7_clicked"/>
@@ -2594,7 +2594,7 @@ Set GPSD Host IP
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton7_clicked"/>
@@ -2762,7 +2762,7 @@ my position</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton2_clicked"/>
@@ -2774,7 +2774,7 @@ my position</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton2_clicked"/>
@@ -2851,7 +2851,7 @@ my position</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_button37_clicked"/>
@@ -3036,7 +3036,7 @@ my position</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton3_clicked"/>
@@ -3048,7 +3048,7 @@ my position</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton3_clicked"/>
@@ -3388,7 +3388,7 @@ My Personal Places</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton5_clicked"/>
@@ -3400,7 +3400,7 @@ My Personal Places</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton5_clicked"/>
@@ -3454,7 +3454,7 @@ delete this Point of Interest?</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton6_clicked"/>
@@ -3465,7 +3465,7 @@ delete this Point of Interest?</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
               </widget>
@@ -3822,7 +3822,7 @@ Sport</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="border_width">7</property>
-                    <property name="label" translatable="yes">gtk-cancel</property>
+                    <property name="label" translatable="no">gtk-cancel</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_cancelbutton5a_clicked"/>
@@ -3843,7 +3843,7 @@ Sport</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="border_width">7</property>
-                    <property name="label" translatable="yes">gtk-ok</property>
+                    <property name="label" translatable="no">gtk-ok</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_okbutton5a_clicked"/>
@@ -4196,7 +4196,7 @@ My Personal Places</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="border_width">7</property>
-                    <property name="label" translatable="yes">gtk-cancel</property>
+                    <property name="label" translatable="no">gtk-cancel</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_cancelbutton4_clicked"/>
@@ -4217,7 +4217,7 @@ My Personal Places</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
                     <property name="border_width">7</property>
-                    <property name="label" translatable="yes">gtk-ok</property>
+                    <property name="label" translatable="no">gtk-ok</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_okbutton4_clicked"/>
@@ -4499,7 +4499,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton10_clicked"/>
@@ -4511,7 +4511,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton11_clicked"/>
@@ -4661,7 +4661,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton9_clicked"/>
@@ -4673,7 +4673,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
               </widget>
@@ -4885,7 +4885,7 @@ gnuite.com</property>
                     <property name="can_focus">True</property>
                     <property name="has_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-open</property>
+                    <property name="label" translatable="no">gtk-open</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button39_clicked"/>
@@ -4904,7 +4904,7 @@ gnuite.com</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-open</property>
+                    <property name="label" translatable="no">gtk-open</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button40_clicked"/>
@@ -5119,7 +5119,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_cancelbutton8_clicked"/>
@@ -5132,7 +5132,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton8_clicked"/>
@@ -5206,7 +5206,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-close</property>
+                <property name="label" translatable="no">gtk-close</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_closebutton2_clicked"/>
@@ -5245,7 +5245,7 @@ gnuite.com</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-goto-first</property>
+                    <property name="label" translatable="no">gtk-goto-first</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button47_clicked"/>
@@ -5256,7 +5256,7 @@ gnuite.com</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-go-back</property>
+                    <property name="label" translatable="no">gtk-go-back</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button45_clicked"/>
@@ -5270,7 +5270,7 @@ gnuite.com</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-zoom-in</property>
+                    <property name="label" translatable="no">gtk-zoom-in</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button50_clicked"/>
@@ -5285,7 +5285,7 @@ gnuite.com</property>
                     <property name="can_focus">True</property>
                     <property name="has_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-go-forward</property>
+                    <property name="label" translatable="no">gtk-go-forward</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button46_clicked"/>
@@ -5299,7 +5299,7 @@ gnuite.com</property>
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
                     <property name="receives_default">True</property>
-                    <property name="label" translatable="yes">gtk-goto-last</property>
+                    <property name="label" translatable="no">gtk-goto-last</property>
                     <property name="use_stock">True</property>
                     <property name="response_id">0</property>
                     <signal name="clicked" handler="on_button48_clicked"/>
@@ -5550,7 +5550,7 @@ gnuite.com</property>
                 <property name="visible">True</property>
                 <property name="can_focus">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-cancel</property>
+                <property name="label" translatable="no">gtk-cancel</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_button49_clicked"/>
@@ -5562,7 +5562,7 @@ gnuite.com</property>
                 <property name="can_focus">True</property>
                 <property name="can_default">True</property>
                 <property name="receives_default">True</property>
-                <property name="label" translatable="yes">gtk-ok</property>
+                <property name="label" translatable="no">gtk-ok</property>
                 <property name="use_stock">True</property>
                 <property name="response_id">0</property>
                 <signal name="clicked" handler="on_okbutton9_clicked"/>
