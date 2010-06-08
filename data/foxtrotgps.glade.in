@@ -3394,9 +3394,9 @@ Medical
 Cafe / Pub / Nightlife
 Place of Worship
 Public Transportation
-Restaurant
+Restaurant &amp; Food
 Services
-Sights / Leisure
+Sights &amp; Leisure
 Shopping
 Sport
 My Personal Places</property>
@@ -3760,14 +3760,15 @@ Businesses
 Car
 Cultural
 Medical
-Nightlife
+Cafe / Pub / Nightlife
 Place of Worship
 Public Transportation
 Restaurant &amp; Food
 Services
 Sights &amp; Leisure
 Shopping
-Sport</property>
+Sport
+My Personal Places</property>
                         <signal name="changed" handler="on_combobox2_changed"/>
                       </widget>
                       <packing>
