@@ -1845,6 +1845,7 @@ download of missing tiles into cache</property>
                                             <child>
                                               <widget class="GtkHBox" id="hbox24">
                                                 <property name="visible">True</property>
+                                                <property name="border_width">5</property>
                                                 <child>
                                                   <widget class="GtkRadioButton" id="radiobutton19">
                                                     <property name="visible">True</property>
