@@ -335,6 +335,10 @@
                                                     <property name="xpad">12</property>
                                                     <property name="label" translatable="yes">Speed</property>
                                                   </widget>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
+                                                  </packing>
                                                 </child>
                                                 <child>
                                                   <widget class="GtkLabel" id="label38">
@@ -345,6 +349,8 @@
                                                     <property name="use_markup">True</property>
                                                   </widget>
                                                   <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
                                                     <property name="position">1</property>
                                                   </packing>
                                                 </child>
@@ -360,6 +366,7 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label66">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">0</property>
                                                     <property name="use_markup">True</property>
                                                   </widget>
@@ -373,6 +380,7 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label70">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">0</property>
                                                     <property name="use_markup">True</property>
                                                   </widget>
@@ -384,6 +392,7 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label65">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">Time</property>
                                                   </widget>
                                                   <packing>
@@ -396,6 +405,7 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label69">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">Max</property>
                                                   </widget>
                                                   <packing>
@@ -406,6 +416,7 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label68">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">0</property>
                                                     <property name="use_markup">True</property>
                                                   </widget>
@@ -417,6 +428,7 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label45">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">0</property>
                                                     <property name="use_markup">True</property>
                                                   </widget>
@@ -430,12 +442,14 @@
                                                 <child>
                                                   <widget class="GtkLabel" id="label67">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">Average</property>
                                                   </widget>
                                                 </child>
                                                 <child>
                                                   <widget class="GtkLabel" id="label28">
                                                     <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
                                                     <property name="label" translatable="yes">Trip</property>
                                                   </widget>
                                                   <packing>
@@ -1830,6 +1844,7 @@ download of missing tiles into cache</property>
                                             <child>
                                               <widget class="GtkHBox" id="hbox24">
                                                 <property name="visible">True</property>
+                                                <property name="border_width">5</property>
                                                 <child>
                                                   <widget class="GtkRadioButton" id="radiobutton19">
                                                     <property name="visible">True</property>
