@@ -481,6 +481,7 @@
                                               <widget class="GtkHBox" id="hbox5">
                                                 <property name="height_request">55</property>
                                                 <property name="visible">True</property>
+                                                <property name="spacing">16</property>
                                                 <child>
                                                   <widget class="GtkButton" id="button15">
                                                     <property name="width_request">130</property>
@@ -491,6 +492,10 @@
                                                     <property name="response_id">0</property>
                                                     <signal name="clicked" handler="on_button15_clicked"/>
                                                   </widget>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
+                                                  </packing>
                                                 </child>
                                                 <child>
                                                   <widget class="GtkButton" id="button8">
@@ -504,6 +509,8 @@
                                                     <signal name="clicked" handler="on_button8_clicked"/>
                                                   </widget>
                                                   <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
                                                     <property name="position">1</property>
                                                   </packing>
                                                 </child>
