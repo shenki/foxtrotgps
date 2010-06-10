@@ -11,7 +11,8 @@ dist_doc_DATA = \
 	NEWS\
 	TODO
 
-
+ChangeLog:
+	bzr log -v > $@.tmp && mv $@.tmp $@
 
 # Copy all the spec files. Of cource, only one is actually used.
 dist-hook:
