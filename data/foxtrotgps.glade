@@ -2199,7 +2199,6 @@ Set GPSD Host IP
             </child>
             <child>
               <widget class="GtkMenuItem" id="item22">
-                <property name="visible">True</property>
                 <property name="label" translatable="yes">create way</property>
                 <property name="use_underline">True</property>
                 <signal name="activate" handler="on_item22_button_release_event"/>
