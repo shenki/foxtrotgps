@@ -3363,15 +3363,6 @@ on_eventbox5_button_release_event      (GtkWidget       *widget,
 	return FALSE;
 }
 
-gboolean
-on_item22_button_release_event         (GtkWidget       *widget,
-                                        GdkEventButton  *event,
-                                        gpointer         user_data)
-{
-
-	return FALSE;
-}
-
 
 gboolean
 on_item23_button_release_event         (GtkWidget       *widget,
