@@ -11,7 +11,7 @@ dist_doc_DATA = \
 	NEWS\
 	TODO
 
-ChangeLog: .bzr/branch/last-revision
+ChangeLog: .bzr/checkout/dirstate
 	bzr log --verbose > $@.tmp && mv $@.tmp $@
 
 # Copy all the spec files. Of cource, only one is actually used.
