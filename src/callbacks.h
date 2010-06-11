@@ -690,11 +690,6 @@ on_eventbox5_button_release_event      (GtkWidget       *widget,
                                         gpointer         user_data);
 
 gboolean
-on_item22_button_release_event         (GtkWidget       *widget,
-                                        GdkEventButton  *event,
-                                        gpointer         user_data);
-
-gboolean
 on_item23_button_release_event         (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);
