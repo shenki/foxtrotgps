@@ -21,7 +21,6 @@ and enhancements:
     * Toolbars now have a style more consistent with other GTK+ applications.
 
     * The command option-parser has been replaced:
-
       - The "-fullscreen" option has been replaced by a more standard
         "--fullscreen" option.
       - A "--display" option is now supported to specify which X11
@@ -37,8 +36,7 @@ and enhancements:
       have been removed.
 
 
-Additionally, packagers and developers should additionally note the
-following changes:
+Additionally, packagers and developers should note the following changes:
 
     * All user-visible references in the program to the package-name
       (including paths to icons and configuration-data) are defined in
