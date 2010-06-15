@@ -11,7 +11,9 @@ dist_doc_DATA = \
 	NEWS\
 	TODO
 
-ChangeLog: .bzr/checkout/dirstate
+bzr_dirstate = $(wildcard .bzr/checkout/dirstate)
+
+ChangeLog: $(bzr_dirstate)
 	bzr log --verbose > $@.tmp && mv $@.tmp $@
 
 # Copy all the spec files. Of cource, only one is actually used.
@@ -21,4 +23,3 @@ dist-hook:
 			cp -p $$specfile $(distdir); \
 		fi \
 	done
-
