@@ -62,8 +62,8 @@ struct mem_struct {
 static size_t
 cb_write_to_mem(void *ptr, size_t size, size_t nmemb, void *data)
 {
-	size_t realsize = size * nmemb;
-	struct mem_struct *mem = (struct mem_struct *)data;
+	size_t realsize		= size * nmemb;
+	struct mem_struct *mem	= (struct mem_struct *)data;
 	
 	mem->memory = (char *)g_realloc(mem->memory, mem->size + realsize + 1);
 	
@@ -467,8 +467,6 @@ update_position0()
 
 
 
-
-
 int
 register_nick()
 {		
@@ -736,6 +734,7 @@ thread_send_message(void *ptr)
 	process_msg_replydata(postreply);
 	gdk_threads_leave();
 
+	
 	
 	
 	g_slist_free(postdata);
