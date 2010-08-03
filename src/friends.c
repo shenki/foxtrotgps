@@ -269,9 +269,7 @@ gdk_threads_leave();
 	curl_easy_setopt(curl_handle, CURLOPT_HTTPPOST, formdata);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, cb_write_to_mem);
 	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
-	curl_easy_setopt(curl_handle, CURLOPT_USERAGENT, "libcurl-agent/1.0 |" VERSION " | " __VERSION__);
-
-
+	curl_easy_setopt(curl_handle, CURLOPT_USERAGENT,  VERSION );
 
 	curl_easy_perform(curl_handle);
 	curl_easy_getinfo(curl_handle, CURLINFO_RESPONSE_CODE, &response_code);
