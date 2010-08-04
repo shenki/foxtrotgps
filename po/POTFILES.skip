@@ -1,0 +1,4 @@
+# Not sure how to handle translatable strings with substitutions,
+# so we just translate this file *after* substitutions are done
+# (ignoring the pre-subst version):
+data/foxtrotgps.glade.in
