@@ -8,6 +8,6 @@ Type=Application
 Exec=foxtrotgps
 Icon=foxtrotgps
 Terminal=false
-Categories=GTK;Application;PIM
+Categories=GTK;Utility;Geography;
 SingleInstance=true
 StartupNotify=true
