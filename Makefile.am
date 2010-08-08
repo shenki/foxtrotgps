@@ -1,6 +1,6 @@
 ## Process this file with automake to produce Makefile.in
 
-SUBDIRS = po src pixmaps data
+SUBDIRS = po src pixmaps data doc
 
 dist_doc_DATA = \
 	README\

@@ -37,4 +37,5 @@ src/Makefile
 pixmaps/Makefile
 data/Makefile
 data/foxtrotgps.glade
+doc/Makefile
 ])
