@@ -1,6 +1,6 @@
 #!/usr/bin/python
 #
-# Basic program to import GeoRSS points into TangoGPS as points of interest
+# Basic program to import GeoRSS points into FoxtrotGPS as points of interest
 #
 # Copyright 2009 Paul Wise
 #
@@ -49,7 +49,7 @@ def link2txt(a):
 
 poi = []
 
-con = sqlite3.connect(os.path.expanduser('~/.tangogps/poi.db'))
+con = sqlite3.connect(os.path.expanduser('~/.foxtrotgps/poi.db'))
 cur = con.cursor()
 
 for arg in sys.argv[1:]:
