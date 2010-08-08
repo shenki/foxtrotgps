@@ -9,5 +9,4 @@ Exec=foxtrotgps
 Icon=foxtrotgps
 Terminal=false
 Categories=GTK;Utility;Geography;
-SingleInstance=true
 StartupNotify=true
