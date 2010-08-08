@@ -1,0 +1,264 @@
+#!/usr/bin/perl
+#
+# (c) 2008 Marcus Bauer
+# License: GPLv2
+#
+# Convert tangoGPS .csv logfiles into .osm files for processing in JOSM
+#
+# Usage: ./convert2osm.pl logfiles*.log
+#
+# creates for each input .log one .osm file
+#
+
+
+
+
+$curr_arg = "";
+
+while(<>)
+{
+
+	if($curr_arg ne $ARGV)
+	{
+		if($curr_arg ne "")
+		{
+			&print_footer;
+			close(FD);
+
+			&convert2osm;
+
+		}
+		$curr_arg = $ARGV;
+
+		$filename = $ARGV . ".gpx";
+		print $filename . "\n";
+		open(FD, "> $filename");
+		&print_header;
+	}
+
+	else
+	{
+		&print_trackpoint;
+	}
+	
+}
+
+
+#--------------------------------
+# and the same for the last file:
+#--------------------------------
+&print_footer;
+&convert2osm;
+
+
+### END MAIN
+
+
+#########################################################
+#
+# sub routines
+#
+#########################################################
+
+
+#---------
+# header
+#---------
+
+sub print_header
+{
+print FD <<EOT
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx	version="1.0"
+	creator="convert2gpx.pl http://www.tangogps.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.topografix.com/GPX/1/0"
+	xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+
+<trk>
+<trkseg>
+
+EOT
+;
+}
+
+
+#-------------
+# trackpoint
+# ------------
+
+sub print_trackpoint
+{
+@arr = split(',',$_);
+chop @arr[6];
+
+
+print FD <<EOT
+<trkpt lat="@arr[0]" lon="@arr[1]">
+  <ele>@arr[2]</ele>
+  <speed>@arr[3]</speed>
+  <course>@arr[4]</course>
+  <fix>3d</fix>
+  <hdop>@arr[5]</hdop>
+  <time>@arr[6]</time>
+</trkpt>
+
+EOT
+;
+}
+
+
+#---------
+# footer
+# --------
+
+sub print_footer
+{
+
+print FD <<EOT
+
+</trkseg>
+</trk>
+</gpx>
+
+EOT
+;
+
+}
+
+
+#=======================================================================
+#
+# convert 2 osm
+#
+#=======================================================================
+
+
+#---------------------------------------------------------------------
+#
+# MAIN SUB convert to .osm
+#
+#----------------------------------------------------------------------
+sub convert2osm
+{
+
+	#
+	# 1. simplify with gpsbabel
+	#
+	`gpsbabel -i gpx -f $filename -x simplify,error=0.001k -x discard,hdop=3.1 -o csv -F $filename.csv`;
+
+
+	#
+	# 2. convert .csv to .osm
+	#
+	&convert_csv2osm;
+
+
+	#
+	# 3. remove .csv
+	#
+	`rm $filename.csv`;
+
+}
+
+# END MAIN SUB convert2osm
+
+
+
+
+#----------------
+# .csv to .osm
+#----------------
+
+sub convert_csv2osm
+{
+
+	print "converting to osm...\n";
+
+	$i = 0;
+
+	open(FDCSV,"$filename.csv") || die $filename.csv;
+	open(FDOSM,"> $filename.osm") || die $filename.osm;
+
+	&print_header_osm;
+
+	while($_ = <FDCSV>)
+	{
+		&print_nodes_osm;
+	}
+	
+	&print_way_osm;
+
+	&print_footer_osm;
+
+	close FDCSV;
+	close FDOSM;
+
+}
+
+
+#----------
+# header
+#----------
+
+sub print_header_osm
+{
+print FDOSM "<?xml version='1.0' encoding='UTF-8'?>\n";
+print FDOSM "<osm version='0.5' generator='JOSM'>\n";
+}
+
+
+
+#---------
+# nodes
+#---------
+
+sub print_nodes_osm
+{
+	$i--;
+
+	@arr = split(',', $_);
+	$lat = $arr[0];
+	$lon = $arr[1];
+	$lon =~ s/ //;
+	print FDOSM "\t<node id='$i' visible='true' lat='$lat' lon='$lon' />\n";
+}
+
+
+#-------
+# way
+#-------
+
+sub print_way_osm
+{
+	$way_id = $i - 1;
+
+	print FDOSM "\t<way id='$way_id' action='modify' visible='true'>\n";
+
+	$j = -1;
+	for(; $i<0; $i++)
+	{
+		print FDOSM "\t\t<nd ref='$j' />\n";
+		$j--;
+	}
+
+}
+
+
+#----------
+# footer
+#----------
+
+sub print_footer_osm
+{
+	print FDOSM "\t\t<tag k='highway' v='residential' /> \n";
+	print FDOSM "\t\t<tag k='name' v='nn' /> \n";
+
+	print FDOSM "\t</way> \n";
+	print FDOSM "</osm> \n";
+}
+
+
+
+
+

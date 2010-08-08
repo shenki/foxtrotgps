@@ -1,0 +1,59 @@
+#!/usr/bin/perl
+#
+# (c)2008 Marcus Bauer - License GPLv2
+#
+# Convert a tangoGPS logfile to GPX
+# 
+# usage:  ./convert2gpx.pl logfile*.log  > outfile.gpx
+#
+
+print <<EOT
+<?xml version="1.0" encoding="UTF-8"?>
+<gpx	version="1.0"
+	creator="convert2gpx.pl http://www.tangogps.org"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns="http://www.topografix.com/GPX/1/0"
+	xsi:schemaLocation="http://www.topografix.com/GPX/1/0 http://www.topografix.com/GPX/1/0/gpx.xsd">
+
+<trk>
+<trkseg>
+
+EOT
+;
+
+while(<>)
+{
+
+@arr = split(',',$_);
+chop @arr[6];
+
+print <<EOT
+<trkpt lat="@arr[0]" lon="@arr[1]">
+  <ele>@arr[2]</ele>
+  <speed>@arr[3]</speed>
+  <course>@arr[4]</course>
+  <fix>3d</fix>
+  <hdop>@arr[5]</hdop>
+  <time>@arr[6]</time>
+</trkpt>
+
+EOT
+;
+
+}
+
+
+print <<EOT
+
+</trkseg>
+</trk>
+</gpx>
+
+EOT
+;
+
+
+
+
+
+
