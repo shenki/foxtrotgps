@@ -1,0 +1,89 @@
+#!/usr/bin/python
+#
+# Basic program to import GeoRSS points into TangoGPS as points of interest
+#
+# Copyright 2009 Paul Wise
+#
+# Permission is hereby granted, free of charge, to any person
+# obtaining a copy of this software and associated documentation
+# files (the "Software"), to deal in the Software without
+# restriction, including without limitation the rights to use,
+# copy, modify, merge, publish, distribute, sublicense, and/or sell
+# copies of the Software, and to permit persons to whom the
+# Software is furnished to do so, subject to the following
+# conditions:
+#
+# The above copyright notice and this permission notice shall be
+# included in all copies or substantial portions of the Software.
+#
+# THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+# EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
+# OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+# NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+# HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
+# WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+# FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+# OTHER DEALINGS IN THE SOFTWARE.
+
+import os
+import sys
+import random
+import sqlite3
+import feedparser
+from BeautifulSoup import BeautifulSoup, BeautifulStoneSoup
+
+def link2txt(a):
+	a_text = ''.join(a).strip()
+
+	if a['href'][0] == '/':
+		a['href'] = 'http://maps.google.com%s' % a['href']
+
+	if a_text == '':
+		return a['href']
+
+	if a_text.lower() == a['href'].lower():
+		return a['href']
+
+	return '%s (%s)' % (a_text,a['href'])
+
+
+poi = []
+
+con = sqlite3.connect(os.path.expanduser('~/.tangogps/poi.db'))
+cur = con.cursor()
+
+for arg in sys.argv[1:]:
+	for e in feedparser.parse(arg).entries:
+		if e.has_key('georss_point'):
+			(lat, lon) = e.georss_point.split()
+		elif e.has_key('gml_pos'):
+			(lat, lon) = e.gml_pos.split()
+		elif e.has_key('gml_polygon'):
+			total_lat = 0
+			total_lon = 0
+			total_points = 0
+			for line in e.gml_poslist.splitlines():
+				(lat, lon) = line.strip().split()
+				total_lat += float(lat)
+				total_lon += float(lon)
+				total_points += 1
+			lat = total_lat/total_points
+			lon = total_lon/total_points
+		else:
+			print 'georss2poi: warning: %s: unhandled feed item (not a point): %s' % (arg, e.title)
+			continue
+		rand1 = random.randint(100000000,1000000000)
+		rand2 = random.randint(100000000,1000000000)
+		rand = '%s%s' % (rand1,rand2)
+		desc = e.description
+		soup = BeautifulSoup(desc,convertEntities=BeautifulStoneSoup.HTML_ENTITIES,smartQuotesTo=None)
+		[img.extract() for img in soup.findAll('img')]
+		[br.replaceWith('\n') for br in soup.findAll('br')]
+		[a.replaceWith(link2txt(a)) for a in soup.findAll('a')]
+		desc = ''.join(soup.findAll(text=True)).strip()
+		poi.append((rand,lat,lon,e.title,desc))
+
+cur.executemany('INSERT INTO poi (idmd5,lat,lon,keywords,desc,visibility,cat,subcat,price_range,extended_open) VALUES (?,?,?,?,?,1.0,0.0,0.0,1.0,0.0)', poi)
+
+con.commit()
+con.close()
