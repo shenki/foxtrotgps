@@ -30,11 +30,11 @@ chop @arr[6];
 print <<EOT
 <trkpt lat="@arr[0]" lon="@arr[1]">
   <ele>@arr[2]</ele>
-  <speed>@arr[3]</speed>
+  <time>@arr[6]</time>
   <course>@arr[4]</course>
+  <speed>@arr[3]</speed>
   <fix>3d</fix>
   <hdop>@arr[5]</hdop>
-  <time>@arr[6]</time>
 </trkpt>
 
 EOT
