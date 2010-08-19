@@ -46,6 +46,13 @@ void *		fetch_track_thread(void *ptr);
 
 
 void
+reset_loaded_track()
+{
+	
+	loaded_track = NULL;
+}
+
+void
 print_track()
 {	
 	GList *list;
@@ -388,10 +395,13 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
-	GtkWidget *drawingarea, *range;
+	GtkWidget *drawingarea, *range, *widget_tmp;
 	int track_zoom, width, height;
 	char *file;
 	bbox_t bbox;
+	
+	widget_tmp = lookup_widget(window1, "button79");
+	gtk_widget_show(widget_tmp);
 	
 	drawingarea = lookup_widget(window1, "drawingarea1");
 	width  = drawingarea->allocation.width;

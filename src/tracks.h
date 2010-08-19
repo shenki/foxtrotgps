@@ -1,4 +1,7 @@
 void
+reset_loaded_track();
+
+void
 print_track();
 
 void
