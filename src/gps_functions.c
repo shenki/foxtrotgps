@@ -264,7 +264,7 @@ cb_gps_timer()
 					tp->lat     = lat;
 					tp->lon     = lon;
 					tp->lat_deg = gpsdata->fix.latitude;
-					tp->lat_deg = gpsdata->fix.longitude;
+					tp->lon_deg = gpsdata->fix.longitude;
 					tp->alt     = gpsdata->fix.altitude;
 					tp->speed   = gpsdata->fix.speed;
 					tp->head    = gpsdata->fix.heading;
