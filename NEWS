@@ -35,6 +35,14 @@ and enhancements:
     * GUI elements directing the user to `see tangogps.org for more details'
       have been removed.
 
+    * Several popular utility-scripts are now bundled (see the `contrib'
+      directory):
+      - convert2gpx, a Perl script by Marcus Bauer that can be used to convert
+        the native track-log format to GPX.
+      - convert2osm, a Perl script by Marcus Bauer that can be used to convert
+        the native track-log format to OpenStreetMap format.
+      - georss2foxtrotgps-poi, a Python script by Paul Wise that reads
+        GeoRSS points and inserts them into the FoxtrotGPS POI database.
 
 Additionally, packagers and developers should note the following changes:
 
