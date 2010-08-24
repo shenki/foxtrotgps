@@ -3,6 +3,8 @@ The user-visible features and functionality of this release very similar
 to those of tangoGPS 0.99.3; FoxtrotGPS does, however, include several fixes
 and enhancements:
 
+    * There is now a manual included.
+
     * Thanks to libgps, FoxtrotGPS supports both the new and old
       gpsd protocols transparently.
 
