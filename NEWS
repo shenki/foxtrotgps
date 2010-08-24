@@ -5,6 +5,9 @@ and enhancements:
 
     * There is now a manual included.
 
+    * FoxtrotGPS does not wait for all downloads to complete before
+      updating the display with new map-tiles.
+
     * Thanks to libgps, FoxtrotGPS supports both the new and old
       gpsd protocols transparently.
 

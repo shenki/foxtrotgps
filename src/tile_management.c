@@ -54,27 +54,17 @@ map_redraw(void *p)
 	
 	
 	
-	if (number_threads > 1)
-	{
-		printf("map_redraw: hmm, in the last 500ms another DL started - still one thread running\n");
-		return TRUE;
-	}
-	else if (number_threads == 0)
-	{
-		fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
-		print_track();
-		paint_loaded_track();
-		paint_friends();
-		paint_photos();
-		paint_pois();
-		paint_wp();
-		paint_myposition();
-		osd_speed(TRUE);
-		
-		return FALSE;
-	}
-	else
-		return TRUE;
+	fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
+	print_track();
+	paint_loaded_track();
+	paint_friends();
+	paint_photos();
+	paint_pois();
+	paint_wp();
+	paint_myposition();
+	osd_speed(TRUE);
+
+	return FALSE;
 }	
 	
 	
@@ -261,12 +251,9 @@ dl_thread(void *ptr)
 		
 		
 		
-		if (number_threads == 0)
-		{
-			gdk_threads_enter();
-			g_timeout_add(500, map_redraw, NULL); 
-			gdk_threads_leave();
-		}
+		gdk_threads_enter();
+		g_timeout_add(500, map_redraw, NULL); 
+		gdk_threads_leave();
 	}
 	if(outfile != NULL)
 		fclose(outfile);
