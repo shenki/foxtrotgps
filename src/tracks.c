@@ -225,7 +225,7 @@ track_log()
 		strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", ts);
 		
 		
-		sprintf(data, "%f,%f,%.1f,%.1f,%.1f,%.1f,%s\n",
+		snprintf(data, sizeof(data), "%f,%f,%.1f,%.1f,%.1f,%.1f,%s\n",
 				gpsdata->fix.latitude,
 				gpsdata->fix.longitude,
 				gpsdata->fix.altitude,
