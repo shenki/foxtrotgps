@@ -50,8 +50,6 @@ static int local_x = 0;
 static int local_y = 0;
 
 
-static int drag_started = 0;
-
 static	GdkPixmap *pixmap_photo = NULL;
 static	GdkPixmap *pixmap_photo_big = NULL;
 

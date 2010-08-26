@@ -54,17 +54,22 @@ map_redraw(void *p)
 	
 	
 	
-	fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
-	print_track();
-	paint_loaded_track();
-	paint_friends();
-	paint_photos();
-	paint_pois();
-	paint_wp();
-	paint_myposition();
-	osd_speed(TRUE);
-
-	return FALSE;
+	if (!drag_started)
+	{
+		fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
+		print_track();
+		paint_loaded_track();
+		paint_friends();
+		paint_photos();
+		paint_pois();
+		paint_wp();
+		paint_myposition();
+		osd_speed(TRUE);
+		
+		return FALSE;
+	}
+	else
+		return TRUE;
 }	
 	
 	

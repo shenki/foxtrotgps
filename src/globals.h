@@ -180,6 +180,8 @@ extern gchar		*foxtrotgps_dir;
 extern int		mouse_x;
 extern int		mouse_y;
 
+extern int		drag_started;
+
 
 enum {
 	PRIVATE_MODE = 1,
