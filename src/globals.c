@@ -100,3 +100,5 @@ gchar		*foxtrotgps_dir = NULL;
 
 int		mouse_x = 0;
 int		mouse_y = 0;
+
+int		drag_started = 0;
