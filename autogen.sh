@@ -1,4 +1,4 @@
 #!/bin/sh
 
-intltoolize \
+intltoolize --automake \
 && autoreconf --install --verbose
