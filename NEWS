@@ -1,4 +1,6 @@
-This is the first release of FoxtrotGPS since branching from tangoGPS.
+FoxtrotGPS 1.0.0 is the first stable release of FoxtrotGPS since branching
+from tangoGPS.
+
 The user-visible features and functionality of this release are very similar
 to those of tangoGPS 0.99.3; FoxtrotGPS does, however, include several fixes
 and enhancements:
