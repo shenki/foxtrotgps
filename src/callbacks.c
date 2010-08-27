@@ -3715,8 +3715,19 @@ on_checkbutton17_toggled               (GtkToggleButton *togglebutton,
 void
 on_button79_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
-{
-
+{	
+	GtkWidget *widget;
+	
+	reset_loaded_track();
+	gtk_widget_hide(GTK_WIDGET(button));
+	
+	widget = lookup_widget(window1, "button78");
+	gtk_widget_hide(widget);
+	
+	widget = lookup_widget(window1, "label203");
+	gtk_label_set_label(GTK_LABEL(widget), "");
+	
+	repaint_all();
 }
 
 void
