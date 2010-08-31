@@ -222,9 +222,20 @@ geo_photos_open_dialog_photo_correlate()
 
 	if(!dialog_photo_correlate)
 	{
+		GtkWidget *dbinsert_cb;
+		GtkLabel *dbinsert_label;
 		dialog_photo_correlate =
 			glade_xml_get_widget (gladexml, "dialog_geocode");
-		
+		dbinsert_cb =
+			lookup_widget (dialog_photo_correlate,
+		                       "checkbutton14");
+		dbinsert_label =
+			GTK_LABEL (gtk_bin_get_child (GTK_BIN (dbinsert_cb)));
+		label_txt =
+			g_strdup_printf (gtk_label_get_label (dbinsert_label),
+			                 _(PACKAGE_NAME));
+		gtk_label_set_label (dbinsert_label, label_txt);
+		g_free (label_txt); label_txt = NULL;
 		
 		tmp   = gconf_client_get_int(global_gconfclient, GCONF"/geocode_timezone", NULL);
 		geocode_timezone = (tmp) ? tmp - 13 : 0 ;

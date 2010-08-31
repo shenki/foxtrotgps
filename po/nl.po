@@ -299,11 +299,12 @@ msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
 msgstr "<big><b>Instellingen</b></big>   <small>[4/4]</small>"
 
 #: ../src/interface.c:1227
+#, c-format
 msgid ""
-"<small><i>FoxtrotGPS Version:\n"
+"<small><i>%s Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<small><i>FoxtrotGPS Versie:\n"
+"<small><i>%s Versie:\n"
 "Ontwikkelaar: Marcus Bauer &amp; Gemeenschap</i></small>"
 
 #: ../src/interface.c:1249
@@ -901,8 +902,9 @@ msgid "Timezone:"
 msgstr "Tijdzone:"
 
 #: ../src/interface.c:4179
-msgid "  add photos to the FoxtrotGPS database"
-msgstr "  voeg fotos toe aan de FoxtrotGPS database"
+#, c-format
+msgid "  add photos to the %s database"
+msgstr "  voeg fotos toe aan de %s database"
 
 #: ../src/interface.c:4268
 msgid "Please choose"

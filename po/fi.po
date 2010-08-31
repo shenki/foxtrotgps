@@ -471,10 +471,6 @@ msgstr "<i>Nopeus ja etäisyys:</i>"
 msgid "<i>What are you up to?</i>"
 msgstr "<i>Mitä teet paraikaa?</i>"
 
-#: ../data/foxtrotgps.glade.h:134
-msgid "<small><i>FoxtrotGPS 0.99.3</i></small>"
-msgstr "<small><i>FoxtrotGPS 0.99.3</i></small>"
-
 #: ../data/foxtrotgps.glade.h:135
 msgid "<span color=\"red\" weight=\"bold\">-</span>"
 msgstr "<span color=\"red\" weight=\"bold\">-</span>"
@@ -899,8 +895,9 @@ msgid "add POI"
 msgstr "lisää POI"
 
 #: ../data/foxtrotgps.glade.h:244
-msgid "add photos to the FoxtrotGPS database"
-msgstr "lisää valokuvia FoxtrotGPS:n tietokantaa"
+#, c-format
+msgid "add photos to the %s database"
+msgstr "lisää valokuvia %s:n tietokantaa"
 
 #: ../data/foxtrotgps.glade.h:245
 msgid "budget"
@@ -1125,10 +1122,10 @@ msgstr ""
 #~ msgstr "    "
 
 #~ msgid ""
-#~ "<small><i>FoxtrotGPS Version:\n"
+#~ "<small><i>%s Version:\n"
 #~ "Developer: Marcus Bauer &amp; Community</i></small>"
 #~ msgstr ""
-#~ "<small><i>FoxtrotGPS-versio:\n"
+#~ "<small><i>%s-versio:\n"
 #~ "Kehittäjä: Marcus Bauer &amp; yhteisö</i></small>"
 
 #~ msgid "      New...       "
