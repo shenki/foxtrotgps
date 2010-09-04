@@ -19,7 +19,7 @@ msgstr "Не удалось найти файл: %s"
 
 #: ../src/interface.c:276
 msgid "FoxtrotGPS"
-msgstr "ТангоGPS"
+msgstr ""
 
 #: ../src/interface.c:385
 #, fuzzy
