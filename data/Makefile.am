@@ -7,7 +7,7 @@ foxtrotgps_data_DATA = $(foxtrotgps_data_in_files:.desktop.in=.desktop)
 @INTLTOOL_DESKTOP_RULE@
 
 
-pkgdata_DATA = foxtrotgps.glade
+dist_pkgdata_DATA = foxtrotgps.glade
 
 EXTRA_DIST = $(foxtrotgps_data_in_files)
 DISTCLEANFILES = $(foxtrotgps_data_in_files:.desktop.in=.desktop)

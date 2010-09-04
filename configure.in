@@ -36,7 +36,6 @@ po/Makefile.in
 src/Makefile
 pixmaps/Makefile
 data/Makefile
-data/foxtrotgps.glade
 doc/Makefile
 contrib/Makefile
 ])

@@ -109,8 +109,11 @@ main (int argc, char *argv[])
 
 	pre_init();
 	window1 = glade_xml_get_widget (gladexml, "window1");
-	
-
+	char *window_title =
+		g_strdup_printf (gtk_window_get_title (GTK_WINDOW (window1)),
+		                 _(PACKAGE_NAME));
+	gtk_window_set_title (GTK_WINDOW (window1), window_title);
+	g_free (window_title); window_title = NULL;
 
   	
 	int screen_height, screen_width;
@@ -149,6 +152,14 @@ main (int argc, char *argv[])
 	hbox = lookup_widget(window1, "hbox49a");
 	global_infopane_widgets = gtk_container_get_children(GTK_CONTAINER(hbox));
 
+	GtkWidget *version_label;
+	char *package_string;
+	version_label = lookup_widget(window1, "label117");
+	package_string = g_strdup_printf
+		(gtk_label_get_label (GTK_LABEL (version_label)),
+		_(PACKAGE_NAME), _(PACKAGE_VERSION));
+	gtk_label_set_label (GTK_LABEL (version_label), package_string);
+	g_free (package_string); package_string = NULL;
 	
 	gtk_widget_show (window1);
 		

@@ -353,8 +353,9 @@ msgid "Timezone:"
 msgstr "Zona horaria:"
 
 #: ../src/interface.c:1312
-msgid "  add photos to the FoxtrotGPS database"
-msgstr "  añadir fotos a la base de datos de FoxtrotGPS"
+#, c-format
+msgid "  add photos to the %s database"
+msgstr "  añadir fotos a la base de datos de %s"
 
 #: ../src/interface.c:1430
 msgid "Image Data"
@@ -759,11 +760,12 @@ msgid "<i>What are you up to?</i>"
 msgstr "<i>¿Qué estás haciendo?</i>"
 
 #: ../data/foxtrotgps.glade.h:45
+#, c-format
 msgid ""
-"<small><i>FoxtrotGPS Version:\n"
+"<small><i>%s Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<small><i>Versión de FoxtrotGPS:\n"
+"<small><i>Versión de %s:\n"
 "Desarrollador: Marcus Bauer &amp; Community</i></small>"
 
 #: ../data/foxtrotgps.glade.h:47

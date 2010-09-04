@@ -311,12 +311,12 @@ msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
 msgstr ""
 
 #: ../src/interface.c:1227
-#, fuzzy
+#, fuzzy, c-format
 msgid ""
-"<small><i>FoxtrotGPS Version:\n"
+"<small><i>%s Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>FoxtrotGPS Version:\n"
+"<i>%s Version:\n"
 "Developer: Marcus Bauer</i>"
 
 #: ../src/interface.c:1249
@@ -918,8 +918,9 @@ msgid "Timezone:"
 msgstr "Časová zóna:"
 
 #: ../src/interface.c:4179
-msgid "  add photos to the FoxtrotGPS database"
-msgstr "  pridať fotky do FoxtrotGPS databázy"
+#, c-format
+msgid "  add photos to the %s database"
+msgstr "  pridať fotky do %s databázy"
 
 #: ../src/interface.c:4268
 msgid "Please choose"
