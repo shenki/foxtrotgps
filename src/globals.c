@@ -38,18 +38,20 @@ int global_latlon_unit	= 0;
 
 gps_data_t *gpsdata = NULL;
 
-GQueue		*trackpoint_list = NULL;
-GSList		*friends_list = NULL;
-GSList		*photo_list = NULL;
-GSList		*poi_list = NULL;
-GSList		*msg_list = NULL;
-float		trip_distance = 0;
-double		trip_maxspeed = 0;
-double		trip_time = 0;
-double		trip_starttime = 0;
-gboolean	trip_counter_on = TRUE;
-gboolean	trip_logger_on = FALSE;
-gboolean	trip_livelog_on = FALSE;
+GQueue		*trackpoint_list= NULL;
+GSList		*friends_list	= NULL;
+GSList		*photo_list	= NULL;
+GSList		*poi_list	= NULL;
+GSList		*msg_list	= NULL;
+
+float		trip_distance	= 0;
+double		trip_maxspeed	= 0;
+double		trip_time	= 0;
+double		trip_starttime	= 0;
+
+gboolean	trip_counter_on	= TRUE;
+gboolean	trip_logger_on	= FALSE;
+gboolean	trip_livelog_on	= FALSE;
 
 trackpoint_t	global_myposition;
 
