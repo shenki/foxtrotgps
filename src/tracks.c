@@ -576,7 +576,8 @@ parse_nodes(xmlNode *node)
 	{
 		if (cur_node->type == XML_ELEMENT_NODE)			
 		{
-			if (xmlStrEqual(cur_node->name, BAD_CAST "trkpt"))
+			if (xmlStrEqual(cur_node->name, BAD_CAST "trkpt") || 
+			    xmlStrEqual(cur_node->name, BAD_CAST "rtept"))
 			{
 				double lat, lon;
 				trackpoint_t *tp = g_new0(trackpoint_t,1);
