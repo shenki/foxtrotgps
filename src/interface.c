@@ -1803,6 +1803,12 @@ create_window1 (void)
   g_signal_connect ((gpointer) radiobutton21, "toggled",
                     G_CALLBACK (on_radiobutton21_toggled),
                     NULL);
+  g_signal_connect ((gpointer) checkbutton18, "toggled",
+                    G_CALLBACK (on_checkbutton18_toggled),
+                    NULL);
+  g_signal_connect ((gpointer) entry33, "changed",
+                    G_CALLBACK (on_entry33_changed),
+                    NULL);
   g_signal_connect ((gpointer) entry3, "changed",
                     G_CALLBACK (on_entry3_changed),
                     NULL);
