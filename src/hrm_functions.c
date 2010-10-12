@@ -41,6 +41,8 @@ reset_hrm_io()
 	g_source_remove(hrm_sid1); 
 	g_source_remove(hrm_sid3); 
 	
+	osd_hrm(TRUE);
+	
 	return FALSE;	
 }
 
