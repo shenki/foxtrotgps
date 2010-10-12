@@ -110,6 +110,9 @@ create_window1 (void)
   GtkWidget *label65;
   GtkWidget *label70;
   GtkWidget *label66;
+  GtkWidget *label205;
+  GtkWidget *label206;
+  GtkWidget *label207;
   GtkWidget *hbox5;
   GtkWidget *button15;
   GtkWidget *button8;
@@ -644,7 +647,7 @@ create_window1 (void)
   gtk_box_pack_start (GTK_BOX (vbox16), alignment1, TRUE, TRUE, 0);
   gtk_alignment_set_padding (GTK_ALIGNMENT (alignment1), 0, 0, 12, 0);
 
-  table3 = gtk_table_new (2, 4, FALSE);
+  table3 = gtk_table_new (3, 4, FALSE);
   gtk_widget_show (table3);
   gtk_container_add (GTK_CONTAINER (alignment1), table3);
   gtk_table_set_row_spacings (GTK_TABLE (table3), 2);
@@ -711,6 +714,26 @@ create_window1 (void)
                     (GtkAttachOptions) (0), 0, 0);
   gtk_label_set_use_markup (GTK_LABEL (label66), TRUE);
   gtk_misc_set_alignment (GTK_MISC (label66), 0, 0.5);
+
+  label205 = gtk_label_new (_("Heart"));
+  gtk_table_attach (GTK_TABLE (table3), label205, 0, 1, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_misc_set_alignment (GTK_MISC (label205), 0, 0.5);
+
+  label206 = gtk_label_new (_(" "));
+  gtk_table_attach (GTK_TABLE (table3), label206, 1, 2, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_label_set_use_markup (GTK_LABEL (label206), TRUE);
+  gtk_misc_set_alignment (GTK_MISC (label206), 0, 0.5);
+
+  label207 = gtk_label_new (_(" "));
+  gtk_table_attach (GTK_TABLE (table3), label207, 3, 4, 2, 3,
+                    (GtkAttachOptions) (GTK_FILL),
+                    (GtkAttachOptions) (0), 0, 0);
+  gtk_label_set_use_markup (GTK_LABEL (label207), TRUE);
+  gtk_misc_set_alignment (GTK_MISC (label207), 0, 0.5);
 
   hbox5 = gtk_hbox_new (FALSE, 0);
   gtk_widget_show (hbox5);
@@ -1905,6 +1928,9 @@ create_window1 (void)
   GLADE_HOOKUP_OBJECT (window1, label65, "label65");
   GLADE_HOOKUP_OBJECT (window1, label70, "label70");
   GLADE_HOOKUP_OBJECT (window1, label66, "label66");
+  GLADE_HOOKUP_OBJECT (window1, label205, "label205");
+  GLADE_HOOKUP_OBJECT (window1, label206, "label206");
+  GLADE_HOOKUP_OBJECT (window1, label207, "label207");
   GLADE_HOOKUP_OBJECT (window1, hbox5, "hbox5");
   GLADE_HOOKUP_OBJECT (window1, button15, "button15");
   GLADE_HOOKUP_OBJECT (window1, button8, "button8");
