@@ -28,6 +28,7 @@
 #include "poi.h"
 #include "wp.h"
 #include "tracks.h"
+#include "hrm_functions.h"
 
 #define WTFCOUNTER 5
 
@@ -403,6 +404,7 @@ on_drawingarea1_expose_event           (GtkWidget       *widget,
 		event->area.width, event->area.height);
 	
 	osd_speed(TRUE);
+	osd_hrm(TRUE);
 	map_scale_indicator();
 	
 	return FALSE;
