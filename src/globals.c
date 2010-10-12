@@ -37,6 +37,7 @@ int global_latlon_unit	= 0;
 
 
 gps_data_t *gpsdata = NULL;
+hrm_data_t *hrmdata = NULL;
 
 GQueue		*trackpoint_list= NULL;
 GSList		*friends_list	= NULL;
@@ -52,6 +53,7 @@ double		trip_starttime	= 0;
 gboolean	trip_counter_on	= TRUE;
 gboolean	trip_logger_on	= FALSE;
 gboolean	trip_livelog_on	= FALSE;
+gboolean	hrm_on		= FALSE;
 
 trackpoint_t	global_myposition;
 
@@ -69,6 +71,7 @@ gboolean	global_auto_download = TRUE;
 gboolean	global_mapmode = TRUE;
 gboolean	global_autocenter = TRUE;
 gboolean	global_reconnect_gpsd = TRUE;
+gboolean	global_reconnect_hrm = TRUE;
 int		global_tiles_in_dl_queue = 0;
 
 gboolean	global_show_friends = FALSE;
@@ -90,6 +93,8 @@ int		global_ff_mode = 3;
 
 gchar		*global_server	= NULL;
 gchar		*global_port	= NULL;
+
+gchar		*global_hrm_bt_addr = NULL;
 
 gchar		*global_home_dir = NULL;
 gchar		*tangogps_dir = NULL;

@@ -49,7 +49,9 @@ tangogps_SOURCES = \
 	tracks.c\
 	tracks.h\
 	exif.c\
-	exif.h
+	exif.h\
+	hrm_functions.c\
+	hrm_functions.h
 
 tangogps_LDFLAGS = 
 

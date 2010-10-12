@@ -90,6 +90,12 @@ typedef struct {
 	gboolean seen_vaild; /* ever had a vaild fix? */
 } gps_data_t;
 
+typedef struct {
+	int freq;
+	int min;
+	int max;
+} hrm_data_t;
+
 extern GdkPixmap 	*pixmap;
 extern GtkWidget	*window1, *window2;
 extern GtkWidget	*map_drawable;
@@ -119,7 +125,7 @@ extern int global_drawingarea_height;
 
 
 extern gps_data_t *gpsdata;
-
+extern hrm_data_t *hrmdata;
 
 extern GQueue		*trackpoint_list;
 extern GSList		*friends_list;
@@ -134,6 +140,7 @@ extern gboolean		trip_counter_on;
 extern trackpoint_t	global_myposition;
 extern gboolean		trip_logger_on;
 extern gboolean		trip_livelog_on;
+extern gboolean		hrm_on;
 
 extern gchar		*global_curr_reponame;
 extern int		global_repo_cnt;
@@ -147,6 +154,7 @@ extern gboolean		global_auto_download;
 extern gboolean		global_mapmode;
 extern gboolean		global_autocenter;
 extern gboolean		global_reconnect_gpsd;
+extern gboolean		global_reconnect_hrm;
 extern int		global_tiles_in_dl_queue;
 
 extern gboolean		global_show_pois;
@@ -168,6 +176,8 @@ extern int		global_ff_mode;
 
 extern gchar		*global_server;
 extern gchar		*global_port;
+
+extern gchar		*global_hrm_bt_addr;
 
 extern gchar		*global_home_dir;
 extern gchar		*tangogps_dir;

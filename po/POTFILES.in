@@ -39,5 +39,7 @@ src/tracks.c
 src/tracks.h
 src/exif.c
 src/exif.h
+src/hrm_functions.c
+src/hrm_functions.h
 
 
