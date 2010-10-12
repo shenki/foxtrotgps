@@ -44,6 +44,90 @@ reset_hrm_io()
 	return FALSE;	
 }
 
+void
+osd_hrm(gboolean force_redraw)
+{
+	PangoContext		*context = NULL;
+	PangoLayout		*layout  = NULL;
+	PangoFontDescription	*desc    = NULL;
+	
+	GdkColor color;
+	GdkGC *gc;
+	
+	gchar *buffer;
+	static int x = 10, y = 310;
+	static int width = 0, height = 0;
+
+	static int hrm_tmp = 0;
+	int hrm;
+
+	if(!hrm_on)
+		return;
+
+
+	if(mouse_dx == 0 && mouse_dy == 0) 
+	{
+		if(hrmdata) 
+			buffer = g_strdup_printf("%u", hrmdata->freq);
+		else
+			buffer = g_strdup_printf("--");
+		
+		
+		context = gtk_widget_get_pango_context (map_drawable);
+		layout  = pango_layout_new (context);
+		desc    = pango_font_description_new();
+		
+		pango_font_description_set_absolute_size (desc, 50 * PANGO_SCALE);
+		pango_layout_set_font_description (layout, desc);
+		pango_layout_set_text (layout, buffer, strlen(buffer));
+	
+	
+		gc = gdk_gc_new (map_drawable->window);
+	
+		if(hrmdata) 
+			color.red = (hrmdata->freq > MAX_HEART_FREQ) ? 0xffff : 0;
+		else
+			color.red = 0;
+		color.green = 0;
+		color.blue = 0;
+		
+		gdk_gc_set_rgb_fg_color (gc, &color);
+		
+		if(hrmdata)
+			hrm = hrmdata->freq;
+		else
+			hrm = 0;
+		
+		if(hrm_tmp != hrm || force_redraw)
+		{
+			
+			gdk_draw_drawable (
+				map_drawable->window,
+				map_drawable->style->fg_gc[GTK_WIDGET_STATE (map_drawable)],
+				pixmap,
+				0,300,
+				0, 300,
+				width+10,height+10);
+		
+			
+
+				gdk_draw_layout(map_drawable->window,
+						gc,
+						x, y,
+						layout);
+			
+			
+			pango_layout_get_pixel_size(layout, &width, &height);
+		}
+	
+		hrm_tmp = hrm;
+		
+		g_free(buffer);
+		pango_font_description_free (desc);
+		g_object_unref (layout);
+		g_object_unref (gc);
+	}
+}
 
 static gboolean
 cb_hrm_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
