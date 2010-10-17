@@ -713,6 +713,9 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 {
 	int ret;
 
+        if (libgps_gpsdata == NULL)
+            return FALSE;
+
 	ret = gps_poll(libgps_gpsdata);
 	if (ret == 0)
 	{
@@ -739,7 +742,9 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 	}
 	else
 	{
-		printf("gps_poll returned %d\n", ret);
+		fprintf(stderr, "connection to gpsd LOST\n");
+		cb_gpsd_io_error(src, condition, data);
+		return FALSE;
 	}
 	return TRUE;
 }
