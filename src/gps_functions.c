@@ -743,8 +743,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 	else
 	{
 		fprintf(stderr, "connection to gpsd LOST\n");
-		cb_gpsd_io_error(src, condition, data);
-		return FALSE;
+		return cb_gpsd_io_error(src, condition, data);
 	}
 	return TRUE;
 }
