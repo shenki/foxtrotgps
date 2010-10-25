@@ -944,7 +944,7 @@ msgid "meters"
 msgstr "metrit"
 
 #: ../data/foxtrotgps.glade.h:249
-msgid "metrical"
+msgid "metric"
 msgstr "metrij."
 
 #: ../data/foxtrotgps.glade.h:250

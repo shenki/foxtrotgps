@@ -376,7 +376,7 @@ msgstr "<i>Скорость и Расстояние:</i>"
 
 #: ../src/interface.c:1404
 #, fuzzy
-msgid "metrical"
+msgid "metric"
 msgstr "метрическая"
 
 #: ../src/interface.c:1411

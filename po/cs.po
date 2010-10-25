@@ -381,7 +381,7 @@ msgid "<i>Speed and Distance:</i>"
 msgstr "<i>Vzdálenost a rychlost:</i>"
 
 #: ../src/interface.c:1404
-msgid "metrical"
+msgid "metric"
 msgstr "metrické"
 
 #: ../src/interface.c:1411
