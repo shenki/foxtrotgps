@@ -381,7 +381,7 @@ msgid "<i>Speed and Distance:</i>"
 msgstr "<i>Vitesse et distance</i>"
 
 #: ../src/interface.c:1404
-msgid "metrical"
+msgid "metric"
 msgstr "métrique"
 
 #: ../src/interface.c:1411

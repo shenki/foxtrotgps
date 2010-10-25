@@ -373,7 +373,7 @@ msgid "<i>Speed and Distance:</i>"
 msgstr "<i>Sebesség és távolság:</i>"
 
 #: ../src/interface.c:1404
-msgid "metrical"
+msgid "metric"
 msgstr "metrikus"
 
 #: ../src/interface.c:1411
