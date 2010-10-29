@@ -3741,6 +3741,47 @@ on_entry29_changed                     (GtkEditable     *editable,
 }
 
 void
+on_checkbutton18_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data)
+{
+	GtkWidget *widget;
+	
+	hrm_on = gtk_toggle_button_get_active(togglebutton);
+	
+	gconf_client_set_bool(	global_gconfclient, 
+				GCONF"/hrm_on",
+				hrm_on, NULL);
+
+	global_reconnect_hrm = TRUE;
+	
+	widget = lookup_widget(window1, "label205");
+	(hrm_on) ? gtk_widget_show(widget) : gtk_widget_hide(widget);
+
+	widget = lookup_widget(window1, "label206");
+	(hrm_on) ? gtk_widget_show(widget) : gtk_widget_hide(widget);
+
+	widget = lookup_widget(window1, "label207");
+	(hrm_on) ? gtk_widget_show(widget) : gtk_widget_hide(widget);
+}
+
+
+void
+on_entry33_changed                     (GtkEditable     *editable,
+                                        gpointer         user_data)
+{
+	const char *entry;
+	
+	entry = gtk_entry_get_text(GTK_ENTRY(editable));
+	
+	gconf_client_set_string(global_gconfclient, 
+				GCONF"/hrm_bt_addr",
+				entry, NULL);
+	
+	global_hrm_bt_addr = g_strdup(entry);
+	global_reconnect_hrm = TRUE;
+}
+
+void
 set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu)
 {
 	gtk_widget_set_sensitive (GTK_WIDGET (zoomout),

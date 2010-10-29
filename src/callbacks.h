@@ -772,6 +772,14 @@ on_entry29_changed                     (GtkEditable     *editable,
                                         gpointer         user_data);
 
 void
+on_checkbutton18_toggled               (GtkToggleButton *togglebutton,
+                                        gpointer         user_data);
+
+void
+on_entry33_changed                     (GtkEditable     *editable,
+                                        gpointer         user_data);
+
+void
 set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu);
 
 void
