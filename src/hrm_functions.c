@@ -131,6 +131,25 @@ osd_hrm(gboolean force_redraw)
 	}
 }
 
+void
+set_hrm_labels()
+{
+	static GtkWidget *widget1=NULL, *widget2=NULL;
+	static gchar buffer[128];
+				
+	if(!widget1) {
+		widget1 = lookup_widget(window1, "label206");
+		widget2 = lookup_widget(window1, "label207");
+	}
+	
+	g_snprintf(buffer, 128, "<b><big>%d</big></b> <small>bpm</small>", hrmdata->freq);
+	gtk_label_set_label(GTK_LABEL(widget1), buffer);
+
+	g_snprintf(buffer, 128, "<b><big>%d/%d</big></b>", hrmdata->min, hrmdata->max);
+	gtk_label_set_label(GTK_LABEL(widget2), buffer);
+}
+
+
 static gboolean
 cb_hrm_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 {

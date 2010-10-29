@@ -355,6 +355,8 @@ cb_gps_timer()
 		get_hrm_data();
 	else if(hrm_on && hrmdata) {
 		osd_hrm(FALSE);
+		if(global_infopane_visible)
+			set_hrm_labels();
 	}
 	
 	return TRUE; 
