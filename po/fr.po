@@ -1,14 +1,14 @@
 # foxtrotgps french translation 
 # Copyright (C) 2008
 # This file is distributed under the same license as the foxtrotgps package.
-# FIRST AUTHOR <EMAIL@ADDRESS>, 2008.
+# Steve Petruzzello <dlist@bluewin.ch>, 2010.
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: 0.9.3\n"
+"Project-Id-Version: 0.99-4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-04-14 08:29+0300\n"
-"PO-Revision-Date: 2008-10-19 21:32+0100\n"
+"PO-Revision-Date: 2010-11-09 21:32+0100\n"
 "Last-Translator: Steve Petruzzello <dlist@bluewin.ch>\n"
 "Language-Team: french <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -25,119 +25,107 @@ msgid "FoxtrotGPS"
 msgstr "FoxtrotGPS"
 
 #: ../src/interface.c:385
-#, fuzzy
 msgid "Show Info"
-msgstr "Info GPS"
+msgstr "Affiche Info"
 
 #: ../src/interface.c:409
 msgid "Fullscreen (F11 or Space)"
-msgstr ""
+msgstr "Plein écran (F11 ou Espace)"
 
 #: ../src/interface.c:434
 msgid "Zoom in"
-msgstr ""
+msgstr "Zoom avant"
 
 #: ../src/interface.c:450
 msgid "Zoom out"
-msgstr ""
+msgstr "Zoom arrière"
 
 #: ../src/interface.c:475
-#, fuzzy
 msgid "Autocenter On"
-msgstr "autocentrer"
+msgstr "autocentrer sur"
 
 #: ../src/interface.c:500
 msgid "Next map repo"
-msgstr ""
+msgstr "Prochain dépôt de cartes"
 
 #: ../src/interface.c:516
 msgid "Previous map repo"
-msgstr ""
+msgstr "Précédent dépôt de cartes"
 
 #: ../src/interface.c:549
 msgid "Go to Previous Page"
-msgstr ""
+msgstr "Aller à la page précédente"
 
 #: ../src/interface.c:560
 msgid "Close Info Area"
-msgstr ""
+msgstr "Fermer la zone d'info "
 
 #: ../src/interface.c:570
 msgid "Go to Next Page"
-msgstr ""
+msgstr "Aller à la page suivante"
 
 #: ../src/interface.c:621
 msgid "Speed"
-msgstr "Vitesse :"
+msgstr "Vitesse"
 
 #: ../src/interface.c:627
 msgid "   <span font_desc='40'> -- </span>"
-msgstr ""
+msgstr "   <span font_desc='40'> -- </span>"
 
 #: ../src/interface.c:645
-#, fuzzy
 msgid "Trip "
-msgstr "Trajet"
+msgstr "Trajet "
 
 #: ../src/interface.c:653
 msgid "Average "
-msgstr ""
+msgstr "Moyenne "
 
 #: ../src/interface.c:661 ../src/interface.c:669 ../src/interface.c:691
 #: ../src/interface.c:699 ../src/interface.c:780 ../src/interface.c:788
 #: ../src/interface.c:796 ../src/interface.c:804 ../src/interface.c:812
 #: ../src/interface.c:4452
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../src/interface.c:677
-#, fuzzy
 msgid "Max "
-msgstr "Carte DL"
+msgstr "Max "
 
 #: ../src/interface.c:684
-#, fuzzy
 msgid "Time "
-msgstr "Durée : "
+msgstr "Temps "
 
 #: ../src/interface.c:712
 msgid "Stop"
-msgstr ""
+msgstr "Stop"
 
 #: ../src/interface.c:718
-#, fuzzy
 msgid "Reset"
-msgstr "activer"
+msgstr "Redémarrer"
 
 #: ../src/interface.c:724
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
-msgstr "<b>Calculateur de voyage</b>"
+msgstr "<big><b>Calculateur de voyage</b></big>  <small>[1/4]</small>"
 
 #: ../src/interface.c:745
-#, fuzzy
 msgid "Altitude"
-msgstr "Altitude :"
+msgstr "Altitude"
 
 #: ../src/interface.c:752
-#, fuzzy
 msgid "Heading"
-msgstr "Direction :"
+msgstr "Direction"
 
 #: ../src/interface.c:759
-#, fuzzy
 msgid "Lat - Lon"
-msgstr "Lat, Lon :"
+msgstr "Lat - Lon"
 
 #: ../src/interface.c:766
-#, fuzzy
 msgid "GPS Time"
-msgstr "Heure GPS :"
+msgstr "Heure GPS"
 
 #: ../src/interface.c:773
-#, fuzzy
 msgid "Satellites  "
-msgstr "Satellites : "
+msgstr "Satellites  "
 
 #: ../src/interface.c:820
 msgid "<b>GPS Data</b>"
@@ -145,21 +133,23 @@ msgstr "<b>Données GPS</b>"
 
 #: ../src/interface.c:839
 msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
-msgstr ""
+msgstr "<big><b>Amis</b></big>  <small>[2/4]</small>"
 
 #: ../src/interface.c:846
 msgid "Hide Messages"
-msgstr ""
+msgstr "Cacher Messages"
 
 #: ../src/interface.c:856
 msgid "<i>No Messages</i>"
-msgstr ""
+msgstr "<i>Aucun message</i>"
 
 #: ../src/interface.c:886
 msgid ""
 "Enable position sharing and\n"
 "messaging with your friends"
 msgstr ""
+"Activer le partage de position et\n"
+"de contacts avec vos amis"
 
 #: ../src/interface.c:891
 msgid ""
@@ -171,21 +161,19 @@ msgstr ""
 
 #: ../src/interface.c:902
 msgid "Update interval  "
-msgstr ""
+msgstr "Intervalle de mise à jour  "
 
 #: ../src/interface.c:910
-#, fuzzy
 msgid "5"
-msgstr "15"
+msgstr "5"
 
 #: ../src/interface.c:913
 msgid "minutes"
 msgstr "minutes"
 
 #: ../src/interface.c:926
-#, fuzzy
 msgid "     Share!     "
-msgstr "Stop"
+msgstr "     Partager !     "
 
 #: ../src/interface.c:932 ../src/interface.c:1110 ../src/interface.c:1152
 #: ../src/interface.c:1366
@@ -193,41 +181,40 @@ msgid "     "
 msgstr "     "
 
 #: ../src/interface.c:947
-#, fuzzy
 msgid "<b>Position Sharing  </b>"
-msgstr "<b> Mise à jour de la position </b>"
+msgstr "<b>Partage de la position  </b>"
 
 #: ../src/interface.c:969
 msgid ""
 "Decide whom you see and \n"
 "who can see you:"
 msgstr ""
+"Décidez qui vous voyez et \n"
+"qui vous voit :"
 
 #: ../src/interface.c:975
 msgid "fun mode"
-msgstr ""
+msgstr "mode fun"
 
 #: ../src/interface.c:982
-#, fuzzy
 msgid "friend mode"
-msgstr "Info ami"
+msgstr "Mode ami"
 
 #: ../src/interface.c:989
 msgid "private mode"
-msgstr ""
+msgstr "Mode privé"
 
 #: ../src/interface.c:996
 msgid "<i>What are you up to?</i>"
-msgstr ""
+msgstr "<i>Où en êtes-vous ?</i>"
 
 #: ../src/interface.c:1006
 msgid "just idle..."
-msgstr ""
+msgstr "Juste oisif..."
 
 #: ../src/interface.c:1009
-#, fuzzy
 msgid "<b>Sharing Mode</b> "
-msgstr "<b>Mise à jour de ma position</b>"
+msgstr "<b>Mode de partage</b>"
 
 #: ../src/interface.c:1035
 msgid "Nickname "
@@ -246,9 +233,8 @@ msgid "JohnDoe"
 msgstr "MichelDupont"
 
 #: ../src/interface.c:1064
-#, fuzzy
 msgid "Show password"
-msgstr "Mot de passe"
+msgstr "Montrer le mot de passe"
 
 #: ../src/interface.c:1085
 msgid ""
@@ -256,73 +242,69 @@ msgid ""
 "\n"
 "Before first use register them by clicking on the button below. "
 msgstr ""
+"Choisissez un surnom et un mot de passe.\n"
+"Avant la première utilisation, enregistrez-les en cliquant sur le bouton ci-"
+"dessous."
 
 #: ../src/interface.c:1091
-#, fuzzy
 msgid "Email        "
-msgstr "Courriel "
+msgstr "Courriel        "
 
 #: ../src/interface.c:1105
 msgid "     Register!     "
-msgstr "Enregistrez-vous "
+msgstr "Enregistrez-vous !"
 
 #: ../src/interface.c:1118
-#, fuzzy
 msgid "<b>Me</b>"
-msgstr "<b>-</b>"
+msgstr "<b>Moi</b>"
 
 #: ../src/interface.c:1138 ../src/interface.c:1306 ../src/interface.c:1542
 msgid "    "
 msgstr "    "
 
 #: ../src/interface.c:1143
-#, fuzzy
 msgid "Enable Track Logging"
-msgstr "<b>Journalisation des parcours</b>"
+msgstr "Activer la journalisation des parcours"
 
 #: ../src/interface.c:1148
 msgid "Enable Live Tracking"
-msgstr ""
+msgstr "Activer la journalisation en direct"
 
 #: ../src/interface.c:1161
-#, fuzzy
 msgid "Split"
-msgstr "Sport"
+msgstr "Scinder"
 
 #: ../src/interface.c:1178
 msgid "Load"
-msgstr ""
+msgstr "Charger"
 
 #: ../src/interface.c:1184
-#, fuzzy
 msgid "Clear"
-msgstr "Voiture"
+msgstr "Effacer"
 
 #: ../src/interface.c:1188
 msgid "Upload"
-msgstr ""
+msgstr "Télécharger"
 
 #: ../src/interface.c:1196
-#, fuzzy
 msgid "Configure"
-msgstr "Configuration"
+msgstr "Configurer"
 
 #: ../src/interface.c:1202
 msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
-msgstr ""
+msgstr "<big><b>Parcours</b></big>  <small>[3/4]</small>"
 
 #: ../src/interface.c:1220
 msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
-msgstr ""
+msgstr "<big><b>Configuration</b></big>   <small>[4/4]</small>"
 
 #: ../src/interface.c:1227
-#, fuzzy, c-format
 msgid ""
-"<small><i>%s Version:\n"
+"<small><i>FoxtrotGPS Version:\n"
 "Developer: Marcus Bauer &amp; Community</i></small>"
 msgstr ""
-"<i>Version de %s :\n"
-"Développeur : Marcus Bauer</i>"
+"<small><i>Version de FoxtrotGPS :\n"
+"Développeur : Marcus Bauer &amp; la communauté</i></small>"
 
 #: ../src/interface.c:1249
 msgid ""
@@ -330,34 +312,31 @@ msgid ""
 "download of missing tiles into cache"
 msgstr ""
 "Activation ou désactivation du téléchargement automatique\n"
-"des cartes dans le cache"
+"des carreaux manquants dans le cache"
 
 #: ../src/interface.c:1254
 msgid "Auto download map tiles"
-msgstr "Téléchargement automatique des cartes"
+msgstr "Téléchargement automatique des carreaux"
 
 #: ../src/interface.c:1261
 msgid "<b>Auto Download</b>"
 msgstr "<b>Téléchargement automatique</b>"
 
 #: ../src/interface.c:1282
-#, fuzzy
 msgid "Current Map:"
-msgstr "Dépôt courant :"
+msgstr "Carte courante :"
 
 #: ../src/interface.c:1302
-#, fuzzy
 msgid "      New...       "
-msgstr "Nouveau"
+msgstr "      Nouveau...    "
 
 #: ../src/interface.c:1311
-#, fuzzy
 msgid "      Edit...     "
-msgstr "Configurer"
+msgstr "      Modifier...     "
 
 #: ../src/interface.c:1325 ../src/interface.c:2290 ../src/interface.c:3914
 msgid "xyz instead of zxy"
-msgstr ""
+msgstr "xyz au lieu de zxy"
 
 #: ../src/interface.c:1331
 msgid "URI"
@@ -365,23 +344,22 @@ msgstr "URI :"
 
 #: ../src/interface.c:1338
 msgid "Cache Dir"
-msgstr "Répertoire des cartes :"
+msgstr "Répertoire du cache"
 
 #: ../src/interface.c:1360
 msgid "    Save Repository Configuration    "
-msgstr "Enregistrer la configuration du dépôt"
+msgstr "  Enregistrer la configuration du dépôt  "
 
 #: ../src/interface.c:1371
-#, fuzzy
 msgid "<b>Map Types</b>"
-msgstr "<b>Dépôts de cartes</b>"
+msgstr "<b>Types de cartes</b>"
 
 #: ../src/interface.c:1392
 msgid "<i>Speed and Distance:</i>"
-msgstr "<i>Vitesse et distance</i>"
+msgstr "<i>Vitesse et distance :</i>"
 
 #: ../src/interface.c:1404
-msgid "metric"
+msgid "metrical"
 msgstr "métrique"
 
 #: ../src/interface.c:1411
@@ -394,7 +372,7 @@ msgstr "nautique"
 
 #: ../src/interface.c:1423
 msgid "<i>Altitude:</i>"
-msgstr "<i>Altitude</i>"
+msgstr "<i>Altitude :</i>"
 
 #: ../src/interface.c:1435
 msgid "meters"
@@ -406,7 +384,7 @@ msgstr "pieds"
 
 #: ../src/interface.c:1448
 msgid "<i>Lat &amp; Lon:</i>"
-msgstr "<i>Lat &amp; Lon</i>"
+msgstr "<i>Lat &amp; Lon :</i>"
 
 #: ../src/interface.c:1460
 msgid "d.dd"
@@ -430,7 +408,7 @@ msgid ""
 "Set GPSD Host IP\n"
 msgstr ""
 "\n"
-"IP de l'hôte gpsd\n"
+"Régler l'IP de l'hôte GPSD\n"
 
 #: ../src/interface.c:1509
 msgid " GPSD "
@@ -446,7 +424,7 @@ msgstr "127.0.0.1"
 
 #: ../src/interface.c:1523
 msgid " Port:"
-msgstr " Ports :"
+msgstr " Ports :"
 
 #: ../src/interface.c:1530
 msgid "2947"
@@ -454,7 +432,7 @@ msgstr "2947"
 
 #: ../src/interface.c:1537
 msgid "     Change GPSD     "
-msgstr "Modifier GPSD"
+msgstr "     Modifier GPSD    "
 
 #: ../src/interface.c:1547
 msgid "<b>GPSD</b>"
@@ -482,25 +460,23 @@ msgstr "montrer les photos"
 
 #: ../src/interface.c:2060
 msgid "ways & routes"
-msgstr ""
+msgstr "chemins et routes"
 
 #: ../src/interface.c:2067
 msgid "get route"
-msgstr ""
+msgstr "obtenir la route"
 
 #: ../src/interface.c:2071
 msgid "create way"
-msgstr ""
+msgstr "créer un chemin"
 
 #: ../src/interface.c:2074
-#, fuzzy
 msgid "set WP"
-msgstr "activer"
+msgstr "Régler WP"
 
 #: ../src/interface.c:2078
-#, fuzzy
 msgid "unset WP"
-msgstr "désactiver"
+msgstr "Effacer WP"
 
 #: ../src/interface.c:2082
 msgid "POIs"
@@ -511,18 +487,16 @@ msgid "add POI"
 msgstr "ajouter PdI"
 
 #: ../src/interface.c:2093
-#, fuzzy
 msgid "select POIs"
-msgstr "Supprimer PdI ?"
+msgstr "Choisir PdI"
 
 #: ../src/interface.c:2097
-#, fuzzy
 msgid "photos"
-msgstr "montrer les photos"
+msgstr "photos"
 
 #: ../src/interface.c:2104
 msgid "geocode"
-msgstr ""
+msgstr "geocode"
 
 #: ../src/interface.c:2108
 msgid "my position"
@@ -530,11 +504,11 @@ msgstr "ma position"
 
 #: ../src/interface.c:2115
 msgid "set"
-msgstr "activer"
+msgstr "Régler"
 
 #: ../src/interface.c:2119
 msgid "unset"
-msgstr "désactiver"
+msgstr "Effacer"
 
 #: ../src/interface.c:2123
 msgid "map download"
@@ -550,30 +524,29 @@ msgid ""
 "\n"
 "http://www.foxtrotgps.org/\n"
 msgstr ""
+"Vous trouverez davantage d'informations concernant les dépôts sur\n"
+"\n"
+"http://www.foxtrotgps.org/\n"
 
 #: ../src/interface.c:2254
-#, fuzzy
 msgid "<b>Name for the new Repository</b>"
-msgstr "Nom du nouveau dépôt"
+msgstr "<b>Nom du nouveau dépôt</b>"
 
 #: ../src/interface.c:2264 ../src/interface.c:3888
-#, fuzzy
 msgid " "
-msgstr "  "
+msgstr " "
 
 #: ../src/interface.c:2268 ../src/interface.c:3892
-#, fuzzy
 msgid "<b>URI</b>"
-msgstr "<b>-</b>"
+msgstr "<b>URI</b>"
 
 #: ../src/interface.c:2279 ../src/interface.c:3903
-#, fuzzy
 msgid "<b>Cache Dir</b>"
-msgstr "Répertoire des cartes :"
+msgstr "<b>Répertoire du cache</b>"
 
 #: ../src/interface.c:2308
 msgid "All fields must be filled in"
-msgstr ""
+msgstr "Tous les champs doivent être remplis"
 
 #: ../src/interface.c:2373
 msgid "GPS Info"
@@ -588,13 +561,16 @@ msgid ""
 "Distance to\n"
 "next point"
 msgstr ""
+"Distance au\n"
+"prochain point"
 
 #: ../src/interface.c:2407
-#, fuzzy
 msgid ""
 "Set point as\n"
 "my position"
-msgstr "ma position"
+msgstr ""
+"Régler ce point comme\n"
+"ma position"
 
 #: ../src/interface.c:2411 ../src/interface.c:3006 ../src/interface.c:3393
 msgid "Close"
@@ -622,27 +598,27 @@ msgstr "Télécharger les cartes de l'espace visible :"
 
 #: ../src/interface.c:2598
 msgid "+ 1 zoom level"
-msgstr "+ 1 niveau de zoom"
+msgstr "+ 1 niveau de zoom"
 
 #: ../src/interface.c:2604
 msgid "+ 2 zoom levels"
-msgstr "+ 2 niveau de zoom"
+msgstr "+ 2 niveaux de zoom"
 
 #: ../src/interface.c:2610
 msgid "+ 3 zoom levels"
-msgstr "+ 3 niveau de zoom"
+msgstr "+ 3 niveaux de zoom"
 
 #: ../src/interface.c:2616
 msgid "+ 4 zoom levels (~25MB)"
-msgstr "+ 4 niveau de zoom (~25Mb)"
+msgstr "+ 4 niveaux de zoom (~25Mb)"
 
 #: ../src/interface.c:2623
 msgid "+ 5 zoom levels (~100MB)"
-msgstr "+ 5 niveau de zoom (~100Mb)"
+msgstr "+ 5 niveaux de zoom (~100Mb)"
 
 #: ../src/interface.c:2629
 msgid "+ 6 zoom levels (~400MB)"
-msgstr "+ 6 niveau de zoom (~400Mb)"
+msgstr "+ 6 niveaux de zoom (~400Mb)"
 
 #: ../src/interface.c:2635
 msgid "<b> Map Download </b>"
@@ -654,7 +630,7 @@ msgstr "Photo Geo"
 
 #: ../src/interface.c:2729
 msgid "Big"
-msgstr ""
+msgstr "Grand"
 
 #: ../src/interface.c:2733 ../src/friends.c:611
 msgid "Go To"
@@ -734,7 +710,7 @@ msgstr "<b>-----</b>"
 
 #: ../src/interface.c:2902
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../src/interface.c:2911 ../src/interface.c:3606
 msgid "<b>-</b>"
@@ -766,20 +742,19 @@ msgstr "publique"
 
 #: ../src/interface.c:3132
 msgid "Coordinates <b><i>clicked</i></b> on the map:"
-msgstr ""
+msgstr "Coordonnées <b><i>cliquées</i></b> sur la carte :"
 
 #: ../src/interface.c:3143 ../src/interface.c:3491
 msgid "Lat: "
 msgstr "Lat : "
 
 #: ../src/interface.c:3153 ../src/interface.c:3501
-#, fuzzy
 msgid " Lon: "
 msgstr "Lon : "
 
 #: ../src/interface.c:3163
 msgid "Use current GPS position instead"
-msgstr ""
+msgstr "Utilisez la position GPS courante à la place"
 
 #: ../src/interface.c:3167 ../src/interface.c:3537
 msgid "Category:"
@@ -787,7 +762,7 @@ msgstr "Catégorie :"
 
 #: ../src/interface.c:3176 ../src/interface.c:3544
 msgid "- please choose -"
-msgstr "Veuillez choisir"
+msgstr "- Veuillez choisir -"
 
 #: ../src/interface.c:3185 ../src/interface.c:3553
 msgid "Restaurant & Food"
@@ -849,296 +824,281 @@ msgstr "Supprimer PdI ?"
 msgid ""
 "Do you really want to \n"
 "delete this Point of Interest?"
-msgstr "Voulez-vous vraiment supprimer ce point d'intérêt ?"
+msgstr ""
+"Voulez-vous vraiment \n"
+"supprimer ce point d'intérêt ?"
 
 #: ../src/interface.c:3776
 msgid "Load track..."
-msgstr ""
+msgstr "Charger le trajet..."
 
 #: ../src/interface.c:3782
 msgid "<b>Choose track to open (.log / .gpx)</b>"
-msgstr ""
+msgstr "<b>Veuillez choisir le trajet à charger /.log / .gpx)</b>"
 
 #: ../src/interface.c:3857
-#, fuzzy
 msgid "Edit Repository"
-msgstr "Nouveau dépôt"
+msgstr "Modifier dépôt"
 
 #: ../src/interface.c:3878
-#, fuzzy
 msgid "<b>Repository Name</b>"
-msgstr "<b>Dépôts de cartes</b>"
+msgstr "<b>Nom du dépôt</b>"
 
 #: ../src/interface.c:3980
-#, fuzzy
 msgid "GeoPhoto"
 msgstr "Photo Geo"
 
 #: ../src/interface.c:4044
 msgid "Photo Correlate"
-msgstr ""
+msgstr "Corréler avec la photo"
 
 #: ../src/interface.c:4053
-#, fuzzy
 msgid "<b>Geocoding your photos</b>"
-msgstr " <b>Obtenir la position des autres</b> "
+msgstr "<b>Géolocalisation de vos photos</b> "
 
 #: ../src/interface.c:4071
 msgid ""
 "Geocode your photos by correlating them with a gps track. For a tutorial see "
 "on http://www.foxtrotgps.org\n"
 msgstr ""
+"Géolocaliser vos photos en les corrélant avec un trajet gps. Vous trouverez "
+"un tutorial sur http://www.foxtrotgps.org\n"
 
 #: ../src/interface.c:4077
 msgid "  <b>1. Add Track</b>        "
-msgstr ""
+msgstr "  <b>1. Ajout d'un trajet</b>  "
 
 #: ../src/interface.c:4085
 msgid "  <b>2. Add Photos</b> "
-msgstr ""
+msgstr "  <b>2. Ajout des photos</b> "
 
 #: ../src/interface.c:4105 ../src/interface.c:4113
 msgid "  <span color=\"red\" weight=\"bold\">-</span>"
-msgstr ""
+msgstr "  <span color=\"red\" weight=\"bold\">-</span>"
 
 #: ../src/interface.c:4128
 msgid "  <b>3. Adjust Time</b>"
-msgstr ""
+msgstr "  <b>3. Ajustement de l'heure</b>"
 
 #: ../src/interface.c:4136
-#, fuzzy
 msgid "View GPS Photo"
-msgstr "Photo Geo"
+msgstr "Voir Photo GPS"
 
 #: ../src/interface.c:4143
 msgid "  +00:00h"
-msgstr ""
+msgstr "  +00:00h"
 
 #: ../src/interface.c:4150
 msgid "  0 seconds"
-msgstr ""
+msgstr "  0 seconde"
 
 #: ../src/interface.c:4157
-#, fuzzy
 msgid "Correction:"
-msgstr "Description :"
+msgstr "Correction :"
 
 #: ../src/interface.c:4164
-#, fuzzy
 msgid "Timezone:"
-msgstr "Durée : "
+msgstr "Fuseau horaire : "
 
 #: ../src/interface.c:4179
-#, c-format
-msgid "  add photos to the %s database"
-msgstr ""
+msgid "  add photos to the FoxtrotGPS database"
+msgstr "  ajouter des photos à la base de données de FoxtrotGPS"
 
 #: ../src/interface.c:4268
-#, fuzzy
 msgid "Please choose"
 msgstr "Veuillez choisir"
 
 #: ../src/interface.c:4276
 msgid "<b>This is important!</b>\n"
-msgstr ""
+msgstr "<b>Important !</b>"
 
 #: ../src/interface.c:4347
 msgid "Image Data"
-msgstr ""
+msgstr "Données image"
 
 #: ../src/interface.c:4408
-#, fuzzy
 msgid " <b>GPS:</b> "
-msgstr "<b>GPSD</b>"
+msgstr "<b>GPS :</b>"
 
 #: ../src/interface.c:4413 ../src/interface.c:4428
-#, fuzzy
 msgid "      "
-msgstr "       "
+msgstr "      "
 
 #: ../src/interface.c:4422
-#, fuzzy
 msgid " <b>Camera:</b> "
-msgstr "Répertoire des cartes :"
+msgstr " <b>Caméra :</b> "
 
 #: ../src/interface.c:4442
 msgid " <b>Correction:</b> "
-msgstr ""
+msgstr " <b>Corrections :</b> "
 
 #: ../src/interface.c:4455
-#, fuzzy
 msgid "s   "
-msgstr "   "
+msgstr "s   "
 
 #: ../src/interface.c:4463
-#, fuzzy
 msgid " <b>Timezone:</b>  "
-msgstr "<b>Calculateur de voyage</b>"
+msgstr " <b>Fuseau horaire :</b>"
 
 #: ../src/interface.c:4471
 msgid "-12:00"
-msgstr ""
+msgstr "-12:00"
 
 #: ../src/interface.c:4472
 msgid "-11:00"
-msgstr ""
+msgstr "-11:00"
 
 #: ../src/interface.c:4473
 msgid "-10:00"
-msgstr ""
+msgstr "-10:00"
 
 #: ../src/interface.c:4474
 msgid "-09:00"
-msgstr ""
+msgstr "-09:00"
 
 #: ../src/interface.c:4475
 msgid "-08:00"
-msgstr ""
+msgstr "-08:00"
 
 #: ../src/interface.c:4476
 msgid "-07:00"
-msgstr ""
+msgstr "-07:00"
 
 #: ../src/interface.c:4477
 msgid "-06:00"
-msgstr ""
+msgstr "-06:00"
 
 #: ../src/interface.c:4478
 msgid "-05:00"
-msgstr ""
+msgstr "-05:00"
 
 #: ../src/interface.c:4479
 msgid "-04:00"
-msgstr ""
+msgstr "-04:00"
 
 #: ../src/interface.c:4480
 msgid "-03:00"
-msgstr ""
+msgstr "-03:00"
 
 #: ../src/interface.c:4481
 msgid "-02:00"
-msgstr ""
+msgstr "-02:00"
 
 #: ../src/interface.c:4482
 msgid "-01:00"
-msgstr ""
+msgstr "-01:00"
 
 #: ../src/interface.c:4483
 msgid "+00:00"
-msgstr ""
+msgstr "+00:00"
 
 #: ../src/interface.c:4484
 msgid "+01:00"
-msgstr ""
+msgstr "+01:00"
 
 #: ../src/interface.c:4485
 msgid "+02:00 "
-msgstr ""
+msgstr "+02:00"
 
 #: ../src/interface.c:4486
 msgid "+03:00"
-msgstr ""
+msgstr "+03:00"
 
 #: ../src/interface.c:4487
 msgid "+04:00"
-msgstr ""
+msgstr "+04:00"
 
 #: ../src/interface.c:4488
 msgid "+05:00"
-msgstr ""
+msgstr "+05:00"
 
 #: ../src/interface.c:4489
 msgid "+06:00"
-msgstr ""
+msgstr "+06:00"
 
 #: ../src/interface.c:4490
 msgid "+07:00"
-msgstr ""
+msgstr "+07:00"
 
 #: ../src/interface.c:4491
 msgid "+08:00"
-msgstr ""
+msgstr "+08:00"
 
 #: ../src/interface.c:4492
 msgid "+09:00"
-msgstr ""
+msgstr "+09:00"
 
 #: ../src/interface.c:4493
 msgid "+10:00"
-msgstr ""
+msgstr "+10:00"
 
 #: ../src/interface.c:4494
 msgid "+11:00"
-msgstr ""
+msgstr "+11:00"
 
 #: ../src/interface.c:4495
 msgid "+12:00"
-msgstr ""
+msgstr "+12:00"
 
 #: ../src/interface.c:4608
 msgid "Geocode Result"
-msgstr ""
+msgstr "Résultat de la géolocalisation"
 
 #: ../src/interface.c:4618
 msgid "<b>The output from gpscorrelate:</b>"
-msgstr ""
+msgstr "<b>Sortie de gpscorrelate :</b>"
 
 #: ../src/interface.c:4624
 msgid "Working...."
-msgstr ""
+msgstr "En cours..."
 
 #: ../src/interface.c:4668
 msgid "Message"
-msgstr ""
+msgstr "Message"
 
 #: ../src/interface.c:4678
 msgid "Send Message to:"
-msgstr ""
+msgstr "Envoyer un message à :"
 
 #: ../src/interface.c:4752
 msgid "Get Route"
-msgstr ""
+msgstr "Obtenir la route"
 
 #: ../src/interface.c:4772
 msgid "Street,City,Country"
-msgstr ""
+msgstr "Rue, Ville, Pays"
 
 #: ../src/interface.c:4782
-#, fuzzy
 msgid " GPS "
-msgstr "GPSD"
+msgstr " GPS "
 
 #: ../src/interface.c:4789
-#, fuzzy
 msgid "<b>Start</b> "
-msgstr "<b>Données GPS</b>"
+msgstr "<b>Début</b>"
 
 #: ../src/interface.c:4797
-#, fuzzy
 msgid "<b>End</b>"
-msgstr "<b>-</b>"
+msgstr "<b>Fin</b>"
 
 #: ../src/interface.c:4805
-#, fuzzy
 msgid " Pick "
-msgstr "Parcours"
+msgstr " Choisir "
 
 #: ../src/interface.c:4810
 msgid "Pick Start on Map"
-msgstr ""
+msgstr "Choisir Début sur la carte"
 
 #: ../src/interface.c:4812
 msgid "Pick"
-msgstr ""
+msgstr "Choisir"
 
 #: ../src/interface.c:4817
 msgid "Pick End on Map"
-msgstr ""
+msgstr "Choisir Fin sur la carte"
 
 #: ../src/interface.c:4819
-#, fuzzy
 msgid "<b>Service </b>"
-msgstr "Répertoire des cartes :"
+msgstr "<b>Service </b>"
 
 #: ../src/interface.c:4827
 msgid "  "
@@ -1146,289 +1106,44 @@ msgstr "  "
 
 #: ../src/interface.c:4841
 msgid "yournavigation.org"
-msgstr ""
+msgstr "yournavigation.org"
 
 #: ../src/interface.c:4842
 msgid "openrouteservice.org"
-msgstr ""
+msgstr "openrouteservice.org"
 
 #: ../src/interface.c:4843
 msgid "gnuite.com"
-msgstr ""
+msgstr "gnuite.com"
 
 #: ../src/interface.c:4845
 msgid ""
 "<i>Insert Start and End:</i>\n"
 "<small>(experimental feature)</small>"
 msgstr ""
+"<i>Insérer Début et Fin :</i>\n"
+"<small>(fonctionnalité expérimentale)</small>"
 
 #: ../src/interface.c:4853
 msgid "<i><b>Connecting...</b></i>"
-msgstr ""
+msgstr "<i><b>En cours de connexion...</b></i>"
 
 #: ../src/friends.c:603
 msgid "Msg"
-msgstr ""
+msgstr "Msg"
 
 #: ../src/friends.c:963
-#, fuzzy
 msgid "  Reply  "
-msgstr "    "
+msgstr "  Répondre  "
 
 #: ../src/friends.c:971
-#, fuzzy
 msgid "  Go To  "
-msgstr "Aller à"
+msgstr "Aller à  "
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "Display map and GPS position"
-msgstr ""
+msgstr "Afficher la carte et la position GPS"
 
 #: ../data/foxtrotgps.desktop.in.h:2
 msgid "GPS and Map"
-msgstr ""
-
-#~ msgid "      Stop       "
-#~ msgstr "      Stop       "
-
-#~ msgid "     Reset     "
-#~ msgstr " Mettre à zéro "
-
-#, fuzzy
-#~ msgid "Enable logging of your tracks for later use, i.e. for extending OSM"
-#~ msgstr ""
-#~ "Activation et désactivation de la journalisation de vos parcours pour une "
-#~ "utilisation ultérieure, par ex. avec OSM"
-
-#~ msgid "            Start            "
-#~ msgstr "Démarrer"
-
-#~ msgid "           Split           "
-#~ msgstr "Découper"
-
-#~ msgid "      Configure...      "
-#~ msgstr "Configurer"
-
-#, fuzzy
-#~ msgid "      Load...     "
-#~ msgstr "Configurer"
-
-#~ msgid "unused cols"
-#~ msgstr "cols inutilisées"
-
-#, fuzzy
-#~ msgid "unused window"
-#~ msgstr "cols inutilisées"
-
-#~ msgid "window7"
-#~ msgstr "window7"
-
-#~ msgid "window9"
-#~ msgstr "window9"
-
-#~ msgid "window11"
-#~ msgstr "window11"
-
-#, fuzzy
-#~ msgid "---"
-#~ msgstr "--"
-
-#~ msgid ""
-#~ "Update your position to a server\n"
-#~ "and receive your friends positions,\n"
-#~ "shown on the map."
-#~ msgstr ""
-#~ "Mettre vos positions à jour vers un serveur\n"
-#~ "et recevoir la position de vos amis sur la carte."
-
-#~ msgid "once"
-#~ msgstr "une fois"
-
-#~ msgid "every"
-#~ msgstr "toujours "
-
-#~ msgid "     Update Me!     "
-#~ msgstr "Mettez-moi à jour !"
-
-#~ msgid "Permission to see me for:"
-#~ msgstr "Autorisation de me voir pour :"
-
-#~ msgid "public (you remain anonymous)"
-#~ msgstr "le public (vous restez anonyme)"
-
-#~ msgid "registered nicks"
-#~ msgstr "mes surnoms enregistrés"
-
-#~ msgid "my friends"
-#~ msgstr "mes amis"
-
-#~ msgid " <b>Updating My Position</b> "
-#~ msgstr "<b>Mise à jour de ma position</b>"
-
-#~ msgid "Show me the positions from:"
-#~ msgstr "Montrer les positions :"
-
-#~ msgid " <b>Getting Other's Positions</b> "
-#~ msgstr " <b>Obtenir la position des autres</b> "
-
-#, fuzzy
-#~ msgid ""
-#~ "Choose any nickname you want to have. A password is only necessary if you "
-#~ "have already registered your nick or you want to register it.\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.foxtrotgps.org/friends"
-#~ msgstr ""
-#~ "Choisissez votre surnom.\n"
-#~ "Un mot de passe n'est nécessaire que si\n"
-#~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
-#~ "Plus d'info sur :\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-
-#~ msgid "   "
-#~ msgstr "   "
-
-#~ msgid "<b>  Me  </b>"
-#~ msgstr "<b> Moi </b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Démarrer gllin et gpsd (pour Openmoko Neo1973 et <i>non pas pour "
-#~ "Freerunner</i>).\n"
-
-#~ msgid "/home/root/gllin/gllin &"
-#~ msgstr "/home/root/gllin/gllin &"
-
-#~ msgid "     Start gllin and GPSD     "
-#~ msgstr "Démarrer gllin et GPSD"
-
-#~ msgid "<b>gllin and gpsd</b>"
-#~ msgstr "<b>gllin et gpsd</b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "The following section is \n"
-#~ "for development purposes"
-#~ msgstr ""
-#~ "\n"
-#~ "La section suivante est seulement pour le développement."
-
-#~ msgid "/home/root/gprs.sh &"
-#~ msgstr "/home/root/gprs.sh &"
-
-#~ msgid "Start pppd/gprs"
-#~ msgstr "Démarrer pppd/gprs"
-
-#~ msgid "/home/root/other.sh"
-#~ msgstr "/home/root/other.sh"
-
-#~ msgid "Other stuff"
-#~ msgstr "Autres trucs"
-
-#~ msgid "fullscreen"
-#~ msgstr "plein écran"
-
-#~ msgid "      +      "
-#~ msgstr "     +       "
-
-#~ msgid "      -      "
-#~ msgstr "      -      "
-
-#, fuzzy
-#~ msgid "   info   "
-#~ msgstr "       "
-
-#, fuzzy
-#~ msgid " center "
-#~ msgstr "autocentrer"
-
-#~ msgid "map"
-#~ msgstr "carte"
-
-#~ msgid "   Map   "
-#~ msgstr "    Carte   "
-
-#~ msgid "  Trip  "
-#~ msgstr "Trajet"
-
-#~ msgid ""
-#~ "Choose any nickname you want\n"
-#~ "to have. A password is only necessary\n"
-#~ "if you have already registered your \n"
-#~ "nick or you want to register it.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-#~ msgstr ""
-#~ "Choisissez votre surnom.\n"
-#~ "Un mot de passe n'est nécessaire que si\n"
-#~ "vous êtes déjà enregistré ou si vous voulez vous enregistrer.\n"
-#~ "Plus d'info sur :\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Pour enregistrer ce surnom, entrez votre courriel et cliquez ci-dessous.\n"
-#~ "IL ne sera ni divulgué ni partagé, mais utilisé que dans le cas de perte "
-#~ "du mot de passe."
-
-#~ msgid " Friends "
-#~ msgstr "Amis"
-
-#~ msgid "waypoints"
-#~ msgstr "étape"
-
-#~ msgid "button35"
-#~ msgstr "button35"
-
-#, fuzzy
-#~ msgid "Distance "
-#~ msgstr "Distance : "
-
-#~ msgid "Avg. Speed:"
-#~ msgstr "Vitesse moyenne : "
-
-#~ msgid "Max Speed:"
-#~ msgstr "Vitesse max :"
-
-#, fuzzy
-#~ msgid "filter POIs"
-#~ msgstr "choisir Pdi"
-
-#~ msgid ""
-#~ "label132\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sadf\n"
-#~ "safsdf\n"
-#~ "sdfsadf\n"
-#~ "sdfsadfadf\n"
-#~ "asdf"
-#~ msgstr ""
-#~ "label132\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sdf\n"
-#~ "sadf\n"
-#~ "safsdf\n"
-#~ "sdfsadf\n"
-#~ "sdfsadfadf\n"
-#~ "asdf"
-
-#~ msgid "Inverted Zoom"
-#~ msgstr "Zoom inversé"
+msgstr "GPS et carte"
