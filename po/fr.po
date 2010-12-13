@@ -8,7 +8,7 @@ msgstr ""
 "Project-Id-Version: 0.99-4\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2010-12-10 22:28-0500\n"
-"PO-Revision-Date: 2010-11-09 21:32+0100\n"
+"PO-Revision-Date: 2010-12-11 15:10-0500\n"
 "Last-Translator: Steve Petruzzello <dlist@bluewin.ch>\n"
 "Language-Team: french <debian-l10n-french@lists.debian.org>\n"
 "MIME-Version: 1.0\n"
@@ -51,9 +51,8 @@ msgid "Go To"
 msgstr "Aller à"
 
 #: ../src/friends.c:966
-#, fuzzy
 msgid "Reply"
-msgstr "  Répondre  "
+msgstr "Répondre"
 
 #: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:224
 msgid "Working...."
@@ -231,19 +230,16 @@ msgid "<b>-</b>"
 msgstr "<b>-</b>"
 
 #: ../data/foxtrotgps.glade.h:81
-#, fuzzy
 msgid "<b>1. Add Track</b>"
-msgstr "  <b>1. Ajout d'un trajet</b>  "
+msgstr "<b>1. Ajout d'un trajet</b>"
 
 #: ../data/foxtrotgps.glade.h:82
-#, fuzzy
 msgid "<b>2. Add Photos</b>"
-msgstr "  <b>2. Ajout des photos</b> "
+msgstr "<b>2. Ajout des photos</b>"
 
 #: ../data/foxtrotgps.glade.h:83
-#, fuzzy
 msgid "<b>3. Adjust Time</b>"
-msgstr "  <b>3. Ajustement de l'heure</b>"
+msgstr "<b>3. Ajustement de l'heure</b>"
 
 #: ../data/foxtrotgps.glade.h:84
 msgid "<b>Auto Download</b>"
@@ -254,18 +250,16 @@ msgid "<b>Cache Dir</b>"
 msgstr "<b>Répertoire du cache</b>"
 
 #: ../data/foxtrotgps.glade.h:86
-#, fuzzy
 msgid "<b>Camera:</b> "
-msgstr " <b>Caméra :</b> "
+msgstr "<b>Caméra :</b>"
 
 #: ../data/foxtrotgps.glade.h:87
 msgid "<b>Choose track to open (.log / .gpx)</b>"
 msgstr "<b>Veuillez choisir le trajet à charger /.log / .gpx)</b>"
 
 #: ../data/foxtrotgps.glade.h:88
-#, fuzzy
 msgid "<b>Correction:</b> "
-msgstr " <b>Corrections :</b> "
+msgstr "<b>Corrections :</b>"
 
 #: ../data/foxtrotgps.glade.h:89
 msgid "<b>End</b>"
@@ -276,7 +270,6 @@ msgid "<b>GPS Data</b>"
 msgstr "<b>Données GPS</b>"
 
 #: ../data/foxtrotgps.glade.h:91
-#, fuzzy
 msgid "<b>GPS:</b> "
 msgstr "<b>GPS :</b>"
 
@@ -289,9 +282,8 @@ msgid "<b>Geocoding your photos</b>"
 msgstr "<b>Géolocalisation de vos photos</b> "
 
 #: ../data/foxtrotgps.glade.h:94
-#, fuzzy
 msgid "<b>Map Download</b>"
-msgstr "<b> Téléchargement de la carte </b>"
+msgstr "<b>Téléchargement de la carte</b>"
 
 #: ../data/foxtrotgps.glade.h:95
 msgid "<b>Map Types</b>"
@@ -306,26 +298,22 @@ msgid "<b>Name for the new Repository</b>"
 msgstr "<b>Nom du nouveau dépôt</b>"
 
 #: ../data/foxtrotgps.glade.h:98
-#, fuzzy
 msgid "<b>Position Sharing</b>"
-msgstr "<b>Partage de la position  </b>"
+msgstr "<b>Partage de la position</b>"
 
 #: ../data/foxtrotgps.glade.h:99
 msgid "<b>Repository Name</b>"
 msgstr "<b>Nom du dépôt</b>"
 
 #: ../data/foxtrotgps.glade.h:100
-#, fuzzy
 msgid "<b>Service</b>"
-msgstr "<b>Service </b>"
+msgstr "<b>Service</b>"
 
 #: ../data/foxtrotgps.glade.h:101
-#, fuzzy
 msgid "<b>Sharing Mode</b>"
 msgstr "<b>Mode de partage</b>"
 
 #: ../data/foxtrotgps.glade.h:102
-#, fuzzy
 msgid "<b>Start</b>"
 msgstr "<b>Début</b>"
 
@@ -334,9 +322,8 @@ msgid "<b>The output from gpscorrelate:</b>"
 msgstr "<b>Sortie de gpscorrelate :</b>"
 
 #: ../data/foxtrotgps.glade.h:104
-#, fuzzy
 msgid "<b>Timezone:</b> "
-msgstr " <b>Fuseau horaire :</b>"
+msgstr "<b>Fuseau horaire :</b>"
 
 #: ../data/foxtrotgps.glade.h:105
 msgid "<b>URI</b>"
@@ -399,14 +386,12 @@ msgid "<i>What are you up to?</i>"
 msgstr "<i>Où en êtes-vous ?</i>"
 
 #: ../data/foxtrotgps.glade.h:120
-#, fuzzy
 msgid "<span color=\"red\" weight=\"bold\">-</span>"
-msgstr "  <span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"red\" weight=\"bold\">-</span>"
 
 #: ../data/foxtrotgps.glade.h:121
-#, fuzzy
 msgid "<span font_desc='40'> -- </span>"
-msgstr "   <span font_desc='40'> -- </span>"
+msgstr "<span font_desc='40'> -- </span>"
 
 #: ../data/foxtrotgps.glade.h:122
 msgid ""
@@ -437,9 +422,8 @@ msgid "Autocenter On"
 msgstr "autocentrer sur"
 
 #: ../data/foxtrotgps.glade.h:129
-#, fuzzy
 msgid "Average"
-msgstr "Moyenne "
+msgstr "Moyenne"
 
 #: ../data/foxtrotgps.glade.h:130
 msgid "Big"
@@ -450,9 +434,8 @@ msgid "Category:"
 msgstr "Catégorie :"
 
 #: ../data/foxtrotgps.glade.h:132
-#, fuzzy
 msgid "Change GPSD"
-msgstr "     Modifier GPSD    "
+msgstr "Modifier GPSD"
 
 #: ../data/foxtrotgps.glade.h:133
 msgid "Clear"
@@ -515,12 +498,11 @@ msgstr ""
 "prochain point"
 
 #: ../data/foxtrotgps.glade.h:148
-#, fuzzy
 msgid ""
 "Do you really want to\n"
 "delete this Point of Interest?"
 msgstr ""
-"Voulez-vous vraiment \n"
+"Voulez-vous vraiment\n"
 "supprimer ce point d'intérêt ?"
 
 #: ../data/foxtrotgps.glade.h:150
@@ -540,13 +522,12 @@ msgid "Edit Repository"
 msgstr "Modifier dépôt"
 
 #: ../data/foxtrotgps.glade.h:154
-#, fuzzy
 msgid "Edit..."
 msgstr "Modifier"
 
 #: ../data/foxtrotgps.glade.h:155
 msgid "Email"
-msgstr ""
+msgstr "Courriel"
 
 #: ../data/foxtrotgps.glade.h:156
 msgid "Enable Live Tracking"
@@ -597,11 +578,8 @@ msgid "Geocode Result"
 msgstr "Résultat de la géolocalisation"
 
 #: ../data/foxtrotgps.glade.h:168
-#, fuzzy
 msgid "Geocode your photos by correlating them with a gps track.\n"
-msgstr ""
-"Géolocaliser vos photos en les corrélant avec un trajet gps. Vous trouverez "
-"un tutorial sur http://www.foxtrotgps.org\n"
+msgstr "Géolocaliser vos photos en les corrélant avec un trajet gps.\n"
 
 #: ../data/foxtrotgps.glade.h:170
 msgid "Get Route"
@@ -656,9 +634,8 @@ msgid "Map DL"
 msgstr "Carte DL"
 
 #: ../data/foxtrotgps.glade.h:184
-#, fuzzy
 msgid "Max"
-msgstr "Max "
+msgstr "Max"
 
 #: ../data/foxtrotgps.glade.h:185
 msgid "Message"
@@ -674,14 +651,13 @@ msgstr "Nouveau dépôt"
 
 #: ../data/foxtrotgps.glade.h:188
 msgid "New..."
-msgstr ""
+msgstr "Nouveau..."
 
 #: ../data/foxtrotgps.glade.h:189
 msgid "Next map repo"
 msgstr "Prochain dépôt de cartes"
 
 #: ../data/foxtrotgps.glade.h:190
-#, fuzzy
 msgid "Nickname"
 msgstr "Surnom"
 
@@ -718,7 +694,6 @@ msgid "Previous map repo"
 msgstr "Précédent dépôt de cartes"
 
 #: ../data/foxtrotgps.glade.h:199
-#, fuzzy
 msgid "Register!"
 msgstr "Enregistrez-vous !"
 
@@ -727,9 +702,8 @@ msgid "Reset"
 msgstr "Redémarrer"
 
 #: ../data/foxtrotgps.glade.h:201
-#, fuzzy
 msgid "Satellites"
-msgstr "Satellites  "
+msgstr "Satellites"
 
 #: ../data/foxtrotgps.glade.h:202
 msgid "Send Message to:"
@@ -745,7 +719,7 @@ msgstr ""
 
 #: ../data/foxtrotgps.glade.h:205
 msgid "Share!"
-msgstr ""
+msgstr "Partager !"
 
 #: ../data/foxtrotgps.glade.h:206
 msgid "Show Info"
@@ -760,7 +734,6 @@ msgid "Show password"
 msgstr "Montrer le mot de passe"
 
 #: ../data/foxtrotgps.glade.h:209
-#, fuzzy
 msgid ""
 "Simply choose any nickname and password.\n"
 "\n"
@@ -787,9 +760,8 @@ msgid "Street,City,Country"
 msgstr "Rue, Ville, Pays"
 
 #: ../data/foxtrotgps.glade.h:216
-#, fuzzy
 msgid "Time"
-msgstr "Temps "
+msgstr "Temps"
 
 #: ../data/foxtrotgps.glade.h:217
 msgid "Timezone:"
@@ -800,9 +772,8 @@ msgid "Trackdir Config"
 msgstr "Configuration du Trackdir"
 
 #: ../data/foxtrotgps.glade.h:219
-#, fuzzy
 msgid "Trip"
-msgstr "Trajet "
+msgstr "Trajet"
 
 #: ../data/foxtrotgps.glade.h:220
 msgid "Update interval  "
@@ -833,9 +804,9 @@ msgid "add POI"
 msgstr "ajouter PdI"
 
 #: ../data/foxtrotgps.glade.h:229
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "add photos to the %s database"
-msgstr "  ajouter des photos à la base de données de FoxtrotGPS"
+msgstr "ajouter des photos à la base de données de %s"
 
 #: ../data/foxtrotgps.glade.h:230
 msgid "budget"
@@ -914,7 +885,6 @@ msgid "meters"
 msgstr "mètres"
 
 #: ../data/foxtrotgps.glade.h:249
-#, fuzzy
 msgid "metric"
 msgstr "métrique"
 
