@@ -24,6 +24,7 @@
 #include "converter.h"
 #include "wp.h"
 #include "tracks.h"
+#include "hrm_functions.h"
 
 #define BUFSIZE 512
 char * distance2scale(float distance, float *factor);
@@ -348,6 +349,14 @@ cb_gps_timer()
 	else 
 	{
 		set_label_nogps();
+	}
+	
+	if(hrm_on && (!hrmdata  || global_reconnect_hrm))
+		get_hrm_data();
+	else if(hrm_on && hrmdata) {
+		osd_hrm(FALSE);
+		if(global_infopane_visible)
+			set_hrm_labels();
 	}
 	
 	return TRUE; 

@@ -358,10 +358,55 @@
                                             <child>
                                               <widget class="GtkTable" id="table3">
                                                 <property name="visible">True</property>
-                                                <property name="n_rows">2</property>
+                                                <property name="n_rows">3</property>
                                                 <property name="n_columns">4</property>
                                                 <property name="column_spacing">2</property>
                                                 <property name="row_spacing">2</property>
+                                                <child>
+                                                  <widget class="GtkLabel" id="label207">
+                                                    <property name="xalign">0</property>
+                                                    <property name="label"> </property>
+                                                    <property name="use_markup">True</property>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="left_attach">2</property>
+                                                    <property name="right_attach">3</property>
+                                                    <property name="top_attach">2</property>
+                                                    <property name="bottom_attach">3</property>
+                                                    <property name="x_options">GTK_FILL</property>
+                                                    <property name="y_options"></property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <widget class="GtkLabel" id="label206">
+                                                    <property name="xalign">0</property>
+                                                    <property name="label"> </property>
+                                                    <property name="use_markup">True</property>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="left_attach">1</property>
+                                                    <property name="right_attach">2</property>
+                                                    <property name="top_attach">2</property>
+                                                    <property name="bottom_attach">3</property>
+                                                    <property name="x_options">GTK_FILL</property>
+                                                    <property name="y_options">GTK_FILL</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <widget class="GtkLabel" id="label205">
+                                                    <property name="xalign">0</property>
+                                                    <property name="label" translatable="yes">Heart</property>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="top_attach">2</property>
+                                                    <property name="bottom_attach">3</property>
+                                                    <property name="x_options">GTK_FILL</property>
+                                                    <property name="y_options"></property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <placeholder/>
+                                                </child>
                                                 <child>
                                                   <widget class="GtkLabel" id="label66">
                                                     <property name="visible">True</property>
@@ -1944,6 +1989,84 @@ download of missing tiles into cache</property>
                                   </packing>
                                 </child>
                                 <child>
+                                  <widget class="GtkFrame" id="frame15">
+                                    <property name="visible">True</property>
+                                    <property name="label_xalign">0</property>
+                                    <property name="shadow_type">GTK_SHADOW_NONE</property>
+                                    <child>
+                                      <widget class="GtkAlignment" id="alignment21">
+                                        <property name="visible">True</property>
+                                        <property name="left_padding">3</property>
+                                        <child>
+                                          <widget class="GtkVBox" id="vbox54">
+                                            <property name="visible">True</property>
+                                            <child>
+                                              <widget class="GtkCheckButton" id="checkbutton18">
+                                                <property name="height_request">45</property>
+                                                <property name="visible">True</property>
+                                                <property name="can_focus">True</property>
+                                                <property name="label" translatable="yes">Activate Heartrate Monitor</property>
+                                                <property name="response_id">0</property>
+                                                <property name="draw_indicator">True</property>
+                                                <signal name="toggled" handler="on_checkbutton18_toggled"/>
+                                              </widget>
+                                              <packing>
+                                                <property name="expand">False</property>
+                                                <property name="fill">False</property>
+                                              </packing>
+                                            </child>
+                                            <child>
+                                              <widget class="GtkHBox" id="hbox56">
+                                                <property name="visible">True</property>
+                                                <child>
+                                                  <widget class="GtkLabel" id="label209">
+                                                    <property name="visible">True</property>
+                                                    <property name="xalign">0</property>
+                                                    <property name="label" translatable="yes">Bluetooth Address: </property>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="fill">False</property>
+                                                  </packing>
+                                                </child>
+                                                <child>
+                                                  <widget class="GtkEntry" id="entry33">
+                                                    <property name="visible">True</property>
+                                                    <property name="can_focus">True</property>
+                                                    <property name="width_chars">18</property>
+                                                    <signal name="changed" handler="on_entry33_changed"/>
+                                                  </widget>
+                                                  <packing>
+                                                    <property name="expand">False</property>
+                                                    <property name="position">1</property>
+                                                  </packing>
+                                                </child>
+                                              </widget>
+                                              <packing>
+                                                <property name="position">1</property>
+                                              </packing>
+                                            </child>
+                                          </widget>
+                                        </child>
+                                      </widget>
+                                    </child>
+                                    <child>
+                                      <widget class="GtkLabel" id="label208">
+                                        <property name="visible">True</property>
+                                        <property name="label" translatable="yes">&lt;b&gt;Heart Rate Monitor&lt;/b&gt;</property>
+                                        <property name="use_markup">True</property>
+                                      </widget>
+                                      <packing>
+                                        <property name="type">label_item</property>
+                                      </packing>
+                                    </child>
+                                  </widget>
+                                  <packing>
+                                    <property name="padding">14</property>
+                                    <property name="position">5</property>
+                                  </packing>
+                                </child>
+                                <child>
                                   <widget class="GtkFrame" id="frame12">
                                     <property name="visible">True</property>
                                     <property name="label_xalign">0</property>
@@ -2092,7 +2215,7 @@ Set GPSD Host IP
                                     </child>
                                   </widget>
                                   <packing>
-                                    <property name="position">5</property>
+                                    <property name="position">6</property>
                                   </packing>
                                 </child>
                               </widget>

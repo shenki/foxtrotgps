@@ -12,7 +12,8 @@ AM_CPPFLAGS = \
 	$(SQLITE_CFLAGS) \
 	$(LIBEXIF_CFLAGS) \
 	$(LIBXML_CFLAGS) \
-	$(LIBGPS_CFLAGS)
+	$(LIBGPS_CFLAGS) \
+	$(BLUETOOTH_CFLAGS)
 
 bin_PROGRAMS = foxtrotgps
 
@@ -50,7 +51,9 @@ foxtrotgps_SOURCES = \
 	tracks.c\
 	tracks.h\
 	exif.c\
-	exif.h
+	exif.h\
+	hrm_functions.c\
+	hrm_functions.h
 
 foxtrotgps_LDFLAGS = -export-dynamic
 
@@ -63,4 +66,5 @@ foxtrotgps_LDADD =  \
 	$(LIBEXIF_LIBS) \
 	$(LIBXML_LIBS) \
 	$(LIBGPS_LIBS) \
+	$(BLUETOOTH_LIBS) \
 	-lm

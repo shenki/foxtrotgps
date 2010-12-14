@@ -213,6 +213,7 @@ track_log()
 	gchar data[256];
 	time_t time_sec;
 	struct tm *ts;
+	int heartfreq = 42;
 	
 	
 	if(gpsdata->valid)
@@ -220,19 +221,19 @@ track_log()
 		
 		time_sec = (time_t)gpsdata->fix.time;
 		ts = localtime(&time_sec);
-		
-		
 		strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", ts);
 		
+		heartfreq = (hrmdata) ? hrmdata->freq : 0;
 		
-		snprintf(data, sizeof(data), "%f,%f,%.1f,%.1f,%.1f,%.1f,%s\n",
+		snprintf(data, sizeof(data), "%f,%f,%.1f,%.1f,%.1f,%.1f,%s,%d\n",
 				gpsdata->fix.latitude,
 				gpsdata->fix.longitude,
 				gpsdata->fix.altitude,
 				gpsdata->fix.speed,
 				gpsdata->fix.heading,
 				gpsdata->hdop,
-				buffer);
+				buffer,
+				heartfreq);
 		
 		if (fp) fprintf(fp, "%s", data);
 	}
