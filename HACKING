@@ -40,6 +40,10 @@ that your changes will be accepted!)
 
 It goes without saying, compile and test thoroughly before sending changes in.
 
+If you add a new file to the project use the "add" command
+
+bzr add newfilename
+
 4 Commit your change:
 
 Now that you have updated one or more files, you need to commit the
