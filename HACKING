@@ -113,7 +113,7 @@ SAMPLE SFTP COMMANDS
 If you have a domain called mydomain.com the publish command would be
 similar to this:
 
-bzr push --create-prefix sftp://jdoe@mydomain.com/~/public_html/foxtrotgps
+bzr push --create-prefix sftp://jdoe@mydomain.com/~/public_html/branches/foxtrotgps
 
 Bazaar will create the foxtrotgps directory on the remote server and
 upload your branch to it.
@@ -121,7 +121,7 @@ upload your branch to it.
 This example would make your repository accessible to others using
 bazaar with a command like this:
 
-$ bzr branch http://www.mydomain.com/foxtrotgps
+$ bzr branch http://www.mydomain.com/branches/foxtrotgps
 
 MORE HELP WITH BAZAAR
 =====================
