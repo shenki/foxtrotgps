@@ -28,13 +28,13 @@ bzr whoami "John Doe <jdoe@gmail.com>"
 
 This is almost the same as the first step to building from source.
 You should check out code to your own branch. If you are fixing a bug,
-name the branch after the bug.  this. This makes it easier to tell
+name the branch after the bug. This makes it easier to tell
 your branch from the trunk when you submit patches.
 
 This is how you might create a branch to fix bug 663102:
 
-bzr branch http://www.foxtrotgps.org/branches/foxtrotgps-dev/ foxtrotgps-663102
-cd foxtrotgps-663102
+    bzr branch http://www.foxtrotgps.org/branches/foxtrotgps-dev/ foxtrotgps-663102
+    cd foxtrotgps-663102
 
 If you are working on a new feature instead of a simple bug fix you might
 name the branch after the feature, for example "foxtrotgps-usng-support".
@@ -50,24 +50,24 @@ that your changes will be accepted!)
 
 It goes without saying, compile and test thoroughly before sending changes in.
 
-If you add a new file to the project use the "add" command
+If you add a new file to the project use the "add" command:
 
-bzr add newfilename
+    bzr add newfilename
 
 4. Commit your change
 ---------------------
 
 Now that you have updated one or more files, you need to commit the
 changes. From your source directory, execute the commit command along
-with a brief but meaningful message. For example,
+with a brief but meaningful message. For example:
 
-bzr commit -m "These changes fix bug number 663102"
+    bzr commit -m "These changes fix bug number 663102"
 
 NOTE that unlike other version control systems (such as subversion),
 when you perform a commit with bazaar the changes stay on your own
 machine. The changes are NOT sent to the remote repository until you
 execute a "push" command. Thus you can do many commits and/or reverts
-before you share the changes. This makes sense, because if you are
+before you share the changes.  this. This makes sense, because if you are
 adding a new feature, you have all the benefits of version control
 without having to publish any non-working code. It also means you can
 work disconnected from a network, pushing changes when you reconnect.
@@ -83,7 +83,7 @@ The bug tracker is here: https://bugs.launchpad.net/foxtrotgps/
 
 The send-to-a-file command looks like this:
 
-bzr send -o ../fix663102.patch
+    bzr send -o ../fix663102.patch
 
 Now you can use a web browser to connect to the bug tracker and add a
 comment to bug 663102, attaching the file fix663102.patch.
@@ -131,7 +131,7 @@ Sample SFTP Publish Commands
 If you have a domain called mydomain.com the publish command would be
 similar to this:
 
-bzr push --create-prefix sftp://jdoe@mydomain.com/~/public_html/branches/foxtrotgps
+    bzr push --create-prefix sftp://jdoe@mydomain.com/~/public_html/branches/foxtrotgps
 
 Bazaar will create the foxtrotgps directory on the remote server and
 upload your branch to it.
@@ -139,7 +139,7 @@ upload your branch to it.
 This example would make your repository accessible to others using
 bazaar with a command like this:
 
-$ bzr branch http://www.mydomain.com/branches/foxtrotgps
+    bzr branch http://www.mydomain.com/branches/foxtrotgps
 
 More Help with Bazaar
 =====================
