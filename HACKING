@@ -1,4 +1,4 @@
-The FoxtrotGPS project uses bazaar for version control. Here are a few
+The FoxtrotGPS project uses Bazaar for version control. Here are a few
 basic instructions to help you get started with using it.
 
 
@@ -64,7 +64,7 @@ with a brief but meaningful message. For example:
     bzr commit -m "These changes fix bug number 663102"
 
 NOTE that unlike other version control systems (such as subversion),
-when you perform a commit with bazaar the changes stay on your own
+when you perform a commit with Bazaar the changes stay on your own
 machine. The changes are NOT sent to the remote repository until you
 execute a "push" command. Thus you can do many commits and/or reverts
 before you share the changes.  this. This makes sense, because if you are
@@ -137,7 +137,7 @@ Bazaar will create the foxtrotgps directory on the remote server and
 upload your branch to it.
 
 This example would make your repository accessible to others using
-bazaar with a command like this:
+Bazaar with a command like this:
 
     bzr branch http://www.mydomain.com/branches/foxtrotgps
 
