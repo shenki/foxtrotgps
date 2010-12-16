@@ -2,7 +2,7 @@ The FoxtrotGPS project uses bazaar for version control. Here are a few
 basic instructions to help you get started with using it.
 
 
-CONTRIBUTING CHANGES
+Contributing Changes
 ====================
 
 Overview of the steps:
@@ -92,7 +92,7 @@ for the changes to be accepted and merged into the trunk.
 checking out a new copy of the code so that you are starting from the
 trunk.
 
-PUBLISHING WITH SFTP
+Publishing with SFTP
 ====================
 
 To publish code, you need a server that is accessible over the
@@ -111,7 +111,7 @@ More details of setting up an sftp server are really beyond the scope
 of this little document. Please don't let access to an sftp server
 stop you from participating; let us know and we'll work something out.
 
-SAMPLE SFTP PUBLISH COMMANDS
+Sample SFTP Publish Commands
 ============================
 
 If you have a domain called mydomain.com the publish command would be
@@ -127,7 +127,7 @@ bazaar with a command like this:
 
 $ bzr branch http://www.mydomain.com/branches/foxtrotgps
 
-MORE HELP WITH BAZAAR
+More Help with Bazaar
 =====================
 
 The official documentation is online at http://bazaar.canonical.com/
