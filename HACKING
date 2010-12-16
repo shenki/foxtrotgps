@@ -7,26 +7,31 @@ Contributing Changes
 
 Overview of the steps:
 
-1 Log in (you only have to do this once on a computer).
-2 Create a branch.
-3 Edit files, fix your bug or add your change.
-4 Commit the files that changed (which only affects your computer).
-5 Send the changes to the maintainer, there are several ways to do this.
-6 The maintainer(s) will evaluate your change and if they are acceptable,
-merge them into the trunk in a timely fashion.
-7 Update your source code from the trunk
+1. Log in (you only have to do this once on a computer).
+2. Create a branch.
+3. Edit files, fix your bug or add your change.
+4. Commit the files that changed (which only affects your computer).
+5. Send the changes to the maintainer, there are several ways to do this.
+6. The maintainer(s) will evaluate your change and if they are acceptable,
+   merge them into the trunk in a timely fashion.
+7. Update your source code from the trunk
 
 More details:
 
-1 Log in, using your own email address.
+1. Log in, using your own email address.
+----------------------------------------
 
 bzr whoami "John Doe <jdoe@gmail.com>"
 
-2 Create a branch: This is almost the same as the first step to
-building from source. You should check out code to your own branch. If
-you are fixing a bug, name the branch after the bug.  this. This makes
-it easier to tell your branch from the trunk when you submit
-patches. This is how you might create a branch to fix bug 663102:
+2. Create a branch
+------------------
+
+This is almost the same as the first step to building from source.
+You should check out code to your own branch. If you are fixing a bug,
+name the branch after the bug.  this. This makes it easier to tell
+your branch from the trunk when you submit patches.
+
+This is how you might create a branch to fix bug 663102:
 
 bzr branch http://www.foxtrotgps.org/branches/foxtrotgps-dev/ foxtrotgps-663102
 cd foxtrotgps-663102
@@ -34,7 +39,8 @@ cd foxtrotgps-663102
 If you are working on a new feature instead of a simple bug fix you might
 name the branch after the feature, for example "foxtrotgps-usng-support".
 
-3 Make your change (or addition or whatever):
+3. Make your change (or addition or whatever)
+---------------------------------------------
 
 "One change" means you want to do the minimum necessary to fix just
 one bug, not several bugs. This makes evaluating the work you did
@@ -48,7 +54,8 @@ If you add a new file to the project use the "add" command
 
 bzr add newfilename
 
-4 Commit your change:
+4. Commit your change
+---------------------
 
 Now that you have updated one or more files, you need to commit the
 changes. From your source directory, execute the commit command along
@@ -65,7 +72,8 @@ adding a new feature, you have all the benefits of version control
 without having to publish any non-working code. It also means you can
 work disconnected from a network, pushing changes when you reconnect.
 
-5 Send your changes to the maintainer:
+5. Send your changes to the maintainer
+--------------------------------------
 
 If the change is relatively small, you can "send" the changes to a
 patch file and then attach the file to the bug in the comments section
@@ -85,10 +93,16 @@ publicly accessible SFTP/Web site, you can use SFTP mode to upload
 your changes to your own site, and then share the Web URL with other
 developers either by email or through the bug tracker.
 
-6 After letting us know about your changes, the next step is to wait
+6. Wait
+-------
+
+After letting us know about your changes, the next step is to wait
 for the changes to be accepted and merged into the trunk.
 
-7 To work on a NEW bug or feature, you'd start the whole cycle again,
+7. Repeat!
+----------
+
+To work on a NEW bug or feature, you'd start the whole cycle again,
 checking out a new copy of the code so that you are starting from the
 trunk.
 
