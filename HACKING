@@ -67,7 +67,7 @@ NOTE that unlike other version control systems (such as subversion),
 when you perform a commit with Bazaar the changes stay on your own
 machine. The changes are NOT sent to the remote repository until you
 execute a "push" command. Thus you can do many commits and/or reverts
-before you share the changes.  this. This makes sense, because if you are
+before you share the changes. This makes sense, because if you are
 adding a new feature, you have all the benefits of version control
 without having to publish any non-working code. It also means you can
 work disconnected from a network, pushing changes when you reconnect.
