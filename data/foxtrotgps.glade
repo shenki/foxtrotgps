@@ -4480,7 +4480,7 @@ My Personal Places</property>
                 <child>
                   <widget class="GtkComboBox" id="combobox8">
                     <property name="visible">True</property>
-                    <property name="items" translatable="yes">yournavigation.org
+                    <property name="items">yournavigation.org
 openrouteservice.org
 gnuite.com</property>
                     <signal name="changed" handler="on_combobox8_changed"/>
