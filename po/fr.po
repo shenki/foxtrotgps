@@ -40,7 +40,7 @@ msgstr "Fichier %s des images introuvable"
 msgid ""
 "%s could not load its user interface; %s does not not appear to be properly "
 "installed."
-msgstr ""
+msgstr "%s n'a pu charger son interface utilisateur ; %s n'a pas été installé correctement."
 
 #: ../src/friends.c:599
 msgid "Msg"
@@ -893,7 +893,7 @@ msgstr "pieds"
 
 #: ../data/foxtrotgps.glade.h:237
 msgid "fewer/larger details"
-msgstr ""
+msgstr "moins de détails"
 
 #: ../data/foxtrotgps.glade.h:238
 msgid "foobar"
@@ -925,7 +925,7 @@ msgstr "Juste oisif..."
 
 #: ../data/foxtrotgps.glade.h:245
 msgid "map detail"
-msgstr ""
+msgstr "détail de la carte"
 
 #: ../data/foxtrotgps.glade.h:246
 msgid "map download"
@@ -949,7 +949,7 @@ msgstr "minutes"
 
 #: ../data/foxtrotgps.glade.h:251
 msgid "more/smaller details"
-msgstr ""
+msgstr "plus de détails"
 
 #: ../data/foxtrotgps.glade.h:252
 msgid "my position"
@@ -1029,6 +1029,9 @@ msgid ""
 "openrouteservice.org\n"
 "gnuite.com"
 msgstr ""
+"yournavigation.org\n"
+"openrouteservice.org\n"
+"gnuite.com"
 
 #~ msgid "     Share!     "
 #~ msgstr "     Partager !     "
