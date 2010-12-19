@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-09-12 10:49+0300\n"
+"POT-Creation-Date: 2010-12-18 00:11-0500\n"
 "PO-Revision-Date: 2010-09-12 10:50+0300\n"
 "Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
@@ -49,7 +49,7 @@ msgstr ""
 msgid "Msg"
 msgstr "Viesti"
 
-#: ../src/friends.c:607 ../src/friends.c:974 ../data/foxtrotgps.glade.h:171
+#: ../src/friends.c:607 ../src/friends.c:974 ../data/foxtrotgps.glade.h:168
 msgid "Go To"
 msgstr "Mene"
 
@@ -57,7 +57,7 @@ msgstr "Mene"
 msgid "Reply"
 msgstr "Vastaa"
 
-#: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:224
+#: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:221
 msgid "Working...."
 msgstr "Työskennellään..."
 
@@ -76,68 +76,60 @@ msgstr "GPS ja kartta"
 #: ../data/foxtrotgps.glade.h:1
 msgid ""
 "\n"
-"\n"
-msgstr ""
-"\n"
-"\n"
-
-#: ../data/foxtrotgps.glade.h:4
-msgid ""
-"\n"
 "Set GPSD Host IP\n"
 msgstr ""
 "\n"
 "Aseta GPSD:n palvelin-IP\n"
 
-#: ../data/foxtrotgps.glade.h:7
+#: ../data/foxtrotgps.glade.h:4
 msgid "  +00:00h"
 msgstr "  +00:00h"
 
-#: ../data/foxtrotgps.glade.h:8
+#: ../data/foxtrotgps.glade.h:5
 msgid "  0 seconds"
 msgstr "  0 sekuntia"
 
-#: ../data/foxtrotgps.glade.h:9
+#: ../data/foxtrotgps.glade.h:6
 msgid " GPSD "
 msgstr " GPSD"
 
-#: ../data/foxtrotgps.glade.h:10
+#: ../data/foxtrotgps.glade.h:7
 msgid " Lon: "
 msgstr " Pit: "
 
-#: ../data/foxtrotgps.glade.h:11
+#: ../data/foxtrotgps.glade.h:8
 msgid " Port:"
 msgstr "Portti:"
 
-#: ../data/foxtrotgps.glade.h:12
+#: ../data/foxtrotgps.glade.h:9
 msgid "+ 1 zoom level"
 msgstr "+ 1 zoomaustaso"
 
-#: ../data/foxtrotgps.glade.h:13
+#: ../data/foxtrotgps.glade.h:10
 msgid "+ 2 zoom levels"
 msgstr "+ 2 zoomaustasoa"
 
-#: ../data/foxtrotgps.glade.h:14
+#: ../data/foxtrotgps.glade.h:11
 msgid "+ 3 zoom levels"
 msgstr "+ 3 zoomaustasoa"
 
-#: ../data/foxtrotgps.glade.h:15
+#: ../data/foxtrotgps.glade.h:12
 msgid "+ 4 zoom levels (~25MB)"
 msgstr "+ 4 zoomaustasoa (~25MB)"
 
-#: ../data/foxtrotgps.glade.h:16
+#: ../data/foxtrotgps.glade.h:13
 msgid "+ 5 zoom levels (~100MB)"
 msgstr "+ 5 zoomaustasoa (~100MB)"
 
-#: ../data/foxtrotgps.glade.h:17
+#: ../data/foxtrotgps.glade.h:14
 msgid "+ 6 zoom levels (~400MB)"
 msgstr "+ 6 zoomaustasoa (~400MB)"
 
-#: ../data/foxtrotgps.glade.h:18
+#: ../data/foxtrotgps.glade.h:15
 msgid "-"
 msgstr "-"
 
-#: ../data/foxtrotgps.glade.h:19
+#: ../data/foxtrotgps.glade.h:16
 msgid ""
 "- please choose -\n"
 "Accomodation\n"
@@ -171,11 +163,11 @@ msgstr ""
 "Urheilu\n"
 "Omat sijainnit"
 
-#: ../data/foxtrotgps.glade.h:34
+#: ../data/foxtrotgps.glade.h:31
 msgid "--"
 msgstr "--"
 
-#: ../data/foxtrotgps.glade.h:35
+#: ../data/foxtrotgps.glade.h:32
 msgid ""
 "-- Show All --\n"
 "Accomodation\n"
@@ -209,7 +201,7 @@ msgstr ""
 "Urheilu\n"
 "Omat sijainnit"
 
-#: ../data/foxtrotgps.glade.h:50
+#: ../data/foxtrotgps.glade.h:47
 msgid ""
 "-12:00\n"
 "-11:00\n"
@@ -263,163 +255,163 @@ msgstr ""
 "+11:00\n"
 "+12:00"
 
-#: ../data/foxtrotgps.glade.h:75
+#: ../data/foxtrotgps.glade.h:72
 msgid "0"
 msgstr "0"
 
-#: ../data/foxtrotgps.glade.h:76
+#: ../data/foxtrotgps.glade.h:73
 msgid "127.0.0.1"
 msgstr "127.0.0.1"
 
-#: ../data/foxtrotgps.glade.h:77
+#: ../data/foxtrotgps.glade.h:74
 msgid "2947"
 msgstr "2947"
 
-#: ../data/foxtrotgps.glade.h:78
+#: ../data/foxtrotgps.glade.h:75
 msgid "5"
 msgstr "5"
 
-#: ../data/foxtrotgps.glade.h:79
+#: ../data/foxtrotgps.glade.h:76
 msgid "<b>-----</b>"
 msgstr "<b>-----</b>"
 
-#: ../data/foxtrotgps.glade.h:80
+#: ../data/foxtrotgps.glade.h:77
 msgid "<b>-</b>"
 msgstr "<b>-</b>"
 
-#: ../data/foxtrotgps.glade.h:81
+#: ../data/foxtrotgps.glade.h:78
 msgid "<b>1. Add Track</b>"
 msgstr "<b>1. Lisää reitti</b>"
 
-#: ../data/foxtrotgps.glade.h:82
+#: ../data/foxtrotgps.glade.h:79
 msgid "<b>2. Add Photos</b>"
 msgstr "<b>2. Lisää valokuvia</b> "
 
-#: ../data/foxtrotgps.glade.h:83
+#: ../data/foxtrotgps.glade.h:80
 msgid "<b>3. Adjust Time</b>"
 msgstr "<b>3. Säädä kellonaikaa</b>"
 
-#: ../data/foxtrotgps.glade.h:84
+#: ../data/foxtrotgps.glade.h:81
 msgid "<b>Auto Download</b>"
 msgstr "<b>Autom. lataus</b>"
 
-#: ../data/foxtrotgps.glade.h:85
+#: ../data/foxtrotgps.glade.h:82
 msgid "<b>Cache Dir</b>"
 msgstr "<b>Välimuistihak</b>"
 
-#: ../data/foxtrotgps.glade.h:86
+#: ../data/foxtrotgps.glade.h:83
 msgid "<b>Camera:</b> "
 msgstr "<b>Kamera:</b>"
 
-#: ../data/foxtrotgps.glade.h:87
+#: ../data/foxtrotgps.glade.h:84
 msgid "<b>Choose track to open (.log / .gpx)</b>"
 msgstr "<b>Valitse avattava reitti (.log / .gpx)</b>"
 
-#: ../data/foxtrotgps.glade.h:88
+#: ../data/foxtrotgps.glade.h:85
 msgid "<b>Correction:</b> "
 msgstr "<b>Korjaus:</b> "
 
-#: ../data/foxtrotgps.glade.h:89
+#: ../data/foxtrotgps.glade.h:86
 msgid "<b>End</b>"
 msgstr "<b>Loppu</b>"
 
-#: ../data/foxtrotgps.glade.h:90
+#: ../data/foxtrotgps.glade.h:87
 msgid "<b>GPS Data</b>"
 msgstr "<b>GPS-tiedot</b>"
 
-#: ../data/foxtrotgps.glade.h:91
+#: ../data/foxtrotgps.glade.h:88
 msgid "<b>GPS:</b> "
 msgstr " <b>GPS:</b> "
 
-#: ../data/foxtrotgps.glade.h:92
+#: ../data/foxtrotgps.glade.h:89
 msgid "<b>GPSD</b>"
 msgstr "<b>GPSD</b>"
 
-#: ../data/foxtrotgps.glade.h:93
+#: ../data/foxtrotgps.glade.h:90
 msgid "<b>Geocoding your photos</b>"
 msgstr " <b>Geokoodataan valokuvia</b>"
 
-#: ../data/foxtrotgps.glade.h:94
+#: ../data/foxtrotgps.glade.h:91
 msgid "<b>Map Download</b>"
 msgstr "<b>Karttojen lataus</b>"
 
-#: ../data/foxtrotgps.glade.h:95
+#: ../data/foxtrotgps.glade.h:92
 msgid "<b>Map Types</b>"
 msgstr "<b>Karttatyypit</b>"
 
-#: ../data/foxtrotgps.glade.h:96
+#: ../data/foxtrotgps.glade.h:93
 msgid "<b>Me</b>"
 msgstr "<b>Minä</b>"
 
-#: ../data/foxtrotgps.glade.h:97
+#: ../data/foxtrotgps.glade.h:94
 msgid "<b>Name for the new Repository</b>"
 msgstr "<b>Nimi uudelle lähteelle</b>"
 
-#: ../data/foxtrotgps.glade.h:98
+#: ../data/foxtrotgps.glade.h:95
 msgid "<b>Position Sharing</b>"
 msgstr "<b>Sijainnin jakaminen</b>"
 
-#: ../data/foxtrotgps.glade.h:99
+#: ../data/foxtrotgps.glade.h:96
 msgid "<b>Repository Name</b>"
 msgstr "<b>Lähteen nimi</b>"
 
-#: ../data/foxtrotgps.glade.h:100
+#: ../data/foxtrotgps.glade.h:97
 msgid "<b>Service</b>"
 msgstr "<b>Palvelu</b>"
 
-#: ../data/foxtrotgps.glade.h:101
+#: ../data/foxtrotgps.glade.h:98
 msgid "<b>Sharing Mode</b>"
 msgstr "<b>Jakamistila</b>"
 
-#: ../data/foxtrotgps.glade.h:102
+#: ../data/foxtrotgps.glade.h:99
 msgid "<b>Start</b>"
 msgstr "<b>Alku</b>"
 
-#: ../data/foxtrotgps.glade.h:103
+#: ../data/foxtrotgps.glade.h:100
 msgid "<b>The output from gpscorrelate:</b>"
 msgstr "<b>gpscorrelaten tuloste:</b>"
 
-#: ../data/foxtrotgps.glade.h:104
+#: ../data/foxtrotgps.glade.h:101
 msgid "<b>Timezone:</b> "
 msgstr "<b>Aikavyöhyke:</b> "
 
-#: ../data/foxtrotgps.glade.h:105
+#: ../data/foxtrotgps.glade.h:102
 msgid "<b>URI</b>"
 msgstr "<b>URI</b>"
 
-#: ../data/foxtrotgps.glade.h:106
+#: ../data/foxtrotgps.glade.h:103
 msgid "<b>Units</b>"
 msgstr "<b>Yksiköt</b>"
 
-#: ../data/foxtrotgps.glade.h:107
+#: ../data/foxtrotgps.glade.h:104
 msgid "<b>no GPS found</b>"
 msgstr "<b>GPS:ää ei löydy</b>"
 
-#: ../data/foxtrotgps.glade.h:108
+#: ../data/foxtrotgps.glade.h:105
 msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
 msgstr "<big><b>Asetukset</b></big>   <small>[4/4]</small>"
 
-#: ../data/foxtrotgps.glade.h:109
+#: ../data/foxtrotgps.glade.h:106
 msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
 msgstr "<big><b>Ystävät</b></big>   <small>[2/4]</small>"
 
-#: ../data/foxtrotgps.glade.h:110
+#: ../data/foxtrotgps.glade.h:107
 msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
 msgstr "<big><b>Reitit</b></big>   <small>[3/4]</small>"
 
-#: ../data/foxtrotgps.glade.h:111
+#: ../data/foxtrotgps.glade.h:108
 msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
 msgstr "<big><b>Matkamittari</b></big>   <small>[1/4]</small>"
 
-#: ../data/foxtrotgps.glade.h:112
+#: ../data/foxtrotgps.glade.h:109
 msgid "<i><b>Connecting...</b></i>"
 msgstr "<i><b>Yhdistetään...</b></i>"
 
-#: ../data/foxtrotgps.glade.h:113
+#: ../data/foxtrotgps.glade.h:110
 msgid "<i>Altitude:</i>"
 msgstr "<i>Korkeus:</i>"
 
-#: ../data/foxtrotgps.glade.h:114
+#: ../data/foxtrotgps.glade.h:111
 msgid ""
 "<i>Insert Start and End:</i>\n"
 "<small>(experimental feature)</small>"
@@ -427,31 +419,31 @@ msgstr ""
 "<i>Syötä alku ja loppu:</i>\n"
 "<small>(kokeellinen ominaisuus)</small>"
 
-#: ../data/foxtrotgps.glade.h:116
+#: ../data/foxtrotgps.glade.h:113
 msgid "<i>Lat &amp; Lon:</i>"
 msgstr "<i>Lev ja pit:</i>"
 
-#: ../data/foxtrotgps.glade.h:117
+#: ../data/foxtrotgps.glade.h:114
 msgid "<i>No Messages</i>"
 msgstr "<i>Ei viestejä</i>"
 
-#: ../data/foxtrotgps.glade.h:118
+#: ../data/foxtrotgps.glade.h:115
 msgid "<i>Speed and Distance:</i>"
 msgstr "<i>Nopeus ja etäisyys:</i>"
 
-#: ../data/foxtrotgps.glade.h:119
+#: ../data/foxtrotgps.glade.h:116
 msgid "<i>What are you up to?</i>"
 msgstr "<i>Mitä teet paraikaa?</i>"
 
-#: ../data/foxtrotgps.glade.h:120
+#: ../data/foxtrotgps.glade.h:117
 msgid "<span color=\"red\" weight=\"bold\">-</span>"
 msgstr "<span color=\"red\" weight=\"bold\">-</span>"
 
-#: ../data/foxtrotgps.glade.h:121
+#: ../data/foxtrotgps.glade.h:118
 msgid "<span font_desc='40'> -- </span>"
 msgstr "<span font_desc='40'> -- </span>"
 
-#: ../data/foxtrotgps.glade.h:122
+#: ../data/foxtrotgps.glade.h:119
 msgid ""
 "Activate or deactivate automatic\n"
 "download of missing tiles into cache"
@@ -459,71 +451,71 @@ msgstr ""
 "Ota käyttöön tai pois automaattinen\n"
 "puuttuvien karttapalojen lataus välimuistiin"
 
-#: ../data/foxtrotgps.glade.h:124
+#: ../data/foxtrotgps.glade.h:121
 msgid "Add POI"
 msgstr "Lisää POI"
 
-#: ../data/foxtrotgps.glade.h:125
+#: ../data/foxtrotgps.glade.h:122
 msgid "All fields must be filled in"
 msgstr "Kaikki kentät tulee täyttää"
 
-#: ../data/foxtrotgps.glade.h:126
+#: ../data/foxtrotgps.glade.h:123
 msgid "Altitude"
 msgstr "Korkeus"
 
-#: ../data/foxtrotgps.glade.h:127
+#: ../data/foxtrotgps.glade.h:124
 msgid "Auto download map tiles"
 msgstr "Lataa karttapalat automaattisesti"
 
-#: ../data/foxtrotgps.glade.h:128
+#: ../data/foxtrotgps.glade.h:125
 msgid "Autocenter On"
 msgstr "Autom. kesk."
 
-#: ../data/foxtrotgps.glade.h:129
+#: ../data/foxtrotgps.glade.h:126
 msgid "Average"
 msgstr "Keskinopeus"
 
-#: ../data/foxtrotgps.glade.h:130
+#: ../data/foxtrotgps.glade.h:127
 msgid "Big"
 msgstr "Suuri"
 
-#: ../data/foxtrotgps.glade.h:131
+#: ../data/foxtrotgps.glade.h:128
 msgid "Category:"
 msgstr "Luokka:"
 
-#: ../data/foxtrotgps.glade.h:132
+#: ../data/foxtrotgps.glade.h:129
 msgid "Change GPSD"
 msgstr "Vaihda GPSD"
 
-#: ../data/foxtrotgps.glade.h:133
+#: ../data/foxtrotgps.glade.h:130
 msgid "Clear"
 msgstr "Tyhjennä"
 
-#: ../data/foxtrotgps.glade.h:134
+#: ../data/foxtrotgps.glade.h:131
 msgid "Close"
 msgstr "Sulje"
 
-#: ../data/foxtrotgps.glade.h:135
+#: ../data/foxtrotgps.glade.h:132
 msgid "Close Info Area"
 msgstr "Sulje tietoalue"
 
-#: ../data/foxtrotgps.glade.h:136
+#: ../data/foxtrotgps.glade.h:133
 msgid "Configure"
 msgstr "Asetukset"
 
-#: ../data/foxtrotgps.glade.h:137
+#: ../data/foxtrotgps.glade.h:134
 msgid "Coordinates <b><i>clicked</i></b> on the map:"
 msgstr "<b><i>Napsautetut</i></b> koordinaatit kartalla:"
 
-#: ../data/foxtrotgps.glade.h:138
+#: ../data/foxtrotgps.glade.h:135
 msgid "Correction:"
 msgstr "Korjaus:"
 
-#: ../data/foxtrotgps.glade.h:139
+#: ../data/foxtrotgps.glade.h:136
 msgid "Current Map:"
 msgstr "Nykyinen kartta:"
 
-#: ../data/foxtrotgps.glade.h:140
+#: ../data/foxtrotgps.glade.h:137
 msgid ""
 "Decide whom you see and \n"
 "who can see you:"
@@ -531,23 +523,23 @@ msgstr ""
 "Päätä, keitä näet ja ketkä \n"
 "voivat nähdä sinut:"
 
-#: ../data/foxtrotgps.glade.h:142
+#: ../data/foxtrotgps.glade.h:139
 msgid "Delete"
 msgstr "Poista"
 
-#: ../data/foxtrotgps.glade.h:143
+#: ../data/foxtrotgps.glade.h:140
 msgid "Delete POI?"
 msgstr "Poista POI?"
 
-#: ../data/foxtrotgps.glade.h:144
+#: ../data/foxtrotgps.glade.h:141
 msgid "Description:"
 msgstr "Kuvaus:"
 
-#: ../data/foxtrotgps.glade.h:145
+#: ../data/foxtrotgps.glade.h:142
 msgid "Directory in which the tracks should be written:"
 msgstr "Hakemisto johon reitit kirjoitetaan:"
 
-#: ../data/foxtrotgps.glade.h:146
+#: ../data/foxtrotgps.glade.h:143
 msgid ""
 "Distance to\n"
 "next point"
@@ -555,7 +547,7 @@ msgstr ""
 "Etäisyys seur.\n"
 "pisteeseen"
 
-#: ../data/foxtrotgps.glade.h:148
+#: ../data/foxtrotgps.glade.h:145
 msgid ""
 "Do you really want to\n"
 "delete this Point of Interest?"
@@ -563,39 +555,39 @@ msgstr ""
 "Haluatko todella poistaa tämän\n"
 "POIn (Point of Interest)?"
 
-#: ../data/foxtrotgps.glade.h:150
+#: ../data/foxtrotgps.glade.h:147
 msgid "Download maps of currently visible area:"
 msgstr "Lataa kartat näkyvissä olevasta alueesta:"
 
-#: ../data/foxtrotgps.glade.h:151
+#: ../data/foxtrotgps.glade.h:148
 msgid "Edit"
 msgstr "Muokkaa"
 
-#: ../data/foxtrotgps.glade.h:152
+#: ../data/foxtrotgps.glade.h:149
 msgid "Edit POI"
 msgstr "Muokkaa POIta"
 
-#: ../data/foxtrotgps.glade.h:153
+#: ../data/foxtrotgps.glade.h:150
 msgid "Edit Repository"
 msgstr "Muokkaa lähdettä"
 
-#: ../data/foxtrotgps.glade.h:154
+#: ../data/foxtrotgps.glade.h:151
 msgid "Edit..."
 msgstr "Muokkaa..."
 
-#: ../data/foxtrotgps.glade.h:155
+#: ../data/foxtrotgps.glade.h:152
 msgid "Email"
 msgstr "Sähköposti"
 
-#: ../data/foxtrotgps.glade.h:156
+#: ../data/foxtrotgps.glade.h:153
 msgid "Enable Live Tracking"
 msgstr "Ota live-seuranta käyttöön"
 
-#: ../data/foxtrotgps.glade.h:157
+#: ../data/foxtrotgps.glade.h:154
 msgid "Enable Track Logging"
 msgstr "Ota reitin lokitus käyttöön"
 
-#: ../data/foxtrotgps.glade.h:158
+#: ../data/foxtrotgps.glade.h:155
 msgid ""
 "Enable position sharing and\n"
 "messaging with your friends"
@@ -603,171 +595,171 @@ msgstr ""
 "Ota käyttöön sijainnin jakaminen\n"
 "ja viestit tuttavien kanssa"
 
-#: ../data/foxtrotgps.glade.h:160
+#: ../data/foxtrotgps.glade.h:157
 msgid "Friend Info"
 msgstr "Tuttavan tiedot"
 
-#: ../data/foxtrotgps.glade.h:161
+#: ../data/foxtrotgps.glade.h:158
 msgid "Fullscreen (F11 or Space)"
 msgstr "Kokoruutu (F11 tai välilyönti)"
 
-#: ../data/foxtrotgps.glade.h:162
+#: ../data/foxtrotgps.glade.h:159
 msgid "GPS"
 msgstr "GPS"
 
-#: ../data/foxtrotgps.glade.h:163
+#: ../data/foxtrotgps.glade.h:160
 msgid "GPS Info"
 msgstr "GPS-tiedot"
 
-#: ../data/foxtrotgps.glade.h:164
+#: ../data/foxtrotgps.glade.h:161
 msgid "GPS Time"
 msgstr "GPS-aika:"
 
-#: ../data/foxtrotgps.glade.h:165
+#: ../data/foxtrotgps.glade.h:162
 msgid "Geo Photo"
 msgstr "Geo-valokuva"
 
-#: ../data/foxtrotgps.glade.h:166
+#: ../data/foxtrotgps.glade.h:163
 msgid "GeoPhoto"
 msgstr "Geo-valokuva"
 
-#: ../data/foxtrotgps.glade.h:167
+#: ../data/foxtrotgps.glade.h:164
 msgid "Geocode Result"
 msgstr "Geokoodauksen tulos"
 
-#: ../data/foxtrotgps.glade.h:168
+#: ../data/foxtrotgps.glade.h:165
 msgid "Geocode your photos by correlating them with a gps track.\n"
 msgstr "Geokoodaa valokuvasti liittämällä ne GPS-reittiin.\n"
 
-#: ../data/foxtrotgps.glade.h:170
+#: ../data/foxtrotgps.glade.h:167
 msgid "Get Route"
 msgstr "Hae reitti"
 
-#: ../data/foxtrotgps.glade.h:172
+#: ../data/foxtrotgps.glade.h:169
 msgid "Go to Next Page"
 msgstr "Siirry seuraavalle sivulle"
 
-#: ../data/foxtrotgps.glade.h:173
+#: ../data/foxtrotgps.glade.h:170
 msgid "Go to Previous Page"
 msgstr "Siirry edelliselle sivulle"
 
-#: ../data/foxtrotgps.glade.h:174
+#: ../data/foxtrotgps.glade.h:171
 msgid "Heading"
 msgstr "Kulkusuunta"
 
-#: ../data/foxtrotgps.glade.h:175
+#: ../data/foxtrotgps.glade.h:172
 msgid "Hide Messages"
 msgstr "Piilota viestit"
 
-#: ../data/foxtrotgps.glade.h:176
+#: ../data/foxtrotgps.glade.h:173
 msgid "Host:"
 msgstr "-palvelin:"
 
-#: ../data/foxtrotgps.glade.h:177
+#: ../data/foxtrotgps.glade.h:174
 msgid "Image Data"
 msgstr "Kuvatiedot"
 
-#: ../data/foxtrotgps.glade.h:178
+#: ../data/foxtrotgps.glade.h:175
 msgid "JohnDoe"
 msgstr "MattiMallikas"
 
-#: ../data/foxtrotgps.glade.h:179
+#: ../data/foxtrotgps.glade.h:176
 msgid "Lat - Lon"
 msgstr "Lev - pit"
 
-#: ../data/foxtrotgps.glade.h:180
+#: ../data/foxtrotgps.glade.h:177
 msgid "Lat: "
 msgstr "Lev: "
 
-#: ../data/foxtrotgps.glade.h:181
+#: ../data/foxtrotgps.glade.h:178
 msgid "Load"
 msgstr "Lataa"
 
-#: ../data/foxtrotgps.glade.h:182
+#: ../data/foxtrotgps.glade.h:179
 msgid "Load track..."
 msgstr "Lataa reitti..."
 
-#: ../data/foxtrotgps.glade.h:183
+#: ../data/foxtrotgps.glade.h:180
 msgid "Map DL"
 msgstr "Karttojen lataus"
 
-#: ../data/foxtrotgps.glade.h:184
+#: ../data/foxtrotgps.glade.h:181
 msgid "Max"
 msgstr "Suurin"
 
-#: ../data/foxtrotgps.glade.h:185
+#: ../data/foxtrotgps.glade.h:182
 msgid "Message"
 msgstr "Viesti"
 
-#: ../data/foxtrotgps.glade.h:186
+#: ../data/foxtrotgps.glade.h:183
 msgid "Name - Keywords / Tags:"
 msgstr "Nimi - avainsanat / merkinnät:"
 
-#: ../data/foxtrotgps.glade.h:187
+#: ../data/foxtrotgps.glade.h:184
 msgid "New Repository"
 msgstr "Uusi lähde"
 
-#: ../data/foxtrotgps.glade.h:188
+#: ../data/foxtrotgps.glade.h:185
 msgid "New..."
 msgstr "Uusi..."
 
-#: ../data/foxtrotgps.glade.h:189
+#: ../data/foxtrotgps.glade.h:186
 msgid "Next map repo"
 msgstr "Seuraava karttavarasto"
 
-#: ../data/foxtrotgps.glade.h:190
+#: ../data/foxtrotgps.glade.h:187
 msgid "Nickname"
 msgstr "Nimimerkki"
 
-#: ../data/foxtrotgps.glade.h:191
+#: ../data/foxtrotgps.glade.h:188
 msgid "POI"
 msgstr "POI"
 
-#: ../data/foxtrotgps.glade.h:192
+#: ../data/foxtrotgps.glade.h:189
 msgid "POIs"
 msgstr "POIt"
 
-#: ../data/foxtrotgps.glade.h:193
+#: ../data/foxtrotgps.glade.h:190
 msgid "Password"
 msgstr "Salasana"
 
-#: ../data/foxtrotgps.glade.h:194
+#: ../data/foxtrotgps.glade.h:191
 msgid "Photo Correlate"
 msgstr "Valokuvien sijoittaminen"
 
-#: ../data/foxtrotgps.glade.h:195
+#: ../data/foxtrotgps.glade.h:192
 msgid "Pick"
 msgstr "Valitse"
 
-#: ../data/foxtrotgps.glade.h:196
+#: ../data/foxtrotgps.glade.h:193
 msgid "Pick End on Map"
 msgstr "Valitse loppu kartalta"
 
-#: ../data/foxtrotgps.glade.h:197
+#: ../data/foxtrotgps.glade.h:194
 msgid "Pick Start on Map"
 msgstr "Valitse alku kartalta"
 
-#: ../data/foxtrotgps.glade.h:198
+#: ../data/foxtrotgps.glade.h:195
 msgid "Previous map repo"
 msgstr "Edellinen karttavarasto"
 
-#: ../data/foxtrotgps.glade.h:199
+#: ../data/foxtrotgps.glade.h:196
 msgid "Register!"
 msgstr "Rekisteröidy"
 
-#: ../data/foxtrotgps.glade.h:200
+#: ../data/foxtrotgps.glade.h:197
 msgid "Reset"
 msgstr "Palauta"
 
-#: ../data/foxtrotgps.glade.h:201
+#: ../data/foxtrotgps.glade.h:198
 msgid "Satellites"
 msgstr "Satelliitit"
 
-#: ../data/foxtrotgps.glade.h:202
+#: ../data/foxtrotgps.glade.h:199
 msgid "Send Message to:"
 msgstr "Lähetä viesti:"
 
-#: ../data/foxtrotgps.glade.h:203
+#: ../data/foxtrotgps.glade.h:200
 msgid ""
 "Set point as\n"
 "my position"
@@ -775,23 +767,23 @@ msgstr ""
 "Aseta piste\n"
 "sijainnikseni"
 
-#: ../data/foxtrotgps.glade.h:205
+#: ../data/foxtrotgps.glade.h:202
 msgid "Share!"
 msgstr "Jaa"
 
-#: ../data/foxtrotgps.glade.h:206
+#: ../data/foxtrotgps.glade.h:203
 msgid "Show Info"
 msgstr "Näytä tiedot"
 
-#: ../data/foxtrotgps.glade.h:207
+#: ../data/foxtrotgps.glade.h:204
 msgid "Show POIs"
 msgstr "Näytä POIt"
 
-#: ../data/foxtrotgps.glade.h:208
+#: ../data/foxtrotgps.glade.h:205
 msgid "Show password"
 msgstr "Näytä salasana"
 
-#: ../data/foxtrotgps.glade.h:209
+#: ../data/foxtrotgps.glade.h:206
 msgid ""
 "Simply choose any nickname and password.\n"
 "\n"
@@ -802,240 +794,246 @@ msgstr ""
 "Ennen ensimmäistä käyttöä, rekisteröidy napsauttamalla alla olevaa "
 "painiketta."
 
-#: ../data/foxtrotgps.glade.h:212
+#: ../data/foxtrotgps.glade.h:209
 msgid "Speed"
 msgstr "Nopeus"
 
-#: ../data/foxtrotgps.glade.h:213
+#: ../data/foxtrotgps.glade.h:210
 msgid "Split"
 msgstr "Jaa"
 
-#: ../data/foxtrotgps.glade.h:214
+#: ../data/foxtrotgps.glade.h:211
 msgid "Stop"
 msgstr "Pysäytä"
 
-#: ../data/foxtrotgps.glade.h:215
+#: ../data/foxtrotgps.glade.h:212
 msgid "Street,City,Country"
 msgstr "Katu,Kaupunki,Maa"
 
-#: ../data/foxtrotgps.glade.h:216
+#: ../data/foxtrotgps.glade.h:213
 msgid "Time"
 msgstr "Aika"
 
-#: ../data/foxtrotgps.glade.h:217
+#: ../data/foxtrotgps.glade.h:214
 msgid "Timezone:"
 msgstr "Aikavyöhyke:"
 
-#: ../data/foxtrotgps.glade.h:218
+#: ../data/foxtrotgps.glade.h:215
 msgid "Trackdir Config"
 msgstr "Reittihak-asetus"
 
-#: ../data/foxtrotgps.glade.h:219
+#: ../data/foxtrotgps.glade.h:216
 msgid "Trip"
 msgstr "Matka"
 
-#: ../data/foxtrotgps.glade.h:220
+#: ../data/foxtrotgps.glade.h:217
 msgid "Update interval  "
 msgstr "Päivityksen aikaväli "
 
-#: ../data/foxtrotgps.glade.h:221
+#: ../data/foxtrotgps.glade.h:218
 msgid "Upload"
 msgstr "Lähetä"
 
-#: ../data/foxtrotgps.glade.h:222
+#: ../data/foxtrotgps.glade.h:219
 msgid "Use current GPS position instead"
 msgstr "Käytä sen sijaan nykyistä GPS-sijaintia"
 
-#: ../data/foxtrotgps.glade.h:223
+#: ../data/foxtrotgps.glade.h:220
 msgid "View GPS Photo"
 msgstr "Näytä GPS-valokuva"
 
-#: ../data/foxtrotgps.glade.h:225
+#: ../data/foxtrotgps.glade.h:222
 msgid "Zoom in"
 msgstr "Lähennä"
 
-#: ../data/foxtrotgps.glade.h:226
+#: ../data/foxtrotgps.glade.h:223
 msgid "Zoom out"
 msgstr "Loitonna"
 
-#: ../data/foxtrotgps.glade.h:227
+#: ../data/foxtrotgps.glade.h:224
 msgid "add POI"
 msgstr "lisää POI"
 
-#: ../data/foxtrotgps.glade.h:229
+#: ../data/foxtrotgps.glade.h:226
 #, no-c-format
 msgid "add photos to the %s database"
 msgstr "lisää valokuvia %s:n tietokantaa"
 
-#: ../data/foxtrotgps.glade.h:230
+#: ../data/foxtrotgps.glade.h:227
 msgid "budget"
 msgstr "edullinen"
 
-#: ../data/foxtrotgps.glade.h:231
+#: ../data/foxtrotgps.glade.h:228
 msgid "d m's.s\""
 msgstr "d m's.s\""
 
-#: ../data/foxtrotgps.glade.h:232
+#: ../data/foxtrotgps.glade.h:229
 msgid "d m.m'"
 msgstr "d m.m'"
 
-#: ../data/foxtrotgps.glade.h:233
+#: ../data/foxtrotgps.glade.h:230
 msgid "d.dd"
 msgstr "d.dd"
 
-#: ../data/foxtrotgps.glade.h:234
+#: ../data/foxtrotgps.glade.h:231
 msgid "exclusive"
 msgstr "korkealuokkainen"
 
-#: ../data/foxtrotgps.glade.h:235
+#: ../data/foxtrotgps.glade.h:232
 msgid "extended opening hours"
 msgstr "laajennetut aukioloajat"
 
-#: ../data/foxtrotgps.glade.h:236
+#: ../data/foxtrotgps.glade.h:233
 msgid "feet"
 msgstr "jalat"
 
-#: ../data/foxtrotgps.glade.h:237
+#: ../data/foxtrotgps.glade.h:234
 msgid "fewer/larger details"
 msgstr "vähemmän/suurempia yksityiskohtia"
 
-#: ../data/foxtrotgps.glade.h:238
+#: ../data/foxtrotgps.glade.h:235
 msgid "foobar"
 msgstr "huuhaa"
 
-#: ../data/foxtrotgps.glade.h:239
+#: ../data/foxtrotgps.glade.h:236
 msgid "friend mode"
 msgstr "tuttavatila"
 
-#: ../data/foxtrotgps.glade.h:240
+#: ../data/foxtrotgps.glade.h:237
 msgid "fun mode"
 msgstr "hauska tila"
 
-#: ../data/foxtrotgps.glade.h:241
+#: ../data/foxtrotgps.glade.h:238
 msgid "geocode"
 msgstr "geokoodaus"
 
-#: ../data/foxtrotgps.glade.h:242
+#: ../data/foxtrotgps.glade.h:239
 msgid "get route"
 msgstr "hae reitti"
 
-#: ../data/foxtrotgps.glade.h:243
+#: ../data/foxtrotgps.glade.h:240
 msgid "imperial"
 msgstr "brittiläinen"
 
-#: ../data/foxtrotgps.glade.h:244
+#: ../data/foxtrotgps.glade.h:241
 msgid "just idle..."
 msgstr "joutenoloa..."
 
-#: ../data/foxtrotgps.glade.h:245
+#: ../data/foxtrotgps.glade.h:242
 msgid "map detail"
 msgstr "kartan yksityiskohdat"
 
-#: ../data/foxtrotgps.glade.h:246
+#: ../data/foxtrotgps.glade.h:243
 msgid "map download"
 msgstr "karttojen lataus"
 
-#: ../data/foxtrotgps.glade.h:247
+#: ../data/foxtrotgps.glade.h:244
 msgid "medium"
 msgstr "keskitasoa"
 
-#: ../data/foxtrotgps.glade.h:248
+#: ../data/foxtrotgps.glade.h:245
 msgid "meters"
 msgstr "metrit"
 
-#: ../data/foxtrotgps.glade.h:249
+#: ../data/foxtrotgps.glade.h:246
 msgid "metric"
 msgstr "metrij."
 
-#: ../data/foxtrotgps.glade.h:250
+#: ../data/foxtrotgps.glade.h:247
 msgid "minutes"
 msgstr "minuuttia"
 
-#: ../data/foxtrotgps.glade.h:251
+#: ../data/foxtrotgps.glade.h:248
 msgid "more/smaller details"
 msgstr "enemmän/pienempiä yksityiskohtia"
 
-#: ../data/foxtrotgps.glade.h:252
+#: ../data/foxtrotgps.glade.h:249
 msgid "my position"
 msgstr "sijaintini"
 
-#: ../data/foxtrotgps.glade.h:253
+#: ../data/foxtrotgps.glade.h:250
 msgid "nautical"
 msgstr "merenkulku"
 
-#: ../data/foxtrotgps.glade.h:254
+#: ../data/foxtrotgps.glade.h:251
 msgid "personal"
 msgstr "henkilökohtainen"
 
-#: ../data/foxtrotgps.glade.h:255
+#: ../data/foxtrotgps.glade.h:252
 msgid "photos"
 msgstr "valokuvat"
 
-#: ../data/foxtrotgps.glade.h:256
+#: ../data/foxtrotgps.glade.h:253
 msgid "private mode"
 msgstr "yksityinen tila"
 
-#: ../data/foxtrotgps.glade.h:257
+#: ../data/foxtrotgps.glade.h:254
 msgid "public"
 msgstr "julkinen"
 
-#: ../data/foxtrotgps.glade.h:258
+#: ../data/foxtrotgps.glade.h:255
 msgid "s   "
 msgstr "s   "
 
-#: ../data/foxtrotgps.glade.h:259
+#: ../data/foxtrotgps.glade.h:256
 msgid "select POIs"
 msgstr "valitse POIt"
 
-#: ../data/foxtrotgps.glade.h:260
+#: ../data/foxtrotgps.glade.h:257
 msgid "set"
 msgstr "aseta"
 
-#: ../data/foxtrotgps.glade.h:261
+#: ../data/foxtrotgps.glade.h:258
 msgid "set WP"
 msgstr "aseta etappi"
 
-#: ../data/foxtrotgps.glade.h:262
+#: ../data/foxtrotgps.glade.h:259
 msgid "show POIs"
 msgstr "näytä POIt"
 
-#: ../data/foxtrotgps.glade.h:263
+#: ../data/foxtrotgps.glade.h:260
 msgid "show friends"
 msgstr "näytä tuttavat"
 
-#: ../data/foxtrotgps.glade.h:264
+#: ../data/foxtrotgps.glade.h:261
 msgid "show photos"
 msgstr "näytä valokuvat"
 
-#: ../data/foxtrotgps.glade.h:265
+#: ../data/foxtrotgps.glade.h:262
 msgid "this point"
 msgstr "tämä piste"
 
-#: ../data/foxtrotgps.glade.h:266
+#: ../data/foxtrotgps.glade.h:263
 msgid "unset"
 msgstr "poista"
 
-#: ../data/foxtrotgps.glade.h:267
+#: ../data/foxtrotgps.glade.h:264
 msgid "unset WP"
 msgstr "poista etappi"
 
-#: ../data/foxtrotgps.glade.h:268
+#: ../data/foxtrotgps.glade.h:265
 msgid "ways & routes"
 msgstr "suunnat ja reitit"
 
-#: ../data/foxtrotgps.glade.h:269
+#: ../data/foxtrotgps.glade.h:266
 msgid "xyz instead of zxy"
 msgstr "xyz (ei zxy)"
 
-#: ../data/foxtrotgps.glade.h:270
-msgid ""
-"yournavigation.org\n"
-"openrouteservice.org\n"
-"gnuite.com"
-msgstr ""
-"yournavigation.org\n"
-"openrouteservice.org\n"
-"gnuite.com"
+#~ msgid ""
+#~ "\n"
+#~ "\n"
+#~ msgstr ""
+#~ "\n"
+#~ "\n"
+
+#~ msgid ""
+#~ "yournavigation.org\n"
+#~ "openrouteservice.org\n"
+#~ "gnuite.com"
+#~ msgstr ""
+#~ "yournavigation.org\n"
+#~ "openrouteservice.org\n"
+#~ "gnuite.com"
 
 #~ msgid ""
 #~ "- please choose -\n"

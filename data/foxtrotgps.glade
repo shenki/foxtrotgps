@@ -856,7 +856,7 @@ messaging with your friends</property>
                                                     <property name="xalign">0</property>
                                                     <property name="yalign">0</property>
                                                     <property name="ypad">3</property>
-                                                    <property name="label" translatable="yes">
+                                                    <property name="label">
 
 </property>
                                                   </widget>
@@ -4603,7 +4603,7 @@ My Personal Places</property>
                 <child>
                   <widget class="GtkComboBox" id="combobox8">
                     <property name="visible">True</property>
-                    <property name="items" translatable="yes">yournavigation.org
+                    <property name="items">yournavigation.org
 openrouteservice.org
 gnuite.com</property>
                     <signal name="changed" handler="on_combobox8_changed"/>
