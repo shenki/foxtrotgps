@@ -171,7 +171,17 @@ main (int argc, char *argv[])
 	window2 = glade_xml_get_widget (gladexml, "window2");
 	window3 = glade_xml_get_widget (gladexml, "window3");
 	menu1 = glade_xml_get_widget (gladexml, "menu1");
-	
+
+#ifdef ENABLE_HRM
+	gtk_widget_show (glade_xml_get_widget (gladexml, "frame15"));
+#else
+	/* It looks like we can't hide widgets attached to a grid,
+           so the next best thing is to just `null them out':
+         */
+	gtk_label_set_label (glade_xml_get_widget (gladexml, "label205"), "");
+	gtk_label_set_label (glade_xml_get_widget (gladexml, "label206"), "");
+	gtk_label_set_label (glade_xml_get_widget (gladexml, "label207"), "");
+#endif
 	
 	init();
 	

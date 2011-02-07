@@ -10,9 +10,11 @@
 #include <stdio.h>
 #include <unistd.h>
 
+#ifdef HAVE_BLUEZ
 #include <sys/socket.h>
 #include <bluetooth/bluetooth.h>
 #include <bluetooth/rfcomm.h>
+#endif /* HAVE_BLUEZ */
 
 #include "hrm_functions.h"
 #include "globals.h"
@@ -30,6 +32,7 @@ void * get_hrm_data_thread(void *ptr);
 gboolean
 reset_hrm_io()
 {
+#ifdef HAVE_BLUEZ
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
 	g_free(hrmdata);
@@ -42,6 +45,7 @@ reset_hrm_io()
 	g_source_remove(hrm_sid3); 
 	
 	osd_hrm(TRUE);
+#endif /* HAVE_BLUEZ */
 	
 	return FALSE;	
 }
@@ -49,6 +53,7 @@ reset_hrm_io()
 void
 osd_hrm(gboolean force_redraw)
 {
+#ifdef HAVE_BLUEZ
 	PangoContext		*context = NULL;
 	PangoLayout		*layout  = NULL;
 	PangoFontDescription	*desc    = NULL;
@@ -129,11 +134,13 @@ osd_hrm(gboolean force_redraw)
 		g_object_unref (layout);
 		g_object_unref (gc);
 	}
+#endif /* HAVE_BLUEZ */
 }
 
 void
 set_hrm_labels()
 {
+#ifdef HAVE_BLUEZ
 	static GtkWidget *widget1=NULL, *widget2=NULL;
 	static gchar buffer[128];
 				
@@ -147,17 +154,20 @@ set_hrm_labels()
 
 	g_snprintf(buffer, 128, "<b><big>%d/%d</big></b>", hrmdata->min, hrmdata->max);
 	gtk_label_set_label(GTK_LABEL(widget2), buffer);
+#endif /* HAVE_BLUEZ */
 }
 
 
 static gboolean
 cb_hrm_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 {
+#ifdef HAVE_BLUEZ
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	g_free(hrmdata);
 	hrmdata = NULL;
 	g_source_remove(hrm_sid1); 
 	g_source_remove(hrm_sid3); 
+#endif /* HAVE_BLUEZ */
 	
 	return FALSE; 
 }
@@ -166,6 +176,7 @@ cb_hrm_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 static gboolean
 cb_hrm_data(GIOChannel *src, GIOCondition condition, gpointer data)
 {
+#ifdef HAVE_BLUEZ
 	static int hrm_status = 0;
 	
 	gsize bytes_read;
@@ -213,6 +224,7 @@ cb_hrm_data(GIOChannel *src, GIOCondition condition, gpointer data)
 		hrmdata->min = hrmdata->freq;
 	if(hrmdata->freq > hrmdata->max && hrmdata->freq < 220)
 		hrmdata->max = hrmdata->freq;
+#endif /* HAVE_BLUEZ */
 
 	return TRUE;
 }
@@ -222,12 +234,15 @@ cb_hrm_data(GIOChannel *src, GIOCondition condition, gpointer data)
 void 
 get_hrm_data()
 {
+#ifdef HAVE_BLUEZ
 	g_thread_create(&get_hrm_data_thread, NULL, FALSE, NULL);
+#endif /* HAVE_BLUEZ */
 }
 
 void *
 get_hrm_data_thread(void *ptr)
 {
+#ifdef HAVE_BLUEZ
 	static int hrm_sock = 0;
 	struct sockaddr_rc addr = {0};
 	int conn, len;
@@ -292,4 +307,5 @@ get_hrm_data_thread(void *ptr)
 		}
 	}
 	return NULL;
+#endif /* HAVE_BLUEZ */
 }
