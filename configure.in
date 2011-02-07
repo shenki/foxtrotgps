@@ -31,7 +31,9 @@ PKG_CHECK_MODULES(LIBXML, [libxml-2.0])
 PKG_CHECK_MODULES(LIBGPS, [libgps >= 2.90])
 PKG_CHECK_MODULES(BLUETOOTH, [bluez],
                   [AC_DEFINE(HAVE_BLUEZ, [],
-                             [We have the BlueZ bluetooth library])],
+                             [We have the BlueZ bluetooth library])
+                   AC_DEFINE(ENABLE_HRM, [],
+                             [Heartrate-monitor support is enabled])],
                   [AC_MSG_WARN([Building without heartrate-monitor support])])
 
 AC_OUTPUT([
