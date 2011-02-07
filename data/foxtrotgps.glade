@@ -1990,7 +1990,6 @@ download of missing tiles into cache</property>
                                 </child>
                                 <child>
                                   <widget class="GtkFrame" id="frame15">
-                                    <property name="visible">True</property>
                                     <property name="label_xalign">0</property>
                                     <property name="shadow_type">GTK_SHADOW_NONE</property>
                                     <child>
