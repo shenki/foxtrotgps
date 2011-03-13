@@ -230,7 +230,12 @@ dl_thread(void *ptr)
 
 	if(curl && outfile) 
 	{
-		
+		/* Multithreading requires setting NOSIGNAL,
+		   otherwise we're likely to crash in the event
+		   of a resolver timeout:
+		 */
+		curl_easy_setopt(curl, CURLOPT_NOSIGNAL, 1);
+
 		curl_easy_setopt(curl, CURLOPT_URL, arr1[0]);
 		curl_easy_setopt(curl, CURLOPT_USERAGENT, 
 			"libcurl-agent/1.0 | " PACKAGE " " VERSION " | " __VERSION__);
