@@ -12,6 +12,17 @@ FoxtrotGPS is a map and GPS application. By default, it uses maps from Openstree
 .PP
 Clicking anywhere on the map pops up a menu of common operations.
 Click and drag the map to pan.
+.PP
+FoxtrotGPS can be used to geotag photographs that were taken while
+logging a GPS track, and can show icons on the map indicating
+where the photographs were taken; this is done by correlating
+timestamps in JPEG EXIF data with timestamps in the GPS track,
+and the following additional packages must also be installed
+for use at run-time in order to make use of this feature:
+
+    * gpscorrelate <http://freefoote.dview.net/linux_gpscorr.html>
+    * jhead <http://www.sentex.net/~mwandel/jhead/>
+
 
 .SH OPTIONS
 .TP
