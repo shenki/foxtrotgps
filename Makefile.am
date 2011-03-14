@@ -8,6 +8,7 @@ dist_doc_DATA = \
 	AUTHORS\
 	ChangeLog\
 	INSTALL\
+	HACKING\
 	NEWS\
 	TODO
 
