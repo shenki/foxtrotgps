@@ -6,6 +6,7 @@
 #  include <config.h>
 #endif
  
+#include <stdlib.h>
 #include <locale.h>
 #include <string.h>
 #include <gtk/gtk.h>
@@ -24,9 +25,12 @@ main (int argc, char *argv[])
 	GError *error = NULL;
 
 	gboolean fullscreen = FALSE;
+	gboolean show_version = FALSE;
 
 	GOptionEntry cmd_options[] =
 	{
+		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version,
+		 "Print the program version and exit", NULL},
 		{"fullscreen", 0, 0, G_OPTION_ARG_NONE, &fullscreen,
 		 "Start in fullscreen mode", NULL},
 		{"gui", 0, 0, G_OPTION_ARG_FILENAME, &gladefile,
@@ -56,23 +60,26 @@ main (int argc, char *argv[])
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	
 	gtk_set_locale ();
 	
-	if (!g_thread_supported ())
-		g_thread_init (NULL);
-	gdk_threads_init ();
-
-	
-	
-	gtk_init (&argc, &argv);
-
 	if (!g_option_context_parse (option_context, &argc, &argv, &error))
 	{
 		g_print ("option parsing failed: %s\n", error->message);
 		return 1;
 	}
+
+	if (show_version)
+	{
+		g_print ("%s %s\n", _(PACKAGE_NAME), _(PACKAGE_VERSION));
+		exit (0);
+	}
 	
+	if (!g_thread_supported ())
+		g_thread_init (NULL);
+	gdk_threads_init ();
+
+	gtk_init (&argc, &argv);
+
 	setlocale (LC_NUMERIC, "C");
 	
 	add_pixmap_directory (PACKAGE_DATA_DIR "/" PACKAGE "/pixmaps");
