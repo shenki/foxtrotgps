@@ -60,17 +60,8 @@ main (int argc, char *argv[])
 	textdomain (GETTEXT_PACKAGE);
 #endif
 
-	
 	gtk_set_locale ();
 	
-	if (!g_thread_supported ())
-		g_thread_init (NULL);
-	gdk_threads_init ();
-
-	
-	
-	gtk_init (&argc, &argv);
-
 	if (!g_option_context_parse (option_context, &argc, &argv, &error))
 	{
 		g_print ("option parsing failed: %s\n", error->message);
@@ -83,6 +74,12 @@ main (int argc, char *argv[])
 		exit (0);
 	}
 	
+	if (!g_thread_supported ())
+		g_thread_init (NULL);
+	gdk_threads_init ();
+
+	gtk_init (&argc, &argv);
+
 	setlocale (LC_NUMERIC, "C");
 	
 	add_pixmap_directory (PACKAGE_DATA_DIR "/" PACKAGE "/pixmaps");
