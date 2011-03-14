@@ -21,6 +21,7 @@ can be built or installed:
     * libexif <http://libexif.sourceforge.net/>
     * libxml2 <http://xmlsoft.org/>
     * libgps >= 2.90 <http://gpsd.berlios.de/>
+    * intltool >= 0.23 <http://freedesktop.org/wiki/Software/intltool>
 
 In order to make use of the photo-geotagging features in FoxtrotGPS,
 the following additional packages must also be installed for use at
