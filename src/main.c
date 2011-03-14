@@ -6,6 +6,7 @@
 #  include <config.h>
 #endif
  
+#include <stdlib.h>
 #include <locale.h>
 #include <string.h>
 #include <gtk/gtk.h>
@@ -24,9 +25,12 @@ main (int argc, char *argv[])
 	GError *error = NULL;
 
 	gboolean fullscreen = FALSE;
+	gboolean show_version = FALSE;
 
 	GOptionEntry cmd_options[] =
 	{
+		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version,
+		 "Print the program version and exit", NULL},
 		{"fullscreen", 0, 0, G_OPTION_ARG_NONE, &fullscreen,
 		 "Start in fullscreen mode", NULL},
 		{"gui", 0, 0, G_OPTION_ARG_FILENAME, &gladefile,
@@ -71,6 +75,12 @@ main (int argc, char *argv[])
 	{
 		g_print ("option parsing failed: %s\n", error->message);
 		return 1;
+	}
+
+	if (show_version)
+	{
+		g_print ("%s %s\n", _(PACKAGE_NAME), _(PACKAGE_VERSION));
+		exit (0);
 	}
 	
 	setlocale (LC_NUMERIC, "C");
