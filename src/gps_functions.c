@@ -701,14 +701,19 @@ static gboolean
 cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 {
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
+
+	global_reconnect_gpsd = TRUE;
+	g_source_remove(watchdog);
+
 	g_free(gpsdata);
 	gpsdata = NULL;
+
 	g_source_remove(sid1); 
 	g_source_remove(sid3); 
+
 	gps_close(libgps_gpsdata);
 	libgps_gpsdata = NULL;
-	
-	
+
 	return FALSE; 
 }
 
