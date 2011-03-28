@@ -27,6 +27,7 @@
 
 #if GPSD_API_MAJOR_VERSION < 5
 #define gps_read gps_poll
+#define gps_open gps_open_r
 #endif
 
 #define BUFSIZE 512
