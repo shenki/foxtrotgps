@@ -32,7 +32,7 @@ void * get_gps_thread(void *ptr);
 
 static GIOChannel *gpsd_io_channel =NULL;
 static struct gps_data_t libgps_gpsdata;
-static int libgps_initialized = 0;
+static gboolean libgps_initialized = FALSE;
 
 static guint sid1,  sid3; 
 guint watchdog;
@@ -701,7 +701,7 @@ cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 	g_source_remove(sid1); 
 	g_source_remove(sid3); 
 	gps_close(&libgps_gpsdata);
-	libgps_initialized = 0;
+	libgps_initialized = FALSE;
 
 	return FALSE; 
 }
@@ -713,7 +713,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 {
 	int ret;
 
-        if (libgps_initialized == 0)
+        if (!libgps_initialized)
             return FALSE;
 
 	ret = gps_read(&libgps_gpsdata);
@@ -762,7 +762,7 @@ get_gps_thread(void *ptr)
 	{
 		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
 
-		libgps_initialized = 1;
+		libgps_initialized = TRUE;
 		global_reconnect_gpsd = FALSE;
 		
 		if(!gpsdata)
