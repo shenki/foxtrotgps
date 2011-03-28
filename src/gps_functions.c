@@ -701,7 +701,8 @@ cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 	g_source_remove(sid1); 
 	g_source_remove(sid3); 
 	gps_close(&libgps_gpsdata);
-	
+	libgps_initialized = 0;
+
 	return FALSE; 
 }
 
