@@ -31,7 +31,8 @@ void * get_gps_thread(void *ptr);
 
 
 static GIOChannel *gpsd_io_channel =NULL;
-static struct gps_data_t *libgps_gpsdata = NULL;
+static struct gps_data_t libgps_gpsdata;
+static int libgps_initialized = 0;
 
 static guint sid1,  sid3; 
 guint watchdog;
@@ -699,9 +700,7 @@ cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 	gpsdata = NULL;
 	g_source_remove(sid1); 
 	g_source_remove(sid3); 
-	gps_close(libgps_gpsdata);
-	libgps_gpsdata = NULL;
-	
+	gps_close(&libgps_gpsdata);
 	
 	return FALSE; 
 }
@@ -713,28 +712,28 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 {
 	int ret;
 
-        if (libgps_gpsdata == NULL)
+        if (libgps_initialized == 0)
             return FALSE;
 
-	ret = gps_read(libgps_gpsdata);
+	ret = gps_read(&libgps_gpsdata);
 	if (ret > 0)
 	{
-		gpsdata->satellites_used = libgps_gpsdata->satellites_used;
-		gpsdata->hdop = libgps_gpsdata->dop.hdop;
-		gpsdata->fix.time = libgps_gpsdata->fix.time;
+		gpsdata->satellites_used = libgps_gpsdata.satellites_used;
+		gpsdata->hdop = libgps_gpsdata.dop.hdop;
+		gpsdata->fix.time = libgps_gpsdata.fix.time;
 		if (isnan(gpsdata->fix.time))
 		{
 			gpsdata->fix.time = (time_t) 0;
 		}
-		gpsdata->valid = (libgps_gpsdata->status != STATUS_NO_FIX);
+		gpsdata->valid = (libgps_gpsdata.status != STATUS_NO_FIX);
 		if (gpsdata->valid)
 		{
 			gpsdata->seen_vaild = TRUE;
-			gpsdata->fix.latitude = libgps_gpsdata->fix.latitude;
-			gpsdata->fix.longitude = libgps_gpsdata->fix.longitude;
-			gpsdata->fix.speed = libgps_gpsdata->fix.speed;
-			gpsdata->fix.heading = libgps_gpsdata->fix.track;
-			gpsdata->fix.altitude = libgps_gpsdata->fix.altitude;
+			gpsdata->fix.latitude = libgps_gpsdata.fix.latitude;
+			gpsdata->fix.longitude = libgps_gpsdata.fix.longitude;
+			gpsdata->fix.speed = libgps_gpsdata.fix.speed;
+			gpsdata->fix.heading = libgps_gpsdata.fix.track;
+			gpsdata->fix.altitude = libgps_gpsdata.fix.altitude;
 		}
 		
 		g_source_remove(watchdog);
@@ -758,11 +757,11 @@ get_gps()
 void *
 get_gps_thread(void *ptr)
 {
-	libgps_gpsdata = gps_open(global_server, global_port);
-	if (libgps_gpsdata)
+	if (gps_open(global_server, global_port, &libgps_gpsdata) == 0)
 	{
 		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
-		
+
+		libgps_initialized = 1;
 		global_reconnect_gpsd = FALSE;
 		
 		if(!gpsdata)
@@ -771,12 +770,12 @@ get_gps_thread(void *ptr)
 		}
 		
 	
-		gps_stream(libgps_gpsdata, WATCH_ENABLE, NULL);
+		gps_stream(&libgps_gpsdata, WATCH_ENABLE, NULL);
 		
 		watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
 		
 		
-		gpsd_io_channel = g_io_channel_unix_new(libgps_gpsdata->gps_fd);
+		gpsd_io_channel = g_io_channel_unix_new(libgps_gpsdata.gps_fd);
 		g_io_channel_set_flags(gpsd_io_channel, G_IO_FLAG_NONBLOCK, NULL);
 		
 		
