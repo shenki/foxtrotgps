@@ -25,6 +25,10 @@
 #include "wp.h"
 #include "tracks.h"
 
+#if GPSD_API_MAJOR_VERSION < 5
+#define gps_read gps_poll
+#endif
+
 #define BUFSIZE 512
 char * distance2scale(float distance, float *factor);
 void * get_gps_thread(void *ptr);
@@ -717,7 +721,13 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
             return FALSE;
 
 	ret = gps_read(&libgps_gpsdata);
-	if (ret > 0)
+        /* Note that gps_read() will never actually return 0
+           (zero-length reads are converted internally to a -1 return,
+            since they mean that the connection to the daemon has closed),
+           and gps_poll() will never return >0, but both will return
+           <0 to indicate failure; hence the following ">= 0" check:
+        */
+	if (ret >= 0)
 	{
 		gpsdata->satellites_used = libgps_gpsdata.satellites_used;
 		gpsdata->hdop = libgps_gpsdata.dop.hdop;
