@@ -771,7 +771,7 @@ get_gps_thread(void *ptr)
 		}
 		
 	
-		gps_stream(libgps_gpsdata, WATCH_ENABLE | POLL_NONBLOCK, NULL);
+		gps_stream(libgps_gpsdata, WATCH_ENABLE, NULL);
 		
 		watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_gpsd_io,NULL,NULL);
 		
