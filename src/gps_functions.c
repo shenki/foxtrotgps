@@ -716,8 +716,8 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
         if (libgps_gpsdata == NULL)
             return FALSE;
 
-	ret = gps_poll(libgps_gpsdata);
-	if (ret == 0)
+	ret = gps_read(libgps_gpsdata);
+	if (ret > 0)
 	{
 		gpsdata->satellites_used = libgps_gpsdata->satellites_used;
 		gpsdata->hdop = libgps_gpsdata->dop.hdop;
