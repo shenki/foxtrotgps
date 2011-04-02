@@ -359,16 +359,30 @@ reset_gpsd_io()
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
 	global_reconnect_gpsd = TRUE;
-	g_source_remove(watchdog);
 
-	g_free(gpsdata);
-	gpsdata = NULL;
+	if (watchdog) {
+		g_source_remove(watchdog);
+	}
 
-	g_source_remove(sid1); 
-	g_source_remove(sid3); 
+	if (gpsdata) {
+		g_free(gpsdata);
+		gpsdata = NULL;
+	}
 
-	gps_close(libgps_gpsdata);
-	libgps_gpsdata = NULL;
+	if (sid1) {
+		g_source_remove(sid1);
+		sid1 = 0;
+	}
+
+	if (sid3) {
+		g_source_remove(sid3);
+		sid3 = 0;
+	}
+
+	if (libgps_gpsdata) {
+		gps_close(libgps_gpsdata);
+		libgps_gpsdata = NULL;
+	}
 
 	return FALSE;	
 }
