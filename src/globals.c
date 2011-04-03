@@ -72,7 +72,6 @@ gboolean	global_landscape;
 gboolean	global_auto_download = TRUE;
 gboolean	global_mapmode = TRUE;
 gboolean	global_autocenter = TRUE;
-gboolean	global_reconnect_gpsd = TRUE;
 int		global_tiles_in_dl_queue = 0;
 
 gboolean	global_show_friends = FALSE;

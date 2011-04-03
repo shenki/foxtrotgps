@@ -33,6 +33,8 @@ void * get_gps_thread(void *ptr);
 static GIOChannel *gpsd_io_channel =NULL;
 static struct gps_data_t *libgps_gpsdata = NULL;
 
+gboolean reconnect_gpsd = TRUE;
+
 static guint sid1 = 0;
 static guint sid3 = 0; 
 guint watchdog = 0;
@@ -103,7 +105,7 @@ cb_gps_timer()
 	}
 	
 	
-	if(!gpsdata  || global_reconnect_gpsd)
+	if(!gpsdata  || reconnect_gpsd)
 		get_gps();
 	
 
@@ -359,7 +361,7 @@ reset_gpsd_io()
 {
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
-	global_reconnect_gpsd = TRUE;
+	reconnect_gpsd = TRUE;
 
 	if (watchdog) {
 		g_source_remove(watchdog);
@@ -779,7 +781,7 @@ get_gps_thread(void *ptr)
 	{
 		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
 		
-		global_reconnect_gpsd = FALSE;
+		reconnect_gpsd = FALSE;
 		
 		if(!gpsdata)
 		{
