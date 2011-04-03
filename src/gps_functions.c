@@ -33,8 +33,9 @@ void * get_gps_thread(void *ptr);
 static GIOChannel *gpsd_io_channel =NULL;
 static struct gps_data_t *libgps_gpsdata = NULL;
 
-static guint sid1,  sid3; 
-guint watchdog;
+static guint sid1 = 0;
+static guint sid3 = 0; 
+guint watchdog = 0;
 
 gboolean
 cb_gps_timer()
