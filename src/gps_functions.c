@@ -770,6 +770,14 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 void 
 get_gps()
 {
+	/* Set this flag to FALSE *immediately* so that a slow gps_open()
+	   doesn't cause successive cb_gps_timer() callbacks to call
+	   us *again* before we've even finished *this* invocation--
+	   which would create multiple, simultaneous get_gps_thread()
+	   threads and all sorts of associated problems:
+	*/
+	reconnect_gpsd = FALSE;
+
 	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
 }
 
@@ -780,9 +788,16 @@ get_gps_thread(void *ptr)
 	if (libgps_gpsdata)
 	{
 		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
-		
-		reconnect_gpsd = FALSE;
-		
+
+		/* Unless someone has re-set reconnect_gpsd
+		   between when get_gps() set it and now,
+		   then it should still be FALSE; if someone else
+		   *did* re-set it, then they did it for a reason.
+
+		   Either way, we're better off leaving it alone,
+		   here.
+		*/
+
 		if(!gpsdata)
 		{
 			gpsdata = g_new0(tangogps_gps_data_t,1);
@@ -803,6 +818,10 @@ get_gps_thread(void *ptr)
 		
 		sid3 = g_io_add_watch_full(gpsd_io_channel, G_PRIORITY_HIGH_IDLE+200, G_IO_IN | G_IO_PRI, cb_gpsd_data, NULL, NULL);
 	
+	} else {
+		/* Failure. Maybe it's transient--try again
+		   on the next cycle: */
+		reconnect_gpsd = TRUE;
 	}
 	
 	return NULL;
