@@ -38,6 +38,7 @@ gboolean reconnect_gpsd = TRUE;
 static guint sid1 = 0;
 static guint sid3 = 0; 
 guint watchdog = 0;
+guint global_gps_timer = 0;
 
 gboolean
 cb_gps_timer()

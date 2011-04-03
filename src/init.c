@@ -114,7 +114,6 @@ pre_init()
 void
 init()
 {
-	gint timer;
 	gpointer data = NULL;	
 	
 	GError	*err = NULL;
@@ -248,7 +247,7 @@ init()
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
 	}
 	
-	timer = g_timeout_add (1000,cb_gps_timer,data);
+	global_gps_timer = g_timeout_add (1000,cb_gps_timer,data);
 	
 	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PACKAGE ".png" ,&err);
 	if (err)
