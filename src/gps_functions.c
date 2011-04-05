@@ -37,7 +37,7 @@ gboolean reconnect_gpsd = TRUE;
 
 static guint sid1 = 0;
 static guint sid3 = 0; 
-guint watchdog = 0;
+static guint watchdog = 0;
 static guint gps_timer = 0;
 
 gboolean
