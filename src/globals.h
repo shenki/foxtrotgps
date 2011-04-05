@@ -158,7 +158,6 @@ extern gboolean		global_landscape;
 extern gboolean		global_auto_download;
 extern gboolean		global_mapmode;
 extern gboolean		global_autocenter;
-extern gboolean		global_reconnect_gpsd;
 extern gboolean		global_reconnect_hrm;
 extern int		global_tiles_in_dl_queue;
 

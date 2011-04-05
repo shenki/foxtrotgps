@@ -114,9 +114,6 @@ pre_init()
 void
 init()
 {
-	gint timer;
-	gpointer data = NULL;	
-	
 	GError	*err = NULL;
 	const gchar *nick, *pass, *me_msg, *hrm_bt_addr;
 	GtkWidget *widget;
@@ -254,9 +251,9 @@ init()
 		widget = lookup_widget(window1, "checkbutton17");
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
 	}
-	
-	timer = g_timeout_add (1000,cb_gps_timer,data);
-	
+
+	get_gps ();
+
 	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PACKAGE ".png" ,&err);
 	if (err)
 	{
