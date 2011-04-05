@@ -364,30 +364,6 @@ reset_gpsd_io()
 	
 	reconnect_gpsd = TRUE;
 
-	if (watchdog) {
-		g_source_remove(watchdog);
-	}
-
-	if (gpsdata) {
-		g_free(gpsdata);
-		gpsdata = NULL;
-	}
-
-	if (sid1) {
-		g_source_remove(sid1);
-		sid1 = 0;
-	}
-
-	if (sid3) {
-		g_source_remove(sid3);
-		sid3 = 0;
-	}
-
-	if (libgps_gpsdata) {
-		gps_close(libgps_gpsdata);
-		libgps_gpsdata = NULL;
-	}
-
 	return FALSE;	
 }
 
@@ -786,6 +762,30 @@ get_gps()
 	   on the `Change GPSD' button):
 	*/
 	g_source_remove (global_gps_timer); global_gps_timer = 0;
+
+	if (watchdog) {
+		g_source_remove(watchdog);
+	}
+
+	if (sid1) {
+		g_source_remove(sid1);
+		sid1 = 0;
+	}
+
+	if (sid3) {
+		g_source_remove(sid3);
+		sid3 = 0;
+	}
+
+	if (gpsdata) {
+		g_free(gpsdata);
+		gpsdata = NULL;
+	}
+
+	if (libgps_gpsdata) {
+		gps_close(libgps_gpsdata);
+		libgps_gpsdata = NULL;
+	}
 
 	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
 }
