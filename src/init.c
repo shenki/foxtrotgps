@@ -114,8 +114,6 @@ pre_init()
 void
 init()
 {
-	gpointer data = NULL;	
-	
 	GError	*err = NULL;
 	const gchar *nick, *pass, *me_msg;
 	GtkWidget *widget;
