@@ -782,10 +782,13 @@ get_gps()
 		gpsd_io_channel = NULL;
 	}
 
-	if (gpsdata) {
-		g_free(gpsdata);
-		gpsdata = NULL;
-	}
+	/* Note that we're *not* free'ing the internal gpsdata structure,
+	   ever. We'd only immediately reallocate it, so it's not a net win
+	   in terms of memory-footprint; and it doesn't contain references
+	   to any file-descriptors or other ephemeral resources, so
+	   the only thing we'd be doing by re-initialising it would be
+	   throwing away our last known fix, etc.
+	*/
 
 	if (libgps_gpsdata) {
 		gps_close(libgps_gpsdata);
