@@ -777,6 +777,11 @@ get_gps()
 		sid3 = 0;
 	}
 
+	if (gpsd_io_channel) {
+		g_io_channel_unref (gpsd_io_channel);
+		gpsd_io_channel = NULL;
+	}
+
 	if (gpsdata) {
 		g_free(gpsdata);
 		gpsdata = NULL;
