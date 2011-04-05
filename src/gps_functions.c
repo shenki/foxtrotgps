@@ -32,7 +32,7 @@
 
 #define BUFSIZE 512
 char * distance2scale(float distance, float *factor);
-void * get_gps_thread(void *ptr);
+static void * get_gps_thread(void *ptr);
 
 
 static GIOChannel *gpsd_io_channel =NULL;
@@ -43,8 +43,8 @@ gboolean reconnect_gpsd = TRUE;
 
 static guint sid1 = 0;
 static guint sid3 = 0; 
-guint watchdog = 0;
-guint global_gps_timer = 0;
+static guint watchdog = 0;
+static guint gps_timer = 0;
 
 gboolean
 cb_gps_timer()
@@ -767,13 +767,16 @@ get_gps()
 	*/
 	reconnect_gpsd = FALSE;
 
-	/* Disable the regularly scheduled callback to cb_gps_timer()
-	   until after get_gps_thread() has returned, to guard against
-	   the situation described above when reconnect_gpsd
-	   is re-set by something else (e.g.: the user bouncing
-	   on the `Change GPSD' button):
-	*/
-	g_source_remove (global_gps_timer); global_gps_timer = 0;
+	if (gps_timer) {
+		/* Disable the regularly scheduled callback to cb_gps_timer()
+		   until after get_gps_thread() has returned, to guard against
+		   the situation described above when reconnect_gpsd
+		   is re-set by something else (e.g.: the user bouncing
+		   on the `Change GPSD' button):
+		*/
+		g_source_remove (gps_timer);
+		gps_timer = 0;
+	}
 
 	if (watchdog) {
 		g_source_remove(watchdog);
@@ -810,7 +813,7 @@ get_gps()
 	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
 }
 
-void *
+static void *
 get_gps_thread(void *ptr)
 {
 	if (gps_open(global_server, global_port, &libgps_gpsdata) == 0)
@@ -854,7 +857,7 @@ get_gps_thread(void *ptr)
 		reconnect_gpsd = TRUE;
 	}
 
-	global_gps_timer = g_timeout_add (1000, cb_gps_timer, NULL);
+	gps_timer = g_timeout_add (1000, cb_gps_timer, NULL);
 
 	return NULL;
 }
