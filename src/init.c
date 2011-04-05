@@ -246,9 +246,9 @@ init()
 		widget = lookup_widget(window1, "checkbutton17");
 		gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), TRUE);
 	}
-	
-	global_gps_timer = g_timeout_add (1000,cb_gps_timer,data);
-	
+
+	get_gps ();
+
 	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PACKAGE ".png" ,&err);
 	if (err)
 	{

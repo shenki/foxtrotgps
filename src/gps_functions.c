@@ -755,13 +755,16 @@ get_gps()
 	*/
 	reconnect_gpsd = FALSE;
 
-	/* Disable the regularly scheduled callback to cb_gps_timer()
-	   until after get_gps_thread() has returned, to guard against
-	   the situation described above when reconnect_gpsd
-	   is re-set by something else (e.g.: the user bouncing
-	   on the `Change GPSD' button):
-	*/
-	g_source_remove (global_gps_timer); global_gps_timer = 0;
+	if (global_gps_timer) {
+		/* Disable the regularly scheduled callback to cb_gps_timer()
+		   until after get_gps_thread() has returned, to guard against
+		   the situation described above when reconnect_gpsd
+		   is re-set by something else (e.g.: the user bouncing
+		   on the `Change GPSD' button):
+		*/
+		g_source_remove (global_gps_timer);
+		global_gps_timer = 0;
+	}
 
 	if (watchdog) {
 		g_source_remove(watchdog);
