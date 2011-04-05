@@ -124,7 +124,6 @@ extern int global_drawingarea_height;
 
 
 extern tangogps_gps_data_t *gpsdata;
-extern guint global_gps_timer;
 
 
 extern GQueue		*trackpoint_list;
