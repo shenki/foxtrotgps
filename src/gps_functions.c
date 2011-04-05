@@ -39,8 +39,12 @@ static GIOChannel *gpsd_io_channel =NULL;
 static struct gps_data_t libgps_gpsdata;
 static gboolean libgps_initialized = FALSE;
 
-static guint sid1,  sid3; 
-guint watchdog;
+gboolean reconnect_gpsd = TRUE;
+
+static guint sid1 = 0;
+static guint sid3 = 0; 
+guint watchdog = 0;
+guint global_gps_timer = 0;
 
 gboolean
 cb_gps_timer()
@@ -108,7 +112,7 @@ cb_gps_timer()
 	}
 	
 	
-	if(!gpsdata  || global_reconnect_gpsd)
+	if(!gpsdata  || reconnect_gpsd)
 		get_gps();
 	
 
@@ -364,12 +368,8 @@ reset_gpsd_io()
 {
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	
-	global_reconnect_gpsd = TRUE;
-	g_source_remove(watchdog);
+	reconnect_gpsd = TRUE;
 
-	g_source_remove(sid1); 
-	g_source_remove(sid3); 
-	
 	return FALSE;	
 }
 
@@ -701,12 +701,8 @@ static gboolean
 cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 {
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	g_free(gpsdata);
-	gpsdata = NULL;
-	g_source_remove(sid1); 
-	g_source_remove(sid3); 
-	gps_close(&libgps_gpsdata);
-	libgps_initialized = FALSE;
+
+	reset_gpsd_io();
 
 	return FALSE; 
 }
@@ -763,6 +759,54 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 void 
 get_gps()
 {
+	/* Set this flag to FALSE *immediately* so that a slow gps_open()
+	   doesn't cause successive cb_gps_timer() callbacks to call
+	   us *again* before we've even finished *this* invocation--
+	   which would create multiple, simultaneous get_gps_thread()
+	   threads and all sorts of associated problems:
+	*/
+	reconnect_gpsd = FALSE;
+
+	/* Disable the regularly scheduled callback to cb_gps_timer()
+	   until after get_gps_thread() has returned, to guard against
+	   the situation described above when reconnect_gpsd
+	   is re-set by something else (e.g.: the user bouncing
+	   on the `Change GPSD' button):
+	*/
+	g_source_remove (global_gps_timer); global_gps_timer = 0;
+
+	if (watchdog) {
+		g_source_remove(watchdog);
+	}
+
+	if (sid1) {
+		g_source_remove(sid1);
+		sid1 = 0;
+	}
+
+	if (sid3) {
+		g_source_remove(sid3);
+		sid3 = 0;
+	}
+
+	if (gpsd_io_channel) {
+		g_io_channel_unref (gpsd_io_channel);
+		gpsd_io_channel = NULL;
+	}
+
+	/* Note that we're *not* free'ing the internal gpsdata structure,
+	   ever. We'd only immediately reallocate it, so it's not a net win
+	   in terms of memory-footprint; and it doesn't contain references
+	   to any file-descriptors or other ephemeral resources, so
+	   the only thing we'd be doing by re-initialising it would be
+	   throwing away our last known fix, etc.
+	*/
+
+	if (libgps_initialized) {
+		gps_close(&libgps_gpsdata);
+		libgps_initialized = FALSE;
+	}
+
 	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
 }
 
@@ -774,8 +818,16 @@ get_gps_thread(void *ptr)
 		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
 
 		libgps_initialized = TRUE;
-		global_reconnect_gpsd = FALSE;
 		
+		/* Unless someone has re-set reconnect_gpsd
+		   between when get_gps() set it and now,
+		   then it should still be FALSE; if someone else
+		   *did* re-set it, then they did it for a reason.
+
+		   Either way, we're better off leaving it alone,
+		   here.
+		*/
+
 		if(!gpsdata)
 		{
 			gpsdata = g_new0(tangogps_gps_data_t,1);
@@ -796,8 +848,14 @@ get_gps_thread(void *ptr)
 		
 		sid3 = g_io_add_watch_full(gpsd_io_channel, G_PRIORITY_HIGH_IDLE+200, G_IO_IN | G_IO_PRI, cb_gpsd_data, NULL, NULL);
 	
+	} else {
+		/* Failure. Maybe it's transient--try again
+		   on the next cycle: */
+		reconnect_gpsd = TRUE;
 	}
-	
+
+	global_gps_timer = g_timeout_add (1000, cb_gps_timer, NULL);
+
 	return NULL;
 }
 

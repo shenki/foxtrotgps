@@ -124,6 +124,7 @@ extern int global_drawingarea_height;
 
 
 extern tangogps_gps_data_t *gpsdata;
+extern guint global_gps_timer;
 
 
 extern GQueue		*trackpoint_list;
@@ -151,7 +152,6 @@ extern gboolean		global_landscape;
 extern gboolean		global_auto_download;
 extern gboolean		global_mapmode;
 extern gboolean		global_autocenter;
-extern gboolean		global_reconnect_gpsd;
 extern int		global_tiles_in_dl_queue;
 
 extern gboolean		global_show_pois;

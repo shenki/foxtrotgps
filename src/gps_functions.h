@@ -4,6 +4,9 @@ cb_gps_timer();
 void
 get_gps();
 
+gboolean
+reset_gpsd_io();
+
 void
 set_label();
 
