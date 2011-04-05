@@ -27,7 +27,7 @@
 
 #define BUFSIZE 512
 char * distance2scale(float distance, float *factor);
-void * get_gps_thread(void *ptr);
+static void * get_gps_thread(void *ptr);
 
 
 static GIOChannel *gpsd_io_channel =NULL;
@@ -801,7 +801,7 @@ get_gps()
 	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
 }
 
-void *
+static void *
 get_gps_thread(void *ptr)
 {
 	libgps_gpsdata = gps_open(global_server, global_port);
