@@ -746,6 +746,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 		if (gpsdata->valid)
 		{
 			gpsdata->seen_vaild = TRUE;
+			gpsdata->fix.mode = libgps_gpsdata.fix.mode;
 			gpsdata->fix.latitude = libgps_gpsdata.fix.latitude;
 			gpsdata->fix.longitude = libgps_gpsdata.fix.longitude;
 			gpsdata->fix.speed = libgps_gpsdata.fix.speed;
