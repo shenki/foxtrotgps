@@ -254,11 +254,7 @@ dl_thread(void *ptr)
 			printf("TILE DL PROBLEM: %s\n   %s\n",err_buffer,tile_data);
 		
 		
-		
 		curl_easy_cleanup(curl);
-
-		number_threads = update_thread_number(-1);
-		
 		
 		
 		gdk_threads_enter();
@@ -267,6 +263,8 @@ dl_thread(void *ptr)
 	}
 	if(outfile != NULL)
 		fclose(outfile);
+
+	number_threads = update_thread_number(-1);
 
 	g_free(ptr);
 	return NULL;
