@@ -17,6 +17,8 @@
 #include <libxml/parser.h>
 #include <libxml/tree.h>
 
+#include <gps.h>
+
 
 #include "globals.h"
 #include "tracks.h"
@@ -210,7 +212,7 @@ void
 track_log()
 {
 	gchar buffer[256];
-	gchar data[256];
+	const gchar *fixstr;
 	time_t time_sec;
 	struct tm *ts;
 	int heartfreq = 42;
@@ -224,19 +226,58 @@ track_log()
 		strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", ts);
 		
 		heartfreq = (hrmdata) ? hrmdata->freq : 0;
-		
-		snprintf(data, sizeof(data), "%f,%f,%.1f,%.1f,%.1f,%.1f,%s,%d\n",
-				gpsdata->fix.latitude,
-				gpsdata->fix.longitude,
-				gpsdata->fix.altitude,
-				gpsdata->fix.speed,
-				gpsdata->fix.heading,
-				gpsdata->hdop,
-				buffer,
-				heartfreq);
-		
-		if (fp) fprintf(fp, "%s", data);
-	}
+
+		switch (gpsdata->fix.mode) {
+		default:
+		case MODE_NOT_SEEN:
+		case MODE_NO_FIX:
+			fixstr = "none";
+			break;
+		case MODE_2D:
+			fixstr = "2d";
+			break;
+		case MODE_3D:
+			fixstr = "3d";
+			break;
+		}
+
+		if (fp)
+		{
+			fprintf (fp, "\n"
+			         "<trkpt lat=\"%g\" lon=\"%g\">\n"
+			         "  <ele>%g</ele>\n"
+			         "  <time>%s</time>\n"
+			         "  <fix>%s</fix>\n"
+			         "  <hdop>%g</hdop>\n"
+			         "  <extensions>\n"
+			         "    <gpxtpx:TrackPointExtension>\n",
+			         gpsdata->fix.latitude,
+			         gpsdata->fix.longitude,
+			         gpsdata->fix.altitude,
+			         buffer,
+			         fixstr,
+			         gpsdata->hdop);
+
+			if (heartfreq > 0)
+			{
+				/* The TrackPointExtension schema defines
+				   the lower bound on heart-rate to be 1. */
+
+				fprintf (fp,
+				 "      <gpxtpx:hr>%d</gpxtpx:hr>\n",
+				         heartfreq);
+			}
+
+			fprintf (fp,
+			         "      <gpxtpx:speed>%g</gpxtpx:speed>\n"
+			         "      <gpxtpx:course>%g</gpxtpx:course>\n"
+			         "    </gpxtpx:TrackPointExtension>\n"
+			         "  </extensions>\n"
+			         "</trkpt>\n",
+			         gpsdata->fix.speed,
+			         gpsdata->fix.heading);
+      }
+  }
 }
 
 void
