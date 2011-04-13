@@ -24,6 +24,8 @@
 GtkWidget *Bar = NULL; 
 static GSList *tile_download_list = NULL;
 
+static gboolean map_redraw_scheduled;
+
 typedef struct  {
 	char *tile_url;
 } Repo_data_t;
@@ -56,6 +58,8 @@ map_redraw(void *p)
 	
 	if (!drag_started)
 	{
+		map_redraw_scheduled = FALSE;
+	
 		fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
 		print_track();
 		paint_loaded_track();
@@ -258,7 +262,10 @@ dl_thread(void *ptr)
 		
 		
 		gdk_threads_enter();
-		g_timeout_add(500, map_redraw, NULL); 
+		if (!map_redraw_scheduled) {
+			g_timeout_add(500, map_redraw, NULL);
+			map_redraw_scheduled = TRUE;
+		}
 		gdk_threads_leave();
 	}
 	if(outfile != NULL)
