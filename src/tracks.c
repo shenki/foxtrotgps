@@ -321,6 +321,19 @@ track_log_open()
 			labeltext = g_strconcat("<b><span foreground='#0000ff'>Log: ",buffer,"</span></b>",NULL);
 			gtk_label_set_label(label76,labeltext);
 			g_free(labeltext);	
+
+			fprintf(fp, "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+			            "<gpx version=\"1.1\"\n"
+			            "     creator=\"" PACKAGE_NAME " " PACKAGE_VERSION "\"\n"
+			            "     xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\"\n"
+			            "     xmlns:gpxtpx=\"http://www.garmin.com/xmlschemas/TrackPointExtension/v2\"\n"
+			            "     xmlns=\"http://www.topografix.com/GPX/1/1\"\n"
+			            "     xsi:schemaLocation=\"http://www.topografix.com/GPX/1/1\n"
+			            "                         http://www.topografix.com/GPX/1/1/gpx.xsd\n"
+			            "                         http://www.garmin.com/xmlschemas/TrackPointExtension/v2\n"
+			            "                         http://www8.garmin.com/xmlschemas/TrackPointExtensionv2.xsd\">\n"
+			            "<trk>\n"
+			            "<trkseg>\n");
 		}
 	}
 	
@@ -340,6 +353,12 @@ track_log_close()
 	
 	if(fp) {
 		printf("closing FP\n");
+
+		fprintf (fp, "\n"
+		         "</trkseg>\n"
+		         "</trk>\n"
+		         "</gpx>\n");
+
 		ret = fclose(fp);
 		fp = NULL;
 	
