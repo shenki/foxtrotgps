@@ -299,8 +299,7 @@ track_log_open()
 	
 	
 
-	strftime(buffer, sizeof(buffer), "%Y%m%d_%H%M%S.log", tm_struct);
-	
+	strftime (buffer, sizeof (buffer), "%Y%m%d_%H%M%S.gpx", tm_struct);
 
 	
 	filename = g_strconcat(global_track_dir, buffer,NULL);
