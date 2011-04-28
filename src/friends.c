@@ -342,8 +342,7 @@ gdk_threads_leave();
 	
 	
 	gdk_threads_enter();
-	paint_friends();
-	
+	repaint_all();
 	gdk_threads_leave();
 	
 	
