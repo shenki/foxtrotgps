@@ -18,6 +18,10 @@ FoxtrotGPS 1.0.1 is a bug-fix release; issues resolved since 1.0.0 include:
 
     * Several resource-leaks, found thanks to Alexandre Maret, have been fixed.
 
+    * When friend-finder icons are updated to new positions, they are
+      now correctly (and consistently) erased from the old positions.
+      Thanks to Ben McCarthy for finding this bug.
+
     * FoxtrotGPS can now be built against libgps 2.96 to support
       use with gpsd 2.96, thanks to Gleb Smirnoff.
 
