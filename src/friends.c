@@ -1,5 +1,5 @@
 
-
+#include "callbacks.h"
 #include "friends.h"
 #include "globals.h"
 #include "converter.h"
