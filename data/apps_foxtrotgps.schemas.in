@@ -1,0 +1,259 @@
+<gconfschemafile>
+  <schemalist>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/started_before</key>
+      <applyto>/apps/foxtrotgps/started_before</applyto>
+      <owner>foxtrotgps</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Has FoxtrotGPS been started before?</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/gpsd_host</key>
+      <applyto>/apps/foxtrotgps/gpsd_host</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <default>localhost</default>
+      <locale name="C">
+        <short>GPSD host</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/gpsd_port</key>
+      <applyto>/apps/foxtrotgps/gpsd_port</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <default>2947</default>
+      <locale name="C">
+        <short>GPSD port</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/latlon_unit</key>
+      <applyto>/apps/foxtrotgps/latlon_unit</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Latitude/longitude unit</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/alt_unit</key>
+      <applyto>/apps/foxtrotgps/alt_unit</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Altitude unit</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/speed_unit</key>
+      <applyto>/apps/foxtrotgps/speed_unit</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Speed unit</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/repo_name</key>
+      <applyto>/apps/foxtrotgps/repo_name</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <default>OSM</default>
+      <locale name="C">
+        <short>The active map-repository</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/repos</key>
+      <applyto>/apps/foxtrotgps/repos</applyto>
+      <owner>foxtrotgps</owner>
+      <type>list</type>
+      <list_type>string</list_type>
+      <locale name="C">
+        <short>Map-repository definitions</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/auto_download</key>
+      <applyto>/apps/foxtrotgps/auto_download</applyto>
+      <owner>foxtrotgps</owner>
+      <type>bool</type>
+      <default>true</default>
+      <locale name="C">
+        <short>Automatically download map-tiles as needed</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/tracklog_on</key>
+      <applyto>/apps/foxtrotgps/tracklog_on</applyto>
+      <owner>foxtrotgps</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Log tracks to a local file</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/track_dir</key>
+      <applyto>/apps/foxtrotgps/track_dir</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>The directory into which track-files are written</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/global_x</key>
+      <applyto>/apps/foxtrotgps/global_x</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>890</default>
+      <locale name="C">
+        <short>Horizontal viewport-coordinate</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/global_y</key>
+      <applyto>/apps/foxtrotgps/global_y</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>515</default>
+      <locale name="C">
+        <short>Vertical viewport-coordinate</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/global_zoom</key>
+      <applyto>/apps/foxtrotgps/global_zoom</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>3</default>
+      <locale name="C">
+        <short>Viewport zoom-level</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/global_detail_zoom</key>
+      <applyto>/apps/foxtrotgps/global_detail_zoom</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Detail scale-factor</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/myposition_lat</key>
+      <applyto>/apps/foxtrotgps/myposition_lat</applyto>
+      <owner>foxtrotgps</owner>
+      <type>float</type>
+      <default>0</default>
+      <locale name="C">
+        <short>`My position', latitude</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/myposition_lon</key>
+      <applyto>/apps/foxtrotgps/myposition_lon</applyto>
+      <owner>foxtrotgps</owner>
+      <type>float</type>
+      <default>0</default>
+      <locale name="C">
+        <short>`My position', longitude</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/fftimer_running</key>
+      <applyto>/apps/foxtrotgps/fftimer_running</applyto>
+      <owner>foxtrotgps</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Publish your location &amp; show others' locations</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/ffupdate_interval_minutes</key>
+      <applyto>/apps/foxtrotgps/ffupdate_interval_minutes</applyto>
+      <owner>foxtrotgps</owner>
+      <type>float</type>
+      <default>5</default>
+      <locale name="C">
+        <short>Friend-finder update interval, in minutes</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/me_msg</key>
+      <applyto>/apps/foxtrotgps/me_msg</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>Status-message to publish in the friend-finder</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/nick</key>
+      <applyto>/apps/foxtrotgps/nick</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>Friend-finder username</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/pass</key>
+      <applyto>/apps/foxtrotgps/pass</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>Friend-finder password</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/geocode_correction</key>
+      <applyto>/apps/foxtrotgps/geocode_correction</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>0</default>
+      <locale name="C">
+        <short>Number of seconds by which photo timestamps must be corrected for geocoding</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/geocode_timezone</key>
+      <applyto>/apps/foxtrotgps/geocode_timezone</applyto>
+      <owner>foxtrotgps</owner>
+      <type>int</type>
+      <default>13</default>
+      <locale name="C">
+        <short>Treat photo-timestamps as being relative to this timezone (UTC=13)</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/hrm_bt_addr</key>
+      <applyto>/apps/foxtrotgps/hrm_bt_addr</applyto>
+      <owner>foxtrotgps</owner>
+      <type>string</type>
+      <locale name="C">
+        <short>The Bluetooth address of your heartrate-monitor</short>
+      </locale>
+    </schema>
+    <schema>
+      <key>/schemas/apps/foxtrotgps/hrm_on</key>
+      <applyto>/apps/foxtrotgps/hrm_on</applyto>
+      <owner>foxtrotgps</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Use the heartrate-monitor specified in hrm_bt_addr</short>
+      </locale>
+    </schema>
+  </schemalist>
+</gconfschemafile>

@@ -36,6 +36,8 @@ PKG_CHECK_MODULES(BLUETOOTH, [bluez],
                              [Heartrate-monitor support is enabled])],
                   [AC_MSG_WARN([Building without heartrate-monitor support])])
 
+AM_GCONF_SOURCE_2
+
 AC_OUTPUT([
 Makefile
 po/Makefile.in
