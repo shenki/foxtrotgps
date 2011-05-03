@@ -16,7 +16,7 @@ gconf_schema_DATA = $(gconf_schema_in_files:.schemas.in=.schemas)
 if GCONF_SCHEMAS_INSTALL
 install-data-local:
 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
-	gconftool-2 --makefile-install-rule $(gconf_schema_DATA)
+	$(GCONFTOOL2) --makefile-install-rule $(gconf_schema_DATA)
 endif
 
 
