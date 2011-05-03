@@ -1,5 +1,5 @@
 
-
+#include "callbacks.h"
 #include "friends.h"
 #include "globals.h"
 #include "converter.h"
@@ -342,8 +342,7 @@ gdk_threads_leave();
 	
 	
 	gdk_threads_enter();
-	paint_friends();
-	
+	repaint_all();
 	gdk_threads_leave();
 	
 	
