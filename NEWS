@@ -1,3 +1,36 @@
+FoxtrotGPS 1.0.1 is a bug-fix release; issues resolved since 1.0.0 include:
+
+    * Several translations were incomplete in FoxtrotGPS 1.0.0, but
+      have now been completed; these are:
+
+        - Hungarian, thanks to György Balló
+        - Spanish, thanks to Dailos Franchy
+        - French, thanks to Steve Petruzzello
+
+    * A bug causing failed downloads to appear permanently stuck
+      has been fixed, thanks to Mikael Berthe.
+
+    * A bug causing large, fast tileset-downloads to hang the
+      user interface has been fixed, also thanks to Mikael Berthe.
+
+    * A crash triggered by slow hostname-resolution, found thanks to
+      Timo Juhani Lindfors, has been fixed.
+
+    * Several resource-leaks, found thanks to Alexandre Maret, have been fixed.
+
+    * FoxtrotGPS can now be built against libgps 2.96 to support
+      use with gpsd 2.96, thanks to Gleb Smirnoff.
+
+    * A standard "--version" command-line flag is now supported.
+
+    * "foxtrotgps --help" no longer fails when no display is available.
+
+    * Various holes in the documentation have been filled--including
+      the creation of a HACKING guide for those interested in contributing,
+      thanks to Brian H Wilson.
+
+
+
 FoxtrotGPS 1.0.0 is the first stable release of FoxtrotGPS since branching
 from tangoGPS.
 
