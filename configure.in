@@ -36,6 +36,14 @@ PKG_CHECK_MODULES(BLUETOOTH, [bluez],
                              [Heartrate-monitor support is enabled])],
                   [AC_MSG_WARN([Building without heartrate-monitor support])])
 
+AC_PATH_PROG(GCONFTOOL2, [gconftool-2])
+if test -z "$GCONFTOOL2"
+then
+    AC_MSG_ERROR([gconftool-2 is required for installation.])
+fi
+
+AM_GCONF_SOURCE_2
+
 AC_OUTPUT([
 Makefile
 po/Makefile.in

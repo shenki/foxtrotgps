@@ -40,5 +40,6 @@ src/hrm_functions.h
 
 # Data files
 data/foxtrotgps.desktop.in
+data/apps_foxtrotgps.schemas.in
 data/foxtrotgps.glade
 
