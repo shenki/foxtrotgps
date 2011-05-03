@@ -17,6 +17,10 @@ if GCONF_SCHEMAS_INSTALL
 install-data-local:
 	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
 	$(GCONFTOOL2) --makefile-install-rule $(gconf_schema_DATA)
+
+uninstall-local:
+	GCONF_CONFIG_SOURCE=$(GCONF_SCHEMA_CONFIG_SOURCE) \
+	$(GCONFTOOL2) --makefile-uninstall-rule $(gconf_schema_DATA)
 endif
 
 
