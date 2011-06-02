@@ -99,15 +99,23 @@ pre_init()
 	}
 
 	if(gconf_client_get_bool(global_gconfclient, GCONF"/started_before", err))	
+	{
 		global_auto_download = gconf_client_get_bool(
 					global_gconfclient, 
 					GCONF"/auto_download",
 					err);
+		global_no_redownload = gconf_client_get_bool(
+					global_gconfclient,
+					GCONF"/no_redownload",
+					err);
+	}
 	else
 	{
 		gconf_client_set_bool(global_gconfclient, GCONF"/started_before", TRUE, err);
 		gconf_client_set_bool(global_gconfclient, GCONF"/auto_download", TRUE, err);
+		gconf_client_set_bool(global_gconfclient, GCONF"/no_redownload", FALSE, err);
 		global_auto_download = TRUE;
+		global_no_redownload = FALSE;
 	}
 }
 

@@ -156,6 +156,7 @@ extern GConfClient	*global_gconfclient;
 extern gboolean		global_infopane_visible;
 extern gboolean		global_landscape;
 extern gboolean		global_auto_download;
+extern gboolean		global_no_redownload;
 extern gboolean		global_mapmode;
 extern gboolean		global_autocenter;
 extern gboolean		global_reconnect_hrm;

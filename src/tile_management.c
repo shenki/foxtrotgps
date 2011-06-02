@@ -1,5 +1,8 @@
 
 
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
 #include <gtk/gtk.h>
 #include <glib.h>
 #include <glib/gprintf.h>
@@ -209,13 +212,22 @@ dl_thread(void *ptr)
 
 	int mkres;
 	tile_data = ptr;
-	
-	number_threads = update_thread_number(1);
-	
+
 	arr1 = g_strsplit(tile_data,"|",3);
 
-	
-	
+	if (global_no_redownload)
+	{
+		struct stat outfile_buf;
+		if (!stat(arr1[1], &outfile_buf) && outfile_buf.st_size != 0)
+		{
+			printf("Tile exists - not redownladed: %s\n", arr1[1]);
+			return NULL;
+		}
+	}
+
+	number_threads = update_thread_number(1);
+
+
 	mkres = g_mkdir_with_parents(arr1[2],0700);
 	
 	
