@@ -608,13 +608,13 @@ load_gpx_file_into_list(char *file)
 	
 	if (doc == NULL) {
 		printf("error: could not parse file %s\n", file);
+	} else {
+		root_element = xmlDocGetRootElement(doc);
+		list = parse_nodes(root_element);
+
+		xmlFreeDoc(doc);
 	}
-	
-	root_element = xmlDocGetRootElement(doc);
-	list = parse_nodes(root_element);
-	
-	xmlFreeDoc(doc);
-	
+
 	return list;
 }
 
@@ -633,13 +633,13 @@ load_gpx_string_into_list(char *gpx_string)
 	
 	if (doc == NULL) {
 		fprintf(stderr, "Failed to parse document\n");
-	}
-	
-	root_element = xmlDocGetRootElement(doc);
-	list = parse_nodes(root_element);
+	} else {
+		root_element = xmlDocGetRootElement(doc);
+		list = parse_nodes(root_element);
 
-	xmlFreeDoc(doc);	
-	
+		xmlFreeDoc(doc);
+	}
+
 	return list;
 }
 
