@@ -614,7 +614,6 @@ load_gpx_file_into_list(char *file)
 	list = parse_nodes(root_element);
 	
 	xmlFreeDoc(doc);
-	xmlCleanupParser();
 	
 	return list;
 }
@@ -640,7 +639,6 @@ load_gpx_string_into_list(char *gpx_string)
 	list = parse_nodes(root_element);
 
 	xmlFreeDoc(doc);	
-	xmlCleanupParser();
 	
 	return list;
 }
