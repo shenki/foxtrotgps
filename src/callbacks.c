@@ -3835,3 +3835,14 @@ activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item)
 
 	repaint_all ();
 }
+
+
+void
+toggle_tile_redownload (GtkToggleButton *togglebutton, gpointer data)
+{
+	global_no_redownload = !gtk_toggle_button_get_active (togglebutton);
+
+	gconf_client_set_bool (global_gconfclient, 
+	                       GCONF"/no_redownload",
+	                       global_no_redownload, NULL);
+}
