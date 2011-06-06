@@ -98,11 +98,18 @@ pre_init()
 		global_port	= g_strdup("2947");
 	}
 
+	global_no_redownload = gconf_client_get_bool(
+				global_gconfclient,
+				GCONF"/no_redownload",
+				err);
+
 	if(gconf_client_get_bool(global_gconfclient, GCONF"/started_before", err))	
+	{
 		global_auto_download = gconf_client_get_bool(
 					global_gconfclient, 
 					GCONF"/auto_download",
 					err);
+	}
 	else
 	{
 		gconf_client_set_bool(global_gconfclient, GCONF"/started_before", TRUE, err);
@@ -199,7 +206,10 @@ init()
 	widget = lookup_widget(window1, "checkbutton2");
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), global_auto_download);
 
-	
+	widget = glade_xml_get_widget (gladexml, "tile_redownload_toggle");
+	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget),
+	                             !global_no_redownload);
+
 	hrm_on = gconf_client_get_bool(global_gconfclient, GCONF"/hrm_on",&err);
 	widget = lookup_widget(window1, "checkbutton18");
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), hrm_on);

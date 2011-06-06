@@ -74,6 +74,7 @@ GConfClient	*global_gconfclient = NULL;
 gboolean	global_infopane_visible = FALSE;
 gboolean	global_landscape;
 gboolean	global_auto_download = TRUE;
+gboolean	global_no_redownload = FALSE;
 gboolean	global_mapmode = TRUE;
 gboolean	global_autocenter = TRUE;
 gboolean	global_reconnect_hrm = TRUE;
