@@ -91,6 +91,16 @@
       </locale>
     </schema>
     <schema>
+      <key>/schemas/apps/foxtrotgps/no_redownload</key>
+      <applyto>/apps/foxtrotgps/no_redownload</applyto>
+      <owner>foxtrotgps</owner>
+      <type>bool</type>
+      <default>false</default>
+      <locale name="C">
+        <short>Avoid re-downloading cached tiles</short>
+      </locale>
+    </schema>
+    <schema>
       <key>/schemas/apps/foxtrotgps/tracklog_on</key>
       <applyto>/apps/foxtrotgps/tracklog_on</applyto>
       <owner>foxtrotgps</owner>
