@@ -103,19 +103,9 @@ pre_init()
 				GCONF"/no_redownload",
 				err);
 
-	if(gconf_client_get_bool(global_gconfclient, GCONF"/started_before", err))	
-	{
-		global_auto_download = gconf_client_get_bool(
-					global_gconfclient, 
-					GCONF"/auto_download",
-					err);
-	}
-	else
-	{
-		gconf_client_set_bool(global_gconfclient, GCONF"/started_before", TRUE, err);
-		gconf_client_set_bool(global_gconfclient, GCONF"/auto_download", TRUE, err);
-		global_auto_download = TRUE;
-	}
+	global_auto_download = gconf_client_get_bool(global_gconfclient, 
+	                                             GCONF"/auto_download",
+	                                             err);
 }
 
 void

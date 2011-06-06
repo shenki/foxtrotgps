@@ -1,16 +1,6 @@
 <gconfschemafile>
   <schemalist>
     <schema>
-      <key>/schemas/apps/foxtrotgps/started_before</key>
-      <applyto>/apps/foxtrotgps/started_before</applyto>
-      <owner>foxtrotgps</owner>
-      <type>bool</type>
-      <default>false</default>
-      <locale name="C">
-        <short>Has FoxtrotGPS been started before?</short>
-      </locale>
-    </schema>
-    <schema>
       <key>/schemas/apps/foxtrotgps/gpsd_host</key>
       <applyto>/apps/foxtrotgps/gpsd_host</applyto>
       <owner>foxtrotgps</owner>
