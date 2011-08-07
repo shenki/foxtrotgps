@@ -2,7 +2,6 @@
 #include <gtk/gtk.h>
 
 #include <curl/curl.h>
-#include <curl/types.h>
 #include <curl/easy.h>
 int
 sql_execute(char *db_name, char *sql, int (*cb_func)(void*,int,char**,char**));
