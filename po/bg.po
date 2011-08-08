@@ -7,10 +7,11 @@ msgid ""
 msgstr ""
 "Project-Id-Version: 0.9.3\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-12-18 00:11-0500\n"
+"POT-Creation-Date: 2011-08-07 23:43-0400\n"
 "PO-Revision-Date: 2008-11-28 11:17+0200\n"
 "Last-Translator: Svetoslav Stefanov <lfu.project@gmail.com>\n"
 "Language-Team: Svetoslav Stefanov <lfu.project@gmail.com>\n"
+"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=utf-8\n"
 "Content-Transfer-Encoding: 8bit\n"
@@ -37,27 +38,27 @@ msgstr "Не може да се открие файл pixmap: %s"
 #. that something is really wrong and they should report
 #. a bug.
 #.
-#: ../src/main.c:103
+#: ../src/main.c:110
 #, c-format
 msgid ""
 "%s could not load its user interface; %s does not not appear to be properly "
 "installed."
 msgstr ""
 
-#: ../src/friends.c:599
+#: ../src/friends.c:597
 msgid "Msg"
 msgstr ""
 
-#: ../src/friends.c:607 ../src/friends.c:974 ../data/foxtrotgps.glade.h:168
+#: ../src/friends.c:605 ../src/friends.c:972 ../data/foxtrotgps.glade.h:171
 msgid "Go To"
 msgstr "Отиване до"
 
-#: ../src/friends.c:966
+#: ../src/friends.c:964
 #, fuzzy
 msgid "Reply"
 msgstr "    "
 
-#: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:221
+#: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:226
 msgid "Working...."
 msgstr ""
 
@@ -71,6 +72,119 @@ msgstr "FoxtrotGPS"
 
 #: ../data/foxtrotgps.desktop.in.h:3
 msgid "GPS and Map"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:1
+#, fuzzy
+msgid "Altitude unit"
+msgstr "Надморска височина:"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:2
+#, fuzzy
+msgid "Automatically download map-tiles as needed"
+msgstr "Автоматично изтегляне на частите на картата"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:3
+#, fuzzy
+msgid "Avoid re-downloading cached tiles"
+msgstr "Автоматично изтегляне на частите на картата"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:4
+msgid "Detail scale-factor"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:5
+msgid "Friend-finder password"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:6
+msgid "Friend-finder update interval, in minutes"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:7
+msgid "Friend-finder username"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:8
+#, fuzzy
+msgid "GPSD host"
+msgstr " GPSD "
+
+#: ../data/apps_foxtrotgps.schemas.in.h:9
+#, fuzzy
+msgid "GPSD port"
+msgstr "Спорт"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:10
+msgid "Horizontal viewport-coordinate"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:11
+msgid "Latitude/longitude unit"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:12
+msgid "Log tracks to a local file"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:13
+msgid "Map-repository definitions"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:14
+msgid ""
+"Number of seconds by which photo timestamps must be corrected for geocoding"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:15
+msgid "Publish your location & show others' locations"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:16
+#, fuzzy
+msgid "Speed unit"
+msgstr "Скорост"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:17
+msgid "Status-message to publish in the friend-finder"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:18
+msgid "The Bluetooth address of your heartrate-monitor"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:19
+msgid "The active map-repository"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:20
+#, fuzzy
+msgid "The directory into which track-files are written"
+msgstr "Папка, в която трябва да се записват следите:"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:21
+msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:22
+msgid "Use the heartrate-monitor specified in hrm_bt_addr"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:23
+msgid "Vertical viewport-coordinate"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:24
+#, fuzzy
+msgid "Viewport zoom-level"
+msgstr "+ 1 ниво на увеличение"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:25
+msgid "`My position', latitude"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:26
+msgid "`My position', longitude"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:1
@@ -283,127 +397,136 @@ msgstr " <b>Получаване на позиции на другите</b> "
 
 #: ../data/foxtrotgps.glade.h:91
 #, fuzzy
+msgid "<b>Heart Rate Monitor</b>"
+msgstr "Име за новото хранилище:"
+
+#: ../data/foxtrotgps.glade.h:92
+#, fuzzy
 msgid "<b>Map Download</b>"
 msgstr "<b> Изтегляне на карти </b>"
 
-#: ../data/foxtrotgps.glade.h:92
+#: ../data/foxtrotgps.glade.h:93
 #, fuzzy
 msgid "<b>Map Types</b>"
 msgstr "<b>Хранилища на карти</b>"
 
-#: ../data/foxtrotgps.glade.h:93
+#: ../data/foxtrotgps.glade.h:94
 #, fuzzy
 msgid "<b>Me</b>"
 msgstr "<b>-</b>"
 
-#: ../data/foxtrotgps.glade.h:94
+#: ../data/foxtrotgps.glade.h:95
 #, fuzzy
 msgid "<b>Name for the new Repository</b>"
 msgstr "Име за новото хранилище:"
 
-#: ../data/foxtrotgps.glade.h:95
+#: ../data/foxtrotgps.glade.h:96
 #, fuzzy
 msgid "<b>Position Sharing</b>"
 msgstr "<b>  Обновяване на позицията  </b>"
 
-#: ../data/foxtrotgps.glade.h:96
+#: ../data/foxtrotgps.glade.h:97
 #, fuzzy
 msgid "<b>Repository Name</b>"
 msgstr "<b>Хранилища на карти</b>"
 
-#: ../data/foxtrotgps.glade.h:97
+#: ../data/foxtrotgps.glade.h:98
 #, fuzzy
 msgid "<b>Service</b>"
 msgstr "Папка за кеширане"
 
-#: ../data/foxtrotgps.glade.h:98
+#: ../data/foxtrotgps.glade.h:99
 #, fuzzy
 msgid "<b>Sharing Mode</b>"
 msgstr " <b>Обновяване на собствената позиция</b> "
 
-#: ../data/foxtrotgps.glade.h:99
+#: ../data/foxtrotgps.glade.h:100
 #, fuzzy
 msgid "<b>Start</b>"
 msgstr "<b>Данни на GPS устройството</b>"
 
-#: ../data/foxtrotgps.glade.h:100
+#: ../data/foxtrotgps.glade.h:101
 msgid "<b>The output from gpscorrelate:</b>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:101
+#: ../data/foxtrotgps.glade.h:102
 #, fuzzy
 msgid "<b>Timezone:</b> "
 msgstr "<b>Измерване на пътуването</b>"
 
-#: ../data/foxtrotgps.glade.h:102
+#: ../data/foxtrotgps.glade.h:103
 #, fuzzy
 msgid "<b>URI</b>"
 msgstr "<b>-</b>"
 
-#: ../data/foxtrotgps.glade.h:103
+#: ../data/foxtrotgps.glade.h:104
 msgid "<b>Units</b>"
 msgstr "<b>Единици</b>"
 
-#: ../data/foxtrotgps.glade.h:104
+#: ../data/foxtrotgps.glade.h:105
 msgid "<b>no GPS found</b>"
 msgstr "<b>не открито GPS устройство</b>"
 
-#: ../data/foxtrotgps.glade.h:105
+#: ../data/foxtrotgps.glade.h:106
 msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:106
+#: ../data/foxtrotgps.glade.h:107
 msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:107
+#: ../data/foxtrotgps.glade.h:108
 msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:108
+#: ../data/foxtrotgps.glade.h:109
 #, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
 msgstr "<b>Измерване на пътуването</b>"
 
-#: ../data/foxtrotgps.glade.h:109
+#: ../data/foxtrotgps.glade.h:110
 msgid "<i><b>Connecting...</b></i>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:110
+#: ../data/foxtrotgps.glade.h:111
 msgid "<i>Altitude:</i>"
 msgstr "<i>Височина:</i>"
 
-#: ../data/foxtrotgps.glade.h:111
+#: ../data/foxtrotgps.glade.h:112
 msgid ""
 "<i>Insert Start and End:</i>\n"
 "<small>(experimental feature)</small>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:113
+#: ../data/foxtrotgps.glade.h:114
 msgid "<i>Lat &amp; Lon:</i>"
 msgstr "<i>Шир &вис; Дълж:</i>"
 
-#: ../data/foxtrotgps.glade.h:114
+#: ../data/foxtrotgps.glade.h:115
 msgid "<i>No Messages</i>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:115
+#: ../data/foxtrotgps.glade.h:116
 msgid "<i>Speed and Distance:</i>"
 msgstr "<i>Скорост и разстояние:</i>"
 
-#: ../data/foxtrotgps.glade.h:116
+#: ../data/foxtrotgps.glade.h:117
 msgid "<i>What are you up to?</i>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:117
+#: ../data/foxtrotgps.glade.h:118
 msgid "<span color=\"red\" weight=\"bold\">-</span>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:118
+#: ../data/foxtrotgps.glade.h:119
 msgid "<span font_desc='40'> -- </span>"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:119
+#: ../data/foxtrotgps.glade.h:120
+msgid "Activate Heartrate Monitor"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:121
 msgid ""
 "Activate or deactivate automatic\n"
 "download of missing tiles into cache"
@@ -411,106 +534,110 @@ msgstr ""
 "Активиране/деактивиране на автоматично\n"
 "изтегляне на липсващи части от картата в кеша"
 
-#: ../data/foxtrotgps.glade.h:121
+#: ../data/foxtrotgps.glade.h:123
 msgid "Add POI"
 msgstr "Добавяне на потребителска важна точка"
 
-#: ../data/foxtrotgps.glade.h:122
+#: ../data/foxtrotgps.glade.h:124
 msgid "All fields must be filled in"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:123
+#: ../data/foxtrotgps.glade.h:125
 #, fuzzy
 msgid "Altitude"
 msgstr "Надморска височина:"
 
-#: ../data/foxtrotgps.glade.h:124
+#: ../data/foxtrotgps.glade.h:126
 msgid "Auto download map tiles"
 msgstr "Автоматично изтегляне на частите на картата"
 
-#: ../data/foxtrotgps.glade.h:125
+#: ../data/foxtrotgps.glade.h:127
 #, fuzzy
 msgid "Autocenter On"
 msgstr "автоцентриране"
 
-#: ../data/foxtrotgps.glade.h:126
+#: ../data/foxtrotgps.glade.h:128
 msgid "Average"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:127
+#: ../data/foxtrotgps.glade.h:129
 msgid "Big"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:128
+#: ../data/foxtrotgps.glade.h:130
+msgid "Bluetooth Address: "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:131
 msgid "Category:"
 msgstr "Категория:"
 
-#: ../data/foxtrotgps.glade.h:129
+#: ../data/foxtrotgps.glade.h:132
 #, fuzzy
 msgid "Change GPSD"
 msgstr "     Промяна на GPSD     "
 
-#: ../data/foxtrotgps.glade.h:130
+#: ../data/foxtrotgps.glade.h:133
 #, fuzzy
 msgid "Clear"
 msgstr "Автомобили"
 
-#: ../data/foxtrotgps.glade.h:131
+#: ../data/foxtrotgps.glade.h:134
 msgid "Close"
 msgstr "Затваряне"
 
-#: ../data/foxtrotgps.glade.h:132
+#: ../data/foxtrotgps.glade.h:135
 msgid "Close Info Area"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:133
+#: ../data/foxtrotgps.glade.h:136
 #, fuzzy
 msgid "Configure"
 msgstr "Настройки"
 
-#: ../data/foxtrotgps.glade.h:134
+#: ../data/foxtrotgps.glade.h:137
 msgid "Coordinates <b><i>clicked</i></b> on the map:"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:135
+#: ../data/foxtrotgps.glade.h:138
 #, fuzzy
 msgid "Correction:"
 msgstr "Описание:"
 
-#: ../data/foxtrotgps.glade.h:136
+#: ../data/foxtrotgps.glade.h:139
 #, fuzzy
 msgid "Current Map:"
 msgstr "Текущо хранилище"
 
-#: ../data/foxtrotgps.glade.h:137
+#: ../data/foxtrotgps.glade.h:140
 msgid ""
 "Decide whom you see and \n"
 "who can see you:"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:139
+#: ../data/foxtrotgps.glade.h:142
 msgid "Delete"
 msgstr "Изтриване"
 
-#: ../data/foxtrotgps.glade.h:140
+#: ../data/foxtrotgps.glade.h:143
 msgid "Delete POI?"
 msgstr "Изтриване на потребителска важна точка?"
 
-#: ../data/foxtrotgps.glade.h:141
+#: ../data/foxtrotgps.glade.h:144
 msgid "Description:"
 msgstr "Описание:"
 
-#: ../data/foxtrotgps.glade.h:142
+#: ../data/foxtrotgps.glade.h:145
 msgid "Directory in which the tracks should be written:"
 msgstr "Папка, в която трябва да се записват следите:"
 
-#: ../data/foxtrotgps.glade.h:143
+#: ../data/foxtrotgps.glade.h:146
 msgid ""
 "Distance to\n"
 "next point"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:145
+#: ../data/foxtrotgps.glade.h:148
 #, fuzzy
 msgid ""
 "Do you really want to\n"
@@ -519,484 +646,493 @@ msgstr ""
 "Наистина ли желаете да изтриете\n"
 "тази потребителска важна точка?"
 
-#: ../data/foxtrotgps.glade.h:147
+#: ../data/foxtrotgps.glade.h:150
 msgid "Download maps of currently visible area:"
 msgstr "Изтегляне на карти на текущата видима област"
 
-#: ../data/foxtrotgps.glade.h:148
+#: ../data/foxtrotgps.glade.h:151
 msgid "Edit"
 msgstr "Редактиране"
 
-#: ../data/foxtrotgps.glade.h:149
+#: ../data/foxtrotgps.glade.h:152
 msgid "Edit POI"
 msgstr "Редактиране на потребителска важна точка"
 
-#: ../data/foxtrotgps.glade.h:150
+#: ../data/foxtrotgps.glade.h:153
 #, fuzzy
 msgid "Edit Repository"
 msgstr "Ново хранилище"
 
-#: ../data/foxtrotgps.glade.h:151
+#: ../data/foxtrotgps.glade.h:154
 #, fuzzy
 msgid "Edit..."
 msgstr "Редактиране"
 
-#: ../data/foxtrotgps.glade.h:152
+#: ../data/foxtrotgps.glade.h:155
 msgid "Email"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:153
+#: ../data/foxtrotgps.glade.h:156
 msgid "Enable Live Tracking"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:154
+#: ../data/foxtrotgps.glade.h:157
 #, fuzzy
 msgid "Enable Track Logging"
 msgstr "<b>Запис на следите</b>"
 
-#: ../data/foxtrotgps.glade.h:155
+#: ../data/foxtrotgps.glade.h:158
 msgid ""
 "Enable position sharing and\n"
 "messaging with your friends"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:157
+#: ../data/foxtrotgps.glade.h:160
 msgid "Friend Info"
 msgstr "Данни за приятел"
 
-#: ../data/foxtrotgps.glade.h:158
+#: ../data/foxtrotgps.glade.h:161
 msgid "Fullscreen (F11 or Space)"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:159
+#: ../data/foxtrotgps.glade.h:162
 msgid "GPS"
 msgstr "GPS"
 
-#: ../data/foxtrotgps.glade.h:160
+#: ../data/foxtrotgps.glade.h:163
 msgid "GPS Info"
 msgstr "Информация за GPS"
 
-#: ../data/foxtrotgps.glade.h:161
+#: ../data/foxtrotgps.glade.h:164
 #, fuzzy
 msgid "GPS Time"
 msgstr "Време на GPS устройството:"
 
-#: ../data/foxtrotgps.glade.h:162
+#: ../data/foxtrotgps.glade.h:165
 msgid "Geo Photo"
 msgstr "Гео Фото"
 
-#: ../data/foxtrotgps.glade.h:163
+#: ../data/foxtrotgps.glade.h:166
 #, fuzzy
 msgid "GeoPhoto"
 msgstr "Гео Фото"
 
-#: ../data/foxtrotgps.glade.h:164
+#: ../data/foxtrotgps.glade.h:167
 msgid "Geocode Result"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:165
+#: ../data/foxtrotgps.glade.h:168
 msgid "Geocode your photos by correlating them with a gps track.\n"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:167
+#: ../data/foxtrotgps.glade.h:170
 msgid "Get Route"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:169
+#: ../data/foxtrotgps.glade.h:172
 msgid "Go to Next Page"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:170
+#: ../data/foxtrotgps.glade.h:173
 msgid "Go to Previous Page"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:171
+#: ../data/foxtrotgps.glade.h:174
 #, fuzzy
 msgid "Heading"
 msgstr "Направление"
 
-#: ../data/foxtrotgps.glade.h:172
+#: ../data/foxtrotgps.glade.h:175
+msgid "Heart"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:176
 msgid "Hide Messages"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:173
+#: ../data/foxtrotgps.glade.h:177
 msgid "Host:"
 msgstr "Хост:"
 
-#: ../data/foxtrotgps.glade.h:174
+#: ../data/foxtrotgps.glade.h:178
 msgid "Image Data"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:175
+#: ../data/foxtrotgps.glade.h:179
 msgid "JohnDoe"
 msgstr "JohnDoe"
 
-#: ../data/foxtrotgps.glade.h:176
+#: ../data/foxtrotgps.glade.h:180
 #, fuzzy
 msgid "Lat - Lon"
 msgstr "Шир, Дълж:"
 
-#: ../data/foxtrotgps.glade.h:177
+#: ../data/foxtrotgps.glade.h:181
 msgid "Lat: "
 msgstr "Шир:"
 
-#: ../data/foxtrotgps.glade.h:178
+#: ../data/foxtrotgps.glade.h:182
 msgid "Load"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:179
+#: ../data/foxtrotgps.glade.h:183
 msgid "Load track..."
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:180
+#: ../data/foxtrotgps.glade.h:184
 msgid "Map DL"
 msgstr "Изтегляне на карти"
 
-#: ../data/foxtrotgps.glade.h:181
+#: ../data/foxtrotgps.glade.h:185
 #, fuzzy
 msgid "Max"
 msgstr "Изтегляне на карти"
 
-#: ../data/foxtrotgps.glade.h:182
+#: ../data/foxtrotgps.glade.h:186
 msgid "Message"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:183
+#: ../data/foxtrotgps.glade.h:187
 msgid "Name - Keywords / Tags:"
 msgstr "Име - Ключови думи / Етикети:"
 
-#: ../data/foxtrotgps.glade.h:184
+#: ../data/foxtrotgps.glade.h:188
 msgid "New Repository"
 msgstr "Ново хранилище"
 
-#: ../data/foxtrotgps.glade.h:185
+#: ../data/foxtrotgps.glade.h:189
 msgid "New..."
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:186
+#: ../data/foxtrotgps.glade.h:190
 msgid "Next map repo"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:187
+#: ../data/foxtrotgps.glade.h:191
 #, fuzzy
 msgid "Nickname"
 msgstr "Псевдоним"
 
-#: ../data/foxtrotgps.glade.h:188
+#: ../data/foxtrotgps.glade.h:192
 msgid "POI"
 msgstr "Потребителска важна точка"
 
-#: ../data/foxtrotgps.glade.h:189
+#: ../data/foxtrotgps.glade.h:193
 msgid "POIs"
 msgstr "Потребителски важни точки"
 
-#: ../data/foxtrotgps.glade.h:190
+#: ../data/foxtrotgps.glade.h:194
 msgid "Password"
 msgstr "Парола"
 
-#: ../data/foxtrotgps.glade.h:191
+#: ../data/foxtrotgps.glade.h:195
 msgid "Photo Correlate"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:192
+#: ../data/foxtrotgps.glade.h:196
 msgid "Pick"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:193
+#: ../data/foxtrotgps.glade.h:197
 msgid "Pick End on Map"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:194
+#: ../data/foxtrotgps.glade.h:198
 msgid "Pick Start on Map"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:195
+#: ../data/foxtrotgps.glade.h:199
 msgid "Previous map repo"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:196
+#: ../data/foxtrotgps.glade.h:200
+#, fuzzy
+msgid "Re-download cached tiles"
+msgstr "Автоматично изтегляне на частите на картата"
+
+#: ../data/foxtrotgps.glade.h:201
 #, fuzzy
 msgid "Register!"
 msgstr "     Регистриране!     "
 
-#: ../data/foxtrotgps.glade.h:197
+#: ../data/foxtrotgps.glade.h:202
 #, fuzzy
 msgid "Reset"
 msgstr "задаване"
 
-#: ../data/foxtrotgps.glade.h:198
+#: ../data/foxtrotgps.glade.h:203
 #, fuzzy
 msgid "Satellites"
 msgstr "Сателити"
 
-#: ../data/foxtrotgps.glade.h:199
+#: ../data/foxtrotgps.glade.h:204
 msgid "Send Message to:"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:200
+#: ../data/foxtrotgps.glade.h:205
 #, fuzzy
 msgid ""
 "Set point as\n"
 "my position"
 msgstr "моята позиция"
 
-#: ../data/foxtrotgps.glade.h:202
+#: ../data/foxtrotgps.glade.h:207
 msgid "Share!"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:203
+#: ../data/foxtrotgps.glade.h:208
 #, fuzzy
 msgid "Show Info"
 msgstr "Информация за GPS"
 
-#: ../data/foxtrotgps.glade.h:204
+#: ../data/foxtrotgps.glade.h:209
 msgid "Show POIs"
 msgstr "Показване на потребителски важни точки"
 
-#: ../data/foxtrotgps.glade.h:205
+#: ../data/foxtrotgps.glade.h:210
 #, fuzzy
 msgid "Show password"
 msgstr "Парола"
 
-#: ../data/foxtrotgps.glade.h:206
+#: ../data/foxtrotgps.glade.h:211
 msgid ""
 "Simply choose any nickname and password.\n"
 "\n"
 "Before first use register them by clicking on the button below."
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:209
+#: ../data/foxtrotgps.glade.h:214
 msgid "Speed"
 msgstr "Скорост"
 
-#: ../data/foxtrotgps.glade.h:210
+#: ../data/foxtrotgps.glade.h:215
 #, fuzzy
 msgid "Split"
 msgstr "Спорт"
 
-#: ../data/foxtrotgps.glade.h:211
+#: ../data/foxtrotgps.glade.h:216
 msgid "Stop"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:212
+#: ../data/foxtrotgps.glade.h:217
 msgid "Street,City,Country"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:213
+#: ../data/foxtrotgps.glade.h:218
 #, fuzzy
 msgid "Time"
 msgstr "Време:"
 
-#: ../data/foxtrotgps.glade.h:214
+#: ../data/foxtrotgps.glade.h:219
 #, fuzzy
 msgid "Timezone:"
 msgstr "Време:"
 
-#: ../data/foxtrotgps.glade.h:215
+#: ../data/foxtrotgps.glade.h:220
 msgid "Trackdir Config"
 msgstr "Настройка на папката за следите"
 
-#: ../data/foxtrotgps.glade.h:216
+#: ../data/foxtrotgps.glade.h:221
 #, fuzzy
 msgid "Trip"
 msgstr "Пътуване"
 
-#: ../data/foxtrotgps.glade.h:217
+#: ../data/foxtrotgps.glade.h:222
 msgid "Update interval  "
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:218
+#: ../data/foxtrotgps.glade.h:223
 msgid "Upload"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:219
+#: ../data/foxtrotgps.glade.h:224
 msgid "Use current GPS position instead"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:220
+#: ../data/foxtrotgps.glade.h:225
 #, fuzzy
 msgid "View GPS Photo"
 msgstr "Гео Фото"
 
-#: ../data/foxtrotgps.glade.h:222
+#: ../data/foxtrotgps.glade.h:227
 msgid "Zoom in"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:223
+#: ../data/foxtrotgps.glade.h:228
 msgid "Zoom out"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:224
+#: ../data/foxtrotgps.glade.h:229
 msgid "add POI"
 msgstr "добавяне на потребителска важна точка"
 
-#: ../data/foxtrotgps.glade.h:226
+#: ../data/foxtrotgps.glade.h:231
 #, no-c-format
 msgid "add photos to the %s database"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:227
+#: ../data/foxtrotgps.glade.h:232
 msgid "budget"
 msgstr "бюджетно"
 
-#: ../data/foxtrotgps.glade.h:228
+#: ../data/foxtrotgps.glade.h:233
 msgid "d m's.s\""
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:229
+#: ../data/foxtrotgps.glade.h:234
 msgid "d m.m'"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:230
+#: ../data/foxtrotgps.glade.h:235
 msgid "d.dd"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:231
+#: ../data/foxtrotgps.glade.h:236
 msgid "exclusive"
 msgstr "скъпо"
 
-#: ../data/foxtrotgps.glade.h:232
+#: ../data/foxtrotgps.glade.h:237
 msgid "extended opening hours"
 msgstr "удължено работно време"
 
-#: ../data/foxtrotgps.glade.h:233
+#: ../data/foxtrotgps.glade.h:238
 msgid "feet"
 msgstr "фут"
 
-#: ../data/foxtrotgps.glade.h:234
+#: ../data/foxtrotgps.glade.h:239
 msgid "fewer/larger details"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:235
+#: ../data/foxtrotgps.glade.h:240
 msgid "foobar"
 msgstr "foobar"
 
-#: ../data/foxtrotgps.glade.h:236
+#: ../data/foxtrotgps.glade.h:241
 #, fuzzy
 msgid "friend mode"
 msgstr "Данни за приятел"
 
-#: ../data/foxtrotgps.glade.h:237
+#: ../data/foxtrotgps.glade.h:242
 msgid "fun mode"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:238
+#: ../data/foxtrotgps.glade.h:243
 msgid "geocode"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:239
+#: ../data/foxtrotgps.glade.h:244
 msgid "get route"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:240
+#: ../data/foxtrotgps.glade.h:245
 msgid "imperial"
 msgstr "имперски"
 
-#: ../data/foxtrotgps.glade.h:241
+#: ../data/foxtrotgps.glade.h:246
 msgid "just idle..."
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:242
+#: ../data/foxtrotgps.glade.h:247
 msgid "map detail"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:243
+#: ../data/foxtrotgps.glade.h:248
 msgid "map download"
 msgstr "изтегляне на карти"
 
-#: ../data/foxtrotgps.glade.h:244
+#: ../data/foxtrotgps.glade.h:249
 msgid "medium"
 msgstr "средно"
 
-#: ../data/foxtrotgps.glade.h:245
+#: ../data/foxtrotgps.glade.h:250
 msgid "meters"
 msgstr "метри"
 
-#: ../data/foxtrotgps.glade.h:246
+#: ../data/foxtrotgps.glade.h:251
 msgid "metric"
 msgstr "метрични"
 
-#: ../data/foxtrotgps.glade.h:247
+#: ../data/foxtrotgps.glade.h:252
 msgid "minutes"
 msgstr "минути"
 
-#: ../data/foxtrotgps.glade.h:248
+#: ../data/foxtrotgps.glade.h:253
 msgid "more/smaller details"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:249
+#: ../data/foxtrotgps.glade.h:254
 msgid "my position"
 msgstr "моята позиция"
 
-#: ../data/foxtrotgps.glade.h:250
+#: ../data/foxtrotgps.glade.h:255
 msgid "nautical"
 msgstr "морски"
 
-#: ../data/foxtrotgps.glade.h:251
+#: ../data/foxtrotgps.glade.h:256
 msgid "personal"
 msgstr "лична"
 
-#: ../data/foxtrotgps.glade.h:252
+#: ../data/foxtrotgps.glade.h:257
 #, fuzzy
 msgid "photos"
 msgstr "показване на снимки"
 
-#: ../data/foxtrotgps.glade.h:253
+#: ../data/foxtrotgps.glade.h:258
 msgid "private mode"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:254
+#: ../data/foxtrotgps.glade.h:259
 msgid "public"
 msgstr "публично достъпни"
 
-#: ../data/foxtrotgps.glade.h:255
+#: ../data/foxtrotgps.glade.h:260
 #, fuzzy
 msgid "s   "
 msgstr "   "
 
-#: ../data/foxtrotgps.glade.h:256
+#: ../data/foxtrotgps.glade.h:261
 msgid "select POIs"
 msgstr "избиране на потребителска важна точка"
 
-#: ../data/foxtrotgps.glade.h:257
+#: ../data/foxtrotgps.glade.h:262
 msgid "set"
 msgstr "задаване"
 
-#: ../data/foxtrotgps.glade.h:258
+#: ../data/foxtrotgps.glade.h:263
 #, fuzzy
 msgid "set WP"
 msgstr "задаване"
 
-#: ../data/foxtrotgps.glade.h:259
+#: ../data/foxtrotgps.glade.h:264
 msgid "show POIs"
 msgstr "показване на потребителски важни точки"
 
-#: ../data/foxtrotgps.glade.h:260
+#: ../data/foxtrotgps.glade.h:265
 msgid "show friends"
 msgstr "показване на приятели"
 
-#: ../data/foxtrotgps.glade.h:261
+#: ../data/foxtrotgps.glade.h:266
 msgid "show photos"
 msgstr "показване на снимки"
 
-#: ../data/foxtrotgps.glade.h:262
+#: ../data/foxtrotgps.glade.h:267
 msgid "this point"
 msgstr "тази точка"
 
-#: ../data/foxtrotgps.glade.h:263
+#: ../data/foxtrotgps.glade.h:268
 msgid "unset"
 msgstr "премахване"
 
-#: ../data/foxtrotgps.glade.h:264
+#: ../data/foxtrotgps.glade.h:269
 #, fuzzy
 msgid "unset WP"
 msgstr "премахване"
 
-#: ../data/foxtrotgps.glade.h:265
+#: ../data/foxtrotgps.glade.h:270
 msgid "ways & routes"
 msgstr ""
 
-#: ../data/foxtrotgps.glade.h:266
+#: ../data/foxtrotgps.glade.h:271
 msgid "xyz instead of zxy"
 msgstr ""
 
@@ -1088,9 +1224,6 @@ msgstr ""
 
 #~ msgid "Shopping"
 #~ msgstr "Пазаруване"
-
-#~ msgid "Sport"
-#~ msgstr "Спорт"
 
 #~ msgid "My Personal Places"
 #~ msgstr "Лични места"
