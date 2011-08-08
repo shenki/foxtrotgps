@@ -1,0 +1,1144 @@
+# FoxtrotGPS Japanese translation
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the FoxtrotGPS package.
+# Yoshizumi Endo <y-endo@ceres.dti.ne.jp>, 2011.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: FoxtrotGPS 1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-07-26 22:59+0900\n"
+"PO-Revision-Date: 2011-07-26 20:53+0900\n"
+"Last-Translator: Yoshizumi Endo <y-endo@ceres.dti.ne.jp>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../src/support.c:97 ../src/support.c:121
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "pixmap ファイルが見つかりません: %s"
+
+#. Developers may run into this if they're naively
+#. trying to run from the build-tree without having
+#. specifically configured the build to allow that or
+#. having passed a "--gui=..." option to the program,
+#. so we need to actually catch this error and output
+#. an informative message.
+#.
+#. This is, however, not an error that end users should face;
+#. if they do, then someone upstream from them messed up--
+#. either `make install' worked only half-way, or a packager
+#. left something critical out of the package. In either case,
+#. we want to fail in a way that indicates to the user
+#. that something is really wrong and they should report
+#. a bug.
+#.
+#: ../src/main.c:110
+#, c-format
+msgid ""
+"%s could not load its user interface; %s does not not appear to be properly "
+"installed."
+msgstr ""
+"%s はユーザインターフェースをロードできませんでした。 %s は適切にインストール"
+"されていないようです。"
+
+#: ../src/friends.c:598
+msgid "Msg"
+msgstr "メッセージ"
+
+#: ../src/friends.c:606 ../src/friends.c:973 ../data/foxtrotgps.glade.h:171
+msgid "Go To"
+msgstr "ここへ移動"
+
+#: ../src/friends.c:965
+msgid "Reply"
+msgstr "返信"
+
+#: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:226
+msgid "Working...."
+msgstr "動作中..."
+
+#: ../data/foxtrotgps.desktop.in.h:1
+msgid "Display map and GPS position"
+msgstr "地図と GPS 位置情報を表示します"
+
+#: ../data/foxtrotgps.desktop.in.h:2
+msgid "FoxtrotGPS"
+msgstr "FoxtrotGPS"
+
+#: ../data/foxtrotgps.desktop.in.h:3
+msgid "GPS and Map"
+msgstr "GPS と地図"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:1
+msgid "Altitude unit"
+msgstr "標高の単位"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:2
+msgid "Automatically download map-tiles as needed"
+msgstr "必要な地図タイルを自動的にダウンロード"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:3
+msgid "Avoid re-downloading cached tiles"
+msgstr "キャッシュされたタイルの再ダウンロードを避ける"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:4
+msgid "Detail scale-factor"
+msgstr "地図の詳細度"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:5
+msgid "Friend-finder password"
+msgstr "フレンドファインダーのパスワード"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:6
+msgid "Friend-finder update interval, in minutes"
+msgstr "フレンドファインダーの更新時間 (分)"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:7
+msgid "Friend-finder username"
+msgstr "フレンドファインダーのユーザ名"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:8
+msgid "GPSD host"
+msgstr "GPSD ホスト"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:9
+msgid "GPSD port"
+msgstr "GPSD ポート"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:10
+msgid "Horizontal viewport-coordinate"
+msgstr "ビューポイントの水平座標"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:11
+msgid "Latitude/longitude unit"
+msgstr "緯度/経度の単位"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:12
+msgid "Log tracks to a local file"
+msgstr "トラックを記録するローカルファイル"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:13
+msgid "Map-repository definitions"
+msgstr "地図リポジトリの定義"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:14
+msgid ""
+"Number of seconds by which photo timestamps must be corrected for geocoding"
+msgstr "写真のタイムスタンプと位置情報を照合する際に、関連づける時間の幅 (秒)"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:15
+msgid "Publish your location & show others' locations"
+msgstr "自らの位置情報の公開と、他のユーザの位置情報の表示"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:16
+msgid "Speed unit"
+msgstr "速度の単位"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:17
+msgid "Status-message to publish in the friend-finder"
+msgstr "フレンドファインダーに公開するステータスメッセージ"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:18
+msgid "The Bluetooth address of your heartrate-monitor"
+msgstr "心拍数モニターの Bluetooth アドレス"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:19
+msgid "The active map-repository"
+msgstr "アクティブな地図リポジトリ"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:20
+msgid "The directory into which track-files are written"
+msgstr "トラックファイルを保存するディレクトリ"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:21
+msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
+msgstr "写真のタイムスタンプをこのタイムゾーン (UTC=13) のものとみなす"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:22
+msgid "Use the heartrate-monitor specified in hrm_bt_addr"
+msgstr "hrm_bt_addr で指定された心拍数モニターを利用"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:23
+msgid "Vertical viewport-coordinate"
+msgstr "ビューポイントの垂直座標"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:24
+msgid "Viewport zoom-level"
+msgstr "ビューポートのズームレベル"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:25
+msgid "`My position', latitude"
+msgstr "自分の位置情報: 緯度"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:26
+msgid "`My position', longitude"
+msgstr "自分の位置情報: 経度"
+
+#: ../data/foxtrotgps.glade.h:1
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+"\n"
+"GPSD ホストの IP を設定します\n"
+
+#: ../data/foxtrotgps.glade.h:4
+msgid "  +00:00h"
+msgstr "  +00:00h"
+
+#: ../data/foxtrotgps.glade.h:5
+msgid "  0 seconds"
+msgstr "  0 秒"
+
+#: ../data/foxtrotgps.glade.h:6
+msgid " GPSD "
+msgstr " GPSD "
+
+#: ../data/foxtrotgps.glade.h:7
+msgid " Lon: "
+msgstr " 緯度: "
+
+#: ../data/foxtrotgps.glade.h:8
+msgid " Port:"
+msgstr " ポート: "
+
+#: ../data/foxtrotgps.glade.h:9
+msgid "+ 1 zoom level"
+msgstr "+ 1 ズームレベル"
+
+#: ../data/foxtrotgps.glade.h:10
+msgid "+ 2 zoom levels"
+msgstr "+ 2 ズームレベル"
+
+#: ../data/foxtrotgps.glade.h:11
+msgid "+ 3 zoom levels"
+msgstr "+ 3 ズームレベル"
+
+#: ../data/foxtrotgps.glade.h:12
+msgid "+ 4 zoom levels (~25MB)"
+msgstr "+ 4 ズームレベル (〜25MB)"
+
+#: ../data/foxtrotgps.glade.h:13
+msgid "+ 5 zoom levels (~100MB)"
+msgstr "+ 5 ズームレベル (〜100MB)"
+
+#: ../data/foxtrotgps.glade.h:14
+msgid "+ 6 zoom levels (~400MB)"
+msgstr "+ 6 ズームレベル (〜400MB)"
+
+#: ../data/foxtrotgps.glade.h:15
+msgid "-"
+msgstr "-"
+
+#: ../data/foxtrotgps.glade.h:16
+msgid ""
+"- please choose -\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places"
+msgstr ""
+"- 選択してください -\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places"
+
+#: ../data/foxtrotgps.glade.h:31
+msgid "--"
+msgstr "--"
+
+#: ../data/foxtrotgps.glade.h:32
+msgid ""
+"-- Show All --\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places"
+msgstr ""
+"- すべて表示 -\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places"
+
+#: ../data/foxtrotgps.glade.h:47
+msgid ""
+"-12:00\n"
+"-11:00\n"
+"-10:00\n"
+"-09:00\n"
+"-08:00\n"
+"-07:00\n"
+"-06:00\n"
+"-05:00\n"
+"-04:00\n"
+"-03:00\n"
+"-02:00\n"
+"-01:00\n"
+"+00:00\n"
+"+01:00\n"
+"+02:00\n"
+"+03:00\n"
+"+04:00\n"
+"+05:00\n"
+"+06:00\n"
+"+07:00\n"
+"+08:00\n"
+"+09:00\n"
+"+10:00\n"
+"+11:00\n"
+"+12:00"
+msgstr ""
+"-12:00\n"
+"-11:00\n"
+"-10:00\n"
+"-09:00\n"
+"-08:00\n"
+"-07:00\n"
+"-06:00\n"
+"-05:00\n"
+"-04:00\n"
+"-03:00\n"
+"-02:00\n"
+"-01:00\n"
+"+00:00\n"
+"+01:00\n"
+"+02:00\n"
+"+03:00\n"
+"+04:00\n"
+"+05:00\n"
+"+06:00\n"
+"+07:00\n"
+"+08:00\n"
+"+09:00\n"
+"+10:00\n"
+"+11:00\n"
+"+12:00"
+
+#: ../data/foxtrotgps.glade.h:72
+msgid "0"
+msgstr "0"
+
+#: ../data/foxtrotgps.glade.h:73
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#: ../data/foxtrotgps.glade.h:74
+msgid "2947"
+msgstr "2947"
+
+#: ../data/foxtrotgps.glade.h:75
+msgid "5"
+msgstr "5"
+
+#: ../data/foxtrotgps.glade.h:76
+msgid "<b>-----</b>"
+msgstr "<b>-----</b>"
+
+#: ../data/foxtrotgps.glade.h:77
+msgid "<b>-</b>"
+msgstr "<b>-</b>"
+
+#: ../data/foxtrotgps.glade.h:78
+msgid "<b>1. Add Track</b>"
+msgstr "<b>1. トラックの追加</b>"
+
+#: ../data/foxtrotgps.glade.h:79
+msgid "<b>2. Add Photos</b>"
+msgstr "<b>2. 写真の追加</b>"
+
+#: ../data/foxtrotgps.glade.h:80
+msgid "<b>3. Adjust Time</b>"
+msgstr "<b>3. 時間の設定</b>"
+
+#: ../data/foxtrotgps.glade.h:81
+msgid "<b>Auto Download</b>"
+msgstr "<b>自動ダウンロード</b>"
+
+#: ../data/foxtrotgps.glade.h:82
+msgid "<b>Cache Dir</b>"
+msgstr "<b>キャッシュディレクトリ</b>"
+
+#: ../data/foxtrotgps.glade.h:83
+msgid "<b>Camera:</b> "
+msgstr "<b>カメラ:</b> "
+
+#: ../data/foxtrotgps.glade.h:84
+msgid "<b>Choose track to open (.log / .gpx)</b>"
+msgstr "<b>開くトラックを選択します (.log / .gpx)</b>"
+
+#: ../data/foxtrotgps.glade.h:85
+msgid "<b>Correction:</b> "
+msgstr "<b>補正:</b> "
+
+#: ../data/foxtrotgps.glade.h:86
+msgid "<b>End</b>"
+msgstr "<b>目的地</b>"
+
+#: ../data/foxtrotgps.glade.h:87
+msgid "<b>GPS Data</b>"
+msgstr "<b>GPS データ</b>"
+
+#: ../data/foxtrotgps.glade.h:88
+msgid "<b>GPS:</b> "
+msgstr "<b>GPS:</b> "
+
+#: ../data/foxtrotgps.glade.h:89
+msgid "<b>GPSD</b>"
+msgstr "<b>GPSD</b>"
+
+#: ../data/foxtrotgps.glade.h:90
+msgid "<b>Geocoding your photos</b>"
+msgstr "<b>写真に位置情報を追加</b>"
+
+#: ../data/foxtrotgps.glade.h:91
+msgid "<b>Heart Rate Monitor</b>"
+msgstr "<b>心拍数モニター</b>"
+
+#: ../data/foxtrotgps.glade.h:92
+msgid "<b>Map Download</b>"
+msgstr "<b>地図のダウンロード</b>"
+
+#: ../data/foxtrotgps.glade.h:93
+msgid "<b>Map Types</b>"
+msgstr "<b>地図のタイプ</b>"
+
+#: ../data/foxtrotgps.glade.h:94
+msgid "<b>Me</b>"
+msgstr "<b>個人情報</b>"
+
+#: ../data/foxtrotgps.glade.h:95
+msgid "<b>Name for the new Repository</b>"
+msgstr "新規リポジトリの名前"
+
+#: ../data/foxtrotgps.glade.h:96
+msgid "<b>Position Sharing</b>"
+msgstr "<b>位置情報の共有</b>"
+
+#: ../data/foxtrotgps.glade.h:97
+msgid "<b>Repository Name</b>"
+msgstr "<b>リポジトリの名前</b>"
+
+#: ../data/foxtrotgps.glade.h:98
+msgid "<b>Service</b>"
+msgstr "<b>サービス</b>"
+
+#: ../data/foxtrotgps.glade.h:99
+msgid "<b>Sharing Mode</b>"
+msgstr "<b>共有モード</b>"
+
+#: ../data/foxtrotgps.glade.h:100
+msgid "<b>Start</b>"
+msgstr "<b>出発地</b>"
+
+#: ../data/foxtrotgps.glade.h:101
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr "<b>GPS 照合の出力:</b>"
+
+#: ../data/foxtrotgps.glade.h:102
+msgid "<b>Timezone:</b> "
+msgstr "<b>タイムゾーン:</b> \""
+
+#: ../data/foxtrotgps.glade.h:103
+msgid "<b>URI</b>"
+msgstr "<b>URI</b>"
+
+#: ../data/foxtrotgps.glade.h:104
+msgid "<b>Units</b>"
+msgstr "<b>単位</b>"
+
+#: ../data/foxtrotgps.glade.h:105
+msgid "<b>no GPS found</b>"
+msgstr "<b>GPS が見つかりません</b>"
+
+#: ../data/foxtrotgps.glade.h:106
+msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
+msgstr "<big><b>設定</b></big>   <small>[4/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:107
+msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
+msgstr "<big><b>フレンド</b></big>   <small>[2/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:108
+msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
+msgstr "<big><b>トラック</b></big>   <small>[3/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:109
+msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
+msgstr "<big><b>移動情報</b></big>   <small>[1/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:110
+msgid "<i><b>Connecting...</b></i>"
+msgstr "<i><b>接続中...</b></i>"
+
+#: ../data/foxtrotgps.glade.h:111
+msgid "<i>Altitude:</i>"
+msgstr "<i>標高:</i>"
+
+#: ../data/foxtrotgps.glade.h:112
+msgid ""
+"<i>Insert Start and End:</i>\n"
+"<small>(experimental feature)</small>"
+msgstr ""
+"<i>出発地と目的地を指定してください</i>\n"
+"<small>(試験的機能)</small>"
+
+#: ../data/foxtrotgps.glade.h:114
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr "<i>緯度と経度:</i>"
+
+#: ../data/foxtrotgps.glade.h:115
+msgid "<i>No Messages</i>"
+msgstr "<i>メッセージはありませ</i>"
+
+#: ../data/foxtrotgps.glade.h:116
+msgid "<i>Speed and Distance:</i>"
+msgstr "<i>速度と距離:</i>"
+
+#: ../data/foxtrotgps.glade.h:117
+msgid "<i>What are you up to?</i>"
+msgstr "<i>今、何をしていますか?</i>"
+
+#: ../data/foxtrotgps.glade.h:118
+msgid "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"red\" weight=\"bold\">-</span>"
+
+#: ../data/foxtrotgps.glade.h:119
+msgid "<span font_desc='40'> -- </span>"
+msgstr "<span font_desc='40'> -- </span>"
+
+#: ../data/foxtrotgps.glade.h:120
+msgid "Activate Heartrate Monitor"
+msgstr "心拍数モニターを有効化"
+
+#: ../data/foxtrotgps.glade.h:121
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+"足りない地図をキャッシュに自動ダウン\n"
+"ロードするかどうかを設定します"
+
+#: ../data/foxtrotgps.glade.h:123
+msgid "Add POI"
+msgstr "POI の追加"
+
+#: ../data/foxtrotgps.glade.h:124
+msgid "All fields must be filled in"
+msgstr "すべての入力欄は必須項目です"
+
+#: ../data/foxtrotgps.glade.h:125
+msgid "Altitude"
+msgstr "標高"
+
+#: ../data/foxtrotgps.glade.h:126
+msgid "Auto download map tiles"
+msgstr "地図タイルの自動ダウンロード"
+
+#: ../data/foxtrotgps.glade.h:127
+msgid "Autocenter On"
+msgstr "自動センター機能を有効化します"
+
+#: ../data/foxtrotgps.glade.h:128
+msgid "Average"
+msgstr "平均"
+
+#: ../data/foxtrotgps.glade.h:129
+msgid "Big"
+msgstr "大"
+
+#: ../data/foxtrotgps.glade.h:130
+msgid "Bluetooth Address: "
+msgstr "Bluetooth アドレス: "
+
+#: ../data/foxtrotgps.glade.h:131
+msgid "Category:"
+msgstr "カテゴリー:"
+
+#: ../data/foxtrotgps.glade.h:132
+msgid "Change GPSD"
+msgstr "GPSD の変更"
+
+#: ../data/foxtrotgps.glade.h:133
+msgid "Clear"
+msgstr "消去"
+
+#: ../data/foxtrotgps.glade.h:134
+msgid "Close"
+msgstr "閉じる"
+
+#: ../data/foxtrotgps.glade.h:135
+msgid "Close Info Area"
+msgstr "情報タブを閉じる"
+
+#: ../data/foxtrotgps.glade.h:136
+msgid "Configure"
+msgstr "設定"
+
+#: ../data/foxtrotgps.glade.h:137
+msgid "Coordinates <b><i>clicked</i></b> on the map:"
+msgstr "地図上で<b><i>クリックされた</i></b>位置:"
+
+#: ../data/foxtrotgps.glade.h:138
+msgid "Correction:"
+msgstr "補正:"
+
+#: ../data/foxtrotgps.glade.h:139
+msgid "Current Map:"
+msgstr "現在の地図:"
+
+#: ../data/foxtrotgps.glade.h:140
+msgid ""
+"Decide whom you see and \n"
+"who can see you:"
+msgstr ""
+"誰の位置情報を取得し、誰に位置\n"
+"情報を提供するかを指定します"
+
+#: ../data/foxtrotgps.glade.h:142
+msgid "Delete"
+msgstr "削除"
+
+#: ../data/foxtrotgps.glade.h:143
+msgid "Delete POI?"
+msgstr "POI を削除しますか?"
+
+#: ../data/foxtrotgps.glade.h:144
+msgid "Description:"
+msgstr "説明:"
+
+#: ../data/foxtrotgps.glade.h:145
+msgid "Directory in which the tracks should be written:"
+msgstr "トラックを保存するディレクトリ:"
+
+#: ../data/foxtrotgps.glade.h:146
+msgid ""
+"Distance to\n"
+"next point"
+msgstr ""
+"次のポイント\n"
+"までの距離"
+
+#: ../data/foxtrotgps.glade.h:148
+msgid ""
+"Do you really want to\n"
+"delete this Point of Interest?"
+msgstr ""
+"本当にこのポイントを\n"
+"削除してよろしいですか?"
+
+#: ../data/foxtrotgps.glade.h:150
+msgid "Download maps of currently visible area:"
+msgstr "現在の表示領域の地図をダウンロード"
+
+#: ../data/foxtrotgps.glade.h:151
+msgid "Edit"
+msgstr "編集"
+
+#: ../data/foxtrotgps.glade.h:152
+msgid "Edit POI"
+msgstr "POI の編集"
+
+#: ../data/foxtrotgps.glade.h:153
+msgid "Edit Repository"
+msgstr "リポジトリの編集"
+
+#: ../data/foxtrotgps.glade.h:154
+msgid "Edit..."
+msgstr "編集..."
+
+#: ../data/foxtrotgps.glade.h:155
+msgid "Email"
+msgstr "電子メール"
+
+#: ../data/foxtrotgps.glade.h:156
+msgid "Enable Live Tracking"
+msgstr "ライブトラッキングを有効化"
+
+#: ../data/foxtrotgps.glade.h:157
+msgid "Enable Track Logging"
+msgstr "トラックの記録を有効化"
+
+#: ../data/foxtrotgps.glade.h:158
+msgid ""
+"Enable position sharing and\n"
+"messaging with your friends"
+msgstr ""
+"位置情報の共有とメッセージの\n"
+"送受信を有効化します"
+
+#: ../data/foxtrotgps.glade.h:160
+msgid "Friend Info"
+msgstr "フレンド情報"
+
+#: ../data/foxtrotgps.glade.h:161
+msgid "Fullscreen (F11 or Space)"
+msgstr "フルスクリーン表示します (F11 かスペースキー)"
+
+#: ../data/foxtrotgps.glade.h:162
+msgid "GPS"
+msgstr "GPS"
+
+#: ../data/foxtrotgps.glade.h:163
+msgid "GPS Info"
+msgstr "GPS 情報"
+
+#: ../data/foxtrotgps.glade.h:164
+msgid "GPS Time"
+msgstr "GPS 時間"
+
+#: ../data/foxtrotgps.glade.h:165
+msgid "Geo Photo"
+msgstr "位置情報付き写真"
+
+#: ../data/foxtrotgps.glade.h:166
+msgid "GeoPhoto"
+msgstr "位置情報付き写真"
+
+#: ../data/foxtrotgps.glade.h:167
+msgid "Geocode Result"
+msgstr "位置情報照合の結果"
+
+#: ../data/foxtrotgps.glade.h:168
+msgid "Geocode your photos by correlating them with a gps track.\n"
+msgstr "GPS トラック情報と照らし合わせて写真に位置情報を追加します。\n"
+
+#: ../data/foxtrotgps.glade.h:170
+msgid "Get Route"
+msgstr "ルートの取得"
+
+#: ../data/foxtrotgps.glade.h:172
+msgid "Go to Next Page"
+msgstr "次のページ"
+
+#: ../data/foxtrotgps.glade.h:173
+msgid "Go to Previous Page"
+msgstr "前のページ"
+
+#: ../data/foxtrotgps.glade.h:174
+msgid "Heading"
+msgstr "方角"
+
+#: ../data/foxtrotgps.glade.h:175
+msgid "Heart"
+msgstr "心拍数"
+
+#: ../data/foxtrotgps.glade.h:176
+msgid "Hide Messages"
+msgstr "メッセージを隠す"
+
+#: ../data/foxtrotgps.glade.h:177
+msgid "Host:"
+msgstr "ホスト: "
+
+#: ../data/foxtrotgps.glade.h:178
+msgid "Image Data"
+msgstr "画像の日付"
+
+#: ../data/foxtrotgps.glade.h:179
+msgid "JohnDoe"
+msgstr "JohnDoe"
+
+#: ../data/foxtrotgps.glade.h:180
+msgid "Lat - Lon"
+msgstr "緯度 - 経度"
+
+#: ../data/foxtrotgps.glade.h:181
+msgid "Lat: "
+msgstr "緯度: "
+
+#: ../data/foxtrotgps.glade.h:182
+msgid "Load"
+msgstr "ロード"
+
+#: ../data/foxtrotgps.glade.h:183
+msgid "Load track..."
+msgstr "トラックのロード..."
+
+#: ../data/foxtrotgps.glade.h:184
+msgid "Map DL"
+msgstr "地図 DL"
+
+#: ../data/foxtrotgps.glade.h:185
+msgid "Max"
+msgstr "最大"
+
+#: ../data/foxtrotgps.glade.h:186
+msgid "Message"
+msgstr "メッセージ"
+
+#: ../data/foxtrotgps.glade.h:187
+msgid "Name - Keywords / Tags:"
+msgstr "名前 - キーワード / タグ:"
+
+#: ../data/foxtrotgps.glade.h:188
+msgid "New Repository"
+msgstr "新規リポジトリ"
+
+#: ../data/foxtrotgps.glade.h:189
+msgid "New..."
+msgstr "新規..."
+
+#: ../data/foxtrotgps.glade.h:190
+msgid "Next map repo"
+msgstr "次の地図リポジトリを選択します"
+
+#: ../data/foxtrotgps.glade.h:191
+msgid "Nickname"
+msgstr "ニックネーム"
+
+#: ../data/foxtrotgps.glade.h:192
+msgid "POI"
+msgstr "POI"
+
+#: ../data/foxtrotgps.glade.h:193
+msgid "POIs"
+msgstr "POI"
+
+#: ../data/foxtrotgps.glade.h:194
+msgid "Password"
+msgstr "パスワード"
+
+#: ../data/foxtrotgps.glade.h:195
+msgid "Photo Correlate"
+msgstr "写真の照合"
+
+#: ../data/foxtrotgps.glade.h:196
+msgid "Pick"
+msgstr "取得"
+
+#: ../data/foxtrotgps.glade.h:197
+msgid "Pick End on Map"
+msgstr "地図から目的地を取得"
+
+#: ../data/foxtrotgps.glade.h:198
+msgid "Pick Start on Map"
+msgstr "地図から出発地を取得"
+
+#: ../data/foxtrotgps.glade.h:199
+msgid "Previous map repo"
+msgstr "前の地図リポジトリを選択します"
+
+#: ../data/foxtrotgps.glade.h:200
+msgid "Re-download cached tiles"
+msgstr "キャッシュされた地図を再ダウンロード"
+
+#: ../data/foxtrotgps.glade.h:201
+msgid "Register!"
+msgstr "登録"
+
+#: ../data/foxtrotgps.glade.h:202
+msgid "Reset"
+msgstr "リセット"
+
+#: ../data/foxtrotgps.glade.h:203
+msgid "Satellites"
+msgstr "衛星"
+
+#: ../data/foxtrotgps.glade.h:204
+msgid "Send Message to:"
+msgstr "メッセージの送信先:"
+
+#: ../data/foxtrotgps.glade.h:205
+msgid ""
+"Set point as\n"
+"my position"
+msgstr ""
+"自分の位置情報\n"
+"として設定する"
+
+#: ../data/foxtrotgps.glade.h:207
+msgid "Share!"
+msgstr "共有"
+
+#: ../data/foxtrotgps.glade.h:208
+msgid "Show Info"
+msgstr "情報を表示します"
+
+#: ../data/foxtrotgps.glade.h:209
+msgid "Show POIs"
+msgstr "POI の表示"
+
+#: ../data/foxtrotgps.glade.h:210
+msgid "Show password"
+msgstr "パスワードの表示"
+
+#: ../data/foxtrotgps.glade.h:211
+msgid ""
+"Simply choose any nickname and password.\n"
+"\n"
+"Before first use register them by clicking on the button below."
+msgstr ""
+"自由にニックネームとパスワードを決めてください。\n"
+"\n"
+"初めて利用する際は、登録のために以下のボタンをクリックしてください。"
+
+#: ../data/foxtrotgps.glade.h:214
+msgid "Speed"
+msgstr "速度"
+
+#: ../data/foxtrotgps.glade.h:215
+msgid "Split"
+msgstr "スプリット"
+
+#: ../data/foxtrotgps.glade.h:216
+msgid "Stop"
+msgstr "停止"
+
+#: ../data/foxtrotgps.glade.h:217
+msgid "Street,City,Country"
+msgstr "町、都市、国"
+
+#: ../data/foxtrotgps.glade.h:218
+msgid "Time"
+msgstr "時間"
+
+#: ../data/foxtrotgps.glade.h:219
+msgid "Timezone:"
+msgstr "タイムゾーン:"
+
+#: ../data/foxtrotgps.glade.h:220
+msgid "Trackdir Config"
+msgstr "トラックディレクトリの設定"
+
+#: ../data/foxtrotgps.glade.h:221
+msgid "Trip"
+msgstr "移動距離"
+
+#: ../data/foxtrotgps.glade.h:222
+msgid "Update interval  "
+msgstr "更新間隔: "
+
+#: ../data/foxtrotgps.glade.h:223
+msgid "Upload"
+msgstr "アップロード"
+
+#: ../data/foxtrotgps.glade.h:224
+msgid "Use current GPS position instead"
+msgstr "現在の GPS 位置情報を代わりに用いる"
+
+#: ../data/foxtrotgps.glade.h:225
+msgid "View GPS Photo"
+msgstr "GPS 写真を閲覧"
+
+#: ../data/foxtrotgps.glade.h:227
+msgid "Zoom in"
+msgstr "拡大します"
+
+#: ../data/foxtrotgps.glade.h:228
+msgid "Zoom out"
+msgstr "縮小します"
+
+#: ../data/foxtrotgps.glade.h:229
+msgid "add POI"
+msgstr "POI の追加"
+
+#: ../data/foxtrotgps.glade.h:231
+#, no-c-format
+msgid "add photos to the %s database"
+msgstr "%s データベースに写真を追加"
+
+#: ../data/foxtrotgps.glade.h:232
+msgid "budget"
+msgstr "安め"
+
+#: ../data/foxtrotgps.glade.h:233
+msgid "d m's.s\""
+msgstr "d m's.s\""
+
+#: ../data/foxtrotgps.glade.h:234
+msgid "d m.m'"
+msgstr "d m.m'"
+
+#: ../data/foxtrotgps.glade.h:235
+msgid "d.dd"
+msgstr "d.dd"
+
+#: ../data/foxtrotgps.glade.h:236
+msgid "exclusive"
+msgstr "高め"
+
+#: ../data/foxtrotgps.glade.h:237
+msgid "extended opening hours"
+msgstr "営業時間の延長"
+
+#: ../data/foxtrotgps.glade.h:238
+msgid "feet"
+msgstr "フィート"
+
+#: ../data/foxtrotgps.glade.h:239
+msgid "fewer/larger details"
+msgstr "少ないが大きいタイル"
+
+#: ../data/foxtrotgps.glade.h:240
+msgid "foobar"
+msgstr "foobar"
+
+#: ../data/foxtrotgps.glade.h:241
+msgid "friend mode"
+msgstr "フレンドモード"
+
+#: ../data/foxtrotgps.glade.h:242
+msgid "fun mode"
+msgstr "ファンモード"
+
+#: ../data/foxtrotgps.glade.h:243
+msgid "geocode"
+msgstr "位置情報の追加"
+
+#: ../data/foxtrotgps.glade.h:244
+msgid "get route"
+msgstr "ルートの取得"
+
+#: ../data/foxtrotgps.glade.h:245
+msgid "imperial"
+msgstr "ヤード"
+
+#: ../data/foxtrotgps.glade.h:246
+msgid "just idle..."
+msgstr "休憩中..."
+
+#: ../data/foxtrotgps.glade.h:247
+msgid "map detail"
+msgstr "地図の分割度"
+
+#: ../data/foxtrotgps.glade.h:248
+msgid "map download"
+msgstr "地図のダウンロード"
+
+#: ../data/foxtrotgps.glade.h:249
+msgid "medium"
+msgstr "普通"
+
+#: ../data/foxtrotgps.glade.h:250
+msgid "meters"
+msgstr "メートル"
+
+#: ../data/foxtrotgps.glade.h:251
+msgid "metric"
+msgstr "メートル法"
+
+#: ../data/foxtrotgps.glade.h:252
+msgid "minutes"
+msgstr "分"
+
+#: ../data/foxtrotgps.glade.h:253
+msgid "more/smaller details"
+msgstr "多いが小さいタイル"
+
+#: ../data/foxtrotgps.glade.h:254
+msgid "my position"
+msgstr "自分の位置情報"
+
+#: ../data/foxtrotgps.glade.h:255
+msgid "nautical"
+msgstr "海里"
+
+#: ../data/foxtrotgps.glade.h:256
+msgid "personal"
+msgstr "プライベート"
+
+#: ../data/foxtrotgps.glade.h:257
+msgid "photos"
+msgstr "写真"
+
+#: ../data/foxtrotgps.glade.h:258
+msgid "private mode"
+msgstr "プライベートモード"
+
+#: ../data/foxtrotgps.glade.h:259
+msgid "public"
+msgstr "公開"
+
+#: ../data/foxtrotgps.glade.h:260
+msgid "s   "
+msgstr "秒   "
+
+#: ../data/foxtrotgps.glade.h:261
+msgid "select POIs"
+msgstr "POI の選択"
+
+#: ../data/foxtrotgps.glade.h:262
+msgid "set"
+msgstr "設定"
+
+#: ../data/foxtrotgps.glade.h:263
+msgid "set WP"
+msgstr "ウェイポイントを設定"
+
+#: ../data/foxtrotgps.glade.h:264
+msgid "show POIs"
+msgstr "POI を表示"
+
+#: ../data/foxtrotgps.glade.h:265
+msgid "show friends"
+msgstr "フレンドを表示"
+
+#: ../data/foxtrotgps.glade.h:266
+msgid "show photos"
+msgstr "写真を表示"
+
+#: ../data/foxtrotgps.glade.h:267
+msgid "this point"
+msgstr "このポイント"
+
+#: ../data/foxtrotgps.glade.h:268
+msgid "unset"
+msgstr "解除"
+
+#: ../data/foxtrotgps.glade.h:269
+msgid "unset WP"
+msgstr "ウェイポイントを解除"
+
+#: ../data/foxtrotgps.glade.h:270
+msgid "ways & routes"
+msgstr "ウェイ & ルート"
+
+#: ../data/foxtrotgps.glade.h:271
+msgid "xyz instead of zxy"
+msgstr " zxy の代わりに xyz を用いる"
