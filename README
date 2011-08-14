@@ -22,6 +22,11 @@ can be built or installed:
     * libxml2 <http://xmlsoft.org/>
     * libgps >= 2.90 <http://gpsd.berlios.de/>
 
+In order to interface with the Zephyr HxM heartrate-monitor,
+the following must be installed before FoxtrotGPS is built or installed:
+
+    * BlueZ <http://www.bluez.org/>
+
 In order to make use of the photo-geotagging features in FoxtrotGPS,
 the following additional packages must also be installed for use at
 run-time:
