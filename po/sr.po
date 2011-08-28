@@ -1,0 +1,1150 @@
+# FoxtrotGPS User Interface Translation
+# Copyright (C) 2011 Branko Majic
+# This file is distributed under the same license as the FoxtrotGPS package.
+# Branko Majic <branko@majic.rs>, 2011.
+msgid ""
+msgstr ""
+"Project-Id-Version: foxtrotgps-1.0.1\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2011-08-27 20:46+0200\n"
+"PO-Revision-Date: 2011-08-27 21:57+0200\n"
+"Last-Translator: Branko Majic <branko@majic.rs>\n"
+"Language-Team: Serbian Team\n"
+"Language: sr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"X-Generator: Virtaal 0.7.0\n"
+
+#: ../src/support.c:97 ../src/support.c:121
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Не могу да нађем датотеку слике: %s"
+
+#. Developers may run into this if they're naively
+#. trying to run from the build-tree without having
+#. specifically configured the build to allow that or
+#. having passed a "--gui=..." option to the program,
+#. so we need to actually catch this error and output
+#. an informative message.
+#.
+#. This is, however, not an error that end users should face;
+#. if they do, then someone upstream from them messed up--
+#. either `make install' worked only half-way, or a packager
+#. left something critical out of the package. In either case,
+#. we want to fail in a way that indicates to the user
+#. that something is really wrong and they should report
+#. a bug.
+#.
+#: ../src/main.c:110
+#, c-format
+msgid ""
+"%s could not load its user interface; %s does not not appear to be properly "
+"installed."
+msgstr ""
+"%s није успео да учита кориснички интерфејс; %s вероватно није инсталиран "
+"како треба."
+
+#: ../src/friends.c:597
+msgid "Msg"
+msgstr "Порука"
+
+#: ../src/friends.c:605 ../src/friends.c:972 ../data/foxtrotgps.glade.h:171
+msgid "Go To"
+msgstr "Иди до"
+
+#: ../src/friends.c:964
+msgid "Reply"
+msgstr "Одговори"
+
+#: ../src/geo_photos.c:702 ../data/foxtrotgps.glade.h:226
+msgid "Working...."
+msgstr "Радим...."
+
+#: ../data/foxtrotgps.desktop.in.h:1
+msgid "Display map and GPS position"
+msgstr "Прикажи мапу и ГПС положај"
+
+#: ../data/foxtrotgps.desktop.in.h:2
+msgid "FoxtrotGPS"
+msgstr "ФокстротГПС"
+
+#: ../data/foxtrotgps.desktop.in.h:3
+msgid "GPS and Map"
+msgstr "ГПС и мапа"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:1
+msgid "Altitude unit"
+msgstr "Јединица за висину"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:2
+msgid "Automatically download map-tiles as needed"
+msgstr "Аутоматски скини потребне делове мапе"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:3
+msgid "Avoid re-downloading cached tiles"
+msgstr "Избегавај поновно скидање похрањених делова мапе"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:4
+msgid "Detail scale-factor"
+msgstr "Величина детаља"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:5
+msgid "Friend-finder password"
+msgstr "Лозинка за налажење пријатеља"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:6
+msgid "Friend-finder update interval, in minutes"
+msgstr "Интервал освежавања налажења пријатеља, у минутима"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:7
+msgid "Friend-finder username"
+msgstr "Корисничко име за налажење пријатеља"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:8
+msgid "GPSD host"
+msgstr "ГПС демон"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:9
+msgid "GPSD port"
+msgstr "ГПС порт"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:10
+msgid "Horizontal viewport-coordinate"
+msgstr "Хоризонтална координата приказа"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:11
+msgid "Latitude/longitude unit"
+msgstr "Јединица за географску ширину/дужину"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:12
+msgid "Log tracks to a local file"
+msgstr "Записуј путању у локални фајл"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:13
+msgid "Map-repository definitions"
+msgstr "Дефиниције складишта мапа"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:14
+msgid ""
+"Number of seconds by which photo timestamps must be corrected for geocoding"
+msgstr ""
+"Број секунди за које је потребно изменити временску ознаку фотографија за "
+"потребе геокодирања"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:15
+msgid "Publish your location & show others' locations"
+msgstr "Шаљи сопствени положај и прикажи туђе положаје"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:16
+msgid "Speed unit"
+msgstr "Јединица за брзину"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:17
+msgid "Status-message to publish in the friend-finder"
+msgstr "Статусна порука која ће бити приказана при налажењу пријатеља"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:18
+msgid "The Bluetooth address of your heartrate-monitor"
+msgstr "Адреса вашег бежичног уређаја за надгледање срца"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:19
+msgid "The active map-repository"
+msgstr "Тренутно изабрано складиште мапа"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:20
+msgid "The directory into which track-files are written"
+msgstr "Директоријум у који се уписују путање"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:21
+msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
+msgstr ""
+"Третирај временске назнаке фотографија у односу на ову временску зону "
+"(UTC=13)"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:22
+msgid "Use the heartrate-monitor specified in hrm_bt_addr"
+msgstr "Користи уређај за праћење откуцаја срца наведен у hrm_bt_addr"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:23
+msgid "Vertical viewport-coordinate"
+msgstr "Вертикална координата приказа"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:24
+msgid "Viewport zoom-level"
+msgstr "Увећање приказа"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:25
+msgid "`My position', latitude"
+msgstr "'Мој положај', географска ширина"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:26
+msgid "`My position', longitude"
+msgstr "'Мој положак', географска дужина"
+
+#: ../data/foxtrotgps.glade.h:1
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+"\n"
+"Постави ИП адресу ГПС демона\n"
+
+#: ../data/foxtrotgps.glade.h:4
+msgid "  +00:00h"
+msgstr "  +00:00ч"
+
+#: ../data/foxtrotgps.glade.h:5
+msgid "  0 seconds"
+msgstr "  0 секунди"
+
+#: ../data/foxtrotgps.glade.h:6
+msgid " GPSD "
+msgstr " ГПС демон "
+
+#: ../data/foxtrotgps.glade.h:7
+msgid " Lon: "
+msgstr " Дужина: "
+
+#: ../data/foxtrotgps.glade.h:8
+msgid " Port:"
+msgstr " Порт:"
+
+#: ../data/foxtrotgps.glade.h:9
+msgid "+ 1 zoom level"
+msgstr "+ 1 увећање"
+
+#: ../data/foxtrotgps.glade.h:10
+msgid "+ 2 zoom levels"
+msgstr "+ 2 увећања"
+
+#: ../data/foxtrotgps.glade.h:11
+msgid "+ 3 zoom levels"
+msgstr "+ 3 увећања"
+
+#: ../data/foxtrotgps.glade.h:12
+msgid "+ 4 zoom levels (~25MB)"
+msgstr "+ 4 увећања (~25МБ)"
+
+#: ../data/foxtrotgps.glade.h:13
+msgid "+ 5 zoom levels (~100MB)"
+msgstr "+ 5 увећања (~100МБ)"
+
+#: ../data/foxtrotgps.glade.h:14
+msgid "+ 6 zoom levels (~400MB)"
+msgstr "+ 6 увећања (~400МБ)"
+
+#: ../data/foxtrotgps.glade.h:15
+msgid "-"
+msgstr "-"
+
+#: ../data/foxtrotgps.glade.h:16
+msgid ""
+"- please choose -\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places"
+msgstr ""
+"- молим вас да одаберете -\n"
+"Смештај\n"
+"Посао\n"
+"Кола\n"
+"Култура\n"
+"Медицина\n"
+"Кафе / крчма / ноћни живот\n"
+"Верски објекат\n"
+"Јавни транспорт\n"
+"Ресторан и храна\n"
+"Услуге\n"
+"Знаменитости и опуштање\n"
+"Куповина\n"
+"Спорт\n"
+"Лична места"
+
+#: ../data/foxtrotgps.glade.h:31
+msgid "--"
+msgstr "--"
+
+#: ../data/foxtrotgps.glade.h:32
+msgid ""
+"-- Show All --\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places"
+msgstr ""
+"-- Прикажи све --\n"
+"Смештај\n"
+"Посао\n"
+"Кола\n"
+"Култура\n"
+"Медицина\n"
+"Кафе / крчма / ноћни живот\n"
+"Верски објекат\n"
+"Јавни транспорт\n"
+"Ресторан и храна\n"
+"Услуге\n"
+"Знаменитости и опуштање\n"
+"Куповина\n"
+"Спорт\n"
+"Лична места"
+
+#: ../data/foxtrotgps.glade.h:47
+msgid ""
+"-12:00\n"
+"-11:00\n"
+"-10:00\n"
+"-09:00\n"
+"-08:00\n"
+"-07:00\n"
+"-06:00\n"
+"-05:00\n"
+"-04:00\n"
+"-03:00\n"
+"-02:00\n"
+"-01:00\n"
+"+00:00\n"
+"+01:00\n"
+"+02:00\n"
+"+03:00\n"
+"+04:00\n"
+"+05:00\n"
+"+06:00\n"
+"+07:00\n"
+"+08:00\n"
+"+09:00\n"
+"+10:00\n"
+"+11:00\n"
+"+12:00"
+msgstr ""
+"-12:00\n"
+"-11:00\n"
+"-10:00\n"
+"-09:00\n"
+"-08:00\n"
+"-07:00\n"
+"-06:00\n"
+"-05:00\n"
+"-04:00\n"
+"-03:00\n"
+"-02:00\n"
+"-01:00\n"
+"+00:00\n"
+"+01:00\n"
+"+02:00\n"
+"+03:00\n"
+"+04:00\n"
+"+05:00\n"
+"+06:00\n"
+"+07:00\n"
+"+08:00\n"
+"+09:00\n"
+"+10:00\n"
+"+11:00\n"
+"+12:00"
+
+#: ../data/foxtrotgps.glade.h:72
+msgid "0"
+msgstr "0"
+
+#: ../data/foxtrotgps.glade.h:73
+msgid "127.0.0.1"
+msgstr "127.0.0.1"
+
+#: ../data/foxtrotgps.glade.h:74
+msgid "2947"
+msgstr "2947"
+
+#: ../data/foxtrotgps.glade.h:75
+msgid "5"
+msgstr "5"
+
+#: ../data/foxtrotgps.glade.h:76
+msgid "<b>-----</b>"
+msgstr "<b>-----</b>"
+
+#: ../data/foxtrotgps.glade.h:77
+msgid "<b>-</b>"
+msgstr "<b>-</b>"
+
+#: ../data/foxtrotgps.glade.h:78
+msgid "<b>1. Add Track</b>"
+msgstr "<b>1. Додај путању</b>"
+
+#: ../data/foxtrotgps.glade.h:79
+msgid "<b>2. Add Photos</b>"
+msgstr "<b>2. Додај фотографије</b>"
+
+#: ../data/foxtrotgps.glade.h:80
+msgid "<b>3. Adjust Time</b>"
+msgstr "<b>3. Подеси време</b>"
+
+#: ../data/foxtrotgps.glade.h:81
+msgid "<b>Auto Download</b>"
+msgstr "<b>Аутоматско скидање</b>"
+
+#: ../data/foxtrotgps.glade.h:82
+msgid "<b>Cache Dir</b>"
+msgstr "<b>Складишни директоријум</b>"
+
+#: ../data/foxtrotgps.glade.h:83
+msgid "<b>Camera:</b> "
+msgstr "<b>Камера:</b> "
+
+#: ../data/foxtrotgps.glade.h:84
+msgid "<b>Choose track to open (.log / .gpx)</b>"
+msgstr "<b>Одаберите путању коју треба отворити (.log / .gpx)</b>"
+
+#: ../data/foxtrotgps.glade.h:85
+msgid "<b>Correction:</b> "
+msgstr "<b>Исправка:</b> "
+
+#: ../data/foxtrotgps.glade.h:86
+msgid "<b>End</b>"
+msgstr "<b>Крај</b>"
+
+#: ../data/foxtrotgps.glade.h:87
+msgid "<b>GPS Data</b>"
+msgstr "<b>ГПС подаци</b>"
+
+#: ../data/foxtrotgps.glade.h:88
+msgid "<b>GPS:</b> "
+msgstr "<b>ГПС:</b> "
+
+#: ../data/foxtrotgps.glade.h:89
+msgid "<b>GPSD</b>"
+msgstr "<b>ГПС демон</b>"
+
+#: ../data/foxtrotgps.glade.h:90
+msgid "<b>Geocoding your photos</b>"
+msgstr "<b>Геокодирање ваших фотографија</b>"
+
+#: ../data/foxtrotgps.glade.h:91
+msgid "<b>Heart Rate Monitor</b>"
+msgstr "<b>Преглед откуцаја срца</b>"
+
+#: ../data/foxtrotgps.glade.h:92
+msgid "<b>Map Download</b>"
+msgstr "<b>Скидање мапа</b>"
+
+#: ../data/foxtrotgps.glade.h:93
+msgid "<b>Map Types</b>"
+msgstr "<b>Типови мапа</b>"
+
+#: ../data/foxtrotgps.glade.h:94
+msgid "<b>Me</b>"
+msgstr "<b>Ја</b>"
+
+#: ../data/foxtrotgps.glade.h:95
+msgid "<b>Name for the new Repository</b>"
+msgstr "<b>Назив новог складишта</b>"
+
+#: ../data/foxtrotgps.glade.h:96
+msgid "<b>Position Sharing</b>"
+msgstr "<b>Дељење положаја</b>"
+
+#: ../data/foxtrotgps.glade.h:97
+msgid "<b>Repository Name</b>"
+msgstr "<b>Назив складишта</b>"
+
+#: ../data/foxtrotgps.glade.h:98
+msgid "<b>Service</b>"
+msgstr "<b>Сервис</b>"
+
+#: ../data/foxtrotgps.glade.h:99
+msgid "<b>Sharing Mode</b>"
+msgstr "<b>Режим дељења</b>"
+
+#: ../data/foxtrotgps.glade.h:100
+msgid "<b>Start</b>"
+msgstr "<b>Почетак</b>"
+
+#: ../data/foxtrotgps.glade.h:101
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr "<b>Излаз ГПС повезивања:</b>"
+
+#: ../data/foxtrotgps.glade.h:102
+msgid "<b>Timezone:</b> "
+msgstr "<b>Временска зона:</b> "
+
+#: ../data/foxtrotgps.glade.h:103
+msgid "<b>URI</b>"
+msgstr "<b>Адреса:</b>"
+
+#: ../data/foxtrotgps.glade.h:104
+msgid "<b>Units</b>"
+msgstr "<b>Јединице</b>"
+
+#: ../data/foxtrotgps.glade.h:105
+msgid "<b>no GPS found</b>"
+msgstr "<b>ГПС није пронађен</b>"
+
+#: ../data/foxtrotgps.glade.h:106
+msgid "<big><b>Configuration</b></big>   <small>[4/4]</small>"
+msgstr "<big><b>Подешавања</b></big>   <small>[4/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:107
+msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
+msgstr "<big><b>Пријатељи</b></big>   <small>[2/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:108
+msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
+msgstr "<big><b>Путање</b></big>   <small>[3/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:109
+msgid "<big><b>Trip Meter</b></big>   <small>[1/4]</small>"
+msgstr "<big><b>Пређена раздаљина</b></big>   <small>[1/4]</small>"
+
+#: ../data/foxtrotgps.glade.h:110
+msgid "<i><b>Connecting...</b></i>"
+msgstr "<i><b>Повезујем се...</b></i>"
+
+#: ../data/foxtrotgps.glade.h:111
+msgid "<i>Altitude:</i>"
+msgstr "<i>Висина:</i>"
+
+#: ../data/foxtrotgps.glade.h:112
+msgid ""
+"<i>Insert Start and End:</i>\n"
+"<small>(experimental feature)</small>"
+msgstr ""
+"<i>Убаците почетак и крај:</i>\n"
+"<small>(експериментална могућност)</small>"
+
+#: ../data/foxtrotgps.glade.h:114
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr "<i>Ширина и дужина:</i>"
+
+#: ../data/foxtrotgps.glade.h:115
+msgid "<i>No Messages</i>"
+msgstr "<i>Нема порука</i>"
+
+#: ../data/foxtrotgps.glade.h:116
+msgid "<i>Speed and Distance:</i>"
+msgstr "<i>Брзина и удаљеност:</i>"
+
+#: ../data/foxtrotgps.glade.h:117
+msgid "<i>What are you up to?</i>"
+msgstr "<i>Шта радиш?</i>"
+
+#: ../data/foxtrotgps.glade.h:118
+msgid "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"red\" weight=\"bold\">-</span>"
+
+#: ../data/foxtrotgps.glade.h:119
+msgid "<span font_desc='40'> -- </span>"
+msgstr "<span font_desc='40'> -- </span>"
+
+#: ../data/foxtrotgps.glade.h:120
+msgid "Activate Heartrate Monitor"
+msgstr "Укључи преглед откуцаја срца"
+
+#: ../data/foxtrotgps.glade.h:121
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+"Укључивање или искључивање аутоматског\n"
+"скидања недостајућих делова мапе у складишни директоријум"
+
+#: ../data/foxtrotgps.glade.h:123
+msgid "Add POI"
+msgstr "Додај ТИ"
+
+#: ../data/foxtrotgps.glade.h:124
+msgid "All fields must be filled in"
+msgstr "Сва поља морају да буду попуњена"
+
+#: ../data/foxtrotgps.glade.h:125
+msgid "Altitude"
+msgstr "Висина"
+
+#: ../data/foxtrotgps.glade.h:126
+msgid "Auto download map tiles"
+msgstr "Аутоматско скидање делова мапе"
+
+#: ../data/foxtrotgps.glade.h:127
+msgid "Autocenter On"
+msgstr "Увек центрирај"
+
+#: ../data/foxtrotgps.glade.h:128
+msgid "Average"
+msgstr "Просек"
+
+#: ../data/foxtrotgps.glade.h:129
+msgid "Big"
+msgstr "Велик"
+
+#: ../data/foxtrotgps.glade.h:130
+msgid "Bluetooth Address: "
+msgstr "Адреса бежичног уређаја: "
+
+#: ../data/foxtrotgps.glade.h:131
+msgid "Category:"
+msgstr "Категорија:"
+
+#: ../data/foxtrotgps.glade.h:132
+msgid "Change GPSD"
+msgstr "Промени ГПС демон"
+
+#: ../data/foxtrotgps.glade.h:133
+msgid "Clear"
+msgstr "Избриши"
+
+#: ../data/foxtrotgps.glade.h:134
+msgid "Close"
+msgstr "Затвори"
+
+#: ../data/foxtrotgps.glade.h:135
+msgid "Close Info Area"
+msgstr "Затвори област са подацима"
+
+#: ../data/foxtrotgps.glade.h:136
+msgid "Configure"
+msgstr "Подеси"
+
+#: ../data/foxtrotgps.glade.h:137
+msgid "Coordinates <b><i>clicked</i></b> on the map:"
+msgstr "Координате <b><i>означене</i></b> на мапи:"
+
+#: ../data/foxtrotgps.glade.h:138
+msgid "Correction:"
+msgstr "Исправка:"
+
+#: ../data/foxtrotgps.glade.h:139
+msgid "Current Map:"
+msgstr "Тренутна мапа:"
+
+#: ../data/foxtrotgps.glade.h:140
+msgid ""
+"Decide whom you see and \n"
+"who can see you:"
+msgstr ""
+"Одлучите кога ви можете да видите и\n"
+"ко вас може да види:"
+
+#: ../data/foxtrotgps.glade.h:142
+msgid "Delete"
+msgstr "Обриши"
+
+#: ../data/foxtrotgps.glade.h:143
+msgid "Delete POI?"
+msgstr "Брисање ТИ?"
+
+#: ../data/foxtrotgps.glade.h:144
+msgid "Description:"
+msgstr "Опис:"
+
+#: ../data/foxtrotgps.glade.h:145
+msgid "Directory in which the tracks should be written:"
+msgstr "Директоријум где се уписују путање:"
+
+#: ../data/foxtrotgps.glade.h:146
+msgid ""
+"Distance to\n"
+"next point"
+msgstr ""
+"Растојање до\n"
+"следеће позиције"
+
+#: ../data/foxtrotgps.glade.h:148
+msgid ""
+"Do you really want to\n"
+"delete this Point of Interest?"
+msgstr ""
+"Да ли заиста желите да\n"
+"обришете ову тачку интереса?"
+
+#: ../data/foxtrotgps.glade.h:150
+msgid "Download maps of currently visible area:"
+msgstr "Скини мапу тренутно видљиве области:"
+
+#: ../data/foxtrotgps.glade.h:151
+msgid "Edit"
+msgstr "Измени"
+
+#: ../data/foxtrotgps.glade.h:152
+msgid "Edit POI"
+msgstr "Измени ТИ"
+
+#: ../data/foxtrotgps.glade.h:153
+msgid "Edit Repository"
+msgstr "Измени репозиторијум"
+
+#: ../data/foxtrotgps.glade.h:154
+msgid "Edit..."
+msgstr "Измени..."
+
+#: ../data/foxtrotgps.glade.h:155
+msgid "Email"
+msgstr "Е-пошта"
+
+#: ../data/foxtrotgps.glade.h:156
+msgid "Enable Live Tracking"
+msgstr "Омогући праћење уживо"
+
+#: ../data/foxtrotgps.glade.h:157
+msgid "Enable Track Logging"
+msgstr "Омогући бележење путање"
+
+#: ../data/foxtrotgps.glade.h:158
+msgid ""
+"Enable position sharing and\n"
+"messaging with your friends"
+msgstr ""
+"Омогући дељење положаја и\n"
+"размену порука са пријатељима"
+
+#: ../data/foxtrotgps.glade.h:160
+msgid "Friend Info"
+msgstr "Подаци о пријатељу"
+
+#: ../data/foxtrotgps.glade.h:161
+msgid "Fullscreen (F11 or Space)"
+msgstr "Пун екран (F11 или бланко)"
+
+#: ../data/foxtrotgps.glade.h:162
+msgid "GPS"
+msgstr "ГПС"
+
+#: ../data/foxtrotgps.glade.h:163
+msgid "GPS Info"
+msgstr "ГПС подаци"
+
+#: ../data/foxtrotgps.glade.h:164
+msgid "GPS Time"
+msgstr "ГПС време"
+
+#: ../data/foxtrotgps.glade.h:165
+msgid "Geo Photo"
+msgstr "Гео фотографија"
+
+#: ../data/foxtrotgps.glade.h:166
+msgid "GeoPhoto"
+msgstr "Геофотографија"
+
+#: ../data/foxtrotgps.glade.h:167
+msgid "Geocode Result"
+msgstr "Резултат геокодирања"
+
+#: ../data/foxtrotgps.glade.h:168
+msgid "Geocode your photos by correlating them with a gps track.\n"
+msgstr "Геокодирајте ваше фотографије повезујући их са ГПС путањом.\n"
+
+#: ../data/foxtrotgps.glade.h:170
+msgid "Get Route"
+msgstr "Добави упутства"
+
+#: ../data/foxtrotgps.glade.h:172
+msgid "Go to Next Page"
+msgstr "Иди на следећу страну"
+
+#: ../data/foxtrotgps.glade.h:173
+msgid "Go to Previous Page"
+msgstr "Иди на претходну страну"
+
+#: ../data/foxtrotgps.glade.h:174
+msgid "Heading"
+msgstr "Правац"
+
+#: ../data/foxtrotgps.glade.h:175
+msgid "Heart"
+msgstr "Срце"
+
+#: ../data/foxtrotgps.glade.h:176
+msgid "Hide Messages"
+msgstr "Сакриј поруке"
+
+#: ../data/foxtrotgps.glade.h:177
+msgid "Host:"
+msgstr "Рачунар:"
+
+#: ../data/foxtrotgps.glade.h:178
+msgid "Image Data"
+msgstr "Подаци о слици"
+
+#: ../data/foxtrotgps.glade.h:179
+msgid "JohnDoe"
+msgstr "НН"
+
+#: ../data/foxtrotgps.glade.h:180
+msgid "Lat - Lon"
+msgstr "Ширина - дужина"
+
+#: ../data/foxtrotgps.glade.h:181
+msgid "Lat: "
+msgstr "Ширина: "
+
+#: ../data/foxtrotgps.glade.h:182
+msgid "Load"
+msgstr "Учитај"
+
+#: ../data/foxtrotgps.glade.h:183
+msgid "Load track..."
+msgstr "Учитај путању..."
+
+#: ../data/foxtrotgps.glade.h:184
+msgid "Map DL"
+msgstr "Скидање мапе"
+
+#: ../data/foxtrotgps.glade.h:185
+msgid "Max"
+msgstr "Највише"
+
+#: ../data/foxtrotgps.glade.h:186
+msgid "Message"
+msgstr "Порука"
+
+#: ../data/foxtrotgps.glade.h:187
+msgid "Name - Keywords / Tags:"
+msgstr "Име - кључне речи / етикете:"
+
+#: ../data/foxtrotgps.glade.h:188
+msgid "New Repository"
+msgstr "Ново складиште"
+
+#: ../data/foxtrotgps.glade.h:189
+msgid "New..."
+msgstr "Ново..."
+
+#: ../data/foxtrotgps.glade.h:190
+msgid "Next map repo"
+msgstr "Следеће складиште мапа"
+
+#: ../data/foxtrotgps.glade.h:191
+msgid "Nickname"
+msgstr "Надимак"
+
+#: ../data/foxtrotgps.glade.h:192
+msgid "POI"
+msgstr "ТИ"
+
+#: ../data/foxtrotgps.glade.h:193
+msgid "POIs"
+msgstr "ТИ"
+
+#: ../data/foxtrotgps.glade.h:194
+msgid "Password"
+msgstr "Лозинка"
+
+#: ../data/foxtrotgps.glade.h:195
+msgid "Photo Correlate"
+msgstr "Повежи фотографију"
+
+#: ../data/foxtrotgps.glade.h:196
+msgid "Pick"
+msgstr "Одабери"
+
+#: ../data/foxtrotgps.glade.h:197
+msgid "Pick End on Map"
+msgstr "Одабери циљ на мапи"
+
+#: ../data/foxtrotgps.glade.h:198
+msgid "Pick Start on Map"
+msgstr "Одабери почетак на мапи"
+
+#: ../data/foxtrotgps.glade.h:199
+msgid "Previous map repo"
+msgstr "Претходно складиште мапа"
+
+#: ../data/foxtrotgps.glade.h:200
+msgid "Re-download cached tiles"
+msgstr "Поново скини делове мапе из складишног директоријума"
+
+#: ../data/foxtrotgps.glade.h:201
+msgid "Register!"
+msgstr "Региструј се!"
+
+#: ../data/foxtrotgps.glade.h:202
+msgid "Reset"
+msgstr "Испочетка"
+
+#: ../data/foxtrotgps.glade.h:203
+msgid "Satellites"
+msgstr "Сателити"
+
+#: ../data/foxtrotgps.glade.h:204
+msgid "Send Message to:"
+msgstr "Пошаљи поруку за:"
+
+#: ../data/foxtrotgps.glade.h:205
+msgid ""
+"Set point as\n"
+"my position"
+msgstr ""
+"Постави тачку\n"
+"као тренутни положај"
+
+#: ../data/foxtrotgps.glade.h:207
+msgid "Share!"
+msgstr "Подели!"
+
+#: ../data/foxtrotgps.glade.h:208
+msgid "Show Info"
+msgstr "Прикажи информације"
+
+#: ../data/foxtrotgps.glade.h:209
+msgid "Show POIs"
+msgstr "Прикажи ТИ"
+
+#: ../data/foxtrotgps.glade.h:210
+msgid "Show password"
+msgstr "Прикажи лозинку"
+
+#: ../data/foxtrotgps.glade.h:211
+msgid ""
+"Simply choose any nickname and password.\n"
+"\n"
+"Before first use register them by clicking on the button below."
+msgstr ""
+"Одаберите било који надимак и лозинку.\n"
+"\n"
+"Пре прве употребе пријавите их кликом на дугме испод."
+
+#: ../data/foxtrotgps.glade.h:214
+msgid "Speed"
+msgstr "Брзина"
+
+#: ../data/foxtrotgps.glade.h:215
+msgid "Split"
+msgstr "Подели"
+
+#: ../data/foxtrotgps.glade.h:216
+msgid "Stop"
+msgstr "Стани"
+
+#: ../data/foxtrotgps.glade.h:217
+msgid "Street,City,Country"
+msgstr "Улица, град, земља"
+
+#: ../data/foxtrotgps.glade.h:218
+msgid "Time"
+msgstr "Време"
+
+#: ../data/foxtrotgps.glade.h:219
+msgid "Timezone:"
+msgstr "Временска зона:"
+
+#: ../data/foxtrotgps.glade.h:220
+msgid "Trackdir Config"
+msgstr "Подешавање директоријума са путањама"
+
+#: ../data/foxtrotgps.glade.h:221
+msgid "Trip"
+msgstr "Пут"
+
+#: ../data/foxtrotgps.glade.h:222
+msgid "Update interval  "
+msgstr "Интервал освежавања  "
+
+#: ../data/foxtrotgps.glade.h:223
+msgid "Upload"
+msgstr "Окачи"
+
+#: ../data/foxtrotgps.glade.h:224
+msgid "Use current GPS position instead"
+msgstr "Користи тренутни ГПС положај"
+
+#: ../data/foxtrotgps.glade.h:225
+msgid "View GPS Photo"
+msgstr "Прикажи ГПС фотографију"
+
+#: ../data/foxtrotgps.glade.h:227
+msgid "Zoom in"
+msgstr "Увећај"
+
+#: ../data/foxtrotgps.glade.h:228
+msgid "Zoom out"
+msgstr "Удаљи"
+
+#: ../data/foxtrotgps.glade.h:229
+msgid "add POI"
+msgstr "додај ТИ"
+
+#: ../data/foxtrotgps.glade.h:231
+#, no-c-format
+msgid "add photos to the %s database"
+msgstr "додај фотографије у базу %s"
+
+#: ../data/foxtrotgps.glade.h:232
+msgid "budget"
+msgstr "јефтино"
+
+#: ../data/foxtrotgps.glade.h:233
+msgid "d m's.s\""
+msgstr "d m's.s\""
+
+#: ../data/foxtrotgps.glade.h:234
+msgid "d m.m'"
+msgstr "d m.m'"
+
+#: ../data/foxtrotgps.glade.h:235
+msgid "d.dd"
+msgstr "d.dd"
+
+#: ../data/foxtrotgps.glade.h:236
+msgid "exclusive"
+msgstr "скупо"
+
+#: ../data/foxtrotgps.glade.h:237
+msgid "extended opening hours"
+msgstr "продужено радно време"
+
+#: ../data/foxtrotgps.glade.h:238
+msgid "feet"
+msgstr "стопе"
+
+#: ../data/foxtrotgps.glade.h:239
+msgid "fewer/larger details"
+msgstr "мање детаља"
+
+#: ../data/foxtrotgps.glade.h:240
+msgid "foobar"
+msgstr "фубар"
+
+#: ../data/foxtrotgps.glade.h:241
+msgid "friend mode"
+msgstr "режим пријатеља"
+
+#: ../data/foxtrotgps.glade.h:242
+msgid "fun mode"
+msgstr "режим забаве"
+
+#: ../data/foxtrotgps.glade.h:243
+msgid "geocode"
+msgstr "геокодирај"
+
+#: ../data/foxtrotgps.glade.h:244
+msgid "get route"
+msgstr "добави упутства"
+
+#: ../data/foxtrotgps.glade.h:245
+msgid "imperial"
+msgstr "империјалне"
+
+#: ../data/foxtrotgps.glade.h:246
+msgid "just idle..."
+msgstr "не радим ништа..."
+
+#: ../data/foxtrotgps.glade.h:247
+msgid "map detail"
+msgstr "детаљност мапе"
+
+#: ../data/foxtrotgps.glade.h:248
+msgid "map download"
+msgstr "скидање мапе"
+
+#: ../data/foxtrotgps.glade.h:249
+msgid "medium"
+msgstr "средње"
+
+#: ../data/foxtrotgps.glade.h:250
+msgid "meters"
+msgstr "метри"
+
+#: ../data/foxtrotgps.glade.h:251
+msgid "metric"
+msgstr "метричке"
+
+#: ../data/foxtrotgps.glade.h:252
+msgid "minutes"
+msgstr "минута"
+
+#: ../data/foxtrotgps.glade.h:253
+msgid "more/smaller details"
+msgstr "више детаља"
+
+#: ../data/foxtrotgps.glade.h:254
+msgid "my position"
+msgstr "мој положај"
+
+#: ../data/foxtrotgps.glade.h:255
+msgid "nautical"
+msgstr "наутичке"
+
+#: ../data/foxtrotgps.glade.h:256
+msgid "personal"
+msgstr "лични"
+
+#: ../data/foxtrotgps.glade.h:257
+msgid "photos"
+msgstr "фотографије"
+
+#: ../data/foxtrotgps.glade.h:258
+msgid "private mode"
+msgstr "режим приватности"
+
+#: ../data/foxtrotgps.glade.h:259
+msgid "public"
+msgstr "јавни"
+
+#: ../data/foxtrotgps.glade.h:260
+msgid "s   "
+msgstr "с   "
+
+#: ../data/foxtrotgps.glade.h:261
+msgid "select POIs"
+msgstr "одабери ТИ"
+
+#: ../data/foxtrotgps.glade.h:262
+msgid "set"
+msgstr "постави"
+
+#: ../data/foxtrotgps.glade.h:263
+msgid "set WP"
+msgstr "постави ПТ"
+
+#: ../data/foxtrotgps.glade.h:264
+msgid "show POIs"
+msgstr "Прикажи ТИ"
+
+#: ../data/foxtrotgps.glade.h:265
+msgid "show friends"
+msgstr "прикажи пријатеље"
+
+#: ../data/foxtrotgps.glade.h:266
+msgid "show photos"
+msgstr "прикажи фотографије"
+
+#: ../data/foxtrotgps.glade.h:267
+msgid "this point"
+msgstr "ова тачка"
+
+#: ../data/foxtrotgps.glade.h:268
+msgid "unset"
+msgstr "одбаци"
+
+#: ../data/foxtrotgps.glade.h:269
+msgid "unset WP"
+msgstr "уклони ПТ"
+
+#: ../data/foxtrotgps.glade.h:270
+msgid "ways & routes"
+msgstr "упутства и путање"
+
+#: ../data/foxtrotgps.glade.h:271
+msgid "xyz instead of zxy"
+msgstr "xyz уместо zxy"
