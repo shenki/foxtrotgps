@@ -781,7 +781,8 @@ printf("commandline in thread: %s\n", command_line);
 	
 	if(!res)
 	{
-		fprintf (stderr, "Error running " PACKAGE "_geocode.pl: %s\n", err->message);
+		fprintf (stderr, "Error running \"%s\": %s\n",
+		         command_line, err->message);
 		g_error_free (err);
 	}
 	
