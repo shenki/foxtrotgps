@@ -3353,7 +3353,7 @@ on_eventbox5_button_release_event      (GtkWidget       *widget,
 		if(!global_infopane_visible)
 		{
 			widget = lookup_widget(window1, "button76");
-			gtk_button_clicked(GTK_BUTTON(widget));
+			g_signal_emit_by_name (widget, "clicked");
 		}
 		
 		gtk_widget_hide(global_infopane_current->data);
