@@ -14,6 +14,9 @@ void
 set_label_nogps();
 
 void
+set_label_newmsg();
+
+void
 osd_speed(gboolean force_redraw);
 
 void
