@@ -1048,30 +1048,36 @@ on_item4_activate                      (GtkMenuItem     *menuitem,
 	
 	if(!distance_mode && gpsdata && gpsdata->fix.latitude)
 	{
-		g_sprintf (buffer, _("<b>This point:</b>\n%s\n"
-		                     "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
-		                     "<b>Bearing:</b>\n%.1f°\n"
-		                     "<b>Distance from your location:</b>\n%.2f%s\n"
-		                     "Click another point for distance"),
-		                   latlon, bearing/M_PI*180,
-		                   distance*unit_conv, distunit);
+		gchar *bufp = buffer;
+		bufp += g_sprintf (bufp, _("<b>This point:</b>\n%s\n"
+		                           "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"),
+		                   latlon);
+		bufp += g_sprintf (bufp, _("<b>Bearing:</b>\n%.1f°\n"),
+		                   bearing/M_PI*180);
+		bufp += g_sprintf (bufp, _("<b>Distance from your location:</b>\n%.2f%s\n"),
+		                   distance*unit_conv,
+		                   distunit);
+		bufp += g_sprintf (bufp, _("Click another point for distance"));
 	}
 	else if (!distance_mode && (!gpsdata || (gpsdata && !gpsdata->fix.latitude)))
 	{
-		g_sprintf (buffer, _("<b>This point:</b>\n%s\n"
-		                     "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
-		                     "Click another point for distance"),
+		gchar *bufp = buffer;
+		bufp += g_sprintf (bufp, _("<b>This point:</b>\n%s\n"
+		                           "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"),
 		                   latlon);
+		bufp += g_sprintf (bufp, _("Click another point for distance"));
 	}
 	else
 	{
-		g_sprintf (buffer, _("<b>This point:</b>\n%s\n"
-		                     "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
-		                     "<b>Bearing:</b>\n%.1f°\n"
-		                     "<b>Distance from last point:</b>\n%.2f%s\n"
-		                     "<b>Overall Distance:</b>\n%.2f%s"),
-		                   latlon, bearing/M_PI*180,
-		                   distance*unit_conv, distunit,
+		gchar *bufp = buffer;
+		bufp += g_sprintf (bufp, _("<b>This point:</b>\n%s\n"
+		                           "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"),
+		                   latlon);
+		bufp += g_sprintf (bufp, _("<b>Bearing:</b>\n%.1f°\n"),
+		                   bearing/M_PI*180);
+		bufp += g_sprintf (bufp, _("<b>Distance from last point:</b>\n%.2f%s\n"),
+		                   distance*unit_conv, distunit);
+		bufp += g_sprintf (bufp, _("<b>Overall Distance:</b>\n%.2f%s"),
 		                   overall_distance*unit_conv, distunit);
 	}
 	
