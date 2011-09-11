@@ -343,10 +343,11 @@ cb_gps_timer()
 		}
 		
 		
-		
-		set_label();
-		
-		
+		if (global_new_msg)
+			set_label_newmsg ();
+		else
+			set_label ();
+
 		if(trip_logger_on && gpsdata->valid)
 			track_log();
 		
@@ -358,7 +359,10 @@ cb_gps_timer()
 	}
 	else 
 	{
-		set_label_nogps();
+		if (global_new_msg)
+			set_label_newmsg ();
+		else
+			set_label_nogps();
 	}
 	
 	if(hrm_on && (!hrmdata  || global_reconnect_hrm))
@@ -471,6 +475,23 @@ osd_speed(gboolean force_redraw)
 		g_object_unref (gc);
 	}
 }
+
+void
+set_label_newmsg()
+{
+	static GtkLabel *label = NULL;
+
+	if (label == NULL)
+	{
+		label = GTK_LABEL(lookup_widget(window1, "label4"));
+	}
+
+	gtk_label_set_label (label,
+	                     _("<span foreground='#ff0000'><b>"
+	                       "New Message arrived. Click here."
+	                       "</b></span>"));
+}
+
 void
 set_label_nogps()
 {
@@ -500,12 +521,6 @@ set_label_nogps()
 			num_dl_threads, global_tiles_in_dl_queue);
 	else
 		g_snprintf (buffer, BUFSIZE, _("<b>no GPSD found</b>"));
-	
-	if(global_new_msg)
-		g_snprintf (buffer, BUFSIZE,
-		            _("<span foreground='#ff0000'><b>"
-		              "New Message arrived. Click here."
-		              "</b></span>"));
 	
 	gtk_label_set_label(label, buffer);
 
@@ -613,12 +628,6 @@ set_label()
 	             gpsdata->fix.heading * unit_conv,
 	             gpsdata->satellites_used,
 	             gpsdata->hdop);
-
-	if(global_new_msg)
-		g_snprintf (buffer, BUFSIZE,
-		            _("<span foreground='#ff0000'><b>"
-		              "New Message arrived. Click here."
-		              "</b></span>"));
 
 	gtk_label_set_label(label, buffer);
 
