@@ -257,7 +257,7 @@ void set_combobox_subcat(GtkWidget *widget, int choice)
 	
 	GtkCellRenderer *renderer;
 	GtkWidget *vbox;
-	char *subcat_lists[15];
+	char *subcat_lists[16];
 		printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	subcat_lists[0] = "---"; 
@@ -275,6 +275,11 @@ void set_combobox_subcat(GtkWidget *widget, int choice)
 	subcat_lists[12] = _("- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other");
 	subcat_lists[13] = _("- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|Geo Cache|Other");
 	subcat_lists[14] = _("- Please choose -|Friend|Other Cool Place");
+	subcat_lists[15] = _("- Please choose -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|Wherigo|Other");
+	/*
+         * NOTE: for geocaching, should also be:
+         * subsubcat[] = "- Please choose -|Micro|Small|Regular|Large|Virtual|Unknown|Other|";
+         */
 
 	vbox = lookup_widget(widget, "vbox28");
 	list_store = create_combobox_list_store(subcat_lists[choice]);

@@ -3564,7 +3564,8 @@ Services
 Sights &amp; Leisure
 Shopping
 Sport
-My Personal Places</property>
+My Personal Places
+Geocaches</property>
           </widget>
           <packing>
             <property name="expand">False</property>
@@ -3933,7 +3934,8 @@ Services
 Sights &amp; Leisure
 Shopping
 Sport
-My Personal Places</property>
+My Personal Places
+Geocaches</property>
                         <signal name="changed" handler="on_combobox2_changed"/>
                       </widget>
                       <packing>
@@ -4229,7 +4231,8 @@ Services
 Sights &amp; Leisure
 Shopping
 Sport
-My Personal Places</property>
+My Personal Places
+Geocaches</property>
                         <signal name="changed" handler="on_combobox2_changed"/>
                       </widget>
                       <packing>
