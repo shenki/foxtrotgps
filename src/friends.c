@@ -101,7 +101,7 @@ update_position()
 {		
 	GtkLabel *label_msg;
 	label_msg = (GtkLabel *)lookup_widget(window1, "label51");
-	gtk_label_set_label(label_msg, "Connecting...");
+	gtk_label_set_label (label_msg, _("Connecting..."));
 
 	if (!g_thread_create(&update_position_thread, NULL, FALSE, NULL) != 0)
 		g_warning("### can't create friend thread\n");
@@ -332,7 +332,7 @@ gdk_threads_leave();
 	else
 	{
 		gdk_threads_enter();
-		gtk_label_set_text(label_msg, "No response (200)"); 
+		gtk_label_set_text (label_msg, _("No response (200)")); 
 		gdk_threads_leave();
 		
 	}
@@ -468,7 +468,7 @@ register_nick()
 {		
 	GtkLabel *label_msg;
 	label_msg = (GtkLabel *)lookup_widget(window1, "label62");
-	gtk_label_set_text(label_msg, "Connecting...");
+	gtk_label_set_text (label_msg, _("Connecting..."));
 
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
@@ -554,7 +554,7 @@ register_nick_thread(void *ptr)
 		buffer = g_strdup(chunk.memory);
 	}
 	else
-		buffer = g_strdup("Oh. Some error occurred...");
+		buffer = g_strdup (_("Oh. Some error occurred..."));
 
 	gdk_threads_enter();
 	label_msg = (GtkLabel *)lookup_widget(window1, "label62");
@@ -577,7 +577,11 @@ create_friend_box(friend_t *f)
 	GtkWidget *hbox, *label, *vbox, *button;
 	char *label_txt;
 	
-	label_txt = g_strdup_printf("<b>%s</b>\nLast seen:\n%s\n<i>%s</i>",f->nick, f->lastseen, f->away_msg);
+	label_txt = g_strdup_printf (_("<b>%s</b>\n"
+	                               "Last seen:\n"
+	                               "%s\n"
+	                               "<i>%s</i>"),
+	                             f->nick, f->lastseen, f->away_msg);
 	
 	hbox = gtk_hbox_new (FALSE, 2);
 	gtk_widget_show (hbox);
@@ -622,7 +626,7 @@ on_msg_friend_clicked(GtkButton *button, gpointer user_data)
 	char *to;
 	
 	to = user_data;
-	label_txt = g_strdup_printf("Send Message To: <b>%s</b>", to);
+	label_txt = g_strdup_printf (_("Send Message To: <b>%s</b>"), to);
 	
 	printf("* %s() %s\n", __PRETTY_FUNCTION__, label_txt);
 	
@@ -895,7 +899,9 @@ process_msg_replydata(postreply_t *postreply)
 	}
 	else
 	{
-		gtk_label_set_label(GTK_LABEL(widget), g_strdup_printf("msg-code: %d",(int)postreply->status_code) );
+		gtk_label_set_label (GTK_LABEL(widget),
+		                     g_strdup_printf (_("msg-code: %d"),
+		                                      (int)postreply->status_code));
 	}
 	
 	
@@ -948,7 +954,8 @@ create_msg_box(msg_t *m)
 	if(m->incoming)
 		label_txt = g_strdup_printf("<i><b>%s</b>, %s</i>\n\n%s",m->from, m->time, m->txt);
 	else
-		label_txt = g_strdup_printf("<i><small>To: </small><b>%s</b></i>\n\n%s",m->to, m->txt);
+		label_txt = g_strdup_printf(_("<i><small>To: </small><b>%s</b></i>\n\n%s"),
+		                            m->to, m->txt);
 	
 	gtk_label_set_label(GTK_LABEL(label), label_txt);
 	

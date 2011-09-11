@@ -245,10 +245,13 @@ geo_photos_open_dialog_photo_correlate()
 		label1 = lookup_widget(dialog_photo_correlate, "label172");
 		label2 = lookup_widget(dialog_photo_correlate, "label174");
 		
-		label_txt = g_strdup_printf("  %d seconds", geocode_correction);
+		label_txt = g_strdup_printf (ngettext ("  1 second",
+		                                       "  %d seconds",
+		                                       geocode_correction),
+		                             geocode_correction);
 		gtk_label_set_label(GTK_LABEL(label2), label_txt);
 		
-		label_txt = g_strdup_printf("  %d:00h", geocode_timezone);
+		label_txt = g_strdup_printf (_("  %d:00h"), geocode_timezone);
 		gtk_label_set_label(GTK_LABEL(label1), label_txt);
 		
 	}
@@ -399,7 +402,8 @@ geocode_set_trackname(char *trackname, GtkWidget *widget)
 	image = gtk_image_new_from_stock("gtk-open", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image(GTK_BUTTON(widget), image);
 	label = lookup_widget(widget, "label154");
-	gtk_label_set_label(GTK_LABEL(label), "<span color=\"#090\"><b>ok</b></span>");
+	gtk_label_set_label (GTK_LABEL(label),
+	                     _("<span color=\"#090\"><b>ok</b></span>"));
 	gtk_button_set_label(GTK_BUTTON(widget), get_basename(geocode_trackname));
 	
 	button = lookup_widget(widget, "okbutton8");
@@ -428,7 +432,8 @@ geocode_set_photodir(char *photodir, GtkWidget *widget)
 	image = gtk_image_new_from_stock("gtk-open", GTK_ICON_SIZE_BUTTON);
 	gtk_button_set_image(GTK_BUTTON(widget), image);
 	label = lookup_widget(widget, "label155");
-	gtk_label_set_label(GTK_LABEL(label), "<span color=\"#090\"><b>ok</b></span>");
+	gtk_label_set_label (GTK_LABEL(label),
+	                     _("<span color=\"#090\"><b>ok</b></span>"));
 	gtk_button_set_label(GTK_BUTTON(widget), get_basename(geocode_photodir));
 	
 	button = lookup_widget(widget, "button44");
@@ -602,7 +607,7 @@ geo_photo_dialog_image_data_next(GtkWidget *widget, gpointer user_data, geo_phot
 	{
 		pixbuf = gdk_pixbuf_new_from_file_at_scale((const gchar *) geocode_photo_list->data, -1, height, TRUE, &err);
 		if(!pixbuf)
-			printf("%s loading pixbuf failed - actually this should not happen\n", __PRETTY_FUNCTION__);
+			printf (_("%s loading pixbuf failed - actually this should not happen\n"), __PRETTY_FUNCTION__);
 		
 		gtk_image_set_from_pixbuf(GTK_IMAGE(image), pixbuf);
 	}
@@ -646,10 +651,13 @@ geo_photo_close_dialog_image_data()
 	txt = gtk_entry_get_text(GTK_ENTRY(entry));
 	geocode_correction = atoi(txt);
 	
-	label_txt = g_strdup_printf("  %d seconds", geocode_correction);
+	label_txt = g_strdup_printf (ngettext ("  1 second",
+	                                       "  %d seconds",
+	                                       geocode_correction),
+	                             geocode_correction);
 	gtk_label_set_label(GTK_LABEL(label2), label_txt);
 	
-	label_txt = g_strdup_printf("  %d:00h", geocode_timezone);
+	label_txt = g_strdup_printf (_("  %d:00h"), geocode_timezone);
 	gtk_label_set_label(GTK_LABEL(label1), label_txt);
 	
 	gconf_client_set_int(global_gconfclient, GCONF"/geocode_correction", geocode_correction, NULL);
@@ -781,7 +789,7 @@ printf("commandline in thread: %s\n", command_line);
 	
 	if(!res)
 	{
-		fprintf (stderr, "Error running \"%s\": %s\n",
+		fprintf (stderr, _("Error running \"%s\": %s\n"),
 		         command_line, err->message);
 		g_error_free (err);
 	}

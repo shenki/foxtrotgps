@@ -7,6 +7,7 @@
 #include <sqlite3.h>
 #include <stdlib.h>
 #include <string.h>
+#include "support.h"
 
 int
 sql_execute(char *db_name, char *sql, int (*cb_func)(void*,int,char**,char**))
@@ -21,7 +22,8 @@ sql_execute(char *db_name, char *sql, int (*cb_func)(void*,int,char**,char**))
 
 	rc = sqlite3_open(db_name, &db);
 	if( rc ){
-		fprintf(stderr, "Can't open database: %s\n", sqlite3_errmsg(db));
+		fprintf (stderr, _("Can't open database: %s\n"),
+		         sqlite3_errmsg (db));
 		sqlite3_close(db);
 		result = -1;
 	}
@@ -31,7 +33,7 @@ sql_execute(char *db_name, char *sql, int (*cb_func)(void*,int,char**,char**))
 	}
 	
 	if( rc!=SQLITE_OK ){
-		fprintf(stderr, "SQL error: %s\n", errmsg);
+		fprintf (stderr, _("SQL error: %s\n"), errmsg);
 		sqlite3_free(errmsg);
 		result = 1;
 	}

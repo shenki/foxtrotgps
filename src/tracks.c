@@ -311,13 +311,16 @@ track_log_open()
 		fp = fopen(filename,"w");
 		if(!fp)
 		{
-			printf("oops: %s \n",strerror(errno));
-			perror("Triplog open failed: ");
-			gtk_label_set_label(label76,"<span foreground='#ff0000'>Error opening logfile</span>");
+			printf (_("oops: %s\n"), strerror (errno));
+			perror (_("Triplog open failed: "));
+			gtk_label_set_label (label76,
+			                     _("<span foreground='#ff0000'>"
+			                       "Error opening logfile"
+			                       "</span>"));
 		}
 		else 
 		{
-			labeltext = g_strconcat("<b><span foreground='#0000ff'>Log: ",buffer,"</span></b>",NULL);
+			labeltext = g_strdup_printf (_("<b><span foreground='#0000ff'>Log: %s</span></b>"), buffer);
 			gtk_label_set_label(label76,labeltext);
 			g_free(labeltext);	
 
@@ -384,7 +387,8 @@ tracks_open_tracks_dialog()
 	
 	if (err != NULL)
 	{
-		fprintf (stderr, "Problem opening directory: %s\n", err->message);
+		fprintf (stderr, _("Problem opening directory: %s\n"),
+		         err->message);
 		g_error_free (err);
 		return;
 	}
@@ -632,7 +636,7 @@ load_gpx_string_into_list(char *gpx_string)
 	doc = xmlReadMemory(gpx_string, strlen(gpx_string), "noname.xml", NULL, 0);
 	
 	if (doc == NULL) {
-		fprintf(stderr, "Failed to parse document\n");
+		fprintf (stderr, _("Failed to parse document\n"));
 	} else {
 		root_element = xmlDocGetRootElement(doc);
 		list = parse_nodes(root_element);
@@ -778,7 +782,10 @@ fetch_track_thread(void *ptr)
 		
 		
 		if(reply->status_code == 200)
-			err_msg = g_strdup("<span color='#aa0000'><b>Oops! No Route found</b></span>\nTry with another Start/End");
+			err_msg = g_strdup (_("<span color='#aa0000'><b>"
+			                      "Oops! No Route found"
+			                      "</b></span>\n"
+			                      "Try with another Start/End"));
 		
 		
 		else if(reply->status_code == 203)
@@ -786,11 +793,17 @@ fetch_track_thread(void *ptr)
 		
 		
 		else if (reply->status_code)
-			err_msg = g_strdup("<span color='#aa0000'><b>Duh! A Server Error</b></span>\nMaybe try later again...");
+			err_msg = g_strdup (_("<span color='#aa0000'><b>"
+			                      "Duh! A Server Error"
+			                      "</b></span>\n"
+			                      "Maybe try later again..."));
 		
 		
 		else
-			err_msg = g_strdup("<span color='#aa0000'><b>Oh! A Network Error</b></span>\nCheck the internet!");
+			err_msg = g_strdup (_("<span color='#aa0000'><b>"
+			                      "Oh! A Network Error"
+			                      "</b></span>\n"
+			                      "Check the internet!"));
 		
 		gdk_threads_enter();
 		{

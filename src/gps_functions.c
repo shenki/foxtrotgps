@@ -484,19 +484,28 @@ set_label_nogps()
 	num_dl_threads = update_thread_number(0);
 	if(num_dl_threads && !global_tiles_in_dl_queue)
 	{	
-		g_snprintf(buffer, BUFSIZE,
-			"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>",
+		g_snprintf (buffer, BUFSIZE,
+		            _("<b>no GPSD found</b>"
+		              " - "
+		              "<span foreground='#0000ff'><b>D%d</b></span>"),
 			num_dl_threads);
 	}
 	else if (num_dl_threads && global_tiles_in_dl_queue)
-		g_snprintf(buffer, BUFSIZE,
-			"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]</b>",
+		g_snprintf (buffer, BUFSIZE,
+		            _("<b>no GPSD found</b>"
+		              " - "
+		              "<span foreground='#0000ff'><b>D%d</b></span>"
+		              " - "
+		              "<b>[%d]</b>"),
 			num_dl_threads, global_tiles_in_dl_queue);
 	else
-		g_snprintf(buffer, BUFSIZE, "<b>no GPSD found</b>");
+		g_snprintf (buffer, BUFSIZE, _("<b>no GPSD found</b>"));
 	
 	if(global_new_msg)
-		g_snprintf(buffer, BUFSIZE, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
+		g_snprintf (buffer, BUFSIZE,
+		            _("<span foreground='#ff0000'><b>"
+		              "New Message arrived. Click here."
+		              "</b></span>"));
 	
 	gtk_label_set_label(label, buffer);
 
@@ -592,24 +601,24 @@ set_label()
 	
 
 	g_snprintf(buffer, BUFSIZE,
-		"%s%s%s%s<b>%4.1f</b>%s "
-		"<small>trp </small><b>%.2f</b>%s "
-		"<small>alt </small><b>%.0f</b>%s "
-		"<small>hdg </small><b>%.0f</b>° "
-		"<small></small>%d/%.1f",
-		numdl_buf,
-		dl_buf,
-		tr_buf,
-		ff_buf,
-		gpsdata->fix.speed * 3.6 * unit_conv,	speedunit,
-		trip_distance * unit_conv,		distunit,
-		gpsdata->fix.altitude * unit_conv_alt,	altunit,
-		gpsdata->fix.heading * unit_conv,
-		gpsdata->satellites_used,
-		gpsdata->hdop);
+	           _("%s%s%s%s<b>%4.1f</b>%s "
+	             "<small>trp </small><b>%.2f</b>%s "
+	             "<small>alt </small><b>%.0f</b>%s "
+	             "<small>hdg </small><b>%.0f</b>° "
+	             "<small></small>%d/%.1f"),
+	             numdl_buf, dl_buf, tr_buf, ff_buf,
+	             gpsdata->fix.speed * 3.6 * unit_conv, speedunit,
+	             trip_distance * unit_conv, distunit,
+	             gpsdata->fix.altitude * unit_conv_alt, altunit,
+	             gpsdata->fix.heading * unit_conv,
+	             gpsdata->satellites_used,
+	             gpsdata->hdop);
 
 	if(global_new_msg)
-		g_snprintf(buffer, BUFSIZE, "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>");
+		g_snprintf (buffer, BUFSIZE,
+		            _("<span foreground='#ff0000'><b>"
+		              "New Message arrived. Click here."
+		              "</b></span>"));
 
 	gtk_label_set_label(label, buffer);
 
@@ -661,7 +670,7 @@ set_label()
 		gtk_label_set_label(label42,buffer);
 		
 		
-		g_snprintf(buffer, BUFSIZE, "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>", 
+		g_snprintf (buffer, BUFSIZE, _("<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"), 
 				gpsdata->satellites_used, gpsdata->hdop);
 		gtk_label_set_label(label43,buffer);
 	
@@ -759,7 +768,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 	}
 	else
 	{
-		fprintf(stderr, "connection to gpsd LOST\n");
+		fprintf (stderr, _("connection to gpsd LOST\n"));
 		return cb_gpsd_io_error(src, condition, data);
 	}
 	return TRUE;
@@ -828,7 +837,7 @@ get_gps_thread(void *ptr)
 {
 	if (gps_open(global_server, global_port, &libgps_gpsdata) == 0)
 	{
-		fprintf(stderr, "connection to gpsd SUCCEEDED \n");
+		fprintf (stderr, _("connection to gpsd SUCCEEDED \n"));
 
 		libgps_initialized = TRUE;
 		

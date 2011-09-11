@@ -257,7 +257,8 @@ init()
 	gtk_window_set_icon_from_file(GTK_WINDOW(window1), PACKAGE_PIXMAPS_DIR "/" PACKAGE ".png" ,&err);
 	if (err)
 	{
-		fprintf (stderr, "Failed to load pixbuf file:  %s\n", err->message);
+		fprintf (stderr, _("Failed to load pixbuf file: %s\n"),
+		         err->message);
 		g_error_free (err);
 	}
 	

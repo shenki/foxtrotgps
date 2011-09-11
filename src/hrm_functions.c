@@ -149,10 +149,12 @@ set_hrm_labels()
 		widget2 = lookup_widget(window1, "label207");
 	}
 	
-	g_snprintf(buffer, 128, "<b><big>%d</big></b> <small>bpm</small>", hrmdata->freq);
+	g_snprintf (buffer, 128, _("<b><big>%d</big></b> <small>bpm</small>"),
+	            hrmdata->freq);
 	gtk_label_set_label(GTK_LABEL(widget1), buffer);
 
-	g_snprintf(buffer, 128, "<b><big>%d/%d</big></b>", hrmdata->min, hrmdata->max);
+	g_snprintf (buffer, 128, _("<b><big>%d/%d</big></b>"),
+	            hrmdata->min, hrmdata->max);
 	gtk_label_set_label(GTK_LABEL(widget2), buffer);
 #endif /* HAVE_BLUEZ */
 }

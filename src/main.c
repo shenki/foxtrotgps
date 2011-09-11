@@ -30,11 +30,11 @@ main (int argc, char *argv[])
 	GOptionEntry cmd_options[] =
 	{
 		{"version", 0, 0, G_OPTION_ARG_NONE, &show_version,
-		 "Print the program version and exit", NULL},
+		 N_("Print the program version and exit"), NULL},
 		{"fullscreen", 0, 0, G_OPTION_ARG_NONE, &fullscreen,
-		 "Start in fullscreen mode", NULL},
+		 N_("Start in fullscreen mode"), NULL},
 		{"gui", 0, 0, G_OPTION_ARG_FILENAME, &gladefile,
-		 "Load the GUI from this GladeXML file", "GLADEFILE"},
+		 N_("Load the GUI from this GladeXML file"), "GLADEFILE"},
                 {NULL}
 	};
 
@@ -64,7 +64,7 @@ main (int argc, char *argv[])
 	
 	if (!g_option_context_parse (option_context, &argc, &argv, &error))
 	{
-		g_print ("option parsing failed: %s\n", error->message);
+		g_print (_("option parsing failed: %s\n"), error->message);
 		return 1;
 	}
 

@@ -261,20 +261,20 @@ void set_combobox_subcat(GtkWidget *widget, int choice)
 		printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	subcat_lists[0] = "---"; 
-	subcat_lists[1] = "- Please choose -|Hotel|Motel|B&B|Hostel|Camping";
-	subcat_lists[2] = "- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|Travel Agency|Other";
-	subcat_lists[3] = "- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car";
-	subcat_lists[4] = "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino";
-	subcat_lists[5] = "- Please choose -|Pharmacy|Hospital|Doctor";
-	subcat_lists[6] = "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot Spot";
-	subcat_lists[7] = "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary";
-	subcat_lists[8] = "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport";
-	subcat_lists[9] = "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French";
-	subcat_lists[10] = "- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|Laundry|Hairdresser|Other";
-	subcat_lists[11] = "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other";
-	subcat_lists[12] = "- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other";
-	subcat_lists[13] = "- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|Geo Cache|Other";
-	subcat_lists[14] = "- Please choose -|Friend|Other Cool Place";
+	subcat_lists[1] = _("- Please choose -|Hotel|Motel|B&B|Hostel|Camping");
+	subcat_lists[2] = _("- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|Travel Agency|Other");
+	subcat_lists[3] = _("- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car");
+	subcat_lists[4] = _("- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino");
+	subcat_lists[5] = _("- Please choose -|Pharmacy|Hospital|Doctor");
+	subcat_lists[6] = _("- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot Spot");
+	subcat_lists[7] = _("- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary");
+	subcat_lists[8] = _("- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport");
+	subcat_lists[9] = _("- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French");
+	subcat_lists[10] = _("- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|Laundry|Hairdresser|Other");
+	subcat_lists[11] = _("- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other");
+	subcat_lists[12] = _("- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other");
+	subcat_lists[13] = _("- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|Geo Cache|Other");
+	subcat_lists[14] = _("- Please choose -|Friend|Other Cool Place");
 
 	vbox = lookup_widget(widget, "vbox28");
 	list_store = create_combobox_list_store(subcat_lists[choice]);
@@ -716,7 +716,7 @@ show_poi_detail()
 			buffer = g_strdup_printf( 
 				"<b>%s</b> ",
 				my_strescape_back(p->keywords,NULL));
-			buffer2 = g_strdup_printf("%s \n\nDistance: %.3fkm ",
+			buffer2 = g_strdup_printf (_("%s\n\nDistance: %.3fkm"),
 				my_strescape_back(p->desc,NULL), distance);
 printf("%s %s \n",buffer, buffer2);			
 			poi_found = TRUE;
@@ -730,7 +730,7 @@ printf("%s %s \n",buffer, buffer2);
 	}
 	
 	if(!poi_found)
-		buffer = g_strdup("<b>No POI found</b>\n");
+		buffer = g_strdup (_("<b>No POI found</b>\n"));
 	
 	gtk_label_set_label(GTK_LABEL(label),buffer);
 	

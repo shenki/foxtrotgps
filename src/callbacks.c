@@ -823,7 +823,7 @@ on_button11_clicked                    (GtkButton       *button,
 		widget = lookup_widget(window1, "image24");
 		gtk_widget_show(widget);
 		
-		gtk_button_set_label(button, "Stop");
+		gtk_button_set_label (button, _("Stop"));
 		
 		widget = lookup_widget(menu1, "item19");
 		gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(widget), TRUE);
@@ -844,7 +844,7 @@ on_button11_clicked                    (GtkButton       *button,
 		msg_timer =0;
 		global_fftimer_running = FALSE;
 		
-		gtk_button_set_label(button, "Share!");
+		gtk_button_set_label (button, _("Share!"));
 	}
 
 	
@@ -913,7 +913,7 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	
 	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-	g_sprintf(buffer, "<b><i>Distance:</i></b> %.3fkm\n",distance);
+	g_sprintf (buffer, _("<b><i>Distance:</i></b> %.3fkm\n"), distance);
 	
 	for(list = friends_list; list != NULL; list = list->next)
 	{
@@ -938,7 +938,7 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	}
 	
 	if (!friend_found)
-		g_sprintf(buffer,"No friends at or near this position");
+		g_sprintf (buffer, _("No friends at or near this position"));
 
 
 	label = lookup_widget(window,"label119");
@@ -1048,32 +1048,31 @@ on_item4_activate                      (GtkMenuItem     *menuitem,
 	
 	if(!distance_mode && gpsdata && gpsdata->fix.latitude)
 	{
-		g_sprintf(buffer,"<b>This point:</b> \n%s \n"
-				"<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
-				"<b>Bearing:</b>\n%.1f°\n"
-				"<b>Distance from your location:</b>\n%.2f%s\n"
-				"Click another point for distance",
-				latlon, bearing/M_PI*180, 
-				distance*unit_conv, distunit);
+		g_sprintf (buffer, _("<b>This point:</b>\n%s\n"
+		                     "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
+		                     "<b>Bearing:</b>\n%.1f°\n"
+		                     "<b>Distance from your location:</b>\n%.2f%s\n"
+		                     "Click another point for distance"),
+		                   latlon, bearing/M_PI*180,
+		                   distance*unit_conv, distunit);
 	}
 	else if (!distance_mode && (!gpsdata || (gpsdata && !gpsdata->fix.latitude)))
 	{
-		g_sprintf(buffer,"<b>This point:</b> \n%s \n"
-				"<small><i>(coords auto-copied to clipboard)\n</i></small>\n" 
-				"Click another point for distance",
-				latlon);		
+		g_sprintf (buffer, _("<b>This point:</b>\n%s\n"
+		                     "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
+		                     "Click another point for distance"),
+		                   latlon);
 	}
 	else
 	{
-		g_sprintf(buffer,"<b>This point:</b> \n%s \n"
-				"<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
-				"<b>Bearing:</b>\n%.1f°\n"
-				"<b>Distance from last point:</b>\n%.2f%s\n"
-				"<b>Overall Distance:</b>\n%.2f%s",
-				latlon, bearing/M_PI*180, 
-				distance*unit_conv, distunit, 
-				overall_distance*unit_conv, distunit);
-		
+		g_sprintf (buffer, _("<b>This point:</b>\n%s\n"
+		                     "<small><i>(coords auto-copied to clipboard)\n</i></small>\n"
+		                     "<b>Bearing:</b>\n%.1f°\n"
+		                     "<b>Distance from last point:</b>\n%.2f%s\n"
+		                     "<b>Overall Distance:</b>\n%.2f%s"),
+		                   latlon, bearing/M_PI*180,
+		                   distance*unit_conv, distunit,
+		                   overall_distance*unit_conv, distunit);
 	}
 	
 	gtk_label_set_label(GTK_LABEL(label),buffer);
@@ -1207,14 +1206,14 @@ on_item5_activate                      (GtkWidget       *widget,
 	global_myposition.lon = lon_deg;
 
 	label = lookup_widget(window2,"label64");
-	
-	g_sprintf(buffer,"<b>Manually set position</b>\n\nThis point: \n\n"
-			"  <i>%f %f</i> \n\n"
-			"will now be used as your location\n"
-			"for the friend finder service.",
-			global_myposition.lat,
-			global_myposition.lon);
-			
+
+	g_sprintf (buffer, _("<b>Manually set position</b>\n\n"
+	                     "This point:\n\n  <i>%f %f</i>\n\n"
+	                     "will now be used as your location\n"
+	                     "for the friend finder service."),
+	           global_myposition.lat,
+	           global_myposition.lon);
+
 	gtk_label_set_label(GTK_LABEL(label),buffer);
 	gtk_widget_show (window2);
 	
@@ -1323,9 +1322,9 @@ on_button15_clicked                    (GtkButton       *button,
 	trip_counter_on = (trip_counter_on) ? FALSE : TRUE;
 	
 	if(trip_counter_on)
-		gtk_button_set_label(button, "Stop");
+		gtk_button_set_label (button, _("Stop"));
 	else
-		gtk_button_set_label(button, "Resume");
+		gtk_button_set_label (button, _("Resume"));
 }
 
 void
@@ -1653,7 +1652,7 @@ on_item10_activate                     (GtkMenuItem     *menuitem,
 			if(!photo)
 			{
 				printf ("+++++++++++++ FOTO NOT FOUND +++++++++\n");
-				g_sprintf(buffer, "File not found");
+				g_sprintf (buffer, _("File not found"));
 			}
 			else
 			{
@@ -1702,7 +1701,7 @@ on_item10_activate                     (GtkMenuItem     *menuitem,
 	}
 	
 	if(!photo_found)
-		g_sprintf(buffer, "No Geo Photo found");
+		g_sprintf (buffer, _("No Geo Photo found"));
 	
 	gtk_label_set_text(GTK_LABEL(label),buffer);
 
@@ -1762,7 +1761,7 @@ printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	if(!photo)
 	{
 		printf ("+++++++++++++ FOTO NOT FOUND: %s +++++++++\n", photo_file);
-		g_sprintf(buffer, "File not found");
+		g_sprintf (buffer, _("File not found"));
 	}
 	else
 	{
@@ -2327,7 +2326,10 @@ on_button33_clicked                    (GtkButton       *button,
 	widget = lookup_widget(window, "label126");
 	
 	if (p->idmd5==NULL)
-		gtk_label_set_label(GTK_LABEL(widget), "<span foreground='#ff0000'>POI has no ID -> see website for help!</span>");
+		gtk_label_set_label (GTK_LABEL(widget),
+		                     _("<span foreground='#ff0000'>"
+		                       "POI has no ID -> see website for help!"
+		                       "</span>"));
 	else
 		gtk_label_set_text(GTK_LABEL(widget), p->idmd5);
 
@@ -2555,13 +2557,13 @@ on_button35_clicked                    (GtkButton       *button,
 	{	
 		gtk_widget_hide(widget);
 		msg_pane_visible = FALSE;
-		gtk_button_set_label(button, "Show Messages");
+		gtk_button_set_label (button, _("Show Messages"));
 	}
 	else
 	{
 		gtk_widget_show(widget);
 		msg_pane_visible = TRUE;
-		gtk_button_set_label(button, "Hide Messages");
+		gtk_button_set_label (button, _("Hide Messages"));
 	}
 }
 
@@ -3467,7 +3469,8 @@ on_okbutton11_clicked                  (GtkButton       *button,
 	
 	widget = lookup_widget(GTK_WIDGET(button), "label190");
 	
-	gtk_label_set_label(GTK_LABEL(widget),"<b><i>Connecting...</i></b>");
+	gtk_label_set_label (GTK_LABEL(widget),
+	                     _("<b><i>Connecting...</i></b>"));
 	
 	widget = lookup_widget(GTK_WIDGET(button), "entry31");
 	start = g_strdup( gtk_entry_get_text(GTK_ENTRY(widget)) );
