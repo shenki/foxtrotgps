@@ -1,3 +1,46 @@
+This release of FoxtrotGPS includes several new features and bug-fixes;
+notable changes since 1.0.1 include:
+
+    * FoxtrotGPS's general support for translations has been expanded,
+      and some new translations have also been introduced:
+
+      - Serbian, thanks to Branco Majic
+      - Japanese, thanks to Yoshizumi Endo
+
+    * Tracks are now logged in GPX 1.1 format, extended with Garmin's
+      `TrackPointExtension v2' XML extensions. The track-conversion scripts
+      are still included, but expect them to be removed in a future
+      release in favour of standard third-party GPX tools.
+
+    * The Zephyr HxM heartrate-monitor support that Tobias Prousa wrote
+      for tangoGPS 0.99.4 has been incorporated as an optional feature--
+      built by default if BlueZ is detected.
+
+    * POI categories (and subcategories) are now included for geocaching,
+      thanks to Rick Richardson.
+
+    * The `Map Download' dialog now allows the user to determine
+      whether tiles that have already been cached should be
+      re-downloaded, thanks to Mikael Berthe.
+
+    * GConf schemas are now included. This means several things,
+      but the most notable change for end users is that many
+      of FoxtrotGPS's configurable parameters are now documented
+      and can be inspected with the standard GConf tools
+      even if they have not been set from within FoxtrotGPS.
+
+    * A long-standing bug that could cause FoxtrotGPS to crash when
+      loading GPX tracks has been fixed.
+
+    * The friend-finder's message-listing is now correctly un-hidden
+      when the user clicks on the "New Message. Click here" notice
+      in the status-line.
+
+    * FoxtrotGPS can now be built with Curl 7.21.8 and newer,
+      thanks to Martin Jansa.
+
+
+
 FoxtrotGPS 1.0.1 is a bug-fix release; issues resolved since 1.0.0 include:
 
     * Several translations were incomplete in FoxtrotGPS 1.0.0, but
