@@ -571,7 +571,6 @@ GSList *
 load_log_file_into_list(char *file)
 {
 	GSList *list = NULL;
-	float lat, lon;
 	char line[121];
 	char *latstr, *lonstr;
 	FILE *fd;
@@ -589,13 +588,10 @@ load_log_file_into_list(char *file)
 		
 		if (latstr == NULL || lonstr == NULL) continue;
 
-		
-		lat = atof(latstr);
-		lon = atof(lonstr);
 
 		tp = g_new0 (trackpoint_t, 1);
-		tp->lat = deg2rad(lat);
-		tp->lon = deg2rad(lon);		
+		tp->lat = deg2rad (atof (latstr));
+		tp->lon = deg2rad (atof (lonstr));		
 
 		list = g_slist_append(list, tp);
 	}
