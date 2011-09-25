@@ -37,6 +37,14 @@ Start in fullscreen mode
 \fB\-\-version\fR
 Print the program version and exit
 
+.SH BUGS
+FoxtrotGPS includes a URL for Google Satellite imagery in its
+default list of map repositories for demonstration and testing purposes,
+but Google Satellite URLs apparently expire due to their "v=..." parameter
+needing to be incremented. In some cases, repository URLs that break
+in this way cannot be fixed automatically when FoxtrotGPS is upgraded,
+and must be fixed manually by the user.
+
 .SH SEE ALSO
 \fIconvert2gpx\fR(1),
 \fIconvert2osm\fR(1).
