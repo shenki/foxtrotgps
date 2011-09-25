@@ -497,7 +497,10 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	}
 
 	if(loaded_track)
-		g_slist_free(loaded_track);
+	{
+		g_slist_foreach (loaded_track, (GFunc) g_free, NULL);
+		g_slist_free (loaded_track);
+	}
 	loaded_track = NULL;
 
 	if (g_strrstr(file,".gpx") ||
