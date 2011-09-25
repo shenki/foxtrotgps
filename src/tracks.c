@@ -576,7 +576,7 @@ load_log_file_into_list(char *file)
 	fd = fopen(file, "r");
 	while(fgets(line,120, fd))
 	{
-		trackpoint_t *tp = g_new0(trackpoint_t,1);
+		trackpoint_t *tp;
 
 		char *parseptr;
 		
@@ -589,7 +589,8 @@ load_log_file_into_list(char *file)
 		
 		lat = atof(latstr);
 		lon = atof(lonstr);
-		
+
+		tp = g_new0 (trackpoint_t, 1);
 		tp->lat = deg2rad(lat);
 		tp->lon = deg2rad(lon);		
 
