@@ -4621,8 +4621,7 @@ Geocaches</property>
                   <widget class="GtkComboBox" id="combobox8">
                     <property name="visible">True</property>
                     <property name="items">yournavigation.org
-openrouteservice.org
-gnuite.com</property>
+openrouteservice.org</property>
                     <signal name="changed" handler="on_combobox8_changed"/>
                   </widget>
                   <packing>
