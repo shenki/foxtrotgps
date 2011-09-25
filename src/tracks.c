@@ -572,14 +572,13 @@ load_log_file_into_list(char *file)
 {
 	GSList *list = NULL;
 	char line[121];
-	char *latstr, *lonstr;
 	FILE *fd;
 
 	fd = fopen(file, "r");
 	while(fgets(line,120, fd))
 	{
 		trackpoint_t *tp;
-
+		char *latstr, *lonstr;
 		char *parseptr;
 		
 		latstr = strtok_r (line, ",", &parseptr);
