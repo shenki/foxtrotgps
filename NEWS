@@ -4,7 +4,7 @@ notable changes since 1.0.1 include:
     * FoxtrotGPS's general support for translations has been expanded,
       and some new translations have also been introduced:
 
-      - Serbian, thanks to Branco Majic
+      - Serbian, thanks to Branko Majic
       - Japanese, thanks to Yoshizumi Endo
 
     * Tracks are now logged in GPX 1.1 format, extended with Garmin's
