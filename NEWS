@@ -29,6 +29,13 @@ notable changes since 1.0.1 include:
       and can be inspected with the standard GConf tools
       even if they have not been set from within FoxtrotGPS.
 
+    * The default Google Satellite URL that FoxtrotGPS provides
+      for testing and demonstration has been updated to accomodate
+      Google's removal of older imagery from their database.
+      Note that existing users may have to edit their `Google Sat'
+      repository settings and manually change "v=53" in the URL
+      to "v=92".
+
     * A long-standing bug that could cause FoxtrotGPS to crash when
       loading GPX tracks has been fixed.
 
