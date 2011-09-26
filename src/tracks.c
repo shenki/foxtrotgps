@@ -497,7 +497,10 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	}
 
 	if(loaded_track)
-		g_slist_free(loaded_track);
+	{
+		g_slist_foreach (loaded_track, (GFunc) g_free, NULL);
+		g_slist_free (loaded_track);
+	}
 	loaded_track = NULL;
 
 	if (g_strrstr(file,".gpx") ||
@@ -570,24 +573,27 @@ load_log_file_into_list(char *file)
 	GSList *list = NULL;
 	float lat, lon;
 	char line[121];
-	char **arr;
+	char *latstr, *lonstr;
 	FILE *fd;
 
 	fd = fopen(file, "r");
 	while(fgets(line,120, fd))
 	{
-		trackpoint_t *tp = g_new0(trackpoint_t,1);
+		trackpoint_t *tp;
+
+		char *parseptr;
+		
+		latstr = strtok_r (line, ",", &parseptr);
+		lonstr = strtok_r (NULL, ",", &parseptr);
 		
 		
-		arr = g_strsplit(line, ",", 2);
-		
-		
-		if (arr[0] == NULL || arr[1] == NULL) continue;
+		if (latstr == NULL || lonstr == NULL) continue;
 
 		
-		lat = atof(arr[0]);
-		lon = atof(arr[1]);
-		
+		lat = atof(latstr);
+		lon = atof(lonstr);
+
+		tp = g_new0 (trackpoint_t, 1);
 		tp->lat = deg2rad(lat);
 		tp->lon = deg2rad(lon);		
 
