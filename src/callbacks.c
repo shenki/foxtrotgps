@@ -239,7 +239,7 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 				gtk_widget_show(menu1);
 				
 				gtk_menu_popup (GTK_MENU(menu1), NULL, NULL, NULL, NULL, 
-					  event->button, event->time);
+					  0, event->time);
 				
 			}
 			

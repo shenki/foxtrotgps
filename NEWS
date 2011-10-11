@@ -43,6 +43,10 @@ notable changes since 1.0.1 include:
       when the user clicks on the "New Message. Click here" notice
       in the status-line.
 
+    * A long-standing bug that made many items in the popup menu
+      appear inoperative for many desktop users has been fixed,
+      thanks to Branko Majic.
+
     * FoxtrotGPS can now be built with Curl 7.21.8 and newer,
       thanks to Martin Jansa.
 
