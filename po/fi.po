@@ -1,14 +1,14 @@
 # foxtrotgps Finnish translation.
-# Copyright (C) 2008 Timo Jyrinki
+# Copyright (C) 2008-2011 Timo Jyrinki
 # This file is distributed under the same license as the foxtrotgps package.
-# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008-2010.
+# Timo Jyrinki <timo.jyrinki@iki.fi>, 2008-2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-25 11:08-0400\n"
-"PO-Revision-Date: 2010-09-12 10:50+0300\n"
+"POT-Creation-Date: 2011-10-18 16:23+0300\n"
+"PO-Revision-Date: 2011-10-18 16:23+0300\n"
 "Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
 "Language: fi\n"
@@ -25,24 +25,24 @@ msgstr "pixmap-tiedostoa ei löydy: %s"
 #: ../src/support.c:128
 #, c-format
 msgid "Failed to load pixbuf file: %s: %s\n"
-msgstr ""
+msgstr "Pixbuf-tiedoston lataaminen epäonnistui: %s: %s\n"
 
 #: ../src/main.c:33
 msgid "Print the program version and exit"
-msgstr ""
+msgstr "Tulosta ohjelman versio ja poistu"
 
 #: ../src/main.c:35
 msgid "Start in fullscreen mode"
-msgstr ""
+msgstr "Käynnistä kokoruututilassa"
 
 #: ../src/main.c:37
 msgid "Load the GUI from this GladeXML file"
-msgstr ""
+msgstr "Lataa käyttöliittymä tästä GladeXML-tiedostosta"
 
 #: ../src/main.c:67
 #, c-format
 msgid "option parsing failed: %s\n"
-msgstr ""
+msgstr "valitsimien jäsennys epäonnistui: %s\n"
 
 #. Developers may run into this if they're naively
 #. trying to run from the build-tree without having
@@ -80,12 +80,12 @@ msgstr "Jaa"
 #: ../src/callbacks.c:916
 #, c-format
 msgid "<b><i>Distance:</i></b> %.3fkm\n"
-msgstr ""
+msgstr "<b><i>Etäisyys:</i></b> %.3fkm\n"
 
 #: ../src/callbacks.c:941
 #, c-format
 msgid "No friends at or near this position"
-msgstr ""
+msgstr "Ei tuttavia lähellä tätä sijaintia"
 
 #: ../src/callbacks.c:1050
 #, c-format
@@ -95,6 +95,10 @@ msgid ""
 "<small><i>(coords auto-copied to clipboard)\n"
 "</i></small>\n"
 msgstr ""
+"<b>Tämä piste:</b>\n"
+"%s\n"
+"<small><i>(koord. kopioitu leikepöydälle)\n"
+"</i></small>\n"
 
 #: ../src/callbacks.c:1056
 #, c-format
@@ -102,6 +106,8 @@ msgid ""
 "<b>Bearing:</b>\n"
 "%.1f°\n"
 msgstr ""
+"<b>Suunta:</b>\n"
+"%.1f°\n"
 
 #: ../src/callbacks.c:1061
 #, c-format
@@ -109,11 +115,13 @@ msgid ""
 "<b>Distance from your location:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Etäisyys nykyisestä sijainnista:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1069
 #, c-format
 msgid "Click another point for distance"
-msgstr ""
+msgstr "Napsauta toista pistettä etäisyyden mittaamiseksi"
 
 #: ../src/callbacks.c:1073
 #, c-format
@@ -121,6 +129,8 @@ msgid ""
 "<b>Distance from last point:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Etäisyys edellisestä pisteestä:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1075
 #, c-format
@@ -128,6 +138,8 @@ msgid ""
 "<b>Overall Distance:</b>\n"
 "%.2f%s"
 msgstr ""
+"<b>Etäisyys yhteensä:</b>\n"
+"%.2f%s"
 
 #: ../src/callbacks.c:1211
 #, c-format
@@ -141,49 +153,59 @@ msgid ""
 "will now be used as your location\n"
 "for the friend finder service."
 msgstr ""
+"<b>Aseta sijainti käsin</b>\n"
+"\n"
+"Tätä pistettä:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"käytetään nyt sijaintinasi\n"
+"tuttavien löytöpalvelussa."
 
 #: ../src/callbacks.c:1328
 msgid "Resume"
-msgstr ""
+msgstr "Jatka"
 
 #: ../src/callbacks.c:1656 ../src/callbacks.c:1765
 #, c-format
 msgid "File not found"
-msgstr ""
+msgstr "Tiedostoa ei löydy"
 
 #: ../src/callbacks.c:1705
-#, fuzzy, c-format
+#, c-format
 msgid "No Geo Photo found"
-msgstr "Geo-valokuva"
+msgstr "Geo Photoa ei löydy"
 
 #: ../src/callbacks.c:2331
 msgid ""
 "<span foreground='#ff0000'>POI has no ID -> see website for help!</span>"
 msgstr ""
+"<span foreground='#ff0000'>POI:lla ei tunnistetta -> lue ohjeita www-"
+"sivustolta.</span>"
 
 #: ../src/callbacks.c:2561
-#, fuzzy
 msgid "Show Messages"
-msgstr "Viesti"
+msgstr "Näytä viestit"
 
 #: ../src/callbacks.c:2567 ../data/foxtrotgps.glade.h:178
 msgid "Hide Messages"
 msgstr "Piilota viestit"
 
 #: ../src/callbacks.c:3474
-#, fuzzy
 msgid "<b><i>Connecting...</i></b>"
-msgstr "<i><b>Yhdistetään...</b></i>"
+msgstr "<b><i>Yhdistetään...</i></b>"
 
 #: ../src/gps_functions.c:490
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
+"<span foreground='#ff0000'><b>Uusi viesti vastaanotettu. Napsauta tästä.</"
+"b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
-msgstr ""
+msgstr "<b>GPSD:tä ei löydy</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
@@ -191,11 +213,13 @@ msgid ""
 "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
 "</b>"
 msgstr ""
+"<b>GPSD:tä ei löydy</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>"
+"[%d]</b>"
 
 #: ../src/gps_functions.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "<b>no GPSD found</b>"
-msgstr "<b>GPS:ää ei löydy</b>"
+msgstr "<b>GPSD:tä ei löydy</b>"
 
 #: ../src/gps_functions.c:619
 #, c-format
@@ -203,39 +227,40 @@ msgid ""
 "%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
 "small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
+"%s%s%s%s<b>%4.1f</b>%s <small>mat </small><b>%.2f</b>%s <small>kor </"
+"small><b>%.0f</b>%s <small>suu </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
 msgid "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
-msgstr ""
+msgstr "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
 
 #: ../src/gps_functions.c:780
 #, c-format
 msgid "connection to gpsd LOST\n"
-msgstr ""
+msgstr "yhteys gpds:hen hävinnyt\n"
 
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr ""
+msgstr "yhteys gpsd:hen onnistui\n"
 
 #: ../src/init.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load pixbuf file: %s\n"
-msgstr "pixmap-tiedostoa ei löydy: %s"
+msgstr "pixbuf-tiedoston lataus epäonnistui: %s\n"
 
 #: ../src/friends.c:104 ../src/friends.c:471
-#, fuzzy
 msgid "Connecting..."
-msgstr "<i><b>Yhdistetään...</b></i>"
+msgstr "Yhdistetään..."
 
 #: ../src/friends.c:335
 msgid "No response (200)"
-msgstr ""
+msgstr "Ei vastausta (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
-msgstr ""
+msgstr "Oho! Tapahtui jokin virhe..."
 
 #: ../src/friends.c:580
 #, c-format
@@ -245,6 +270,10 @@ msgid ""
 "%s\n"
 "<i>%s</i>"
 msgstr ""
+"<b>%s</b>\n"
+"Viimeksi nähty:\n"
+"%s\n"
+"<i>%s</i>"
 
 #: ../src/friends.c:601
 msgid "Msg"
@@ -255,14 +284,14 @@ msgid "Go To"
 msgstr "Mene"
 
 #: ../src/friends.c:629
-#, fuzzy, c-format
+#, c-format
 msgid "Send Message To: <b>%s</b>"
-msgstr "Lähetä viesti:"
+msgstr "Lähetä viesti henkilölle: <b>%s</b>"
 
 #: ../src/friends.c:903
 #, c-format
 msgid "msg-code: %d"
-msgstr ""
+msgstr "viestikoodi: %d"
 
 #: ../src/friends.c:957
 #, c-format
@@ -271,32 +300,34 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"<i><small>Kenelle: </small><b>%s</b></i>\n"
+"\n"
+"%s"
 
 #: ../src/friends.c:971
 msgid "Reply"
 msgstr "Vastaa"
 
 #: ../src/geo_photos.c:248 ../src/geo_photos.c:654
-#, fuzzy, c-format
+#, c-format
 msgid "  1 second"
 msgid_plural "  %d seconds"
-msgstr[0] "  0 sekuntia"
-msgstr[1] "  0 sekuntia"
+msgstr[0] " 1 sekunti"
+msgstr[1] " %d sekuntia"
 
 #: ../src/geo_photos.c:254 ../src/geo_photos.c:660
-#, fuzzy, c-format
+#, c-format
 msgid "  %d:00h"
-msgstr "  +00:00h"
+msgstr "  %d:00h"
 
 #: ../src/geo_photos.c:406 ../src/geo_photos.c:436
-#, fuzzy
 msgid "<span color=\"#090\"><b>ok</b></span>"
-msgstr "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"#090\"><b>ok</b></span>"
 
 #: ../src/geo_photos.c:610
 #, c-format
 msgid "%s loading pixbuf failed - actually this should not happen\n"
-msgstr ""
+msgstr "%s pixbufin lataus epäonnistui - tätä ei kuuluisi tapahtua\n"
 
 #: ../src/geo_photos.c:710 ../data/foxtrotgps.glade.h:228
 msgid "Working...."
@@ -305,78 +336,95 @@ msgstr "Työskennellään..."
 #: ../src/geo_photos.c:792
 #, c-format
 msgid "Error running \"%s\": %s\n"
-msgstr ""
+msgstr "Virhe suoritettaessa \"%s\": %s\n"
 
 #: ../src/poi.c:264
 msgid "- Please choose -|Hotel|Motel|B&B|Hostel|Camping"
-msgstr ""
+msgstr "- Valitse -|hotelli|motelli|B&B|hostelli|leirintä"
 
 #: ../src/poi.c:265
 msgid ""
 "- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
 "Travel Agency|Other"
 msgstr ""
+"- Valitse -|pankki/rahanvaihto/automaatti|posti|kiinteistövälitys|"
+"matkatoimisto|muu"
 
 #: ../src/poi.c:266
 msgid ""
 "- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
 "Radar - Speed Trap|My Car"
 msgstr ""
+"- Valitse -|pysäköinti|polttoaineasema|korjaamo|vuokraus|jakaminen|"
+"automyynti|tutka - nopeusvalvonta|oma auto"
 
 #: ../src/poi.c:267
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
-msgstr ""
+msgstr "- Valitse -|elokuvateatteri|teatteri|konserttihalli|ooppera|kasino"
 
 #: ../src/poi.c:268
 msgid "- Please choose -|Pharmacy|Hospital|Doctor"
-msgstr ""
+msgstr "- Valitse -|apteekki|sairaala|lääkäri"
 
 #: ../src/poi.c:269
 msgid ""
 "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
 "Spot"
 msgstr ""
+"- Valitse -|kahvila|pubi|aulabaari|klubi|tanssi|Internet-kahvila|WLAN-"
+"tukiasema"
 
 #: ../src/poi.c:270
 msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
-msgstr ""
+msgstr "- Valitse -|kirkko|moskeija|synagooga|temppeli|hautausmaa"
 
 #: ../src/poi.c:271
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr ""
+"- Valitse -|bussi|metro|raitiovaunu|taksi|juna-asema|pyörä|satama|lentokenttä"
 
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
 "Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
+"- Valitse -|paikallisruoka|eurooppalainen|aasialainen|amerikkalainen|"
+"afrikkalainen|pizza|pikaruoka|takeaway|grilli|italialainen|meksikolainen|"
+"intialainen|japanilainen|ranskalainen"
 
 #: ../src/poi.c:273
 msgid ""
 "- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
 "Laundry|Hairdresser|Other"
 msgstr ""
+"- Valitse -|WLAN-tukisema|pankkiautomaatti|postitoimisto|pesula|"
+"parturikampaamo|muu"
 
 #: ../src/poi.c:274
 msgid ""
 "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
 msgstr ""
+"- Valitse -|turisti-info|monumentti|museo|eläintarha|näköalapaikka|"
+"maastokartat|muu"
 
 #: ../src/poi.c:275
 msgid ""
 "- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
 "Butcher|DoItYourself|Other"
 msgstr ""
+"- Valitse -|supermarket|ostoskeskus|vaatteet|kengät|ruoka|leipomo|"
+"lihakauppias|tee-se-itse|muu"
 
 #: ../src/poi.c:276
 msgid ""
 "- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
 "Geo Cache|Other"
 msgstr ""
+"- Valitse -|areena/stadioni|uima-allas|kiipeily|luistelu|golf|geokätkö|muu"
 
 #: ../src/poi.c:277
 msgid "- Please choose -|Friend|Other Cool Place"
-msgstr ""
+msgstr "- Valitse -|tuttava|muu siisti paikka"
 
 #: ../src/poi.c:278
 msgid ""
@@ -384,85 +432,96 @@ msgid ""
 "Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
 "Wherigo|Other"
 msgstr ""
+"- Valitse -|perinteinen|multi|virtuaalinen|kirjelaatikkohybridi|tapahtuma|"
+"tuntematon|projektiapina|web-kamera|kätkö roskiksessa|maakätkö|megatapahtuma|"
+"GPS-seikkailu|Wherigo|muu"
 
 #: ../src/poi.c:724
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "\n"
 "Distance: %.3fkm"
-msgstr "Etäisyys: "
+msgstr ""
+"%s\n"
+"\n"
+"Etäisyys: %.3fkm"
 
 #: ../src/poi.c:738
-#, fuzzy
 msgid "<b>No POI found</b>\n"
-msgstr "<b>GPS:ää ei löydy</b>"
+msgstr "<b>POI:ta ei löydy</b>\n"
 
 #: ../src/util.c:25
 #, c-format
 msgid "Can't open database: %s\n"
-msgstr ""
+msgstr "Tietokantaa ei voi avata: %s\n"
 
 #: ../src/util.c:36
 #, c-format
 msgid "SQL error: %s\n"
-msgstr ""
+msgstr "SQL-virhe: %s\n"
 
 #: ../src/tracks.c:314
 #, c-format
 msgid "oops: %s\n"
-msgstr ""
+msgstr "oho: %s\n"
 
 #: ../src/tracks.c:315
 msgid "Triplog open failed: "
-msgstr ""
+msgstr "Matkalokin avaus epäonnistui: "
 
 #: ../src/tracks.c:317
 msgid "<span foreground='#ff0000'>Error opening logfile</span>"
-msgstr ""
+msgstr "<span foreground='#ff0000'>Virhe avattaessa lokitiedostoa</span>"
 
 #: ../src/tracks.c:323
 #, c-format
 msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
-msgstr ""
+msgstr "<b><span foreground='#0000ff'>Loki: %s</span></b>"
 
 #: ../src/tracks.c:390
 #, c-format
 msgid "Problem opening directory: %s\n"
-msgstr ""
+msgstr "Ongelma avattaessa hakemistoa: %s\n"
 
-#: ../src/tracks.c:639
+#: ../src/tracks.c:640
 #, c-format
 msgid "Failed to parse document\n"
-msgstr ""
+msgstr "Asiakirjan jäsentäminen epäonnistui\n"
 
-#: ../src/tracks.c:785
+#: ../src/tracks.c:786
 msgid ""
 "<span color='#aa0000'><b>Oops! No Route found</b></span>\n"
 "Try with another Start/End"
 msgstr ""
+"<span color='#aa0000'><b>Ikävä kyllä reittiä ei löydy</b></span>\n"
+"Kokeile toisella alku- tai loppupisteellä"
 
-#: ../src/tracks.c:796
+#: ../src/tracks.c:797
 msgid ""
 "<span color='#aa0000'><b>Duh! A Server Error</b></span>\n"
 "Maybe try later again..."
 msgstr ""
+"<span color='#aa0000'><b>Ikävä kyllä tapahtui palvelinvirhe</b></span>\n"
+"Kokeile ehkä myöhemmin uudelleen..."
 
-#: ../src/tracks.c:803
+#: ../src/tracks.c:804
 msgid ""
 "<span color='#aa0000'><b>Oh! A Network Error</b></span>\n"
 "Check the internet!"
 msgstr ""
+"<span color='#aa0000'><b>Verkkovirhe</b></span>\n"
+"Tarkista Internet-yhteys"
 
 #: ../src/hrm_functions.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "<b><big>%d</big></b> <small>bpm</small>"
-msgstr "<big><b>Ystävät</b></big>   <small>[2/4]</small>"
+msgstr "<b><big>%d</big></b> <small>bpm</small>"
 
 #: ../src/hrm_functions.c:156
 #, c-format
 msgid "<b><big>%d/%d</big></b>"
-msgstr ""
+msgstr "<b><big>%d/%d</big></b>"
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "Display map and GPS position"
@@ -477,117 +536,113 @@ msgid "GPS and Map"
 msgstr "GPS ja kartta"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
-#, fuzzy
 msgid "Altitude unit"
-msgstr "Korkeus"
+msgstr "Korkeusyksikkö"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:2
-#, fuzzy
 msgid "Automatically download map-tiles as needed"
-msgstr "Lataa karttapalat automaattisesti"
+msgstr "Lataa karttapalat automaattisesti tarvittaessa"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:3
-#, fuzzy
 msgid "Avoid re-downloading cached tiles"
-msgstr "Lataa karttapalat automaattisesti"
+msgstr "Vältä välimuistiin ladattujen palojen uudelleen lataamista"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:4
 msgid "Detail scale-factor"
-msgstr ""
+msgstr "Yksityiskohtien skaalauskerroin"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:5
 msgid "Friend-finder password"
-msgstr ""
+msgstr "Tuttavaetsimen salasana"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:6
 msgid "Friend-finder update interval, in minutes"
-msgstr ""
+msgstr "Tuttavaetsimen päivitysväli minuuteissa"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:7
 msgid "Friend-finder username"
-msgstr ""
+msgstr "Tuttavaetsimen käyttäjänimi"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:8
-#, fuzzy
 msgid "GPSD host"
-msgstr " GPSD"
+msgstr "GPSD-isäntä"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:9
-#, fuzzy
 msgid "GPSD port"
-msgstr "Urheilu"
+msgstr "GPSD-portti"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:10
 msgid "Horizontal viewport-coordinate"
-msgstr ""
+msgstr "Vaakasuuntainen näkymän koordinaatti"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:11
 msgid "Latitude/longitude unit"
-msgstr ""
+msgstr "Leveys/pituusyksikkö"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:12
 msgid "Log tracks to a local file"
-msgstr ""
+msgstr "Kirjaa reitit paikalliseen lokitiedostoon"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:13
 msgid "Map-repository definitions"
-msgstr ""
+msgstr "Karttalähteiden määritteet"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:14
 msgid ""
 "Number of seconds by which photo timestamps must be corrected for geocoding"
 msgstr ""
+"Sekunteja joiden kuluttua valokuvien aikamerkit tulee korjata geokoodausta "
+"varten"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:15
 msgid "Publish your location & show others' locations"
-msgstr ""
+msgstr "Julkaise sijaintisi ja näytä muiden sijainnit"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:16
-#, fuzzy
 msgid "Speed unit"
-msgstr "Nopeus"
+msgstr "Nopeusyksikkö"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:17
 msgid "Status-message to publish in the friend-finder"
-msgstr ""
+msgstr "Julkaistava tilaviesti tuttavaetsimeen"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:18
 msgid "The Bluetooth address of your heartrate-monitor"
-msgstr ""
+msgstr "Sykeseurantalaitteen Bluetooth-osoite"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:19
 msgid "The active map-repository"
-msgstr ""
+msgstr "Aktiivinen karttalähde"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:20
-#, fuzzy
 msgid "The directory into which track-files are written"
-msgstr "Hakemisto johon reitit kirjoitetaan:"
+msgstr "Hakemisto jonne reittitiedostot kirjoitetaan"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:21
 msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
 msgstr ""
+"Käsittele valokuvien aikaleimoja suhteellisena tähän aikavyöhykkeeseen "
+"(UTC=13)"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:22
 msgid "Use the heartrate-monitor specified in hrm_bt_addr"
-msgstr ""
+msgstr "Käytä sykeseurantalaitetta, joka on määritelty kohdassa hrm_bt_addr"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:23
 msgid "Vertical viewport-coordinate"
-msgstr ""
+msgstr "Pystysuuntainen näkymän koordinaatti"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:24
-#, fuzzy
 msgid "Viewport zoom-level"
-msgstr "+ 1 zoomaustaso"
+msgstr "Näkymän zoomaustaso"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:25
 msgid "`My position', latitude"
-msgstr ""
+msgstr "`Minun sijaintini', leveyaste"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:26
 msgid "`My position', longitude"
-msgstr ""
+msgstr "`Minun sijaintini', pituusaste"
 
 #: ../data/foxtrotgps.glade.h:1
 msgid ""
@@ -646,7 +701,6 @@ msgid "-"
 msgstr "-"
 
 #: ../data/foxtrotgps.glade.h:16
-#, fuzzy
 msgid ""
 "- please choose -\n"
 "Accomodation\n"
@@ -679,14 +733,14 @@ msgstr ""
 "Nähtävyydet ja vapaa-aika\n"
 "Ostokset\n"
 "Urheilu\n"
-"Omat sijainnit"
+"Omat sijainnit\n"
+"Geokätköt"
 
 #: ../data/foxtrotgps.glade.h:32
 msgid "--"
 msgstr "--"
 
 #: ../data/foxtrotgps.glade.h:33
-#, fuzzy
 msgid ""
 "-- Show All --\n"
 "Accomodation\n"
@@ -719,7 +773,8 @@ msgstr ""
 "Nähtävyydet ja vapaa-aika\n"
 "Ostokset\n"
 "Urheilu\n"
-"Omat sijainnit"
+"Omat sijainnit\n"
+"Geokätköt"
 
 #: ../data/foxtrotgps.glade.h:49
 msgid ""
@@ -852,9 +907,8 @@ msgid "<b>Geocoding your photos</b>"
 msgstr " <b>Geokoodataan valokuvia</b>"
 
 #: ../data/foxtrotgps.glade.h:93
-#, fuzzy
 msgid "<b>Heart Rate Monitor</b>"
-msgstr "<b>Nimi uudelle lähteelle</b>"
+msgstr "<b>Sydämen sykkeen seuranta</b>"
 
 #: ../data/foxtrotgps.glade.h:94
 msgid "<b>Map Download</b>"
@@ -918,7 +972,7 @@ msgstr "<big><b>Asetukset</b></big>   <small>[4/4]</small>"
 
 #: ../data/foxtrotgps.glade.h:109
 msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
-msgstr "<big><b>Ystävät</b></big>   <small>[2/4]</small>"
+msgstr "<big><b>Tuttavat</b></big>   <small>[2/4]</small>"
 
 #: ../data/foxtrotgps.glade.h:110
 msgid "<big><b>Tracks</b></big>   <small>[3/4]</small>"
@@ -970,7 +1024,7 @@ msgstr "<span font_desc='40'> -- </span>"
 
 #: ../data/foxtrotgps.glade.h:122
 msgid "Activate Heartrate Monitor"
-msgstr ""
+msgstr "Aktivoi sykeseuranta"
 
 #: ../data/foxtrotgps.glade.h:123
 msgid ""
@@ -1010,7 +1064,7 @@ msgstr "Suuri"
 
 #: ../data/foxtrotgps.glade.h:132
 msgid "Bluetooth Address: "
-msgstr ""
+msgstr "Bluetooth-osoite: "
 
 #: ../data/foxtrotgps.glade.h:133
 msgid "Category:"
@@ -1182,7 +1236,7 @@ msgstr "Kulkusuunta"
 
 #: ../data/foxtrotgps.glade.h:177
 msgid "Heart"
-msgstr ""
+msgstr "Sydän"
 
 #: ../data/foxtrotgps.glade.h:179
 msgid "Host:"
@@ -1277,9 +1331,8 @@ msgid "Previous map repo"
 msgstr "Edellinen karttavarasto"
 
 #: ../data/foxtrotgps.glade.h:202
-#, fuzzy
 msgid "Re-download cached tiles"
-msgstr "Lataa karttapalat automaattisesti"
+msgstr "Lataa välimuistissa olevat karttapalat uudelleen"
 
 #: ../data/foxtrotgps.glade.h:203
 msgid "Register!"
