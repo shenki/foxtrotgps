@@ -7,15 +7,15 @@ msgstr ""
 "Project-Id-Version: foxtrotgps-1.0.1\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-25 11:08-0400\n"
-"PO-Revision-Date: 2011-08-27 21:57+0200\n"
+"PO-Revision-Date: 2011-11-29 19:30+0200\n"
 "Last-Translator: Branko Majic <branko@majic.rs>\n"
 "Language-Team: Serbian Team\n"
 "Language: sr\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n"
-"%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
+"Plural-Forms: nplurals=3; plural=(n%10==1 && n%100!=11 ? 0 : n%10>=2 && n%"
+"10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 "X-Generator: Virtaal 0.7.0\n"
 
 #: ../src/support.c:97 ../src/support.c:121
@@ -26,24 +26,24 @@ msgstr "Не могу да нађем датотеку слике: %s"
 #: ../src/support.c:128
 #, c-format
 msgid "Failed to load pixbuf file: %s: %s\n"
-msgstr ""
+msgstr "Учитавање датотеке слике није успело: %s: %s\n"
 
 #: ../src/main.c:33
 msgid "Print the program version and exit"
-msgstr ""
+msgstr "Испиши издање програма и изађи"
 
 #: ../src/main.c:35
 msgid "Start in fullscreen mode"
-msgstr ""
+msgstr "Покрени преко читавог екрана"
 
 #: ../src/main.c:37
 msgid "Load the GUI from this GladeXML file"
-msgstr ""
+msgstr "Учитај графичко сучеље из наведеног GladeXML фајла"
 
 #: ../src/main.c:67
 #, c-format
 msgid "option parsing failed: %s\n"
-msgstr ""
+msgstr "обрада опције није успела: %s\n"
 
 #. Developers may run into this if they're naively
 #. trying to run from the build-tree without having
@@ -81,12 +81,12 @@ msgstr "Подели!"
 #: ../src/callbacks.c:916
 #, c-format
 msgid "<b><i>Distance:</i></b> %.3fkm\n"
-msgstr ""
+msgstr "<b><i>Удаљеност:</i></b> %.3fkm\n"
 
 #: ../src/callbacks.c:941
 #, c-format
 msgid "No friends at or near this position"
-msgstr ""
+msgstr "Нема пријатеља близу овог положаја"
 
 #: ../src/callbacks.c:1050
 #, c-format
@@ -96,6 +96,10 @@ msgid ""
 "<small><i>(coords auto-copied to clipboard)\n"
 "</i></small>\n"
 msgstr ""
+"<b>Одабрана тачка:</b>\n"
+"%s\n"
+"<small><i>(аутоматско копирање у складиште)\n"
+"</i></small>\n"
 
 #: ../src/callbacks.c:1056
 #, c-format
@@ -103,6 +107,8 @@ msgid ""
 "<b>Bearing:</b>\n"
 "%.1f°\n"
 msgstr ""
+"<b>Правац:</b>\n"
+"%.1f°\n"
 
 #: ../src/callbacks.c:1061
 #, c-format
@@ -110,11 +116,13 @@ msgid ""
 "<b>Distance from your location:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Удаљеност од вашег положаја:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1069
 #, c-format
 msgid "Click another point for distance"
-msgstr ""
+msgstr "Одаберите још једну тачку за процену удаљености"
 
 #: ../src/callbacks.c:1073
 #, c-format
@@ -122,6 +130,8 @@ msgid ""
 "<b>Distance from last point:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Удаљеност од последње тачке:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1075
 #, c-format
@@ -129,6 +139,8 @@ msgid ""
 "<b>Overall Distance:</b>\n"
 "%.2f%s"
 msgstr ""
+"<b>Укупна удаљеност:</b>\n"
+"%.2f%s"
 
 #: ../src/callbacks.c:1211
 #, c-format
@@ -142,49 +154,61 @@ msgid ""
 "will now be used as your location\n"
 "for the friend finder service."
 msgstr ""
+"<b>Ручно постављање положаја</b>\n"
+"\n"
+"Одабрана тачка:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"биће коришћена као ваш тренутни положај\n"
+"за услугу проналажења пријатеља."
 
 #: ../src/callbacks.c:1328
 msgid "Resume"
-msgstr ""
+msgstr "Настави"
 
 #: ../src/callbacks.c:1656 ../src/callbacks.c:1765
 #, c-format
 msgid "File not found"
-msgstr ""
+msgstr "Датотека није пронађена"
 
 #: ../src/callbacks.c:1705
-#, fuzzy, c-format
+#, c-format
 msgid "No Geo Photo found"
-msgstr "Гео фотографија"
+msgstr "Ниједна гео-фотографија није пронађена"
 
 #: ../src/callbacks.c:2331
 msgid ""
 "<span foreground='#ff0000'>POI has no ID -> see website for help!</span>"
 msgstr ""
+"<span foreground='#ff0000'>ТИ не садржи ознаку -> помоћ можете пронаћи на "
+"сајту!</span>"
 
 #: ../src/callbacks.c:2561
-#, fuzzy
 msgid "Show Messages"
-msgstr "Порука"
+msgstr "Прикажи поруке"
 
 #: ../src/callbacks.c:2567 ../data/foxtrotgps.glade.h:178
 msgid "Hide Messages"
 msgstr "Сакриј поруке"
 
 #: ../src/callbacks.c:3474
-#, fuzzy
 msgid "<b><i>Connecting...</i></b>"
-msgstr "<i><b>Повезујем се...</b></i>"
+msgstr "<b><i>Повезујем се...</i></b>"
 
 #: ../src/gps_functions.c:490
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
+"<span foreground='#ff0000'><b>Пристигла је нова порука. Кликните "
+"овде.</b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 msgstr ""
+"<b>ГПС демон није пронађен</b> - <span foreground='#0000ff'><b>D%"
+"d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
@@ -192,11 +216,13 @@ msgid ""
 "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
 "</b>"
 msgstr ""
+"<b>ГПС демон није пронађен</b> - <span foreground='#0000ff'><b>D%"
+"d</b></span> - <b>[%d]</b>"
 
 #: ../src/gps_functions.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "<b>no GPSD found</b>"
-msgstr "<b>ГПС није пронађен</b>"
+msgstr "<b>ГПС демон није пронађен</b>"
 
 #: ../src/gps_functions.c:619
 #, c-format
@@ -204,39 +230,40 @@ msgid ""
 "%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
 "small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
+"%s%s%s%s<b>%4.1f</b>%s <small>пут </small><b>%.2f</b>%s <small>вис "
+"</small><b>%.0f</b>%s <small>прв </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
 msgid "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
-msgstr ""
+msgstr "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
 
 #: ../src/gps_functions.c:780
 #, c-format
 msgid "connection to gpsd LOST\n"
-msgstr ""
+msgstr "веза ка ГПС демону је изгубљена\n"
 
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr ""
+msgstr "веза ка ГПС демону је успела \n"
 
 #: ../src/init.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load pixbuf file: %s\n"
-msgstr "Не могу да нађем датотеку слике: %s"
+msgstr "Не могу да очитам датотеку слике: %s\n"
 
 #: ../src/friends.c:104 ../src/friends.c:471
-#, fuzzy
 msgid "Connecting..."
-msgstr "<i><b>Повезујем се...</b></i>"
+msgstr "Повезујем се..."
 
 #: ../src/friends.c:335
 msgid "No response (200)"
-msgstr ""
+msgstr "Нема одговора (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
-msgstr ""
+msgstr "Ух. Дошло је до неке грешке..."
 
 #: ../src/friends.c:580
 #, c-format
@@ -246,6 +273,10 @@ msgid ""
 "%s\n"
 "<i>%s</i>"
 msgstr ""
+"<b>%s</b>\n"
+"Последње виђење:\n"
+"%s\n"
+"<i>%s</i>"
 
 #: ../src/friends.c:601
 msgid "Msg"
@@ -256,14 +287,14 @@ msgid "Go To"
 msgstr "Иди до"
 
 #: ../src/friends.c:629
-#, fuzzy, c-format
+#, c-format
 msgid "Send Message To: <b>%s</b>"
-msgstr "Пошаљи поруку за:"
+msgstr "Пошаљи поруку за: <b>%s</b>"
 
 #: ../src/friends.c:903
 #, c-format
 msgid "msg-code: %d"
-msgstr ""
+msgstr "код поруке: %d"
 
 #: ../src/friends.c:957
 #, c-format
@@ -272,33 +303,35 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"<i><small>За: </small><b>%s</b></i>\n"
+"\n"
+"%s"
 
 #: ../src/friends.c:971
 msgid "Reply"
 msgstr "Одговори"
 
 #: ../src/geo_photos.c:248 ../src/geo_photos.c:654
-#, fuzzy, c-format
+#, c-format
 msgid "  1 second"
 msgid_plural "  %d seconds"
-msgstr[0] "  0 секунди"
-msgstr[1] "  0 секунди"
-msgstr[2] "  0 секунди"
+msgstr[0] "  1 секунда"
+msgstr[1] "  %d секунде"
+msgstr[2] "  %d секунди"
 
 #: ../src/geo_photos.c:254 ../src/geo_photos.c:660
-#, fuzzy, c-format
+#, c-format
 msgid "  %d:00h"
-msgstr "  +00:00ч"
+msgstr "  %d:00ч"
 
 #: ../src/geo_photos.c:406 ../src/geo_photos.c:436
-#, fuzzy
 msgid "<span color=\"#090\"><b>ok</b></span>"
-msgstr "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"#090\"><b>у реду</b></span>"
 
 #: ../src/geo_photos.c:610
 #, c-format
 msgid "%s loading pixbuf failed - actually this should not happen\n"
-msgstr ""
+msgstr "%s није успело учитавање датотеке слике - ово заправо не би смело да се деси\n"
 
 #: ../src/geo_photos.c:710 ../data/foxtrotgps.glade.h:228
 msgid "Working...."
@@ -307,78 +340,97 @@ msgstr "Радим...."
 #: ../src/geo_photos.c:792
 #, c-format
 msgid "Error running \"%s\": %s\n"
-msgstr ""
+msgstr "Грешка при покретање \"%s\": %s\n"
 
 #: ../src/poi.c:264
 msgid "- Please choose -|Hotel|Motel|B&B|Hostel|Camping"
-msgstr ""
+msgstr "- Молим одаберите -|Хотел|Мотел|НиД|Хостел|Камповање"
 
 #: ../src/poi.c:265
 msgid ""
 "- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
 "Travel Agency|Other"
 msgstr ""
+"- Молим одаберите -|Банка / Мењачница / Банкомат|Пошта|Агенција за "
+"некретнине|Туристичка агенција|Остало"
 
 #: ../src/poi.c:266
 msgid ""
 "- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
 "Radar - Speed Trap|My Car"
 msgstr ""
+"- Молим одаберите -|Паркинг|Бензинска "
+"пумпа|Мајстор|Изнајмљивање|Дељење|Дилер|Радар - праћење брзине|Мој ауто"
 
 #: ../src/poi.c:267
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
-msgstr ""
+msgstr "- Молим одаберите -|Биоскоп|Позориште|Концертна сала|Опера|Коцкарница"
 
 #: ../src/poi.c:268
 msgid "- Please choose -|Pharmacy|Hospital|Doctor"
-msgstr ""
+msgstr "- Молим одаберите -|Апотека|Болница|Лекар"
 
 #: ../src/poi.c:269
 msgid ""
 "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
 "Spot"
 msgstr ""
+"- Молим одаберите -|Кафић|Крчма|Бар са сепареима|Клуб|Плес|Интернет "
+"кафић|Бежична мрежа"
 
 #: ../src/poi.c:270
 msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
-msgstr ""
+msgstr "- Молим одаберите -|Црква|Џамија|Синагога|Храм|Гробље"
 
 #: ../src/poi.c:271
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr ""
+"- Молим одаберите -|Аутобус|Метро|Трамвај|Такси|Железничка "
+"станица|Бицикл|Лука|Аеродром"
 
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
 "Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
+"- Молим одаберите -|Локална "
+"храна|Европска|Азијска|Америчка|Афричка|Пица|Брза храна|За "
+"понети|Роштиљ|Италијанска|Мексичка|Индијска|Јапанска|Француска"
 
 #: ../src/poi.c:273
 msgid ""
 "- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
 "Laundry|Hairdresser|Other"
 msgstr ""
+"- Молим одбарите -|Бежична мрежа|Банкомат|Пошта/поштанско "
+"сандуче|Праоница|Фризер|Остало"
 
 #: ../src/poi.c:274
 msgid ""
 "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
 msgstr ""
+"- Молим одаберите -|Туристичке информације|Споменик|Музеј|Зоолошки "
+"врт|Видиковац|Рељефна мапа|Остало"
 
 #: ../src/poi.c:275
 msgid ""
 "- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
 "Butcher|DoItYourself|Other"
 msgstr ""
+"- Молим одаберите -|Супермаркет|Тржни "
+"центар|Одећа|Обућа|Храна|Пекара|Месара|Уради сам|Остало"
 
 #: ../src/poi.c:276
 msgid ""
 "- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
 "Geo Cache|Other"
 msgstr ""
+"- Молимо одаберите -|Хала/стадион|Базен|Слободно пењање|Клизање на "
+"леду|Голф|Гео-остава|Остало"
 
 #: ../src/poi.c:277
 msgid "- Please choose -|Friend|Other Cool Place"
-msgstr ""
+msgstr "- Молим одаберите -|Пријатељ|Остало занимљива места"
 
 #: ../src/poi.c:278
 msgid ""
@@ -386,6 +438,9 @@ msgid ""
 "Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
 "Wherigo|Other"
 msgstr ""
+"- Молим одаберите -|Изворни|Вишеструки|Виртуелни|Хибридно поштанско "
+"сандуче|Догађај|Непознат|Интернет камера|Рашчишћавање|Земљаски|Велики "
+"догађај|ГПС авантуре|Wherigo|Остало"
 
 #: ../src/poi.c:724
 #, c-format
@@ -394,77 +449,85 @@ msgid ""
 "\n"
 "Distance: %.3fkm"
 msgstr ""
+"%s\n"
+"\n"
+"Удаљеност: %.3fkm"
 
 #: ../src/poi.c:738
-#, fuzzy
 msgid "<b>No POI found</b>\n"
-msgstr "<b>ГПС није пронађен</b>"
+msgstr "<b>Ниједна ТИ није пронађена</b>\n"
 
 #: ../src/util.c:25
 #, c-format
 msgid "Can't open database: %s\n"
-msgstr ""
+msgstr "Не могу да отворим базу података: %s\n"
 
 #: ../src/util.c:36
 #, c-format
 msgid "SQL error: %s\n"
-msgstr ""
+msgstr "Грешка у SQL-у: %s\n"
 
 #: ../src/tracks.c:314
 #, c-format
 msgid "oops: %s\n"
-msgstr ""
+msgstr "упс: %s\n"
 
 #: ../src/tracks.c:315
 msgid "Triplog open failed: "
-msgstr ""
+msgstr "Отварање путног записа није успело: "
 
 #: ../src/tracks.c:317
 msgid "<span foreground='#ff0000'>Error opening logfile</span>"
-msgstr ""
+msgstr "<span foreground='#ff0000'>Грешка у отварању извештаја</span>"
 
 #: ../src/tracks.c:323
 #, c-format
 msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
-msgstr ""
+msgstr "<b><span foreground='#0000ff'>Извештај: %s</span></b>"
 
 #: ../src/tracks.c:390
 #, c-format
 msgid "Problem opening directory: %s\n"
-msgstr ""
+msgstr "Проблем приликом отварања директоријума: %s\n"
 
 #: ../src/tracks.c:639
 #, c-format
 msgid "Failed to parse document\n"
-msgstr ""
+msgstr "Неуспешно тумачење документа\n"
 
 #: ../src/tracks.c:785
 msgid ""
 "<span color='#aa0000'><b>Oops! No Route found</b></span>\n"
 "Try with another Start/End"
 msgstr ""
+"<span color='#aa0000'><b>Упс! Ниједно упутство није пронађено</b></span>\n"
+"Покушајте са другим почетком/крајем"
 
 #: ../src/tracks.c:796
 msgid ""
 "<span color='#aa0000'><b>Duh! A Server Error</b></span>\n"
 "Maybe try later again..."
 msgstr ""
+"<span color='#aa0000'><b>Уф! Грешка на серверу</b></span>\n"
+"Покушајте мало касније..."
 
 #: ../src/tracks.c:803
 msgid ""
 "<span color='#aa0000'><b>Oh! A Network Error</b></span>\n"
 "Check the internet!"
 msgstr ""
+"<span color='#aa0000'><b>Ух! Грешка на мрежи</b></span>\n"
+"Проверите везу са Интернетом!"
 
 #: ../src/hrm_functions.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "<b><big>%d</big></b> <small>bpm</small>"
-msgstr "<big><b>Пријатељи</b></big>   <small>[2/4]</small>"
+msgstr "<b><big>%d</big></b> <small>оум</small>"
 
 #: ../src/hrm_functions.c:156
 #, c-format
 msgid "<b><big>%d/%d</big></b>"
-msgstr ""
+msgstr "<b><big>%d/%d</big></b>"
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "Display map and GPS position"
@@ -581,11 +644,11 @@ msgstr "Увећање приказа"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:25
 msgid "`My position', latitude"
-msgstr "'Мој положај', географска ширина"
+msgstr "`Мој положај', географска ширина"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:26
 msgid "`My position', longitude"
-msgstr "'Мој положак', географска дужина"
+msgstr "`Мој положак', географска дужина"
 
 #: ../data/foxtrotgps.glade.h:1
 msgid ""
@@ -644,7 +707,6 @@ msgid "-"
 msgstr "-"
 
 #: ../data/foxtrotgps.glade.h:16
-#, fuzzy
 msgid ""
 "- please choose -\n"
 "Accomodation\n"
@@ -677,14 +739,14 @@ msgstr ""
 "Знаменитости и опуштање\n"
 "Куповина\n"
 "Спорт\n"
-"Лична места"
+"Лична места\n"
+"Гео-штек"
 
 #: ../data/foxtrotgps.glade.h:32
 msgid "--"
 msgstr "--"
 
 #: ../data/foxtrotgps.glade.h:33
-#, fuzzy
 msgid ""
 "-- Show All --\n"
 "Accomodation\n"
@@ -717,7 +779,8 @@ msgstr ""
 "Знаменитости и опуштање\n"
 "Куповина\n"
 "Спорт\n"
-"Лична места"
+"Лична места\n"
+"Гео-штек"
 
 #: ../data/foxtrotgps.glade.h:49
 msgid ""
@@ -1514,7 +1577,7 @@ msgstr "постави ПТ"
 
 #: ../data/foxtrotgps.glade.h:266
 msgid "show POIs"
-msgstr "Прикажи ТИ"
+msgstr "прикажи ТИ"
 
 #: ../data/foxtrotgps.glade.h:267
 msgid "show friends"
