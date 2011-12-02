@@ -5,43 +5,44 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: FoxtrotGPS 1.0.1\n"
+"Project-Id-Version: FoxtrotGPS 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2011-09-25 11:08-0400\n"
-"PO-Revision-Date: 2011-07-26 20:53+0900\n"
+"POT-Creation-Date: 2011-11-21 09:57+0900\n"
+"PO-Revision-Date: 2011-11-22 01:18+0900\n"
 "Last-Translator: Yoshizumi Endo <y-endo@ceres.dti.ne.jp>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
-"Language: \n"
+"Language: ja\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
 
 #: ../src/support.c:97 ../src/support.c:121
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "pixmap ファイルが見つかりません: %s"
+msgstr "pixmap ファイルが見つかりませんでした: %s"
 
 #: ../src/support.c:128
 #, c-format
 msgid "Failed to load pixbuf file: %s: %s\n"
-msgstr ""
+msgstr "pixbuf ファイルのロードに失敗しました: %s: %s\n"
 
 #: ../src/main.c:33
 msgid "Print the program version and exit"
-msgstr ""
+msgstr "プログラムのバージョンを表示して終了"
 
 #: ../src/main.c:35
 msgid "Start in fullscreen mode"
-msgstr ""
+msgstr "フルスクリーン表示で起動"
 
 #: ../src/main.c:37
 msgid "Load the GUI from this GladeXML file"
-msgstr ""
+msgstr "GladeXML ファイルから GUI をロード"
 
 #: ../src/main.c:67
 #, c-format
 msgid "option parsing failed: %s\n"
-msgstr ""
+msgstr "オプションのパースに失敗: %s\n"
 
 #. Developers may run into this if they're naively
 #. trying to run from the build-tree without having
@@ -63,9 +64,7 @@ msgstr ""
 msgid ""
 "%s could not load its user interface; %s does not not appear to be properly "
 "installed."
-msgstr ""
-"%s はユーザインターフェースをロードできませんでした。 %s は適切にインストール"
-"されていないようです。"
+msgstr "%s はユーザインターフェースをロードできませんでした。%s は適切にインストールされていないようです。"
 
 #: ../src/callbacks.c:826 ../src/callbacks.c:1326
 #: ../data/foxtrotgps.glade.h:218
@@ -79,12 +78,12 @@ msgstr "共有"
 #: ../src/callbacks.c:916
 #, c-format
 msgid "<b><i>Distance:</i></b> %.3fkm\n"
-msgstr ""
+msgstr "<b><i>距離:</i></b> %.3fkm\n"
 
 #: ../src/callbacks.c:941
 #, c-format
 msgid "No friends at or near this position"
-msgstr ""
+msgstr "この付近にフレンドはいません"
 
 #: ../src/callbacks.c:1050
 #, c-format
@@ -94,6 +93,10 @@ msgid ""
 "<small><i>(coords auto-copied to clipboard)\n"
 "</i></small>\n"
 msgstr ""
+"<b>このポイント:</b>\n"
+"%s\n"
+"<small><i>(位置情報をクリップボードに自動コピー)\n"
+"</i></small>\n"
 
 #: ../src/callbacks.c:1056
 #, c-format
@@ -101,6 +104,8 @@ msgid ""
 "<b>Bearing:</b>\n"
 "%.1f°\n"
 msgstr ""
+"<b>方位:</b>\n"
+"%.1f°\n"
 
 #: ../src/callbacks.c:1061
 #, c-format
@@ -108,11 +113,13 @@ msgid ""
 "<b>Distance from your location:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>現在地からの距離:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1069
 #, c-format
 msgid "Click another point for distance"
-msgstr ""
+msgstr "距離測定のために他のポイントをクリック"
 
 #: ../src/callbacks.c:1073
 #, c-format
@@ -120,6 +127,8 @@ msgid ""
 "<b>Distance from last point:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>最後のポイントからの距離:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1075
 #, c-format
@@ -127,6 +136,8 @@ msgid ""
 "<b>Overall Distance:</b>\n"
 "%.2f%s"
 msgstr ""
+"<b>総距離:</b>\n"
+"%.2f%s"
 
 #: ../src/callbacks.c:1211
 #, c-format
@@ -140,49 +151,60 @@ msgid ""
 "will now be used as your location\n"
 "for the friend finder service."
 msgstr ""
+"<b>位置情報の手動設定</b>\n"
+"\n"
+"このポイント:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"をあなたの位置情報としてフレンド\n"
+"検索サービスで使用します。"
 
 #: ../src/callbacks.c:1328
 msgid "Resume"
-msgstr ""
+msgstr "再開"
 
 #: ../src/callbacks.c:1656 ../src/callbacks.c:1765
 #, c-format
 msgid "File not found"
-msgstr ""
+msgstr "ファイルが見つかりません"
 
 #: ../src/callbacks.c:1705
-#, fuzzy, c-format
+#, c-format
 msgid "No Geo Photo found"
-msgstr "位置情報付き写真"
+msgstr "位置情報付き写真が見つかりません"
 
 #: ../src/callbacks.c:2331
 msgid ""
 "<span foreground='#ff0000'>POI has no ID -> see website for help!</span>"
 msgstr ""
+"<span foreground='#ff0000'>POI に ID がありません -> ウェブサイトでヘルプを参"
+"照してください</span>"
 
 #: ../src/callbacks.c:2561
-#, fuzzy
 msgid "Show Messages"
-msgstr "メッセージ"
+msgstr "メッセージを表示する"
 
 #: ../src/callbacks.c:2567 ../data/foxtrotgps.glade.h:178
 msgid "Hide Messages"
 msgstr "メッセージを隠す"
 
 #: ../src/callbacks.c:3474
-#, fuzzy
 msgid "<b><i>Connecting...</i></b>"
-msgstr "<i><b>接続中...</b></i>"
+msgstr "<b><i>接続中...</i></b>"
 
 #: ../src/gps_functions.c:490
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
+"<span foreground='#ff0000'><b>新しいメッセージがあります。クリックしてくださ"
+"い。</b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 msgstr ""
+"<b>GPSD が見つかりません</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
@@ -190,11 +212,13 @@ msgid ""
 "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
 "</b>"
 msgstr ""
+"<b>GPSD が見つかりません</b> - <span foreground='#0000ff'><b>D%d</b></span> "
+"- <b>[%d]</b>"
 
 #: ../src/gps_functions.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "<b>no GPSD found</b>"
-msgstr "<b>GPS が見つかりません</b>"
+msgstr "<b>GPSD が見つかりません</b>"
 
 #: ../src/gps_functions.c:619
 #, c-format
@@ -202,39 +226,40 @@ msgid ""
 "%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
 "small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
+"%s%s%s%s<b>%4.1f</b>%s <small>距離 </small><b>%.2f</b>%s <small>標高 </"
+"small><b>%.0f</b>%s <small>方位 </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
 msgid "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
-msgstr ""
+msgstr "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
 
 #: ../src/gps_functions.c:780
 #, c-format
 msgid "connection to gpsd LOST\n"
-msgstr ""
+msgstr "GPSD への接続が切断されました\n"
 
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr ""
+msgstr "GPSD への接続に成功しました \n"
 
 #: ../src/init.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load pixbuf file: %s\n"
-msgstr "pixmap ファイルが見つかりません: %s"
+msgstr "pixbuf ファイルのロードに失敗しました: %s\n"
 
 #: ../src/friends.c:104 ../src/friends.c:471
-#, fuzzy
 msgid "Connecting..."
-msgstr "<i><b>接続中...</b></i>"
+msgstr "接続中..."
 
 #: ../src/friends.c:335
 msgid "No response (200)"
-msgstr ""
+msgstr "応答がありません (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
-msgstr ""
+msgstr "すみません。何らかのエラーが発生しました..."
 
 #: ../src/friends.c:580
 #, c-format
@@ -244,6 +269,10 @@ msgid ""
 "%s\n"
 "<i>%s</i>"
 msgstr ""
+"<b>%s</b>\n"
+"最終ポイント:\n"
+"%s\n"
+"<i>%s</i>"
 
 #: ../src/friends.c:601
 msgid "Msg"
@@ -254,14 +283,14 @@ msgid "Go To"
 msgstr "ここへ移動"
 
 #: ../src/friends.c:629
-#, fuzzy, c-format
+#, c-format
 msgid "Send Message To: <b>%s</b>"
-msgstr "メッセージの送信先:"
+msgstr "メッセージの送信先: <b>%s</b>"
 
 #: ../src/friends.c:903
 #, c-format
 msgid "msg-code: %d"
-msgstr ""
+msgstr "msg-code: %d"
 
 #: ../src/friends.c:957
 #, c-format
@@ -270,32 +299,33 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"<i><small>宛先: </small><b>%s</b></i>\n"
+"\n"
+"%s"
 
 #: ../src/friends.c:971
 msgid "Reply"
 msgstr "返信"
 
 #: ../src/geo_photos.c:248 ../src/geo_photos.c:654
-#, fuzzy, c-format
+#, c-format
 msgid "  1 second"
 msgid_plural "  %d seconds"
-msgstr[0] "  0 秒"
-msgstr[1] "  0 秒"
+msgstr[0] "  %d 秒"
 
 #: ../src/geo_photos.c:254 ../src/geo_photos.c:660
-#, fuzzy, c-format
+#, c-format
 msgid "  %d:00h"
-msgstr "  +00:00h"
+msgstr "  %d:00h"
 
 #: ../src/geo_photos.c:406 ../src/geo_photos.c:436
-#, fuzzy
 msgid "<span color=\"#090\"><b>ok</b></span>"
-msgstr "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"#090\"><b>ok</b></span>"
 
 #: ../src/geo_photos.c:610
 #, c-format
 msgid "%s loading pixbuf failed - actually this should not happen\n"
-msgstr ""
+msgstr "%s pixbuf のロードに失敗 - 想定外のエラーです\n"
 
 #: ../src/geo_photos.c:710 ../data/foxtrotgps.glade.h:228
 msgid "Working...."
@@ -304,78 +334,95 @@ msgstr "動作中..."
 #: ../src/geo_photos.c:792
 #, c-format
 msgid "Error running \"%s\": %s\n"
-msgstr ""
+msgstr "\"%s\" の実行にエラー: %s\n"
 
 #: ../src/poi.c:264
 msgid "- Please choose -|Hotel|Motel|B&B|Hostel|Camping"
-msgstr ""
+msgstr "- 選択してください -|Hotel|Motel|B&B|Hostel|Camping"
 
 #: ../src/poi.c:265
 msgid ""
 "- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
 "Travel Agency|Other"
 msgstr ""
+"- 選択してください -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
+"Travel Agency|Other"
 
 #: ../src/poi.c:266
 msgid ""
 "- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
 "Radar - Speed Trap|My Car"
 msgstr ""
+"- 選択してください -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
+"Radar - Speed Trap|My Car"
 
 #: ../src/poi.c:267
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
-msgstr ""
+msgstr "- 選択してください -|Cinema|Theatre|Concert Hall|Opera|Casino"
 
 #: ../src/poi.c:268
 msgid "- Please choose -|Pharmacy|Hospital|Doctor"
-msgstr ""
+msgstr "- 選択してください -|Pharmacy|Hospital|Doctor"
 
 #: ../src/poi.c:269
 msgid ""
 "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
 "Spot"
 msgstr ""
+"- 選択してください -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
+"Spot"
 
 #: ../src/poi.c:270
 msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
-msgstr ""
+msgstr "- 選択してください -|Church|Mosque|Synagoge|Temple|Cemetary"
 
 #: ../src/poi.c:271
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr ""
+"- 選択してください -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
 "Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
+"- 選択してください -|Local Food|European|Asian|American|African|Pizza|Fast "
+"Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
 
 #: ../src/poi.c:273
 msgid ""
 "- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
 "Laundry|Hairdresser|Other"
 msgstr ""
+"- 選択してください -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
+"Laundry|Hairdresser|Other"
 
 #: ../src/poi.c:274
 msgid ""
 "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
 msgstr ""
+"- 選択してください -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|"
+"Other"
 
 #: ../src/poi.c:275
 msgid ""
 "- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
 "Butcher|DoItYourself|Other"
 msgstr ""
+"- 選択してください -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
+"Butcher|DoItYourself|Other"
 
 #: ../src/poi.c:276
 msgid ""
 "- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
 "Geo Cache|Other"
 msgstr ""
+"- 選択してください -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|"
+"Golf|Geo Cache|Other"
 
 #: ../src/poi.c:277
 msgid "- Please choose -|Friend|Other Cool Place"
-msgstr ""
+msgstr "- 選択してください -|Friend|Other Cool Place"
 
 #: ../src/poi.c:278
 msgid ""
@@ -383,6 +430,9 @@ msgid ""
 "Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
 "Wherigo|Other"
 msgstr ""
+"- 選択してください -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|"
+"Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS "
+"Adventures|Wherigo|Other"
 
 #: ../src/poi.c:724
 #, c-format
@@ -391,77 +441,85 @@ msgid ""
 "\n"
 "Distance: %.3fkm"
 msgstr ""
+"%s\n"
+"\n"
+"距離: %.3fkm"
 
 #: ../src/poi.c:738
-#, fuzzy
 msgid "<b>No POI found</b>\n"
-msgstr "<b>GPS が見つかりません</b>"
+msgstr "<b>POI が見つかりません</b>\n"
 
 #: ../src/util.c:25
 #, c-format
 msgid "Can't open database: %s\n"
-msgstr ""
+msgstr "データベースを開けません: %s\n"
 
 #: ../src/util.c:36
 #, c-format
 msgid "SQL error: %s\n"
-msgstr ""
+msgstr "SQL エラー: %s\n"
 
 #: ../src/tracks.c:314
 #, c-format
 msgid "oops: %s\n"
-msgstr ""
+msgstr "oops: %s\n"
 
 #: ../src/tracks.c:315
 msgid "Triplog open failed: "
-msgstr ""
+msgstr "Triplog のオープンに失敗: "
 
 #: ../src/tracks.c:317
 msgid "<span foreground='#ff0000'>Error opening logfile</span>"
-msgstr ""
+msgstr "<span foreground='#ff0000'>ログファイルのオープン時にエラー</span>"
 
 #: ../src/tracks.c:323
 #, c-format
 msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
-msgstr ""
+msgstr "<b><span foreground='#0000ff'>ログ: %s</span></b>"
 
 #: ../src/tracks.c:390
 #, c-format
 msgid "Problem opening directory: %s\n"
-msgstr ""
+msgstr "ディレクトリのオープン時にエラー: %s\n"
 
-#: ../src/tracks.c:639
+#: ../src/tracks.c:640
 #, c-format
 msgid "Failed to parse document\n"
-msgstr ""
+msgstr "ドキュメントのパースに失敗\n"
 
-#: ../src/tracks.c:785
+#: ../src/tracks.c:786
 msgid ""
 "<span color='#aa0000'><b>Oops! No Route found</b></span>\n"
 "Try with another Start/End"
 msgstr ""
+"<span color='#aa0000'><b>ルートが見つかりません</b></span>\n"
+"他の出発地／目的地を試してください"
 
-#: ../src/tracks.c:796
+#: ../src/tracks.c:797
 msgid ""
 "<span color='#aa0000'><b>Duh! A Server Error</b></span>\n"
 "Maybe try later again..."
 msgstr ""
+"<span color='#aa0000'><b>サーバーエラー</b></span>\n"
+"しばらく経ってからもう一度試してださい..."
 
-#: ../src/tracks.c:803
+#: ../src/tracks.c:804
 msgid ""
 "<span color='#aa0000'><b>Oh! A Network Error</b></span>\n"
 "Check the internet!"
 msgstr ""
+"<span color='#aa0000'><b>ネットワークエラー</b></span>\n"
+"インターネットへの接続を確認してください"
 
 #: ../src/hrm_functions.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "<b><big>%d</big></b> <small>bpm</small>"
-msgstr "<big><b>フレンド</b></big>   <small>[2/4]</small>"
+msgstr "<b><big>%d</big></b> <small>bpm</small>"
 
 #: ../src/hrm_functions.c:156
 #, c-format
 msgid "<b><big>%d/%d</big></b>"
-msgstr ""
+msgstr "<b><big>%d/%d</big></b>"
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "Display map and GPS position"
@@ -637,7 +695,6 @@ msgid "-"
 msgstr "-"
 
 #: ../data/foxtrotgps.glade.h:16
-#, fuzzy
 msgid ""
 "- please choose -\n"
 "Accomodation\n"
@@ -670,14 +727,14 @@ msgstr ""
 "Sights & Leisure\n"
 "Shopping\n"
 "Sport\n"
-"My Personal Places"
+"My Personal Places\n"
+"Geocaches"
 
 #: ../data/foxtrotgps.glade.h:32
 msgid "--"
 msgstr "--"
 
 #: ../data/foxtrotgps.glade.h:33
-#, fuzzy
 msgid ""
 "-- Show All --\n"
 "Accomodation\n"
@@ -710,7 +767,8 @@ msgstr ""
 "Sights & Leisure\n"
 "Shopping\n"
 "Sport\n"
-"My Personal Places"
+"My Personal Places\n"
+"Geocaches"
 
 #: ../data/foxtrotgps.glade.h:49
 msgid ""
@@ -888,7 +946,7 @@ msgstr "<b>GPS 照合の出力:</b>"
 
 #: ../data/foxtrotgps.glade.h:104
 msgid "<b>Timezone:</b> "
-msgstr "<b>タイムゾーン:</b> \""
+msgstr "<b>タイムゾーン:</b>"
 
 #: ../data/foxtrotgps.glade.h:105
 msgid "<b>URI</b>"
@@ -1168,7 +1226,7 @@ msgstr "前のページ"
 
 #: ../data/foxtrotgps.glade.h:176
 msgid "Heading"
-msgstr "方角"
+msgstr "方位"
 
 #: ../data/foxtrotgps.glade.h:177
 msgid "Heart"
@@ -1535,4 +1593,4 @@ msgstr "ウェイ & ルート"
 
 #: ../data/foxtrotgps.glade.h:273
 msgid "xyz instead of zxy"
-msgstr " zxy の代わりに xyz を用いる"
+msgstr "zxy の代わりに xyz を用いる"
