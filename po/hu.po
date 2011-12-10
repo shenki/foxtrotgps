@@ -1,20 +1,21 @@
 # Hungarian translation for FoxtrotGPS
 # Copyright (C) 2009 Marcus Bauer
 # This file is distributed under the same license as the foxtrotgps package.
-# György Balló <ballogy@freestart.hu>, 2009.
+# György Balló <ballogy@freestart.hu>, 2009, 2011.
 #
 msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps 0.9.9\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2011-09-25 11:08-0400\n"
-"PO-Revision-Date: 2010-10-31 23:30+0100\n"
+"PO-Revision-Date: 2011-12-09 17:21+0100\n"
 "Last-Translator: György Balló <ballogy@freestart.hu>\n"
-"Language-Team: Hungarian <hu@li.org>\n"
+"Language-Team: magyar <>\n"
 "Language: hu\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
-"Content-Transfer-Encoding: 8bit\n"
+"Content-Transfer-Encoding: 8bits\n"
+"Plural-Forms: nplurals=2; plural=(n!=1);\n"
 
 #: ../src/support.c:97 ../src/support.c:121
 #, c-format
@@ -24,24 +25,24 @@ msgstr "Nem található a pixmap fájl: %s"
 #: ../src/support.c:128
 #, c-format
 msgid "Failed to load pixbuf file: %s: %s\n"
-msgstr ""
+msgstr "Nem tölthető be a pixbuf fájl: %s: %s\n"
 
 #: ../src/main.c:33
 msgid "Print the program version and exit"
-msgstr ""
+msgstr "Programverzió kiírása és kilépés"
 
 #: ../src/main.c:35
 msgid "Start in fullscreen mode"
-msgstr ""
+msgstr "Indítás teljes képernyős módban"
 
 #: ../src/main.c:37
 msgid "Load the GUI from this GladeXML file"
-msgstr ""
+msgstr "GUI betöltése ebből a GladeXML fájlból"
 
 #: ../src/main.c:67
 #, c-format
 msgid "option parsing failed: %s\n"
-msgstr ""
+msgstr "nem sikerült értelmezni az opciót: %s\n"
 
 #. Developers may run into this if they're naively
 #. trying to run from the build-tree without having
@@ -79,12 +80,12 @@ msgstr "Megosztás!"
 #: ../src/callbacks.c:916
 #, c-format
 msgid "<b><i>Distance:</i></b> %.3fkm\n"
-msgstr ""
+msgstr "<b><i>Távolság:</i></b> %.3f km\n"
 
 #: ../src/callbacks.c:941
 #, c-format
 msgid "No friends at or near this position"
-msgstr ""
+msgstr "Nincsenek barátok ebben a pozícióban vagy környékén"
 
 #: ../src/callbacks.c:1050
 #, c-format
@@ -94,6 +95,10 @@ msgid ""
 "<small><i>(coords auto-copied to clipboard)\n"
 "</i></small>\n"
 msgstr ""
+"<b>Ez a pont:</b>\n"
+"%s\n"
+"<small><i>(a koordináták automatikusan átmásolásra kerültek a vágólapra)\n"
+"</i></small>\n"
 
 #: ../src/callbacks.c:1056
 #, c-format
@@ -101,6 +106,8 @@ msgid ""
 "<b>Bearing:</b>\n"
 "%.1f°\n"
 msgstr ""
+"<b>Irány:</b>\n"
+"%.1f°\n"
 
 #: ../src/callbacks.c:1061
 #, c-format
@@ -108,11 +115,13 @@ msgid ""
 "<b>Distance from your location:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Távolság a pozíciójától:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1069
 #, c-format
 msgid "Click another point for distance"
-msgstr ""
+msgstr "A távolsághoz kattintson egy másik pontra"
 
 #: ../src/callbacks.c:1073
 #, c-format
@@ -120,6 +129,8 @@ msgid ""
 "<b>Distance from last point:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Távolság a legutóbbi ponttól:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1075
 #, c-format
@@ -127,6 +138,8 @@ msgid ""
 "<b>Overall Distance:</b>\n"
 "%.2f%s"
 msgstr ""
+"<b>A teljes távolság:</b>\n"
+"%.2f%s"
 
 #: ../src/callbacks.c:1211
 #, c-format
@@ -140,25 +153,35 @@ msgid ""
 "will now be used as your location\n"
 "for the friend finder service."
 msgstr ""
+"<b>Pozíció kézi beállítása</b>\n"
+"\n"
+"Ez a pont:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"lesz használva az ön pozíciójaként\n"
+"a barátkereső szolgáltatás számára."
 
 #: ../src/callbacks.c:1328
 msgid "Resume"
-msgstr ""
+msgstr "Visszaállítás"
 
 #: ../src/callbacks.c:1656 ../src/callbacks.c:1765
 #, c-format
 msgid "File not found"
-msgstr ""
+msgstr "A fájl nem találjató"
 
 #: ../src/callbacks.c:1705
-#, fuzzy, c-format
+#, c-format
 msgid "No Geo Photo found"
-msgstr "Geo fotó"
+msgstr "Nem található Geo fotó"
 
 #: ../src/callbacks.c:2331
 msgid ""
 "<span foreground='#ff0000'>POI has no ID -> see website for help!</span>"
 msgstr ""
+"<span foreground='#ff0000'>A POI-nak nincs azonosítója -> segítségért lásd a "
+"webhelyet!</span>"
 
 #: ../src/callbacks.c:2561
 msgid "Show Messages"
@@ -169,19 +192,20 @@ msgid "Hide Messages"
 msgstr "Üzenetek elrejtése"
 
 #: ../src/callbacks.c:3474
-#, fuzzy
 msgid "<b><i>Connecting...</i></b>"
-msgstr "<i><b>Kapcsolódás...</b></i>"
+msgstr "<b><i>Kapcsolódás...</i></b>"
 
 #: ../src/gps_functions.c:490
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
+"<span foreground='#ff0000'><b>Új üzenet érkezett. Kattintson ide.</b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 msgstr ""
+"<b>nem található GPSD</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
@@ -189,11 +213,13 @@ msgid ""
 "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
 "</b>"
 msgstr ""
+"<b>nem található GPSD</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 
 #: ../src/gps_functions.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "<b>no GPSD found</b>"
-msgstr "<b>nem található GPS</b>"
+msgstr "<b>nem található GPSD</b>"
 
 #: ../src/gps_functions.c:619
 #, c-format
@@ -201,39 +227,40 @@ msgid ""
 "%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
 "small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
+"small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
 msgid "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
-msgstr ""
+msgstr "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
 
 #: ../src/gps_functions.c:780
 #, c-format
 msgid "connection to gpsd LOST\n"
-msgstr ""
+msgstr "a kapcsolat a gpsd-vel ELVESZETT\n"
 
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr ""
+msgstr "a kapcsolódás a gpsd-hez SIKERÜLT\n"
 
 #: ../src/init.c:260
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load pixbuf file: %s\n"
-msgstr "Nem található a pixmap fájl: %s"
+msgstr "Nem található a pixbuf fájl: %s\n"
 
 #: ../src/friends.c:104 ../src/friends.c:471
-#, fuzzy
 msgid "Connecting..."
-msgstr "<i><b>Kapcsolódás...</b></i>"
+msgstr "Kapcsolódás..."
 
 #: ../src/friends.c:335
 msgid "No response (200)"
-msgstr ""
+msgstr "Nincs válasz (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
-msgstr ""
+msgstr "Ó! Hiba történt..."
 
 #: ../src/friends.c:580
 #, c-format
@@ -243,6 +270,10 @@ msgid ""
 "%s\n"
 "<i>%s</i>"
 msgstr ""
+"<b>%s</b>\n"
+"Legutóbb látszott:\n"
+"%s\n"
+"<i>%s</i>"
 
 #: ../src/friends.c:601
 msgid "Msg"
@@ -253,14 +284,14 @@ msgid "Go To"
 msgstr "Ugrás"
 
 #: ../src/friends.c:629
-#, fuzzy, c-format
+#, c-format
 msgid "Send Message To: <b>%s</b>"
-msgstr "Üzenet küldése neki:"
+msgstr "Üzenet küldése neki: <b>%s</b>"
 
 #: ../src/friends.c:903
 #, c-format
 msgid "msg-code: %d"
-msgstr ""
+msgstr "üzenet-kód: %d"
 
 #: ../src/friends.c:957
 #, c-format
@@ -269,32 +300,34 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"<i><small>Címzett: </small><b>%s</b></i>\n"
+"\n"
+"%s"
 
 #: ../src/friends.c:971
 msgid "Reply"
 msgstr "Válasz"
 
 #: ../src/geo_photos.c:248 ../src/geo_photos.c:654
-#, fuzzy, c-format
+#, c-format
 msgid "  1 second"
 msgid_plural "  %d seconds"
-msgstr[0] "  0 másodperc"
-msgstr[1] "  0 másodperc"
+msgstr[0] "  1 másodperc"
+msgstr[1] "  %d másodperc"
 
 #: ../src/geo_photos.c:254 ../src/geo_photos.c:660
-#, fuzzy, c-format
+#, c-format
 msgid "  %d:00h"
-msgstr "  +00:00h"
+msgstr "  %d:00h"
 
 #: ../src/geo_photos.c:406 ../src/geo_photos.c:436
-#, fuzzy
 msgid "<span color=\"#090\"><b>ok</b></span>"
-msgstr "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr "<span color=\"#090\"><b>OK</b></span>"
 
 #: ../src/geo_photos.c:610
 #, c-format
 msgid "%s loading pixbuf failed - actually this should not happen\n"
-msgstr ""
+msgstr "%s pixbuf betöltése nem sikerült - valójában ez nem történhet meg\n"
 
 #: ../src/geo_photos.c:710 ../data/foxtrotgps.glade.h:228
 msgid "Working...."
@@ -303,78 +336,96 @@ msgstr "Folyamatban..."
 #: ../src/geo_photos.c:792
 #, c-format
 msgid "Error running \"%s\": %s\n"
-msgstr ""
+msgstr "Hiba \"%s\" futtatásakor: %s\n"
 
 #: ../src/poi.c:264
 msgid "- Please choose -|Hotel|Motel|B&B|Hostel|Camping"
-msgstr ""
+msgstr "- Kérem, válasszon -|Szálloda|Panzió|Vendégház|Turistaszálló|Kemping"
 
 #: ../src/poi.c:265
 msgid ""
 "- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
 "Travel Agency|Other"
 msgstr ""
+"- Kérem, válasszon -|Bank / Pénzváltó / ATM|Posta|Ingatlaniroda|Utazási "
+"iroda|Egyéb"
 
 #: ../src/poi.c:266
 msgid ""
 "- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
 "Radar - Speed Trap|My Car"
 msgstr ""
+"- Kérem, válasszon -|Parkoló|Benzinkút|Szerviz|Kölcsönző|Megosztás|"
+"Kereskedés|Radar - sebességmérés|Saját autóm"
 
 #: ../src/poi.c:267
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
-msgstr ""
+msgstr "- Kérem, válasszon -|Mozi|Színház|Koncertterem|Opera|Kaszinó"
 
 #: ../src/poi.c:268
 msgid "- Please choose -|Pharmacy|Hospital|Doctor"
-msgstr ""
+msgstr "- Kérem, válasszon -|Gyórgyszertár|Kórház|Orvosi rendelő"
 
 #: ../src/poi.c:269
 msgid ""
 "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
 "Spot"
 msgstr ""
+"- Kérem, válasszon -|Kávézó|Kocsma|Bár|Klub|Táncterem|Internetkávézó|Wifi "
+"Hot Spot"
 
 #: ../src/poi.c:270
 msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
-msgstr ""
+msgstr "- Kérem, válasszon -|Templom|Mecset|Zsinagóga|Kápolna|Temető"
 
 #: ../src/poi.c:271
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr ""
+"- Kérem, válasszon -|Busz|Metró|Villamos|Taxi|Vasútállomás|Kerékpár|Kikötő|"
+"Repülőtér"
 
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
 "Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
+"- Kérem, válasszon -|Helyi étel|Európai|Ázsiai|Amerikai|Afrikai|Pizza|"
+"Gyorsétterem|Elvitel|Grill|Olasz|Mexikói|Indiai|Japán|Francia"
 
 #: ../src/poi.c:273
 msgid ""
 "- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
 "Laundry|Hairdresser|Other"
 msgstr ""
+"- Kérem, válasszon -|Wifi Hotspot|ATM pénzkiadó|Posta/Postaláda|Mosoda|"
+"Fodrász|Egyéb"
 
 #: ../src/poi.c:274
 msgid ""
 "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
 msgstr ""
+"- Kérem, válasszon -|Turistainformáció|Emlékmű|Múzeum|Állatkert|Kilátóhely|"
+"Domborzati térkép|Egyéb"
 
 #: ../src/poi.c:275
 msgid ""
 "- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
 "Butcher|DoItYourself|Other"
 msgstr ""
+"- Kérem, válasszon -|Szupermarket|Bevásárlóközpont|Ruhabolt|Cipőbolt|"
+"Élelmiszerbolt|Pékség|Hentesbolt|Barkácsbolt|Egyéb"
 
 #: ../src/poi.c:276
 msgid ""
 "- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
 "Geo Cache|Other"
 msgstr ""
+"- Kérem, válasszon -|Aréna/Stadion|Uszoda|Falmászás|Korcsolya|Golf|Geoláda|"
+"Egyéb"
 
 #: ../src/poi.c:277
 msgid "- Please choose -|Friend|Other Cool Place"
-msgstr ""
+msgstr "- Kérem, válasszon -|Barát|Egyéb nagyszerű hely"
 
 #: ../src/poi.c:278
 msgid ""
@@ -382,85 +433,96 @@ msgid ""
 "Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
 "Wherigo|Other"
 msgstr ""
+"- Kérem, válasszon -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|"
+"Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS "
+"Adventures|Wherigo|Egyéb"
 
 #: ../src/poi.c:724
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "\n"
 "Distance: %.3fkm"
-msgstr "Távolság: "
+msgstr ""
+"%s\n"
+"\n"
+"Távolság: %.3fkm"
 
 #: ../src/poi.c:738
-#, fuzzy
 msgid "<b>No POI found</b>\n"
-msgstr "<b>nem található GPS</b>"
+msgstr "<b>Nem található POI</b>\n"
 
 #: ../src/util.c:25
 #, c-format
 msgid "Can't open database: %s\n"
-msgstr ""
+msgstr "Az adatbázis nem nyitható meg: %s\n"
 
 #: ../src/util.c:36
 #, c-format
 msgid "SQL error: %s\n"
-msgstr ""
+msgstr "SQL hiba: %s\n"
 
 #: ../src/tracks.c:314
 #, c-format
 msgid "oops: %s\n"
-msgstr ""
+msgstr "hoppá: %s\n"
 
 #: ../src/tracks.c:315
 msgid "Triplog open failed: "
-msgstr ""
+msgstr "A túranapló megnyitása nem sikerült: "
 
 #: ../src/tracks.c:317
 msgid "<span foreground='#ff0000'>Error opening logfile</span>"
-msgstr ""
+msgstr "<span foreground='#ff0000'>Hiba a naplófájl megnyitása közben</span>"
 
 #: ../src/tracks.c:323
 #, c-format
 msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
-msgstr ""
+msgstr "<b><span foreground='#0000ff'>Napló: %s</span></b>"
 
 #: ../src/tracks.c:390
 #, c-format
 msgid "Problem opening directory: %s\n"
-msgstr ""
+msgstr "Probléma a könyvtár megnyitása közben: %s\n"
 
 #: ../src/tracks.c:639
 #, c-format
 msgid "Failed to parse document\n"
-msgstr ""
+msgstr "A dokumentum értelmezése nem sikerült\n"
 
 #: ../src/tracks.c:785
 msgid ""
 "<span color='#aa0000'><b>Oops! No Route found</b></span>\n"
 "Try with another Start/End"
 msgstr ""
+"<span color='#aa0000'><b>Hoppá! Nem található útvonal</b></span>\n"
+"Próbáljon másik kezdő-/végpontot"
 
 #: ../src/tracks.c:796
 msgid ""
 "<span color='#aa0000'><b>Duh! A Server Error</b></span>\n"
 "Maybe try later again..."
 msgstr ""
+"<span color='#aa0000'><b>Na! Szerverhiba</b></span>\n"
+"Próbálja újra később..."
 
 #: ../src/tracks.c:803
 msgid ""
 "<span color='#aa0000'><b>Oh! A Network Error</b></span>\n"
 "Check the internet!"
 msgstr ""
+"<span color='#aa0000'><b>Ó! Hálózati hiba</b></span>\n"
+"Ellenőrizze az internetet!"
 
 #: ../src/hrm_functions.c:152
-#, fuzzy, c-format
+#, c-format
 msgid "<b><big>%d</big></b> <small>bpm</small>"
-msgstr "<big><b>Barátok</b></big>   <small>[2/4]</small>"
+msgstr "<b><big>%d</big></b> <small>bpm</small>"
 
 #: ../src/hrm_functions.c:156
 #, c-format
 msgid "<b><big>%d/%d</big></b>"
-msgstr ""
+msgstr "<b><big>%d/%d</big></b>"
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "Display map and GPS position"
@@ -475,117 +537,112 @@ msgid "GPS and Map"
 msgstr "GPS és térkép"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
-#, fuzzy
 msgid "Altitude unit"
-msgstr "Magasság"
+msgstr "Magasság egysége"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:2
-#, fuzzy
 msgid "Automatically download map-tiles as needed"
-msgstr "Térképcsempék automatikus letöltése"
+msgstr "Térképcsempék automatikus letöltése szükség esetén"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:3
-#, fuzzy
 msgid "Avoid re-downloading cached tiles"
-msgstr "Térképcsempék automatikus letöltése"
+msgstr "Gyorstárazott csempék újra-letöltésének elkerülése"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:4
 msgid "Detail scale-factor"
-msgstr ""
+msgstr "Részletesség szintje"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:5
 msgid "Friend-finder password"
-msgstr ""
+msgstr "Barátkereső jelszó"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:6
 msgid "Friend-finder update interval, in minutes"
-msgstr ""
+msgstr "Barátkereső frissítési időköz percben"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:7
 msgid "Friend-finder username"
-msgstr ""
+msgstr "Barátkereső felhasználónév"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:8
-#, fuzzy
 msgid "GPSD host"
-msgstr " GPSD "
+msgstr "GPSD hoszt"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:9
-#, fuzzy
 msgid "GPSD port"
-msgstr "Sport"
+msgstr "GPSD port"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:10
 msgid "Horizontal viewport-coordinate"
-msgstr ""
+msgstr "Vízszintes nézetkoordináta"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:11
 msgid "Latitude/longitude unit"
-msgstr ""
+msgstr "Földrajzi szélesség/hosszúság egysége"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:12
 msgid "Log tracks to a local file"
-msgstr ""
+msgstr "Nyomvonalak naplózása egy helyi fájlba"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:13
 msgid "Map-repository definitions"
-msgstr ""
+msgstr "Térképtárolók definíciói"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:14
 msgid ""
 "Number of seconds by which photo timestamps must be corrected for geocoding"
 msgstr ""
+"Másodperc, amennyivel a fotóidőbélyegeket javítani szükséges a geokódoláshoz"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:15
 msgid "Publish your location & show others' locations"
-msgstr ""
+msgstr "Saját pozíció közzététele, és a többiek helyének megjelenítése"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:16
-#, fuzzy
 msgid "Speed unit"
-msgstr "Sebesség"
+msgstr "Sebesség egysége"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:17
 msgid "Status-message to publish in the friend-finder"
-msgstr ""
+msgstr "Állapotüzenet, ami a barátkeresőben kerül közzétételre"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:18
 msgid "The Bluetooth address of your heartrate-monitor"
-msgstr ""
+msgstr "A pulzusszámmérő Bluetooth címe"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:19
 msgid "The active map-repository"
-msgstr ""
+msgstr "Az aktív térképtároló"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:20
-#, fuzzy
 msgid "The directory into which track-files are written"
-msgstr "Könyvtár, amelybe a nyomvonal írandó:"
+msgstr "A könyvtár, amelybe a nyomvonalfájlok kerülnek"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:21
 msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
 msgstr ""
+"Fotóidőbélyegek kezelése úgy, mintha azok relatívak lennének ehhez az "
+"időzónához (UTC=13)"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:22
 msgid "Use the heartrate-monitor specified in hrm_bt_addr"
-msgstr ""
+msgstr "A hrm_bt_addr-ben megadott pulzusszámmérő használata"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:23
 msgid "Vertical viewport-coordinate"
-msgstr ""
+msgstr "Függőleges nézetkoordináta"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:24
-#, fuzzy
 msgid "Viewport zoom-level"
-msgstr "+ 1 nagyítási szint"
+msgstr "Nézet nagyítási szintje"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:25
 msgid "`My position', latitude"
-msgstr ""
+msgstr "„Saját pozícióm”, földrajzi szélesség"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:26
 msgid "`My position', longitude"
-msgstr ""
+msgstr "„Saját pozícióm”, földrajzi hosszúság"
 
 #: ../data/foxtrotgps.glade.h:1
 msgid ""
@@ -644,7 +701,6 @@ msgid "-"
 msgstr "-"
 
 #: ../data/foxtrotgps.glade.h:16
-#, fuzzy
 msgid ""
 "- please choose -\n"
 "Accomodation\n"
@@ -677,14 +733,14 @@ msgstr ""
 "Látnivalók és szabadidő\n"
 "Vásárlás\n"
 "Sport\n"
-"Személyes helyek"
+"Személyes helyek\n"
+"Geoládák"
 
 #: ../data/foxtrotgps.glade.h:32
 msgid "--"
 msgstr "--"
 
 #: ../data/foxtrotgps.glade.h:33
-#, fuzzy
 msgid ""
 "-- Show All --\n"
 "Accomodation\n"
@@ -717,7 +773,8 @@ msgstr ""
 "Látnivalók és szabadidő\n"
 "Vásárlás\n"
 "Sport\n"
-"Személyes helyek"
+"Személyes helyek\n"
+"Geoládák"
 
 #: ../data/foxtrotgps.glade.h:49
 msgid ""
@@ -850,9 +907,8 @@ msgid "<b>Geocoding your photos</b>"
 msgstr "<b>Fotók geokódolása</b>"
 
 #: ../data/foxtrotgps.glade.h:93
-#, fuzzy
 msgid "<b>Heart Rate Monitor</b>"
-msgstr "<b>Új tároló neve</b>"
+msgstr "<b>Pulzusszámmérő</b>"
 
 #: ../data/foxtrotgps.glade.h:94
 msgid "<b>Map Download</b>"
@@ -968,7 +1024,7 @@ msgstr "<span font_desc='40'> -- </span>"
 
 #: ../data/foxtrotgps.glade.h:122
 msgid "Activate Heartrate Monitor"
-msgstr ""
+msgstr "Pulzusszámmérő bekapcsolása"
 
 #: ../data/foxtrotgps.glade.h:123
 msgid ""
@@ -1008,7 +1064,7 @@ msgstr "Nagy"
 
 #: ../data/foxtrotgps.glade.h:132
 msgid "Bluetooth Address: "
-msgstr ""
+msgstr "Bluetooth cím: "
 
 #: ../data/foxtrotgps.glade.h:133
 msgid "Category:"
@@ -1180,11 +1236,11 @@ msgstr "Irány"
 
 #: ../data/foxtrotgps.glade.h:177
 msgid "Heart"
-msgstr ""
+msgstr "Szív"
 
 #: ../data/foxtrotgps.glade.h:179
 msgid "Host:"
-msgstr "Host:"
+msgstr "Hoszt:"
 
 #: ../data/foxtrotgps.glade.h:180
 msgid "Image Data"
@@ -1275,9 +1331,8 @@ msgid "Previous map repo"
 msgstr "Előző térképtároló"
 
 #: ../data/foxtrotgps.glade.h:202
-#, fuzzy
 msgid "Re-download cached tiles"
-msgstr "Térképcsempék automatikus letöltése"
+msgstr "Gyorstárazott csempék letöltése újra"
 
 #: ../data/foxtrotgps.glade.h:203
 msgid "Register!"
@@ -1301,7 +1356,7 @@ msgid ""
 "my position"
 msgstr ""
 "Pont beállítása\n"
-"pozíciómként"
+"saját pozíciómként"
 
 #: ../data/foxtrotgps.glade.h:210
 msgid "Show Info"
@@ -1532,7 +1587,7 @@ msgstr "Ez a pont"
 
 #: ../data/foxtrotgps.glade.h:270
 msgid "unset"
-msgstr "Megszűntetés"
+msgstr "Megszüntetés"
 
 #: ../data/foxtrotgps.glade.h:271
 msgid "unset WP"
