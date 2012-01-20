@@ -5,7 +5,6 @@
 #include <libexif/exif-data.h>
 #include <ctype.h>
 #include <glib.h>
-#include <glib/gprintf.h>
 
 
 static void trim_spaces(char *buf)

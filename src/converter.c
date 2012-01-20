@@ -3,7 +3,7 @@
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>
-#include <glib/gprintf.h>
+#include <glib.h>
 
 #define TILESIZE 256
 

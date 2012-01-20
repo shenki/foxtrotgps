@@ -2,8 +2,6 @@
 
 #include <glib.h>
 #include <gtk/gtk.h>
-#include <glib/gstring.h>
-#include <glib/gprintf.h>
 #include <gconf/gconf.h>
 #include <math.h>
 #include "support.h"

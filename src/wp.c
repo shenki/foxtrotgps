@@ -1,6 +1,6 @@
 
 #include <string.h>
-#include <glib/gprintf.h>
+#include <glib.h>
 #include "support.h"
 #include "converter.h"
 #include "callbacks.h"
