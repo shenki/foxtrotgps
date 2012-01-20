@@ -373,8 +373,8 @@ msgstr ""
 "Spot"
 
 #: ../src/poi.c:270
-msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
-msgstr "- 選択してください -|Church|Mosque|Synagoge|Temple|Cemetary"
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
+msgstr "- 選択してください -|Church|Mosque|Synagogue|Temple|Cemetery"
 
 #: ../src/poi.c:271
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
@@ -384,10 +384,10 @@ msgstr ""
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
+"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
 "- 選択してください -|Local Food|European|Asian|American|African|Pizza|Fast "
-"Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
+"Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 
 #: ../src/poi.c:273
 msgid ""

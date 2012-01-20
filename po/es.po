@@ -358,7 +358,7 @@ msgid "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot
 msgstr "- Elegir... -|Cafetería|Bar|Salón-bar|Discoteca|Baile|Cibercafé|Hotspot wifi"
 
 #: ../src/poi.c:270
-msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
 msgstr "- Elegir... -|Iglesia|Mezquita|Sinagoga|Templo|Cementerio"
 
 #: ../src/poi.c:271
@@ -366,7 +366,7 @@ msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr "- Elegir... -|Autobus|Metro|Tranvía|Taxi|Estación de tren|Bici|Puerto|Aeropuerto"
 
 #: ../src/poi.c:272
-msgid "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
+msgid "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr "- Elegir... -|Comida local|Europea|Asiática|Estadounidense|Africana|Pizza|Comida rápida|Para llevar|Asador|Italiana|Mexicana|India|Japonesa|Francesa"
 
 #: ../src/poi.c:273

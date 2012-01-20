@@ -375,7 +375,7 @@ msgstr ""
 "Hot Spot"
 
 #: ../src/poi.c:270
-msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
 msgstr "- Kérem, válasszon -|Templom|Mecset|Zsinagóga|Kápolna|Temető"
 
 #: ../src/poi.c:271
@@ -387,7 +387,7 @@ msgstr ""
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
+"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
 "- Kérem, válasszon -|Helyi étel|Európai|Ázsiai|Amerikai|Afrikai|Pizza|"
 "Gyorsétterem|Elvitel|Grill|Olasz|Mexikói|Indiai|Japán|Francia"

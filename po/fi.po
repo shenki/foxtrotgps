@@ -375,7 +375,7 @@ msgstr ""
 "tukiasema"
 
 #: ../src/poi.c:270
-msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
 msgstr "- Valitse -|kirkko|moskeija|synagooga|temppeli|hautausmaa"
 
 #: ../src/poi.c:271
@@ -386,7 +386,7 @@ msgstr ""
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
+"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
 "- Valitse -|paikallisruoka|eurooppalainen|aasialainen|amerikkalainen|"
 "afrikkalainen|pizza|pikaruoka|takeaway|grilli|italialainen|meksikolainen|"

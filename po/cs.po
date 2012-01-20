@@ -360,7 +360,7 @@ msgid "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot
 msgstr "- Prosím vyberte -|Kavárna|Restaurace|Hospoda|Klub|Taneční sál|Internetová kavárna|Přístupový bod WiFi"
 
 #: ../src/poi.c:270
-msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
 msgstr "- Prosím vyberte -|Kostel|Mešita|Synagoga|Chrám|Hřbitov"
 
 #: ../src/poi.c:271
@@ -368,8 +368,8 @@ msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr "- Prosím vyberte -|Autobus|Metro|Tramvaj|Taxi|Vlak|Půjčovna kol|Přístav|Letiště"
 
 #: ../src/poi.c:272
-msgid "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
-msgstr "- Prosím vyberte -|Místní|Evropská|Asijská|Americká|Africká|Pizza|Rychlé občerstvení|Jídlo s sebou|Barbeque|Italská|Mexická|Indická|Japonská|Francouzská"
+msgid "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
+msgstr "- Prosím vyberte -|Místní|Evropská|Asijská|Americká|Africká|Pizza|Rychlé občerstvení|Jídlo s sebou|Barbecue|Italská|Mexická|Indická|Japonská|Francouzská"
 
 #: ../src/poi.c:273
 #, fuzzy

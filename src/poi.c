@@ -267,9 +267,9 @@ void set_combobox_subcat(GtkWidget *widget, int choice)
 	subcat_lists[4] = _("- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino");
 	subcat_lists[5] = _("- Please choose -|Pharmacy|Hospital|Doctor");
 	subcat_lists[6] = _("- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot Spot");
-	subcat_lists[7] = _("- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary");
+	subcat_lists[7] = _("- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery");
 	subcat_lists[8] = _("- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport");
-	subcat_lists[9] = _("- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French");
+	subcat_lists[9] = _("- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French");
 	subcat_lists[10] = _("- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|Laundry|Hairdresser|Other");
 	subcat_lists[11] = _("- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other");
 	subcat_lists[12] = _("- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other");

@@ -379,7 +379,7 @@ msgstr ""
 "кафић|Бежична мрежа"
 
 #: ../src/poi.c:270
-msgid "- Please choose -|Church|Mosque|Synagoge|Temple|Cemetary"
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
 msgstr "- Молим одаберите -|Црква|Џамија|Синагога|Храм|Гробље"
 
 #: ../src/poi.c:271
@@ -391,7 +391,7 @@ msgstr ""
 #: ../src/poi.c:272
 msgid ""
 "- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbeque|Italian|Mexican|Indian|Japanese|French"
+"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
 "- Молим одаберите -|Локална "
 "храна|Европска|Азијска|Америчка|Афричка|Пица|Брза храна|За "
