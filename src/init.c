@@ -5,6 +5,8 @@
 #endif
 
 #include <glib.h>
+#include <glib/gstdio.h>
+#include <glib/gprintf.h>
 #include <gtk/gtk.h>
 #include <string.h>
 #include <stdlib.h>

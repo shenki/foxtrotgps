@@ -14,6 +14,7 @@
 #include "tile_management.h"
 
 #include <glib.h>
+#include <glib/gprintf.h>
 #include <stdio.h>
 #include <sqlite3.h>
 #include <stdlib.h>

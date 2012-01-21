@@ -5,6 +5,7 @@
 #include <unistd.h>
 #include <gtk/gtk.h>
 #include <glib.h>
+#include <glib/gprintf.h>
 #include <string.h>
 #include <curl/curl.h>
 #include <curl/easy.h> 

@@ -5,6 +5,7 @@
 #endif
 
 #include <glib.h>
+#include <glib/gprintf.h>
 
 #include <stdio.h>
 #include <stdlib.h>
