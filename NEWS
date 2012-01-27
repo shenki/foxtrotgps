@@ -34,7 +34,7 @@ notable changes since 1.0.1 include:
       Google's removal of older imagery from their database.
       Note that existing users may have to edit their `Google Sat'
       repository settings and manually change "v=53" in the URL
-      to "v=92".
+      to "v=102".
 
     * A long-standing bug that could cause FoxtrotGPS to crash when
       loading GPX tracks has been fixed.
