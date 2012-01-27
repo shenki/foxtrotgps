@@ -36,6 +36,10 @@ notable changes since 1.0.1 include:
       repository settings and manually change "v=53" in the URL
       to "v=102".
 
+    * The default OpenCycleMap URL has changed; some existing users
+      may need to edit ther `Opencyclemap' repository settings per
+      <http://www.gravitystorm.co.uk/shine/change-of-tileserver-url/>.
+
     * A long-standing bug that could cause FoxtrotGPS to crash when
       loading GPX tracks has been fixed.
 

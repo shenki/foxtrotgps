@@ -302,7 +302,7 @@ gconf_get_repolist()
 		global_repo_list = g_slist_append(global_repo_list, repo2);
 				
 		repo3->name = g_strdup("Opencyclemap");
-		repo3->uri  = g_strdup("http://a.andy.sandbox.cloudmade.com/tiles/cycle/%d/%d/%d.png");
+		repo3->uri  = g_strdup("http://tile.opencyclemap.org/cycle/%d/%d/%d.png");
 		repo3->dir  = g_strdup_printf("%s/Maps/opencyclemap",global_home_dir);
 		repo3->inverted_zoom = 0;
 		global_repo_list = g_slist_append(global_repo_list, repo3);
