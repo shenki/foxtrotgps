@@ -1,0 +1,57 @@
+#!/usr/bin/env python
+#poi2osm convert a sqlite poi database comming from tangps to a file you can import in JOSM
+#Copyright (C) 2009  Denis 'GNUtoo' Carikli
+#
+#This program is free software; you can redistribute it and/or modify
+#it under the terms of the GNU General Public License as published by
+#the Free Software Foundation; either version 2 of the License, or
+#(at your option) any later version.
+#
+#This program is distributed in the hope that it will be useful,
+#but WITHOUT ANY WARRANTY; without even the implied warranty of
+#MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+#GNU General Public License for more details.
+#
+#You should have received a copy of the GNU General Public License along
+#with this program; if not, write to the Free Software Foundation, Inc.,
+#51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+
+from sqlalchemy import *
+from sqlalchemy.orm import *
+
+class Poi(object):
+	def __init__(self,id,longitude,latitude,unk1,unk2,unk3,description,unk4,unk5,unk6,unk7,unk8,unk9,unk10,unk11):
+		self.id = id
+	def __repr__(self):
+		print repr(self.id)
+
+
+engine = create_engine('sqlite:///poi.db')
+session = create_session(bind=engine)
+metadata = MetaData('sqlite://')
+poi_table = Table("poi",metadata,
+    Column('idmd5', Integer, primary_key=True),
+    Column('lat', Integer),
+    Column('lon', Integer),
+    Column('visibility', Integer),
+    Column('cat', Integer),
+    Column('subcat', Integer),
+    Column('keywords', String),
+    Column('desc', String),
+    Column('price_range',Integer),
+    Column('extended_open', Integer),
+    Column('creator', String),
+    Column('bookmarked', String),
+    Column('user_rating', String),
+    Column('rating', String),
+    Column('user_comment', String),
+    )
+mapper(Poi, poi_table)
+
+print "<osm version=\"0.5\">"
+for poi in session.query(Poi).all():
+	print "  <node id=\""+ str(poi.idmd5) + "\" lat=\"" + str(poi.lat)  + "\" lon=\"" + str(poi.lon)  +  "\">"
+	print "    <tag k=\"name\" v=\""+ poi.keywords  +"\"/>"
+	print "  </node>"
+print "</osm>"
