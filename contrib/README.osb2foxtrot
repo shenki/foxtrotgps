@@ -1,0 +1,8 @@
+FoxtrotGPS does not display waypoints, but the program is able to read POIs (Points of Interest) from its own sqlite POI database.
+
+This is a script to read the GPX file from OpenStreetBugs ("As GPX file" on the left) and store it in the POI database. Maybe you also want to download the empty-poi.db file, which is just the empty database ready to be filled.
+
+usage:
+./osb2foxtrot gpxfile poidbfile
+  gpxfile: a file in the OSB GPX file format, containing bug information
+  poidbfile: usually poi.db, or any other wellformed foxtrotgps poi sqlite database file
