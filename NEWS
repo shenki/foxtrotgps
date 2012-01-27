@@ -29,6 +29,10 @@ notable changes since 1.0.1 include:
       and can be inspected with the standard GConf tools
       even if they have not been set from within FoxtrotGPS.
 
+    * FoxtrotGPS now includes a Python script (poi2osm)
+      contributed by Denis 'GNUtoo' Carikli for exporting POIs
+      to OpenStreetMap XML format.
+
     * The default Google Satellite URL that FoxtrotGPS provides
       for testing and demonstration has been updated to accomodate
       Google's removal of older imagery from their database.
