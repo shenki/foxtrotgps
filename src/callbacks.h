@@ -37,7 +37,7 @@ on_vscale1_value_changed               (GtkRange        *range,
                                         gpointer         user_data);
 
 void
-on_button3_clicked                     (GtkButton       *button,
+on_button3_clicked                     (GtkToggleToolButton *button,
                                         gpointer         user_data);
 
 gboolean

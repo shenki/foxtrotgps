@@ -291,6 +291,8 @@ on_drawingarea1_motion_notify_event    (GtkWidget       *widget,
 	 
 		if (state & GDK_BUTTON1_MASK  && wtfcounter>=WTFCOUNTER) 
 		{
+			GtkToggleToolButton *autocenter_toggle;
+
 			if(!drag_started)
 			{
 				mouse_x = (int) event->x;
@@ -331,6 +333,17 @@ on_drawingarea1_motion_notify_event    (GtkWidget       *widget,
 					widget->allocation.width,
 					mouse_dy);
 					
+			autocenter_toggle =
+				GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1,
+				                                     "button3"));
+			gtk_toggle_tool_button_set_active(autocenter_toggle,
+			                                  FALSE);
+
+			autocenter_toggle =
+				GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1,
+				                                     "button56"));
+			gtk_toggle_tool_button_set_active(autocenter_toggle,
+			                                  FALSE);
 
 		}	
 		else
@@ -471,11 +484,14 @@ on_button4_clicked                     (GtkButton       *button,
 
 
 void
-on_button3_clicked                     (GtkButton       *button,
+on_button3_clicked                     (GtkToggleToolButton *button,
                                         gpointer         user_data)
 {
-	global_autocenter = TRUE;
-	
+	global_autocenter = gtk_toggle_tool_button_get_active(button);
+
+	if (!global_autocenter)
+		return;
+
 	if(gpsdata) {
 		if(isnan(gpsdata->fix.latitude) == 0	&&
 		   isnan(gpsdata->fix.longitude)== 0	&&
@@ -2415,7 +2431,22 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
 	else if(event->keyval == GDK_Up)
 		move_map(4);
 	else if(event->keyval == GDK_a)
-		on_button3_clicked(GTK_BUTTON(lookup_widget(window1,"button3")), NULL);
+	{
+		global_autocenter = !global_autocenter;
+		GtkToggleToolButton *autocenter_toggle;
+
+		autocenter_toggle =
+			GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1,
+			                                     "button3"));
+		gtk_toggle_tool_button_set_active(autocenter_toggle,
+		                                  global_autocenter);
+
+		autocenter_toggle =
+			GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1,
+			                                     "button56"));
+		gtk_toggle_tool_button_set_active(autocenter_toggle,
+		                                  global_autocenter);
+	}
 	else if(event->keyval == GDK_r)
 		on_item23_button_release_event(NULL, NULL, NULL);
 	else if(event->keyval == GDK_1)
@@ -3652,6 +3683,7 @@ void
 move_map(int i)
 {
 	GtkWidget *widget = NULL;
+	GtkToggleToolButton *autocenter_toggle;
 
 	widget = lookup_widget(window1, "drawingarea1");
 	
@@ -3676,9 +3708,15 @@ move_map(int i)
 	gtk_widget_queue_draw_area (
 		widget, 
 		0,0,widget->allocation.width+260,widget->allocation.height+260);
-	
-	global_autocenter = FALSE;
-	
+
+	autocenter_toggle =
+		GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1, "button3"));
+	gtk_toggle_tool_button_set_active(autocenter_toggle, FALSE);
+
+	autocenter_toggle =
+		GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1, "button56"));
+	gtk_toggle_tool_button_set_active(autocenter_toggle, FALSE);
+
 	repaint_all();
 }
 

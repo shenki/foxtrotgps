@@ -136,7 +136,15 @@ init()
 	global_speed_unit	= gconf_client_get_int(global_gconfclient, GCONF"/speed_unit",&err);
 	global_alt_unit		= gconf_client_get_int(global_gconfclient, GCONF"/alt_unit",&err);
 	global_latlon_unit	= gconf_client_get_int(global_gconfclient, GCONF"/latlon_unit",&err);
-	
+
+	widget = lookup_widget(window1, "button3");
+	gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(widget),
+	                                  global_autocenter);
+
+	widget = lookup_widget(window1, "button56");
+	gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(widget),
+	                                  global_autocenter);
+
 	switch (global_speed_unit)
 	{
 		case 1:

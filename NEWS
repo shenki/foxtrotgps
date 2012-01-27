@@ -61,6 +61,10 @@ notable changes since 1.0.1 include:
     * FoxtrotGPS can now be built with Curl 7.21.8 and newer,
       thanks to Martin Jansa.
 
+    * The `autocenter' button is now a proper toggle-button,
+      making it readily apparent (from the visual state
+      of the button) whether FoxtrotGPS is in autocenter mode.
+
 
 
 FoxtrotGPS 1.0.1 is a bug-fix release; issues resolved since 1.0.0 include:
