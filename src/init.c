@@ -203,13 +203,9 @@ init()
 	hrm_on = gconf_client_get_bool(global_gconfclient, GCONF"/hrm_on",&err);
 	widget = lookup_widget(window1, "checkbutton18");
 	gtk_toggle_button_set_active(GTK_TOGGLE_BUTTON(widget), hrm_on);
-	
-	
-	
-	
-	gconf_fftimer_running = gconf_client_get_bool(global_gconfclient, GCONF"/fftimer_running",&err);
-	
-	
+
+	gconf_fftimer_running = FALSE;
+
 	global_ffupdate_interval_minutes = gconf_client_get_float(global_gconfclient, GCONF"/ffupdate_interval_minutes",&err);
 	
 	if(!global_ffupdate_interval_minutes)

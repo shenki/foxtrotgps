@@ -39,9 +39,10 @@ notable changes since 1.0.1 include:
     * A long-standing bug that could cause FoxtrotGPS to crash when
       loading GPX tracks has been fixed.
 
-    * The friend-finder's message-listing is now correctly un-hidden
-      when the user clicks on the "New Message. Click here" notice
-      in the status-line.
+    * The friend-finder has been removed due to tangogps.org
+      no longer providing that service. We hope to revive
+      the friend-finder with a different back-end, at some point--
+      help is welcomed!
 
     * A long-standing bug that made many items in the popup menu
       appear inoperative for many desktop users has been fixed,
