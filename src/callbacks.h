@@ -24,7 +24,7 @@ on_drawingarea1_expose_event           (GtkWidget       *widget,
                                         gpointer         user_data);
 
 void
-on_button1_clicked                     (GtkButton       *button,
+on_button1_clicked                     (GtkToggleToolButton *button,
                                         gpointer         user_data);
 
 gboolean

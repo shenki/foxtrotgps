@@ -61,9 +61,9 @@ notable changes since 1.0.1 include:
     * FoxtrotGPS can now be built with Curl 7.21.8 and newer,
       thanks to Martin Jansa.
 
-    * The `autocenter' button is now a proper toggle-button,
-      making it readily apparent (from the visual state
-      of the button) whether FoxtrotGPS is in autocenter mode.
+    * The `autocenter' and `fullscreen' buttons are now proper toggles,
+      making it readily apparent (from the visual state of the buttons)
+      whether FoxtrotGPS is in autocenter/fullscreen mode.
 
 
 

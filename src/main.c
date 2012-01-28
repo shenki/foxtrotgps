@@ -172,7 +172,15 @@ main (int argc, char *argv[])
 		
 	if (fullscreen)
 	{
-		on_button1_clicked(GTK_BUTTON(window1), NULL);
+		GtkToggleToolButton *toggle;
+
+		toggle = GTK_TOGGLE_TOOL_BUTTON (lookup_widget (window1,
+		                                                "button1"));
+		gtk_toggle_tool_button_set_active(toggle, TRUE);
+
+		toggle = GTK_TOGGLE_TOOL_BUTTON (lookup_widget (window1,
+		                                                "button53"));
+		gtk_toggle_tool_button_set_active(toggle, TRUE);
 	}
 
 	window2 = glade_xml_get_widget (gladexml, "window2");

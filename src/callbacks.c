@@ -422,21 +422,19 @@ on_drawingarea1_expose_event           (GtkWidget       *widget,
 }
 
 void
-on_button1_clicked                     (GtkButton       *button,
+on_button1_clicked                     (GtkToggleToolButton *button,
                                         gpointer         user_data)
-{	
-	if(!maximized)
-	{		
+{
+	maximized = gtk_toggle_tool_button_get_active (button);
+
+	if(maximized)
+	{
 		gtk_window_fullscreen(GTK_WINDOW(window1));
 		fill_tiles_pixel(global_x, global_y, global_zoom, FALSE);
-
-		maximized = TRUE;
 	}
 	else
 	{
 		gtk_window_unfullscreen(GTK_WINDOW(window1));
-
-		maximized = FALSE;
 	}
 }
 
@@ -2421,7 +2419,11 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
 	else if(event->keyval == 'm')
 		on_button76_clicked(NULL, NULL);
 	else if(event->keyval == GDK_space || event->keyval == GDK_F11)
-		on_button1_clicked(GTK_BUTTON(lookup_widget(window1, "button1")), NULL);
+	{
+		maximized = !maximized;
+		gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1, "button1")), maximized);
+		gtk_toggle_tool_button_set_active(GTK_TOGGLE_TOOL_BUTTON(lookup_widget(window1, "button53")), maximized);
+	}
 	else if(event->keyval == GDK_Right)
 		move_map(1);
 	else if(event->keyval == GDK_Down)
