@@ -27,3 +27,6 @@ data/foxtrotgps.desktop
 data/apps_foxtrotgps.schemas
 po/Makefile.in.in
 ./ChangeLog
+.project
+.cproject
+.autotools
