@@ -140,7 +140,7 @@ cb_gps_timer()
 
 
 		
-		if(gpsdata->seen_vaild)
+		if(gpsdata->seen_valid)
 		{
 			int hand_x, hand_y, hand_wp_x, hand_wp_y;
 			double heading_rad, bearing;
@@ -314,13 +314,13 @@ cb_gps_timer()
 			}
 			
 			
-			if(trip_starttime == 0 && gpsdata->seen_vaild)
+			if(trip_starttime == 0 && gpsdata->seen_valid)
 			{
 				trip_starttime = gpsdata->fix.time;
 			}
 			
 			
-			if(trip_starttime > 0 && gpsdata->seen_vaild)
+			if(trip_starttime > 0 && gpsdata->seen_valid)
 			{
 				trip_time = gpsdata->fix.time - trip_starttime + trip_time_accumulated;				
 			}
@@ -763,7 +763,7 @@ cb_gpsd_data(GIOChannel *src, GIOCondition condition, gpointer data)
 		gpsdata->valid = (libgps_gpsdata.status != STATUS_NO_FIX);
 		if (gpsdata->valid)
 		{
-			gpsdata->seen_vaild = TRUE;
+			gpsdata->seen_valid = TRUE;
 			gpsdata->fix.mode = libgps_gpsdata.fix.mode;
 			gpsdata->fix.latitude = libgps_gpsdata.fix.latitude;
 			gpsdata->fix.longitude = libgps_gpsdata.fix.longitude;

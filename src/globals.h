@@ -87,7 +87,7 @@ typedef struct {
 	int satellites_inview;
 	double hdop;
 	gboolean valid;
-	gboolean seen_vaild; /* ever had a vaild fix? */
+	gboolean seen_valid; /* ever had a valid fix? */
 } tangogps_gps_data_t;
 
 typedef struct {
