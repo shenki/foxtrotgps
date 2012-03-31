@@ -114,6 +114,7 @@ paint_pois()
 	GdkColor color;
 	GError	*error = NULL;
 	static GdkPixbuf *photo_icon = NULL;
+	static int icon_width, icon_height;
 	static GdkGC *gc;
 	
 
@@ -130,6 +131,8 @@ paint_pois()
 		photo_icon = gdk_pixbuf_new_from_file_at_size (
 			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-poi.png", 25,25,
 			&error);
+		icon_width = gdk_pixbuf_get_width (photo_icon);
+		icon_height = gdk_pixbuf_get_width (photo_icon);
 	}
 
 	if(global_show_pois)
@@ -174,16 +177,16 @@ paint_pois()
 					NULL,
 					photo_icon,
 					0,0,
-					x-12,y-12,
-					24,24,
+					x - icon_width/2, y - icon_height/2,
+					-1, -1,
 					GDK_RGB_DITHER_NONE, 0, 0);
 				
 			}
 			
 			gtk_widget_queue_draw_area (
 					map_drawable, 
-					x-12, y-12,
-					24,24);
+					x - icon_width/2, y - icon_height/2,
+					icon_width, icon_height);
 			
 			printf("POI: %s lat %f - lon %f\n",p->keywords,p->lat_deg, p->lon_deg);
 		}
