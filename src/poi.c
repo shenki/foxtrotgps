@@ -150,6 +150,49 @@ get_poi_icon (poi_t *poi)
 
 		g_mkdir (icon_dir, 0777);
 		g_free (icon_dir);
+
+		if (!g_file_test (icon_path, G_FILE_TEST_EXISTS)) {
+			pid_t mkvisualid_pid;
+			int mkvisualid_status;
+	
+			char *autocache_dir =
+				g_build_filename (global_home_dir,
+				                  ".VisualIDs",
+				                  PACKAGE, "poi-icons",
+				                  NULL);
+
+			g_mkdir_with_parents (autocache_dir, 0777);
+			/* Free autocache_dir later--we need to pass it
+			   to mkvisualid, below... */
+	
+			mkvisualid_pid = fork();
+	
+			switch (mkvisualid_pid) {
+			case 0:
+				execlp ("mkvisualid", "mkvisualid",
+				        "--autocache",
+				        "--autocache-dir", autocache_dir,
+				        "--output", icon_path,
+				        "--linewidth=.1",
+				        "--outline-width=.2",
+
+				        /* Don't use glyph-types that are
+				           easily confused with streets: */
+				        "--line=0",
+				        "--path=0",
+
+				        poi->keywords,
+
+				        NULL);
+
+				_exit (1); /* execlp failed */
+			default:
+				waitpid (mkvisualid_pid, &mkvisualid_status, 0);
+				/* Fall through to cleanup... */
+			case -1:
+				g_free (autocache_dir);
+			}
+		}
 	
 		icon = gdk_pixbuf_new_from_file_at_size
 			(icon_path, 32, 32, NULL);
