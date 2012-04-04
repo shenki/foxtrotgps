@@ -25,7 +25,6 @@
 
 GtkListStore *list_store;
 
-gchar *my_strescape (const gchar *source, const gchar *exceptions);
 gchar *my_strescape_back (const gchar *source,  const gchar *exceptions);
 
 enum {
@@ -376,8 +375,8 @@ set_poi(GtkWidget *dialog)
 	GtkTextIter start, end;
 	GtkWidget *entry, *radiobutton;
 
-	const char *keyword_raw;
-	char *desc, *desc_raw, *keyword;
+	const char *keyword;
+	char *desc;
 	char *sql;
 	char *db;
 	int visibility, price_range = 0, extended_open;
@@ -400,14 +399,12 @@ set_poi(GtkWidget *dialog)
 	category = gtk_combo_box_get_active(combo_box);
 	subcategory = gtk_combo_box_get_active(GTK_COMBO_BOX(combobox_subcat));
 	entry = lookup_widget(dialog, "entry13");
-	keyword_raw = gtk_entry_get_text(GTK_ENTRY(entry));
-	keyword = my_strescape(keyword_raw, NULL);
+	keyword = gtk_entry_get_text(GTK_ENTRY(entry));
 	text_view = GTK_TEXT_VIEW(lookup_widget(dialog, "textview1"));
 	buffer = gtk_text_view_get_buffer(text_view);
 	gtk_text_buffer_get_start_iter (buffer, &start);
 	gtk_text_buffer_get_end_iter (buffer, &end);
-	desc_raw = gtk_text_buffer_get_text(buffer, &start, &end, TRUE);
-	desc = my_strescape(desc_raw, NULL);
+	desc = gtk_text_buffer_get_text(buffer, &start, &end, TRUE);
 	radiobutton = lookup_widget(dialog, "radiobutton8");
 	price_range = (gtk_toggle_button_get_active(GTK_TOGGLE_BUTTON(radiobutton))) ? 1 : price_range;
 	radiobutton = lookup_widget(dialog, "radiobutton9");
@@ -424,10 +421,10 @@ set_poi(GtkWidget *dialog)
 	
 	db = g_strconcat(foxtrotgps_dir, "/", POI_DB, NULL);	
 	
-	sql = g_strdup_printf( 	
+	sql = sqlite3_mprintf ( 	
 			"INSERT INTO poi "
 			"(idmd5, lat, lon, visibility, cat, subcat, keywords, desc, price_range, extended_open) "
-			"VALUES ('%.0f%.0f',%f,%f,%d,%d,%d,'%s','%s',%d,%d)",
+			"VALUES ('%.0f%.0f',%f,%f,%d,%d,%d,%Q,%Q,%d,%d)",
 			rand1, rand2, lat_deg, lon_deg, visibility, category, subcategory, 
 			keyword, desc, price_range, extended_open);
 		  
@@ -443,8 +440,7 @@ printf("size of gdouble: %d", (int)sizeof(double));
 	}
 
 	g_free(desc);
-	g_free(desc_raw);
-	g_free(sql);
+	sqlite3_free (sql);
 	gtk_widget_destroy(dialog);
 	
 	
@@ -461,8 +457,8 @@ update_poi(GtkWidget *dialog)
 	GtkTextIter start, end;
 	GtkWidget *entry, *widget; 
 
-	const char *keyword_raw, *idmd5;
-	char *desc, *desc_raw, *keyword;
+	const char *keyword, *idmd5;
+	char *desc;
 	char *sql;
 	char *db;
 
@@ -491,28 +487,26 @@ update_poi(GtkWidget *dialog)
 
 
 	entry = lookup_widget(dialog, "entry19");
-	keyword_raw = gtk_entry_get_text(GTK_ENTRY(entry));
-	keyword = my_strescape(keyword_raw, NULL);
+	keyword = gtk_entry_get_text(GTK_ENTRY(entry));
 	text_view = GTK_TEXT_VIEW(lookup_widget(dialog, "textview2"));
 	buffer = gtk_text_view_get_buffer(text_view);
 	gtk_text_buffer_get_start_iter (buffer, &start);
 	gtk_text_buffer_get_end_iter (buffer, &end);
-	desc_raw = gtk_text_buffer_get_text(buffer, &start, &end, TRUE);
-	desc = my_strescape(desc_raw, NULL);
+	desc = gtk_text_buffer_get_text(buffer, &start, &end, TRUE);
 
 
 	db = g_strconcat(foxtrotgps_dir, "/", POI_DB, NULL);	
 	
 
 
-	sql = g_strdup_printf( 	
+	sql = sqlite3_mprintf ( 	
 			"UPDATE "
 				"poi "
 			"SET "
 				"lat=%f,"
 				"lon=%f,"
-				"keywords='%s',"
-				"desc='%s'"
+				"keywords=%Q,"
+				"desc=%Q"
 			"WHERE "
 				"idmd5='%s'" 
 			,
@@ -531,8 +525,7 @@ printf("SQL: %s\n",sql);
 	}
 
 	g_free(desc);
-	g_free(desc_raw);
-	g_free(sql);
+	sqlite3_free (sql);
 	
 	gtk_widget_destroy(dialog);
 	
@@ -765,60 +758,6 @@ printf("%s %s \n",buffer, buffer2);
 	gtk_widget_show(window);
 	
 
-}
-
-gchar *
-my_strescape (const gchar *source,
-	     const gchar *exceptions)
-{
-  const guchar *p;
-  gchar *dest;
-  gchar *q;
-  guchar excmap[256];
-
-  g_return_val_if_fail (source != NULL, NULL);
-
-  p = (guchar *) source;
-  
-  q = dest = g_malloc (strlen (source) * 4 + 1);
-
-  memset (excmap, 0, 256);
-  if (exceptions)
-    {
-      guchar *e = (guchar *) exceptions;
-
-      while (*e)
-	{
-	  excmap[*e] = 1;
-	  e++;
-	}
-    }
-
-  while (*p)
-    {
-      if (excmap[*p])
-	*q++ = *p;
-      else
-	{
-	  switch (*p)
-	    {
-	    case '"':
-	      
-	      *q++ = '`';
-	      break;
-	    case '\'':
-	      
-	      *q++ = '`';
-	      break;
-	    default:
-		*q++ = *p;
-	      break;
-	    }
-	}
-      p++;
-    }
-  *q = 0;
-  return dest;
 }
 
 

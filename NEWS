@@ -1,3 +1,10 @@
+This release of FoxtrotGPS includes bug-fixes like:
+
+    * Double-quotes and single-quotes, and apostrophes in POI-names
+      and -descriptions are no longer replaced with backticks.
+
+
+
 FoxtrotGPS 1.1.0 includes several new features and bug-fixes;
 notable changes since 1.0.1 include:
 
