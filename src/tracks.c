@@ -243,7 +243,7 @@ track_log()
 		if (fp)
 		{
 			fprintf (fp, "\n"
-			         "<trkpt lat=\"%g\" lon=\"%g\">\n"
+			         "<trkpt lat=\"%f\" lon=\"%f\">\n"
 			         "  <ele>%g</ele>\n"
 			         "  <time>%s</time>\n"
 			         "  <fix>%s</fix>\n"
