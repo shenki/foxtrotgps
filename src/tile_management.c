@@ -125,7 +125,7 @@ download_tile(	repo_t *repo,
 	gchar *key;
 	int value=1;
 	int *found;
-	int maxzoom=17;
+	int maxzoom=18;
 	gboolean retval = FALSE;
 	
 	if(ht==NULL)
