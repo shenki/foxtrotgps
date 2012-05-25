@@ -15,6 +15,12 @@
 
 #include <glib.h>
 #include <glib/gprintf.h>
+
+#include <unistd.h>
+#include <sys/types.h>
+#include <sys/wait.h>
+#include <glib/gstdio.h>
+
 #include <stdio.h>
 #include <sqlite3.h>
 #include <stdlib.h>
@@ -97,10 +103,122 @@ sql_cb__poi_get(void *unused, int colc, char **colv, char **col_names)
 	return 0;
 }
 
+static GdkPixbuf *
+get_poi_icon (poi_t *poi)
+{
+	GdkPixbuf *icon;
+
+	static GHashTable *icon_cache = NULL;
+	static GdkPixbuf *poi_icon_default = NULL;
+
+	if (!icon_cache) {
+		/* Initialise icon-cache: */
+		icon_cache = g_hash_table_new (g_str_hash, g_str_equal);
+	}
+
+	if (!poi_icon_default) {
+		/* Initialise the default POI icon: */
+		poi_icon_default = gdk_pixbuf_new_from_file_at_size
+			(PACKAGE_PIXMAPS_DIR "/" PACKAGE "-poi.png",
+			 25, 25,
+			 NULL);
+	}
 
 
+	icon = g_hash_table_lookup (icon_cache, poi->keywords);
 
+	if (!icon) {
+		char *icon_dir =
+			g_build_filename (foxtrotgps_dir, "poi-icons", NULL);
 
+		/* Not all characters that might be in a POI's name
+		   are suitable for use in icon-filenames, e.g.: 
+		   path-separators need to be escaped so that
+		   a POI named something like "../../evil"
+		   doesn't result in us reading/writing a file
+		   somewhere where we shouldn't, and a number of
+		   characters need to be escaped to allow files
+		   to be stored on some filesystems like FAT.
+		 */
+		char *icon_basename =
+			g_uri_escape_string (poi->keywords, NULL, TRUE);
+
+		char *icon_path =
+			g_build_filename (icon_dir, icon_basename, NULL);
+
+		g_free (icon_basename);
+
+		g_mkdir (icon_dir, 0777);
+		g_free (icon_dir);
+
+		if (!g_file_test (icon_path, G_FILE_TEST_EXISTS)) {
+			pid_t mkvisualid_pid;
+			int mkvisualid_status;
+	
+			char *autocache_dir =
+				g_build_filename (global_home_dir,
+				                  ".VisualIDs",
+				                  PACKAGE, "poi-icons",
+				                  NULL);
+
+			g_mkdir_with_parents (autocache_dir, 0777);
+			/* Free autocache_dir later--we need to pass it
+			   to mkvisualid, below... */
+	
+			mkvisualid_pid = fork();
+	
+			switch (mkvisualid_pid) {
+			case 0:
+				execlp ("mkvisualid", "mkvisualid",
+				        "--autocache",
+				        "--autocache-dir", autocache_dir,
+				        "--output", icon_path,
+				        "--linewidth=.1",
+				        "--outline-width=.2",
+
+				        /* Don't use glyph-types that are
+				           easily confused with streets: */
+				        "--line=0",
+				        "--path=0",
+
+				        poi->keywords,
+
+				        NULL);
+
+				_exit (1); /* execlp failed */
+			default:
+				waitpid (mkvisualid_pid, &mkvisualid_status, 0);
+				/* Fall through to cleanup... */
+			case -1:
+				g_free (autocache_dir);
+			}
+		}
+	
+		icon = gdk_pixbuf_new_from_file_at_size
+			(icon_path, 32, 32, NULL);
+		/*^Note that this is slightly bigger than
+		   the `generic POI star' fallback-icon:
+		   we budget an additional 25% of the icon-radius
+		   for a border in case the icon needs one,
+		   e.g.: to ensure contrast against the map.
+		 */
+
+		g_free (icon_path);
+
+		if (icon) {
+			g_hash_table_insert (icon_cache,
+			                     poi->keywords,
+			                     icon);
+		}
+	}
+
+	if (!icon)
+	{
+		icon = poi_icon_default;
+	}
+
+	return icon;
+}
 
 
 void
@@ -112,8 +230,6 @@ paint_pois()
 	float lat, lon;
 	GSList *list;
 	GdkColor color;
-	GError	*error = NULL;
-	static GdkPixbuf *photo_icon = NULL;
 	static GdkGC *gc;
 	
 
@@ -125,13 +241,6 @@ paint_pois()
 	gdk_gc_set_rgb_fg_color(gc, &color);
 	
 
-	if(!photo_icon)
-	{
-		photo_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-poi.png", 25,25,
-			&error);
-	}
-
 	if(global_show_pois)
 	{
 		get_pois();
@@ -139,6 +248,10 @@ paint_pois()
 		for(list = poi_list; list != NULL; list = list->next)
 		{
 			poi_t *p = list->data;
+
+			GdkPixbuf *photo_icon = get_poi_icon (p);
+			int icon_width = gdk_pixbuf_get_width (photo_icon);
+			int icon_height = gdk_pixbuf_get_width (photo_icon);
 		
 			lat = deg2rad(p->lat_deg);
 			lon = deg2rad(p->lon_deg);
@@ -174,16 +287,16 @@ paint_pois()
 					NULL,
 					photo_icon,
 					0,0,
-					x-12,y-12,
-					24,24,
+					x - icon_width/2, y - icon_height/2,
+					-1, -1,
 					GDK_RGB_DITHER_NONE, 0, 0);
 				
 			}
 			
 			gtk_widget_queue_draw_area (
 					map_drawable, 
-					x-12, y-12,
-					24,24);
+					x - icon_width/2, y - icon_height/2,
+					icon_width, icon_height);
 			
 			printf("POI: %s lat %f - lon %f\n",p->keywords,p->lat_deg, p->lon_deg);
 		}
