@@ -62,7 +62,52 @@ mycurl_write_to_mem_cb(void *ptr, size_t rsize, size_t nmemb, void *data)
 	return size;
 }
 
+postreply_t*
+mycurl__do_http_post_XML (char *url, char *xmlString, char *useragent)
+{
+	GSList *list;
+	postreply_t *postreply;
+	
+	CURL *curl_handle;
+	
+	struct curl_httppost *lastptr  = NULL;
+		
+	mem_struct_t chunk;
+	long int status_code;
+	
+	chunk.memory = NULL;
+	chunk.size   = 0;
+	
+	curl_global_init(CURL_GLOBAL_ALL);
+	
+	curl_handle = curl_easy_init();
+	
+	curl_easy_setopt(curl_handle, CURLOPT_URL, url);
+	curl_easy_setopt(curl_handle, CURLOPT_POST, 1);
+	curl_easy_setopt(curl_handle, CURLOPT_POSTFIELDS, xmlString);
+	curl_easy_setopt(curl_handle, CURLOPT_WRITEFUNCTION, mycurl_write_to_mem_cb);
+	curl_easy_setopt(curl_handle, CURLOPT_WRITEDATA, (void *)&chunk);
 
+	curl_easy_perform(curl_handle);
+	curl_easy_getinfo(curl_handle, CURLINFO_RESPONSE_CODE, &status_code);
+	
+	curl_easy_cleanup(curl_handle);
+	
+	postreply = g_new0(postreply_t, 1);
+	postreply->status_code = status_code;
+	if(chunk.memory)
+		postreply->size = strlen(chunk.memory);
+	else
+		postreply->size = 0;
+	postreply->data = g_strdup(chunk.memory);
+	
+	if(chunk.memory)
+		g_free(chunk.memory);
+	
+	curl_global_cleanup();
+	
+	return postreply;
+}
 
 postreply_t*
 mycurl__do_http_post (char *url, GSList *post_data_list, char *useragent)

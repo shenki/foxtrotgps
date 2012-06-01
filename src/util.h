@@ -31,4 +31,7 @@ postreply_t*
 mycurl__do_http_post (char *url, GSList *post_data_list, char *useragent);
 
 postreply_t*
+mycurl__do_http_post_XML (char *url, char *xmlString, char *useragent);
+
+postreply_t*
 mycurl__do_http_get (char *url, char *useragent);

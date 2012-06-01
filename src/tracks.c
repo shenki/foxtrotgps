@@ -40,10 +40,12 @@ bbox_t		get_track_bbox(GSList *track);
 
 GSList *	load_log_file_into_list(char *file);
 GSList *	load_gpx_file_into_list(char *file);
-GSList *	parse_nodes(xmlNode *node);
+GSList * load_ols_XML_file_into_list(char *file);
+GSList * parse_gpx_nodes(xmlNode *node);
+GSList * parse_ols_XML_nodes(xmlNode *node);
 
-void *		fetch_track_thread(void *ptr);
-
+void * fetch_track_thread(void *ptr);
+void * fetch_openrouteservice_track_thread(void *ptr);
 
 
 void
@@ -614,7 +616,7 @@ load_gpx_file_into_list(char *file)
 		printf("error: could not parse file %s\n", file);
 	} else {
 		root_element = xmlDocGetRootElement(doc);
-		list = parse_nodes(root_element);
+		list = parse_gpx_nodes(root_element);
 
 		xmlFreeDoc(doc);
 	}
@@ -639,7 +641,7 @@ load_gpx_string_into_list(char *gpx_string)
 		fprintf (stderr, _("Failed to parse document\n"));
 	} else {
 		root_element = xmlDocGetRootElement(doc);
-		list = parse_nodes(root_element);
+		list = parse_gpx_nodes(root_element);
 
 		xmlFreeDoc(doc);
 	}
@@ -647,9 +649,32 @@ load_gpx_string_into_list(char *gpx_string)
 	return list;
 }
 
+GSList *
+load_ols_XML_string_into_list(char *ols_string)
+{
+	GSList *list = NULL;
+	xmlDoc *doc = NULL;
+	xmlNode *root_element = NULL;
+	
+	if(!ols_string) return NULL;
+	
+	LIBXML_TEST_VERSION
+	
+	doc = xmlReadMemory(ols_string, strlen(ols_string), "noname.xml", NULL, 0);
+	
+	if (doc == NULL) {
+		fprintf (stderr, _("Failed to parse document\n"));
+	} else {
+		root_element = xmlDocGetRootElement(doc);
+		list = parse_ols_XML_nodes(root_element);
+		xmlFreeDoc(doc);
+	}
+
+	return list;
+}
 
 GSList *
-parse_nodes(xmlNode *node)
+parse_gpx_nodes(xmlNode *node)
 {
 	xmlNode *cur_node = NULL;
 	GSList *list = NULL;
@@ -657,20 +682,26 @@ parse_nodes(xmlNode *node)
 
 	for (cur_node = node; cur_node; cur_node = cur_node->next)
 	{
-		if (cur_node->type == XML_ELEMENT_NODE)			
+		if (cur_node->type == XML_ELEMENT_NODE)
 		{
-			if (xmlStrEqual(cur_node->name, BAD_CAST "trkpt") || 
+			if (xmlStrEqual(cur_node->name, BAD_CAST "trkpt") ||
 			    xmlStrEqual(cur_node->name, BAD_CAST "rtept"))
 			{
 				double lat, lon;
 				trackpoint_t *tp = g_new0(trackpoint_t,1);
 				
+				if (xmlHasProp(cur_node, BAD_CAST "junction") &&
+				    strcmp(xmlGetProp(cur_node, BAD_CAST "junction"), "") == 0)
+				{
+					continue;
+				}
+
 				lat = atof((char *)xmlGetProp(cur_node, BAD_CAST "lat"));
 				lon = atof((char *)xmlGetProp(cur_node, BAD_CAST "lon"));
 				
 				tp->lat = deg2rad(lat);
-				tp->lon = deg2rad(lon);		
-		
+				tp->lon = deg2rad(lon);
+
 				list = g_slist_append(list, tp);
 			}
 			else
@@ -678,7 +709,58 @@ parse_nodes(xmlNode *node)
 				printf("  OTHER XML ELEMENT: %s \n", cur_node->name);
 			}
 		}
-		list = g_slist_concat(list, parse_nodes(cur_node->children));
+		list = g_slist_concat(list, parse_gpx_nodes(cur_node->children));
+	}
+	
+	return list;
+}
+
+GSList *
+parse_ols_XML_nodes(xmlNode *node)
+{
+	xmlNode *cur_node = NULL;
+	GSList *list = NULL;
+
+	for (cur_node = node; cur_node; cur_node = cur_node->next)
+	{
+		if (xmlStrEqual(cur_node->name, BAD_CAST "RouteGeometry"))
+		{
+			xmlNode *geometry_node = cur_node->children;
+			while (geometry_node != NULL)
+			{
+				if (xmlStrEqual(geometry_node->name, BAD_CAST "LineString"))
+				{
+					xmlNode *inner_cur_node = geometry_node->children;
+					while (inner_cur_node != NULL)
+					{
+						if (xmlStrEqual(inner_cur_node->name, BAD_CAST "pos"))
+						{
+							double lat, lon;
+							char** lonlat;
+
+							trackpoint_t *tp = g_new0(trackpoint_t,1);
+							fflush(stdout);
+							lonlat = g_strsplit(xmlNodeGetContent(inner_cur_node), " ", 2);
+							if (lonlat[0])
+							{
+								lon = atof(lonlat[0]);
+								if (lonlat[1])
+								{
+									lat = atof(lonlat[1]);
+								}
+							}
+							tp->lat = deg2rad(lat);
+							tp->lon = deg2rad(lon);
+							g_strfreev (lonlat);
+							list = g_slist_append(list, tp);
+						}
+						inner_cur_node = inner_cur_node->next;
+					}
+				}
+				geometry_node = geometry_node->next;
+			}
+		}
+		list = g_slist_concat(list, parse_ols_XML_nodes(cur_node->children));
 	}
 	
 	return list;
@@ -692,8 +774,22 @@ fetch_track(GtkWidget *widget, char *service, char *start, char *end)
 		fetch_yournavigation_track(widget, start, end);
 	else if (strcmp (service, "openrouteservice.org") == 0)
 		fetch_openrouteservice_track(widget, start, end);
-	else 
+	else
+	{
+		char *err_msg = g_strdup (_("<span color='#aa0000'><b>"
+		                            "Unknown service selected"
+		                            "</b></span>\n"
+		                            "This is a bug in FoxtrotGPS!"));
+		GtkWidget *tmpWidget;
+
+		tmpWidget = lookup_widget(dialog10, "label190");
+		gtk_label_set_label(GTK_LABEL(tmpWidget), err_msg);
+
+		tmpWidget = lookup_widget(dialog10, "okbutton11");
+		gtk_widget_set_sensitive(tmpWidget, TRUE);
+		
 		g_warning("###unknown route service (%s) selected\n", service);
+	}
 }
 
 void fetch_yournavigation_track(GtkWidget *widget, char *start, char *end)
@@ -703,7 +799,6 @@ void fetch_yournavigation_track(GtkWidget *widget, char *start, char *end)
 	char *startlonstr;
 	char *endlatstr;
 	char *endlonstr;
-	char *myEnd = g_strdup(end);
 	char *parseptr;
 	startlatstr = strtok_r (start, ",", &parseptr);
 	startlonstr = strtok_r (NULL, ",", &parseptr);
@@ -722,18 +817,69 @@ void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
 	char *url;
 	dialog10 = widget;
 	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
+	char *startlatstr;
+	char *startlonstr;
+	char *endlatstr;
+	char *endlonstr;
+	char *myEnd = g_strdup(end);
+	char *parseptr;
+	startlatstr = strtok_r (start, ",", &parseptr);
+	startlonstr = strtok_r (NULL, ",", &parseptr);
+	endlatstr = strtok_r (end, ",", &parseptr);
+	endlonstr = strtok_r (NULL, ",", &parseptr);
+	char *request;
 	
-	url = g_strdup_printf("www.tangogps.org/friends/navtrack.php?service=&start=%s&end=%s",start,end);
-	
-	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
+	request = g_strdup_printf("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n"
+	                          "<xls:XLS xmlns:xls=\"http://www.opengis.net/xls\" xmlns:sch=\"http://www.ascc.net/xml/schematron\" "
+	                          "xmlns:gml=\"http://www.opengis.net/gml\" xmlns:xlink=\"http://www.w3.org/1999/xlink\" "
+	                          "xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" "
+	                          "xsi:schemaLocation=\"http://www.opengis.net/xls "
+	                          "http://schemas.opengis.net/ols/1.1.0/RouteService.xsd\" version=\"1.1\" xls:lang=\"en\">\n"
+	                          "<xls:RequestHeader/>\n"
+	                          "<xls:Request methodName=\"RouteRequest\" requestID=\"999\" version=\"1.1\">\n"
+	                          "<xls:DetermineRouteRequest distanceUnit=\"KM\">\n"    
+	                          "<xls:RoutePlan>\n"
+	                          "<xls:RoutePreference>Fastest</xls:RoutePreference>"
+	                          "<xls:WayPointList>\n"
+	                          "<xls:StartPoint>\n"
+	                          "<xls:Position>\n"
+	                          "<gml:Point srsName=\"EPSG:4326\">\n"
+	                          "<gml:pos>%s %s</gml:pos>\n"
+	                          "</gml:Point>\n"
+	                          "</xls:Position>\n"
+	                          "</xls:StartPoint>\n"
+	                          "<xls:EndPoint>\n"
+	                          "<xls:Position>\n"
+	                          "<gml:Point srsName=\"EPSG:4326\">\n"
+	                          "<gml:pos>%s %s</gml:pos>\n"
+	                          "</gml:Point>\n"
+	                          "</xls:Position>\n"
+	                          "</xls:EndPoint>\n"
+	                          "</xls:WayPointList>\n"
+	                          "</xls:RoutePlan>\n"
+	                          "<xls:RouteInstructionsRequest provideGeometry=\"true\"/>\n"
+	                          "<xls:RouteGeometryRequest/>\n"
+	                          "</xls:DetermineRouteRequest>"
+	                          "</xls:Request>\n"
+	                          "</xls:XLS>\n",
+	                          startlonstr,
+	                          startlatstr,
+	                          endlonstr,
+	                          endlatstr
+	);
+
+	url = g_strdup_printf("http://openls.geog.uni-heidelberg.de/osm/eu/routing");
+
+	char **urlAndRequest = g_malloc(2 * sizeof(char*));
+	urlAndRequest[0] = url;
+	urlAndRequest[1] = request;
+
+	if (!g_thread_create(&fetch_openrouteservice_track_thread, (void *)urlAndRequest, FALSE, NULL) != 0)
 		g_warning("### can't create route thread\n");
 }
 
-void *
-fetch_track_thread(void *ptr)
+void process_fetched_track(postreply_t *reply, bool save_gpx)
 {
-	postreply_t *reply = NULL;
-	char *url;
 	GtkWidget *range, *drawingarea;
 	int track_zoom, width, height;
 	bbox_t bbox;
@@ -742,45 +888,36 @@ fetch_track_thread(void *ptr)
 	width  = drawingarea->allocation.width;
 	height = drawingarea->allocation.height;
 	
-	url = ptr;
-	
-	printf("URL ROUTE %s \n", url);
-	
-	reply = mycurl__do_http_get(url, NULL); 
-
-	printf("HTTP-GET: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
-
-	loaded_track = load_gpx_string_into_list(reply->data);
-	
 	if(loaded_track)
 	{
-		FILE *fp = NULL;
-		time_t time_epoch_sec;
-		struct tm  *tm_struct;
-		gchar buffer[256];
-		gchar *filename = NULL;
+		if (save_gpx)
+		{
+			FILE *fp = NULL;
+			time_t time_epoch_sec;
+			struct tm  *tm_struct;
+			gchar buffer[256];
+			gchar *filename = NULL;	
 		
+			time_epoch_sec = time(NULL);
+			tm_struct = localtime(&time_epoch_sec);
+			strftime(buffer, sizeof(buffer), "nav%Y%m%d_%H%M%S.gpx", tm_struct);
 		
-		time_epoch_sec = time(NULL);
-		tm_struct = localtime(&time_epoch_sec);
-		strftime(buffer, sizeof(buffer), "nav%Y%m%d_%H%M%S.gpx", tm_struct);
-		
-		filename = g_strconcat(global_track_dir, buffer,NULL);
+			filename = g_strconcat(global_track_dir, buffer,NULL);
 	
-		fp = fopen(filename,"w");
-		if(!fp)
-		{
-			printf("oops: %s \n",strerror(errno));
-			perror("navtrack open failed: ");
+			fp = fopen(filename,"w");
+			if(!fp)
+			{
+				printf("oops: %s \n",strerror(errno));
+				perror("navtrack open failed: ");
+			}
+			else
+			{
+				fprintf(fp,"%s", reply->data);
+				fclose(fp);
+			}
+			
+			g_free(filename);
 		}
-		else
-		{
-			fprintf(fp,"%s", reply->data);
-			fclose(fp);			
-		}
-		
-		g_free(filename);
-		
 		
 		bbox = get_track_bbox(loaded_track);
 		
@@ -846,7 +983,53 @@ fetch_track_thread(void *ptr)
 		gdk_threads_leave();
 	
 	}
+		
+}
+
+void *
+fetch_openrouteservice_track_thread(void *ptr)
+{
+	postreply_t *reply = NULL;
+	char *url;
+	char *request;
+	
+	url = ((char**)ptr)[0];
+	request = ((char**)ptr)[1];
 	
 	
+	reply = mycurl__do_http_post_XML(url, request, NULL);
+
+	printf("HTTP-POST: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
+	loaded_track = load_ols_XML_string_into_list(reply->data);
+	process_fetched_track(reply, false);
+	
+	g_free(url);
+	g_free(request);
+	g_free((char**)ptr);
+	return NULL;
+}
+
+void *
+fetch_track_thread(void *ptr)
+{
+	postreply_t *reply = NULL;
+	char *url;
+	GtkWidget *range, *drawingarea;
+	int track_zoom, width, height;
+	bbox_t bbox;
+	
+	drawingarea = lookup_widget(window1, "drawingarea1");
+	width  = drawingarea->allocation.width;
+	height = drawingarea->allocation.height;
+	
+	url = ptr;
+	
+	reply = mycurl__do_http_get(url, NULL); 
+
+	printf("HTTP-GET: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
+
+	loaded_track = load_gpx_string_into_list(reply->data);
+	process_fetched_track(reply, true);
+		
 	return NULL;
 }
