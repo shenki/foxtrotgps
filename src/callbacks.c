@@ -3497,7 +3497,7 @@ on_okbutton11_clicked                  (GtkButton       *button,
 {
 	GtkWidget *widget;
 	char *start=NULL, *end=NULL;
-	int service;
+	char *service=NULL;
 	
 	gtk_widget_set_sensitive(GTK_WIDGET(button),FALSE);
 	
@@ -3513,9 +3513,9 @@ on_okbutton11_clicked                  (GtkButton       *button,
 	end   = g_strdup( gtk_entry_get_text(GTK_ENTRY(widget)) );
 	
 	widget = lookup_widget(GTK_WIDGET(button), "combobox8");
-	service = gtk_combo_box_get_active(GTK_COMBO_BOX(widget));
+	service = g_strdup (gtk_combo_box_get_active_text(GTK_COMBO_BOX(widget)));
 	
-	fetch_track(dialog10, service, start, end);
+	fetch_track (dialog10, service, start, end);
 }
 
 void

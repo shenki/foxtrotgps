@@ -686,20 +686,48 @@ parse_nodes(xmlNode *node)
 
 
 void
-fetch_track(GtkWidget *widget, int service, char *start, char *end)
+fetch_track(GtkWidget *widget, char *service, char *start, char *end)
+{
+	if (strcmp (service, "yournavigation.org") == 0)
+		fetch_yournavigation_track(widget, start, end);
+	else if (strcmp (service, "openrouteservice.org") == 0)
+		fetch_openrouteservice_track(widget, start, end);
+	else 
+		g_warning("###unknown route service (%s) selected\n", service);
+}
+
+void fetch_yournavigation_track(GtkWidget *widget, char *start, char *end)
 {
 	char *url;
-	
+	char *startlatstr;
+	char *startlonstr;
+	char *endlatstr;
+	char *endlonstr;
+	char *myEnd = g_strdup(end);
+	char *parseptr;
+	startlatstr = strtok_r (start, ",", &parseptr);
+	startlonstr = strtok_r (NULL, ",", &parseptr);
+	endlatstr = strtok_r (end, ",", &parseptr);
+	endlonstr = strtok_r (NULL, ",", &parseptr);
 	dialog10 = widget;
 	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
 	
-	url = g_strdup_printf("www.tangogps.org/friends/navtrack.php?service=%d&start=%s&end=%s",service,start,end);
+	url = g_strdup_printf("http://www.yournavigation.org/api/dev/gosmore.php?format=gpx&flat=%s&flon=%s&tlat=%s&tlon=%s&v=motorcar&fast=1&layer=mapnik",startlatstr, startlonstr, endlatstr, endlonstr);
+	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
+		g_warning("### can't create route thread\n");
+}
+
+void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
+{
+	char *url;
+	dialog10 = widget;
+	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
+	
+	url = g_strdup_printf("www.tangogps.org/friends/navtrack.php?service=&start=%s&end=%s",start,end);
 	
 	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
 		g_warning("### can't create route thread\n");
-
 }
-
 
 void *
 fetch_track_thread(void *ptr)
