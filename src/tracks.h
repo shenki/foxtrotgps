@@ -25,4 +25,10 @@ tracks_on_file_button_release_event      (	GtkWidget       *widget,
                                         gpointer         user_data);
 
 void
-fetch_track(GtkWidget *widget, int service, char *start, char *end);
+fetch_track(GtkWidget *widget, char *service, char *start, char *end);
+
+void
+fetch_yournavigation_track(GtkWidget *widget, char *start, char *end);
+
+void
+fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end);
