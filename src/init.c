@@ -322,7 +322,7 @@ gconf_get_repolist()
 		global_repo_list = g_slist_append(global_repo_list, repo4);
 
 		repo5->name = g_strdup("Google Sat (testing only)");
-		repo5->uri  = g_strdup("http://khm.google.com/kh/v=102&x=%d&y=%d&z=%d");
+		repo5->uri  = g_strdup("http://khm.google.com/kh/v=113&x=%d&y=%d&z=%d");
 		repo5->dir  = g_strdup_printf("%s/Maps/googlesat",global_home_dir);
 		repo5->inverted_zoom = 1;
 		global_repo_list = g_slist_append(global_repo_list, repo5);
