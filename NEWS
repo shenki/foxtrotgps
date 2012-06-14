@@ -1,5 +1,10 @@
 This release of FoxtrotGPS includes bug-fixes like:
 
+    * FoxtrotGPS is once again able to find routes on demand using
+      yournavigation.org and openrouteservice.org--thanks to
+      Benjamin Deering for removing the dependencies on the
+      tangogps.org route-finding proxy.
+
     * Double-quotes and single-quotes, and apostrophes in POI-names
       and -descriptions are no longer replaced with backticks.
 
