@@ -1,6 +1,9 @@
 This release of FoxtrotGPS includes the following new features and bug-fixes
 since 1.1.0:
 
+    * More detail in OpenStreetMap: FoxtrotGPS now supports loading
+      tiles for zoom levels up to 18.
+
     * FoxtrotGPS is once again able to find routes on demand using
       yournavigation.org and openrouteservice.org--thanks to
       Benjamin Deering for removing the dependencies on the
@@ -16,6 +19,9 @@ since 1.1.0:
 
     * Double-quotes and single-quotes, and apostrophes in POI-names
       and -descriptions are no longer replaced with backticks.
+
+    * The GPX tracks produced by FoxtrotGPS now log latitude
+      and longitude with 6 digits after the decimal point.
 
 
 
