@@ -1,4 +1,13 @@
-This release of FoxtrotGPS includes bug-fixes like:
+This release of FoxtrotGPS includes the following new features and bug-fixes
+since 1.1.0:
+
+    * FoxtrotGPS now supports loading distinct icons for different POIs--
+      and, if you have the `mkvisualid' command from libvisualid installed,
+      FoxtrotGPS can even generate distinctive icons automatically.
+
+      For more on libvisualid, see its website:
+
+          http://www.hackerposse.com/~rozzin/VisualIDs
 
     * Double-quotes and single-quotes, and apostrophes in POI-names
       and -descriptions are no longer replaced with backticks.
