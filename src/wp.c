@@ -32,7 +32,24 @@ set_current_wp(double lat, double lon)
 
 
 
+GdkPixbuf *
+load_wp_icon ()
+{
+	GdkPixbuf *wp_icon = NULL;
+	GError *error = NULL;
 
+	wp_icon = gdk_pixbuf_new_from_file_at_size (
+			PACKAGE_PIXMAPS_DIR "/foxtrotgps-wp.png", 36, 36,
+			&error);
+	if (error)
+	{
+		g_print ("%s%s(): loading pixbuf failure. %s\n", __FUNCTION__,__FILE__,
+		         error->message);
+		g_error_free (error);
+	}
+
+	return wp_icon;
+}
 
 void
 paint_wp()
@@ -47,7 +64,6 @@ do_paint_wp()
 	float lat, lon;
 	GdkColor color;
 	GdkGC *gc;
-	GError	*error = NULL;
 	
 	gc = gdk_gc_new(pixmap);
 	color.green = 60000;
@@ -57,19 +73,8 @@ do_paint_wp()
 	
 
 	if(!wp_icon)
-	{
-		wp_icon = gdk_pixbuf_new_from_file_at_size (
-			PACKAGE_PIXMAPS_DIR "/" PACKAGE "-wp.png", 36,36,
-			&error);
-		if (error)
-		{
-			g_print ("%s(): loading pixbuf failure. %s\n", __FUNCTION__,
-			error->message);
-			g_error_free (error);
-			
-			
-		}
-	}
+		wp_icon = load_wp_icon ();
+
 	if (pixmap && !gc_map)	
 		gc_map = gdk_gc_new(pixmap);
 		

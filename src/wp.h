@@ -16,6 +16,9 @@ paint_myposition();
 void
 do_paint_wp();
 
+GdkPixbuf *
+load_wp_icon();
+
 void
 set_current_wp(double lat, double lon);
 
