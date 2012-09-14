@@ -300,3 +300,54 @@ get_way_bbox (GSList *ways)
 
 	return bbox;
 }
+
+
+char *
+choose_save_file (char *currentName)
+{
+	char *filename = NULL;
+	GtkWidget *dialog;
+	dialog = gtk_file_chooser_dialog_new ("Save File",
+	                                      NULL,
+	                                      GTK_FILE_CHOOSER_ACTION_SAVE,
+	                                      GTK_STOCK_CANCEL, GTK_RESPONSE_CANCEL,
+	                                      GTK_STOCK_SAVE, GTK_RESPONSE_ACCEPT,
+	                                      NULL);
+	gtk_file_chooser_set_do_overwrite_confirmation
+		(GTK_FILE_CHOOSER (dialog), TRUE);
+	gtk_file_chooser_set_current_name (GTK_FILE_CHOOSER (dialog),
+	                                   currentName);
+
+	if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+	{
+		filename = gtk_file_chooser_get_filename
+			(GTK_FILE_CHOOSER (dialog));
+	}
+
+	gtk_widget_destroy (dialog);
+
+	return filename;
+}
+
+char *
+choose_load_file ()
+{
+	char *filename = NULL;
+	GtkWidget *dialog;
+	dialog = gtk_file_chooser_dialog_new ("Open File", NULL,
+	                                      GTK_FILE_CHOOSER_ACTION_OPEN,
+	                                      GTK_STOCK_CANCEL,
+	                                      GTK_RESPONSE_CANCEL,
+	                                      GTK_STOCK_OPEN,
+	                                      GTK_RESPONSE_ACCEPT,
+	                                      NULL);
+
+	if (gtk_dialog_run (GTK_DIALOG (dialog)) == GTK_RESPONSE_ACCEPT)
+	{
+		filename = gtk_file_chooser_get_filename
+			(GTK_FILE_CHOOSER (dialog));
+	}
+	gtk_widget_destroy (dialog);
+
+	return filename;
+}

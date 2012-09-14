@@ -51,4 +51,10 @@ change_waypoint_of_route (waypoint_t *wp, double lat, double lon);
 void
 insert_waypoint_before_of_route (waypoint_t *wp);
 
+char *
+choose_save_file (char *currentName);
+
+char *
+choose_load_file ();
+
 #endif
