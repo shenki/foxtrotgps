@@ -414,6 +414,37 @@ save_route_as_gpx (const char *uri)
 }
 
 /**
+ * Save a route to a TomTom ITN file format.
+ */
+void
+save_route_as_tomtom_itn (const char *uri)
+{
+	FILE *tomtom;
+	int no;
+	GSList *list;
+
+	if (uri == NULL) return;
+
+	tomtom = fopen (uri, "w");
+	if (tomtom == NULL) {
+		perror ("opening file to save tomtom.");
+	} else {
+		for (list = route, no = 1;
+		     list != NULL;
+		     list = list->next, no++)
+		{
+			waypoint_t *wp = list->data;
+			fprintf (tomtom, "%d|%d|WP%d|0\n", 
+			         (int) (rad2deg (wp->lon) * 100000),
+			         (int) (rad2deg (wp->lat) * 100000),
+			         no);
+		}
+
+		fclose (tomtom);
+	}
+}
+
+/**
  * Take all routepoints from a DOM tree containing GPX nodes.
  */
 static

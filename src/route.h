@@ -58,6 +58,12 @@ void
 save_route_as_gpx (const char *uri);
 
 /**
+ * Save a route to a TomTom ITN file format.
+ */
+void
+save_route_as_tomtom_itn (const char *uri);
+
+/**
  * Load a route from a given GPX file.
  */
 void

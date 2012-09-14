@@ -3389,6 +3389,20 @@ on_load_route_button_release_event (GtkWidget *widget,
 }
 
 gboolean
+on_save_route_tomtom_button_release_event (GtkWidget *widget,
+                                           GdkEventButton *event,
+                                           gpointer user_data)
+{
+	char *filename;
+
+	filename = choose_save_file ("Unnamed.itn");
+	save_route_as_tomtom_itn (filename);
+	g_free (filename);
+	return FALSE;
+}
+
+
+gboolean
 on_item18_button_release_event         (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)

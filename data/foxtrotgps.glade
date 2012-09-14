@@ -1800,6 +1800,14 @@ Set GPSD Host IP
               </widget>
             </child>
             <child>
+              <widget class="GtkMenuItem" id="item23d">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">save route as TomTom ITN</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="on_save_route_tomtom_button_release_event"/>
+              </widget>
+            </child>
+            <child>
               <widget class="GtkMenuItem" id="item17">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">set WP</property>
