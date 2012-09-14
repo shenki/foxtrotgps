@@ -301,6 +301,204 @@ get_way_bbox (GSList *ways)
 	return bbox;
 }
 
+/**
+ * Write a single route point to the XML file in GPX format.
+ */
+static
+void
+write_rtept (xmlTextWriterPtr writer, waypoint_t *wp, int no)
+{
+	xmlTextWriterStartElement (writer, BAD_CAST "rtept");
+	xmlTextWriterWriteFormatAttribute (writer, BAD_CAST "lat",
+	                                   "%f", rad2deg (wp->lat));
+	xmlTextWriterWriteFormatAttribute (writer, BAD_CAST "lon",
+	                                   "%f", rad2deg (wp->lon));
+	xmlTextWriterEndElement (writer); /* </rtept> */
+}
+
+/**
+ * Save the route in GPX format to the given URI.
+ */
+void
+save_route_as_gpx (const char *uri) 
+{
+	int rc;
+	xmlTextWriterPtr writer;
+	int no;
+	GSList *list;
+	char now_as_string[200];
+	struct tm now_as_tm;
+	time_t now;
+
+	if (uri == NULL) return;
+
+	bbox_t bbox = get_way_bbox (route);
+
+	/*
+	 * this initialize the library and check potential ABI mismatches
+	 * between the version it was compiled for and the actual shared
+	 * library used.
+	 */
+	LIBXML_TEST_VERSION
+
+	/* Create a new XmlWriter for uri, with no compression. */
+	writer = xmlNewTextWriterFilename (uri, 0);
+	if (writer == NULL) {
+		printf ("testXmlwriterFilename: Error creating the xml writer\n");
+		return;
+	}
+
+	/* We would like to indent the elements for better readability. */
+	xmlTextWriterSetIndent (writer, 1);
+
+	/* Start the document with the xml default for the version,
+	 * encoding and the default for the standalone
+	 * declaration. */
+	rc = xmlTextWriterStartDocument (writer, "1.0", GPX_ENCODING, "no");
+	if (rc < 0) {
+		printf ("testXmlwriterFilename: Error at xmlTextWriterStartDocument\n");
+		return;
+	}
+
+	xmlTextWriterStartElement (writer, BAD_CAST "gpx");
+	xmlTextWriterWriteAttribute (writer, BAD_CAST "version",
+	                                     BAD_CAST "1.1");
+	xmlTextWriterWriteAttribute (writer, BAD_CAST "creator",
+	                                     BAD_CAST PACKAGE_STRING);
+	xmlTextWriterWriteAttribute (writer, BAD_CAST "xmlns:xsi",
+	                                     BAD_CAST "http://www.w3.org/2001/XMLSchema-instance");
+	xmlTextWriterWriteAttribute (writer, BAD_CAST "xmlns:topografix",
+	                                     BAD_CAST "http://www.topografix.com/GPX/Private/TopoGrafix/0/1");
+	xmlTextWriterWriteAttribute (writer, BAD_CAST "xmlns",
+	                                     BAD_CAST "http://www.topografix.com/GPX/1/1");
+	xmlTextWriterWriteAttribute (writer, BAD_CAST "xsi:schemaLocation",
+	                                     BAD_CAST "http://www.topografix.com/GPX/1/1 http://www.topografix.com/GPX/1/1/gpx.xsd");
+
+	xmlTextWriterStartElement (writer, BAD_CAST "metadata");
+
+	/* save current time into GPX file: */
+	time (&now);
+	localtime_r (&now, &now_as_tm);
+	strftime (now_as_string, sizeof (now_as_string), "%Y-%m-%dT%H:%M:%S%Z",
+	          &now_as_tm);
+	xmlTextWriterWriteElement (writer, BAD_CAST "time",
+	                                   BAD_CAST now_as_string);
+
+	xmlTextWriterStartElement (writer, BAD_CAST "bounds");
+	xmlTextWriterWriteFormatAttribute (writer, BAD_CAST "minlat",
+	                                   "%f", rad2deg (bbox.lat2));
+	xmlTextWriterWriteFormatAttribute (writer, BAD_CAST "minlon",
+	                                   "%f", rad2deg (bbox.lon1));
+	xmlTextWriterWriteFormatAttribute (writer, BAD_CAST "maxlat",
+	                                   "%f", rad2deg (bbox.lat1));
+	xmlTextWriterWriteFormatAttribute (writer, BAD_CAST "maxlon",
+	                                   "%f", rad2deg (bbox.lon2));
+	xmlTextWriterEndElement (writer); /* </bounds> */
+
+	xmlTextWriterEndElement (writer); /* </metadata> */
+
+	xmlTextWriterStartElement (writer, BAD_CAST "rte");
+
+	for (list = route, no = 1; list != NULL; list = list->next, no++)
+	{
+		waypoint_t *wp = list->data;
+		write_rtept (writer, wp, no);
+	}
+
+	xmlTextWriterEndElement (writer); /* </rte> */
+	xmlTextWriterEndElement (writer); /* </gpx> */
+
+	xmlTextWriterEndDocument (writer);
+
+	xmlFreeTextWriter (writer);
+}
+
+/**
+ * Take all routepoints from a DOM tree containing GPX nodes.
+ */
+static
+GSList *
+parse_gpx_routepoints (xmlNode *node)
+{
+	xmlNode *cur_node = NULL;
+	GSList *list = NULL;
+
+	for (cur_node = node; cur_node; cur_node = cur_node->next)
+	{
+		if (cur_node->type == XML_ELEMENT_NODE)			
+		{
+			if (xmlStrEqual (cur_node->name, BAD_CAST "rtept"))
+			{
+				double lat, lon;
+				waypoint_t *tp = g_new0 (waypoint_t, 1);
+
+				lat = atof ((char *) xmlGetProp (cur_node,
+				                                 BAD_CAST "lat"));
+				lon = atof ((char *) xmlGetProp (cur_node,
+				                                 BAD_CAST "lon"));
+
+				tp->lat = deg2rad (lat);
+				tp->lon = deg2rad (lon);
+
+				list = g_slist_append (list, tp);
+			}
+			else
+			{
+				printf ("  OTHER XML ELEMENT: %s \n",
+				        cur_node->name);
+			}
+		}
+		list = g_slist_concat (list,
+		                       parse_gpx_routepoints (cur_node->children));
+	}
+
+	return list;
+}
+
+/**
+ * Load a route from a given GPX file.
+ */
+GSList *
+load_route_as_gpx (const char *file) 
+{
+  	GSList *list = NULL;
+	xmlDoc *doc = NULL;
+	xmlNode *root_element = NULL;
+
+	LIBXML_TEST_VERSION
+
+	doc = xmlReadFile (file, NULL, 0);
+	if (doc == NULL)
+	{
+		printf ("error: could not parse file %s\n", file);
+	}
+
+	root_element = xmlDocGetRootElement (doc);
+	list = parse_gpx_routepoints (root_element);
+	xmlFreeDoc (doc);
+	xmlCleanupParser ();
+
+	return list;
+}
+
+/**
+ * Load a route from a file with a supported file format.
+ */
+void
+load_route (const char *filename)
+{
+	bbox_t bbox;
+
+	if (filename == NULL) return;
+
+	route = load_route_as_gpx (filename);
+	if (route != NULL)
+	{
+		bbox = get_way_bbox (route);
+		show_bbox (bbox);
+	}
+}
+
 
 char *
 choose_save_file (char *currentName)

@@ -3362,6 +3362,33 @@ on_clear_route_button_release_event (GtkWidget *widget,
 }
 
 gboolean
+on_save_route_gpx_button_release_event (GtkWidget *widget,
+                                        GdkEventButton *event,
+                                        gpointer user_data)
+{
+	char *filename;
+
+	filename = choose_save_file ("Unnamed.gpx");
+	save_route_as_gpx (filename);
+	g_free (filename);
+	return FALSE;
+}
+
+gboolean
+on_load_route_button_release_event (GtkWidget *widget,
+                                    GdkEventButton *event,
+                                    gpointer user_data)
+{
+	char *filename;
+
+	filename = choose_load_file ();
+	load_route (filename);
+	repaint_all ();
+	g_free (filename);
+	return FALSE;
+}
+
+gboolean
 on_item18_button_release_event         (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)

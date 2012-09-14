@@ -1784,6 +1784,22 @@ Set GPSD Host IP
               </widget>
             </child>
             <child>
+              <widget class="GtkMenuItem" id="item23cc">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">load route from GPX</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="on_load_route_button_release_event"/>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="item23c">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">save route as GPX</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="on_save_route_gpx_button_release_event"/>
+              </widget>
+            </child>
+            <child>
               <widget class="GtkMenuItem" id="item17">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">set WP</property>

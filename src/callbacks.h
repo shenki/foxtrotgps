@@ -673,6 +673,16 @@ on_clear_route_button_release_event         (GtkWidget       *widget,
                                         gpointer         user_data);
 
 gboolean
+on_save_route_gpx_button_release_event         (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data);
+
+gboolean
+on_load_route_button_release_event         (GtkWidget       *widget,
+                                        GdkEventButton  *event,
+                                        gpointer         user_data);
+
+gboolean
 on_item18_button_release_event         (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data);

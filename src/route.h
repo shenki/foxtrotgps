@@ -51,6 +51,18 @@ change_waypoint_of_route (waypoint_t *wp, double lat, double lon);
 void
 insert_waypoint_before_of_route (waypoint_t *wp);
 
+/**
+ * Save the route in GPX format to the given URI.
+ */
+void
+save_route_as_gpx (const char *uri);
+
+/**
+ * Load a route from a given GPX file.
+ */
+void
+load_route (const char *filename);
+
 char *
 choose_save_file (char *currentName);
 
