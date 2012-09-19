@@ -32,3 +32,6 @@ fetch_yournavigation_track(GtkWidget *widget, char *start, char *end);
 
 void
 fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end);
+
+void
+show_bbox (bbox_t bbox);
