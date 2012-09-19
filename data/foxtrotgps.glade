@@ -1714,6 +1714,25 @@ Set GPSD Host IP
       </widget>
     </child>
   </widget>
+  <widget class="GtkMenu" id="route_menu">
+    <property name="visible">True</property>
+    <child>
+      <widget class="GtkMenuItem" id="route_menu_item1">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">delete waypoint</property>
+        <property name="use_underline">True</property>
+        <signal name="activate" handler="on_delete_waypoint_button_release_event"/>
+      </widget>
+    </child>
+    <child>
+      <widget class="GtkMenuItem" id="route_menu_item2">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">insert waypoint before this</property>
+        <property name="use_underline">True</property>
+        <signal name="activate" handler="on_insert_waypoint_button_release_event"/>
+      </widget>
+    </child>
+  </widget>
   <widget class="GtkMenu" id="menu1">
     <property name="visible">True</property>
     <child>
@@ -1757,6 +1776,14 @@ Set GPSD Host IP
               </widget>
             </child>
             <child>
+              <widget class="GtkMenuItem" id="item23b">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">clear route</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="on_clear_route_button_release_event"/>
+              </widget>
+            </child>
+            <child>
               <widget class="GtkMenuItem" id="item17">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">set WP</property>
@@ -1770,6 +1797,14 @@ Set GPSD Host IP
                 <property name="label" translatable="yes">unset WP</property>
                 <property name="use_underline">True</property>
                 <signal name="activate" handler="on_item18_button_release_event"/>
+              </widget>
+            </child>
+            <child>
+              <widget class="GtkMenuItem" id="item17b">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">add WP</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="on_add_wp_button_release_event"/>
               </widget>
             </child>
           </widget>

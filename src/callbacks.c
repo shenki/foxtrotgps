@@ -28,6 +28,7 @@
 #include "poi.h"
 #include "wp.h"
 #include "tracks.h"
+#include "route.h"
 #include "hrm_functions.h"
 
 /* How many move events must come in for a drag to be recognized: */
@@ -78,6 +79,7 @@ set_cursor(int type)
 		gdk_window_set_cursor(window1->window, cursor_default);
 }
 
+waypoint_t *selected_wp;
 
 gboolean
 on_drawingarea1_button_press_event     (GtkWidget       *widget,
@@ -98,6 +100,8 @@ on_drawingarea1_button_press_event     (GtkWidget       *widget,
 	local_x = global_x;
 	local_y = global_y;
 		
+	selected_wp = find_routepoint (mouse_x, mouse_y);
+	
 	return FALSE;
 }
 
@@ -151,31 +155,36 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 			/* This is the mouse release event
 			   of a previous drag: */
 			printf("* mouse drag +8events\n");
-			int mouse_dx, mouse_dy;
-			
-			global_x = local_x;
-			global_y = local_y;
-			
-			mouse_dx = mouse_x - (int) event->x;
-			mouse_dy = mouse_y - (int) event->y;
-			
-			global_x += mouse_dx;
-			global_y += mouse_dy;
-		
-			gdk_draw_rectangle (
-				pixmap,
-				widget->style->white_gc,
-				TRUE,
-				0, 0,
-				widget->allocation.width+260,
-				widget->allocation.height+260);
-						
-			gtk_widget_queue_draw_area (
-				widget, 
-				0,0,widget->allocation.width+260,widget->allocation.height+260);
-			
-		
-			repaint_all();
+
+			if (!selected_wp) {
+				int mouse_dx, mouse_dy;
+
+				global_x = local_x;
+				global_y = local_y;
+
+				mouse_dx = mouse_x - (int) event->x;
+				mouse_dy = mouse_y - (int) event->y;
+
+				global_x += mouse_dx;
+				global_y += mouse_dy;
+
+				gdk_draw_rectangle (
+					pixmap,
+					widget->style->white_gc,
+					TRUE,
+					0, 0,
+					widget->allocation.width+260,
+					widget->allocation.height+260);
+
+				gtk_widget_queue_draw_area (
+					widget, 
+					0,0,widget->allocation.width+260,widget->allocation.height+260);
+
+
+				repaint_all ();
+			} else {
+				selected_wp = NULL;
+			}
 		}
 		
 		if (abs(mouse_x - (int) event->x) < 10 && abs(mouse_y - (int) event->y) < 10)
@@ -184,6 +193,7 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 			gboolean friend_found = FALSE;
 			gboolean photo_found = FALSE;
 			gboolean poi_found = FALSE;
+			waypoint_t *routepoint;
 			
 			
 			if(global_show_friends)
@@ -234,8 +244,9 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 				}
 			}
 			
+			routepoint = find_routepoint (mouse_x, mouse_y);
 			
-			if (!friend_found && !photo_found && !poi_found && 
+			if (!friend_found && !photo_found && !poi_found && !routepoint && 
 				!distance_mode && !pickpoint_mode)
 			{	
 	
@@ -258,6 +269,13 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 					on_item10_activate(NULL, NULL);
 				if (poi_found)
 					on_item15_activate(NULL, NULL);
+				if (routepoint) {
+					gtk_widget_show (route_menu);
+					gtk_menu_popup (GTK_MENU (route_menu),
+					                NULL, NULL, NULL, NULL, 
+					                event->button,
+					                event->time);
+				}
 			}
 		}
 	
@@ -294,6 +312,15 @@ on_drawingarea1_motion_notify_event    (GtkWidget       *widget,
 	 
 		if (state & GDK_BUTTON1_MASK  && wtfcounter>=WTFCOUNTER) 
 		{
+
+			if (selected_wp) {
+				double lat = pixel2lat (global_zoom, global_y+event->y);
+				double lon = pixel2lon (global_zoom, global_x+event->x);
+				change_waypoint_of_route (selected_wp, lat, lon);
+				repaint_all ();
+				return FALSE;
+			}
+
 			GtkToggleToolButton *autocenter_toggle;
 
 			if(!drag_started)
@@ -2257,6 +2284,7 @@ repaint_all()
 	paint_photos();
 	paint_pois();
 	paint_wp();
+	paint_route();
 	paint_myposition();
 	
 }
@@ -3307,6 +3335,31 @@ on_item17_button_release_event         (GtkWidget       *widget,
   return FALSE;
 }
 
+gboolean
+on_add_wp_button_release_event (GtkWidget *widget,
+                                GdkEventButton *event,
+                                gpointer user_data)
+{
+	float lat, lon;
+
+	lat = pixel2lat (global_zoom, global_y+mouse_y);
+	lon = pixel2lon (global_zoom, global_x+mouse_x);
+
+	append_waypoint_to_route (lat, lon);
+	repaint_all ();
+
+	return FALSE;
+}
+
+gboolean
+on_clear_route_button_release_event (GtkWidget *widget,
+                                     GdkEventButton *event,
+                                     gpointer user_data)
+{
+	reset_route ();
+	repaint_all ();
+	return FALSE;
+}
 
 gboolean
 on_item18_button_release_event         (GtkWidget       *widget,
@@ -3892,4 +3945,28 @@ toggle_tile_redownload (GtkToggleButton *togglebutton, gpointer data)
 	gconf_client_set_bool (global_gconfclient, 
 	                       GCONF"/no_redownload",
 	                       global_no_redownload, NULL);
+}
+
+gboolean
+on_delete_waypoint_button_release_event (GtkWidget *widget,
+                                         GdkEventButton *event,
+                                         gpointer user_data)
+{
+	delete_waypoint_of_route (selected_wp);
+	selected_wp = NULL;
+	repaint_all ();
+
+	return FALSE;
+}
+
+gboolean
+on_insert_waypoint_button_release_event (GtkWidget *widget,
+                                         GdkEventButton *event,
+                                         gpointer user_data)
+{
+	insert_waypoint_before_of_route (selected_wp);
+	selected_wp = NULL;
+	repaint_all ();
+
+	return FALSE;
 }
