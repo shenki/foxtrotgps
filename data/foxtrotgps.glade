@@ -1719,7 +1719,7 @@ Set GPSD Host IP
     <child>
       <widget class="GtkMenuItem" id="route_menu_item1">
         <property name="visible">True</property>
-        <property name="label" translatable="yes">delete waypoint</property>
+        <property name="label" translatable="yes">delete routepoint</property>
         <property name="use_underline">True</property>
         <signal name="activate" handler="on_delete_waypoint_button_release_event"/>
       </widget>
@@ -1727,7 +1727,7 @@ Set GPSD Host IP
     <child>
       <widget class="GtkMenuItem" id="route_menu_item2">
         <property name="visible">True</property>
-        <property name="label" translatable="yes">insert waypoint before this</property>
+        <property name="label" translatable="yes">insert routepoint before this</property>
         <property name="use_underline">True</property>
         <signal name="activate" handler="on_insert_waypoint_button_release_event"/>
       </widget>
@@ -1760,12 +1760,12 @@ Set GPSD Host IP
       </widget>
     </child>
     <child>
-      <widget class="GtkMenuItem" id="item16">
+      <widget class="GtkMenuItem" id="routefinding_menu_item">
         <property name="visible">True</property>
-        <property name="label" translatable="yes">ways &amp; routes</property>
+        <property name="label" translatable="yes">route-finding</property>
         <property name="use_underline">True</property>
         <child>
-          <widget class="GtkMenu" id="item16_menu">
+          <widget class="GtkMenu" id="routefinding_menu">
             <property name="visible">True</property>
             <child>
               <widget class="GtkMenuItem" id="item23">
@@ -1775,12 +1775,24 @@ Set GPSD Host IP
                 <signal name="activate" handler="on_item23_button_release_event"/>
               </widget>
             </child>
+          </widget>
+        </child>
+      </widget>
+    </child>
+    <child>
+      <widget class="GtkMenuItem" id="routeplanning_menu_item">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">route-planning</property>
+        <property name="use_underline">True</property>
+        <child>
+          <widget class="GtkMenu" id="routeplanning_menu">
+            <property name="visible">True</property>
             <child>
-              <widget class="GtkMenuItem" id="item23b">
+              <widget class="GtkMenuItem" id="item17b">
                 <property name="visible">True</property>
-                <property name="label" translatable="yes">clear route</property>
+                <property name="label" translatable="yes">add routepoint</property>
                 <property name="use_underline">True</property>
-                <signal name="activate" handler="on_clear_route_button_release_event"/>
+                <signal name="activate" handler="on_add_wp_button_release_event"/>
               </widget>
             </child>
             <child>
@@ -1808,6 +1820,26 @@ Set GPSD Host IP
               </widget>
             </child>
             <child>
+              <widget class="GtkMenuItem" id="item23b">
+                <property name="visible">True</property>
+                <property name="label" translatable="yes">clear route</property>
+                <property name="use_underline">True</property>
+                <signal name="activate" handler="on_clear_route_button_release_event"/>
+              </widget>
+            </child>
+          </widget>
+        </child>
+      </widget>
+    </child>
+    <child>
+      <widget class="GtkMenuItem" id="waypoint_menu_item">
+        <property name="visible">True</property>
+        <property name="label" translatable="yes">waypoint</property>
+        <property name="use_underline">True</property>
+        <child>
+          <widget class="GtkMenu" id="item16_menu">
+            <property name="visible">True</property>
+            <child>
               <widget class="GtkMenuItem" id="item17">
                 <property name="visible">True</property>
                 <property name="label" translatable="yes">set WP</property>
@@ -1821,14 +1853,6 @@ Set GPSD Host IP
                 <property name="label" translatable="yes">unset WP</property>
                 <property name="use_underline">True</property>
                 <signal name="activate" handler="on_item18_button_release_event"/>
-              </widget>
-            </child>
-            <child>
-              <widget class="GtkMenuItem" id="item17b">
-                <property name="visible">True</property>
-                <property name="label" translatable="yes">add WP</property>
-                <property name="use_underline">True</property>
-                <signal name="activate" handler="on_add_wp_button_release_event"/>
               </widget>
             </child>
           </widget>
