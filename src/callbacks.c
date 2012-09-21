@@ -30,6 +30,7 @@
 #include "tracks.h"
 #include "hrm_functions.h"
 
+/* How many move events must come in for a drag to be recognized: */
 #define WTFCOUNTER 5
 
 
@@ -147,6 +148,8 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
 		
 		if(wtfcounter >= WTFCOUNTER)
 		{
+			/* This is the mouse release event
+			   of a previous drag: */
 			printf("* mouse drag +8events\n");
 			int mouse_dx, mouse_dy;
 			
