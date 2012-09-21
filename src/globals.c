@@ -19,6 +19,7 @@ GtkWidget *dialog8 = NULL;
 
 GtkWidget *window3 = NULL;
 GtkWidget *menu1 = NULL;
+GtkWidget *route_menu = NULL;
 
 GList	*global_infopane_widgets = NULL;
 GList	*global_infopane_current = NULL;

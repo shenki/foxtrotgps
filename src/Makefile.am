@@ -50,6 +50,8 @@ foxtrotgps_SOURCES = \
 	wp.h\
 	tracks.c\
 	tracks.h\
+	route.c\
+	route.h\
 	exif.c\
 	exif.h\
 	hrm_functions.c\

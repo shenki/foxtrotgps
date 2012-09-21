@@ -186,6 +186,7 @@ main (int argc, char *argv[])
 	window2 = glade_xml_get_widget (gladexml, "window2");
 	window3 = glade_xml_get_widget (gladexml, "window3");
 	menu1 = glade_xml_get_widget (gladexml, "menu1");
+	route_menu = glade_xml_get_widget (gladexml, "route_menu");
 
 #ifdef ENABLE_HRM
 	gtk_widget_show (glade_xml_get_widget (gladexml, "frame15"));

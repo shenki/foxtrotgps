@@ -22,6 +22,7 @@
 #include "poi.h"
 #include "wp.h"
 #include "tracks.h"
+#include "route.h"
 
 GtkWidget *Bar = NULL; 
 static GSList *tile_download_list = NULL;
@@ -69,6 +70,7 @@ map_redraw(void *p)
 		paint_photos();
 		paint_pois();
 		paint_wp();
+		paint_route();
 		paint_myposition();
 		osd_speed(TRUE);
 		

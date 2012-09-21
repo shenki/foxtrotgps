@@ -107,6 +107,7 @@ extern GtkWidget	*dialog1;
 extern GtkWidget	*dialog8;
 extern GtkWidget	*window3;
 extern GtkWidget	*menu1;
+extern GtkWidget	*route_menu;
 extern GList		*global_infopane_widgets;
 extern GList		*global_infopane_current;
 

@@ -16,6 +16,7 @@
 #include "poi.h"
 #include "wp.h"
 #include "tracks.h"
+#include "route.h"
 
 typedef struct {
 	GdkPixbuf *pixbuf;
@@ -373,6 +374,5 @@ set_mapcenter(	float lat,
 	paint_photos();
 	paint_pois();
 	paint_wp();
-	
-	
+	paint_route();
 }

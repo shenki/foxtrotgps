@@ -20,12 +20,12 @@
 
 
 #include "globals.h"
-#include "tracks.h"
 #include "interface.h"
 #include "support.h"
 #include "converter.h"
 #include "map_management.h"
 #include "tile_management.h"
+#include "tracks.h"
 #include "util.h"
 
 GSList *loaded_track = NULL;
@@ -455,22 +455,40 @@ make_file_label(const char *file, char *full_file)
 	return label;
 }
 
+void
+show_bbox (bbox_t bbox) 
+{
+	GtkWidget *drawingarea, *range;
+	int track_zoom, width, height;
+
+	drawingarea = lookup_widget (window1, "drawingarea1");
+	width  = drawingarea->allocation.width;
+	height = drawingarea->allocation.height;
+
+	track_zoom = get_zoom_covering (width, height,
+	                                bbox.lat1, bbox.lon1,
+	                                bbox.lat2, bbox.lon2);
+	track_zoom = (track_zoom > 15) ? 15 : track_zoom;
+
+	set_mapcenter (rad2deg ((bbox.lat1+bbox.lat2)/2),
+	               rad2deg ((bbox.lon1+bbox.lon2)/2),
+	               track_zoom);
+
+	range = lookup_widget (window1, "vscale1");
+	gtk_range_set_value (GTK_RANGE (range), (double) global_zoom);
+}
+
 gboolean
 tracks_on_file_button_release_event   (	GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
-	GtkWidget *drawingarea, *range, *widget_tmp;
-	int track_zoom, width, height;
+	GtkWidget *widget_tmp;
 	char *file;
 	bbox_t bbox;
 	
 	widget_tmp = lookup_widget(window1, "button79");
 	gtk_widget_show(widget_tmp);
-	
-	drawingarea = lookup_widget(window1, "drawingarea1");
-	width  = drawingarea->allocation.width;
-	height = drawingarea->allocation.height;
 	
 	file = (char *) user_data;
 
@@ -512,28 +530,15 @@ tracks_on_file_button_release_event   (	GtkWidget       *widget,
 	}
 	else
 		loaded_track = load_log_file_into_list(file);
-	
-	
-	
-	
-	
-	
-	bbox = get_track_bbox(loaded_track);
-	
-	track_zoom = get_zoom_covering(width, height, bbox.lat1, bbox.lon1, bbox.lat2, bbox.lon2);
-	track_zoom = (track_zoom > 15) ? 15 : track_zoom;
-	
-	
-	if(loaded_track)
-		set_mapcenter(rad2deg((bbox.lat1+bbox.lat2)/2), rad2deg((bbox.lon1+bbox.lon2)/2), track_zoom);
 
-	
-	range = lookup_widget(window1, "vscale1");
-	gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
+	if(loaded_track)
+	{
+		bbox = get_track_bbox (loaded_track);
+		show_bbox (bbox);
+	}
 
 	paint_loaded_track();
-	
-	
+
 	return FALSE;	
 }
 
@@ -880,13 +885,7 @@ void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
 
 void process_fetched_track(postreply_t *reply, bool save_gpx)
 {
-	GtkWidget *range, *drawingarea;
-	int track_zoom, width, height;
 	bbox_t bbox;
-	
-	drawingarea = lookup_widget(window1, "drawingarea1");
-	width  = drawingarea->allocation.width;
-	height = drawingarea->allocation.height;
 	
 	if(loaded_track)
 	{
@@ -919,24 +918,16 @@ void process_fetched_track(postreply_t *reply, bool save_gpx)
 			g_free(filename);
 		}
 		
-		bbox = get_track_bbox(loaded_track);
-		
-		track_zoom = get_zoom_covering(width, height, bbox.lat1, bbox.lon1, bbox.lat2, bbox.lon2);
-		track_zoom = (track_zoom > 15) ? 15 : track_zoom;
-	
 		gdk_threads_enter();
 		{
-			
 			if(loaded_track)
-				set_mapcenter(rad2deg((bbox.lat1+bbox.lat2)/2), rad2deg((bbox.lon1+bbox.lon2)/2), track_zoom);
-		
+			{
+				bbox = get_track_bbox (loaded_track);
+				show_bbox (bbox);
+			}
+
 			paint_loaded_track();
 			gtk_widget_hide(dialog10);
-			
-			
-			
-			range = lookup_widget(window1, "vscale1");
-			gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
 		}
 		gdk_threads_leave();
 	}
