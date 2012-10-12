@@ -56,7 +56,7 @@ reset_loaded_track()
 }
 
 void
-print_track()
+paint_track()
 {	
 	GList *list;
 	int pixel_x, pixel_y, x,y, last_x = 0, last_y = 0;

@@ -368,7 +368,7 @@ set_mapcenter(	float lat,
 	fill_tiles_pixel (	pixel_x - global_drawingarea_width/2, 
 				pixel_y - global_drawingarea_height/2,
 				zoom, FALSE);
-	print_track();
+	paint_track();
 	paint_loaded_track();
 	paint_friends();
 	paint_photos();

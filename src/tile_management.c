@@ -64,7 +64,7 @@ map_redraw(void *p)
 		map_redraw_scheduled = FALSE;
 	
 		fill_tiles_pixel(global_x, global_y, global_zoom, TRUE);
-		print_track();
+		paint_track();
 		paint_loaded_track();
 		paint_friends();
 		paint_photos();

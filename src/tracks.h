@@ -2,7 +2,7 @@ void
 reset_loaded_track();
 
 void
-print_track();
+paint_track();
 
 void
 track_log();

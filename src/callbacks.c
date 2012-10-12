@@ -2278,7 +2278,7 @@ repaint_all()
 
 
 	fill_tiles_pixel(global_x, global_y, global_zoom, FALSE);
-	print_track();
+	paint_track();
 	paint_loaded_track();
 	paint_friends();
 	paint_photos();

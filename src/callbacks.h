@@ -1,7 +1,7 @@
 #include <gtk/gtk.h>
 
 void
-print_track();
+paint_track();
 
 gboolean
 on_drawingarea1_button_press_event     (GtkWidget       *widget,
