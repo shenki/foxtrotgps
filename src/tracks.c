@@ -122,30 +122,6 @@ print_track()
 			is_line = TRUE;
 		}
 	}
-	
-	
-	if(	
-		gpsdata && 7==6 &&
-		gpsdata->fix.longitude !=0 &&  
-		gpsdata->fix.latitude != 0 &&
-		last_x != 0 &&
-		last_y != 0
-		)
-	{
-		pixel_x = lon2pixel(global_zoom, deg2rad(gpsdata->fix.longitude));
-		pixel_y = lat2pixel(global_zoom, deg2rad(gpsdata->fix.latitude));
-			
-		x = pixel_x - global_x;
-		y = pixel_y - global_y;
-
-	
-		gdk_draw_line (pixmap, gc, x, y, last_x, last_y);
-		gtk_widget_queue_draw_area (
-			map_drawable, 
-			x-4, y-4,
-			8,8);		
-	}
-	
 }
 
 
