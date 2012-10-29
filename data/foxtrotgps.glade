@@ -189,6 +189,7 @@
                   <widget class="GtkDrawingArea" id="drawingarea1">
                     <property name="visible">True</property>
                     <property name="can_focus">True</property>
+                    <property name="has_focus">True</property>
                     <property name="events">GDK_EXPOSURE_MASK | GDK_POINTER_MOTION_MASK | GDK_POINTER_MOTION_HINT_MASK | GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_LEAVE_NOTIFY_MASK | GDK_STRUCTURE_MASK</property>
                     <signal name="button_press_event" handler="on_drawingarea1_button_press_event"/>
                     <signal name="configure_event" handler="on_drawingarea1_configure_event"/>
