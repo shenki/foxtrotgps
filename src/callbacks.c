@@ -2439,15 +2439,15 @@ on_drawingarea1_key_press_event        (GtkWidget       *widget,
                                         GdkEventKey     *event,
                                         gpointer         user_data)
 {
-	if (event->keyval == GDK_Page_Up || event->keyval == GDK_KP_Up || event->keyval == 'i')
+	if (event->keyval == GDK_Page_Up || event->keyval == GDK_KP_Up || event->keyval == GDK_i)
 		on_button4_clicked(NULL, NULL);
-	else if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK && event->keyval == 'p')
+	else if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK && event->keyval == GDK_p)
 		geo_photos_open_dialog_photo_correlate();
-	else if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK && event->keyval == 't')
+	else if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK && event->keyval == GDK_t)
 		tracks_open_tracks_dialog();
-	else if(event->keyval == GDK_Page_Down || event->keyval == 'o')
+	else if(event->keyval == GDK_Page_Down || event->keyval == GDK_o)
 		on_button5_clicked(NULL, NULL);
-	else if(event->keyval == 'm')
+	else if(event->keyval == GDK_m)
 		on_button76_clicked(NULL, NULL);
 	else if(event->keyval == GDK_space || event->keyval == GDK_F11)
 	{
