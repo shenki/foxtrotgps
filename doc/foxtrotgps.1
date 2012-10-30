@@ -11,7 +11,47 @@ FoxtrotGPS \- GTK+ mapping and GPS application
 FoxtrotGPS is a map and GPS application. By default, it uses maps from Openstreetmap.
 .PP
 Clicking anywhere on the map pops up a menu of common operations.
-Click and drag the map to pan.
+Click and drag the map to pan. There are also a number of keyboard
+shortcuts defined (see \fBKEYBOARD SHORTCUTS\fR below).
+
+FoxtrotGPS also has some features that require other software to be
+installed (see \fBGEOTAGGING PHOTOS\fR below) and other features that
+can be enhanced be other software (see \fBPOI ICONS\fR below).
+
+.SS KEYBOARD SHORTCUTS
+.PP
+There are a number of keyboard shortcuts for common operations:
+
+.TP
+\fBLeft, Right, Up, Down\fR:
+pan West, East, North, or South respectively
+.TP
+\fBI\fR, \fBO\fR:
+zoom in, out
+.TP
+\fBA\fR:
+toggle autocenter (follows GPS fix)
+.TP
+\fB1-8\fR:
+select which map to use
+.TP
+\fBM\fR:
+show/hide the info/control panel
+.TP
+\fBCtrl+T\fR:
+load track
+.TP
+\fBR\fR:
+get route
+.TP
+\fBCtrl+P\fR:
+geocode photos
+.TP
+\fBF11\fR:
+toggle fullscreen
+
+.SS GEOTAGGING PHOTOS
+
 .PP
 FoxtrotGPS can be used to geotag photographs that were taken while
 logging a GPS track, and can show icons on the map indicating
@@ -26,6 +66,8 @@ gpscorrelate \%<\fIhttp://freefoote.dview.net/linux_gpscorr.html\fR>
 .IP \(bu
 jhead \%<\fIhttp://www.sentex.net/~mwandel/jhead/\fR>
 .RE
+
+.SS POI ICONS
 
 .PP
 FoxtrotGPS can load distinct icons for different POIs from the directory
