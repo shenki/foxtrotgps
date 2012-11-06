@@ -3835,12 +3835,27 @@ on_checkbutton16_toggled               (GtkToggleButton *togglebutton,
 }
 
 void
+tracklog_toolbutton_toggled (GtkToggleToolButton *button, gpointer data)
+{
+	GtkToggleButton *main_toggle =
+		GTK_TOGGLE_BUTTON (lookup_widget (window1, "checkbutton17"));
+
+	trip_logger_on = gtk_toggle_tool_button_get_active (button);
+
+	gtk_toggle_button_set_active (main_toggle, trip_logger_on);
+}
+
+void
 on_checkbutton17_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
+	GtkToggleToolButton *toolbar_toggle =
+		GTK_TOGGLE_TOOL_BUTTON (lookup_widget (window1, "button62"));
+
 	trip_logger_on = gtk_toggle_button_get_active(togglebutton);
 
-	
+	gtk_toggle_tool_button_set_active (toolbar_toggle, trip_logger_on);
+
 	if(trip_logger_on)
 	{
 		track_log_open();

@@ -179,6 +179,17 @@
                         <property name="expand">False</property>
                       </packing>
                     </child>
+                    <child>
+                      <widget class="GtkToggleToolButton" id="button62">
+                        <property name="visible">True</property>
+                        <property name="tooltip" translatable="yes">Enable Track Logging</property>
+                        <property name="stock_id">gtk-save</property>
+                        <signal name="toggled" handler="tracklog_toolbutton_toggled"/>
+                      </widget>
+                      <packing>
+                        <property name="homogeneous">True</property>
+                      </packing>
+                    </child>
                   </widget>
                   <packing>
                     <property name="expand">False</property>
