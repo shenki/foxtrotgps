@@ -837,7 +837,7 @@ command = g_strdup(
 "# (C)2008 Marcus Bauer, License: GPLv2, marus.bauer@gmail.com\n"
 "\n"
 "#\n"
-"# helper for FoxtrotGPS to geocode photos\n"
+"# helper for " PACKAGE_NAME " to geocode photos\n"
 "#\n"
 "\n"
 "# needs: gpscorrelate, sqlite3, jhead\n"

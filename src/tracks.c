@@ -757,10 +757,11 @@ fetch_track(GtkWidget *widget, char *service, char *start, char *end)
 		fetch_openrouteservice_track(widget, start, end);
 	else
 	{
-		char *err_msg = g_strdup (_("<span color='#aa0000'><b>"
-		                            "Unknown service selected"
-		                            "</b></span>\n"
-		                            "This is a bug in FoxtrotGPS!"));
+		char *err_msg = g_strdup_printf (_("<span color='#aa0000'><b>"
+		                                   "Unknown service selected"
+		                                   "</b></span>\n"
+		                                   "This is a bug in %s!"),
+		                                 _(PACKAGE_NAME));
 		GtkWidget *tmpWidget;
 
 		tmpWidget = lookup_widget(dialog10, "label190");
