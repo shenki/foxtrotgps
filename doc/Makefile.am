@@ -1,5 +1,9 @@
 dist_man_MANS = foxtrotgps.1
 
+nobase_dist_doc_DATA = \
+	foxtrotgps.html \
+	$(images)
+
 info_TEXINFOS = foxtrotgps.texi
 
 foxtrotgps_TEXINFOS = $(images) $(images_eps)
