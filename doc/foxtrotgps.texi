@@ -3,6 +3,11 @@
 @setfilename foxtrotgps.info
 @include version.texi
 @settitle FoxtrotGPS @value{VERSION}
+@iftex
+@c Use CUD-compatible colors <http://jfly.iam.u-tokyo.ac.jp/color/#pallet>:
+@def @urlcolor {0.80 0.40 0.0}
+@def @linkcolor {0.80 0.40 0.0}
+@end iftex
 @c %**end of header
 
 @titlepage
