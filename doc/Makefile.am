@@ -9,6 +9,8 @@ foxtrotgps_TEXINFOS = \
 foxtrotgps.png:
 	$(LN_S) $(top_srcdir)/pixmaps/$@ $@
 
+AM_MAKEINFOHTMLFLAGS = --no-split --no-headers
+
 EXTRA_DIST = foxtrotgps.h2m
 
 foxtrotgps.1: $(top_srcdir)/src/main.c $(top_srcdir)/configure.in foxtrotgps.h2m
