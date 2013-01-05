@@ -21,3 +21,6 @@ foxtrotgps.1: $(top_srcdir)/src/main.c $(top_srcdir)/configure.in foxtrotgps.h2m
 				--version\"" \
 		--info-page=foxtrotgps \
 		--include=foxtrotgps.h2m
+
+.texi.txt:
+	$(MAKEINFO) --plaintext --output=$@ $<
