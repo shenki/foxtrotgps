@@ -2,12 +2,23 @@ dist_man_MANS = foxtrotgps.1
 
 info_TEXINFOS = foxtrotgps.texi
 
-foxtrotgps_TEXINFOS = \
+foxtrotgps_TEXINFOS = $(images)
+
+images = \
 	foxtrotgps.png \
 	screenshots/main-window.png
 
 foxtrotgps.png:
 	$(LN_S) $(top_srcdir)/pixmaps/$@ $@
+
+$(images): | screenshots
+
+screenshots:
+# If this directory doesn't exist, try a checkout of the upstream
+# screenshot-archive:
+
+	bzr co --lightweight lp:foxtrotgps/screenshots
+
 
 AM_MAKEINFOHTMLFLAGS = --no-split --no-headers
 
