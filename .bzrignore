@@ -33,6 +33,7 @@ po/Makefile.in.in
 doc/foxtrotgps.png
 doc/texinfo.tex
 doc/mdate-sh
+doc/foxtrotgps.1
 doc/foxtrotgps.info
 doc/foxtrotgps.html
 doc/foxtrotgps.dvi

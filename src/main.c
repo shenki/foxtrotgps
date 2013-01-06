@@ -39,7 +39,7 @@ main (int argc, char *argv[])
 	};
 
 	GOptionContext *option_context =
-		g_option_context_new ("- a friendly GPS & mapping "
+		g_option_context_new ("\n\nA friendly GPS & mapping "
 				      "application.");
 
 	g_option_context_add_group (option_context,

@@ -42,6 +42,7 @@ If you're building from Bazaar, you also need:
 
     * The `makeinfo' command from GNU Texinfo
           <http://www.gnu.org/software/texinfo/>
+    * GNU help2man <http://www.gnu.org/software/help2man/>
 
 If you want to generate documentation in PDF format,
 then you'll also need:

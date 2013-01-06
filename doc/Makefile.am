@@ -1,3 +1,5 @@
+dist_man_MANS = foxtrotgps.1
+
 info_TEXINFOS = foxtrotgps.texi
 
 foxtrotgps_TEXINFOS = \
@@ -6,3 +8,16 @@ foxtrotgps_TEXINFOS = \
 
 foxtrotgps.png:
 	$(LN_S) $(top_srcdir)/pixmaps/$@ $@
+
+EXTRA_DIST = foxtrotgps.h2m
+
+foxtrotgps.1: $(top_srcdir)/src/main.c $(top_srcdir)/configure.in foxtrotgps.h2m
+	$(MAKE) -C $(top_builddir)/src foxtrotgps$(EXEEXT)
+
+	help2man sh --output=foxtrotgps.1 \
+		--help-option="-c \"$(top_builddir)/src/foxtrotgps$(EXEEXT) \
+				--help | sed -e '1N;2s/\\n//'\"" \
+		--version-option="-c \"$(top_builddir)/src/foxtrotgps$(EXEEXT)\
+				--version\"" \
+		--info-page=foxtrotgps \
+		--include=foxtrotgps.h2m
