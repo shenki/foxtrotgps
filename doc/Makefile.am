@@ -13,6 +13,9 @@ images = \
 	screenshots/main-window.png \
 	screenshots/map-download.png \
 	screenshots/tracking.png \
+	screenshots/found-route.png \
+	screenshots/get-route.png \
+	screenshots/route-planning.png \
 	cc-by-sa.png cc-by-sa_small.png
 
 cc-by-sa_small.png: cc-by-sa.png

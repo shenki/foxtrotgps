@@ -64,6 +64,7 @@ Mountain View, California, 94041, USA
 @detailmenu
 * Cached Maps::
 * Logging Tracks::
+* Routing::
 @end detailmenu
 
 * Bugs::
@@ -217,6 +218,7 @@ Print the program version and exit
 @menu
 * Cached Maps::
 * Logging Tracks::
+* Routing::
 @end menu
 
 @node Cached Maps
@@ -296,6 +298,144 @@ e.g.: @file{20121107_Jones_Street_track_gr3.gpx}.
 The remaining stages are probably best documented on
 @url{http://openstreetmap.org/, the OSM website}, but do remember to
 mark your roads as ``source=survey'', the best source of OSM data.
+
+@node Routing
+@section Routing
+FoxtrotGPS allows you to plan a route in a few different ways. First,
+there is route finding, which finds a route from point A to point
+B. This is done by using an online web service, which knows how to get
+from A to B. Second, there is route planning, which allows you to plan
+a route through a number of points. This route is then transferred to a
+separate navigation system (e.g. in a car) to guide you through the
+points.
+
+@menu
+* Route Finding::
+* Route Planning::
+@end menu
+
+@node Route Finding
+@subsection Route Finding
+Route finding extends FoxtrotGPS to be a simple navigation system. It
+takes two points and computes a route between the points.
+@ifnotinfo
+Here you see an example of such a route:
+
+@center @image{screenshots/found-route, 4in}
+@end ifnotinfo
+
+To use that feature, you have to click anywhere on the map and select
+the menu entry ``@clicksequence{route finding @click{} get route}''. It
+will open a small dialog allowing you to
+@ifnotinfo
+select both points:
+
+@center @image{screenshots/get-route, 3in}
+@end ifnotinfo
+@ifinfo
+select both points.
+@end ifinfo
+
+Click on the ``Pick'' button right beside the text entries to select a
+point on the map. Alternatively you can enter the GPS coordinates into
+the text entries.
+
+After clicking on ``OK'' you will see the resulting route on the map.
+
+@quotation Note
+You need an internet connection to access the web service, which
+computes the route.
+@end quotation
+
+Currently there is no turn by turn navigation telling you to go left or right, if you are approaching a crossing. You have to use a GPS device to show your location on the map and look at your current position to know where to go next.
+
+@node Route Planning
+@subsection Route Planning
+
+   Route planning is different to route finding because you will use
+FoxtrotGPS to plan a route and transfer that route to another system
+for navigation. This could be a navigation system installed in a car
+or on a motor bike. You do not need an internet connection for this
+kind of planning.
+
+@quotation Note
+If you download the appropriate tiles before your journey, then you
+are able to plan or change your route on the trip without any internet
+connection.
+@end quotation
+
+You use FoxtrotGPS to set a number of waypoints on the map. Together
+they form the route to travel, but without the exact route to
+follow. If you like to make a trip from point ``A'' over ``B'' and ``C'' to
+``D'', then set these 4 waypoints.
+@ifnotinfo
+Here is an example:
+
+@center @image{screenshots/route-planning, 4in}
+@end ifnotinfo
+
+Afterwards transfer these waypoints to your navigation system and ask
+it to compute a route through all these waypoints. Then you get turn
+by turn navigation from the navigation system, but you use FoxtrotGPS
+for easy and comfortable planning.
+
+Waypoints can be saved in GPX or TomTom file format@footnote{The
+gpsbabel program can be used to convert to many more different file
+formats.} for use by a navigation system. Here is the above example as
+TomTom (ITN) file format:
+
+@example
+@group
+915240|4872867|WP1|0
+915438|4872786|WP2|0
+914980|4872469|WP3|0
+915309|4872313|WP4|0
+915693|4872355|WP5|0
+@end group
+@end example
+
+To plan a route click on the map for the first waypoint and select
+``@clicksequence{route-planning @click{} add routepoint}''. Then click on
+the next waypoint and select ``@clicksequence{route-planning @click{}
+add routepoint}'' again. Repeat this for as many waypoints as you like.
+
+At any time you can drag an existing waypoint to another location by
+clicking on it and holding the button down. Move it to another place
+and release the mouse button.
+
+Clicking on an existing waypoint offers a menu to delete that waypoint
+or insert another waypoint before it.
+
+The route can be saved by clicking anywhere on the map and selecting
+``@clicksequence{route-planning @click{} save route}''.
+
+@quotation Note
+@itemize @bullet
+@item
+Do not set your waypoints on crossings. Instead, set them on the road
+between crossings. Why? If the GPS position of the crossing is not
+very accurate, then your waypoint is beside the real crossing. This
+will force your navigation system to make a turn to reach your
+waypoint and then ask you to turn around.
+
+@item
+Humans normally choose cities as waypoints. E.g. travelling from Rome
+to Berlin normally goes over Munich. If you set a waypoint to the
+middle of Munich, then you force your route to go through the center
+of Munich, which is normally crowded and best avoided. A better
+strategy is to set the waypoints between the cities on a straight road
+without any crossings where you definitively must come through. This
+is also good for small villages, otherwise you will sometimes be
+directed to your waypoint, which is often not the best way to go
+through that village.
+
+@item
+Setting many waypoints forces the navigation system to stick closely
+to your route. However, if there is an `uninteresting' part on the
+route, then let the navigation system decide on its own by not setting
+any waypoints.
+@end itemize
+@end quotation
 
 @node Bugs
 @appendix Bugs
