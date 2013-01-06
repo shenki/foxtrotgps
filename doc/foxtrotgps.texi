@@ -279,12 +279,19 @@ box. In either case, start recording at the start of the road, stop at
 the end. Remember your GPS will be several metres out so accuracy
 greater than that is not essential.
 
-FoxtrotGPS saves its logs in its own format but there is an excellent
-script included that will convert that log to an OSM format directly
-importable into (e.g.) @url{http://josm.openstreetmap.de/, JOSM}.
+FoxtrotGPS saves its logs in GPX format (with an extension introduced
+by Garmin for some auxiliary data). These logs can be converted
+to OSM and other formats using the widely-available
+@url{http://www.gpsbabel.org/, gpsbabel utility}.@footnote{Prior
+to version 1.1.0, FoxtrotGPS used its own log format; in case you
+have any logs in this format, there are scripts included with FoxtrotGPS
+that can convert those logs to GPX format, or to OSM format directly.}
+
+After converting logs to OSM format, they will be importable into
+tools like @url{http://josm.openstreetmap.de/, JOSM}.
 But before you convert, make things a bit easier for yourself and
 rename the road. Perhaps keep the date and use the road name and condition,
-e.g.: @file{20121107_Jones_Street_track_gr3.log}.
+e.g.: @file{20121107_Jones_Street_track_gr3.gpx}.
 
 The remaining stages are probably best documented on
 @url{http://openstreetmap.org/, the OSM website}, but do remember to
