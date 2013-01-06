@@ -2,11 +2,16 @@ dist_man_MANS = foxtrotgps.1
 
 info_TEXINFOS = foxtrotgps.texi
 
-foxtrotgps_TEXINFOS = $(images)
+foxtrotgps_TEXINFOS = $(images) $(images_eps)
 
 images = \
 	foxtrotgps.png \
 	screenshots/main-window.png
+
+# Some of the TeX-based outputs need images in EPS format:
+images_eps = $(patsubst %.png,%.eps,$(images))
+.png.eps:
+	convert $< $@
 
 foxtrotgps.png:
 	$(LN_S) $(top_srcdir)/pixmaps/$@ $@
