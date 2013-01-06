@@ -1,0 +1,169 @@
+\input texinfo @c -*- texinfo -*-
+@c %**start of header
+@setfilename foxtrotgps.info
+@include version.texi
+@settitle FoxtrotGPS @value{VERSION}
+@iftex
+@c Use CUD-compatible colors <http://jfly.iam.u-tokyo.ac.jp/color/#pallet>:
+@def @urlcolor {0.80 0.40 0.0}
+@def @linkcolor {0.80 0.40 0.0}
+@end iftex
+@c %**end of header
+
+@titlepage
+@title FoxtrotGPS
+@subtitle GTK+ mapping and GPS application
+@vskip 0pt plus 1filll
+@center @image{foxtrotgps, 3in}
+@author The FoxtrotGPS team
+@end titlepage
+
+@contents
+
+@ifnottex
+@node Top
+@top FoxtrotGPS
+@end ifnottex
+
+@menu
+* Overview::
+@detailmenu
+* Keyboard Shortcuts::
+* Geotagging Photos::
+* POI Icons::
+* Command-line options::
+@end detailmenu
+
+* Bugs::
+* More Info::
+@end menu
+
+@node Overview
+@chapter Overview
+FoxtrotGPS is a map and GPS application. By default, it uses maps from OpenStreetMap.
+
+@ifnotinfo
+@center @image{screenshots/main-window, 3in}
+@end ifnotinfo
+
+Clicking anywhere on the map pops up a menu of common operations.
+Click and drag the map to pan. There are also a number of keyboard
+shortcuts defined (@pxref{Keyboard Shortcuts}).
+
+FoxtrotGPS also has some features that require other software to be
+installed (@pxref{Geotagging Photos}) and other features that
+can be enhanced by other software (@pxref{POI Icons}).
+
+@menu
+* Keyboard Shortcuts::          
+* Geotagging Photos::           
+* POI Icons::                   
+* Command-line options::        
+@end menu
+
+@node Keyboard Shortcuts
+@section Keyboard Shortcuts
+There are a number of keyboard shortcuts for common operations:
+
+@table @asis
+@item @key{Left}, @key{Right}, @key{Up}, @key{Down}
+pan West, East, North, or South respectively
+
+@item @kbd{I}, @kbd{O}
+zoom in, out
+
+@item @kbd{A}
+toggle autocenter (follows GPS fix)
+
+@item @kbd{1}-@kbd{8}
+select which map to use
+
+@item @kbd{M}
+show/hide the info/control panel
+
+@item @kbd{Ctrl+T}
+load track
+
+@item @kbd{R}
+get route
+
+@item @kbd{Ctrl+P}
+geocode photos (@pxref{Geotagging Photos})
+
+@item @key{F11}
+toggle fullscreen
+@end table
+
+@node Geotagging Photos
+@section Geotagging Photos
+FoxtrotGPS can be used to geotag photographs that were taken while
+logging a GPS track, and can show icons on the map indicating
+where the photographs were taken; this is done by correlating
+timestamps in JPEG EXIF data with timestamps in the GPS track,
+and the following additional packages must also be installed
+for use at run-time in order to make use of this feature:
+
+@itemize
+@item @url{http://freefoote.dview.net/linux_gpscorr.html, gpscorrelate}
+@item @url{http://www.sentex.net/~mwandel/jhead/, jhead}
+@end itemize
+
+@node POI Icons
+@section POI Icons
+FoxtrotGPS can load distinct icons for different POIs from the directory
+@file{~/.foxtrotgps/poi-icons/}; and, if you have the `@command{mkvisualid}' command
+from libvisualid installed, FoxtrotGPS can even generate distinctive icons
+automatically. For more on libvisualid, see
+@url{http://www.hackerposse.com/~rozzin/VisualIDs, its website}.
+
+@node Command-line options
+@section Command-line options
+
+@table @code
+@item --fullscreen
+Start in fullscreen mode
+
+@item --version
+Print the program version and exit
+@end table
+
+@node Bugs
+@appendix Bugs
+@itemize @bullet
+@item
+FoxtrotGPS includes a URL for Google Satellite imagery in its
+default list of map repositories for demonstration and testing purposes,
+but Google Satellite URLs apparently expire due to their ``v=...'' parameter
+needing to be incremented. In some cases, repository URLs that break
+in this way cannot be fixed automatically when FoxtrotGPS is upgraded,
+and must be fixed manually by the user.
+@end itemize
+
+@node More Info
+@appendix More Info
+@menu
+* Related Tools::
+* Homepage::
+* Author::
+@end menu
+
+@node Related Tools
+@heading Related Tools
+
+@itemize @bullet
+@item convert2gpx(1)
+@item convert2osm(1)
+@end itemize
+
+@node Homepage
+@heading Homepage
+More information about FoxtrotGPS can be found online at
+@url{http://www.foxtrotgps.org/, its website}.
+
+@node Author
+@heading Author
+FoxtrotGPS is a community developed fork from tangoGPS lead by
+@email{rozzin@@geekspace.com, Joshua Judson Rosen}. tangoGPS was
+written by @email{marcus.bauer@@gmail.com, Marcus Bauer}.
+
+@bye
