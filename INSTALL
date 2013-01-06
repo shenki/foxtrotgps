@@ -37,6 +37,19 @@ run-time:
     * gpscorrelate <http://freefoote.dview.net/linux_gpscorr.html>
     * jhead <http://www.sentex.net/~mwandel/jhead/>
 
+
+If you're building from Bazaar, you also need:
+
+    * The `makeinfo' command from GNU Texinfo
+          <http://www.gnu.org/software/texinfo/>
+
+If you want to generate documentation in PDF format,
+then you'll also need:
+
+    * The GNU Texinfo suite <http://www.gnu.org/software/texinfo/>
+    * A TeX implementation like TeX Live <http://www.tug.org/texlive/>
+
+
 Basic Installation
 ==================
 
