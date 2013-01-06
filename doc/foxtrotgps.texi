@@ -60,32 +60,91 @@ Mountain View, California, 94041, USA
 * Command-line options::
 @end detailmenu
 
+* HowTo::
+@detailmenu
+* Cached Maps::
+* Logging Tracks::
+@end detailmenu
+
 * Bugs::
 * More Info::
 @end menu
 
 @node Overview
 @chapter Overview
-FoxtrotGPS is a map and GPS application. By default, it uses maps from OpenStreetMap.
+FoxtrotGPS is a GTK+ based mapping and GPS application. It's typically
+used to show a moving map showing your position in real time. It's
+useful as a navigation tool, and as a track logging (e.g. for OpenStreetMap)
+and trip planning tool.
+
+By default, FoxtrotGPS uses maps from OpenStreetMap, but may use a
+range of other maps, some in experimental mode.
 
 @ifnotinfo
 @center @image{screenshots/main-window, 3in}
 @end ifnotinfo
 
-Clicking anywhere on the map pops up a menu of common operations.
-Click and drag the map to pan. There are also a number of keyboard
-shortcuts defined (@pxref{Keyboard Shortcuts}).
+Clicking anywhere on the map pops up a menu of common operations,
+allowing such things as:
+
+@itemize @bullet
+@item identifying the exact coordinates of that spot
+@item distances to another spot
+@item setting way points
+@item downloading map data in bulk
+@end itemize
+
+Click and drag the map to pan. As you do so, FoxtrotGPS will download
+the necessary map data and display it. That map data is cached
+(usually in @file{~/Maps}) and reused when required.
+
+There are also a number of keyboard shortcuts defined
+(@pxref{Keyboard Shortcuts}).
 
 FoxtrotGPS also has some features that require other software to be
 installed (@pxref{Geotagging Photos}) and other features that
 can be enhanced by other software (@pxref{POI Icons}).
 
 @menu
+* Connect a GPS::
 * Keyboard Shortcuts::          
 * Geotagging Photos::           
 * POI Icons::                   
 * Command-line options::        
 @end menu
+
+@page
+
+@node Connect a GPS
+@section Connect a GPS
+Many devices already have a GPS built in but if yours does not or you
+want to have it in a better position to `see the sky' then an external
+GPS is required. FoxtrotGPS uses @url{http://catb.org/gpsd/, gpsd} to
+handle the varity of GPS hardware available, it's well documented and
+readily available wherever FoxtrotGPS is likely to be used. Actual
+GPS hardware options include:
+
+@table @b
+@item Handheld GPS
+Typically used in bush walking, hiking etc. Connected via a serial or
+USB cable, many newer laptops don't have serial ports anymore so a
+USB-to-serial adapter may be needed. If you already have a hand-held, this
+is a reasonable solution; you will need it on the car's dash, and might
+need to stop it sliding around. Reception might not be great
+especially in difficult conditions but you will probably be OK most of
+the time.
+
+@item GPS Mice
+All mice have a pretty good sense of direction but some carefully bred
+mice can be trained to convert that knowledge into the NMEA sentences
+that GPSD expects.
+
+A @url{http://en.wikipedia.org/wiki/@/GPS_navigation_device#GPS_modules,
+GPS Mouse} might be a better solution in many cases. Reasonably cheap,
+powered from the laptop they have the advantage of being suitable to
+sit on the roof of your car making for better reception.
+
+@end table
 
 @node Keyboard Shortcuts
 @section Keyboard Shortcuts
@@ -152,6 +211,84 @@ Start in fullscreen mode
 @item --version
 Print the program version and exit
 @end table
+
+@node HowTo
+@chapter HowTo
+@menu
+* Cached Maps::
+* Logging Tracks::
+@end menu
+
+@node Cached Maps
+@section Pre Load or Refresh the Cached Maps
+
+FoxtrotGPS is quite smart when downloading maps. As you browse to an
+area or change zoom level if the appropriate map tiles are in the
+cache, they will be used. If not, FoxtrotGPS will attempt to download
+them, if it fails (because, for example, you are off line), it does so
+silently and tries to scale what ever tiles it does have. This
+sometimes means you'll have blurry maps.
+
+The solution is to download what you need before you go off line, just
+browsing is one way but that gets you only the current zoom
+level. Right clicking and selecting ``Map Download'' is often more
+useful.
+
+@ifnotinfo
+@center @image{screenshots/map-download, 2in}
+@end ifnotinfo
+
+It's important to note that the download applies to the zoom level
+immediately below the one you are currently on, so go up a level
+before starting. It's sometimes useful to bring the window borders in a
+little to restrict the total download (and save some time and
+bandwidth), you don't have to download in full screen mode! Watch the
+little progress message to the bottom left: when it drops back to just speed
+and similar information, the download is done.
+
+@node Logging Tracks
+@section Log Tracks for OpenStreetMap
+For most people, the most useful maps in FoxtrotGPS are from Open
+Street Map (OSM). This is an open project to map the whole world and
+most of its content is contributed by people recording information and
+then contributing it to OSM. If you are using FoxtrotGPS in any sort
+of mobile mode, you are probably ready to do your bit for this
+worthwhile project. Please consider!
+
+OSM needs all sorts of data added, we will look here at perhaps the
+mainstream activity, recording a road and adding it to OSM's
+database. This process has a couple of clear steps:
+
+@enumerate
+@item Record the track.
+@item Download the area from OSM
+@item Label the recorded track and add it to the downloaded area.
+@item Upload the `changeset' to OSM.
+@end enumerate
+
+@ifnotinfo
+@center @image{screenshots/tracking, 4in}
+@end ifnotinfo
+
+The first step, recording, is where FoxtrotGPS comes in. Releases of
+FoxtrotGPS after 1.1.1 have a useful icon on the main screen (left
+side) to start track logging; with older versions it's necessary to click
+the top left ``Show Info'' icon to display the Control Panel, and possibly
+scroll it left or right until you see the ``Enable Track Logging'' tick
+box. In either case, start recording at the start of the road, stop at
+the end. Remember your GPS will be several metres out so accuracy
+greater than that is not essential.
+
+FoxtrotGPS saves its logs in its own format but there is an excellent
+script included that will convert that log to an OSM format directly
+importable into (e.g.) @url{http://josm.openstreetmap.de/, JOSM}.
+But before you convert, make things a bit easier for yourself and
+rename the road. Perhaps keep the date and use the road name and condition,
+e.g.: @file{20121107_Jones_Street_track_gr3.log}.
+
+The remaining stages are probably best documented on
+@url{http://openstreetmap.org/, the OSM website}, but do remember to
+mark your roads as ``source=survey'', the best source of OSM data.
 
 @node Bugs
 @appendix Bugs

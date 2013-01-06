@@ -11,6 +11,8 @@ foxtrotgps_TEXINFOS = $(images) $(images_eps)
 images = \
 	foxtrotgps.png \
 	screenshots/main-window.png \
+	screenshots/map-download.png \
+	screenshots/tracking.png \
 	cc-by-sa.png cc-by-sa_small.png
 
 cc-by-sa_small.png: cc-by-sa.png
