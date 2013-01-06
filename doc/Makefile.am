@@ -10,7 +10,11 @@ foxtrotgps_TEXINFOS = $(images) $(images_eps)
 
 images = \
 	foxtrotgps.png \
-	screenshots/main-window.png
+	screenshots/main-window.png \
+	cc-by-sa.png cc-by-sa_small.png
+
+cc-by-sa_small.png: cc-by-sa.png
+	convert $< -scale 88x31 $@
 
 # Some of the TeX-based outputs need images in EPS format:
 images_eps = $(patsubst %.png,%.eps,$(images))

@@ -10,12 +10,36 @@
 @end iftex
 @c %**end of header
 
+@copying
+This manual is for FoxtrotGPS (version @value{VERSION}, @value{UPDATED}).
+
+@ifhtml
+@image{cc-by-sa_small}
+@end ifhtml
+@iftex
+@image{cc-by-sa}
+@end iftex
+This document is licensed under a @url{http://creativecommons.org/licenses/by-sa/3.0/,, Creative Commons Attribution-@/ShareAlike 3.0 Unported License}.
+@ifnothtml
+To view a copy of this license, visit
+@url{http://creativecommons.org/@/licenses/@/by-sa/3.0/}
+or send a letter to:
+@quotation
+Creative Commons, 444 Castro Street, Suite 900,
+Mountain View, California, 94041, USA
+@end quotation
+@end ifnothtml
+@end copying
+
 @titlepage
 @title FoxtrotGPS
 @subtitle GTK+ mapping and GPS application
 @vskip 0pt plus 1filll
 @center @image{foxtrotgps, 3in}
 @author The FoxtrotGPS team
+@page
+@vskip 0pt plus 1filll
+@insertcopying
 @end titlepage
 
 @contents
@@ -23,6 +47,8 @@
 @ifnottex
 @node Top
 @top FoxtrotGPS
+
+@insertcopying
 @end ifnottex
 
 @menu

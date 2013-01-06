@@ -32,6 +32,7 @@ po/Makefile.in.in
 .autotools
 doc/screenshots
 doc/foxtrotgps.png
+doc/cc-by-sa_small.png
 *.eps
 doc/texinfo.tex
 doc/mdate-sh
