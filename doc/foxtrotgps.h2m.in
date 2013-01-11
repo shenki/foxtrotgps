@@ -6,3 +6,6 @@ By default, it uses maps from Openstreetmap.
 
 [SEE ALSO]
 convert2gpx(1), convert2osm(1)
+
+A full, illustrated user manual is available in HTML format in
+@htmldir@/foxtrotgps.html.
