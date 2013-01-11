@@ -1,6 +1,6 @@
 dist_man_MANS = foxtrotgps.1
 
-nobase_dist_doc_DATA = \
+nobase_dist_html_DATA = \
 	foxtrotgps.html \
 	$(images)
 
