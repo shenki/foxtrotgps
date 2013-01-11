@@ -32,6 +32,7 @@ screenshots:
 AM_MAKEINFOHTMLFLAGS = --no-split --no-headers
 
 EXTRA_DIST = foxtrotgps.h2m
+MAINTAINERCLEANFILES = foxtrotgps.1 $(images_eps)
 
 foxtrotgps.1: $(top_srcdir)/src/main.c $(top_srcdir)/configure.in foxtrotgps.h2m
 	$(MAKE) -C $(top_builddir)/src foxtrotgps$(EXEEXT)
