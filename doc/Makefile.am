@@ -42,7 +42,7 @@ foxtrotgps.1: $(top_srcdir)/src/main.c $(top_srcdir)/configure.in foxtrotgps.h2m
 		--version-option="-c \"$(top_builddir)/src/foxtrotgps$(EXEEXT)\
 				--version\"" \
 		--info-page=foxtrotgps \
-		--include=foxtrotgps.h2m
+		--include=$(srcdir)/foxtrotgps.h2m
 
 .texi.txt:
 	$(MAKEINFO) --plaintext --output=$@ $<
