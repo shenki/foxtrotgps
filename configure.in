@@ -19,6 +19,7 @@ dnl Languages which your application supports
 ALL_LINGUAS="bg cs de es fi fr hu ru sk nl ja sr"
 AM_GLIB_GNU_GETTEXT
 
+AC_PROG_LN_S
 AM_PROG_LIBTOOL
 
 PKG_CHECK_MODULES(GTK, [gtk+-2.0 gdk-2.0 gthread-2.0])
