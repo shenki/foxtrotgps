@@ -48,7 +48,7 @@ foxtrotgps.1: foxtrotgps.1.in Makefile
 	sed -e 's|@htmldir[@]|$(htmldir)|g' $< > $@.tmp
 	mv $@.tmp $@
 
-foxtrotgps.1.in: $(top_srcdir)/src/main.c $(top_srcdir)/configure.in foxtrotgps.h2m.in
+foxtrotgps.1.in: $(top_srcdir)/src/main.c $(top_srcdir)/configure.ac foxtrotgps.h2m.in
 	$(MAKE) -C $(top_builddir)/src foxtrotgps$(EXEEXT)
 
 	help2man sh --output=foxtrotgps.1.in \

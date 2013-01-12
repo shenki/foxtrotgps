@@ -6,21 +6,20 @@ AC_CONFIG_SRCDIR([src/main.c])
 AC_CONFIG_HEADERS([config.h])
 AM_MAINTAINER_MODE([enable])
 
-AC_ISC_POSIX
 AC_PROG_CC_C99
 AC_HEADER_STDC
 
 GETTEXT_PACKAGE=foxtrotgps
 AC_SUBST(GETTEXT_PACKAGE)
 AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Package name for gettext])
-AC_PROG_INTLTOOL([0.23])
+IT_PROG_INTLTOOL([0.23])
 
 dnl Languages which your application supports
 ALL_LINGUAS="bg cs de es fi fr hu ru sk nl ja sr"
 AM_GLIB_GNU_GETTEXT
 
 AC_PROG_LN_S
-AM_PROG_LIBTOOL
+LT_INIT
 
 PKG_CHECK_MODULES(GTK, [gtk+-2.0 gdk-2.0 gthread-2.0])
 PKG_CHECK_MODULES(GLADE, [libglade-2.0])
@@ -45,7 +44,7 @@ fi
 
 AM_GCONF_SOURCE_2
 
-AC_OUTPUT([
+AC_CONFIG_FILES([
 Makefile
 po/Makefile.in
 src/Makefile
@@ -54,3 +53,4 @@ data/Makefile
 doc/Makefile
 contrib/Makefile
 ])
+AC_OUTPUT
