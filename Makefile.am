@@ -16,7 +16,7 @@ bzr_dirstate = $(wildcard .bzr/checkout/dirstate)
 
 ChangeLog: $(bzr_dirstate)
 	(bzr log --verbose --include-merges || \
-	bzr log --verbose) > $@.tmp && mv $@.tmp $@
+	bzr log --verbose) | fmt -s > $@.tmp && mv $@.tmp $@
 
 # Copy all the spec files. Of cource, only one is actually used.
 dist-hook:
