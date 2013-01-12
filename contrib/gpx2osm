@@ -1,0 +1,116 @@
+#!/usr/bin/python
+
+# Simple script to convert GPX logs to OpenSteetMap for easy importation.
+# Sets some basic defaults to speed up the process a bit.
+# Author David Bannon but borrows heavily from a perl script by Markus Bauer
+import sys, os, datetime, subprocess
+import argparse
+
+TagHighway = "\t\t<tag k='highway' v='road' />\n"
+TagSurface = "\t\t<tag k='surface' v='unpaved' />\n"
+TagTracktype = "\t\t<tag k='tracktype' v='grade3' />\n"
+Tag4wd_only = "\t\t<tag k='4wd_only' v='yes' />\n"
+TagLanes = "\t\t<tag k='lanes' v='1' />\n"
+TagSource = "\t\t<tag k='source' v='survey' />\n"
+TagName = "\t\t<tag k='name' v='no name yet' />\n"
+HDOP = "10"
+	# hdop is a measure of how accurate GPS might be, smaller the better.
+	# Markus used 3.1 but I found that walking tracks with overhead trees 
+	# can easily generate tracks in the 6 range. 
+	# http://wiki.openstreetmap.org/wiki/Converting_NMEA_to_GPX suggests 10
+	# If you are really careless you can describe HDOP as a multiplier to the
+	# intrinsic error of the full hardware chain, typically 5 to 8 metres.
+	# So, again, very careless, HDOP of 10 means an uncertainty of 50 to 80 metres.
+
+def Header():
+	return "<?xml version='1.0' encoding='UTF-8'?>\n<osm version='0.5' generator='JOSM'>\n";
+
+def TrackTags():		# Useful for all unsealed roads
+	return TagName + TagHighway + TagTracktype + TagSurface + TagLanes + TagSource
+
+def RoadTags():			# default tag set
+	return TagName + TagHighway + TagSource
+
+def Footer():
+	return "\t</way> \n</osm> \n";
+
+
+def WriteOSM(InFile):
+	Count = 1;
+	OF =open(InFile+'.osm', 'w')
+	OF.write(Header())
+	IF = open(InFile + '.csv')
+	for Line in IF:
+		Pos = Line.split(', ')
+		Node = "\t<node id='-" + str(Count) + "' visible='true' lat='" + Pos[0] + "' lon='" + Pos[1] + "' />\n"
+		OF.write(Node)
+		Count = Count + 1
+	OF.write("\t<way id='-" + str(Count) + "' action='modify' visible='true'>\n")
+	for WLine in range(1, Count):
+		Way = "\t\t<nd ref='-" + str(WLine) + "' />\n"
+		OF.write(Way);
+	if args.TRACK:
+		OF.write(TrackTags())
+	else:
+		OF.write(RoadTags())
+	IF.close
+	OF.write(Footer())
+	OF.close
+	os.unlink(InFile + '.csv')
+	return Count
+
+def HowManyPoints(FileName):
+	Count = 0
+	BadCount = 0
+	IF = open(FileName)		
+	for Line in IF:
+		Count = Count + Line.count("<hdop>") # careful, this is case sensitive !
+		# print "CNT", Count, Line
+		HDOPs = Line.split('<hdop>')
+		for i in HDOPs:
+			try:
+				# print "testing ", i, i[:3]
+				if 10.0 < float(i[:i.find('<')]):
+					BadCount = BadCount+1
+			except ValueError:
+				continue	
+	IF.close
+	return Count, BadCount
+		
+# -------- ------------------------
+# -------- Main Function ----------
+# ---------------------------------
+
+# use = " %prog [ option ]."
+
+parser = argparse.ArgumentParser(description='convert gpx logs to OSM files')
+parser.add_argument('-v', dest='VERBOSE', action='store_true', help='be verbose')
+parser.add_argument('-t', dest='TRACK', action='store_true', help='treat it as a track')
+parser.add_argument('FileList', metavar='gpxfile', nargs='+', help='some gpx file')
+args = parser.parse_args()
+
+for Infile in args.FileList:
+	Base,ext = os.path.splitext(Infile)
+	Points, BadPoints = HowManyPoints(Infile)
+	if BadPoints*2 > Points:
+		print "Warning,", Infile, " has excessive points with poor HDOP"
+	if args.VERBOSE:
+		print Infile, Points, "points logged", BadPoints, "with excessive HDOP",
+	Cmd = 'gpsbabel', '-i', 'gpx', '-f', Infile, '-x', 'simplify,error=0.003k', '-x', 'discard,hdop='+HDOP, '-o', 'csv', '-F', Base+'.csv'
+	try:
+		Pipe = subprocess.Popen(Cmd, stdout=subprocess.PIPE)
+	except OSError:
+		print "Looks like you do not have gpsbabel installed, or maybe not in your path."
+		print "Please make gpsbabel available and try again."
+		sys.exit()
+	Lines = Pipe.communicate()[0]
+	if len(Lines) > 0:
+		print 'Something bad happened, beats me !'
+		print Lines
+		sys.exit()
+	if args.VERBOSE:
+		print WriteOSM(Base),
+		print " nodes saved"
+	else:
+		WriteOSM(Base) 
+
