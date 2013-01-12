@@ -1,4 +1,5 @@
 dist_bin_SCRIPTS = convert2gpx convert2osm \
+	gpx2osm \
 	georss2foxtrotgps-poi \
 	poi2osm \
 	osb2foxtrot
