@@ -37,6 +37,7 @@ doc/cc-by-sa_small.png
 doc/texinfo.tex
 doc/mdate-sh
 doc/foxtrotgps.1
+doc/foxtrotgps.1.in
 doc/foxtrotgps.info
 doc/foxtrotgps.html
 doc/foxtrotgps.txt
