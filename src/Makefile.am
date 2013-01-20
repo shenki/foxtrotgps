@@ -4,6 +4,7 @@ AM_CPPFLAGS = \
 	-DPACKAGE_DATA_DIR="\"$(datadir)\"" \
 	-DPACKAGE_PIXMAPS_DIR="\"$(datadir)/pixmaps\"" \
 	-DPACKAGE_LOCALE_DIR="\"$(localedir)\"" \
+	-DPACKAGE_HTML_DIR="\"$(htmldir)\"" \
 	\
 	$(GTK_CFLAGS) \
 	$(GLADE_CFLAGS) \
