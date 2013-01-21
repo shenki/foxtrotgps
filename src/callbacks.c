@@ -4026,3 +4026,9 @@ on_insert_waypoint_button_release_event (GtkWidget *widget,
 
 	return FALSE;
 }
+
+void
+on_help_menuitem_activate (GtkMenuItem *help_menuitem, gpointer user_data)
+{
+	system ("xdg-open " PACKAGE_HTML_DIR "/" PACKAGE ".html");
+}

@@ -812,3 +812,6 @@ activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data);
 
 void
 activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item);
+
+void
+on_help_menuitem_activate (GtkMenuItem *help_menuitem, gpointer user_data);
