@@ -972,7 +972,7 @@ command = g_strdup(
 "}\n"
 "\n"
 "\n"
-"#=========== END MAIN FUCTIONS, START HELPER FUNCTIONS ===========\n"
+"#=========== END MAIN FUNCTIONS, START HELPER FUNCTIONS ===========\n"
 "\n"
 "\n"
 "sub do_convert2gpx\n"
