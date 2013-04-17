@@ -2,6 +2,7 @@
 _Name=FoxtrotGPS
 _GenericName=GPS and Map
 _Comment=Display map and GPS position
+_Keywords=OpenStreetMap;OSM;Track;Trip;map;location;
 Version=1.0
 Type=Application
 Exec=foxtrotgps
