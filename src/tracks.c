@@ -803,7 +803,6 @@ void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
 	char *startlonstr;
 	char *endlatstr;
 	char *endlonstr;
-	char *myEnd = g_strdup(end);
 	char *parseptr;
 	startlatstr = strtok_r (start, ",", &parseptr);
 	startlonstr = strtok_r (NULL, ",", &parseptr);

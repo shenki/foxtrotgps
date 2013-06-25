@@ -1151,6 +1151,7 @@ if (fp==0)
 
 fprintf(fp, "%s", command);
 fclose(fp);
+g_free(command);
 
 unused = system ("chmod 700 /tmp/" PACKAGE "_geocode.pl");
 

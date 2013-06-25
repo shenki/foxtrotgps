@@ -218,7 +218,7 @@ fill_tiles_pixel(	int pixel_x,
 	int offset_y;
 	gboolean success = FALSE;
 	GError **error = NULL;
-	repo_t *repo = g_new0(repo_t, 1);
+	repo_t *repo = global_curr_repo->data;
 	
 	
 	if (!hash_table)
@@ -236,7 +236,6 @@ fill_tiles_pixel(	int pixel_x,
 	
 	widget = lookup_widget(window1,"drawingarea1");
 	
-	repo = global_curr_repo->data;
 
 	
 	max_pixel = (int) exp2(zoom) * TILESIZE; 
