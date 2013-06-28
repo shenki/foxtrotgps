@@ -557,6 +557,11 @@ load_log_file_into_list(char *file)
 	FILE *fd;
 
 	fd = fopen(file, "r");
+
+	if (!fd) {
+		return list;
+	}
+
 	while(fgets(line,120, fd))
 	{
 		trackpoint_t *tp;
