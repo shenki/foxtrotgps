@@ -576,7 +576,9 @@ load_log_file_into_list(char *file)
 
 		list = g_slist_append(list, tp);
 	}
-	
+
+	fclose (fd);
+
 	return list;
 }
 
