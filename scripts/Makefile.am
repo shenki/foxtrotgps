@@ -1,1 +1,1 @@
-dist_libexec_SCRIPTS = geocode
+dist_pkglibexec_SCRIPTS = geocode
