@@ -32,6 +32,8 @@ $db = "~/.foxtrotgps/geophoto.db";
 
 #===================  MAIN  ====================
 
+use File::Temp;
+
 print STDERR "
 VARS: 
   geocode_track = $ARGV[0];
@@ -147,8 +149,7 @@ sub do_convert2gpx
 #---  open track logfile ---
 	
 open (INFILE, $geocode_track) or die $!;
-open (OUTFILE, ">/tmp/$$.gpx") or die $!;
-
+$outfile = File::Temp->new() or die $!;
 
 	
 #--- start GPX ---
@@ -197,11 +198,8 @@ EOT
 
 
 
-# write .gpx to /tmp/$$
-print OUTFILE $gpx;
-
-# set geocode_track to filename
-$geocode_track = "/tmp/$$.gpx";
+print $outfile $gpx;
+$geocode_track = $outfile->filename;
 
 print STDERR "track: $geocode_track\n"
 }
