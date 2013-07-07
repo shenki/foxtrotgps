@@ -234,10 +234,6 @@ $lon = ($lon_half eq "E") ? $lon : -$lon;
 #----------------------------
 # extract filename from path 
 #----------------------------
-$filename = "\"" . $photo . "\"";
-$file =  `basename $filename` ;
-chop $file;
-$file = "\"" . $file . "\"";
 $desc = "\"unset\"";
 
 
@@ -251,7 +247,7 @@ print STDERR "$file $lat - $lon\n";
 
 if ($lat !=0 && $lon !=0)
 {
-	$res = `sqlite3 $db 'INSERT INTO photo VALUES ("$geocode_dir/$photo",$file,$lat,$lon,$desc)'`;
+	$res = `sqlite3 $db 'INSERT INTO photo VALUES ("$geocode_dir/$photo","$photo",$lat,$lon,$desc)'`;
 
 	print STDERR $res;
 }
