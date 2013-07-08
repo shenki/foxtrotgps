@@ -104,24 +104,19 @@ sub correlate
 			)
 		  )
 		{
-			$photo_list .= " '$_'";
+			push (@photo_list, $_);
 		}
 		else { print STDERR "not a file: $_ \n"; }
 	}
 
 	# gpscorrelate ... 
-	$command_line =  "gpscorrelate "
-			."-g '$geocode_track' "
-			."-z $timezone "
-			."--max-dist 120 "
-			."--photooffset $correction"
-			. $photo_list;
-
-	print STDERR "$command_line\n";
-
-	$output = `$command_line`;
-
-	print STDOUT "$output \n";
+	system ("gpscorrelate",
+	        "-g", $geocode_track,
+	        "-z",  $timezone,
+	        "--max-dist", 120,
+	        "--photooffset", $correction,
+	        @photo_list);
+	print "\n";
 
 }
 
