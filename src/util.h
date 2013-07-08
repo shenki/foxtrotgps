@@ -4,7 +4,7 @@
 #include <curl/curl.h>
 #include <curl/easy.h>
 int
-sql_execute(char *db_name, char *sql, int (*cb_func)(void*,int,char**,char**));
+sql_execute(const char *db_name, const char *sql, int (*cb_func)(void*,int,char**,char**));
 
 typedef struct {
 	char *name;

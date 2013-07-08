@@ -9,7 +9,7 @@
 #include "support.h"
 
 int
-sql_execute(char *db_name, char *sql, int (*cb_func)(void*,int,char**,char**))
+sql_execute(const char *db_name, const char *sql, int (*cb_func)(void*,int,char**,char**))
 {
 	sqlite3 *db;
 	char *errmsg = 0;
