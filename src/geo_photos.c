@@ -320,17 +320,10 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 	gtk_file_filter_add_pattern (filter, "*.GPX");
 	gtk_file_filter_set_name (filter, "GPX trace log files (*.gpx)");
 	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(widget), filter);
-	
-
-	filter = gtk_file_filter_new ();
-	gtk_file_filter_add_pattern (filter, "*.log");
-	gtk_file_filter_set_name (filter, PACKAGE_NAME " log files (*.log)");
-	gtk_file_chooser_add_filter (GTK_FILE_CHOOSER(widget), filter);
 
 	gtk_file_chooser_set_filter (GTK_FILE_CHOOSER(widget), filter);
 
 
-	
 	if (gtk_dialog_run (GTK_DIALOG (widget)) == GTK_RESPONSE_ACCEPT)
 	{
 		char *filename;
