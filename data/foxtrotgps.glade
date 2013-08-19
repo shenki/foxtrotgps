@@ -1913,6 +1913,7 @@ Set GPSD Host IP
                 <property name="label" translatable="yes">geocode</property>
                 <property name="use_underline">True</property>
                 <signal name="activate" handler="on_itemgeocode1_activate"/>
+                <signal name="expose-event" handler="on_itemgeocode1_expose_event"/>
               </widget>
             </child>
           </widget>

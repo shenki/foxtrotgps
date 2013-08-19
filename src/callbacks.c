@@ -3093,6 +3093,23 @@ on_itemgeocode1_activate               (GtkWidget       *widget,
 	return FALSE;
 }
 
+gboolean
+on_itemgeocode1_expose_event (GtkWidget *widget, GdkEvent *event, gpointer user_data)
+{
+	if (system ("command -v gpscorrelate > /dev/null") != 0) {
+		gtk_widget_set_sensitive (widget, FALSE);
+		gtk_widget_set_tooltip_text
+			(widget, _("gpscorrelate is necessary for this feature "
+                                   "but does not appear to be installed."));
+	} else {
+		gtk_widget_set_sensitive (widget, TRUE);
+		gtk_widget_set_tooltip_text (widget, NULL);
+	}
+
+	return FALSE;
+}
+
+
 
 void
 on_button39_clicked                    (GtkButton       *button,
