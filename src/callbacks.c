@@ -3194,6 +3194,23 @@ on_eventbox3_button_release_event      (GtkWidget       *widget,
 	return FALSE;
 }
 
+int
+on_checkbutton14_expose_event (GtkWidget *togglebutton, gpointer user_data)
+{
+	if (system ("command -v jhead > /dev/null") != 0) {
+		gtk_toggle_button_set_active (GTK_TOGGLE_BUTTON (togglebutton), FALSE);
+		gtk_widget_set_sensitive (togglebutton, FALSE);
+		gtk_widget_set_tooltip_text
+			(togglebutton, _("jhead is necessary for this feature "
+			                 "but does not appear to be installed."));
+	} else {
+		gtk_widget_set_sensitive (togglebutton, TRUE);
+		gtk_widget_set_tooltip_text (togglebutton, NULL);
+	}
+
+	return FALSE;
+}
+
 void
 on_checkbutton14_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
