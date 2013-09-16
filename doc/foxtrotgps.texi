@@ -364,22 +364,22 @@ are able to plan or change your route on the trip without any internet
 connection.
 @end quotation
 
-You use FoxtrotGPS to set a number of waypoints on the map. Together
+You use FoxtrotGPS to set a number of routepoints on the map. Together
 they form the route to travel, but without the exact route to
 follow. If you like to make a trip from point ``A'' over ``B'' and ``C'' to
-``D'', then set these 4 waypoints.
+``D'', then set these 4 routepoints.
 @ifnotinfo
 Here is an example:
 
 @center @image{screenshots/route-planning, 4in}
 @end ifnotinfo
 
-Afterwards transfer these waypoints to your navigation system and ask
-it to compute a route through all these waypoints. Then you get turn
+Afterwards transfer these routepoints to your navigation system and ask
+it to compute a route through all these routepoints. Then you get turn
 by turn navigation from the navigation system, but you use FoxtrotGPS
 for easy and comfortable planning.
 
-Waypoints can be saved in GPX or TomTom file format@footnote{The
+Routepoints can be saved in GPX or TomTom file format@footnote{The
 gpsbabel program can be used to convert to many more different file
 formats.} for use by a navigation system. Here is the above example as
 TomTom (ITN) file format:
@@ -394,17 +394,17 @@ TomTom (ITN) file format:
 @end group
 @end example
 
-To plan a route click on the map for the first waypoint and select
+To plan a route click on the map for the first routepoint and select
 ``@clicksequence{route-planning @click{} add routepoint}''. Then click on
-the next waypoint and select ``@clicksequence{route-planning @click{}
-add routepoint}'' again. Repeat this for as many waypoints as you like.
+the next routepoint and select ``@clicksequence{route-planning @click{}
+add routepoint}'' again. Repeat this for as many routepoints as you like.
 
-At any time you can drag an existing waypoint to another location by
+At any time you can drag an existing routepoint to another location by
 clicking on it and holding the button down. Move it to another place
 and release the mouse button.
 
-Clicking on an existing waypoint offers a menu to delete that waypoint
-or insert another waypoint before it.
+Clicking on an existing routepoint offers a menu to delete that routepoint
+or insert another routepoint before it.
 
 The route can be saved by clicking anywhere on the map and selecting
 ``@clicksequence{route-planning @click{} save route}''.
@@ -412,28 +412,28 @@ The route can be saved by clicking anywhere on the map and selecting
 @quotation Note
 @itemize @bullet
 @item
-Do not set your waypoints on crossings. Instead, set them on the road
+Do not set your routepoints on crossings. Instead, set them on the road
 between crossings. Why? If the GPS position of the crossing is not
-very accurate, then your waypoint is beside the real crossing. This
+very accurate, then your routepoint is beside the real crossing. This
 will force your navigation system to make a turn to reach your
-waypoint and then ask you to turn around.
+routepoint and then ask you to turn around.
 
 @item
-Humans normally choose cities as waypoints. E.g. travelling from Rome
-to Berlin normally goes over Munich. If you set a waypoint to the
+Humans normally choose cities as routepoints. E.g. travelling from Rome
+to Berlin normally goes over Munich. If you set a routepoint to the
 middle of Munich, then you force your route to go through the center
 of Munich, which is normally crowded and best avoided. A better
-strategy is to set the waypoints between the cities on a straight road
+strategy is to set the routepoints between the cities on a straight road
 without any crossings where you definitively must come through. This
 is also good for small villages, otherwise you will sometimes be
-directed to your waypoint, which is often not the best way to go
+directed to your routepoint, which is often not the best way to go
 through that village.
 
 @item
-Setting many waypoints forces the navigation system to stick closely
+Setting many routepoints forces the navigation system to stick closely
 to your route. However, if there is an `uninteresting' part on the
 route, then let the navigation system decide on its own by not setting
-any waypoints.
+any routepoints.
 @end itemize
 @end quotation
 
