@@ -9,7 +9,7 @@ info_TEXINFOS = foxtrotgps.texi
 foxtrotgps_TEXINFOS = $(images) $(images_eps)
 
 images = \
-	foxtrotgps.png \
+	foxtrotgps-logo.png \
 	screenshots/main-window.png \
 	screenshots/map-download.png \
 	screenshots/tracking.png \
@@ -26,8 +26,8 @@ images_eps = $(patsubst %.png,%.eps,$(images))
 .png.eps:
 	convert $< $@
 
-foxtrotgps.png:
-	$(LN_S) $(top_srcdir)/pixmaps/$@ $@
+foxtrotgps-logo.png:
+	$(LN_S) $(top_srcdir)/pixmaps/foxtrotgps.png $@
 
 $(images): | screenshots
 
