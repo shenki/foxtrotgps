@@ -735,12 +735,12 @@ parse_ols_XML_nodes(xmlNode *node)
 								if (lonlat[1])
 								{
 									lat = atof(lonlat[1]);
+									tp->lat = deg2rad(lat);
+									tp->lon = deg2rad(lon);
+									list = g_slist_append(list, tp);
 								}
 							}
-							tp->lat = deg2rad(lat);
-							tp->lon = deg2rad(lon);
 							g_strfreev (lonlat);
-							list = g_slist_append(list, tp);
 						}
 						inner_cur_node = inner_cur_node->next;
 					}
