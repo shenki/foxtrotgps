@@ -6,19 +6,17 @@
 # helper for FoxtrotGPS to geocode photos
 #
 
-# needs: gpscorrelate, sqlite3, jhead
+# needs: gpscorrelate, sqlite3
 
 # input:
 # - .log or .gpx file
 # - photo list
 # - timezone
 # - correction
-# - do_insert2db
 
 # logic:
 # - convert to gpx
 # - correlate
-# - in2db foxtrotgps
 
 # gpscorrelate -g foo.gpx -z timezone --max-dist 120 --photooffset 5 p1.jpg ...
 
@@ -26,9 +24,6 @@ $geocode_track = $ARGV[0];
 $geocode_dir   = $ARGV[1];
 $timezone      = $ARGV[2];
 $correction    = $ARGV[3];
-$do_insert2db  = $ARGV[4];
-
-$db = "~/.foxtrotgps/geophoto.db";
 
 #===================  MAIN  ====================
 
@@ -40,7 +35,6 @@ VARS:
   geocode_dir   = $ARGV[1];
   timezone      = $ARGV[2];
   correction    = $ARGV[3];
-  do_insert2db  = $ARGV[4];
 ";
 
 &test_for_helper_programs();
@@ -48,17 +42,15 @@ VARS:
 
 &convert2gpx();
 &correlate();
-&insert2db();
 
 #==================  END MAIN  ==================
 
 sub test_for_helper_programs()
 {
-	# jhead, sqlite3, gpscorrelate
+	# sqlite3, gpscorrelate
 
 	$missing_prog = 0;
 
-	if(system("jhead -h >/dev/null") == -1){ $install .= " jhead,";	$missing_prog = 1;};
 	if(system("sqlite3") == -1)		 { $install .= " sqlite3, ";	$missing_prog = 1;};
 	if(system("gpscorrelate -h >/dev/null")  == -1)	 { $install .= " gpscorrelate"; 	$missing_prog = 1;};
 
@@ -117,20 +109,6 @@ sub correlate
 	        "--photooffset", $correction,
 	        @photo_list);
 	print "\n";
-
-}
-
-
-sub insert2db()
-{
-	if($do_insert2db)
-	{
-		&do_insert2db();
-	}
-	else
-	{
-		print STDERR "Not adding to FoxtrotGPS database\n";
-	}
 
 }
 
@@ -197,102 +175,4 @@ print $outfile $gpx;
 $geocode_track = $outfile->filename;
 
 print STDERR "track: $geocode_track\n"
-}
-
-
-#------------------------------------------------------------
-
-#---------------------------------------------
-# get exif info from photo and put into db
-#---------------------------------------------
-
-sub exif2db
-{
-
-local($photo) = @_;
-
-# ------------------
-# extract exif info
-# ------------------
-$lat_string = `jhead $photo | grep "GPS Latitude" `;
-$lon_string = `jhead $photo | grep "GPS Longitude" `;
-
-
-($lat_half, $lat_deg, $lat_min, $lat_sec) =
-	$lat_string =~ /^GPS Latitude : (N|S) +(\d+)d +(\d+)m +(\d+\.\d+)s$/;
-
-($lon_half, $lon_deg, $lon_min, $lon_sec) =
-	$lon_string =~ /^GPS Longitude: (E|W) +(\d+)d +(\d+)m +(\d+\.\d+)s$/;
-
-$lat = $lat_deg + $lat_min/60 + $lat_sec/3600;
-$lat = ($lat_half eq "N") ? $lat : -$lat;
-
-$lon = $lon_deg + $lon_min/60 + $lon_sec/3600;
-$lon = ($lon_half eq "E") ? $lon : -$lon;
-
-
-#----------------------------
-# extract filename from path 
-#----------------------------
-$desc = "\"unset\"";
-
-
-
-print STDERR "$file $lat - $lon\n";
-
-
-#-----------------------
-# insert into sqlite db
-#-----------------------
-
-if ($lat !=0 && $lon !=0)
-{
-	$res = `sqlite3 $db 'INSERT INTO photo VALUES ("$geocode_dir/$photo","$photo",$lat,$lon,$desc)'`;
-
-	print STDERR $res;
-}
-
-}
-
-
-sub do_insert2db 
-{
-
-#-------------------------------------------
-# create database if it does not yet exist
-#-------------------------------------------
-$sql = "
-CREATE TABLE 
-	photo (
-		filename TEXT primary key, 
-		name TEXT, 
-		lat REAL, 
-		lon REAL, 
-		desc TEXT
-	)
-";
-$res = `sqlite3 $db '$sql'`;
-
-print STDERR $res;
-
-
-#-----------------------
-# insert photos into db
-#----------------------
-foreach(@photos)
-{
-	#
-	# check if jpeg file
-	#
-	if(	-f "$_"   && 
-		( ( $_ =~ /\.jpg$/i ) ||
-		  ( $_ =~ /\.jpeg$/i)
-		)
-	  )
-	{
-		&exif2db("$_");
-	}
-}
-
-
 }

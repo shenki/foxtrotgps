@@ -3,7 +3,7 @@
 #  include <config.h>
 #endif
 
-#define _XOPEN_SOURCE
+#define _XOPEN_SOURCE 700
 
 #include "globals.h"
 #include "geo_photos.h"
@@ -21,8 +21,15 @@
 #include <stdlib.h>
 #include <libexif/exif-data.h>
 #include <time.h>
+#include <math.h>
 
 #define PHOTO_DB "geophoto.db"
+#define PHOTO_DB_CREATE "CREATE TABLE photo " \
+	"(filename TEXT primary key, " \
+	"name TEXT, " \
+	"lat REAL, " \
+	"lon REAL, " \
+	"desc TEXT);"
 
 GList *geocode_photo_list;
 GtkWidget *dialog_image_data = NULL;
@@ -709,12 +716,11 @@ geo_photo_close_dialog_photo_correlate()
 	gtk_widget_show(dialog_geocode_result);
 	gtk_widget_hide(dialog_photo_correlate);
 
-	command_line = g_strdup_printf(PACKAGE_LIBEXEC_DIR "/geocode '%s' '%s' '%d' '%d' '%d'",
+	command_line = g_strdup_printf(PACKAGE_LIBEXEC_DIR "/geocode '%s' '%s' '%d' '%d'",
 					geocode_trackname, 
 					geocode_photodir,
 					geocode_timezone,
-					geocode_correction,
-					add_to_database);
+					geocode_correction);
 printf("commandline out thread: %s\n", command_line);	
 	
 	g_thread_create(geocode_thread, command_line, FALSE, NULL);
@@ -761,7 +767,68 @@ update_gps_time_label()
 
 
 
+static void
+exif2db (const char *db, char *photo)
+{
+	char *sql;
+	char *argv[] = {"jhead", photo, NULL};
+	char *line = NULL;
+	size_t linesz;
+	GPid jhead_pid;
+	int jhead_outfd;
+	FILE *jhead_stdout;
 
+	char lat_half=0, lon_half=0;
+	float lat_deg=NAN, lon_deg=NAN,
+	      lat_min=NAN, lon_min=NAN,
+	      lat_sec=NAN, lon_sec=NAN;
+
+	float lat, lon;
+
+	GError *error = NULL;
+
+	g_spawn_async_with_pipes (geocode_photodir, argv, NULL,
+	                          G_SPAWN_SEARCH_PATH, NULL, NULL,
+	                          &jhead_pid,
+	                          NULL, &jhead_outfd, NULL,
+	                          &error);
+	jhead_stdout = fdopen (jhead_outfd, "r");
+
+	while (getline (&line, &linesz, jhead_stdout) > -1)
+	{
+		/* At most one of these will actually do anything: */
+		sscanf (line, "GPS Latitude : %c %fd %fm %fs",
+		        &lat_half, &lat_deg, &lat_min, &lat_sec);
+		sscanf (line, "GPS Longitude: %c %fd %fm %fs",
+		        &lon_half, &lon_deg, &lon_min, &lon_sec);
+	}
+	free (line);
+
+	lat = lat_deg + lat_min/60 + lat_sec/3600;
+	if (lat_half == 'S') {
+		lat = -lat;
+	}
+	lon = lon_deg + lon_min/60 + lon_sec/3600;
+	if (lon_half == 'W') {
+		lon = -lon;
+	}
+
+	if (isnan(lat) || isnan(lon)) {
+		return;
+	}
+
+	char *photo_basename = g_path_get_basename (photo);
+	sql = sqlite3_mprintf ("INSERT INTO photo (filename, name, "
+	                                          "lat, lon, "
+	                                          "desc) "
+	                       "VALUES (%Q, %Q, %f, %f, %Q)",
+	                       photo, photo_basename,
+	                       lat, lon,
+	                       "unset");
+	g_free (photo_basename);
+	sql_execute (db, sql, NULL);
+	sqlite3_free (sql);
+}
 
 
 gpointer
@@ -800,6 +867,24 @@ printf("commandline in thread: %s\n", command_line);
 	
 	if(add_to_database)
 	{
+		GList *photos;
+		static char *db = NULL;
+
+		if (!db) {
+			db = g_build_filename (foxtrotgps_dir, PHOTO_DB, NULL);
+		}
+
+		sql_execute (db, PHOTO_DB_CREATE, NULL);
+
+		for (photos = geocode_photo_list;
+		     photos;
+		     photos = photos->next)
+		{
+
+			/* FIXME: catch/report exif2db errors? */
+			exif2db (db, (char *) photos->data);
+		}
+
 		item = lookup_widget(menu1, "item9");
 		gtk_menu_item_activate (GTK_MENU_ITEM(item));
 	}
