@@ -704,7 +704,6 @@ geo_photo_set_add_to_database(GtkToggleButton *togglebutton)
 void
 geo_photo_close_dialog_photo_correlate()
 {
-	gchar *command_line;
 	GtkWidget *label;
 
 	dialog_geocode_result = glade_xml_get_widget (gladexml,
@@ -716,15 +715,7 @@ geo_photo_close_dialog_photo_correlate()
 	gtk_widget_show(dialog_geocode_result);
 	gtk_widget_hide(dialog_photo_correlate);
 
-	command_line = g_strdup_printf(PACKAGE_LIBEXEC_DIR "/geocode '%s' '%s' '%d' '%d'",
-					geocode_trackname, 
-					geocode_photodir,
-					geocode_timezone,
-					geocode_correction);
-printf("commandline out thread: %s\n", command_line);	
-	
-	g_thread_create(geocode_thread, command_line, FALSE, NULL);
-	
+	g_thread_create(geocode_thread, NULL, FALSE, NULL);
 }
 
 
@@ -839,22 +830,32 @@ geocode_thread(gpointer user_data)
 	gchar *standard_error;
 	gint exit_status;
 	GError *err = NULL;
-	char *command_line = (char *) user_data;
 	gboolean res;
 
-printf("commandline in thread: %s\n", command_line);	
-	
-	res = g_spawn_command_line_sync  (
-				command_line, 
-				&standard_output, 
-				&standard_error,
-				&exit_status,
-				&err);
+	char *timezone = g_strdup_printf ("%d", geocode_timezone);
+	char *correction = g_strdup_printf ("%d", geocode_correction);
+
+	char *argv[] = {PACKAGE_LIBEXEC_DIR "/geocode",
+	                geocode_trackname, 
+	                geocode_photodir,
+	                timezone,
+	                correction,
+	                NULL};
+
+	res = g_spawn_sync (NULL, argv, NULL,
+	                    0, NULL, NULL,
+	                    &standard_output, 
+	                    &standard_error,
+	                    &exit_status,
+	                    &err);
+
+	g_free (timezone);
+	g_free (correction);
 	
 	if(!res)
 	{
 		fprintf (stderr, _("Error running \"%s\": %s\n"),
-		         command_line, err->message);
+		         "geocode", err->message);
 		g_error_free (err);
 	}
 	
@@ -890,8 +891,6 @@ printf("commandline in thread: %s\n", command_line);
 	}
 	
 	gdk_threads_leave();
-	
-	g_free(command_line);
 
 	return NULL;
 }
