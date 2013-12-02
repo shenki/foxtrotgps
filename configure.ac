@@ -48,7 +48,6 @@ AC_CONFIG_FILES([
 Makefile
 po/Makefile.in
 src/Makefile
-scripts/Makefile
 pixmaps/Makefile
 data/Makefile
 doc/Makefile

@@ -828,15 +828,32 @@ geocode_thread(gpointer user_data)
 	char *timezone = g_strdup_printf ("%d", geocode_timezone);
 	char *correction = g_strdup_printf ("%d", geocode_correction);
 
-	char *argv[] = {PACKAGE_LIBEXEC_DIR "/geocode",
-	                geocode_trackname, 
-	                geocode_photodir,
-	                timezone,
-	                correction,
-	                NULL};
+	GList *photos;
+
+	char **argv = g_new (char *, 9+g_list_length(geocode_photo_list)+1);
+	int argc = 0;
+	argv[argc++] = "gpscorrelate";
+	argv[argc++] = "-g";
+	argv[argc++] = geocode_trackname;
+	argv[argc++] = "-z";
+	argv[argc++] = timezone;
+	argv[argc++] = "--max-dist";
+	argv[argc++] = "120";
+	argv[argc++] = "--photooffset";
+	argv[argc++] = correction;
+
+	for (photos = geocode_photo_list;
+	     photos;
+	     photos = photos->next)
+	{
+		argv[argc++] = photos->data;
+	}
+
+	argv[argc] = NULL;
 
 	res = g_spawn_sync (NULL, argv, NULL,
-	                    0, NULL, NULL,
+	                    G_SPAWN_SEARCH_PATH,
+	                    NULL, NULL,
 	                    &standard_output, 
 	                    &standard_error,
 	                    &exit_status,
@@ -848,7 +865,7 @@ geocode_thread(gpointer user_data)
 	if(!res)
 	{
 		fprintf (stderr, _("Error running \"%s\": %s\n"),
-		         "geocode", err->message);
+		         "gpscorrelate", err->message);
 		g_error_free (err);
 	}
 	
