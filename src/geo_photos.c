@@ -897,7 +897,7 @@ geocode_thread(gpointer user_data)
 		}
 
 		item = lookup_widget(menu1, "item9");
-		gtk_menu_item_activate (GTK_MENU_ITEM(item));
+		gtk_check_menu_item_set_active (GTK_CHECK_MENU_ITEM(item), TRUE);
 	}
 	
 	gdk_threads_leave();
