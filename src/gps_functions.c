@@ -625,7 +625,7 @@ set_label()
 	             gpsdata->fix.speed * 3.6 * unit_conv, speedunit,
 	             trip_distance * unit_conv, distunit,
 	             gpsdata->fix.altitude * unit_conv_alt, altunit,
-	             gpsdata->fix.heading * unit_conv,
+	             gpsdata->fix.heading,
 	             gpsdata->satellites_used,
 	             gpsdata->hdop);
 
