@@ -200,7 +200,7 @@ track_log()
 		
 		time_sec = (time_t)gpsdata->fix.time;
 		ts = localtime(&time_sec);
-		strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%SZ", ts);
+		strftime(buffer, sizeof(buffer), "%Y-%m-%dT%H:%M:%S%Z", ts);
 		
 		heartfreq = (hrmdata) ? hrmdata->freq : 0;
 
