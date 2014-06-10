@@ -378,8 +378,8 @@ save_route_as_gpx (const char *uri)
 
 	/* save current time into GPX file: */
 	time (&now);
-	localtime_r (&now, &now_as_tm);
-	strftime (now_as_string, sizeof (now_as_string), "%Y-%m-%dT%H:%M:%S%Z",
+	gmtime_r (&now, &now_as_tm);
+	strftime (now_as_string, sizeof (now_as_string), "%Y-%m-%dT%H:%M:%SZ",
 	          &now_as_tm);
 	xmlTextWriterWriteElement (writer, BAD_CAST "time",
 	                                   BAD_CAST now_as_string);
