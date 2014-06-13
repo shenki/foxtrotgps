@@ -276,7 +276,7 @@ track_log_open()
 	
 	
 
-	strftime (buffer, sizeof (buffer), "%Y%m%d_%H%M%S.gpx", tm_struct);
+	strftime (buffer, sizeof (buffer), "%Y%m%d_%H%M%S%z.gpx", tm_struct);
 
 	
 	filename = g_strconcat(global_track_dir, buffer,NULL);
@@ -882,7 +882,7 @@ void process_fetched_track(postreply_t *reply, bool save_gpx)
 		
 			time_epoch_sec = time(NULL);
 			tm_struct = localtime(&time_epoch_sec);
-			strftime(buffer, sizeof(buffer), "nav%Y%m%d_%H%M%S.gpx", tm_struct);
+			strftime(buffer, sizeof(buffer), "nav%Y%m%d_%H%M%S%z.gpx", tm_struct);
 		
 			filename = g_strconcat(global_track_dir, buffer,NULL);
 	
