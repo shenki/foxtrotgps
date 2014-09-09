@@ -128,10 +128,10 @@ stop you from participating; let us know and we'll work something out.
 Sample SFTP Publish Commands
 ============================
 
-If you have a domain called mydomain.com the publish command would be
+If you have a domain called example.com the publish command would be
 similar to this:
 
-    bzr push --create-prefix sftp://jdoe@mydomain.com/~/public_html/branches/foxtrotgps
+    bzr push --create-prefix sftp://jdoe@example.com/~/public_html/branches/foxtrotgps
 
 Bazaar will create the foxtrotgps directory on the remote server and
 upload your branch to it.
@@ -139,7 +139,7 @@ upload your branch to it.
 This example would make your repository accessible to others using
 Bazaar with a command like this:
 
-    bzr branch http://www.mydomain.com/branches/foxtrotgps
+    bzr branch http://www.example.com/branches/foxtrotgps
 
 More Help with Bazaar
 =====================
