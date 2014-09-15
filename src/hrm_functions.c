@@ -294,7 +294,7 @@ get_hrm_data_thread(void *ptr)
 
 			len = read(hrm_sock, buf, 500);
 			
-			fprintf(stderr, "HRM Rcvd %u bytes", len);
+			fprintf(stderr, "HRM Rcvd %i bytes", len);
 			
 			
 			watchdog = g_timeout_add_seconds_full(G_PRIORITY_DEFAULT_IDLE,60,reset_hrm_io,NULL,NULL);
