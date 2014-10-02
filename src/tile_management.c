@@ -117,11 +117,9 @@ download_tile(	repo_t *repo,
 		int x,
 		int y)
 {
-
-
-	
 	gchar *tile_data;
 	gchar tile_data_tmp[512];
+	gchar filtered_repo_uri[256];
 	gchar tile_url[256];
 	static GHashTable *ht = NULL;
 	gchar *key;
@@ -129,18 +127,48 @@ download_tile(	repo_t *repo,
 	int *found;
 	int maxzoom=18;
 	gboolean retval = FALSE;
+	gchar *inp, *outp;
+	int nfmts;
 	
 	if(ht==NULL)
 	{
 		ht = g_hash_table_new (g_str_hash, g_str_equal);
 	}
-	
-	
+
+
+	/* Sanitise repo->uri, filtering out bad/excessive formatters,
+	   so bad user inputs here don't cause a crash or other badness:
+	*/
+	nfmts = 0;
+	inp = repo->uri;
+	outp = filtered_repo_uri;
+	while (*inp && outp - filtered_repo_uri < (sizeof filtered_repo_uri) - 1)
+	{
+		if (*inp == '%')
+		{
+			switch (*(++inp))
+			{
+			case 'd': /* support up to 3 "%d" formatters */
+				if (++nfmts > 3)
+				{
+			default: /* just drop unsupported formatters */
+					++inp;
+					continue;
+				}
+			/* fall through */
+			case '%': /* support "%%" for literal %-chars */
+				(*outp++) = '%';
+			}
+		}
+
+		*(outp++) = *(inp++);
+	}
+	*outp = '\0';
+
 	if (!repo->inverted_zoom)
-		g_sprintf(tile_url, repo->uri, zoom, x, y);
+		g_sprintf(tile_url, filtered_repo_uri, zoom, x, y);
 	else
-		g_sprintf(tile_url, repo->uri, x, y, zoom); 
-	
+		g_sprintf(tile_url, filtered_repo_uri, x, y, zoom); 
 	
 	
 	g_sprintf(tile_data_tmp, "%s|%s/%d/%d/%d.png|%s/%d/%d/",
