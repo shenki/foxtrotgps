@@ -166,12 +166,13 @@ download_tile(	repo_t *repo,
 	*outp = '\0';
 
 	if (!repo->inverted_zoom)
-		g_sprintf(tile_url, filtered_repo_uri, zoom, x, y);
+		g_snprintf(tile_url, sizeof tile_url, filtered_repo_uri, zoom, x, y);
 	else
-		g_sprintf(tile_url, filtered_repo_uri, x, y, zoom); 
+		g_snprintf(tile_url, sizeof tile_url, filtered_repo_uri, x, y, zoom); 
+	tile_url[(sizeof tile_url) - 1] = '\0';
 	
 	
-	g_sprintf(tile_data_tmp, "%s|%s/%d/%d/%d.png|%s/%d/%d/",
+	g_snprintf(tile_data_tmp, sizeof tile_data_tmp, "%s|%s/%d/%d/%d.png|%s/%d/%d/",
 			tile_url,
 			repo->dir, zoom, x, y,
 			repo->dir, zoom, x);
@@ -179,7 +180,7 @@ download_tile(	repo_t *repo,
 	
 	if(strcmp(repo->uri,"maps-for-free")==0)
 	{
-		g_sprintf(tile_data_tmp, 
+		g_snprintf(tile_data_tmp, sizeof tile_data_tmp,
 				"http://maps-for-free.com/layer/relief/z%d/row%d/%d_%d-%d.jpg"
 				"|%s/%d/%d/%d.png|%s/%d/%d/",
 				zoom,y,zoom,x,y,
@@ -190,7 +191,7 @@ download_tile(	repo_t *repo,
 	
 	if(strcmp(repo->uri,"openaerial")==0)
 	{
-		g_sprintf(tile_data_tmp, 
+		g_snprintf(tile_data_tmp, sizeof tile_data_tmp,
 				"http://tile.openaerialmap.org/tiles/1.0.0/openaerialmap-900913/%d/%d/%d.jpg"
 				"|%s/%d/%d/%d.png|%s/%d/%d/",
 				zoom,x,y,
@@ -198,6 +199,7 @@ download_tile(	repo_t *repo,
 				repo->dir, zoom, x);
 	}
 
+	tile_data_tmp[(sizeof tile_data_tmp) - 1] = '\0';
 
 	tile_data = g_strdup(tile_data_tmp);
 	
