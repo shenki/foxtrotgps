@@ -1,0 +1,1470 @@
+# Brazilian Portuguese translation for foxtrotgps
+# Copyright (c) 2014 Rosetta Contributors and Canonical Ltd 2014
+# This file is distributed under the same license as the foxtrotgps package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: foxtrotgps\n"
+"Report-Msgid-Bugs-To: FULL NAME <EMAIL@ADDRESS>\n"
+"POT-Creation-Date: 2014-10-04 18:23-0400\n"
+"PO-Revision-Date: 2014-10-16 15:08+0000\n"
+"Last-Translator: vits <Unknown>\n"
+"Language-Team: Brazilian Portuguese <pt_BR@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n > 1;\n"
+"X-Launchpad-Export-Date: 2014-10-23 02:56+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
+
+#: ../src/support.c:97 ../src/support.c:121
+#, c-format
+msgid "Couldn't find pixmap file: %s"
+msgstr "Arquivo pixmap não encontrado: %s"
+
+#: ../src/support.c:128
+#, c-format
+msgid "Failed to load pixbuf file: %s: %s\n"
+msgstr "Falha ao carregar arquivo pixbuf: %s:%s\n"
+
+#: ../src/main.c:33
+msgid "Print the program version and exit"
+msgstr "Mostre a versão do programa e saia."
+
+#: ../src/main.c:35
+msgid "Start in fullscreen mode"
+msgstr "Iniciar em modo de tela cheia"
+
+#: ../src/main.c:37
+msgid "Load the GUI from this GladeXML file"
+msgstr "Carregar a GUI deste arquivo GladeXML"
+
+#: ../src/main.c:67
+#, c-format
+msgid "option parsing failed: %s\n"
+msgstr "falha ao analisar a opção: %s\n"
+
+#. Developers may run into this if they're naively
+#. trying to run from the build-tree without having
+#. specifically configured the build to allow that or
+#. having passed a "--gui=..." option to the program,
+#. so we need to actually catch this error and output
+#. an informative message.
+#. 
+#. This is, however, not an error that end users should face;
+#. if they do, then someone upstream from them messed up--
+#. either `make install' worked only half-way, or a packager
+#. left something critical out of the package. In either case,
+#. we want to fail in a way that indicates to the user
+#. that something is really wrong and they should report
+#. a bug.
+#. 
+#: ../src/main.c:110
+#, c-format
+msgid ""
+"%s could not load its user interface; %s does not not appear to be properly "
+"installed."
+msgstr ""
+"%s não pode carregar sua interface de usuário; %s aparenta não ter sido "
+"instalado corretamente."
+
+#: ../src/callbacks.c:870 ../src/callbacks.c:1370
+#: ../data/foxtrotgps.glade.h:20
+msgid "Stop"
+msgstr "Parar"
+
+#: ../src/callbacks.c:891
+msgid "Share!"
+msgstr "Compartilhar!"
+
+#: ../src/callbacks.c:960
+#, c-format
+msgid "<b><i>Distance:</i></b> %.3fkm\n"
+msgstr "<b><i>Distância:</i></b> %.3fkm\n"
+
+#: ../src/callbacks.c:985
+#, c-format
+msgid "No friends at or near this position"
+msgstr "Sem amigos nesta ou próximos a esta posição"
+
+#: ../src/callbacks.c:1094
+#, c-format
+msgid ""
+"<b>This point:</b>\n"
+"%s\n"
+"<small><i>(coords auto-copied to clipboard)\n"
+"</i></small>\n"
+msgstr ""
+"<b>Este ponto:</b>\n"
+"%s\n"
+"<small><i>(coordenadas copiadas automaticamente para área de transferência)\n"
+"</i></small>\n"
+
+#: ../src/callbacks.c:1100
+#, c-format
+msgid ""
+"<b>Bearing:</b>\n"
+"%.1f°\n"
+msgstr ""
+"<b>Direção:</b>\n"
+"%.1f°\n"
+
+#: ../src/callbacks.c:1105
+#, c-format
+msgid ""
+"<b>Distance from your location:</b>\n"
+"%.2f%s\n"
+msgstr ""
+"<b>Distância da sua localização:</b>\n"
+"%.2f%s\n"
+
+#: ../src/callbacks.c:1113
+#, c-format
+msgid "Click another point for distance"
+msgstr "Clique em outro ponto para distância"
+
+#: ../src/callbacks.c:1117
+#, c-format
+msgid ""
+"<b>Distance from last point:</b>\n"
+"%.2f%s\n"
+msgstr ""
+"<b>Distância do último ponto:</b>\n"
+"%.2f%s\n"
+
+#: ../src/callbacks.c:1119
+#, c-format
+msgid ""
+"<b>Overall Distance:</b>\n"
+"%.2f%s"
+msgstr ""
+"<b>Distância Total:</b>\n"
+"%.2f%s"
+
+#: ../src/callbacks.c:1255
+#, c-format
+msgid ""
+"<b>Manually set position</b>\n"
+"\n"
+"This point:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"will now be used as your location\n"
+"for the friend finder service."
+msgstr ""
+"<b>Definir posição manualmente</b>\n"
+"\n"
+"Este ponto:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"será utilizado com sua localização\n"
+"para o serviço localizador de amigos."
+
+#: ../src/callbacks.c:1372
+msgid "Resume"
+msgstr "Continuar"
+
+#: ../src/callbacks.c:1700 ../src/callbacks.c:1809
+#, c-format
+msgid "File not found"
+msgstr "Arquivo não encontrado"
+
+#: ../src/callbacks.c:1749
+#, c-format
+msgid "No Geo Photo found"
+msgstr "Nenhuma Geo Foto encontrada"
+
+#: ../src/callbacks.c:2376
+msgid ""
+"<span foreground='#ff0000'>POI has no ID -> see website for help!</span>"
+msgstr ""
+"<span foreground='#ff0000'>POI não possui ID -> veja ajuda no site!</span>"
+
+#: ../src/callbacks.c:2625
+msgid "Show Messages"
+msgstr "Mostrar Mensagens"
+
+#: ../src/callbacks.c:2631
+msgid "Hide Messages"
+msgstr "Ocultar Mensagens"
+
+#: ../src/callbacks.c:3102
+msgid ""
+"gpscorrelate is necessary for this feature but does not appear to be "
+"installed."
+msgstr ""
+"gpscorrelate é necessário para esta funcionalidade,  mas aparentemente não "
+"está instalado."
+
+#: ../src/callbacks.c:3221
+msgid ""
+"jhead is necessary for this feature but does not appear to be installed."
+msgstr ""
+"jhead é necessário para esta funcionalidade,  mas aparentemente não está "
+"instalado."
+
+#: ../src/callbacks.c:3638
+msgid "<b><i>Connecting...</i></b>"
+msgstr "<b><i>Connectando...</i></b>"
+
+#: ../src/gps_functions.c:490
+msgid ""
+"<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
+msgstr ""
+"<span foreground='#ff0000'><b>Chegou Nova Mensagem. Clique Aqui.</b></span>"
+
+#: ../src/gps_functions.c:509
+#, c-format
+msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
+msgstr ""
+"<b>nenhum GPSD encontrado</b> - <span foreground='#0000ff'><b>D%d</b></span>"
+
+#: ../src/gps_functions.c:516
+#, c-format
+msgid ""
+"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
+msgstr ""
+"<b>nenhum GPSD encontrado</b> - <span foreground='#0000ff'><b>D%d</b></span> "
+"- <b>[%d]</b>"
+
+#: ../src/gps_functions.c:523
+#, c-format
+msgid "<b>no GPSD found</b>"
+msgstr "<b>nenhum GPSD encontrado</b>"
+
+#: ../src/gps_functions.c:619
+#, c-format
+msgid ""
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+msgstr ""
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+
+#: ../src/gps_functions.c:682
+#, c-format
+msgid "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
+msgstr "<big><b>%d</b> <small>HDOP</small><b> %.1f</b></big>"
+
+#: ../src/gps_functions.c:780
+#, c-format
+msgid "connection to gpsd LOST\n"
+msgstr "conexão com gpsd PERDIDA\n"
+
+#: ../src/gps_functions.c:849
+#, c-format
+msgid "connection to gpsd SUCCEEDED \n"
+msgstr "conexão com gpsd BEM SUCEDIDA \n"
+
+#: ../src/init.c:264
+#, c-format
+msgid "Failed to load pixbuf file: %s\n"
+msgstr "Falhou ao carregar arquivo pixbuf: %s\n"
+
+#: ../src/friends.c:104 ../src/friends.c:471
+msgid "Connecting..."
+msgstr "Conectando..."
+
+#: ../src/friends.c:335
+msgid "No response (200)"
+msgstr "Sem resposta (200)"
+
+#: ../src/friends.c:557
+msgid "Oh. Some error occurred..."
+msgstr "Opa. Aconteceu algum erro..."
+
+#: ../src/friends.c:580
+#, c-format
+msgid ""
+"<b>%s</b>\n"
+"Last seen:\n"
+"%s\n"
+"<i>%s</i>"
+msgstr ""
+"<b>%s</b>\n"
+"Última vez visto:\n"
+"%s\n"
+"<i>%s</i>"
+
+#: ../src/friends.c:601
+msgid "Msg"
+msgstr "Msg"
+
+#: ../src/friends.c:609 ../src/friends.c:979 ../data/foxtrotgps.glade.h:133
+msgid "Go To"
+msgstr "Ir Para"
+
+#: ../src/friends.c:629
+#, c-format
+msgid "Send Message To: <b>%s</b>"
+msgstr "Enviar Mensagem Para: <b>%s</b>"
+
+#: ../src/friends.c:903
+#, c-format
+msgid "msg-code: %d"
+msgstr "msg-code: %d"
+
+#: ../src/friends.c:957
+#, c-format
+msgid ""
+"<i><small>To: </small><b>%s</b></i>\n"
+"\n"
+"%s"
+msgstr ""
+"<i><small>Para: </small><b>%s</b></i>\n"
+"\n"
+"%s"
+
+#: ../src/friends.c:971
+msgid "Reply"
+msgstr "Responder"
+
+#: ../src/geo_photos.c:254 ../src/geo_photos.c:653
+#, c-format
+msgid "  1 second"
+msgid_plural "  %d seconds"
+msgstr[0] "  1 segundo"
+msgstr[1] "  %d segundos"
+
+#: ../src/geo_photos.c:260 ../src/geo_photos.c:659
+#, c-format
+msgid "  %d:00h"
+msgstr "  %d:00h"
+
+#: ../src/geo_photos.c:405 ../src/geo_photos.c:435
+msgid "<span color=\"#090\"><b>ok</b></span>"
+msgstr "<span color=\"#090\"><b>sim</b></span>"
+
+#: ../src/geo_photos.c:609
+#, c-format
+msgid "%s loading pixbuf failed - actually this should not happen\n"
+msgstr "%s falha carregando pixbuf - de fato isso não deveria acontecer\n"
+
+#: ../src/geo_photos.c:706 ../data/foxtrotgps.glade.h:222
+msgid "Working...."
+msgstr "Trabalhando..."
+
+#: ../src/geo_photos.c:867
+#, c-format
+msgid "Error running \"%s\": %s\n"
+msgstr "Erro executando \"%s\": %s\n"
+
+#: ../src/poi.c:376
+msgid "- Please choose -|Hotel|Motel|B&B|Hostel|Camping"
+msgstr "- Por favor escolha -|Hotel|Motel|B&B|Hostel|Camping"
+
+#: ../src/poi.c:377
+msgid ""
+"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate "
+"Agency|Travel Agency|Other"
+msgstr ""
+"- Por favor escolha -|Banco / Casa de Câmbio / Caixa "
+"Eletônico|Correio|Imobiliária|Agência de Viagem|Outra"
+
+#: ../src/poi.c:378
+msgid ""
+"- Please choose -|Parking|Gas Station|Repair "
+"Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car"
+msgstr ""
+"- Por favor escolha -"
+"|Estacionamento|Posto|Oficina|Aluguel|Compartilhamento|Revenda|Radar - "
+"Pardal|Meu Carro"
+
+#: ../src/poi.c:379
+msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
+msgstr ""
+
+#: ../src/poi.c:380
+msgid "- Please choose -|Pharmacy|Hospital|Doctor"
+msgstr "- Escolha, por favor -|Farmácia|Hospital|Médico"
+
+#: ../src/poi.c:381
+msgid ""
+"- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
+"Spot"
+msgstr ""
+
+#: ../src/poi.c:382
+msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
+msgstr "- Por favor escolha -|Igreja|Mesquita|Sinagoga|Templo|Cemitério"
+
+#: ../src/poi.c:383
+msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
+msgstr ""
+
+#: ../src/poi.c:384
+msgid ""
+"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast "
+"Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
+msgstr ""
+
+#: ../src/poi.c:385
+msgid ""
+"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter "
+"Box|Laundry|Hairdresser|Other"
+msgstr ""
+
+#: ../src/poi.c:386
+msgid ""
+"- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
+msgstr ""
+
+#: ../src/poi.c:387
+msgid ""
+"- Please choose -|Supermarket|Shopping "
+"Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other"
+msgstr ""
+
+#: ../src/poi.c:388
+msgid ""
+"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice "
+"Skating|Golf|Geo Cache|Other"
+msgstr ""
+
+#: ../src/poi.c:389
+msgid "- Please choose -|Friend|Other Cool Place"
+msgstr "- Escolha, por favor -|Amigo|Outro lugar legal"
+
+#: ../src/poi.c:390
+msgid ""
+"- Please choose -|Traditional|Multi|Virtual|Letterbox "
+"Hybrid|Event|Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-"
+"Event|GPS Adventures|Wherigo|Other"
+msgstr ""
+
+#: ../src/poi.c:830
+#, c-format
+msgid ""
+"%s\n"
+"\n"
+"Distance: %.3fkm"
+msgstr ""
+"%s\n"
+"\n"
+"Distância: %.3fkm"
+
+#: ../src/poi.c:844
+msgid "<b>No POI found</b>\n"
+msgstr "<b>Nenhum POI encontrado</b>\n"
+
+#: ../src/util.c:24
+#, c-format
+msgid "Can't open database: %s\n"
+msgstr "Não pude abrir base de dados: %s\n"
+
+#: ../src/util.c:35
+#, c-format
+msgid "SQL error: %s\n"
+msgstr "Erro SQL: %s\n"
+
+#: ../src/tracks.c:291
+#, c-format
+msgid "oops: %s\n"
+msgstr "opa: %s\n"
+
+#: ../src/tracks.c:292
+msgid "Triplog open failed: "
+msgstr "Falha ao abrir Triplog "
+
+#: ../src/tracks.c:294
+msgid "<span foreground='#ff0000'>Error opening logfile</span>"
+msgstr "<span foreground='#ff0000'>Erro abrindo arquivo log</span>"
+
+#: ../src/tracks.c:300
+#, c-format
+msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
+msgstr "<b><span foreground='#0000ff'>Log: %s</span></b>"
+
+#: ../src/tracks.c:367
+#, c-format
+msgid "Problem opening directory: %s\n"
+msgstr "Problema abrindo diretório: %s\n"
+
+#: ../src/tracks.c:629 ../src/tracks.c:654
+#, c-format
+msgid "Failed to parse document\n"
+msgstr "Falha ao interpretar documento\n"
+
+#: ../src/tracks.c:767
+#, c-format
+msgid ""
+"<span color='#aa0000'><b>Unknown service selected</b></span>\n"
+"This is a bug in %s!"
+msgstr ""
+"<span color='#aa0000'><b>Selecionado um serviço desconhecido</b></span>\n"
+"Isso é um erro em %s!"
+
+#: ../src/tracks.c:924
+msgid ""
+"<span color='#aa0000'><b>Oops! No Route found</b></span>\n"
+"Try with another Start/End"
+msgstr ""
+
+#: ../src/tracks.c:935
+msgid ""
+"<span color='#aa0000'><b>Duh! A Server Error</b></span>\n"
+"Maybe try later again..."
+msgstr ""
+
+#: ../src/tracks.c:942
+msgid ""
+"<span color='#aa0000'><b>Oh! A Network Error</b></span>\n"
+"Check the internet!"
+msgstr ""
+"<span color='#aa0000'><b>Opa! Um Erro de Rede</b></span>\n"
+"Confira a Internet!"
+
+#: ../src/hrm_functions.c:151
+#, c-format
+msgid "<b><big>%d</big></b> <small>bpm</small>"
+msgstr ""
+
+#: ../src/hrm_functions.c:155
+#, c-format
+msgid "<b><big>%d/%d</big></b>"
+msgstr "<b><big>%d/%d</big></b>"
+
+#: ../data/foxtrotgps.desktop.in.h:1
+msgid "FoxtrotGPS"
+msgstr "FoxtrotGPS"
+
+#: ../data/foxtrotgps.desktop.in.h:2
+msgid "GPS and Map"
+msgstr "GPS e Mapa"
+
+#: ../data/foxtrotgps.desktop.in.h:3
+msgid "Display map and GPS position"
+msgstr "Mostra mapa e posição GPS"
+
+#: ../data/foxtrotgps.desktop.in.h:4
+msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:1
+msgid "GPSD host"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:2
+msgid "GPSD port"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:3
+msgid "Latitude/longitude unit"
+msgstr "Unidade de Latitude/Longitude"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:4
+msgid "Altitude unit"
+msgstr "Unidade de Altitude"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:5
+msgid "Speed unit"
+msgstr "Unidade de velocidade"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:6
+msgid "The active map-repository"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:7
+msgid "Map-repository definitions"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:8
+msgid "Automatically download map-tiles as needed"
+msgstr "Baixar automaticamente map-tiles conforme necessário"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:9
+msgid "Avoid re-downloading cached tiles"
+msgstr "Evitar baixar novamente tiles do cache"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:10
+msgid "Log tracks to a local file"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:11
+msgid "The directory into which track-files are written"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:12
+msgid "Horizontal viewport-coordinate"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:13
+msgid "Vertical viewport-coordinate"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:14
+msgid "Viewport zoom-level"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:15
+msgid "Detail scale-factor"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:16
+msgid "`My position', latitude"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:17
+msgid "`My position', longitude"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:18
+msgid "Publish your location & show others' locations"
+msgstr "Publique sua localização & mostre as localizações dos outros"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:19
+msgid "Friend-finder update interval, in minutes"
+msgstr "Intervalo de atualização do Localizador de amigos, em minutos"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:20
+msgid "Status-message to publish in the friend-finder"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:21
+msgid "Friend-finder username"
+msgstr "Usuário do Localizador de Amigos"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:22
+msgid "Friend-finder password"
+msgstr "Senha do Localizador de Amigos"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:23
+msgid ""
+"Number of seconds by which photo timestamps must be corrected for geocoding"
+msgstr ""
+"Número de segundos pelo qual o horário das fotos deve ser corrigido para "
+"geocoding"
+
+#: ../data/apps_foxtrotgps.schemas.in.h:24
+msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:25
+msgid "The Bluetooth address of your heartrate-monitor"
+msgstr ""
+
+#: ../data/apps_foxtrotgps.schemas.in.h:26
+msgid "Use the heartrate-monitor specified in hrm_bt_addr"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:1
+msgid "Show Info"
+msgstr "Mostrar Informação"
+
+#: ../data/foxtrotgps.glade.h:2
+msgid "Fullscreen (F11 or Space)"
+msgstr "Tela Cheia (F11 ou Espaço)"
+
+#: ../data/foxtrotgps.glade.h:3
+msgid "Zoom in"
+msgstr "Mais zoom"
+
+#: ../data/foxtrotgps.glade.h:4
+msgid "Zoom out"
+msgstr "Menos zoom"
+
+#: ../data/foxtrotgps.glade.h:5
+msgid "Autocenter On"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:6
+msgid "Next map repo"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:7
+msgid "Previous map repo"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:8
+msgid "Enable Track Logging"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:9
+msgid "Go to Previous Page"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:10
+msgid "Close Info Area"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:11
+msgid "Go to Next Page"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:12
+msgid "Speed"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:13
+msgid "<span font_desc='40'> -- </span>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:14
+msgid "Heart"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:15
+msgid "0"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:16
+msgid "Time"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:17
+msgid "Max"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:18
+msgid "Average"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:19
+msgid "Trip"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:21
+msgid "Reset"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:22
+msgid "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:23
+msgid "Altitude"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:24
+msgid "Heading"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:25
+msgid "Lat - Lon"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:26
+msgid "GPS Time"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:27
+msgid "Satellites"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:28
+msgid "<b>GPS Data</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:29
+msgid "Enable Live Tracking"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:30
+msgid "Split"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:31
+msgid "Load"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:32
+msgid "Clear"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:33
+msgid "Upload"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:34
+msgid "Configure"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:35
+msgid "<big><b>Tracks</b></big>   <small>[2/3]</small>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:36
+msgid "<big><b>Configuration</b></big>   <small>[3/3]</small>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:37
+msgid ""
+"Activate or deactivate automatic\n"
+"download of missing tiles into cache"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:39
+msgid "Auto download map tiles"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:40
+msgid "<b>Auto Download</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:41
+msgid "Current Map:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:42
+msgid "New..."
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:43
+msgid "Edit..."
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:44
+msgid "<b>Map Types</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:45
+msgid "<i>Speed and Distance:</i>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:46
+msgid "metric"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:47
+msgid "imperial"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:48
+msgid "nautical"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:49
+msgid "<i>Altitude:</i>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:50
+msgid "meters"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:51
+msgid "feet"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:52
+msgid "<i>Lat &amp; Lon:</i>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:53
+msgid "d.dd"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:54
+msgid "d m.m'"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:55
+msgid "d m's.s\""
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:56
+msgid "<b>Units</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:57
+msgid "Activate Heartrate Monitor"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:58
+msgid "Bluetooth Address: "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:59
+msgid "<b>Heart Rate Monitor</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:60
+msgid ""
+"\n"
+"Set GPSD Host IP\n"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:63
+msgid " GPSD "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:64
+msgid "Host:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:65
+msgid "127.0.0.1"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:66
+msgid " Port:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:67
+msgid "2947"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:68
+msgid "Change GPSD"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:69
+msgid "<b>GPSD</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:70
+msgid "<b>no GPS found</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:71
+msgid "delete routepoint"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:72
+msgid "insert routepoint before this"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:73
+msgid "this point"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:74
+msgid "show POIs"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:75
+msgid "show photos"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:76
+msgid "route-finding"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:77
+msgid "get route"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:78
+msgid "route-planning"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:79
+msgid "add routepoint"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:80
+msgid "load route from GPX"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:81
+msgid "save route as GPX"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:82
+msgid "save route as TomTom ITN"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:83
+msgid "clear route"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:84
+msgid "waypoint"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:85
+msgid "set WP"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:86
+msgid "unset WP"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:87
+msgid "POIs"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:88
+msgid "add POI"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:89
+msgid "select POIs"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:90
+msgid "photos"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:91
+msgid "geocode"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:92
+msgid "my position"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:93
+msgid "set"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:94
+msgid "unset"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:95
+msgid "map download"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:96
+msgid "map detail"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:97
+msgid "fewer/larger details"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:98
+msgid "more/smaller details"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:99
+msgid "help"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:100
+msgid "New Repository"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:101
+msgid "<b>Name for the new Repository</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:102
+msgid "<b>URI</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:103
+msgid "<b>Cache Dir</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:104
+msgid "xyz instead of zxy"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:105
+msgid "All fields must be filled in"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:106
+msgid "Edit Repository"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:107
+msgid "<b>Repository Name</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:108
+msgid "GPS Info"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:109
+msgid "--"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:110
+msgid ""
+"Distance to\n"
+"next point"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:112
+msgid ""
+"Set point as\n"
+"my position"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:114
+msgid "Close"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:115
+msgid "Trackdir Config"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:116
+msgid "Directory in which the tracks should be written:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:117
+msgid "Load track..."
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:118
+msgid "<b>Choose track to open (.log / .gpx)</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:119
+msgid "Map DL"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:120
+msgid "Re-download cached tiles"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:121
+msgid "Download maps of currently visible area:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:122
+msgid "+ 1 zoom level"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:123
+msgid "+ 2 zoom levels"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:124
+msgid "+ 3 zoom levels"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:125
+msgid "+ 4 zoom levels (~25MB)"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:126
+msgid "+ 5 zoom levels (~100MB)"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:127
+msgid "+ 6 zoom levels (~400MB)"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:128
+msgid "<b>Map Download</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:129
+msgid "POI"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:130
+msgid "<b>-----</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:131
+msgid "-"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:132
+msgid "<b>-</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:134
+msgid "Edit"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:135
+msgid "Delete"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:136
+msgid "Show POIs"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:137
+msgid ""
+"-- Show All --\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places\n"
+"Geocaches"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:153
+msgid "Delete POI?"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:154
+msgid ""
+"Do you really want to\n"
+"delete this Point of Interest?"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:156
+msgid "Edit POI"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:157
+msgid "GPS"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:158
+msgid "Lat: "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:159
+msgid " Lon: "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:160
+msgid "Name - Keywords / Tags:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:161
+msgid "Description:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:162
+msgid "budget"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:163
+msgid "medium"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:164
+msgid "exclusive"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:165
+msgid "extended opening hours"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:166
+msgid ""
+"- please choose -\n"
+"Accomodation\n"
+"Businesses\n"
+"Car\n"
+"Cultural\n"
+"Medical\n"
+"Cafe / Pub / Nightlife\n"
+"Place of Worship\n"
+"Public Transportation\n"
+"Restaurant & Food\n"
+"Services\n"
+"Sights & Leisure\n"
+"Shopping\n"
+"Sport\n"
+"My Personal Places\n"
+"Geocaches"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:182
+msgid "Category:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:183
+msgid "personal"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:184
+msgid "public"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:185
+msgid "Add POI"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:186
+msgid "Coordinates <b><i>clicked</i></b> on the map:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:187
+msgid "Use current GPS position instead"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:188
+msgid "Get Route"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:189
+msgid "Street,City,Country"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:190
+msgid "<b>Start</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:191
+msgid "<b>End</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:192
+msgid "Pick Start on Map"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:193
+msgid "Pick"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:194
+msgid "Pick End on Map"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:195
+msgid "<b>Service</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:196
+msgid ""
+"<i>Insert Start and End:</i>\n"
+"<small>(experimental feature)</small>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:198
+msgid "<i><b>Connecting...</b></i>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:199
+msgid "Friend Info"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:200
+msgid "Message"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:201
+msgid "Send Message to:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:202
+msgid "Geo Photo"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:203
+msgid "Big"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:204
+msgid "GeoPhoto"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:205
+msgid "Photo Correlate"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:206
+msgid "<b>Geocoding your photos</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:207
+msgid "Geocode your photos by correlating them with a gps track.\n"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:209
+msgid "<b>1. Add Track</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:210
+msgid "<b>2. Add Photos</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:211
+msgid "<span color=\"red\" weight=\"bold\">-</span>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:212
+msgid "<b>3. Adjust Time</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:213
+msgid "View GPS Photo"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:214
+msgid "  +00:00h"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:215
+msgid "  0 seconds"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:216
+msgid "Correction:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:217
+msgid "Timezone:"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:219
+#, no-c-format
+msgid "add photos to the %s database"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:220
+msgid "Geocode Result"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:221
+msgid "<b>The output from gpscorrelate:</b>"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:223
+msgid "Image Data"
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:224
+msgid "<b>GPS:</b> "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:225
+msgid "<b>Camera:</b> "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:226
+msgid "<b>Correction:</b> "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:227
+msgid "s   "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:228
+msgid "<b>Timezone:</b> "
+msgstr ""
+
+#: ../data/foxtrotgps.glade.h:229
+msgid ""
+"-12:00\n"
+"-11:00\n"
+"-10:00\n"
+"-09:00\n"
+"-08:00\n"
+"-07:00\n"
+"-06:00\n"
+"-05:00\n"
+"-04:00\n"
+"-03:00\n"
+"-02:00\n"
+"-01:00\n"
+"+00:00\n"
+"+01:00\n"
+"+02:00\n"
+"+03:00\n"
+"+04:00\n"
+"+05:00\n"
+"+06:00\n"
+"+07:00\n"
+"+08:00\n"
+"+09:00\n"
+"+10:00\n"
+"+11:00\n"
+"+12:00"
+msgstr ""

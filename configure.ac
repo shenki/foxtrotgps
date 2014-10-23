@@ -15,7 +15,7 @@ AC_DEFINE_UNQUOTED(GETTEXT_PACKAGE, "$GETTEXT_PACKAGE", [Package name for gettex
 IT_PROG_INTLTOOL([0.23])
 
 dnl Languages which your application supports
-ALL_LINGUAS="bg cs de es fi fr hu ru sk nl ja sr"
+ALL_LINGUAS="bg cs de es fi fr hu ru sk nl ja sr pt_BR"
 AM_GLIB_GNU_GETTEXT
 
 AC_PROG_LN_S
