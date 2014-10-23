@@ -7,15 +7,17 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-02 00:58-0400\n"
-"PO-Revision-Date: 2011-10-18 16:23+0300\n"
-"Last-Translator: Timo Jyrinki <timo.jyrinki@iki.fi>\n"
+"POT-Creation-Date: 2014-10-04 18:23-0400\n"
+"PO-Revision-Date: 2014-10-06 04:53+0000\n"
+"Last-Translator: Timo Jyrinki <timo.jyrinki@canonical.com>\n"
 "Language-Team: Finnish <laatu@lokalisointi.org>\n"
-"Language: fi\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2014-10-23 02:56+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
+"Language: fi\n"
 
 #: ../src/support.c:97 ../src/support.c:121
 #, c-format
@@ -50,7 +52,7 @@ msgstr "valitsimien jäsennys epäonnistui: %s\n"
 #. having passed a "--gui=..." option to the program,
 #. so we need to actually catch this error and output
 #. an informative message.
-#.
+#. 
 #. This is, however, not an error that end users should face;
 #. if they do, then someone upstream from them messed up--
 #. either `make install' worked only half-way, or a packager
@@ -58,7 +60,7 @@ msgstr "valitsimien jäsennys epäonnistui: %s\n"
 #. we want to fail in a way that indicates to the user
 #. that something is really wrong and they should report
 #. a bug.
-#.
+#. 
 #: ../src/main.c:110
 #, c-format
 msgid ""
@@ -192,18 +194,19 @@ msgid "Hide Messages"
 msgstr "Piilota viestit"
 
 #: ../src/callbacks.c:3102
-#, fuzzy
 msgid ""
 "gpscorrelate is necessary for this feature but does not appear to be "
 "installed."
 msgstr ""
-"%s ei voi ladata käyttöliittymää. Sovellus %s ei vaikuta olevan oikein "
-"asennettu"
+"gpscorrelate-ohjelma vaaditaan tätä ominaisuutta varten, mutta ohjelmaa ei "
+"ole asennettu."
 
 #: ../src/callbacks.c:3221
 msgid ""
 "jhead is necessary for this feature but does not appear to be installed."
 msgstr ""
+"jhead-ohjelma vaaditaan tätä ominaisuutta varten, mutta ohjelmaa ei ole "
+"asennettu."
 
 #: ../src/callbacks.c:3638
 msgid "<b><i>Connecting...</i></b>"
@@ -213,22 +216,23 @@ msgstr "<b><i>Yhdistetään...</i></b>"
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
-"<span foreground='#ff0000'><b>Uusi viesti vastaanotettu. Napsauta tästä.</"
-"b></span>"
+"<span foreground='#ff0000'><b>Uusi viesti vastaanotettu. Napsauta "
+"tästä.</b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
-msgstr "<b>GPSD:tä ei löydy</b> - <span foreground='#0000ff'><b>D%d</b></span>"
+msgstr ""
+"<b>GPSD:tä ei löydy</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
 msgid ""
-"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
-"</b>"
+"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 msgstr ""
-"<b>GPSD:tä ei löydy</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>"
-"[%d]</b>"
+"<b>GPSD:tä ei löydy</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 
 #: ../src/gps_functions.c:523
 #, c-format
@@ -238,11 +242,11 @@ msgstr "<b>GPSD:tä ei löydy</b>"
 #: ../src/gps_functions.c:619
 #, c-format
 msgid ""
-"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
-"small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
-"%s%s%s%s<b>%4.1f</b>%s <small>mat </small><b>%.2f</b>%s <small>kor </"
-"small><b>%.0f</b>%s <small>suu </small><b>%.0f</b>° <small></small>%d/%.1f"
+"%s%s%s%s<b>%4.1f</b>%s <small>mat </small><b>%.2f</b>%s <small>kor "
+"</small><b>%.0f</b>%s <small>suu </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
@@ -257,7 +261,7 @@ msgstr "yhteys gpds:hen hävinnyt\n"
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr "yhteys gpsd:hen onnistui\n"
+msgstr "yhteys gpsd:hen onnistui \n"
 
 #: ../src/init.c:264
 #, c-format
@@ -326,8 +330,8 @@ msgstr "Vastaa"
 #, c-format
 msgid "  1 second"
 msgid_plural "  %d seconds"
-msgstr[0] " 1 sekunti"
-msgstr[1] " %d sekuntia"
+msgstr[0] "  1 sekunti"
+msgstr[1] "  %d sekuntia"
 
 #: ../src/geo_photos.c:260 ../src/geo_photos.c:659
 #, c-format
@@ -358,19 +362,20 @@ msgstr "- Valitse -|hotelli|motelli|B&B|hostelli|leirintä"
 
 #: ../src/poi.c:377
 msgid ""
-"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
-"Travel Agency|Other"
+"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate "
+"Agency|Travel Agency|Other"
 msgstr ""
-"- Valitse -|pankki/rahanvaihto/automaatti|posti|kiinteistövälitys|"
-"matkatoimisto|muu"
+"- Valitse -"
+"|pankki/rahanvaihto/automaatti|posti|kiinteistövälitys|matkatoimisto|muu"
 
 #: ../src/poi.c:378
 msgid ""
-"- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
-"Radar - Speed Trap|My Car"
+"- Please choose -|Parking|Gas Station|Repair "
+"Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car"
 msgstr ""
-"- Valitse -|pysäköinti|polttoaineasema|korjaamo|vuokraus|jakaminen|"
-"automyynti|tutka - nopeusvalvonta|oma auto"
+"- Valitse -"
+"|pysäköinti|polttoaineasema|korjaamo|vuokraus|jakaminen|automyynti|tutka - "
+"nopeusvalvonta|oma auto"
 
 #: ../src/poi.c:379
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
@@ -399,40 +404,42 @@ msgstr ""
 
 #: ../src/poi.c:384
 msgid ""
-"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
+"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast "
+"Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
-"- Valitse -|paikallisruoka|eurooppalainen|aasialainen|amerikkalainen|"
-"afrikkalainen|pizza|pikaruoka|takeaway|grilli|italialainen|meksikolainen|"
-"intialainen|japanilainen|ranskalainen"
+"- Valitse -"
+"|paikallisruoka|eurooppalainen|aasialainen|amerikkalainen|afrikkalainen|pizza"
+"|pikaruoka|takeaway|grilli|italialainen|meksikolainen|intialainen|japanilaine"
+"n|ranskalainen"
 
 #: ../src/poi.c:385
 msgid ""
-"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
-"Laundry|Hairdresser|Other"
+"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter "
+"Box|Laundry|Hairdresser|Other"
 msgstr ""
-"- Valitse -|WLAN-tukisema|pankkiautomaatti|postitoimisto|pesula|"
-"parturikampaamo|muu"
+"- Valitse -|WLAN-"
+"tukisema|pankkiautomaatti|postitoimisto|pesula|parturikampaamo|muu"
 
 #: ../src/poi.c:386
 msgid ""
 "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
 msgstr ""
-"- Valitse -|turisti-info|monumentti|museo|eläintarha|näköalapaikka|"
-"maastokartat|muu"
+"- Valitse -|turisti-"
+"info|monumentti|museo|eläintarha|näköalapaikka|maastokartat|muu"
 
 #: ../src/poi.c:387
 msgid ""
-"- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
-"Butcher|DoItYourself|Other"
+"- Please choose -|Supermarket|Shopping "
+"Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other"
 msgstr ""
-"- Valitse -|supermarket|ostoskeskus|vaatteet|kengät|ruoka|leipomo|"
-"lihakauppias|tee-se-itse|muu"
+"- Valitse -"
+"|supermarket|ostoskeskus|vaatteet|kengät|ruoka|leipomo|lihakauppias|tee-se-"
+"itse|muu"
 
 #: ../src/poi.c:388
 msgid ""
-"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
-"Geo Cache|Other"
+"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice "
+"Skating|Golf|Geo Cache|Other"
 msgstr ""
 "- Valitse -|areena/stadioni|uima-allas|kiipeily|luistelu|golf|geokätkö|muu"
 
@@ -442,13 +449,14 @@ msgstr "- Valitse -|tuttava|muu siisti paikka"
 
 #: ../src/poi.c:390
 msgid ""
-"- Please choose -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|Unknown|"
-"Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
-"Wherigo|Other"
+"- Please choose -|Traditional|Multi|Virtual|Letterbox "
+"Hybrid|Event|Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-"
+"Event|GPS Adventures|Wherigo|Other"
 msgstr ""
-"- Valitse -|perinteinen|multi|virtuaalinen|kirjelaatikkohybridi|tapahtuma|"
-"tuntematon|projektiapina|web-kamera|kätkö roskiksessa|maakätkö|megatapahtuma|"
-"GPS-seikkailu|Wherigo|muu"
+"- Valitse -"
+"|perinteinen|multi|virtuaalinen|kirjelaatikkohybridi|tapahtuma|tuntematon|pro"
+"jektiapina|web-kamera|kätkö roskiksessa|maakätkö|megatapahtuma|GPS-"
+"seikkailu|Wherigo|muu"
 
 #: ../src/poi.c:830
 #, c-format
@@ -504,13 +512,13 @@ msgid "Failed to parse document\n"
 msgstr "Asiakirjan jäsentäminen epäonnistui\n"
 
 #: ../src/tracks.c:767
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "<span color='#aa0000'><b>Unknown service selected</b></span>\n"
 "This is a bug in %s!"
 msgstr ""
-"<span color='#aa0000'><b>Ikävä kyllä tapahtui palvelinvirhe</b></span>\n"
-"Kokeile ehkä myöhemmin uudelleen..."
+"<span color='#aa0000'><b>Tuntematon palvelu valittu</b></span>\n"
+"Tämä on bugi ohjelmassa %s!"
 
 #: ../src/tracks.c:924
 msgid ""
@@ -560,7 +568,7 @@ msgstr "Näytä kartta ja GPS-sijainti"
 
 #: ../data/foxtrotgps.desktop.in.h:4
 msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
-msgstr ""
+msgstr "OpenStreetMap;OSM;reitti;matka;kartta;sijainti;"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
 msgid "GPSD host"
@@ -752,9 +760,8 @@ msgid "Reset"
 msgstr "Palauta"
 
 #: ../data/foxtrotgps.glade.h:22
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
-msgstr "<big><b>Matkamittari</b></big>   <small>[1/4]</small>"
+msgstr "<big><b>Matkamittari</b></big>   <small>[1/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:23
 msgid "Altitude"
@@ -805,14 +812,12 @@ msgid "Configure"
 msgstr "Asetukset"
 
 #: ../data/foxtrotgps.glade.h:35
-#, fuzzy
 msgid "<big><b>Tracks</b></big>   <small>[2/3]</small>"
-msgstr "<big><b>Reitit</b></big>   <small>[3/4]</small>"
+msgstr "<big><b>Reitit</b></big>   <small>[2/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:36
-#, fuzzy
 msgid "<big><b>Configuration</b></big>   <small>[3/3]</small>"
-msgstr "<big><b>Asetukset</b></big>   <small>[4/4]</small>"
+msgstr "<big><b>Asetukset</b></big>   <small>[3/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:37
 msgid ""
@@ -916,7 +921,7 @@ msgstr ""
 
 #: ../data/foxtrotgps.glade.h:63
 msgid " GPSD "
-msgstr " GPSD"
+msgstr " GPSD "
 
 #: ../data/foxtrotgps.glade.h:64
 msgid "Host:"
@@ -928,7 +933,7 @@ msgstr "127.0.0.1"
 
 #: ../data/foxtrotgps.glade.h:66
 msgid " Port:"
-msgstr "Portti:"
+msgstr " Portti:"
 
 #: ../data/foxtrotgps.glade.h:67
 msgid "2947"
@@ -947,13 +952,12 @@ msgid "<b>no GPS found</b>"
 msgstr "<b>GPS:ää ei löydy</b>"
 
 #: ../data/foxtrotgps.glade.h:71
-#, fuzzy
 msgid "delete routepoint"
-msgstr "hae reitti"
+msgstr "poista reittipiste"
 
 #: ../data/foxtrotgps.glade.h:72
 msgid "insert routepoint before this"
-msgstr ""
+msgstr "lisää reittipiste ennen tätä"
 
 #: ../data/foxtrotgps.glade.h:73
 msgid "this point"
@@ -969,7 +973,7 @@ msgstr "näytä valokuvat"
 
 #: ../data/foxtrotgps.glade.h:76
 msgid "route-finding"
-msgstr ""
+msgstr "reitinetsintä"
 
 #: ../data/foxtrotgps.glade.h:77
 msgid "get route"
@@ -977,33 +981,31 @@ msgstr "hae reitti"
 
 #: ../data/foxtrotgps.glade.h:78
 msgid "route-planning"
-msgstr ""
+msgstr "reittisuunnittelu"
 
 #: ../data/foxtrotgps.glade.h:79
 msgid "add routepoint"
-msgstr ""
+msgstr "lisää reittipiste"
 
 #: ../data/foxtrotgps.glade.h:80
 msgid "load route from GPX"
-msgstr ""
+msgstr "lataa reitti GPX-tiedostosta"
 
 #: ../data/foxtrotgps.glade.h:81
 msgid "save route as GPX"
-msgstr ""
+msgstr "tallenna reitti GPX-tiedostoon"
 
 #: ../data/foxtrotgps.glade.h:82
 msgid "save route as TomTom ITN"
-msgstr ""
+msgstr "tallenna reitti muodossa TomTom ITN"
 
 #: ../data/foxtrotgps.glade.h:83
-#, fuzzy
 msgid "clear route"
-msgstr "hae reitti"
+msgstr "tyhjennä reitti"
 
 #: ../data/foxtrotgps.glade.h:84
-#, fuzzy
 msgid "waypoint"
-msgstr "etapit"
+msgstr "välietappi"
 
 #: ../data/foxtrotgps.glade.h:85
 msgid "set WP"
@@ -1063,7 +1065,7 @@ msgstr "enemmän/pienempiä yksityiskohtia"
 
 #: ../data/foxtrotgps.glade.h:99
 msgid "help"
-msgstr ""
+msgstr "ohje"
 
 #: ../data/foxtrotgps.glade.h:100
 msgid "New Repository"
@@ -1431,7 +1433,7 @@ msgstr "Valokuvien sijoittaminen"
 
 #: ../data/foxtrotgps.glade.h:206
 msgid "<b>Geocoding your photos</b>"
-msgstr " <b>Geokoodataan valokuvia</b>"
+msgstr "<b>Geokoodataan valokuvia</b>"
 
 #: ../data/foxtrotgps.glade.h:207
 msgid "Geocode your photos by correlating them with a gps track.\n"
@@ -1443,7 +1445,7 @@ msgstr "<b>1. Lisää reitti</b>"
 
 #: ../data/foxtrotgps.glade.h:210
 msgid "<b>2. Add Photos</b>"
-msgstr "<b>2. Lisää valokuvia</b> "
+msgstr "<b>2. Lisää valokuvia</b>"
 
 #: ../data/foxtrotgps.glade.h:211
 msgid "<span color=\"red\" weight=\"bold\">-</span>"
@@ -1492,11 +1494,11 @@ msgstr "Kuvatiedot"
 
 #: ../data/foxtrotgps.glade.h:224
 msgid "<b>GPS:</b> "
-msgstr " <b>GPS:</b> "
+msgstr "<b>GPS:</b> "
 
 #: ../data/foxtrotgps.glade.h:225
 msgid "<b>Camera:</b> "
-msgstr "<b>Kamera:</b>"
+msgstr "<b>Kamera:</b> "
 
 #: ../data/foxtrotgps.glade.h:226
 msgid "<b>Correction:</b> "
@@ -1563,600 +1565,3 @@ msgstr ""
 "+10:00\n"
 "+11:00\n"
 "+12:00"
-
-#~ msgid "5"
-#~ msgstr "5"
-
-#~ msgid "<b>Me</b>"
-#~ msgstr "<b>Minä</b>"
-
-#~ msgid "<b>Position Sharing</b>"
-#~ msgstr "<b>Sijainnin jakaminen</b>"
-
-#~ msgid "<b>Sharing Mode</b>"
-#~ msgstr "<b>Jakamistila</b>"
-
-#~ msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
-#~ msgstr "<big><b>Tuttavat</b></big>   <small>[2/4]</small>"
-
-#~ msgid "<i>No Messages</i>"
-#~ msgstr "<i>Ei viestejä</i>"
-
-#~ msgid "<i>What are you up to?</i>"
-#~ msgstr "<i>Mitä teet paraikaa?</i>"
-
-#~ msgid ""
-#~ "Decide whom you see and \n"
-#~ "who can see you:"
-#~ msgstr ""
-#~ "Päätä, keitä näet ja ketkä \n"
-#~ "voivat nähdä sinut:"
-
-#~ msgid "Email"
-#~ msgstr "Sähköposti"
-
-#~ msgid ""
-#~ "Enable position sharing and\n"
-#~ "messaging with your friends"
-#~ msgstr ""
-#~ "Ota käyttöön sijainnin jakaminen\n"
-#~ "ja viestit tuttavien kanssa"
-
-#~ msgid "JohnDoe"
-#~ msgstr "MattiMallikas"
-
-#~ msgid "Nickname"
-#~ msgstr "Nimimerkki"
-
-#~ msgid "Password"
-#~ msgstr "Salasana"
-
-#~ msgid "Register!"
-#~ msgstr "Rekisteröidy"
-
-#~ msgid "Show password"
-#~ msgstr "Näytä salasana"
-
-#~ msgid ""
-#~ "Simply choose any nickname and password.\n"
-#~ "\n"
-#~ "Before first use register them by clicking on the button below."
-#~ msgstr ""
-#~ "Valitse vain nimimerkki ja salasana.\n"
-#~ "\n"
-#~ "Ennen ensimmäistä käyttöä, rekisteröidy napsauttamalla alla olevaa "
-#~ "painiketta."
-
-#~ msgid "Update interval  "
-#~ msgstr "Päivityksen aikaväli "
-
-#~ msgid "foobar"
-#~ msgstr "huuhaa"
-
-#~ msgid "friend mode"
-#~ msgstr "tuttavatila"
-
-#~ msgid "fun mode"
-#~ msgstr "hauska tila"
-
-#~ msgid "just idle..."
-#~ msgstr "joutenoloa..."
-
-#~ msgid "minutes"
-#~ msgstr "minuuttia"
-
-#~ msgid "private mode"
-#~ msgstr "yksityinen tila"
-
-#~ msgid "show friends"
-#~ msgstr "näytä tuttavat"
-
-#~ msgid "ways & routes"
-#~ msgstr "suunnat ja reitit"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-
-#~ msgid ""
-#~ "yournavigation.org\n"
-#~ "openrouteservice.org\n"
-#~ "gnuite.com"
-#~ msgstr ""
-#~ "yournavigation.org\n"
-#~ "openrouteservice.org\n"
-#~ "gnuite.com"
-
-#~ msgid ""
-#~ "- please choose -\n"
-#~ "Accomodation\n"
-#~ "Businesses\n"
-#~ "Car\n"
-#~ "Cultural\n"
-#~ "Medical\n"
-#~ "Nightlife\n"
-#~ "Place of Worship\n"
-#~ "Public Transportation\n"
-#~ "Restaurant & Food\n"
-#~ "Services\n"
-#~ "Sights & Leisure\n"
-#~ "Shopping\n"
-#~ "Sport"
-#~ msgstr ""
-#~ "- valitse -\n"
-#~ "Majoitus\n"
-#~ "Liiketoiminta\n"
-#~ "Autot\n"
-#~ "Kulttuuri\n"
-#~ "Sairaanhoito\n"
-#~ "Yöelämä\n"
-#~ "Palvontapaikat\n"
-#~ "Julkinen liikenne\n"
-#~ "Ravintolat ja ruoka\n"
-#~ "Palvelut\n"
-#~ "Nähtävyydet ja vapaa-aika\n"
-#~ "Ostokset\n"
-#~ "Urheilu"
-
-#~ msgid "create way"
-#~ msgstr "luo suunta"
-
-#~ msgid "gtk-cancel"
-#~ msgstr "Peru"
-
-#~ msgid "gtk-close"
-#~ msgstr "Sulje"
-
-#~ msgid "gtk-go-back"
-#~ msgstr "Taaksepäin"
-
-#~ msgid "gtk-go-forward"
-#~ msgstr "Eteenpäin"
-
-#~ msgid "gtk-goto-first"
-#~ msgstr "Ensimmäinen"
-
-#~ msgid "gtk-goto-last"
-#~ msgstr "Viimeinen"
-
-#~ msgid "gtk-ok"
-#~ msgstr "Ok"
-
-#~ msgid "gtk-open"
-#~ msgstr "Avaa"
-
-#~ msgid "gtk-zoom-in"
-#~ msgstr "Lähennä"
-
-#~ msgid "     Share!     "
-#~ msgstr "      Jaa       "
-
-#~ msgid "     "
-#~ msgstr "     "
-
-#~ msgid "Email        "
-#~ msgstr "Sähköposti   "
-
-#~ msgid "    "
-#~ msgstr "    "
-
-#~ msgid ""
-#~ "<small><i>%s Version:\n"
-#~ "Developer: Marcus Bauer &amp; Community</i></small>"
-#~ msgstr ""
-#~ "<small><i>%s-versio:\n"
-#~ "Kehittäjä: Marcus Bauer &amp; yhteisö</i></small>"
-
-#~ msgid "      New...       "
-#~ msgstr "      Uusi...      "
-
-#~ msgid "      Edit...     "
-#~ msgstr "    Muokkaa...    "
-
-#~ msgid "URI"
-#~ msgstr "URI"
-
-#~ msgid "Cache Dir"
-#~ msgstr "Välimuistihak"
-
-#~ msgid "    Save Repository Configuration    "
-#~ msgstr "    Tallenna lähteiden asetukset     "
-
-#~ msgid " "
-#~ msgstr " "
-
-#~ msgid "unused"
-#~ msgstr "käyttämätön"
-
-#~ msgid "-- Show All --"
-#~ msgstr "-- Näytä kaikki --"
-
-#~ msgid "Accomodation"
-#~ msgstr "Majoitus"
-
-#~ msgid "Businesses"
-#~ msgstr "Liiketoiminta"
-
-#~ msgid "Car"
-#~ msgstr "Autot"
-
-#~ msgid "Cultural"
-#~ msgstr "Kulttuuri"
-
-#~ msgid "Medical"
-#~ msgstr "Sairaanhoito"
-
-#~ msgid "Cafe / Pub / Nightlife"
-#~ msgstr "Kahvila / baari / yöelämä"
-
-#~ msgid "Place of Worship"
-#~ msgstr "Palvontapaikat"
-
-#~ msgid "Public Transportation"
-#~ msgstr "Julkinen liikenne"
-
-#~ msgid "Restaurant"
-#~ msgstr "Ravintolat"
-
-#~ msgid "Services"
-#~ msgstr "Palvelut"
-
-#~ msgid "Sights / Leisure"
-#~ msgstr "Nähtävyydet / vapaa-aika"
-
-#~ msgid "Shopping"
-#~ msgstr "Ostokset"
-
-#~ msgid "My Personal Places"
-#~ msgstr "Omat paikat"
-
-#~ msgid "Go To "
-#~ msgstr "Mene "
-
-#~ msgid "- please choose -"
-#~ msgstr "- valitse -"
-
-#~ msgid "Restaurant & Food"
-#~ msgstr "Ravintolat ja ruoka"
-
-#~ msgid "Sights & Leisure"
-#~ msgstr "Nähtävyydet ja vapaa-aika"
-
-#~ msgid "       "
-#~ msgstr "       "
-
-#~ msgid "Nightlife"
-#~ msgstr "Yöelämä"
-
-#~ msgid "Please choose"
-#~ msgstr "Valitse"
-
-#~ msgid "<b>This is important!</b>\n"
-#~ msgstr "<b>Tämä on tärkeää</b>\n"
-
-#~ msgid "      "
-#~ msgstr "      "
-
-#~ msgid "-12:00"
-#~ msgstr "-12:00"
-
-#~ msgid "-11:00"
-#~ msgstr "-11:00"
-
-#~ msgid "-10:00"
-#~ msgstr "-10:00"
-
-#~ msgid "-09:00"
-#~ msgstr "-09:00"
-
-#~ msgid "-08:00"
-#~ msgstr "-08:00"
-
-#~ msgid "-07:00"
-#~ msgstr "-07:00"
-
-#~ msgid "-06:00"
-#~ msgstr "-06:00"
-
-#~ msgid "-05:00"
-#~ msgstr "-05:00"
-
-#~ msgid "-04:00"
-#~ msgstr "-04:00"
-
-#~ msgid "-03:00"
-#~ msgstr "-03:00"
-
-#~ msgid "-02:00"
-#~ msgstr "-02:00"
-
-#~ msgid "-01:00"
-#~ msgstr "-01:00"
-
-#~ msgid "+00:00"
-#~ msgstr "+00:00"
-
-#~ msgid "+01:00"
-#~ msgstr "+01:00"
-
-#~ msgid "+02:00 "
-#~ msgstr "+02:00 "
-
-#~ msgid "+03:00"
-#~ msgstr "+03:00"
-
-#~ msgid "+04:00"
-#~ msgstr "+04:00"
-
-#~ msgid "+05:00"
-#~ msgstr "+05:00"
-
-#~ msgid "+06:00"
-#~ msgstr "+06:00"
-
-#~ msgid "+07:00"
-#~ msgstr "+07:00"
-
-#~ msgid "+08:00"
-#~ msgstr "+08:00"
-
-#~ msgid "+09:00"
-#~ msgstr "+09:00"
-
-#~ msgid "+10:00"
-#~ msgstr "+10:00"
-
-#~ msgid "+11:00"
-#~ msgstr "+11:00"
-
-#~ msgid "+12:00"
-#~ msgstr "+12:00"
-
-#~ msgid " GPS "
-#~ msgstr " GPS "
-
-#~ msgid " Pick "
-#~ msgstr " Valitse "
-
-#~ msgid "  "
-#~ msgstr "  "
-
-#~ msgid "yournavigation.org"
-#~ msgstr "yournavigation.org"
-
-#~ msgid "openrouteservice.org"
-#~ msgstr "openrouteservice.org"
-
-#~ msgid "gnuite.com"
-#~ msgstr "gnuite.com"
-
-#~ msgid "  Go To  "
-#~ msgstr "  Mene  "
-
-#~ msgid "      Stop       "
-#~ msgstr "     Pysäytä     "
-
-#~ msgid "     Reset     "
-#~ msgstr "     Alusta     "
-
-#, fuzzy
-#~ msgid "Enable logging of your tracks for later use, i.e. for extending OSM"
-#~ msgstr ""
-#~ "Voit ottaa käyttöön / pois käytöstä reittien lokituksen myöhempää käyttöä "
-#~ "varten, esimerkiksi OSM:n laajentamiseksi"
-
-#~ msgid "            Start            "
-#~ msgstr "          Käynnistä          "
-
-#~ msgid "           Split           "
-#~ msgstr "            Jaa            "
-
-#~ msgid "      Configure...      "
-#~ msgstr "      Asetukset...      "
-
-#, fuzzy
-#~ msgid "      Load...     "
-#~ msgstr "      Asetukset...      "
-
-#~ msgid "unused cols"
-#~ msgstr "käyttäm. sarakk."
-
-#, fuzzy
-#~ msgid "unused window"
-#~ msgstr "käyttäm. sarakk."
-
-#~ msgid "window7"
-#~ msgstr "window7"
-
-#~ msgid "window9"
-#~ msgstr "window9"
-
-#~ msgid "window11"
-#~ msgstr "window11"
-
-#, fuzzy
-#~ msgid "---"
-#~ msgstr "--"
-
-#~ msgid ""
-#~ "Update your position to a server\n"
-#~ "and receive your friends positions,\n"
-#~ "shown on the map."
-#~ msgstr ""
-#~ "Päivitä sijaintitiedot palvelimelle\n"
-#~ "ja hae tuttavien sijainnit, jotka\n"
-#~ "näytetään kartalla."
-
-#~ msgid "once"
-#~ msgstr "kerran"
-
-#~ msgid "every"
-#~ msgstr "joka"
-
-#~ msgid "     Update Me!     "
-#~ msgstr "   Päivitä minut    "
-
-#~ msgid " ."
-#~ msgstr " ."
-
-#~ msgid "Permission to see me for:"
-#~ msgstr "Lupa nähdä sijainti:"
-
-#~ msgid "public (you remain anonymous)"
-#~ msgstr "julkinen (mutta pysyt anonyyminä)"
-
-#~ msgid "registered nicks"
-#~ msgstr "rekisteröidyt nimimerkit"
-
-#~ msgid "my friends"
-#~ msgstr "tuttavani"
-
-#~ msgid " <b>Updating My Position</b> "
-#~ msgstr " <b>Päivitetään sijaintia</b> "
-
-#~ msgid "Show me the positions from:"
-#~ msgstr "Näytä sijainnit kohteesta:"
-
-#~ msgid " <b>Getting Other's Positions</b> "
-#~ msgstr " <b>Haetaan muiden sijainteja</b> "
-
-#, fuzzy
-#~ msgid ""
-#~ "Choose any nickname you want to have. A password is only necessary if you "
-#~ "have already registered your nick or you want to register it.\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.foxtrotgps.org/friends"
-#~ msgstr ""
-#~ "Valitse haluamasi nimimerkki.\n"
-#~ "Salasana tarvitaan vain, jos olet jo\n"
-#~ "rekisteröinyt nimimerkkisi tai haluat\n"
-#~ "rekisteröidä sen.\n"
-#~ "\n"
-#~ "Lisätietoja osoitteessa:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-
-#~ msgid "   "
-#~ msgstr "   "
-
-#~ msgid "<b>  Me  </b>"
-#~ msgstr "<b> Minä </b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Käynnistä gllin ja gpsd (Openmoko Neo1973 <i>ei FreeRunner</i>).\n"
-
-#~ msgid "/home/root/gllin/gllin &"
-#~ msgstr "/home/root/gllin/gllin &"
-
-#~ msgid "     Start gllin and GPSD     "
-#~ msgstr "   Käynnistä gllin and GPSD   "
-
-#~ msgid "<b>gllin and gpsd</b>"
-#~ msgstr "<b>gllin ja gpsd</b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "The following section is \n"
-#~ "for development purposes"
-#~ msgstr ""
-#~ "\n"
-#~ "Seuraava osio on tarkoitettu \n"
-#~ "kehitystarkoituksiin"
-
-#~ msgid "/home/root/gprs.sh &"
-#~ msgstr "/home/root/gprs.sh &"
-
-#~ msgid "Start pppd/gprs"
-#~ msgstr "Käynnistä pppd/gprs"
-
-#~ msgid "/home/root/other.sh"
-#~ msgstr "/home/root/other.sh"
-
-#~ msgid "Other stuff"
-#~ msgstr "Muuta tavaraa"
-
-#~ msgid "fullscreen"
-#~ msgstr "kokoruutu"
-
-#~ msgid "      +      "
-#~ msgstr "      +      "
-
-#~ msgid "      -      "
-#~ msgstr "      -      "
-
-#, fuzzy
-#~ msgid "   info   "
-#~ msgstr "       "
-
-#, fuzzy
-#~ msgid " center "
-#~ msgstr "autom.kesk."
-
-#~ msgid "map"
-#~ msgstr "kartta"
-
-#~ msgid "   Map   "
-#~ msgstr "  Kartta  "
-
-#~ msgid "  Trip  "
-#~ msgstr " Matka "
-
-#~ msgid ""
-#~ "Choose any nickname you want\n"
-#~ "to have. A password is only necessary\n"
-#~ "if you have already registered your \n"
-#~ "nick or you want to register it.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-#~ msgstr ""
-#~ "Valitse haluamasi nimimerkki.\n"
-#~ "Salasana tarvitaan vain, jos olet jo\n"
-#~ "rekisteröinyt nimimerkkisi tai haluat\n"
-#~ "rekisteröidä sen.\n"
-#~ "\n"
-#~ "Lisätietoja osoitteessa:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Rekisteröidäksesi nimimerkin kirjoita sähköpostiosoitteesi ja napsauta!\n"
-#~ "Sähköpostiosoitettasi ei näytetä tai jaeta, ja sitä käytetään vain "
-#~ "hukkuneen salasanan palauttamiseen."
-
-#~ msgid " Friends "
-#~ msgstr " Kaverit "
-
-#~ msgid "Avg. Speed:"
-#~ msgstr "Keskinop:"
-
-#~ msgid "Max Speed:"
-#~ msgstr "Maksimin:"
-
-#, fuzzy
-#~ msgid "filter POIs"
-#~ msgstr "valitse POIt"
-
-#~ msgid "Inverted Zoom"
-#~ msgstr "Käänteinen zoom"
-
-#~ msgid "version"
-#~ msgstr "versio"
