@@ -7,17 +7,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps 1.1.0\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-02 00:58-0400\n"
-"PO-Revision-Date: 2011-10-09 20:52-0000\n"
-"Last-Translator: Dailos Franchy <dfranchy@gmail.com>\n"
+"POT-Creation-Date: 2014-10-04 18:23-0400\n"
+"PO-Revision-Date: 2014-10-05 22:10+0000\n"
+"Last-Translator: Dailos <Unknown>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2014-10-23 02:56+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
+"Language: \n"
 "X-Poedit-Language: Spanish\n"
 "X-Poedit-Basepath: /usr/local/tmp/seguim_foxtrotgps/foxtrotgps-dev/po\n"
-"Plural-Forms: nplurals=2; plural=n != 1;\n"
 
 #: ../src/support.c:97 ../src/support.c:121
 #, c-format
@@ -52,7 +54,7 @@ msgstr "error al analizar las opciones: %s\n"
 #. having passed a "--gui=..." option to the program,
 #. so we need to actually catch this error and output
 #. an informative message.
-#.
+#. 
 #. This is, however, not an error that end users should face;
 #. if they do, then someone upstream from them messed up--
 #. either `make install' worked only half-way, or a packager
@@ -60,7 +62,7 @@ msgstr "error al analizar las opciones: %s\n"
 #. we want to fail in a way that indicates to the user
 #. that something is really wrong and they should report
 #. a bug.
-#.
+#. 
 #: ../src/main.c:110
 #, c-format
 msgid ""
@@ -161,7 +163,7 @@ msgstr ""
 "\n"
 "  <i>%f %f</i>\n"
 "\n"
-"se usará como tu posición para el servicio\n"
+"se usará como su posición para el servicio\n"
 "de localización de amigos."
 
 #: ../src/callbacks.c:1372
@@ -194,18 +196,18 @@ msgid "Hide Messages"
 msgstr "Ocultar mensajes"
 
 #: ../src/callbacks.c:3102
-#, fuzzy
 msgid ""
 "gpscorrelate is necessary for this feature but does not appear to be "
 "installed."
 msgstr ""
-"%s no pudo cargar su interfaz de usuario; %s no parece estar instalado "
-"correctamente."
+"gpscorrelate es requerido por esta función, pero parece que no está "
+"instalado."
 
 #: ../src/callbacks.c:3221
 msgid ""
 "jhead is necessary for this feature but does not appear to be installed."
 msgstr ""
+"jhead es requerido por esta función, pero parece que no está instalado."
 
 #: ../src/callbacks.c:3638
 msgid "<b><i>Connecting...</i></b>"
@@ -215,8 +217,8 @@ msgstr "<b><i>Conectando...</i></b>"
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
-"<span foreground='#ff0000'><b>Nuevo mensaje recibido. Haz clic aquí.</b></"
-"span>"
+"<span foreground='#ff0000'><b>Nuevo mensaje recibido. Haga clic "
+"aquí.</b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
@@ -227,8 +229,8 @@ msgstr ""
 #: ../src/gps_functions.c:516
 #, c-format
 msgid ""
-"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
-"</b>"
+"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 msgstr ""
 "<b>no se encontró el GPSD</b> - <span foreground='#0000ff'><b>D%d</b></span> "
 "- <b>[%d]</b>"
@@ -241,11 +243,11 @@ msgstr "<b>no se encontró el GPSD</b>"
 #: ../src/gps_functions.c:619
 #, c-format
 msgid ""
-"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
-"small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
-"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
-"small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
@@ -361,19 +363,19 @@ msgstr "- Elegir... -|Hotel|Motel|Bed & Breakfast|Albergue|Camping"
 
 #: ../src/poi.c:377
 msgid ""
-"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
-"Travel Agency|Other"
+"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate "
+"Agency|Travel Agency|Other"
 msgstr ""
 "- Elegir... -|Banco / Cambio / Cajero automático|Oficina de correos|Agencia "
 "inmobiliaria|Agencia de viajes|Otro"
 
 #: ../src/poi.c:378
 msgid ""
-"- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
-"Radar - Speed Trap|My Car"
+"- Please choose -|Parking|Gas Station|Repair "
+"Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car"
 msgstr ""
-"- Elegir... -|Aparcamiento|Gasolinera|Taller|Alquiler|Compartir|Compra-venta|"
-"Radar - Control de velocidad|Mi coche"
+"- Elegir... -|Aparcamiento|Gasolinera|Taller|Alquiler|Compartir|Compra-"
+"venta|Radar - Control de velocidad|Mi coche"
 
 #: ../src/poi.c:379
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
@@ -397,24 +399,25 @@ msgstr "- Elegir... -|Iglesia|Mezquita|Sinagoga|Templo|Cementerio"
 #: ../src/poi.c:383
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
 msgstr ""
-"- Elegir... -|Autobus|Metro|Tranvía|Taxi|Estación de tren|Bici|Puerto|"
-"Aeropuerto"
+"- Elegir... -|Autobús|Metro|Tranvía|Taxi|Estación de "
+"tren|Bici|Puerto|Aeropuerto"
 
 #: ../src/poi.c:384
 msgid ""
-"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
+"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast "
+"Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
-"- Elegir... -|Comida local|Europea|Asiática|Estadounidense|Africana|Pizza|"
-"Comida rápida|Para llevar|Asador|Italiana|Mexicana|India|Japonesa|Francesa"
+"- Elegir... -|Comida "
+"local|Europea|Asiática|Estadounidense|Africana|Pizza|Comida rápida|Para "
+"llevar|Asador|Italiana|Mexicana|India|Japonesa|Francesa"
 
 #: ../src/poi.c:385
 msgid ""
-"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
-"Laundry|Hairdresser|Other"
+"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter "
+"Box|Laundry|Hairdresser|Other"
 msgstr ""
-"- Elegir... -|Hotspot wifi|Cajero automático|Oficina de correos/Buzón|"
-"Lavandería|Peluquería|Otro"
+"- Elegir... -|Hotspot wifi|Cajero automático|Oficina de "
+"correos/Buzón|Lavandería|Peluquería|Otro"
 
 #: ../src/poi.c:386
 msgid ""
@@ -425,16 +428,16 @@ msgstr ""
 
 #: ../src/poi.c:387
 msgid ""
-"- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
-"Butcher|DoItYourself|Other"
+"- Please choose -|Supermarket|Shopping "
+"Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other"
 msgstr ""
-"- Elegir... -|Supermercado|Centro comercial|Ropa|Zapatos|Comida|Panadería|"
-"Cernicería|Bricolaje|Otro"
+"- Elegir... -|Supermercado|Centro "
+"comercial|Ropa|Zapatos|Comida|Panadería|Cernicería|Bricolaje|Otro"
 
 #: ../src/poi.c:388
 msgid ""
-"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
-"Geo Cache|Other"
+"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice "
+"Skating|Golf|Geo Cache|Other"
 msgstr ""
 "- Elegir... -|Campo/Estadio|Piscina|Escalada|Patinaje sobre hielo|Golf|Geo "
 "Cache|Otro"
@@ -445,13 +448,13 @@ msgstr "- Elegir... -|Amigo|Otro lugar interesante"
 
 #: ../src/poi.c:390
 msgid ""
-"- Please choose -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|Unknown|"
-"Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
-"Wherigo|Other"
+"- Please choose -|Traditional|Multi|Virtual|Letterbox "
+"Hybrid|Event|Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-"
+"Event|GPS Adventures|Wherigo|Other"
 msgstr ""
-"- Elegir... -|Tradicional|Multi|Virtual|Letterbox híbrido|Evento|Puzzle|"
-"Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-evento|GPS Adventures|"
-"Wherigo|Otro"
+"- Elegir... -|Tradicional|Multi|Virtual|Letterbox "
+"híbrido|Evento|Puzzle|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-"
+"evento|GPS Adventures|Wherigo|Otro"
 
 #: ../src/poi.c:830
 #, c-format
@@ -507,13 +510,13 @@ msgid "Failed to parse document\n"
 msgstr "Error al analizar el documento\n"
 
 #: ../src/tracks.c:767
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "<span color='#aa0000'><b>Unknown service selected</b></span>\n"
 "This is a bug in %s!"
 msgstr ""
-"<span color='#aa0000'><b>Vaya, un error de servidor</b></span>\n"
-"Quizá deberías intentarlo de nuevo más tarde..."
+"<span color='#aa0000'><b>Servicio seleccionado desconocido</b></span>\n"
+"¡Esto es un fallo en %s!"
 
 #: ../src/tracks.c:924
 msgid ""
@@ -521,7 +524,7 @@ msgid ""
 "Try with another Start/End"
 msgstr ""
 "<span color='#aa0000'><b>Vaya, no se encontró una ruta</b></span>\n"
-"Prueba con otro Inicio/Fin"
+"Pruebe con otro Inicio/Fin"
 
 #: ../src/tracks.c:935
 msgid ""
@@ -529,7 +532,7 @@ msgid ""
 "Maybe try later again..."
 msgstr ""
 "<span color='#aa0000'><b>Vaya, un error de servidor</b></span>\n"
-"Quizá deberías intentarlo de nuevo más tarde..."
+"Quizá debería intentarlo de nuevo más tarde..."
 
 #: ../src/tracks.c:942
 msgid ""
@@ -537,7 +540,7 @@ msgid ""
 "Check the internet!"
 msgstr ""
 "<span color='#aa0000'><b>Vaya, un error de red</b></span>\n"
-"¡Comprueba la conexión a internet!"
+"¡Compruebe la conexión a internet!"
 
 #: ../src/hrm_functions.c:151
 #, c-format
@@ -563,7 +566,7 @@ msgstr "Mostrar mapa y posición GPS"
 
 #: ../data/foxtrotgps.desktop.in.h:4
 msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
-msgstr ""
+msgstr "OpenStreetMap;OSM;Camino;Viaje;mapa;ubicación;"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
 msgid "GPSD host"
@@ -635,7 +638,7 @@ msgstr "'Mi posición', longitud"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:18
 msgid "Publish your location & show others' locations"
-msgstr "Publicar tu posición y mostrar la posición de otros"
+msgstr "Publicar su posición y mostrar la posición de otros"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:19
 msgid "Friend-finder update interval, in minutes"
@@ -755,9 +758,8 @@ msgid "Reset"
 msgstr "Restablecer"
 
 #: ../data/foxtrotgps.glade.h:22
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
-msgstr "<big><b>Datos del recorrido</b></big>   <small>[1/4]</small>"
+msgstr "<big><b>Medidor de viaje</b></big>   <small>[1/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:23
 msgid "Altitude"
@@ -808,14 +810,12 @@ msgid "Configure"
 msgstr "Configurar"
 
 #: ../data/foxtrotgps.glade.h:35
-#, fuzzy
 msgid "<big><b>Tracks</b></big>   <small>[2/3]</small>"
-msgstr "<big><b>Tracks</b></big>   <small>[3/4]</small>"
+msgstr "<big><b>Tracks</b></big>   <small>[2/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:36
-#, fuzzy
 msgid "<big><b>Configuration</b></big>   <small>[3/3]</small>"
-msgstr "<big><b>Configuración</b></big>   <small>[4/4]</small>"
+msgstr "<big><b>Configuración</b></big>   <small>[3/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:37
 msgid ""
@@ -950,13 +950,12 @@ msgid "<b>no GPS found</b>"
 msgstr "<b>no se encontró el GPS</b>"
 
 #: ../data/foxtrotgps.glade.h:71
-#, fuzzy
 msgid "delete routepoint"
-msgstr "obtener ruta"
+msgstr "eliminar punto de ruta"
 
 #: ../data/foxtrotgps.glade.h:72
 msgid "insert routepoint before this"
-msgstr ""
+msgstr "insertar punto de ruta antes de este"
 
 #: ../data/foxtrotgps.glade.h:73
 msgid "this point"
@@ -972,7 +971,7 @@ msgstr "mostrar fotos"
 
 #: ../data/foxtrotgps.glade.h:76
 msgid "route-finding"
-msgstr ""
+msgstr "búsqueda de ruta"
 
 #: ../data/foxtrotgps.glade.h:77
 msgid "get route"
@@ -980,40 +979,39 @@ msgstr "obtener ruta"
 
 #: ../data/foxtrotgps.glade.h:78
 msgid "route-planning"
-msgstr ""
+msgstr "planificación de ruta"
 
 #: ../data/foxtrotgps.glade.h:79
 msgid "add routepoint"
-msgstr ""
+msgstr "agregar punto de ruta"
 
 #: ../data/foxtrotgps.glade.h:80
 msgid "load route from GPX"
-msgstr ""
+msgstr "cargar ruta desde GPX"
 
 #: ../data/foxtrotgps.glade.h:81
 msgid "save route as GPX"
-msgstr ""
+msgstr "guardar ruta como GPX"
 
 #: ../data/foxtrotgps.glade.h:82
 msgid "save route as TomTom ITN"
-msgstr ""
+msgstr "guardar ruta como TomTom ITN"
 
 #: ../data/foxtrotgps.glade.h:83
-#, fuzzy
 msgid "clear route"
-msgstr "obtener ruta"
+msgstr "eliminar ruta"
 
 #: ../data/foxtrotgps.glade.h:84
 msgid "waypoint"
-msgstr ""
+msgstr "punto de referencia"
 
 #: ../data/foxtrotgps.glade.h:85
 msgid "set WP"
-msgstr "poner WP"
+msgstr "marcar referencia"
 
 #: ../data/foxtrotgps.glade.h:86
 msgid "unset WP"
-msgstr "quitar WP"
+msgstr "quitar referencia"
 
 #: ../data/foxtrotgps.glade.h:87
 msgid "POIs"
@@ -1065,7 +1063,7 @@ msgstr "más detalles, más pequeños"
 
 #: ../data/foxtrotgps.glade.h:99
 msgid "help"
-msgstr ""
+msgstr "ayuda"
 
 #: ../data/foxtrotgps.glade.h:100
 msgid "New Repository"
@@ -1565,92 +1563,3 @@ msgstr ""
 "+10:00\n"
 "+11:00\n"
 "+12:00"
-
-#~ msgid "5"
-#~ msgstr "5"
-
-#~ msgid "<b>Me</b>"
-#~ msgstr "<b>Mis datos</b>"
-
-#~ msgid "<b>Position Sharing</b>"
-#~ msgstr "<b>Compartir la posición  </b>"
-
-#~ msgid "<b>Sharing Mode</b>"
-#~ msgstr "<b>Modo de intercambio</b>"
-
-#~ msgid "<big><b>Friends</b></big>   <small>[2/4]</small>"
-#~ msgstr "<big><b>Amigos</b></big>   <small>[2/4]</small>"
-
-#~ msgid "<i>No Messages</i>"
-#~ msgstr "<i>No hay mensajes</i>"
-
-#~ msgid "<i>What are you up to?</i>"
-#~ msgstr "<i>¿Qué estás haciendo?</i>"
-
-#~ msgid ""
-#~ "Decide whom you see and \n"
-#~ "who can see you:"
-#~ msgstr ""
-#~ "Decida a quién puede ver y \n"
-#~ "quién puede verle:"
-
-#~ msgid "Email"
-#~ msgstr "Email"
-
-#~ msgid ""
-#~ "Enable position sharing and\n"
-#~ "messaging with your friends"
-#~ msgstr ""
-#~ "Active el intercambio de posiciones\n"
-#~ "y mensajes con sus amigos"
-
-#~ msgid "JohnDoe"
-#~ msgstr "FulanoDeTal"
-
-#~ msgid "Nickname"
-#~ msgstr "Apodo (nick)"
-
-#~ msgid "Password"
-#~ msgstr "Contraseña"
-
-#~ msgid "Register!"
-#~ msgstr "¡Registrar!"
-
-#~ msgid "Show password"
-#~ msgstr "Mostrar contraseña"
-
-#~ msgid ""
-#~ "Simply choose any nickname and password.\n"
-#~ "\n"
-#~ "Before first use register them by clicking on the button below."
-#~ msgstr ""
-#~ "Elija un apodo (nickname) y una contraseña.\n"
-#~ "\n"
-#~ "Antes del primer uso, regístrelos pulsando el botón inferior."
-
-#~ msgid "Update interval  "
-#~ msgstr "Período de actualización"
-
-#~ msgid "foobar"
-#~ msgstr "algo"
-
-#~ msgid "friend mode"
-#~ msgstr "modo amigos"
-
-#~ msgid "fun mode"
-#~ msgstr "modo diversión"
-
-#~ msgid "just idle..."
-#~ msgstr "ocioso..."
-
-#~ msgid "minutes"
-#~ msgstr "minutos"
-
-#~ msgid "private mode"
-#~ msgstr "modo privado"
-
-#~ msgid "show friends"
-#~ msgstr "mostrar amigos"
-
-#~ msgid "ways & routes"
-#~ msgstr "caminos y rutas"
