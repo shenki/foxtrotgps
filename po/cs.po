@@ -22,7 +22,7 @@ msgstr ""
 #: ../src/support.c:97 ../src/support.c:121
 #, c-format
 msgid "Couldn't find pixmap file: %s"
-msgstr "Nenalezen soubor pixmapy: %s"
+msgstr "Nenalezen pixmap soubor: %s"
 
 #: ../src/support.c:128
 #, c-format
@@ -67,7 +67,7 @@ msgid ""
 "%s could not load its user interface; %s does not not appear to be properly "
 "installed."
 msgstr ""
-"%s nelze načíst uživatelské rozhraní; instalace %s je nejspíše poškozena."
+"%s nelze načíst uživatelské rozhraní, instalace %s je nejspíše poškozena."
 
 #: ../src/callbacks.c:870 ../src/callbacks.c:1370
 #: ../data/foxtrotgps.glade.h:20
@@ -98,7 +98,7 @@ msgid ""
 msgstr ""
 "<b>Tento bod:</b>\n"
 "%s\n"
-"<small><i>(souřadnice byly zkopírovány do schránky)\n"
+"<small><i>(souřadnice byly automaticky zkopírovány do schránky)\n"
 "</i></small>\n"
 
 #: ../src/callbacks.c:1100
@@ -154,7 +154,7 @@ msgid ""
 "will now be used as your location\n"
 "for the friend finder service."
 msgstr ""
-"<b>Ručně nastavena poloha</b>\n"
+"<b>Ruční nastavení polohy</b>\n"
 "\n"
 "Tento bod:\n"
 "\n"
@@ -175,7 +175,7 @@ msgstr "Soubor nenalezen"
 #: ../src/callbacks.c:1749
 #, c-format
 msgid "No Geo Photo found"
-msgstr "Nenalezeny žádné vhodné fotografie"
+msgstr "Nenalezeny žádné fotografie v blízosti tohoto místa"
 
 #: ../src/callbacks.c:2376
 msgid ""
@@ -193,17 +193,16 @@ msgid "Hide Messages"
 msgstr "Skrýt zprávy"
 
 #: ../src/callbacks.c:3102
-#, fuzzy
 msgid ""
 "gpscorrelate is necessary for this feature but does not appear to be "
 "installed."
 msgstr ""
-"%s nelze načíst uživatelské rozhraní; instalace %s je nejspíše poškozena."
+"pro tuto funkci je nutné mít nainstalovaný gpscorrelate, ten ale nebyl nalezen"
 
 #: ../src/callbacks.c:3221
 msgid ""
 "jhead is necessary for this feature but does not appear to be installed."
-msgstr ""
+msgstr "pro tuto funkci je nutné mít nainstalovaný jhead, ten ale nebyl nalezen"
 
 #: ../src/callbacks.c:3638
 msgid "<b><i>Connecting...</i></b>"
@@ -213,7 +212,7 @@ msgstr "<b><i>Připojuji se...</i></b>"
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
-"<span foreground='#ff0000'><b>Přišla nová zpráva. Pro zobrazení klikněte zde."
+"<span foreground='#ff0000'><b>Přijata nová zpráva. Pro zobrazení klikněte zde."
 "</b></span>"
 
 #: ../src/gps_functions.c:509
@@ -272,7 +271,7 @@ msgstr "Bez odpovědi (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
-msgstr "Došlo k nějaké chybě..."
+msgstr "Došlo k jakési chybě..."
 
 #: ../src/friends.c:580
 #, c-format
@@ -293,12 +292,12 @@ msgstr "Zpráva"
 
 #: ../src/friends.c:609 ../src/friends.c:979 ../data/foxtrotgps.glade.h:133
 msgid "Go To"
-msgstr "Jít na"
+msgstr "Jdi na"
 
 #: ../src/friends.c:629
 #, c-format
 msgid "Send Message To: <b>%s</b>"
-msgstr "Poslat zprávu komu: <b>%s</b>"
+msgstr "Poslat zprávu pro: <b>%s</b>"
 
 #: ../src/friends.c:903
 #, c-format
@@ -340,11 +339,11 @@ msgstr "<span color=\"#090\"><b>ok</b></span>"
 #: ../src/geo_photos.c:609
 #, c-format
 msgid "%s loading pixbuf failed - actually this should not happen\n"
-msgstr "%s chyba při načítání pixbuf - toto by se vlastně vůbec stát nemělo\n"
+msgstr "%s chyba při načítání pixbuf - k této chyby by nikdy nemělo dojít\n"
 
 #: ../src/geo_photos.c:706 ../data/foxtrotgps.glade.h:222
 msgid "Working...."
-msgstr "Pracuji..."
+msgstr "Zpracovávám..."
 
 #: ../src/geo_photos.c:867
 #, c-format
@@ -373,7 +372,7 @@ msgstr ""
 
 #: ../src/poi.c:379
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
-msgstr "- Prosím vyberte -|Kino|Divadlo|Koncertní síň|Opera|Kasíno"
+msgstr "- Prosím vyberte -|Kino|Divadlo|Koncertní síň|Opera|Kasino"
 
 #: ../src/poi.c:380
 msgid "- Please choose -|Pharmacy|Hospital|Doctor"
@@ -407,7 +406,6 @@ msgstr ""
 "Francouzská"
 
 #: ../src/poi.c:385
-#, fuzzy
 msgid ""
 "- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
 "Laundry|Hairdresser|Other"
@@ -431,7 +429,6 @@ msgstr ""
 "Pekařství|Řeznictví|Kutilské potřeby|Jiný"
 
 #: ../src/poi.c:388
-#, fuzzy
 msgid ""
 "- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
 "Geo Cache|Other"
@@ -448,7 +445,9 @@ msgid ""
 "- Please choose -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|Unknown|"
 "Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
 "Wherigo|Other"
-msgstr ""
+msgstr "- Prosím vyberte -|Tradiční|Multi|Virtuální|Letterbox Hybrid|"
+"Event|Neznámá|Project Ape|Webcam|Cache In Trash Out|Earthcache|"
+"Mega-Event|GPS Adventures|Wherigo|Jiná"
 
 #: ../src/poi.c:830
 #, c-format
@@ -463,7 +462,7 @@ msgstr ""
 
 #: ../src/poi.c:844
 msgid "<b>No POI found</b>\n"
-msgstr "<b>Žádný bod zájmu nenalezen</b>\n"
+msgstr "<b>Nenalezen Žádný bod zájmu</b>\n"
 
 #: ../src/util.c:24
 #, c-format
@@ -491,7 +490,7 @@ msgstr "<span foreground='#ff0000'>Chyba při otevírání záznamu</span>"
 #: ../src/tracks.c:300
 #, c-format
 msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
-msgstr "<b><span foreground='#0000ff'>Výpis: %s</span></b>"
+msgstr "<b><span foreground='#0000ff'>Záznam: %s</span></b>"
 
 #: ../src/tracks.c:367
 #, c-format
@@ -501,16 +500,16 @@ msgstr "Chyba při otevírání adresáře: %s\n"
 #: ../src/tracks.c:629 ../src/tracks.c:654
 #, c-format
 msgid "Failed to parse document\n"
-msgstr "Chyba při zpracování dokumentu\n"
+msgstr "Chyba při parsování dokumentu\n"
 
 #: ../src/tracks.c:767
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "<span color='#aa0000'><b>Unknown service selected</b></span>\n"
 "This is a bug in %s!"
 msgstr ""
-"<span color='#aa0000'><b>Chyba na straně serveru</b></span>\n"
-"Zkuste to prosím později..."
+"<span color='#aa0000'><b>Vybrána neznámá služba</b></span>\n"
+"Toto je chyba v %s!"
 
 #: ../src/tracks.c:924
 msgid ""
@@ -560,7 +559,7 @@ msgstr "Zobraz mapu a GPS souřadnice"
 
 #: ../data/foxtrotgps.desktop.in.h:4
 msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
-msgstr ""
+msgstr "OpenStreetMap;OSM;cesta;trasa;výlet;mapa;místo;"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
 msgid "GPSD host"
@@ -592,11 +591,11 @@ msgstr "Definice zdrojů map"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:8
 msgid "Automatically download map-tiles as needed"
-msgstr "Automaticky stahovat díly mapy dle potřeby"
+msgstr "Automaticky stahovat mapové podklady dle potřeby"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:9
 msgid "Avoid re-downloading cached tiles"
-msgstr "Nestahovat znovu již stažené díly mapy"
+msgstr "Nestahovat znovu již stažené části mapy"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:10
 msgid "Log tracks to a local file"
@@ -608,11 +607,11 @@ msgstr "Adresář pro ukládání tras"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:12
 msgid "Horizontal viewport-coordinate"
-msgstr "Horizontální souřadnice viditelné oblasti"
+msgstr "Horizontální souřadnice zobrazené oblasti"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:13
 msgid "Vertical viewport-coordinate"
-msgstr "Vertikální souřadnice viditelné oblasti"
+msgstr "Vertikální souřadnice zobrazené oblasti"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:14
 msgid "Viewport zoom-level"
@@ -620,7 +619,7 @@ msgstr "Úroveň přiblížení"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:15
 msgid "Detail scale-factor"
-msgstr "Úroveň přiblížení"
+msgstr "Zvětšení podkladu"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:16
 msgid "`My position', latitude"
@@ -636,7 +635,7 @@ msgstr "Zveřejní vaše umístění a zobrazí umístění ostatních"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:19
 msgid "Friend-finder update interval, in minutes"
-msgstr "Interval mezi aktualizacemi při hledání přátel (minuty)"
+msgstr "Interval aktualizace pozice mezi přáteli (minuty)"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:20
 msgid "Status-message to publish in the friend-finder"
@@ -677,7 +676,7 @@ msgstr "Zobrazit informační oblast"
 
 #: ../data/foxtrotgps.glade.h:2
 msgid "Fullscreen (F11 or Space)"
-msgstr "Celá obrazovka (F11 nebo mezera)"
+msgstr "Celá obrazovka (F11 nebo mezerník)"
 
 #: ../data/foxtrotgps.glade.h:3
 msgid "Zoom in"
@@ -737,25 +736,23 @@ msgstr "Čas"
 
 #: ../data/foxtrotgps.glade.h:17
 msgid "Max"
-msgstr "Maximum"
+msgstr "Max"
 
 #: ../data/foxtrotgps.glade.h:18
 msgid "Average"
 msgstr "Průměr"
 
 #: ../data/foxtrotgps.glade.h:19
-#, fuzzy
 msgid "Trip"
-msgstr "Chyba"
+msgstr "Cesta"
 
 #: ../data/foxtrotgps.glade.h:21
 msgid "Reset"
 msgstr "Vynulovat"
 
 #: ../data/foxtrotgps.glade.h:22
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
-msgstr "<big><b>Tachometr </b></big>   <small>[1/4]</small>"
+msgstr "<big><b>Měření trasy</b></big>   <small>[1/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:23
 msgid "Altitude"
@@ -806,14 +803,12 @@ msgid "Configure"
 msgstr "Konfigurace"
 
 #: ../data/foxtrotgps.glade.h:35
-#, fuzzy
 msgid "<big><b>Tracks</b></big>   <small>[2/3]</small>"
-msgstr "<big><b>Trasy</b></big>   <small>[3/4]</small>"
+msgstr "<big><b>Trasa</b></big>   <small>[2/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:36
-#, fuzzy
 msgid "<big><b>Configuration</b></big>   <small>[3/3]</small>"
-msgstr "<big><b>Konfigurace</b></big>   <small>[4/4]</small>"
+msgstr "<big><b>Konfigurace</b></big>   <small>[3/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:37
 msgid ""
@@ -821,11 +816,11 @@ msgid ""
 "download of missing tiles into cache"
 msgstr ""
 "Povolit/zakázat automatické\n"
-"stahování chybějících dílů map"
+"stahování chybějících částí map"
 
 #: ../data/foxtrotgps.glade.h:39
 msgid "Auto download map tiles"
-msgstr "Automatické stahování mapových dílů"
+msgstr "Automatické stahování mapových podkladů"
 
 #: ../data/foxtrotgps.glade.h:40
 msgid "<b>Auto Download</b>"
@@ -833,7 +828,7 @@ msgstr "<b>Automatické Stahování</b>"
 
 #: ../data/foxtrotgps.glade.h:41
 msgid "Current Map:"
-msgstr "Aktuální zdroj map:"
+msgstr "Aktuální mapa:"
 
 #: ../data/foxtrotgps.glade.h:42
 msgid "New..."
@@ -948,13 +943,12 @@ msgid "<b>no GPS found</b>"
 msgstr "<b>GPS nenalezena</b>"
 
 #: ../data/foxtrotgps.glade.h:71
-#, fuzzy
 msgid "delete routepoint"
-msgstr "najít cestu"
+msgstr "smazat bod trasy"
 
 #: ../data/foxtrotgps.glade.h:72
 msgid "insert routepoint before this"
-msgstr ""
+msgstr "vložit bod trasy před tento"
 
 #: ../data/foxtrotgps.glade.h:73
 msgid "this point"
@@ -970,7 +964,7 @@ msgstr "zobrazit fotografie"
 
 #: ../data/foxtrotgps.glade.h:76
 msgid "route-finding"
-msgstr ""
+msgstr "nalezení trasy"
 
 #: ../data/foxtrotgps.glade.h:77
 msgid "get route"
@@ -978,33 +972,31 @@ msgstr "najít cestu"
 
 #: ../data/foxtrotgps.glade.h:78
 msgid "route-planning"
-msgstr ""
+msgstr "plánování trasy"
 
 #: ../data/foxtrotgps.glade.h:79
 msgid "add routepoint"
-msgstr ""
+msgstr "přidat bod trasy"
 
 #: ../data/foxtrotgps.glade.h:80
 msgid "load route from GPX"
-msgstr ""
+msgstr "načíst trasu z GPX"
 
 #: ../data/foxtrotgps.glade.h:81
 msgid "save route as GPX"
-msgstr ""
+msgstr "uložit trasu jako GPX"
 
 #: ../data/foxtrotgps.glade.h:82
 msgid "save route as TomTom ITN"
-msgstr ""
+msgstr "uložit trasu jako TomTom ITN"
 
 #: ../data/foxtrotgps.glade.h:83
-#, fuzzy
 msgid "clear route"
-msgstr "najít cestu"
+msgstr "smazat trasu"
 
 #: ../data/foxtrotgps.glade.h:84
-#, fuzzy
 msgid "waypoint"
-msgstr "trasové body"
+msgstr "body trasy"
 
 #: ../data/foxtrotgps.glade.h:85
 msgid "set WP"
@@ -1052,19 +1044,19 @@ msgstr "stažení mapy"
 
 #: ../data/foxtrotgps.glade.h:96
 msgid "map detail"
-msgstr "úroveň detailů "
+msgstr "zvětšení mapy"
 
 #: ../data/foxtrotgps.glade.h:97
 msgid "fewer/larger details"
-msgstr "níže/větší detaily"
+msgstr "zvětšit (přiblížit)"
 
 #: ../data/foxtrotgps.glade.h:98
 msgid "more/smaller details"
-msgstr "výše/menší detaily"
+msgstr "zmenšit (oddálit)"
 
 #: ../data/foxtrotgps.glade.h:99
 msgid "help"
-msgstr ""
+msgstr "pomoc"
 
 #: ../data/foxtrotgps.glade.h:100
 msgid "New Repository"
@@ -1148,11 +1140,11 @@ msgstr "Stažení map"
 
 #: ../data/foxtrotgps.glade.h:120
 msgid "Re-download cached tiles"
-msgstr "Znovu stáhnou již stažené díly mapy"
+msgstr "Znovu stáhnou všechny díly mapy"
 
 #: ../data/foxtrotgps.glade.h:121
 msgid "Download maps of currently visible area:"
-msgstr "Stáhnout mapy pro zobrazenou oblast:"
+msgstr "Stáhnout podklady právě zobrazné oblasti:"
 
 #: ../data/foxtrotgps.glade.h:122
 msgid "+ 1 zoom level"
@@ -1356,7 +1348,7 @@ msgstr "Souřadnice <b><i>vybrané</i></b> na mapě:"
 
 #: ../data/foxtrotgps.glade.h:187
 msgid "Use current GPS position instead"
-msgstr "Použít současnou GPS pozici"
+msgstr "Použít současnou GPS polohu"
 
 #: ../data/foxtrotgps.glade.h:188
 msgid "Get Route"
@@ -1396,7 +1388,7 @@ msgid ""
 "<small>(experimental feature)</small>"
 msgstr ""
 "<i>Vložte začátek a konec:</i>\n"
-"<small>(experimentální vlastnost)</small>"
+"<small>(experimentální funkce)</small>"
 
 #: ../data/foxtrotgps.glade.h:198
 msgid "<i><b>Connecting...</b></i>"
@@ -1412,7 +1404,7 @@ msgstr "Zpráva"
 
 #: ../data/foxtrotgps.glade.h:201
 msgid "Send Message to:"
-msgstr "Poslat zprávu komu:"
+msgstr "Poslat zprávu pro:"
 
 #: ../data/foxtrotgps.glade.h:202
 msgid "Geo Photo"
@@ -1498,7 +1490,7 @@ msgstr "<b>GPS:</b> "
 
 #: ../data/foxtrotgps.glade.h:225
 msgid "<b>Camera:</b> "
-msgstr "<b>Kamera:</b> "
+msgstr "<b>Foťákt:</b> "
 
 #: ../data/foxtrotgps.glade.h:226
 msgid "<b>Correction:</b> "
