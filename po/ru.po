@@ -2,16 +2,20 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps-0.9.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-02 00:58-0400\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Evgeny Ginzburg <Nad.Oby@gmail.com>\n"
+"POT-Creation-Date: 2014-10-04 18:23-0400\n"
+"PO-Revision-Date: 2014-10-05 17:09+0000\n"
+"Last-Translator: evadim <evadim@evadim.ru>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"X-Poedit-Language: Russian\n"
+"Plural-Forms: nplurals=3; plural=n%10==1 && n%100!=11 ? 0 : n%10>=2 && "
+"n%10<=4 && (n%100<10 || n%100>=20) ? 1 : 2;\n"
+"X-Launchpad-Export-Date: 2014-10-23 02:56+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
 "X-Poedit-Country: RUSSIAN FEDERATION\n"
+"Language: \n"
+"X-Poedit-Language: Russian\n"
 
 #: ../src/support.c:97 ../src/support.c:121
 #, c-format
@@ -25,11 +29,11 @@ msgstr ""
 
 #: ../src/main.c:33
 msgid "Print the program version and exit"
-msgstr ""
+msgstr "Показать версию программы и выйти"
 
 #: ../src/main.c:35
 msgid "Start in fullscreen mode"
-msgstr ""
+msgstr "запустить в полноэкранном режиме"
 
 #: ../src/main.c:37
 msgid "Load the GUI from this GladeXML file"
@@ -38,7 +42,7 @@ msgstr ""
 #: ../src/main.c:67
 #, c-format
 msgid "option parsing failed: %s\n"
-msgstr ""
+msgstr "Разбор параметров не удался: %s\n"
 
 #. Developers may run into this if they're naively
 #. trying to run from the build-tree without having
@@ -46,7 +50,7 @@ msgstr ""
 #. having passed a "--gui=..." option to the program,
 #. so we need to actually catch this error and output
 #. an informative message.
-#.
+#. 
 #. This is, however, not an error that end users should face;
 #. if they do, then someone upstream from them messed up--
 #. either `make install' worked only half-way, or a packager
@@ -54,7 +58,7 @@ msgstr ""
 #. we want to fail in a way that indicates to the user
 #. that something is really wrong and they should report
 #. a bug.
-#.
+#. 
 #: ../src/main.c:110
 #, c-format
 msgid ""
@@ -69,7 +73,7 @@ msgstr ""
 
 #: ../src/callbacks.c:891
 msgid "Share!"
-msgstr ""
+msgstr "Поделиться!"
 
 #: ../src/callbacks.c:960
 #, c-format
@@ -146,9 +150,9 @@ msgid "File not found"
 msgstr ""
 
 #: ../src/callbacks.c:1749
-#, fuzzy, c-format
+#, c-format
 msgid "No Geo Photo found"
-msgstr "Геотегированная фотографии"
+msgstr ""
 
 #: ../src/callbacks.c:2376
 msgid ""
@@ -157,27 +161,28 @@ msgstr ""
 
 #: ../src/callbacks.c:2625
 msgid "Show Messages"
-msgstr ""
+msgstr "Показать сообщения"
 
 #: ../src/callbacks.c:2631
 msgid "Hide Messages"
-msgstr ""
+msgstr "Скрыть сообщения"
 
 #: ../src/callbacks.c:3102
 msgid ""
 "gpscorrelate is necessary for this feature but does not appear to be "
 "installed."
 msgstr ""
+"для работы этой функции требуется gpscorrelate, но похоже она не установлена"
 
 #: ../src/callbacks.c:3221
 msgid ""
 "jhead is necessary for this feature but does not appear to be installed."
 msgstr ""
+"для работы этой функции требуется jhead, но похоже она не установлена"
 
 #: ../src/callbacks.c:3638
-#, fuzzy
 msgid "<b><i>Connecting...</i></b>"
-msgstr "Описание:"
+msgstr ""
 
 #: ../src/gps_functions.c:490
 msgid ""
@@ -187,25 +192,27 @@ msgstr ""
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
-msgstr ""
+msgstr "<b>не найден GPSD</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
 msgid ""
-"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
-"</b>"
+"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 msgstr ""
+"<b>не найден GPSD</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 
 #: ../src/gps_functions.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "<b>no GPSD found</b>"
-msgstr "<b>не найдено GPS устройство</b>"
+msgstr "<b>не найден GPSD</b>"
 
 #: ../src/gps_functions.c:619
 #, c-format
 msgid ""
-"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
-"small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
 
 #: ../src/gps_functions.c:682
@@ -216,17 +223,17 @@ msgstr ""
 #: ../src/gps_functions.c:780
 #, c-format
 msgid "connection to gpsd LOST\n"
-msgstr ""
+msgstr "соединение с gpsd ПОТЕРЯНО\n"
 
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr ""
+msgstr "соединение с gpsd УСТАНОВЛЕНО \n"
 
 #: ../src/init.c:264
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load pixbuf file: %s\n"
-msgstr "Не удалось найти файл: %s"
+msgstr ""
 
 #: ../src/friends.c:104 ../src/friends.c:471
 msgid "Connecting..."
@@ -234,7 +241,7 @@ msgstr ""
 
 #: ../src/friends.c:335
 msgid "No response (200)"
-msgstr ""
+msgstr "Нет ответа (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
@@ -289,7 +296,7 @@ msgstr[1] ""
 #: ../src/geo_photos.c:260 ../src/geo_photos.c:659
 #, c-format
 msgid "  %d:00h"
-msgstr ""
+msgstr "  %d:00ч"
 
 #: ../src/geo_photos.c:405 ../src/geo_photos.c:435
 msgid "<span color=\"#090\"><b>ok</b></span>"
@@ -315,14 +322,14 @@ msgstr ""
 
 #: ../src/poi.c:377
 msgid ""
-"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
-"Travel Agency|Other"
+"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate "
+"Agency|Travel Agency|Other"
 msgstr ""
 
 #: ../src/poi.c:378
 msgid ""
-"- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
-"Radar - Speed Trap|My Car"
+"- Please choose -|Parking|Gas Station|Repair "
+"Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car"
 msgstr ""
 
 #: ../src/poi.c:379
@@ -349,14 +356,14 @@ msgstr ""
 
 #: ../src/poi.c:384
 msgid ""
-"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
+"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast "
+"Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
 
 #: ../src/poi.c:385
 msgid ""
-"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
-"Laundry|Hairdresser|Other"
+"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter "
+"Box|Laundry|Hairdresser|Other"
 msgstr ""
 
 #: ../src/poi.c:386
@@ -366,14 +373,14 @@ msgstr ""
 
 #: ../src/poi.c:387
 msgid ""
-"- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
-"Butcher|DoItYourself|Other"
+"- Please choose -|Supermarket|Shopping "
+"Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other"
 msgstr ""
 
 #: ../src/poi.c:388
 msgid ""
-"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
-"Geo Cache|Other"
+"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice "
+"Skating|Golf|Geo Cache|Other"
 msgstr ""
 
 #: ../src/poi.c:389
@@ -382,23 +389,22 @@ msgstr ""
 
 #: ../src/poi.c:390
 msgid ""
-"- Please choose -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|Unknown|"
-"Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
-"Wherigo|Other"
+"- Please choose -|Traditional|Multi|Virtual|Letterbox "
+"Hybrid|Event|Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-"
+"Event|GPS Adventures|Wherigo|Other"
 msgstr ""
 
 #: ../src/poi.c:830
-#, fuzzy, c-format
+#, c-format
 msgid ""
 "%s\n"
 "\n"
 "Distance: %.3fkm"
-msgstr "Дистанция:"
+msgstr ""
 
 #: ../src/poi.c:844
-#, fuzzy
 msgid "<b>No POI found</b>\n"
-msgstr "<b>не найдено GPS устройство</b>"
+msgstr ""
 
 #: ../src/util.c:24
 #, c-format
@@ -464,9 +470,9 @@ msgid ""
 msgstr ""
 
 #: ../src/hrm_functions.c:151
-#, fuzzy, c-format
+#, c-format
 msgid "<b><big>%d</big></b> <small>bpm</small>"
-msgstr "<b>Маршрутомер</b>"
+msgstr ""
 
 #: ../src/hrm_functions.c:155
 #, c-format
@@ -490,28 +496,24 @@ msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
 msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
-#, fuzzy
 msgid "GPSD host"
-msgstr "GPSD"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:2
-#, fuzzy
 msgid "GPSD port"
-msgstr "Спорт"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:3
 msgid "Latitude/longitude unit"
 msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:4
-#, fuzzy
 msgid "Altitude unit"
-msgstr "Высота:"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:5
-#, fuzzy
 msgid "Speed unit"
-msgstr "Скорость"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:6
 msgid "The active map-repository"
@@ -522,23 +524,20 @@ msgid "Map-repository definitions"
 msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:8
-#, fuzzy
 msgid "Automatically download map-tiles as needed"
-msgstr "Скачивать карты автоматически"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:9
-#, fuzzy
 msgid "Avoid re-downloading cached tiles"
-msgstr "Скачивать карты автоматически"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:10
 msgid "Log tracks to a local file"
 msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:11
-#, fuzzy
 msgid "The directory into which track-files are written"
-msgstr "Директория сохранения треков"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:12
 msgid "Horizontal viewport-coordinate"
@@ -549,9 +548,8 @@ msgid "Vertical viewport-coordinate"
 msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:14
-#, fuzzy
 msgid "Viewport zoom-level"
-msgstr "+ 1 уровень увеличения"
+msgstr ""
 
 #: ../data/apps_foxtrotgps.schemas.in.h:15
 msgid "Detail scale-factor"
@@ -603,9 +601,8 @@ msgid "Use the heartrate-monitor specified in hrm_bt_addr"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:1
-#, fuzzy
 msgid "Show Info"
-msgstr "GPS информация"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:2
 msgid "Fullscreen (F11 or Space)"
@@ -620,9 +617,8 @@ msgid "Zoom out"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:5
-#, fuzzy
 msgid "Autocenter On"
-msgstr "автоцентрировать"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:6
 msgid "Next map repo"
@@ -633,9 +629,8 @@ msgid "Previous map repo"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:8
-#, fuzzy
 msgid "Enable Track Logging"
-msgstr "<b>Логи трасс</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:9
 msgid "Go to Previous Page"
@@ -666,58 +661,48 @@ msgid "0"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:16
-#, fuzzy
 msgid "Time"
-msgstr "Время:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:17
-#, fuzzy
 msgid "Max"
-msgstr "Скачивание карт"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:18
 msgid "Average"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:19
-#, fuzzy
 msgid "Trip"
-msgstr "Маршрут"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:21
-#, fuzzy
 msgid "Reset"
-msgstr "установить"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:22
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
-msgstr "<b>Маршрутомер</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:23
-#, fuzzy
 msgid "Altitude"
-msgstr "Высота:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:24
-#, fuzzy
 msgid "Heading"
-msgstr "Направление:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:25
-#, fuzzy
 msgid "Lat - Lon"
-msgstr "Широта, Долгота:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:26
-#, fuzzy
 msgid "GPS Time"
-msgstr "Время GPS;"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:27
-#, fuzzy
 msgid "Satellites"
-msgstr "Спутники:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:28
 msgid "<b>GPS Data</b>"
@@ -728,37 +713,32 @@ msgid "Enable Live Tracking"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:30
-#, fuzzy
 msgid "Split"
-msgstr "Спорт"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:31
 msgid "Load"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:32
-#, fuzzy
 msgid "Clear"
-msgstr "Авто"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:33
 msgid "Upload"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:34
-#, fuzzy
 msgid "Configure"
-msgstr "Настройка"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:35
-#, fuzzy
 msgid "<big><b>Tracks</b></big>   <small>[2/3]</small>"
-msgstr "<b>Маршрутомер</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:36
-#, fuzzy
 msgid "<big><b>Configuration</b></big>   <small>[3/3]</small>"
-msgstr "<b>Маршрутомер</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:37
 msgid ""
@@ -777,42 +757,36 @@ msgid "<b>Auto Download</b>"
 msgstr "<b>Скачивание карт</b>"
 
 #: ../data/foxtrotgps.glade.h:41
-#, fuzzy
 msgid "Current Map:"
-msgstr "Репозитарий:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:42
 msgid "New..."
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:43
-#, fuzzy
 msgid "Edit..."
-msgstr "Редактировать"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:44
-#, fuzzy
 msgid "<b>Map Types</b>"
-msgstr "<b>Репозитарии карт</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:45
 msgid "<i>Speed and Distance:</i>"
 msgstr "<i>Скорость и Расстояние:</i>"
 
 #: ../data/foxtrotgps.glade.h:46
-#, fuzzy
 msgid "metric"
-msgstr "метрическая"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:47
-#, fuzzy
 msgid "imperial"
-msgstr "имперская"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:48
-#, fuzzy
 msgid "nautical"
-msgstr "морская"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:49
 msgid "<i>Altitude:</i>"
@@ -831,19 +805,16 @@ msgid "<i>Lat &amp; Lon:</i>"
 msgstr "<i>Широта и Долгота:</i>"
 
 #: ../data/foxtrotgps.glade.h:53
-#, fuzzy
 msgid "d.dd"
-msgstr "d.dd"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:54
-#, fuzzy
 msgid "d m.m'"
-msgstr "d m.m'"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:55
-#, fuzzy
 msgid "d m's.s\""
-msgstr "d m's.s\""
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:56
 msgid "<b>Units</b>"
@@ -858,9 +829,8 @@ msgid "Bluetooth Address: "
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:59
-#, fuzzy
 msgid "<b>Heart Rate Monitor</b>"
-msgstr "Название репозитария"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:60
 msgid ""
@@ -872,7 +842,7 @@ msgstr ""
 
 #: ../data/foxtrotgps.glade.h:63
 msgid " GPSD "
-msgstr "GPSD"
+msgstr " GPSD "
 
 #: ../data/foxtrotgps.glade.h:64
 msgid "Host:"
@@ -884,16 +854,15 @@ msgstr "127.0.0.1"
 
 #: ../data/foxtrotgps.glade.h:66
 msgid " Port:"
-msgstr "порт:"
+msgstr " порт:"
 
 #: ../data/foxtrotgps.glade.h:67
 msgid "2947"
 msgstr "2947"
 
 #: ../data/foxtrotgps.glade.h:68
-#, fuzzy
 msgid "Change GPSD"
-msgstr " Подключиться к GPSD"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:69
 msgid "<b>GPSD</b>"
@@ -960,14 +929,12 @@ msgid "waypoint"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:85
-#, fuzzy
 msgid "set WP"
-msgstr "установить"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:86
-#, fuzzy
 msgid "unset WP"
-msgstr "снять"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:87
 msgid "POIs"
@@ -982,9 +949,8 @@ msgid "select POIs"
 msgstr "выбрать POI"
 
 #: ../data/foxtrotgps.glade.h:90
-#, fuzzy
 msgid "photos"
-msgstr "показать фото"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:91
 msgid "geocode"
@@ -1027,19 +993,16 @@ msgid "New Repository"
 msgstr "Новый репозитарий"
 
 #: ../data/foxtrotgps.glade.h:101
-#, fuzzy
 msgid "<b>Name for the new Repository</b>"
-msgstr "Название репозитария"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:102
-#, fuzzy
 msgid "<b>URI</b>"
-msgstr "<b>-</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:103
-#, fuzzy
 msgid "<b>Cache Dir</b>"
-msgstr "Директория кэш"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:104
 msgid "xyz instead of zxy"
@@ -1050,14 +1013,12 @@ msgid "All fields must be filled in"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:106
-#, fuzzy
 msgid "Edit Repository"
-msgstr "Новый репозитарий"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:107
-#, fuzzy
 msgid "<b>Repository Name</b>"
-msgstr "<b>Репозитарии карт</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:108
 msgid "GPS Info"
@@ -1074,20 +1035,18 @@ msgid ""
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:112
-#, fuzzy
 msgid ""
 "Set point as\n"
 "my position"
-msgstr "моё местоположение"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:114
 msgid "Close"
 msgstr "Закрыть"
 
 #: ../data/foxtrotgps.glade.h:115
-#, fuzzy
 msgid "Trackdir Config"
-msgstr "Треки"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:116
 msgid "Directory in which the tracks should be written:"
@@ -1106,9 +1065,8 @@ msgid "Map DL"
 msgstr "Скачивание карт"
 
 #: ../data/foxtrotgps.glade.h:120
-#, fuzzy
 msgid "Re-download cached tiles"
-msgstr "Скачивать карты автоматически"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:121
 msgid "Download maps of currently visible area:"
@@ -1139,9 +1097,8 @@ msgid "+ 6 zoom levels (~400MB)"
 msgstr "+ 6 уровней увеличения (~400MB)"
 
 #: ../data/foxtrotgps.glade.h:128
-#, fuzzy
 msgid "<b>Map Download</b>"
-msgstr "<b>Скачивание карт</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:129
 msgid "POI"
@@ -1164,9 +1121,8 @@ msgid "Edit"
 msgstr "Редактировать"
 
 #: ../data/foxtrotgps.glade.h:135
-#, fuzzy
 msgid "Delete"
-msgstr "футы"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:136
 msgid "Show POIs"
@@ -1193,9 +1149,8 @@ msgid ""
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:153
-#, fuzzy
 msgid "Delete POI?"
-msgstr "выбрать POI"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:154
 msgid ""
@@ -1213,11 +1168,11 @@ msgstr "GPS"
 
 #: ../data/foxtrotgps.glade.h:158
 msgid "Lat: "
-msgstr "Широта:"
+msgstr "Широта: "
 
 #: ../data/foxtrotgps.glade.h:159
 msgid " Lon: "
-msgstr "Долгота:"
+msgstr " Долгота: "
 
 #: ../data/foxtrotgps.glade.h:160
 msgid "Name - Keywords / Tags:"
@@ -1296,14 +1251,12 @@ msgid "Street,City,Country"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:190
-#, fuzzy
 msgid "<b>Start</b>"
-msgstr "<b>Данные GPS</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:191
-#, fuzzy
 msgid "<b>End</b>"
-msgstr "<b>-</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:192
 msgid "Pick Start on Map"
@@ -1318,9 +1271,8 @@ msgid "Pick End on Map"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:195
-#, fuzzy
 msgid "<b>Service</b>"
-msgstr "Директория кэш"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:196
 msgid ""
@@ -1353,18 +1305,16 @@ msgid "Big"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:204
-#, fuzzy
 msgid "GeoPhoto"
-msgstr "Геотегированная фотографии"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:205
 msgid "Photo Correlate"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:206
-#, fuzzy
 msgid "<b>Geocoding your photos</b>"
-msgstr " <b>Видеть местоположение других</b> "
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:207
 msgid "Geocode your photos by correlating them with a gps track.\n"
@@ -1387,9 +1337,8 @@ msgid "<b>3. Adjust Time</b>"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:213
-#, fuzzy
 msgid "View GPS Photo"
-msgstr "Геотегированная фотографии"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:214
 msgid "  +00:00h"
@@ -1400,14 +1349,12 @@ msgid "  0 seconds"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:216
-#, fuzzy
 msgid "Correction:"
-msgstr "Описание:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:217
-#, fuzzy
 msgid "Timezone:"
-msgstr "Время:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:219
 #, no-c-format
@@ -1427,29 +1374,24 @@ msgid "Image Data"
 msgstr ""
 
 #: ../data/foxtrotgps.glade.h:224
-#, fuzzy
 msgid "<b>GPS:</b> "
-msgstr "<b>GPSD</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:225
-#, fuzzy
 msgid "<b>Camera:</b> "
-msgstr "Директория кэш"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:226
-#, fuzzy
 msgid "<b>Correction:</b> "
-msgstr "Описание:"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:227
-#, fuzzy
 msgid "s   "
-msgstr "  "
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:228
-#, fuzzy
 msgid "<b>Timezone:</b> "
-msgstr "<b>Маршрутомер</b>"
+msgstr ""
 
 #: ../data/foxtrotgps.glade.h:229
 msgid ""
@@ -1479,380 +1421,3 @@ msgid ""
 "+11:00\n"
 "+12:00"
 msgstr ""
-
-#, fuzzy
-#~ msgid "<b>Me</b>"
-#~ msgstr "<b>-</b>"
-
-#, fuzzy
-#~ msgid "<b>Position Sharing</b>"
-#~ msgstr "<b>Обновление местоположения</b>"
-
-#, fuzzy
-#~ msgid "<b>Sharing Mode</b>"
-#~ msgstr " <b>Обновление моего местоположения</b> "
-
-#~ msgid "JohnDoe"
-#~ msgstr "ВасяПупкин"
-
-#, fuzzy
-#~ msgid "Nickname"
-#~ msgstr "Имя пользователя"
-
-#~ msgid "Password"
-#~ msgstr "Пароль"
-
-#, fuzzy
-#~ msgid "Register!"
-#~ msgstr "Зарегистрировать!"
-
-#, fuzzy
-#~ msgid "Show password"
-#~ msgstr "Пароль"
-
-#~ msgid "foobar"
-#~ msgstr "суперпуперпароль"
-
-#, fuzzy
-#~ msgid "friend mode"
-#~ msgstr "Информация о друзьях"
-
-#~ msgid "minutes"
-#~ msgstr "минут"
-
-#~ msgid "show friends"
-#~ msgstr "показать друзей"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-
-#, fuzzy
-#~ msgid "     Share!     "
-#~ msgstr "Стоп"
-
-#, fuzzy
-#~ msgid "Email        "
-#~ msgstr "EMail"
-
-#, fuzzy
-#~ msgid "      New...       "
-#~ msgstr "Новый..."
-
-#, fuzzy
-#~ msgid "      Edit...     "
-#~ msgstr "Настроить"
-
-#~ msgid "URI"
-#~ msgstr "Адрес"
-
-#~ msgid "Cache Dir"
-#~ msgstr "Директория кэш"
-
-#~ msgid "    Save Repository Configuration    "
-#~ msgstr "Сохранить настройки репозитария "
-
-#, fuzzy
-#~ msgid " "
-#~ msgstr "  "
-
-#~ msgid "unused"
-#~ msgstr "не использовано"
-
-#~ msgid "-- Show All --"
-#~ msgstr "-- Показать всё --"
-
-#, fuzzy
-#~ msgid "Accomodation"
-#~ msgstr "Размещениё"
-
-#~ msgid "Businesses"
-#~ msgstr "Бизнес"
-
-#~ msgid "Car"
-#~ msgstr "Авто"
-
-#~ msgid "Cultural"
-#~ msgstr "Культура"
-
-#~ msgid "Medical"
-#~ msgstr "Медицина"
-
-#, fuzzy
-#~ msgid "Cafe / Pub / Nightlife"
-#~ msgstr "Кафе / Бар / Ночной клуб"
-
-#~ msgid "Place of Worship"
-#~ msgstr "Религия"
-
-#~ msgid "Public Transportation"
-#~ msgstr "Общественный транспорт"
-
-#~ msgid "Restaurant"
-#~ msgstr "Ресторан"
-
-#~ msgid "Services"
-#~ msgstr "Услуги"
-
-#~ msgid "Sights / Leisure"
-#~ msgstr "Достопримечательности / Досуг"
-
-#~ msgid "Shopping"
-#~ msgstr "Покупки"
-
-#~ msgid "Go To "
-#~ msgstr "Перейти"
-
-#~ msgid "- please choose -"
-#~ msgstr "- выберите -"
-
-#~ msgid "Restaurant & Food"
-#~ msgstr "Рестораны и питание"
-
-#~ msgid "Sights & Leisure"
-#~ msgstr "Достопримечательности и Досуг"
-
-#, fuzzy
-#~ msgid "Nightlife"
-#~ msgstr "Ночной клуб"
-
-#, fuzzy
-#~ msgid "Please choose"
-#~ msgstr "- выберите -"
-
-#, fuzzy
-#~ msgid "      "
-#~ msgstr "Карта"
-
-#, fuzzy
-#~ msgid " GPS "
-#~ msgstr "GPSD"
-
-#, fuzzy
-#~ msgid " Pick "
-#~ msgstr "Трасса"
-
-#~ msgid "  "
-#~ msgstr "  "
-
-#, fuzzy
-#~ msgid "  Go To  "
-#~ msgstr "Перейти"
-
-#~ msgid "      Stop       "
-#~ msgstr "Стоп"
-
-#~ msgid "     Reset     "
-#~ msgstr "Обнулить"
-
-#, fuzzy
-#~ msgid "Enable logging of your tracks for later use, i.e. for extending OSM"
-#~ msgstr ""
-#~ "Здесь Вы можете включить / отключить логирование ваших маршрутов для "
-#~ "дальнейшего использования, например улучшения карт OSM (openstrretmap.org)"
-
-#~ msgid "            Start            "
-#~ msgstr "Старт"
-
-#~ msgid "           Split           "
-#~ msgstr "Разделить"
-
-#~ msgid "      Configure...      "
-#~ msgstr "Настроить"
-
-#, fuzzy
-#~ msgid "      Load...     "
-#~ msgstr "Настроить"
-
-#~ msgid "unused cols"
-#~ msgstr "Неиспользованные колонки"
-
-#, fuzzy
-#~ msgid "unused window"
-#~ msgstr "Неиспользованные колонки"
-
-#, fuzzy
-#~ msgid "---"
-#~ msgstr "--"
-
-#, fuzzy
-#~ msgid ""
-#~ "Update your position to a server\n"
-#~ "and receive your friends positions,\n"
-#~ "shown on the map."
-#~ msgstr ""
-#~ "Обновить Ваше местоположение на сервере\n"
-#~ "и получить местоположение Ваших друзей\n"
-#~ "отображённое на карте."
-
-#~ msgid "once"
-#~ msgstr "один раз"
-
-#~ msgid "every"
-#~ msgstr "каждые"
-
-#, fuzzy
-#~ msgid "     Update Me!     "
-#~ msgstr "Обновить!"
-
-#~ msgid "Permission to see me for:"
-#~ msgstr "Разрешить видеть меня:"
-
-#~ msgid "public (you remain anonymous)"
-#~ msgstr "всем (Вы остаётесь анонимным)"
-
-#, fuzzy
-#~ msgid "registered nicks"
-#~ msgstr "зарегистрированным пользователям"
-
-#, fuzzy
-#~ msgid "my friends"
-#~ msgstr "моим друзьям"
-
-#, fuzzy
-#~ msgid " <b>Updating My Position</b> "
-#~ msgstr " <b>Обновление моего местоположения</b> "
-
-#~ msgid "Show me the positions from:"
-#~ msgstr "Показать мне местоположение"
-
-#~ msgid " <b>Getting Other's Positions</b> "
-#~ msgstr " <b>Видеть местоположение других</b> "
-
-#, fuzzy
-#~ msgid ""
-#~ "Choose any nickname you want to have. A password is only necessary if you "
-#~ "have already registered your nick or you want to register it.\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.foxtrotgps.org/friends"
-#~ msgstr ""
-#~ "Выберите имя пользователя\n"
-#~ "Пароль необходим только если\n"
-#~ "Вы уже зарегистрировались\n"
-#~ "или хотите зарегистрироваться.\n"
-#~ "Подробная информация на:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-
-#~ msgid "<b>  Me  </b>"
-#~ msgstr "<b>Мои данные</b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "Start gllin and gpsd (Openmoko Neo1973 <i>not Freerunner</i>).\n"
-#~ msgstr ""
-#~ "\n"
-#~ "Запуск gllin и gpsd (только Openmoko Neo1973 <i>не Freerunner</i>).\n"
-
-#~ msgid "/home/root/gllin/gllin &"
-#~ msgstr "/home/root/gllin/gllin &"
-
-#~ msgid "     Start gllin and GPSD     "
-#~ msgstr "Запустить gllin и GPSD"
-
-#~ msgid "<b>gllin and gpsd</b>"
-#~ msgstr "<b>gllin и gpsd</b>"
-
-#~ msgid ""
-#~ "\n"
-#~ "The following section is \n"
-#~ "for development purposes"
-#~ msgstr ""
-#~ "\n"
-#~ "Следующая секция\n"
-#~ "для целей разработки"
-
-#~ msgid "/home/root/gprs.sh &"
-#~ msgstr "/home/root/gprs.sh &"
-
-#~ msgid "Start pppd/gprs"
-#~ msgstr "Запуск pppd/gprs"
-
-#~ msgid "/home/root/other.sh"
-#~ msgstr "/home/root/other.sh"
-
-#~ msgid "Other stuff"
-#~ msgstr "Дополнительно"
-
-#, fuzzy
-#~ msgid "fullscreen"
-#~ msgstr "во весь экран"
-
-#~ msgid "      +      "
-#~ msgstr "      +      "
-
-#~ msgid "      -      "
-#~ msgstr "      -      "
-
-#, fuzzy
-#~ msgid "   info   "
-#~ msgstr "Карта"
-
-#, fuzzy
-#~ msgid " center "
-#~ msgstr "автоцентрировать"
-
-#~ msgid "map"
-#~ msgstr "карта"
-
-#~ msgid "   Map   "
-#~ msgstr "Карта"
-
-#, fuzzy
-#~ msgid "  Trip  "
-#~ msgstr "Маршрут"
-
-#~ msgid ""
-#~ "Choose any nickname you want\n"
-#~ "to have. A password is only necessary\n"
-#~ "if you have already registered your \n"
-#~ "nick or you want to register it.\n"
-#~ "\n"
-#~ "Further info at:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-#~ msgstr ""
-#~ "Выберите имя пользователя\n"
-#~ "Пароль необходим только если\n"
-#~ "Вы уже зарегистрировались\n"
-#~ "или хотите зарегистрироваться.\n"
-#~ "Подробная информация на:\n"
-#~ "http://www.foxtrotgps.org/friends\n"
-
-#~ msgid ""
-#~ "\n"
-#~ "\n"
-#~ "To register this nick simply put in your email and click below!\n"
-#~ "Your email will not be shown, nor shared and only used for a reminder in "
-#~ "case of a lost password."
-#~ msgstr ""
-#~ "\n"
-#~ "\n"
-#~ "Чтобы зарегистрироваться просто заполните Ваш Email адрес  и нажмите "
-#~ "кнопку ниже. Ваш Email нигде не будет отображаться и будет использован "
-#~ "только для напоминания пароля."
-
-#~ msgid " Friends "
-#~ msgstr "Друзья"
-
-#~ msgid "Avg. Speed:"
-#~ msgstr "Средняя скорость:"
-
-#~ msgid "Max Speed:"
-#~ msgstr "Максимальная скорость:"
-
-#, fuzzy
-#~ msgid "filter POIs"
-#~ msgstr "выбрать POI"
-
-#~ msgid "Inverted Zoom"
-#~ msgstr "Обращённый Zoom"
-
-#~ msgid "version"
-#~ msgstr "версия"
