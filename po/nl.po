@@ -2,17 +2,19 @@ msgid ""
 msgstr ""
 "Project-Id-Version: foxtrotgps 0.99.2\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2014-10-02 00:58-0400\n"
-"PO-Revision-Date: \n"
-"Last-Translator: Sander van Grieken <sander@3v8.net>\n"
+"POT-Creation-Date: 2014-10-04 18:23-0400\n"
+"PO-Revision-Date: 2014-10-05 20:53+0000\n"
+"Last-Translator: marc verwerft <marc.js.verwerft@gmail.com>\n"
 "Language-Team: \n"
-"Language: \n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
-"Plural-Forms: nplurals-2; plural=(n != 1);\n"
-"X-Poedit-Language: Dutch\n"
+"Plural-Forms: nplurals=2; plural=n != 1;\n"
+"X-Launchpad-Export-Date: 2014-10-23 02:56+0000\n"
+"X-Generator: Launchpad (build 17203)\n"
 "X-Poedit-Country: NETHERLANDS\n"
+"Language: \n"
+"X-Poedit-Language: Dutch\n"
 "X-Poedit-SourceCharset: iso-8859-1\n"
 
 #: ../src/support.c:97 ../src/support.c:121
@@ -23,24 +25,24 @@ msgstr "Kon pixmap bestand niet vinden: %s"
 #: ../src/support.c:128
 #, c-format
 msgid "Failed to load pixbuf file: %s: %s\n"
-msgstr ""
+msgstr "het laden van pixbuf bestand %s: %s is mislukt\n"
 
 #: ../src/main.c:33
 msgid "Print the program version and exit"
-msgstr ""
+msgstr "Print de programma versie en sluit af"
 
 #: ../src/main.c:35
 msgid "Start in fullscreen mode"
-msgstr ""
+msgstr "Start schermvullend"
 
 #: ../src/main.c:37
 msgid "Load the GUI from this GladeXML file"
-msgstr ""
+msgstr "Laad de GUI uit dit GladeXML bestand"
 
 #: ../src/main.c:67
 #, c-format
 msgid "option parsing failed: %s\n"
-msgstr ""
+msgstr "optie verwerken mislukt: %s\n"
 
 #. Developers may run into this if they're naively
 #. trying to run from the build-tree without having
@@ -48,7 +50,7 @@ msgstr ""
 #. having passed a "--gui=..." option to the program,
 #. so we need to actually catch this error and output
 #. an informative message.
-#.
+#. 
 #. This is, however, not an error that end users should face;
 #. if they do, then someone upstream from them messed up--
 #. either `make install' worked only half-way, or a packager
@@ -56,32 +58,34 @@ msgstr ""
 #. we want to fail in a way that indicates to the user
 #. that something is really wrong and they should report
 #. a bug.
-#.
+#. 
 #: ../src/main.c:110
 #, c-format
 msgid ""
 "%s could not load its user interface; %s does not not appear to be properly "
 "installed."
 msgstr ""
+"%s kon zijn user interface niet laden, %s lijkt niet goed geinstalleerd te "
+"zijn."
 
 #: ../src/callbacks.c:870 ../src/callbacks.c:1370
 #: ../data/foxtrotgps.glade.h:20
 msgid "Stop"
-msgstr ""
+msgstr "Stoppen"
 
 #: ../src/callbacks.c:891
 msgid "Share!"
-msgstr ""
+msgstr "Delen!"
 
 #: ../src/callbacks.c:960
 #, c-format
 msgid "<b><i>Distance:</i></b> %.3fkm\n"
-msgstr ""
+msgstr "<b><i>Afstand:</i></b> %.3fkm\n"
 
 #: ../src/callbacks.c:985
 #, c-format
 msgid "No friends at or near this position"
-msgstr ""
+msgstr "Geen vrienden op of nabij deze locatie"
 
 #: ../src/callbacks.c:1094
 #, c-format
@@ -91,6 +95,10 @@ msgid ""
 "<small><i>(coords auto-copied to clipboard)\n"
 "</i></small>\n"
 msgstr ""
+"<b>Dit punt:</b\n"
+"%s\n"
+"<small><i>(coordinaten worden automatich naar het klembord gekopieerd)\n"
+"</i></small>\n"
 
 #: ../src/callbacks.c:1100
 #, c-format
@@ -98,6 +106,8 @@ msgid ""
 "<b>Bearing:</b>\n"
 "%.1f°\n"
 msgstr ""
+"<b>Richting:</b>\n"
+"%.1f°\n"
 
 #: ../src/callbacks.c:1105
 #, c-format
@@ -105,11 +115,13 @@ msgid ""
 "<b>Distance from your location:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Afstand vanaf jouw locatie:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1113
 #, c-format
 msgid "Click another point for distance"
-msgstr ""
+msgstr "Klik op een ander punt voor de afstand"
 
 #: ../src/callbacks.c:1117
 #, c-format
@@ -117,6 +129,8 @@ msgid ""
 "<b>Distance from last point:</b>\n"
 "%.2f%s\n"
 msgstr ""
+"<b>Afstand vanaf laatste punt:</b>\n"
+"%.2f%s\n"
 
 #: ../src/callbacks.c:1119
 #, c-format
@@ -124,6 +138,8 @@ msgid ""
 "<b>Overall Distance:</b>\n"
 "%.2f%s"
 msgstr ""
+"<b>Totale afstand:</b>\n"
+"%.2f%s"
 
 #: ../src/callbacks.c:1255
 #, c-format
@@ -137,30 +153,39 @@ msgid ""
 "will now be used as your location\n"
 "for the friend finder service."
 msgstr ""
+"b>Manueel de positie zetten</b>\n"
+"\n"
+"Dit punt:\n"
+"\n"
+"  <i>%f %f</i>\n"
+"\n"
+"zal vanaf nu gebruikt worden als jouw lokatie\n"
+"door de service om vrienden te zoeken."
 
 #: ../src/callbacks.c:1372
 msgid "Resume"
-msgstr ""
+msgstr "Hervat"
 
 #: ../src/callbacks.c:1700 ../src/callbacks.c:1809
 #, c-format
 msgid "File not found"
-msgstr ""
+msgstr "Bestand niet gevonden"
 
 #: ../src/callbacks.c:1749
-#, fuzzy, c-format
+#, c-format
 msgid "No Geo Photo found"
-msgstr "Geo Foto"
+msgstr "Geen Geo foto gevonden"
 
 #: ../src/callbacks.c:2376
 msgid ""
 "<span foreground='#ff0000'>POI has no ID -> see website for help!</span>"
 msgstr ""
+"<span foreground='#ff0000'>POI heeft geen ID -> Raadpleeg de website voor "
+"hulp!</span>"
 
 #: ../src/callbacks.c:2625
-#, fuzzy
 msgid "Show Messages"
-msgstr "Bericht"
+msgstr "Boodschappen tonen"
 
 #: ../src/callbacks.c:2631
 msgid "Hide Messages"
@@ -171,78 +196,87 @@ msgid ""
 "gpscorrelate is necessary for this feature but does not appear to be "
 "installed."
 msgstr ""
+"Het programma gpscorrelate is nodig voor deze functie maar is blijkbaar niet "
+"geïnstalleerd."
 
 #: ../src/callbacks.c:3221
 msgid ""
 "jhead is necessary for this feature but does not appear to be installed."
 msgstr ""
+"Het programma jhead is nodig voor deze functie maar is blijkbaar niet "
+"geïnstalleerd."
 
 #: ../src/callbacks.c:3638
-#, fuzzy
 msgid "<b><i>Connecting...</i></b>"
-msgstr "<i><b>Verbinden...</b></i>"
+msgstr "<b><i>Bezig met connecteren...</i></b>"
 
 #: ../src/gps_functions.c:490
 msgid ""
 "<span foreground='#ff0000'><b>New Message arrived. Click here.</b></span>"
 msgstr ""
+"<span foreground='#ff0000'><b>Nieuwe boodschap toegekomen. Klik "
+"hier.</b></span>"
 
 #: ../src/gps_functions.c:509
 #, c-format
 msgid "<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 msgstr ""
+"<b>geen GPSD gevonden</b> - <span foreground='#0000ff'><b>D%d</b></span>"
 
 #: ../src/gps_functions.c:516
 #, c-format
 msgid ""
-"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - <b>[%d]"
-"</b>"
+"<b>no GPSD found</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 msgstr ""
+"<b>geen GPSD gevonden</b> - <span foreground='#0000ff'><b>D%d</b></span> - "
+"<b>[%d]</b>"
 
 #: ../src/gps_functions.c:523
-#, fuzzy, c-format
+#, c-format
 msgid "<b>no GPSD found</b>"
-msgstr "<b>Mijn Identiteit</b>"
+msgstr "<b>geen GPSD gevonden</b>"
 
 #: ../src/gps_functions.c:619
 #, c-format
 msgid ""
-"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt </"
-"small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 msgstr ""
+"%s%s%s%s<b>%4.1f</b>%s <small>trp </small><b>%.2f</b>%s <small>alt "
+"</small><b>%.0f</b>%s <small>hdg </small><b>%.0f</b>° <small></small>%d/%.1f"
 
 #: ../src/gps_functions.c:682
 #, c-format
 msgid "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
-msgstr ""
+msgstr "<big><b>%d</b>  <small>HDOP</small><b> %.1f</b></big>"
 
 #: ../src/gps_functions.c:780
 #, c-format
 msgid "connection to gpsd LOST\n"
-msgstr ""
+msgstr "connectie met GPSD kwijtgeraakt\n"
 
 #: ../src/gps_functions.c:849
 #, c-format
 msgid "connection to gpsd SUCCEEDED \n"
-msgstr ""
+msgstr "connectie leggen naar gpsd GELUKT \n"
 
 #: ../src/init.c:264
-#, fuzzy, c-format
+#, c-format
 msgid "Failed to load pixbuf file: %s\n"
-msgstr "Kon pixmap bestand niet vinden: %s"
+msgstr "Kan pixbuf bestand niet laden: %s\n"
 
 #: ../src/friends.c:104 ../src/friends.c:471
-#, fuzzy
 msgid "Connecting..."
-msgstr "<i><b>Verbinden...</b></i>"
+msgstr "Bezig met Verbinden..."
 
 #: ../src/friends.c:335
 msgid "No response (200)"
-msgstr ""
+msgstr "Geen antwoord (200)"
 
 #: ../src/friends.c:557
 msgid "Oh. Some error occurred..."
-msgstr ""
+msgstr "Oei. Er is een fout opgetreden ..."
 
 #: ../src/friends.c:580
 #, c-format
@@ -252,24 +286,28 @@ msgid ""
 "%s\n"
 "<i>%s</i>"
 msgstr ""
+"<b>%s</b>\n"
+"Laatst gezien:\n"
+"%s\n"
+"<i>%s</i>"
 
 #: ../src/friends.c:601
 msgid "Msg"
-msgstr ""
+msgstr "Msg"
 
 #: ../src/friends.c:609 ../src/friends.c:979 ../data/foxtrotgps.glade.h:133
 msgid "Go To"
 msgstr "Ga Naar"
 
 #: ../src/friends.c:629
-#, fuzzy, c-format
+#, c-format
 msgid "Send Message To: <b>%s</b>"
-msgstr "Stuur Bericht naar:"
+msgstr "Bericht zenden naar: <b>%s</b>"
 
 #: ../src/friends.c:903
 #, c-format
 msgid "msg-code: %d"
-msgstr ""
+msgstr "msg-code: %d"
 
 #: ../src/friends.c:957
 #, c-format
@@ -278,32 +316,34 @@ msgid ""
 "\n"
 "%s"
 msgstr ""
+"<i><small>Aan: </small><b>%s</b></i>\n"
+"\n"
+"%s"
 
 #: ../src/friends.c:971
-#, fuzzy
 msgid "Reply"
-msgstr "  Antwoord  "
+msgstr "Beantwoord"
 
 #: ../src/geo_photos.c:254 ../src/geo_photos.c:653
-#, fuzzy, c-format
+#, c-format
 msgid "  1 second"
 msgid_plural "  %d seconds"
-msgstr[0] "  0 seconden"
-msgstr[1] "  0 seconden"
+msgstr[0] "  1 seconde"
+msgstr[1] "  %d seconden"
 
 #: ../src/geo_photos.c:260 ../src/geo_photos.c:659
 #, c-format
 msgid "  %d:00h"
-msgstr ""
+msgstr "  %d:00h"
 
 #: ../src/geo_photos.c:405 ../src/geo_photos.c:435
 msgid "<span color=\"#090\"><b>ok</b></span>"
-msgstr ""
+msgstr "<span color=\"#090\"><b>ok</b></span>"
 
 #: ../src/geo_photos.c:609
 #, c-format
 msgid "%s loading pixbuf failed - actually this should not happen\n"
-msgstr ""
+msgstr "%s laden van pixbuf is mislukt - eigenlijk mag dit niet gebeuren\n"
 
 #: ../src/geo_photos.c:706 ../data/foxtrotgps.glade.h:222
 msgid "Working...."
@@ -312,85 +352,104 @@ msgstr "Bezig...."
 #: ../src/geo_photos.c:867
 #, c-format
 msgid "Error running \"%s\": %s\n"
-msgstr ""
+msgstr "Fout tijdens uitvoeren van \"%s\":%s\n"
 
 #: ../src/poi.c:376
 msgid "- Please choose -|Hotel|Motel|B&B|Hostel|Camping"
-msgstr ""
+msgstr "- Kies uit  -|Hotel|Motel|B&B|Hostel|Camping"
 
 #: ../src/poi.c:377
 msgid ""
-"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate Agency|"
-"Travel Agency|Other"
+"- Please choose -|Bank / Exchange / ATM|Post Office|Real Estate "
+"Agency|Travel Agency|Other"
 msgstr ""
+"- Kies uit -|Bank / Wissel / ATM|Postkantoor|Vastgoed "
+"makelaarskantoor|Reisagentschap|Andere"
 
 #: ../src/poi.c:378
 msgid ""
-"- Please choose -|Parking|Gas Station|Repair Shop|Rental|Sharing|Dealer|"
-"Radar - Speed Trap|My Car"
+"- Please choose -|Parking|Gas Station|Repair "
+"Shop|Rental|Sharing|Dealer|Radar - Speed Trap|My Car"
 msgstr ""
+"- Kies uit -|Parking|Tankstation|Garage|Huurwagen|Gedeelde "
+"wagen|Dealer|Radar - Snelheidsmeting|Mijn wagen"
 
 #: ../src/poi.c:379
 msgid "- Please choose -|Cinema|Theatre|Concert Hall|Opera|Casino"
-msgstr ""
+msgstr "- Kies uit -|Cinema|Theater|Concert gebouw|Opera|Casino"
 
 #: ../src/poi.c:380
 msgid "- Please choose -|Pharmacy|Hospital|Doctor"
-msgstr ""
+msgstr "- Kies uit -|Apotheek|Hospitaal|Dokter"
 
 #: ../src/poi.c:381
 msgid ""
 "- Please choose -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot "
 "Spot"
 msgstr ""
+"- Kies uit -|Cafe|Pub|Lounge Bar|Club|Dancing|Internet Cafe|Wifi Hot Spot"
 
 #: ../src/poi.c:382
 msgid "- Please choose -|Church|Mosque|Synagogue|Temple|Cemetery"
-msgstr ""
+msgstr "- Kies uit -|Kerk|Moskee|Synagoge|Tempel|Grafplaats"
 
 #: ../src/poi.c:383
 msgid "- Please choose -|Bus|Metro|Tram|Taxi|Train Station|Bike|Port|Airport"
-msgstr ""
+msgstr "- Kies uit -|Bus|Metro|Tram|Taxi|Station|Fiets|Haven|Luchthaven"
 
 #: ../src/poi.c:384
 msgid ""
-"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast Food|"
-"Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
+"- Please choose -|Local Food|European|Asian|American|African|Pizza|Fast "
+"Food|Take Away|Barbecue|Italian|Mexican|Indian|Japanese|French"
 msgstr ""
+"- Kies uit -|Lokale "
+"gerechten|Europees|Aziatisch|Amerikaans|Afrikaans|Pizza|Fast "
+"Food|Meeneem|Barbecue|Italiaans|Mexicaans|Indisch|Japans|Frans"
 
 #: ../src/poi.c:385
 msgid ""
-"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter Box|"
-"Laundry|Hairdresser|Other"
+"- Please choose -|Wifi Hotspot|ATM-Money Dispenser|Post Office/Letter "
+"Box|Laundry|Hairdresser|Other"
 msgstr ""
+"- Kies uit -|Wifi Hotspot|ATM-"
+"geldautomaat|Postkantoor/Brievenbus|Wasserij|Kapper|Andere"
 
 #: ../src/poi.c:386
 msgid ""
 "- Please choose -|Tourist Info|Monument|Museum|Zoo|Viewpoint|Relief Map|Other"
 msgstr ""
+"- Kies uit -|Toeristische Info|Monument|Museum|Zoo|Uitzicht punt|Reliëf "
+"kaart|Andere"
 
 #: ../src/poi.c:387
 msgid ""
-"- Please choose -|Supermarket|Shopping Center|Clothes|Shoes|Food|Baker|"
-"Butcher|DoItYourself|Other"
+"- Please choose -|Supermarket|Shopping "
+"Center|Clothes|Shoes|Food|Baker|Butcher|DoItYourself|Other"
 msgstr ""
+"- Kies uit -|Supermarkt|Shopping "
+"Center|Kleren|Schoenen|Voedsel|Bakkerij|Slager|Doe-het-zelf zaak|Andere"
 
 #: ../src/poi.c:388
 msgid ""
-"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice Skating|Golf|"
-"Geo Cache|Other"
+"- Please choose -|Arena/Stadium|Swimming Pool|Freeclimbing|Ice "
+"Skating|Golf|Geo Cache|Other"
 msgstr ""
+"- Kies uit -|Arena/Stadium|Zwembad|Vrij klimmen|Ijs schaatsen|Golf|Geo "
+"Cache|Andere"
 
 #: ../src/poi.c:389
 msgid "- Please choose -|Friend|Other Cool Place"
-msgstr ""
+msgstr "- Kies uit -|Vriend|Andere toffe Plaats"
 
 #: ../src/poi.c:390
 msgid ""
-"- Please choose -|Traditional|Multi|Virtual|Letterbox Hybrid|Event|Unknown|"
-"Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-Event|GPS Adventures|"
-"Wherigo|Other"
+"- Please choose -|Traditional|Multi|Virtual|Letterbox "
+"Hybrid|Event|Unknown|Project Ape|Webcam|Cache In Trash Out|Earthcache|Mega-"
+"Event|GPS Adventures|Wherigo|Other"
 msgstr ""
+"- Kies uit -|Traditioneel|Multi|Virtueel|Brievenbus "
+"Hybrid|Evenement|Onbekend|Project Ape|Webcam|Cache In Trash Out|Wereld "
+"cache|Mega-Evenement|GPS Avonturen|Wherigo|Andere"
 
 #: ../src/poi.c:830
 #, c-format
@@ -399,49 +458,51 @@ msgid ""
 "\n"
 "Distance: %.3fkm"
 msgstr ""
+"%s\n"
+"\n"
+"Afstand: %.3fkm"
 
 #: ../src/poi.c:844
-#, fuzzy
 msgid "<b>No POI found</b>\n"
-msgstr "<b>Eind</b>"
+msgstr "<b>Geen POI gevonden</b>\n"
 
 #: ../src/util.c:24
 #, c-format
 msgid "Can't open database: %s\n"
-msgstr ""
+msgstr "Kan database niet openen: %s\n"
 
 #: ../src/util.c:35
 #, c-format
 msgid "SQL error: %s\n"
-msgstr ""
+msgstr "SQL fout: %s\n"
 
 #: ../src/tracks.c:291
 #, c-format
 msgid "oops: %s\n"
-msgstr ""
+msgstr "Oei: %s\n"
 
 #: ../src/tracks.c:292
 msgid "Triplog open failed: "
-msgstr ""
+msgstr "Openen van triplog mislukt: "
 
 #: ../src/tracks.c:294
 msgid "<span foreground='#ff0000'>Error opening logfile</span>"
-msgstr ""
+msgstr "<span foreground='#ff0000'>Fout bij openen van logbestand</span>"
 
 #: ../src/tracks.c:300
 #, c-format
 msgid "<b><span foreground='#0000ff'>Log: %s</span></b>"
-msgstr ""
+msgstr "<b><span foreground='#0000ff'>Log: %s</span></b>"
 
 #: ../src/tracks.c:367
 #, c-format
 msgid "Problem opening directory: %s\n"
-msgstr ""
+msgstr "Probleem bij lezen van directory: %s\n"
 
 #: ../src/tracks.c:629 ../src/tracks.c:654
 #, c-format
 msgid "Failed to parse document\n"
-msgstr ""
+msgstr "Ontleden van document is mislukt\n"
 
 #: ../src/tracks.c:767
 #, c-format
@@ -449,162 +510,163 @@ msgid ""
 "<span color='#aa0000'><b>Unknown service selected</b></span>\n"
 "This is a bug in %s!"
 msgstr ""
+"<span color='#aa0000'><b>Onbekende dienst geselecteeerd</b></span>\n"
+"Dit is een bug in %s!"
 
 #: ../src/tracks.c:924
 msgid ""
 "<span color='#aa0000'><b>Oops! No Route found</b></span>\n"
 "Try with another Start/End"
 msgstr ""
+"<span color='#aa0000'><b>Oei! Geen route gevonden</b></span>\n"
+"Probeer met een andere Start/Einde combinatie"
 
 #: ../src/tracks.c:935
 msgid ""
 "<span color='#aa0000'><b>Duh! A Server Error</b></span>\n"
 "Maybe try later again..."
 msgstr ""
+"<span color='#aa0000'><b>Ai! Een fout in het programma</b></span>\n"
+"Misschien kan je later nog eens proberen..."
 
 #: ../src/tracks.c:942
 msgid ""
 "<span color='#aa0000'><b>Oh! A Network Error</b></span>\n"
 "Check the internet!"
 msgstr ""
+"<span color='#aa0000'><b>Oeh! Een network fout</b></span>\n"
+"Het internet moet nagekeken worden!"
 
 #: ../src/hrm_functions.c:151
-#, fuzzy, c-format
+#, c-format
 msgid "<b><big>%d</big></b> <small>bpm</small>"
-msgstr "<big><b>Vrienden</b></big>   <small>[2/4]</small>"
+msgstr "<b><big>%d</big></b> <small>bpm</small>"
 
 #: ../src/hrm_functions.c:155
 #, c-format
 msgid "<b><big>%d/%d</big></b>"
-msgstr ""
+msgstr "<b><big>%d/%d</big></b>"
 
 #: ../data/foxtrotgps.desktop.in.h:1
 msgid "FoxtrotGPS"
-msgstr ""
+msgstr "FoxtrotGPS"
 
 #: ../data/foxtrotgps.desktop.in.h:2
-#, fuzzy
 msgid "GPS and Map"
-msgstr "Kies Eindpunt op Kaart"
+msgstr "GPS en Map"
 
 #: ../data/foxtrotgps.desktop.in.h:3
 msgid "Display map and GPS position"
-msgstr ""
+msgstr "Een kaart en GPS-positie weergeven"
 
 #: ../data/foxtrotgps.desktop.in.h:4
 msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
-msgstr ""
+msgstr "OpenStreetMap;OSM;Track;Trip;kaart;locatie;"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
 msgid "GPSD host"
-msgstr ""
+msgstr "GPSD hostnaam"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:2
 msgid "GPSD port"
-msgstr ""
+msgstr "GPSD poort"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:3
 msgid "Latitude/longitude unit"
-msgstr ""
+msgstr "Eenheid voor Latitude/longitude"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:4
-#, fuzzy
 msgid "Altitude unit"
-msgstr "Hoogte"
+msgstr "Eenheid voor hoogte"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:5
-#, fuzzy
 msgid "Speed unit"
-msgstr "Snelheid"
+msgstr "Eenheid voor snelheid"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:6
 msgid "The active map-repository"
-msgstr ""
+msgstr "De actieve kaart-repository"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:7
 msgid "Map-repository definitions"
-msgstr ""
+msgstr "Kaart-repository definities"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:8
-#, fuzzy
 msgid "Automatically download map-tiles as needed"
-msgstr "Automatisch downloaden van kaart tegels"
+msgstr "Automatisch downloaden van kaart-tegels indien vereist"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:9
-#, fuzzy
 msgid "Avoid re-downloading cached tiles"
-msgstr "Automatisch downloaden van kaart tegels"
+msgstr "Vermijd het herhaaldelijk downloaden van gecachte tegels"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:10
 msgid "Log tracks to a local file"
-msgstr ""
+msgstr "Log de tracks naar een lokaal bestand"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:11
-#, fuzzy
 msgid "The directory into which track-files are written"
-msgstr "Directory waarin de sporen geschreven moet worden"
+msgstr "De directory waarin de track bestanden geschreven worden"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:12
 msgid "Horizontal viewport-coordinate"
-msgstr ""
+msgstr "Horizontale viewport-coordinaat"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:13
 msgid "Vertical viewport-coordinate"
-msgstr ""
+msgstr "Verticale viewport-coordinaat"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:14
-#, fuzzy
 msgid "Viewport zoom-level"
-msgstr "+ 1 zoom niveau"
+msgstr "Viewport zoom-niveau"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:15
 msgid "Detail scale-factor"
-msgstr ""
+msgstr "Detail schaalfactor"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:16
 msgid "`My position', latitude"
-msgstr ""
+msgstr "`Mijn positie', breedtegraad"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:17
 msgid "`My position', longitude"
-msgstr ""
+msgstr "`Mijn positie', lentegraad"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:18
 msgid "Publish your location & show others' locations"
-msgstr ""
+msgstr "Publiceer jouw locatie & toon de locaties van anderen"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:19
 msgid "Friend-finder update interval, in minutes"
-msgstr ""
+msgstr "Friend-finder update interval, in minuten"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:20
 msgid "Status-message to publish in the friend-finder"
-msgstr ""
+msgstr "Status boodschap die gepubliceerd wordt in friend-finder"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:21
 msgid "Friend-finder username"
-msgstr ""
+msgstr "Friend-finder gebruikersnaam"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:22
 msgid "Friend-finder password"
-msgstr ""
+msgstr "Friend-finder paswoord"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:23
 msgid ""
 "Number of seconds by which photo timestamps must be corrected for geocoding"
-msgstr ""
+msgstr "Aantal seconden ter correctie van foto tijdstippen voor geocodering"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:24
 msgid "Treat photo-timestamps as being relative to this timezone (UTC=13)"
-msgstr ""
+msgstr "Behandel foto-tijdstippen als relatief tov tijdszone (UTC=13)"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:25
 msgid "The Bluetooth address of your heartrate-monitor"
-msgstr ""
+msgstr "Het bluetooth adres van je hartslag-monitor"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:26
 msgid "Use the heartrate-monitor specified in hrm_bt_addr"
-msgstr ""
+msgstr "Gebruik de hartslag-monitor gespecifieerd in hrm_bt_addr"
 
 #: ../data/foxtrotgps.glade.h:1
 msgid "Show Info"
@@ -616,7 +678,7 @@ msgstr "Volledig scherm (F11 of spatie)"
 
 #: ../data/foxtrotgps.glade.h:3
 msgid "Zoom in"
-msgstr ""
+msgstr "Inzoomen"
 
 #: ../data/foxtrotgps.glade.h:4
 msgid "Zoom out"
@@ -636,7 +698,7 @@ msgstr "Vorig kaart archief"
 
 #: ../data/foxtrotgps.glade.h:8
 msgid "Enable Track Logging"
-msgstr ""
+msgstr "Laat track logging toe"
 
 #: ../data/foxtrotgps.glade.h:9
 msgid "Go to Previous Page"
@@ -656,43 +718,39 @@ msgstr "Snelheid"
 
 #: ../data/foxtrotgps.glade.h:13
 msgid "<span font_desc='40'> -- </span>"
-msgstr ""
+msgstr "<span font_desc='40'> -- </span>"
 
 #: ../data/foxtrotgps.glade.h:14
 msgid "Heart"
-msgstr ""
+msgstr "Hart"
 
 #: ../data/foxtrotgps.glade.h:15
 msgid "0"
-msgstr ""
+msgstr "0"
 
 #: ../data/foxtrotgps.glade.h:16
-#, fuzzy
 msgid "Time"
 msgstr "Tijd"
 
 #: ../data/foxtrotgps.glade.h:17
 msgid "Max"
-msgstr ""
+msgstr "Max"
 
 #: ../data/foxtrotgps.glade.h:18
-#, fuzzy
 msgid "Average"
 msgstr "Gemiddeld"
 
 #: ../data/foxtrotgps.glade.h:19
 msgid "Trip"
-msgstr ""
+msgstr "Trip"
 
 #: ../data/foxtrotgps.glade.h:21
-#, fuzzy
 msgid "Reset"
-msgstr "zet"
+msgstr "Opnieuw instellen"
 
 #: ../data/foxtrotgps.glade.h:22
-#, fuzzy
 msgid "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
-msgstr "<big><b>Vrienden</b></big>   <small>[2/4]</small>"
+msgstr "<big><b>Trip Meter</b></big>   <small>[1/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:23
 msgid "Altitude"
@@ -704,55 +762,51 @@ msgstr "Koers"
 
 #: ../data/foxtrotgps.glade.h:25
 msgid "Lat - Lon"
-msgstr ""
+msgstr "Lat - Lon"
 
 #: ../data/foxtrotgps.glade.h:26
 msgid "GPS Time"
 msgstr "GPS Tijd"
 
 #: ../data/foxtrotgps.glade.h:27
-#, fuzzy
 msgid "Satellites"
 msgstr "Satellieten"
 
 #: ../data/foxtrotgps.glade.h:28
 msgid "<b>GPS Data</b>"
-msgstr ""
+msgstr "<b>GPS Gegevens</b>"
 
 #: ../data/foxtrotgps.glade.h:29
 msgid "Enable Live Tracking"
-msgstr ""
+msgstr "Live Tracking toelaten"
 
 #: ../data/foxtrotgps.glade.h:30
 msgid "Split"
-msgstr ""
+msgstr "Splitsen"
 
 #: ../data/foxtrotgps.glade.h:31
 msgid "Load"
-msgstr ""
+msgstr "Laden"
 
 #: ../data/foxtrotgps.glade.h:32
-#, fuzzy
 msgid "Clear"
-msgstr "Auto"
+msgstr "Wissen"
 
 #: ../data/foxtrotgps.glade.h:33
 msgid "Upload"
-msgstr ""
+msgstr "Upload"
 
 #: ../data/foxtrotgps.glade.h:34
 msgid "Configure"
-msgstr ""
+msgstr "Instellen"
 
 #: ../data/foxtrotgps.glade.h:35
-#, fuzzy
 msgid "<big><b>Tracks</b></big>   <small>[2/3]</small>"
-msgstr "<big><b>Sporen</b></big>   <small>[3/4]</small>"
+msgstr "<big><b>Tracks</b></big>   <small>[2/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:36
-#, fuzzy
 msgid "<big><b>Configuration</b></big>   <small>[3/3]</small>"
-msgstr "<big><b>Instellingen</b></big>   <small>[4/4]</small>"
+msgstr "<big><b>Configuratie</b></big>   <small>[3/3]</small>"
 
 #: ../data/foxtrotgps.glade.h:37
 msgid ""
@@ -768,7 +822,7 @@ msgstr "Automatisch downloaden van kaart tegels"
 
 #: ../data/foxtrotgps.glade.h:40
 msgid "<b>Auto Download</b>"
-msgstr ""
+msgstr "<b>Auto Download</b>"
 
 #: ../data/foxtrotgps.glade.h:41
 msgid "Current Map:"
@@ -776,12 +830,11 @@ msgstr "Huidige kaart:"
 
 #: ../data/foxtrotgps.glade.h:42
 msgid "New..."
-msgstr ""
+msgstr "Nieuw…"
 
 #: ../data/foxtrotgps.glade.h:43
-#, fuzzy
 msgid "Edit..."
-msgstr "Bewerken"
+msgstr "Bewerk..."
 
 #: ../data/foxtrotgps.glade.h:44
 msgid "<b>Map Types</b>"
@@ -809,7 +862,7 @@ msgstr "<i>Hoogte:</i>"
 
 #: ../data/foxtrotgps.glade.h:50
 msgid "meters"
-msgstr ""
+msgstr "meter"
 
 #: ../data/foxtrotgps.glade.h:51
 msgid "feet"
@@ -817,19 +870,19 @@ msgstr "voet"
 
 #: ../data/foxtrotgps.glade.h:52
 msgid "<i>Lat &amp; Lon:</i>"
-msgstr ""
+msgstr "<i>Lat &amp; Lon:</i>"
 
 #: ../data/foxtrotgps.glade.h:53
 msgid "d.dd"
-msgstr ""
+msgstr "d.dd"
 
 #: ../data/foxtrotgps.glade.h:54
 msgid "d m.m'"
-msgstr ""
+msgstr "d m.m'"
 
 #: ../data/foxtrotgps.glade.h:55
 msgid "d m's.s\""
-msgstr ""
+msgstr "d m's.s\""
 
 #: ../data/foxtrotgps.glade.h:56
 msgid "<b>Units</b>"
@@ -837,16 +890,15 @@ msgstr "<b>Eenheden</b>"
 
 #: ../data/foxtrotgps.glade.h:57
 msgid "Activate Heartrate Monitor"
-msgstr ""
+msgstr "Activeer hartslag monitor"
 
 #: ../data/foxtrotgps.glade.h:58
 msgid "Bluetooth Address: "
-msgstr ""
+msgstr "Bluetooth adres: "
 
 #: ../data/foxtrotgps.glade.h:59
-#, fuzzy
 msgid "<b>Heart Rate Monitor</b>"
-msgstr "<b>Naam voor nieuw Archief</b>"
+msgstr "<b>Hartslag Monitor</b>"
 
 #: ../data/foxtrotgps.glade.h:60
 msgid ""
@@ -858,45 +910,43 @@ msgstr ""
 
 #: ../data/foxtrotgps.glade.h:63
 msgid " GPSD "
-msgstr ""
+msgstr " GPSD "
 
 #: ../data/foxtrotgps.glade.h:64
 msgid "Host:"
-msgstr ""
+msgstr "Computernaam:"
 
 #: ../data/foxtrotgps.glade.h:65
 msgid "127.0.0.1"
-msgstr ""
+msgstr "127.0.0.1"
 
 #: ../data/foxtrotgps.glade.h:66
 msgid " Port:"
-msgstr "Poort:"
+msgstr " Poort:"
 
 #: ../data/foxtrotgps.glade.h:67
 msgid "2947"
-msgstr ""
+msgstr "2947"
 
 #: ../data/foxtrotgps.glade.h:68
-#, fuzzy
 msgid "Change GPSD"
-msgstr "     Aanpassen GPSD     "
+msgstr "Wijzig GPSD"
 
 #: ../data/foxtrotgps.glade.h:69
 msgid "<b>GPSD</b>"
-msgstr ""
+msgstr "<b>GPSD</b>"
 
 #: ../data/foxtrotgps.glade.h:70
 msgid "<b>no GPS found</b>"
-msgstr ""
+msgstr "<b>geen GPS gevonden</b>"
 
 #: ../data/foxtrotgps.glade.h:71
-#, fuzzy
 msgid "delete routepoint"
-msgstr "ophalen route"
+msgstr "routepunt  verwijderen"
 
 #: ../data/foxtrotgps.glade.h:72
 msgid "insert routepoint before this"
-msgstr ""
+msgstr "routepunt invoegen voor dit routepunt"
 
 #: ../data/foxtrotgps.glade.h:73
 msgid "this point"
@@ -912,7 +962,7 @@ msgstr "toon fotos"
 
 #: ../data/foxtrotgps.glade.h:76
 msgid "route-finding"
-msgstr ""
+msgstr "route opzoeken"
 
 #: ../data/foxtrotgps.glade.h:77
 msgid "get route"
@@ -920,32 +970,31 @@ msgstr "ophalen route"
 
 #: ../data/foxtrotgps.glade.h:78
 msgid "route-planning"
-msgstr ""
+msgstr "route plannen"
 
 #: ../data/foxtrotgps.glade.h:79
 msgid "add routepoint"
-msgstr ""
+msgstr "routepunt toevoegen"
 
 #: ../data/foxtrotgps.glade.h:80
 msgid "load route from GPX"
-msgstr ""
+msgstr "route van GPX laden"
 
 #: ../data/foxtrotgps.glade.h:81
 msgid "save route as GPX"
-msgstr ""
+msgstr "route als GPX bewaren"
 
 #: ../data/foxtrotgps.glade.h:82
 msgid "save route as TomTom ITN"
-msgstr ""
+msgstr "route als TomTom ITN bewaren"
 
 #: ../data/foxtrotgps.glade.h:83
-#, fuzzy
 msgid "clear route"
-msgstr "ophalen route"
+msgstr "route wissen"
 
 #: ../data/foxtrotgps.glade.h:84
 msgid "waypoint"
-msgstr ""
+msgstr "waypoint"
 
 #: ../data/foxtrotgps.glade.h:85
 msgid "set WP"
@@ -957,7 +1006,7 @@ msgstr "verwijder WP"
 
 #: ../data/foxtrotgps.glade.h:87
 msgid "POIs"
-msgstr ""
+msgstr "Nuttige plaatsen"
 
 #: ../data/foxtrotgps.glade.h:88
 msgid "add POI"
@@ -993,19 +1042,19 @@ msgstr "kaart download"
 
 #: ../data/foxtrotgps.glade.h:96
 msgid "map detail"
-msgstr ""
+msgstr "detail kaart"
 
 #: ../data/foxtrotgps.glade.h:97
 msgid "fewer/larger details"
-msgstr ""
+msgstr "minder/grotere details"
 
 #: ../data/foxtrotgps.glade.h:98
 msgid "more/smaller details"
-msgstr ""
+msgstr "meer/kleinere details"
 
 #: ../data/foxtrotgps.glade.h:99
 msgid "help"
-msgstr ""
+msgstr "help"
 
 #: ../data/foxtrotgps.glade.h:100
 msgid "New Repository"
@@ -1017,11 +1066,11 @@ msgstr "<b>Naam voor nieuw Archief</b>"
 
 #: ../data/foxtrotgps.glade.h:102
 msgid "<b>URI</b>"
-msgstr ""
+msgstr "<b>URI</b>"
 
 #: ../data/foxtrotgps.glade.h:103
 msgid "<b>Cache Dir</b>"
-msgstr ""
+msgstr "<b>Cache Dir</b>"
 
 #: ../data/foxtrotgps.glade.h:104
 msgid "xyz instead of zxy"
@@ -1041,11 +1090,11 @@ msgstr "<b>Archief Naam</b>"
 
 #: ../data/foxtrotgps.glade.h:108
 msgid "GPS Info"
-msgstr ""
+msgstr "GPS Info"
 
 #: ../data/foxtrotgps.glade.h:109
 msgid "--"
-msgstr ""
+msgstr "--"
 
 #: ../data/foxtrotgps.glade.h:110
 msgid ""
@@ -1085,12 +1134,11 @@ msgstr "<b>Kies het te openen spoor (.log / .gpx)</b>"
 
 #: ../data/foxtrotgps.glade.h:119
 msgid "Map DL"
-msgstr ""
+msgstr "Map DL"
 
 #: ../data/foxtrotgps.glade.h:120
-#, fuzzy
 msgid "Re-download cached tiles"
-msgstr "Automatisch downloaden van kaart tegels"
+msgstr "Opnieuw downloaden van cached tiles"
 
 #: ../data/foxtrotgps.glade.h:121
 msgid "Download maps of currently visible area:"
@@ -1121,25 +1169,24 @@ msgid "+ 6 zoom levels (~400MB)"
 msgstr "+ 6 zoom niveaus (~400MB)"
 
 #: ../data/foxtrotgps.glade.h:128
-#, fuzzy
 msgid "<b>Map Download</b>"
-msgstr "<b> Kaart Download </b>"
+msgstr "<b>Download kaart</b>"
 
 #: ../data/foxtrotgps.glade.h:129
 msgid "POI"
-msgstr ""
+msgstr "POI"
 
 #: ../data/foxtrotgps.glade.h:130
 msgid "<b>-----</b>"
-msgstr ""
+msgstr "<b>-----</b>"
 
 #: ../data/foxtrotgps.glade.h:131
 msgid "-"
-msgstr ""
+msgstr "-"
 
 #: ../data/foxtrotgps.glade.h:132
 msgid "<b>-</b>"
-msgstr ""
+msgstr "<b>-</b>"
 
 #: ../data/foxtrotgps.glade.h:134
 msgid "Edit"
@@ -1172,19 +1219,34 @@ msgid ""
 "My Personal Places\n"
 "Geocaches"
 msgstr ""
+"-- Alle keuzes--\n"
+"Accomodatie\n"
+"Handelszaken\n"
+"Wagen\n"
+"Cultureel\n"
+"Medisch\n"
+"Cafe / Pub / Nachtleven\n"
+"Kerk\n"
+"Publiek Transport\n"
+"Restaurant & Eten\n"
+"Dienstverlening\n"
+"Bezienswaardigheden & ontspanning\n"
+"Shopping\n"
+"Sport\n"
+"Mijn Persoonlijke Plaatsen\n"
+"Geocaches"
 
 #: ../data/foxtrotgps.glade.h:153
 msgid "Delete POI?"
 msgstr "Verwijder POI?"
 
 #: ../data/foxtrotgps.glade.h:154
-#, fuzzy
 msgid ""
 "Do you really want to\n"
 "delete this Point of Interest?"
 msgstr ""
-"Wilt u echt dit Interessant Punt (POI)\n"
-"verwijderen?"
+"Wil je werkelijk dit\n"
+"Point of Interest verwijderen?"
 
 #: ../data/foxtrotgps.glade.h:156
 msgid "Edit POI"
@@ -1192,15 +1254,15 @@ msgstr "Bewerk POI"
 
 #: ../data/foxtrotgps.glade.h:157
 msgid "GPS"
-msgstr ""
+msgstr "GPS"
 
 #: ../data/foxtrotgps.glade.h:158
 msgid "Lat: "
-msgstr ""
+msgstr "Lat: "
 
 #: ../data/foxtrotgps.glade.h:159
 msgid " Lon: "
-msgstr ""
+msgstr " Lon: "
 
 #: ../data/foxtrotgps.glade.h:160
 msgid "Name - Keywords / Tags:"
@@ -1212,11 +1274,11 @@ msgstr "Omschrijving:"
 
 #: ../data/foxtrotgps.glade.h:162
 msgid "budget"
-msgstr ""
+msgstr "budget"
 
 #: ../data/foxtrotgps.glade.h:163
 msgid "medium"
-msgstr ""
+msgstr "gemiddeld"
 
 #: ../data/foxtrotgps.glade.h:164
 msgid "exclusive"
@@ -1245,6 +1307,22 @@ msgid ""
 "My Personal Places\n"
 "Geocaches"
 msgstr ""
+"- Kies uit -\n"
+"Accomodatie\n"
+"Zaken\n"
+"Wagen\n"
+"Cultureel\n"
+"Medisch\n"
+"Cafe / Pub / Nachtleven\n"
+"Kerk\n"
+"Publiek Transport\n"
+"Restaurant & Eten\n"
+"Diensten\n"
+"Bezienswaardigheden & Ontspanning\n"
+"Shopping\n"
+"Sport\n"
+"Mijn Persoonlijke Plaatsen\n"
+"Geocaches"
 
 #: ../data/foxtrotgps.glade.h:182
 msgid "Category:"
@@ -1279,9 +1357,8 @@ msgid "Street,City,Country"
 msgstr "Straat,Stad,Land"
 
 #: ../data/foxtrotgps.glade.h:190
-#, fuzzy
 msgid "<b>Start</b>"
-msgstr "<b>Mijn Identiteit</b>"
+msgstr "<b>Start</b>"
 
 #: ../data/foxtrotgps.glade.h:191
 msgid "<b>End</b>"
@@ -1300,15 +1377,16 @@ msgid "Pick End on Map"
 msgstr "Kies Eindpunt op Kaart"
 
 #: ../data/foxtrotgps.glade.h:195
-#, fuzzy
 msgid "<b>Service</b>"
-msgstr "<b>Dienst </b>"
+msgstr "<b>Service</b>"
 
 #: ../data/foxtrotgps.glade.h:196
 msgid ""
 "<i>Insert Start and End:</i>\n"
 "<small>(experimental feature)</small>"
 msgstr ""
+"<i>Insert Start en Einde:</i>\n"
+"<small>(experimenteel feature)</small>"
 
 #: ../data/foxtrotgps.glade.h:198
 msgid "<i><b>Connecting...</b></i>"
@@ -1347,30 +1425,24 @@ msgid "<b>Geocoding your photos</b>"
 msgstr "<b>Geocoderen van uw fotos</b>"
 
 #: ../data/foxtrotgps.glade.h:207
-#, fuzzy
 msgid "Geocode your photos by correlating them with a gps track.\n"
-msgstr ""
-"Geocodeer uw fotos door ze te correleren met een GPS spoor. Voor nadere "
-"uitleg, zie http://www.foxtrotgps.org\n"
+msgstr "Geocodeer uw fotos door correlatie met een gps track.\n"
 
 #: ../data/foxtrotgps.glade.h:209
-#, fuzzy
 msgid "<b>1. Add Track</b>"
-msgstr "  <b>1. Toevoegen Spoor</b>        "
+msgstr "<b>1. Track toevoegen</b>"
 
 #: ../data/foxtrotgps.glade.h:210
-#, fuzzy
 msgid "<b>2. Add Photos</b>"
-msgstr "  <b>2. Toevoegen Fotos</b> "
+msgstr "<b>2. Fotos toevoegen</b>"
 
 #: ../data/foxtrotgps.glade.h:211
 msgid "<span color=\"red\" weight=\"bold\">-</span>"
-msgstr ""
+msgstr "<span color=\"red\" weight=\"bold\">-</span>"
 
 #: ../data/foxtrotgps.glade.h:212
-#, fuzzy
 msgid "<b>3. Adjust Time</b>"
-msgstr "  <b>3. Aanpassen Tijd</b>"
+msgstr "<b>3. Tijd bijregelen</b>"
 
 #: ../data/foxtrotgps.glade.h:213
 msgid "View GPS Photo"
@@ -1378,7 +1450,7 @@ msgstr "Bekijk GPS Foto"
 
 #: ../data/foxtrotgps.glade.h:214
 msgid "  +00:00h"
-msgstr ""
+msgstr "  +00:00h"
 
 #: ../data/foxtrotgps.glade.h:215
 msgid "  0 seconds"
@@ -1393,9 +1465,9 @@ msgid "Timezone:"
 msgstr "Tijdzone:"
 
 #: ../data/foxtrotgps.glade.h:219
-#, fuzzy, no-c-format
+#, no-c-format
 msgid "add photos to the %s database"
-msgstr "  voeg fotos toe aan de %s database"
+msgstr "Fotos aan %s database toevoegen"
 
 #: ../data/foxtrotgps.glade.h:220
 msgid "Geocode Result"
@@ -1407,31 +1479,27 @@ msgstr "<b>De uitvoer van gpscorrelate:</b>"
 
 #: ../data/foxtrotgps.glade.h:223
 msgid "Image Data"
-msgstr ""
+msgstr "Afbeeldingsdata"
 
 #: ../data/foxtrotgps.glade.h:224
-#, fuzzy
 msgid "<b>GPS:</b> "
-msgstr "<b>Mijn Identiteit</b>"
+msgstr "<b>GPS:</b> "
 
 #: ../data/foxtrotgps.glade.h:225
-#, fuzzy
 msgid "<b>Camera:</b> "
-msgstr "<b>Mijn Identiteit</b>"
+msgstr "<b>Camera:</b> "
 
 #: ../data/foxtrotgps.glade.h:226
-#, fuzzy
 msgid "<b>Correction:</b> "
-msgstr " <b>Correctie:</b> "
+msgstr "<b>Correctie:</b> "
 
 #: ../data/foxtrotgps.glade.h:227
 msgid "s   "
-msgstr ""
+msgstr "s   "
 
 #: ../data/foxtrotgps.glade.h:228
-#, fuzzy
 msgid "<b>Timezone:</b> "
-msgstr " <b>Tijdzone:</b>  "
+msgstr "<b>Tijdszone:</b> "
 
 #: ../data/foxtrotgps.glade.h:229
 msgid ""
@@ -1461,191 +1529,28 @@ msgid ""
 "+11:00\n"
 "+12:00"
 msgstr ""
-
-#~ msgid "<b>Me</b>"
-#~ msgstr "<b>Mijn Identiteit</b>"
-
-#, fuzzy
-#~ msgid "<b>Position Sharing</b>"
-#~ msgstr "<b>Positie Delen  </b>"
-
-#, fuzzy
-#~ msgid "<b>Sharing Mode</b>"
-#~ msgstr "<b>Delen Mode</b>"
-
-#~ msgid "<i>No Messages</i>"
-#~ msgstr "<i>Geen Berichten</i>"
-
-#~ msgid "<i>What are you up to?</i>"
-#~ msgstr "<i>Wat ben je aan het doen?</i>"
-
-#~ msgid ""
-#~ "Decide whom you see and \n"
-#~ "who can see you:"
-#~ msgstr ""
-#~ "Bepaal wie u ziet en\n"
-#~ "wie u kan zien:"
-
-#~ msgid ""
-#~ "Enable position sharing and\n"
-#~ "messaging with your friends"
-#~ msgstr ""
-#~ "Aanzetten van positie delen en\n"
-#~ "berichten uitwisselen met vrienden"
-
-#, fuzzy
-#~ msgid "Nickname"
-#~ msgstr "Gebruikersnaam"
-
-#~ msgid "Password"
-#~ msgstr "Wachtwoord"
-
-#, fuzzy
-#~ msgid "Register!"
-#~ msgstr "     Registreer!     "
-
-#~ msgid "Show password"
-#~ msgstr "Toon wachtwoord"
-
-#, fuzzy
-#~ msgid ""
-#~ "Simply choose any nickname and password.\n"
-#~ "\n"
-#~ "Before first use register them by clicking on the button below."
-#~ msgstr ""
-#~ "Voer uw gebruikersnaam en wachtwoord in.\n"
-#~ "\n"
-#~ "Voordat u het kunt gebruiken moet u eerst registreren, door op de knop "
-#~ "hieronder te drukken."
-
-#~ msgid "Update interval  "
-#~ msgstr "Ververs interval"
-
-#~ msgid "friend mode"
-#~ msgstr "vriend mode"
-
-#~ msgid "fun mode"
-#~ msgstr "pret mode"
-
-#~ msgid "minutes"
-#~ msgstr "minuten"
-
-#~ msgid "private mode"
-#~ msgstr "privé mode"
-
-#~ msgid "show friends"
-#~ msgstr "toon vrienden"
-
-#~ msgid "ways & routes"
-#~ msgstr "wegen & routes"
-
-#~ msgid ""
-#~ "<small><i>%s Version:\n"
-#~ "Developer: Marcus Bauer &amp; Community</i></small>"
-#~ msgstr ""
-#~ "<small><i>%s Versie:\n"
-#~ "Ontwikkelaar: Marcus Bauer &amp; Gemeenschap</i></small>"
-
-#~ msgid "      New...       "
-#~ msgstr "      Nieuw...       "
-
-#~ msgid "      Edit...     "
-#~ msgstr "      Bewerk...     "
-
-#~ msgid "    Save Repository Configuration    "
-#~ msgstr "    Opslaan Archief Instellingen    "
-
-#~ msgid "create way"
-#~ msgstr "maak weg"
-
-#~ msgid ""
-#~ "You can find more information about repositories on\n"
-#~ "\n"
-#~ "http://www.foxtrotgps.org/\n"
-#~ msgstr ""
-#~ "U kunt meer informatie over archieven vinden op\n"
-#~ "\n"
-#~ "http://www.foxtrotgps.org/\n"
-
-#~ msgid "unused"
-#~ msgstr "niet gebruikt"
-
-#~ msgid "-- Show All --"
-#~ msgstr "-- Toon Alle --"
-
-#~ msgid "Accomodation"
-#~ msgstr "Accomodatie"
-
-#~ msgid "Businesses"
-#~ msgstr "Zakelijk"
-
-#~ msgid "Car"
-#~ msgstr "Auto"
-
-#~ msgid "Cultural"
-#~ msgstr "Cultureel"
-
-#~ msgid "Medical"
-#~ msgstr "Medisch"
-
-#~ msgid "Cafe / Pub / Nightlife"
-#~ msgstr "Café / Pub / Nachtleven"
-
-#~ msgid "Place of Worship"
-#~ msgstr "Plaats voor Gelovigen"
-
-#~ msgid "Public Transportation"
-#~ msgstr "Openbaar Vervoer"
-
-#~ msgid "Services"
-#~ msgstr "Diensten"
-
-#~ msgid "Sights / Leisure"
-#~ msgstr "Uitzicht / Vrije tijd"
-
-#~ msgid "Shopping"
-#~ msgstr "Winkelen"
-
-#~ msgid "My Personal Places"
-#~ msgstr "Mijn Persoonlijke Plaatsen"
-
-#~ msgid "Go To "
-#~ msgstr "Ga Naar"
-
-#~ msgid "- please choose -"
-#~ msgstr "- maak een keuze -"
-
-#~ msgid "Restaurant & Food"
-#~ msgstr "Restaurant & Eten"
-
-#~ msgid "Sights & Leisure"
-#~ msgstr "Uitzicht & Vrije tijd"
-
-#~ msgid "Nightlife"
-#~ msgstr "Nachtleven"
-
-#~ msgid "Please choose"
-#~ msgstr "Maak een keuze"
-
-#~ msgid "<b>This is important!</b>\n"
-#~ msgstr "<b>Dit is belangrijk!</b>\n"
-
-#~ msgid " Pick "
-#~ msgstr " Kies "
-
-#~ msgid "  Go To  "
-#~ msgstr "  Ga Naar  "
-
-#~ msgid "Enable logging of your tracks for later use, i.e. for extending OSM"
-#~ msgstr ""
-#~ "Aanzetten opslaan van uw sporen voor later gebruik, bijv. voor verbeteren "
-#~ "van OSM"
-
-#~ msgid "           Split           "
-#~ msgstr "           Splitsen           "
-
-#~ msgid "      Configure...      "
-#~ msgstr "      Instellen...      "
-
-#~ msgid "      Load...     "
-#~ msgstr "      Inladen...     "
+"-12:00\n"
+"-11:00\n"
+"-10:00\n"
+"-09:00\n"
+"-08:00\n"
+"-07:00\n"
+"-06:00\n"
+"-05:00\n"
+"-04:00\n"
+"-03:00\n"
+"-02:00\n"
+"-01:00\n"
+"+00:00\n"
+"+01:00\n"
+"+02:00\n"
+"+03:00\n"
+"+04:00\n"
+"+05:00\n"
+"+06:00\n"
+"+07:00\n"
+"+08:00\n"
+"+09:00\n"
+"+10:00\n"
+"+11:00\n"
+"+12:00"
