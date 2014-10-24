@@ -121,7 +121,7 @@ can be enhanced by other software (@pxref{POI Icons}).
 Many devices already have a GPS built in but if yours does not or you
 want to have it in a better position to `see the sky' then an external
 GPS is required. FoxtrotGPS uses @url{http://catb.org/gpsd/, gpsd} to
-handle the varity of GPS hardware available, it's well documented and
+handle the variety of GPS hardware available, it's well documented and
 readily available wherever FoxtrotGPS is likely to be used. Actual
 GPS hardware options include:
 

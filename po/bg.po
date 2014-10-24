@@ -1172,7 +1172,7 @@ msgstr "Показване на потребителски важни точки
 #: ../data/foxtrotgps.glade.h:137
 msgid ""
 "-- Show All --\n"
-"Accomodation\n"
+"Accommodation\n"
 "Businesses\n"
 "Car\n"
 "Cultural\n"
@@ -1245,7 +1245,7 @@ msgstr "удължено работно време"
 #: ../data/foxtrotgps.glade.h:166
 msgid ""
 "- please choose -\n"
-"Accomodation\n"
+"Accommodation\n"
 "Businesses\n"
 "Car\n"
 "Cultural\n"
@@ -1579,7 +1579,7 @@ msgstr ""
 #~ msgid "-- Show All --"
 #~ msgstr "-- Показване на всичко --"
 
-#~ msgid "Accomodation"
+#~ msgid "Accommodation"
 #~ msgstr "Квартира"
 
 #~ msgid "Businesses"

@@ -3093,7 +3093,7 @@ my position</property>
           <widget class="GtkComboBox" id="combobox4">
             <property name="visible">True</property>
             <property name="items" translatable="yes">-- Show All --
-Accomodation
+Accommodation
 Businesses
 Car
 Cultural
@@ -3463,7 +3463,7 @@ delete this Point of Interest?</property>
                         <property name="can_focus">True</property>
                         <property name="add_tearoffs">True</property>
                         <property name="items" translatable="yes">- please choose -
-Accomodation
+Accommodation
 Businesses
 Car
 Cultural
@@ -3760,7 +3760,7 @@ Geocaches</property>
                         <property name="can_focus">True</property>
                         <property name="add_tearoffs">True</property>
                         <property name="items" translatable="yes">- please choose -
-Accomodation
+Accommodation
 Businesses
 Car
 Cultural

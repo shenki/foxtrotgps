@@ -1,5 +1,5 @@
 #!/usr/bin/env python
-#poi2osm convert a sqlite poi database comming from tangps to a file you can import in JOSM
+#poi2osm convert a sqlite poi database coming from tangogps to a file you can import in JOSM
 #Copyright (C) 2009  Denis 'GNUtoo' Carikli
 #
 #This program is free software; you can redistribute it and/or modify
