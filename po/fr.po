@@ -561,7 +561,7 @@ msgstr "Afficher la carte et la position GPS"
 
 #: ../data/foxtrotgps.desktop.in.h:4
 msgid "OpenStreetMap;OSM;Track;Trip;map;location;"
-msgstr "OpenStreetMap;OSM;Parcours;Trajet;carte;Lieu"
+msgstr "OpenStreetMap;OSM;Parcours;Trajet;carte;Lieu;"
 
 #: ../data/apps_foxtrotgps.schemas.in.h:1
 msgid "GPSD host"
