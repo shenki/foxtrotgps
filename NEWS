@@ -1,3 +1,56 @@
+FoxtrotGPS 1.2.0 includes the following new features, bug-fixes,
+and other changes since 1.1.1:
+
+    * An advanced, interactive route-planning facility, thanks to
+      Tilmann Bubeck; this is accessible via the new "route-planning" menu.
+
+    * Menu reorganisation: to avoid confusion between the new
+      route-planning and routepoint-manipulation functionality, and the
+      other _route-finding_ and _waypoint_ features that were previously
+      located together in the "ways & routes" menu, those features have
+      been split out into separate "route-finding" and "waypoint" menus.
+
+    * An illustrated user manual, including a detailed introduction,
+      and HOWTO guides on route-planning, track-logging, and
+      tilecache-management--thanks to David Bannon and Tilmann Bubeck.
+
+    * A quick track-logging toggle in the left toolbar used in the
+      horizontal screen-layout.
+
+    * FoxtrotGPS now ships with a script (gpx2osm) to help convert from
+      GPX to OpenStreetMap log format, contributed by David Bannon.
+
+    * Heading angles are now actually correct regardless of the units in use,
+      thanks to Karl-Georg Warnick.
+
+    * The map-widget now takes focus by default, which means that various
+      keyboard shortcut should work more reliably.
+
+    * The timestamps in the names of track-log files now include the
+      timezone, to avoid confusion when logging/using tracks around DST
+      or other timezone-transitions (where `the same 1-hour span' can
+      occur twice in a row and collide with itself if the timestamps are
+      zoneless).
+
+    * More translations, more complete translations; this version
+      includes complete translations for Dutch (thanks to Marc Verwerft),
+      German (thanks to Simon Vetter), Spanish (thanks to Cristian Gómez and
+      Dailos Franchy), Czech (thanks to Jiří Pinkava), French (thanks to
+      Guilhem Bonnefille, Philippe Coval, and Steve Petruzzello), and
+      Finnish (thanks to Timo Jyrinki); as well as new and newly-improved
+      partial translations for Polish (thanks to Patryk Benderz),
+      Russian (thanks to Vadim Efimov), Italian (thanks to Daniele Forsi),
+      and Portuguese (thanks to Victor Benso).
+
+    * Geocoding photos no longer requires Perl.
+
+    * Support for geocoding using old-style `.log' files has been removed.
+
+    * Various crashes, memory leaks, and potential security issues
+      have been fixed.
+
+
+
 FoxtrotGPS 1.1.1 includes the following new features and bug-fixes
 since 1.1.0:
 
