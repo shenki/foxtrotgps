@@ -13,6 +13,13 @@
 @copying
 This manual is for FoxtrotGPS (version @value{VERSION}, @value{UPDATED}).
 
+@ifinfo
+@dircategory Mapping
+@direntry
+* foxtrotgps: (foxtrotgps). GTK+ mapping and GPS application
+@end direntry
+@end ifinfo
+
 @ifhtml
 @image{cc-by-sa_small}
 @end ifhtml
