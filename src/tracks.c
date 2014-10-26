@@ -876,7 +876,7 @@ void fetch_yournavigation_track(GtkWidget *widget, char *start, char *end)
 	dialog10 = widget;
 	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
 	
-	url = g_strdup_printf("http://www.yournavigation.org/api/dev/gosmore.php?format=gpx&flat=%s&flon=%s&tlat=%s&tlon=%s&v=motorcar&fast=1&layer=mapnik",startlatstr, startlonstr, endlatstr, endlonstr);
+	url = g_strdup_printf("http://www.yournavigation.org/api/1.0/gosmore.php?format=kml&flat=%s&flon=%s&tlat=%s&tlon=%s&v=motorcar&fast=1&layer=mapnik",startlatstr, startlonstr, endlatstr, endlonstr);
 	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
 		g_warning("### can't create route thread\n");
 }
@@ -1082,7 +1082,7 @@ fetch_track_thread(void *ptr)
 
 	printf("HTTP-GET: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
 
-	loaded_track = load_gpx_string_into_list(reply->data);
+	loaded_track = load_kml_XML_string_into_list(reply->data);
 	process_fetched_track(reply, true);
 		
 	return NULL;
