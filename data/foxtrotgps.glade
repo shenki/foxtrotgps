@@ -15,8 +15,6 @@
           <widget class="GtkToolbar" id="toolbar1">
             <property name="height_request">55</property>
             <property name="toolbar_style">GTK_TOOLBAR_ICONS</property>
-            <property name="icon_size">GTK_ICON_SIZE_BUTTON</property>
-            <property name="icon_size_set">True</property>
             <child>
               <widget class="GtkToggleToolButton" id="button1">
                 <property name="width_request">90</property>
@@ -88,8 +86,6 @@
                   <widget class="GtkToolbar" id="toolbar4">
                     <property name="orientation">GTK_ORIENTATION_VERTICAL</property>
                     <property name="toolbar_style">GTK_TOOLBAR_ICONS</property>
-                    <property name="icon_size">GTK_ICON_SIZE_BUTTON</property>
-                    <property name="icon_size_set">True</property>
                     <child>
                       <widget class="GtkToolButton" id="button76">
                         <property name="width_request">50</property>
