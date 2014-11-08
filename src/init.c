@@ -227,9 +227,7 @@ init()
 		g_sprintf(buffer, "%.0f", global_ffupdate_interval_minutes);
 
 	widget = lookup_widget(window1, "entry16");
-	gtk_entry_set_text( GTK_ENTRY(widget), buffer );
-	
-
+	// gtk_entry_set_text( GTK_ENTRY(widget), buffer );
 	
 	if(gconf_fftimer_running)
 	{
