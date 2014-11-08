@@ -325,17 +325,13 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 		filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (widget));
 
 		geocode_set_trackname(filename, GTK_WIDGET(button));
-		
-		if(file_type_test(filename, "log"))
-			tracks_on_file_button_release_event(NULL, NULL, filename);
-		else
-			printf("There is no GPX importer yet :-( \n");
-		
+
+		tracks_on_file_button_release_event(NULL, NULL, filename);
+
 		g_free (filename);
 	}
-	
+
 	gtk_widget_destroy (widget);
-	
 }
 
 
