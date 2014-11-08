@@ -473,11 +473,6 @@ parse_gpx_routepoints (xmlNode *node)
 
 				list = g_slist_append (list, tp);
 			}
-			else
-			{
-				printf ("  OTHER XML ELEMENT: %s \n",
-				        cur_node->name);
-			}
 		}
 		list = g_slist_concat (list,
 		                       parse_gpx_routepoints (cur_node->children));

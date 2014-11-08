@@ -15,9 +15,6 @@ sql_execute(const char *db_name, const char *sql, int (*cb_func)(void*,int,char*
 	char *errmsg = 0;
 	int rc;
 	int result = 0;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 
 	rc = sqlite3_open(db_name, &db);
 	if( rc ){

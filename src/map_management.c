@@ -342,9 +342,6 @@ fill_tiles_latlon(	float lat,
 
 	pixel_y = lat2pixel(zoom, lat);
 
-	printf("fill_tiles_latlon(): lat %f  %i -- lon %f  %i\n",
-	lat,pixel_y,lon,pixel_x);
-	
 	fill_tiles_pixel (pixel_x, pixel_y, zoom, FALSE);
 }
 

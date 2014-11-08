@@ -32,8 +32,6 @@ gboolean
 reset_hrm_io()
 {
 #ifdef HAVE_BLUEZ
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	
 	g_free(hrmdata);
 	hrmdata = NULL;
 	
@@ -163,7 +161,6 @@ static gboolean
 cb_hrm_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 {
 #ifdef HAVE_BLUEZ
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 	g_free(hrmdata);
 	hrmdata = NULL;
 	g_source_remove(hrm_sid1); 
@@ -283,8 +280,6 @@ get_hrm_data_thread(void *ptr)
 			shutdown(hrm_sock, SHUT_RDWR);
 		}
 		else {
-			printf("connection done %s\n", global_hrm_bt_addr);
-			
 			global_reconnect_hrm = FALSE;
 			
 			if(!hrmdata) {

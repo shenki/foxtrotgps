@@ -64,8 +64,6 @@ sql_cb__photo(void *unused, int colc, char **colv, char **col_names)
 {
 	photo_t *photo = g_new0(photo_t,1);
 
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 	photo->filename = g_strdup(colv[0]);
 	photo->name	= g_strdup(colv[1]);
 	photo->lat	= atof(colv[2]);
@@ -142,8 +140,6 @@ paint_photos()
 				thumb = gdk_pixbuf_new_from_file_at_scale (p->filename, 48, 48, FALSE, &error);
 				if(!thumb)
 					printf("could not open %s \n", p->filename);
-				else
-					printf("loading thumb %s okay \n", p->filename);
 			}
 			
 			if(!photo_icon && !thumb)
@@ -186,9 +182,7 @@ paint_photos()
 					map_drawable, 
 					x-18, y-18,
 					36,36);
-			
-			printf("PHOTO: %s lat %f - lon %f\n",p->name,p->lat, p->lon);
-		}	
+		}
 	}
 }
 
@@ -329,9 +323,7 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 		char *filename;
 		
 		filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (widget));
-		printf ("%s \n",filename);
-		
-		
+
 		geocode_set_trackname(filename, GTK_WIDGET(button));
 		
 		if(file_type_test(filename, "log"))
@@ -341,8 +333,6 @@ geo_photos_geocode_track_select_dialog (GtkButton       *button,
 		
 		g_free (filename);
 	}
-	else
-		printf("%s(): file dialog cancelled \n", __PRETTY_FUNCTION__);
 	
 	gtk_widget_destroy (widget);
 	
@@ -376,16 +366,12 @@ geo_photos_geocode_dir_select_dialog (GtkButton       *button,
 		char *filename;
 		
 		filename = gtk_file_chooser_get_filename (GTK_FILE_CHOOSER (widget));
-		printf ("%s \n",filename);
-		
-		
+
 		geocode_set_photodir(filename, GTK_WIDGET(button));
 		
 		g_free (filename);
 	}
-	else
-		printf("%s(): file dialog cancelled \n", __PRETTY_FUNCTION__);
-	
+
 	gtk_widget_destroy (widget);
 }
 
@@ -495,7 +481,6 @@ get_entries_from_dir(char *dirname)
 		    file_type_test(fullfile,"jpeg")  || file_type_test(fullfile,"JPEG"))	
 		)
 		{		
-			printf("pic: %s/%s \n", dirname, file);
 			list = g_list_insert_sorted(list, g_strconcat(dirname, "/", file, NULL), (GCompareFunc)g_strcmp0);
 		}
 		file = g_dir_read_name(dir);
@@ -545,8 +530,6 @@ geo_photo_dialog_image_data_next(GtkWidget *widget, gpointer user_data, geo_phot
 	last_button = lookup_widget(widget, "button48");
 	zoom_button = lookup_widget(widget, "button50");
 	
-
-	printf("%s: viewport h,w: %d %d \n", __PRETTY_FUNCTION__, viewport->allocation.height, viewport->allocation.width);
 	height = viewport->allocation.height;
 	
 	switch (move)
@@ -691,7 +674,6 @@ void
 geo_photo_set_add_to_database(GtkToggleButton *togglebutton)
 {
 	add_to_database = gtk_toggle_button_get_active(togglebutton);
-	printf("add_to_database: %d\n", add_to_database);
 }
 
 void
@@ -741,7 +723,6 @@ update_gps_time_label()
 	time = mktime(&tm_photo) + correction - timezone*3600;
 
 	tm_gps = localtime(&time);
-	printf("timezone: %d\n", timezone);	
 
 	strftime(buf, sizeof(buf), "<span color=\"#009\">%a %Y-%m-%d %H:%M:%S</span>", tm_gps);
 	
@@ -868,9 +849,7 @@ geocode_thread(gpointer user_data)
 		         "gpscorrelate", err->message);
 		g_error_free (err);
 	}
-	
-	printf ("%s(): STDERR \n%s \nRET: %d \n", __PRETTY_FUNCTION__, standard_error, exit_status);
-	
+
 	gdk_threads_enter();
 	
 	label = lookup_widget(dialog_geocode_result, "label177");

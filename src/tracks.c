@@ -283,8 +283,6 @@ track_log_open()
 	
 	filename = g_strconcat(global_track_dir, buffer,NULL);
 	
-	printf("*** %s(): %s\n",__PRETTY_FUNCTION__,filename);
-	
 	if(fp==NULL && trip_logger_on)
 	{
 		fp = fopen(filename,"w");
@@ -329,12 +327,8 @@ track_log_close()
 	GtkLabel *label76;
 	label76 = GTK_LABEL(lookup_widget(window1, "label76"));
 	gtk_label_set_label(label76,"");
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	
-	if(fp) {
-		printf("closing FP\n");
 
+	if(fp) {
 		fprintf (fp, "\n"
 		         "</trkseg>\n"
 		         "</trk>\n"
@@ -396,9 +390,7 @@ tracks_open_tracks_dialog()
 	for(; list!=NULL; list=list->next)
 	{
 		char *file = list->data;
-		
-		
-		printf("%s \n", file);
+
 		eventbox = gtk_event_box_new ();
 		gtk_widget_set_events (eventbox, GDK_BUTTON_PRESS_MASK | GDK_BUTTON_RELEASE_MASK | GDK_ENTER_NOTIFY_MASK);
 		gtk_widget_show (eventbox);
@@ -718,10 +710,6 @@ parse_gpx_nodes(xmlNode *node)
 
 				list = g_slist_append(list, tp);
 			}
-			else
-			{
-				printf("  OTHER XML ELEMENT: %s \n", cur_node->name);
-			}
 		}
 		list = g_slist_concat(list, parse_gpx_nodes(cur_node->children));
 	}
@@ -874,8 +862,7 @@ void fetch_yournavigation_track(GtkWidget *widget, char *start, char *end)
 	endlatstr = strtok_r (end, ",", &parseptr);
 	endlonstr = strtok_r (NULL, ",", &parseptr);
 	dialog10 = widget;
-	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
-	
+
 	url = g_strdup_printf("http://www.yournavigation.org/api/1.0/gosmore.php?format=kml&flat=%s&flon=%s&tlat=%s&tlon=%s&v=motorcar&fast=1&layer=mapnik",startlatstr, startlonstr, endlatstr, endlonstr);
 	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
 		g_warning("### can't create route thread\n");
@@ -885,7 +872,6 @@ void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
 {
 	char *url;
 	dialog10 = widget;
-	printf("%s(): %s, %s\n",__PRETTY_FUNCTION__, start, end);
 	char *startlatstr;
 	char *startlonstr;
 	char *endlatstr;
@@ -1053,7 +1039,6 @@ fetch_openrouteservice_track_thread(void *ptr)
 	
 	reply = mycurl__do_http_post_XML(url, request, NULL);
 
-	printf("HTTP-POST: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
 	loaded_track = load_ols_XML_string_into_list(reply->data);
 	process_fetched_track(reply, false);
 	
@@ -1079,8 +1064,6 @@ fetch_track_thread(void *ptr)
 	url = ptr;
 	
 	reply = mycurl__do_http_get(url, NULL); 
-
-	printf("HTTP-GET: size: %d, statuscode %d \n", (int)reply->size, (int)reply->status_code);
 
 	loaded_track = load_kml_XML_string_into_list(reply->data);
 	process_fetched_track(reply, true);

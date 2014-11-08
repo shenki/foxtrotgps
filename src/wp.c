@@ -77,12 +77,6 @@ do_paint_wp()
 
 	if (pixmap && !gc_map)	
 		gc_map = gdk_gc_new(pixmap);
-		
-	
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-
 
 	lat = global_wp.lat;
 	lon = global_wp.lon;
@@ -125,8 +119,6 @@ do_paint_wp()
 			x, y-36,
 			36,36);
 	}
-	printf("WAYPOINT: lat %f - lon %f\n",lat, lon);
-	
 }
 
 
@@ -150,8 +142,6 @@ osd_wp()
 
 	float distance;
 	double unit_conv = 1;
-		
-	printf("** %s(): \n",__PRETTY_FUNCTION__);
 
 	if(gpsdata && mouse_dx == 0 && mouse_dy == 0) 
 	{
@@ -278,12 +268,6 @@ do_paint_myposition()
 	}
 	if (pixmap && !gc_map)	
 		gc_map = gdk_gc_new(pixmap);
-		
-	
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
-
 
 	lat = deg2rad(global_myposition.lat);
 	lon = deg2rad(global_myposition.lon);
@@ -296,9 +280,7 @@ do_paint_myposition()
 	
 	x = pixel_x - global_x;
 	y = pixel_y - global_y;
-	
-printf("%d %d %f %f\n",x,y,lat,lon);	
-	
+
 	if(!myposition_icon)
 	{
 		gdk_draw_arc (
@@ -326,6 +308,4 @@ printf("%d %d %f %f\n",x,y,lat,lon);
 			x, y-36,
 			36,36);
 	}
-	printf("MYPOSITION: lat %f - lon %f\n",lat, lon);
-	
 }

@@ -443,8 +443,6 @@ update_position0()
 	CURL *curl;
 	CURLcode res;
 
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	
 	curl = curl_easy_init();
 	
 	if(curl)
@@ -469,8 +467,6 @@ register_nick()
 	GtkLabel *label_msg;
 	label_msg = (GtkLabel *)lookup_widget(window1, "label62");
 	gtk_label_set_text (label_msg, _("Connecting..."));
-
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	if (!g_thread_create(&register_nick_thread, NULL, FALSE, NULL) != 0)
 		g_warning("### can't create register_nick() thread\n");
@@ -498,12 +494,7 @@ register_nick_thread(void *ptr)
 	
 	chunk.memory=NULL;
 	chunk.size = 0;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-
-
-	
 	nick  = (GtkEntry *)lookup_widget(window1, "entry7");
 	pass  = (GtkEntry *)lookup_widget(window1, "entry8");
 	email = (GtkEntry *)lookup_widget(window1, "entry9");
@@ -547,8 +538,6 @@ register_nick_thread(void *ptr)
 
 	curl_easy_perform(curl_handle);
 	curl_easy_cleanup(curl_handle);
-
-	printf("REPLY: %s %d \n",chunk.memory, (int)chunk.size);
 
 	if((int)chunk.size > 0){
 		buffer = g_strdup(chunk.memory);
@@ -627,9 +616,7 @@ on_msg_friend_clicked(GtkButton *button, gpointer user_data)
 	
 	to = user_data;
 	label_txt = g_strdup_printf (_("Send Message To: <b>%s</b>"), to);
-	
-	printf("* %s() %s\n", __PRETTY_FUNCTION__, label_txt);
-	
+
 	widget = lookup_widget(GTK_WIDGET(button), "window8");
 	gtk_widget_destroy(widget);
 	
@@ -658,9 +645,7 @@ on_goto_friend_clicked(GtkButton *button, gpointer user_data)
 	
 	friend_t *f;
 	f = user_data;
-	
-	printf("btn42 clicked: %s\n", f->nick);
-	
+
 	widget = lookup_widget(GTK_WIDGET(button), "window8");
 	set_current_wp(deg2rad(f->lat), deg2rad(f->lon));
 	gtk_widget_destroy(widget);
@@ -694,9 +679,7 @@ on_msg_send_clicked(GtkButton *button, gpointer user_data)
 		m->lat = 0;
 		m->lon = 0;
 	}
-		
-	printf("* %s() %s %s %f %f\n", __PRETTY_FUNCTION__, to, m->txt, m->lat,m->lon);
-	
+
 	add_message(m);
 	send_message((gpointer) m);
 	widget = lookup_widget(GTK_WIDGET(button), "dialog9");
@@ -993,9 +976,7 @@ on_goto_friend2_clicked(GtkButton *button, gpointer user_data)
 {	
 	msg_t *m;
 	m = user_data;
-	
-	printf("btn42 clicked: %s\n", m->from);
-	
+
 	set_current_wp(deg2rad(m->lat), deg2rad(m->lon));
 	
 	set_mapcenter(m->lat,m->lon, global_zoom);

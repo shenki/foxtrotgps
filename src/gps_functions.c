@@ -307,7 +307,6 @@ cb_gps_timer()
 			
 			if(trip_counter_got_stopped)
 			{
-				printf("counter had been stopped \n");
 				trip_counter_got_stopped = FALSE;
 				trip_time_accumulated = trip_time;
 				trip_starttime = 0;
@@ -337,7 +336,6 @@ cb_gps_timer()
 
 		else
 		{
-			printf("trip counter halted\n");
 			trip_counter_got_stopped = TRUE;
 			lat_tmp = lon_tmp = 0;
 		}
@@ -379,8 +377,6 @@ cb_gps_timer()
 gboolean
 reset_gpsd_io()
 {
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-	
 	reconnect_gpsd = TRUE;
 
 	return FALSE;	
@@ -727,8 +723,6 @@ set_label()
 static gboolean
 cb_gpsd_io_error(GIOChannel *src, GIOCondition condition, gpointer data)
 {
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 	reset_gpsd_io();
 
 	return FALSE; 

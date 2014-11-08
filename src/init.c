@@ -345,9 +345,6 @@ gconf_get_repolist()
 		repo->inverted_zoom = (atoi(g_strdup(array[3])) == 1) ? TRUE : FALSE;
 		
 		global_repo_list = g_slist_append(global_repo_list, repo);
-
-		printf("GCONF: \n -- name: %s \n -- uri: %s \n -- dir: %s \n",
-			repo->name, repo->uri, repo->dir);
 	}
 	
 	
@@ -379,9 +376,6 @@ gconf_set_repolist()
 				repo->name, repo->uri, repo->dir, repo->inverted_zoom);
 		
 		gconf_list = g_slist_append(gconf_list, g_strdup(gconf_str));
-
-		printf("GCONFSAVE: \n -- name: %s \n -- uri: %s \n -- dir: %s \n -- zoom: %i \n\n %s \n",
-			repo->name, repo->uri, repo->dir, repo->inverted_zoom, gconf_str);
 	}
 	
 	success = gconf_client_set_list(	global_gconfclient, 
@@ -389,9 +383,6 @@ gconf_set_repolist()
 						GCONF_VALUE_STRING,
 						gconf_list,
 						error);
-	
-	printf("*** %s(): %i \n",__PRETTY_FUNCTION__, success);
-
 }
 
 

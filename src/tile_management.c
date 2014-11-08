@@ -361,8 +361,6 @@ download_maps(bbox_t bbox, int zoom_start, int zoom_end)
 	bbox_pixel_t bbox_pixel;
 	int zoom;
 
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
-
 	zoom_end = (zoom_end > 17) ? 17 : zoom_end;
 	
 	for(zoom=zoom_start; zoom<=zoom_end; zoom++)
@@ -377,9 +375,6 @@ download_maps(bbox_t bbox, int zoom_start, int zoom_end)
 	for(list = tile_download_list; list != NULL; list = list->next)
 	{		
 		tile = list->data;
-
-		printf("LIST: %d %d %d %s\n",tile->x, tile->y, tile->zoom,tile->repo->name);	
-		
 	}
 
 }
@@ -403,8 +398,6 @@ queue_tile_dl_for_bbox(bbox_pixel_t bbox_pixel, int zoom)
 {
 	tile_t tile_11, tile_22;
 	int i,j,k=0;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	tile_11 = get_tile(bbox_pixel.x1, bbox_pixel.y1, zoom);
 	tile_22 = get_tile(bbox_pixel.x2, bbox_pixel.y2, zoom);
@@ -416,8 +409,7 @@ queue_tile_dl_for_bbox(bbox_pixel_t bbox_pixel, int zoom)
 		for(j=tile_11.y; j<=tile_22.y; j++)
 		{
 			tile_t *tile = g_new0(tile_t,1);
-			printf("### DEBUG queue: %d %d - %d\n",i,j,k);
-			
+
 			k++;
 			tile->x = i;
 			tile->y = j;
@@ -435,16 +427,12 @@ bbox_t
 get_bbox()
 {
 	bbox_t bbox;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	bbox.lat1 = pixel2lat(global_zoom, global_y);
 	bbox.lon1 = pixel2lon(global_zoom, global_x);
 	bbox.lat2 = pixel2lat(global_zoom, global_y + global_drawingarea_height);
 	bbox.lon2 = pixel2lon(global_zoom, global_x + global_drawingarea_width);
 
-	printf("BBOX: %f %f %f %f \n", bbox.lat1, bbox.lon1, bbox.lat2, bbox.lon2);
-	
 	return bbox;
 }
 
@@ -452,16 +440,12 @@ bbox_t
 get_bbox_deg()
 {
 	bbox_t bbox;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	bbox.lat1 = rad2deg( pixel2lat(global_zoom, global_y) );
 	bbox.lon1 = rad2deg( pixel2lon(global_zoom, global_x) );
 	bbox.lat2 = rad2deg( pixel2lat(global_zoom, global_y + global_drawingarea_height) );
 	bbox.lon2 = rad2deg( pixel2lon(global_zoom, global_x + global_drawingarea_width) );
 
-	printf("BBOX: %f %f %f %f \n", bbox.lat1, bbox.lon1, bbox.lat2, bbox.lon2);
-	
 	return bbox;
 }
 
@@ -469,16 +453,12 @@ bbox_pixel_t
 get_bbox_pixel(bbox_t bbox, int zoom)
 {
 	bbox_pixel_t bbox_pixel;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
 	bbox_pixel.x1 = lon2pixel(zoom, bbox.lon1);
 	bbox_pixel.y1 = lat2pixel(zoom, bbox.lat1);
 	bbox_pixel.x2 = lon2pixel(zoom, bbox.lon2);
 	bbox_pixel.y2 = lat2pixel(zoom, bbox.lat2);
 
-	printf("DEBUG: xy12 %d %d %d %d \n",bbox_pixel.x1,bbox_pixel.y1,bbox_pixel.x2,bbox_pixel.y2);
-	
 	return	bbox_pixel;
 }
 
@@ -491,24 +471,19 @@ timer_tile_download(gpointer data)
 	gboolean more_tiles = TRUE;
 	int i;
 	int running_downloads, possible_downloads, max_downloads = 6;
-	
-	printf("*** %s(): \n",__PRETTY_FUNCTION__);
 
-	
 	running_downloads = update_thread_number(0);
 	
 	possible_downloads = max_downloads - running_downloads;
 	
 	for( i=1; i<=possible_downloads; i++)
 	{
-printf("\n\n####LOOP %d %d ###########\n\n",i,possible_downloads);		
 		list = g_slist_nth(tile_download_list, 0);
 		if (list)
 		{
 			
 			tile = list->data;
-			printf("\n\n\nTIMER DL: %d %d -- %d\n\n\n", tile->x, tile->y, possible_downloads);
-			
+
 			if(	tile->x >= 0				&&
 				tile->y >= 0				&&
 				tile->x < exp(tile->zoom * M_LN2)	&&
@@ -520,7 +495,6 @@ printf("\n\n####LOOP %d %d ###########\n\n",i,possible_downloads);
 		}
 		else
 		{
-			printf("========= TILE DL LIST END \n");
 			more_tiles = FALSE;
 			global_tiles_in_dl_queue = 0;
 		}

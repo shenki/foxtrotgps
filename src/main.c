@@ -143,7 +143,6 @@ main (int argc, char *argv[])
 	
 	if(screen_height < 640 && screen_height > screen_width)
 	{
-		printf("height: %d \n",screen_height);
 		gtk_window_resize(GTK_WINDOW(window1), 
 				  (screen_width < 480) ? screen_width : 480, 
 				  screen_height-30);
