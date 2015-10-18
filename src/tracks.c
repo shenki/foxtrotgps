@@ -18,6 +18,9 @@
 
 #include <gps.h>
 
+#include <netdb.h>
+#include <sys/socket.h>
+#include <arpa/inet.h>
 
 #include "globals.h"
 #include "interface.h"
@@ -1069,4 +1072,80 @@ fetch_track_thread(void *ptr)
 	process_fetched_track(reply, true);
 		
 	return NULL;
+}
+
+void *udp_load_track_listener_thread(void* p);
+
+/* Use a UDP port to load a track */
+
+void start_udp_load_track_listener_thread(void) {
+	if (!g_thread_create(&udp_load_track_listener_thread, NULL, FALSE, NULL) != 0)
+		g_warning("### can't create udp load track listener thread\n");
+}
+
+#define BUFSIZE          2048
+#define SERVICE_PORT	21234
+
+void *udp_load_track_listener_thread(void* p) {
+	struct sockaddr_in myaddr;	/* our address */
+	struct sockaddr_in remaddr;	/* remote address */
+	socklen_t addrlen = sizeof(remaddr);		/* length of addresses */
+	int recvlen;			/* # bytes received */
+	int fd;				/* our socket */
+	unsigned char file[BUFSIZE];	/* receive buffer, file name */
+
+	/* create a UDP socket */
+
+	if ((fd = socket(AF_INET, SOCK_DGRAM, 0)) < 0) {
+		g_warning("### cannot create socket\n");
+		return 0;
+	}
+
+	/* bind the socket to any valid IP address and a specific port */
+
+	memset((char *)&myaddr, 0, sizeof(myaddr));
+	myaddr.sin_family = AF_INET;
+	myaddr.sin_addr.s_addr = htonl(INADDR_ANY);
+	myaddr.sin_port = htons(SERVICE_PORT);
+
+	if (bind(fd, (struct sockaddr *)&myaddr, sizeof(myaddr)) < 0) {
+		g_warning("### bind failed");
+		return 0;
+	}
+
+	/* now loop, receiving data and printing what we received */
+
+	for (;;) {
+		printf("udp listener waiting on port %d - send me a log file to load!\n", SERVICE_PORT);
+		recvlen = recvfrom(fd, file, BUFSIZE, 0, (struct sockaddr *)&remaddr, &addrlen);
+		printf("received %d bytes\n", recvlen);
+		if (recvlen > 0) {
+			file[recvlen] = 0;
+			printf("log file to load: %s\n", file);
+
+                        gdk_threads_enter();
+
+                        /* remove old track - is it safe to do this in a thread? */
+
+                        if(loaded_track)
+                        {
+                            g_slist_foreach (loaded_track, (GFunc) g_free, NULL);
+                            g_slist_free (loaded_track);
+                        }
+                        loaded_track = NULL;
+
+                        /* load and paint new one */
+
+			printf("log file to load: %s\n", file);
+                        loaded_track = load_log_file_into_list(file);
+                        if(!loaded_track)
+                           printf("couldn't load track: %s\n", file);
+                        }
+
+                        repaint_all ();
+
+                        gdk_threads_leave();
+		}
+	}
+	/* never exits */
 }

@@ -35,3 +35,6 @@ fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end);
 
 void
 show_bbox (bbox_t bbox);
+
+void
+start_udp_load_track_listener_thread();

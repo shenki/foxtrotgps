@@ -268,6 +268,7 @@ init()
 	global_myposition.lat = gconf_client_get_float(global_gconfclient, GCONF"/myposition_lat", NULL);
 	global_myposition.lon = gconf_client_get_float(global_gconfclient, GCONF"/myposition_lon", NULL);
 	paint_myposition();
+	start_udp_load_track_listener_thread();
 }
 
 GSList *
