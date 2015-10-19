@@ -1,0 +1,15 @@
+language: c
+
+compiler:
+        - clang
+        - gcc
+
+dist: trusty
+sudo: required
+
+before_install:
+        - sudo apt-get update -qq
+        - sudo apt-get install -qq build-essential autoconf automake pkg-config gconf2 libcurl4-gnutls-dev libexif-dev libsqlite3-dev libgconf2-dev libtool libgtk2.0-dev libglade2-dev libxml2 libxml2-dev libgps-dev intltool help2man imagemagick texinfo
+
+script:
+        - ./autogen.sh && ./configure && make && sudo make install
