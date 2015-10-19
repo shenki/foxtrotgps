@@ -360,12 +360,6 @@ download_maps(bbox_t bbox, int zoom_start, int zoom_end)
 	
 	
 	g_timeout_add(100, timer_tile_download, NULL);
-
-	for(list = tile_download_list; list != NULL; list = list->next)
-	{		
-		tile = list->data;
-	}
-
 }
 
 tile_t
