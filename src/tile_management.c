@@ -40,11 +40,11 @@ update_thread_number (int change)
 {
 	static int current_number = 0;
 	int ret_val;
-	static GStaticMutex mutex = G_STATIC_MUTEX_INIT;
+	static GMutex mutex = G_STATIC_MUTEX_INIT;
 	
-	g_static_mutex_lock (&mutex);
+	g_mutex_lock (&mutex);
 	ret_val = current_number += change; 
-	g_static_mutex_unlock (&mutex);
+	g_mutex_unlock (&mutex);
 
 
 	return ret_val;
