@@ -1,5 +1,9 @@
-#ifndef __ROUTE_H
-#define __ROUTE_H
+#ifndef ROUTE_H
+#define ROUTE_H
+
+#include <gtk/gtk.h>
+
+#include "globals.h"
 
 /**
  * Clear the route.

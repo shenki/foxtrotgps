@@ -1,3 +1,6 @@
+#ifndef CONVERTER_H
+#define CONVERTER_H
+
 float
 deg2rad(float deg);
 
@@ -11,11 +14,11 @@ lat2pixel(	float zoom,
 int
 lon2pixel(	float zoom,
 		float lon);
-		
+
 float
 pixel2lon(	float zoom,
 		int pixel_x);
-		
+
 float
 pixel2lat(	float zoom,
 		int pixel_y);
@@ -39,3 +42,5 @@ get_distance(double lat1, double lon1, double lat2, double lon2);
 
 int
 get_zoom_covering(int width, int height, double lat_max, double lon_min, double lat_min, double lon_max);
+
+#endif /* CONVERTER_H */

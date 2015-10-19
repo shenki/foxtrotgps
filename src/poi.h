@@ -1,6 +1,7 @@
+#ifndef POI_H
+#define POI_H
 
-//void
-//get_poi();
+#include <gtk/gtk.h>
 
 void
 paint_pois();
@@ -25,3 +26,5 @@ get_pois();
 
 void
 show_poi_detail();
+
+#endif /* POI_H */

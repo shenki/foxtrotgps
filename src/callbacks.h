@@ -1,3 +1,6 @@
+#ifndef CALLBACKS_H
+#define CALLBACKS_H
+
 #include <gtk/gtk.h>
 
 void
@@ -815,3 +818,5 @@ activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item);
 
 void
 on_help_menuitem_activate (GtkMenuItem *help_menuitem, gpointer user_data);
+
+#endif /* CALLBACKS_H */

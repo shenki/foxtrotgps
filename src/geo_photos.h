@@ -1,3 +1,5 @@
+#ifndef GEO_PHOTOS_H
+#define GEO_PHOTOS_H
 
 typedef enum {
 	GEOPHOTO_NEXT,
@@ -50,3 +52,5 @@ geo_photo_close_dialog_photo_correlate();
 
 void
 geo_photo_correction_entry_cb(GtkEditable *editable);
+
+#endif /* GEO_PHOTOS_H */

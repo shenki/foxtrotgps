@@ -1,3 +1,7 @@
+#ifndef TILE_MANAGEMENT_H
+#define TILE_MANAGEMENT_H
+
+#include <gtk/gtk.h>
 
 typedef struct {
 	double lat1;
@@ -52,3 +56,5 @@ queue_tile_dl_for_bbox(bbox_pixel_t bbox_pixel, int zoom);
 
 gboolean
 timer_tile_download(gpointer data);
+
+#endif /* TILE_MANAGEMENT_H */

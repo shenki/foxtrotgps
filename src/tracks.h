@@ -1,3 +1,8 @@
+#ifndef TRACKS_H
+#define TRACKS_H
+
+#include <gtk/gtk.h>
+
 void
 reset_loaded_track();
 
@@ -37,4 +42,6 @@ void
 show_bbox (bbox_t bbox);
 
 void
-start_udp_load_track_listener_thread();
+start_udp_load_track_listener_thread(void);
+
+#endif /* TRACKS_H */

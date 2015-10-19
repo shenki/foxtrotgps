@@ -1,3 +1,8 @@
+#ifndef GPS_FUNCTIONS_H
+#define GPS_FUNCTIONS_H
+
+#include <gtk/gtk.h>
+
 gboolean
 cb_gps_timer();
 
@@ -21,3 +26,5 @@ osd_speed(gboolean force_redraw);
 
 void
 map_scale_indicator();
+
+#endif /* GPS_FUNCTIONS_H */

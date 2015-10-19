@@ -1,4 +1,5 @@
-
+#ifndef MAP_MANAGEMENT_H
+#define MAP_MANAGEMENT_H
 
 void
 load_tiles();
@@ -20,9 +21,11 @@ void
 fill_tiles_latlon(	float lat,
 			float lon,
 			int zoom);
-			
-			
+
+
 void
 set_mapcenter(	float lat,
 		float lon,
 		int zoom);
+
+#endif /* MAP_MANAGEMENT_H */

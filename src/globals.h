@@ -1,3 +1,6 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
 #endif
@@ -205,3 +208,5 @@ enum {
 	IMPERIAL = 1,
 	NAUTICAL = 2
 };
+
+#endif /* GLOBALS_H */

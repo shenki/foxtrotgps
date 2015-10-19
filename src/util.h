@@ -1,3 +1,6 @@
+#ifndef UTIL_H
+#define UTIL_H
+
 #include <stdlib.h>
 #include <gtk/gtk.h>
 
@@ -35,3 +38,5 @@ mycurl__do_http_post_XML (char *url, char *xmlString, char *useragent);
 
 postreply_t*
 mycurl__do_http_get (char *url, char *useragent);
+
+#endif /* UTIL_H */

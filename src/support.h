@@ -1,3 +1,6 @@
+#ifndef SUPPORT_H
+#define SUPPORT_H
+
 #ifdef HAVE_CONFIG_H
 #  include <config.h>
 #endif
@@ -42,7 +45,6 @@
 GtkWidget*  lookup_widget              (GtkWidget       *widget,
                                         const gchar     *widget_name);
 
-
 /* Use this function to set the directory containing installed pixmaps. */
 void        add_pixmap_directory       (const gchar     *directory);
 
@@ -63,3 +65,5 @@ void        glade_set_atk_action_description (AtkAction       *action,
                                               const gchar     *action_name,
                                               const gchar     *description);
 
+
+#endif

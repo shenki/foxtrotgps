@@ -1,11 +1,13 @@
-/***************************************************************************
- *            wp.h
- *
- *  Wed Jun  4 21:07:49 2008
+/*
  *  Copyright  2008  Marcus Bauer 
  *  GPLv2
  *  Email marcus.bauer@gmail.com
- ****************************************************************************/
+ */
+
+#ifndef WP_H
+#define WP_H
+
+#include <gtk/gtk.h>
 
 void
 paint_wp();
@@ -24,3 +26,5 @@ set_current_wp(double lat, double lon);
 
 void
 osd_wp();
+
+#endif /* WP_H */

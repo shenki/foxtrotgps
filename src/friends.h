@@ -1,11 +1,8 @@
-/***************************************************************************
- *            friends.h
- *
- *  Tue Feb 12 16:58:38 2008
- *  Copyright  2008  User
- *  Email
- ****************************************************************************/
+#ifndef FRIENDS_H
+#define FRIENDS_H
+
 #include <gtk/gtk.h>
+
 typedef struct {
 	int type;
 	char *nick;
@@ -44,7 +41,7 @@ paint_friends();
 
 int
 register_nick();
-	
+
 void *
 register_nick_thread(void *ptr);
 
@@ -53,3 +50,5 @@ create_friend_box(friend_t *f);
 
 gboolean
 send_message(gpointer user_data);
+
+#endif /* FRIENDS_H */
