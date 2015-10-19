@@ -832,7 +832,7 @@ get_gps()
 		libgps_initialized = FALSE;
 	}
 
-	g_thread_create(&get_gps_thread, NULL, FALSE, NULL);
+	g_thread_new(NULL, &get_gps_thread, NULL);
 }
 
 static void *

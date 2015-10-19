@@ -867,8 +867,7 @@ void fetch_yournavigation_track(GtkWidget *widget, char *start, char *end)
 	dialog10 = widget;
 
 	url = g_strdup_printf("http://www.yournavigation.org/api/1.0/gosmore.php?format=kml&flat=%s&flon=%s&tlat=%s&tlon=%s&v=motorcar&fast=1&layer=mapnik",startlatstr, startlonstr, endlatstr, endlonstr);
-	if (!g_thread_create(&fetch_track_thread, (void *)url, FALSE, NULL) != 0)
-		g_warning("### can't create route thread\n");
+	g_thread_new("fetch_track", &fetch_track_thread, url);
 }
 
 void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
@@ -931,8 +930,8 @@ void fetch_openrouteservice_track(GtkWidget *widget, char *start, char *end)
 	urlAndRequest[0] = url;
 	urlAndRequest[1] = request;
 
-	if (!g_thread_create(&fetch_openrouteservice_track_thread, (void *)urlAndRequest, FALSE, NULL) != 0)
-		g_warning("### can't create route thread\n");
+	g_thread_new("route", &fetch_openrouteservice_track_thread,
+			urlAndRequest);
 }
 
 void process_fetched_track(postreply_t *reply, bool save_gpx)
@@ -1078,9 +1077,10 @@ void *udp_load_track_listener_thread(void* p);
 
 /* Use a UDP port to load a track */
 
-void start_udp_load_track_listener_thread(void) {
-	if (!g_thread_create(&udp_load_track_listener_thread, NULL, FALSE, NULL) != 0)
-		g_warning("### can't create udp load track listener thread\n");
+void
+start_udp_load_track_listener_thread(void)
+{
+	g_thread_new("udp_listener", &udp_load_track_listener_thread, NULL);
 }
 
 #define BUFSIZE          2048

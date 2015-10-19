@@ -686,7 +686,7 @@ geo_photo_close_dialog_photo_correlate()
 	gtk_widget_show(dialog_geocode_result);
 	gtk_widget_hide(dialog_photo_correlate);
 
-	g_thread_create(geocode_thread, NULL, FALSE, NULL);
+	g_thread_new("geocode", geocode_thread, NULL);
 }
 
 

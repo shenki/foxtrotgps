@@ -103,8 +103,7 @@ update_position()
 	label_msg = (GtkLabel *)lookup_widget(window1, "label51");
 	gtk_label_set_label (label_msg, _("Connecting..."));
 
-	if (!g_thread_create(&update_position_thread, NULL, FALSE, NULL) != 0)
-		g_warning("### can't create friend thread\n");
+	g_thread_new("update_position", &update_position_thread, NULL);
 
 	return TRUE;	
 }
@@ -468,9 +467,8 @@ register_nick()
 	label_msg = (GtkLabel *)lookup_widget(window1, "label62");
 	gtk_label_set_text (label_msg, _("Connecting..."));
 
-	if (!g_thread_create(&register_nick_thread, NULL, FALSE, NULL) != 0)
-		g_warning("### can't create register_nick() thread\n");
-	
+	g_thread_new("register_nick", &register_nick_thread, NULL);
+
 	return 0;
 }
 	
@@ -696,9 +694,8 @@ send_message(gpointer user_data)
 
 	postdata = create_msg_postdata(m);
 
-	if (!g_thread_create(&thread_send_message, postdata, FALSE, NULL) != 0)
-		g_warning("### can't create mission thread\n");
-	
+	g_thread_new("send_message", &thread_send_message, postdata);
+
 	return TRUE;
 }
 

@@ -233,7 +233,7 @@ void
 get_hrm_data()
 {
 #ifdef HAVE_BLUEZ
-	g_thread_create(&get_hrm_data_thread, NULL, FALSE, NULL);
+	g_thread_new("hrm_data", &get_hrm_data_thread, NULL);
 #endif /* HAVE_BLUEZ */
 }
 

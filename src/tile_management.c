@@ -210,8 +210,7 @@ download_tile(	repo_t *repo,
 	{
 		g_hash_table_insert(ht, key, &value);
 			
-		if (!g_thread_create(&dl_thread, (void *)tile_data, FALSE, NULL) != 0)
-			g_warning("can't create DL thread");
+		g_thread_new("tile_thread", &dl_thread, tile_data);
 		
 		retval = TRUE;
 	}	
