@@ -36,8 +36,6 @@ pre_init()
 {
 	GError	**err = NULL;
 
-	g_type_init();
-
 	trackpoint_list = g_queue_new();
 
 	global_home_dir = getenv("HOME");
