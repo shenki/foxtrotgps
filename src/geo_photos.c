@@ -512,7 +512,7 @@ geo_photo_dialog_image_data_next(GtkWidget *widget, gpointer user_data, geo_phot
 	GtkWidget *image, *viewport, *label, *forward_button, *back_button, *first_button, *last_button, *zoom_button;
 	static GdkPixbuf *pixbuf = NULL;
 	GError *err = NULL;
-	int height, img_width;
+	int height;
 	gboolean fullsize = FALSE;
 	const char *datetime;
 	ExifData *ed;
@@ -592,7 +592,6 @@ geo_photo_dialog_image_data_next(GtkWidget *widget, gpointer user_data, geo_phot
 	else
 	{
 		gtk_image_set_from_file(GTK_IMAGE(image), (const gchar *) geocode_photo_list->data);
-		img_width = gdk_pixbuf_get_width(gtk_image_get_pixbuf(GTK_IMAGE(image)));
 	}
 		
 	ed = exif_data_new_from_file((const gchar *) geocode_photo_list->data);

@@ -1051,25 +1051,13 @@ fetch_openrouteservice_track_thread(void *ptr)
 }
 
 void *
-fetch_track_thread(void *ptr)
+fetch_track_thread(void *url)
 {
-	postreply_t *reply = NULL;
-	char *url;
-	GtkWidget *range, *drawingarea;
-	int track_zoom, width, height;
-	bbox_t bbox;
-	
-	drawingarea = lookup_widget(window1, "drawingarea1");
-	width  = drawingarea->allocation.width;
-	height = drawingarea->allocation.height;
-	
-	url = ptr;
-	
-	reply = mycurl__do_http_get(url, NULL); 
+	postreply_t *reply = mycurl__do_http_get(url, NULL);
 
 	loaded_track = load_kml_XML_string_into_list(reply->data);
 	process_fetched_track(reply, true);
-		
+
 	return NULL;
 }
 

@@ -631,7 +631,6 @@ delete_poi(poi_t *p)
 {
 	char *db;
 	char *sql;
-	int res;
 
 	db = g_strconcat(foxtrotgps_dir, "/", POI_DB, NULL);	
 	
@@ -642,13 +641,9 @@ delete_poi(poi_t *p)
 				"idmd5='%s'" 
 			, p->idmd5);
 
-	res = sql_execute(db, sql, NULL);
-	
+	sql_execute(db, sql, NULL);
 
 	repaint_all();
-
-	
-	
 }
 
 
@@ -719,7 +714,7 @@ show_poi_detail()
 	GSList *list;
 	gchar *buffer = NULL, *buffer2 = NULL;
 	gboolean poi_found = FALSE;
-	float lat, lon,lat_deg,lon_deg;
+	float lat, lon;
 	float distance=0;
 	waypoint_t *wp = g_new0(waypoint_t, 1);
 	poi_t *p, *this_poi = NULL;
@@ -734,11 +729,6 @@ show_poi_detail()
 
 	lat = pixel2lat(global_zoom, global_y+mouse_y);
 	lon = pixel2lon(global_zoom, global_x+mouse_x);
-	
-
-	
-	lat_deg = rad2deg(lat);
-	lon_deg = rad2deg(lon);
 
 	if(gpsdata !=NULL && !global_myposition.lat && !global_myposition.lon)
 	{

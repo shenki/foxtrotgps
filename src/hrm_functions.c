@@ -275,11 +275,8 @@ get_hrm_data_thread(void *ptr)
 		conn = connect(hrm_sock, (struct sockaddr *)&addr, sizeof(addr));
 		if(conn < 0) {
 			printf("error connecting %s\n", global_hrm_bt_addr);
-			
-			conn = 1;
 			shutdown(hrm_sock, SHUT_RDWR);
-		}
-		else {
+		} else {
 			global_reconnect_hrm = FALSE;
 			
 			if(!hrmdata) {

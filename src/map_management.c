@@ -216,8 +216,6 @@ fill_tiles_pixel(	int pixel_x,
 	int offset_yn = 0;
 	int offset_x;
 	int offset_y;
-	gboolean success = FALSE;
-	GError **error = NULL;
 	repo_t *repo = global_curr_repo->data;
 	
 	
@@ -309,25 +307,23 @@ fill_tiles_pixel(	int pixel_x,
 		offset_yn = offset_y;
 	}
 
-	
 	g_hash_table_foreach_remove (hash_table, hash_sieve_func, NULL);
-	
-	
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/global_x",
-				global_x,
-				error);
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/global_y",
-				global_y,
-				error);
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/global_zoom",
-				global_zoom,
-				error);
+
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/global_x",
+			global_x,
+			NULL);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/global_y",
+			global_y,
+			NULL);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/global_zoom",
+			global_zoom,
+			NULL);
 }
 
 void

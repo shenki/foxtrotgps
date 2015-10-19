@@ -54,11 +54,8 @@ update_thread_number (int change)
 gboolean
 map_redraw(void *p)
 {
-	int number_threads;
-	number_threads = update_thread_number(0);
-	
-	
-	
+	update_thread_number(0);
+
 	if (!drag_started)
 	{
 		map_redraw_scheduled = FALSE;
@@ -240,7 +237,6 @@ dl_thread(void *ptr)
 	const gchar *tile_data;
 	gchar **arr1;
 
-	int mkres;
 	tile_data = ptr;
 
 	arr1 = g_strsplit(tile_data,"|",3);
@@ -255,16 +251,10 @@ dl_thread(void *ptr)
 		}
 	}
 
-	number_threads = update_thread_number(1);
+	update_thread_number(1);
 
+	g_mkdir_with_parents(arr1[2],0700);
 
-	mkres = g_mkdir_with_parents(arr1[2],0700);
-	
-	
-	
-	
-	
-	
 	outfile = fopen(arr1[1], "w");
 	if (outfile==NULL)
 	{
@@ -313,7 +303,7 @@ dl_thread(void *ptr)
 	if(outfile != NULL)
 		fclose(outfile);
 
-	number_threads = update_thread_number(-1);
+	update_thread_number(-1);
 
 	g_free(ptr);
 	return NULL;

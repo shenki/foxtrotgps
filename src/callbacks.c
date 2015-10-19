@@ -103,35 +103,19 @@ on_drawingarea1_button_release_event   (GtkWidget       *widget,
                                         gpointer         user_data)
 {
 	if ((event->state & GDK_CONTROL_MASK) == GDK_CONTROL_MASK) {
-		
-		GtkWidget *range;
-		int zoom_old;
-		double factor;
-		int width_center, height_center;
-			
 
-			
+		GtkWidget *range;
+
 		if(global_zoom<global_zoom_max)
-		{	
+		{
 			range = lookup_widget(window1, "vscale1");
-			
-			width_center  = map_drawable->allocation.width 	/ 2;
-			height_center = map_drawable->allocation.height / 2;
-						
-			zoom_old = global_zoom;
-		
+
 			global_zoom++;
 			gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
-			
-			
-			
-			factor = 2;
-			
-			
+
 			global_x = 2 * global_x + (int)event->x;
 			global_y = 2 * global_y + (int)event->y;
-			
-			
+
 			repaint_all();
 		}
 	}
@@ -280,11 +264,8 @@ on_drawingarea1_motion_notify_event    (GtkWidget       *widget,
 {
 	if(global_mapmode)
 	{
-		int x, y, width, height;
+		int x, y;
 		GdkModifierType state;
-		
-		width  = map_drawable->allocation.width;  
-		height = map_drawable->allocation.height; 
 		
 		if (event->is_hint)
 			gdk_window_get_pointer (event->window, &x, &y, &state);
@@ -619,23 +600,17 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 {
 	GSList	*list;
 	gchar *reponame_combo;
-	GError **error = NULL;
-	gboolean success = FALSE;
 	static gboolean first_run = TRUE;
 
-	
 	reponame_combo = gtk_combo_box_get_active_text(combobox);
 
 	global_curr_reponame = g_strdup(reponame_combo);
-	
-	
 	if(!global_curr_reponame)
 	{
 		global_curr_reponame = g_strdup("OSM");
 		printf("YOUR DISTRIBUTION SUCKS BIGTIME\n");
 	}
-	
-	
+
 	for(list = global_repo_list; list != NULL; list = list->next)
 	{
 		repo_t	*repo;
@@ -643,29 +618,24 @@ on_combobox1_changed                   (GtkComboBox     *combobox,
 
 		repo = list->data;
 		reponame = g_strdup(repo->name);
-		
-		if(	g_strrstr(reponame,global_curr_reponame) != NULL &&
-			strlen(reponame) == strlen(global_curr_reponame)	
-		) 
+
+		if(g_strrstr(reponame,global_curr_reponame) != NULL &&
+			strlen(reponame) == strlen(global_curr_reponame))
 		{
 			global_curr_repo = list;
 		}
 	}
-	
-	
-	success = gconf_client_set_string(
-					global_gconfclient, 
-					GCONF"/repo_name",
-					global_curr_reponame,
-					error);
-	
+
+	gconf_client_set_string(
+			global_gconfclient,
+			GCONF"/repo_name",
+			global_curr_reponame,
+			NULL);
+
 	global_repo_nr = gtk_combo_box_get_active(combobox);
-	
-	 
-	
-	if(first_run) {
+
+	if (first_run)
 		first_run = FALSE;
-	}
 	else
 		repaint_all();
 }
@@ -781,13 +751,12 @@ on_checkbutton2_toggled                (GtkToggleButton *togglebutton,
 	
 	toggled = gtk_toggle_button_get_active(togglebutton);
 	global_auto_download = toggled;
-	
-	success = gconf_client_set_bool(
-				global_gconfclient, 
-				GCONF"/auto_download",
-				global_auto_download,
-				error);
-	
+
+	gconf_client_set_bool(
+			global_gconfclient,
+			GCONF"/auto_download",
+			global_auto_download,
+			error);
 }
 
 
@@ -815,7 +784,6 @@ on_button11_clicked                    (GtkButton       *button,
                                         gpointer         user_data)
 {
 	GtkWidget *widget;
-	gboolean success = FALSE;
 	GError **error = NULL;
 	
 	
@@ -853,13 +821,12 @@ on_button11_clicked                    (GtkButton       *button,
 		gtk_button_set_label (button, _("Share!"));
 	}
 
-	
-	success = gconf_client_set_bool(
-		global_gconfclient, 
+	gconf_client_set_bool(
+		global_gconfclient,
 		GCONF"/fftimer_running",
 		global_fftimer_running,
 		error);
-	
+
 	global_show_friends = TRUE;
 }
 
@@ -873,7 +840,7 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	GtkWidget *label, *window, *friend_box, *widget, *hseparator;
 	gchar buffer[8192];
 	gboolean friend_found = FALSE;
-	float lat, lon,lat_deg,lon_deg;
+	float lat, lon;
 	float distance=0;
 
 	gladexml = glade_xml_new (gladefile, "window8", GETTEXT_PACKAGE);
@@ -888,9 +855,6 @@ on_item3_activate                      (GtkMenuItem     *menuitem,
 	lat = pixel2lat(global_zoom, global_y+mouse_y);
 	lon = pixel2lon(global_zoom, global_x+mouse_x);
 	
-	lat_deg = rad2deg(lat);
-	lon_deg = rad2deg(lon);
-
 	if(gpsdata !=NULL && !global_myposition.lat && !global_myposition.lon)
 	{
 		distance = 	6371.0 *  
@@ -1234,10 +1198,8 @@ on_drawinarea1_scroll_event            (GtkWidget       *widget,
 	{
 		GtkWidget *range;
 		int zoom_old;
-		double factor;
-		int width_center, height_center;
 		static int slowpad = 0;
-		
+
 		if (event->direction == GDK_SCROLL_UP && slowpad % 2 ==0)
 		{
 			slowpad++;
@@ -1246,17 +1208,8 @@ on_drawinarea1_scroll_event            (GtkWidget       *widget,
 			{	
 				range = lookup_widget(window1, "vscale1");
 				
-				width_center  = map_drawable->allocation.width 	/ 2;
-				height_center = map_drawable->allocation.height / 2;
-								
-				zoom_old = global_zoom;
-			
 				global_zoom++;
 				gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
-				
-				
-				
-				factor = 2;
 				
 				
 				global_x = 2 * global_x + (int)event->x;
@@ -1274,16 +1227,9 @@ on_drawinarea1_scroll_event            (GtkWidget       *widget,
 			{
 				range = lookup_widget(window1, "vscale1");
 			
-				width_center  = map_drawable->allocation.width 	/ 2;
-				height_center = map_drawable->allocation.height / 2;
-								
-				zoom_old = global_zoom;
-			
 				global_zoom--;
 				gtk_range_set_value(GTK_RANGE(range), (double) global_zoom);
 			
-				factor = exp(global_zoom * M_LN2)/exp(zoom_old * M_LN2);
-				
 				global_x = global_x/2 - (int)event->x/2;
 				global_y = global_y/2 - (int)event->y/2;
 				
@@ -1317,17 +1263,16 @@ on_entry7_changed                      (GtkEditable     *editable,
 	GtkWidget *nick;
 	const gchar *n;
 	GError **error = NULL;
-	gboolean success = FALSE;
-	
+
 	nick  = lookup_widget(window1, "entry7");
 	
 	n = gtk_entry_get_text(GTK_ENTRY(nick));
 		
-	success = gconf_client_set_string(
-					global_gconfclient, 
-					GCONF"/nick",
-					n,
-					error);
+	gconf_client_set_string(
+			global_gconfclient, 
+			GCONF"/nick",
+			n,
+			error);
 }
 
 
@@ -1337,19 +1282,16 @@ on_entry8_changed                      (GtkEditable     *editable,
 {
 	GtkWidget *pass;
 	const gchar *p;
-	GError **error = NULL;
-	gboolean success = FALSE;
-	
+
 	pass  = lookup_widget(window1, "entry8");
-	
+
 	p = gtk_entry_get_text(GTK_ENTRY(pass));
-	
-	
-	success = gconf_client_set_string(
-					global_gconfclient, 
-					GCONF"/pass",
-					p,
-					error);
+
+	gconf_client_set_string(
+			global_gconfclient,
+			GCONF"/pass",
+			p,
+			NULL);
 
 }
 
@@ -1406,7 +1348,6 @@ on_okbutton2_clicked                   (GtkButton       *button,
 	GtkEntry *entry;
 	gint mkres;
 	GError **error = NULL;
-	gboolean success = FALSE;
 	int result;
 
 	
@@ -1433,13 +1374,13 @@ on_okbutton2_clicked                   (GtkButton       *button,
 	if(mkres==-1) {
 		perror("mkdir........");
 	}
-	
-	success = gconf_client_set_string(
-				global_gconfclient, 
-				GCONF"/track_dir",
-				global_track_dir,
-				error);
-	
+
+	gconf_client_set_string(
+			global_gconfclient,
+			GCONF"/track_dir",
+			global_track_dir,
+			error);
+
 	dialog3 = lookup_widget(GTK_WIDGET(button), "dialog3");
 	
 	gtk_widget_hide(dialog3);
@@ -1889,10 +1830,6 @@ void
 on_entry16_changed                     (GtkEditable     *editable,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;		
-
-	
 	global_ffupdate_interval_minutes = atof(gtk_entry_get_text(GTK_ENTRY(editable)));
 	global_ffupdate_interval = global_ffupdate_interval_minutes * 60000;
 	
@@ -1914,14 +1851,13 @@ on_entry16_changed                     (GtkEditable     *editable,
 		friendfinder_timer = g_timeout_add_seconds(global_ffupdate_interval/1000, update_position, NULL);
 		msg_timer	   = g_timeout_add_seconds(global_ffupdate_interval/1000, send_message, NULL);
 	}
-	
-	
-	success = gconf_client_set_float(
-			global_gconfclient, 
+
+
+	gconf_client_set_float(
+			global_gconfclient,
 			GCONF"/ffupdate_interval_minutes",
 			global_ffupdate_interval_minutes,
-			error);
-
+			NULL);
 }
 
 
@@ -1929,16 +1865,13 @@ void
 on_radiobutton14_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_speed_unit = (gtk_toggle_button_get_active(togglebutton)) ? 0 : global_speed_unit;
 
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/speed_unit",
-				global_speed_unit,
-				error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/speed_unit",
+			global_speed_unit,
+			NULL);
 }
 
 
@@ -1946,16 +1879,13 @@ void
 on_radiobutton15_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_speed_unit = (gtk_toggle_button_get_active(togglebutton)) ? 1 : global_speed_unit;
 	
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/speed_unit",
-				global_speed_unit,
-				error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/speed_unit",
+			global_speed_unit,
+			NULL);
 }
 
 
@@ -1963,16 +1893,13 @@ void
 on_radiobutton16_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_speed_unit = (gtk_toggle_button_get_active(togglebutton)) ? 2 : global_speed_unit;
-	
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/speed_unit",
-				global_speed_unit,
-				error);
+
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/speed_unit",
+			global_speed_unit,
+			NULL);
 }
 
 
@@ -1980,16 +1907,13 @@ void
 on_radiobutton17_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_alt_unit = (gtk_toggle_button_get_active(togglebutton)) ? 0 : global_alt_unit;
-	
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/alt_unit",
-				global_alt_unit,
-				error);
+
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/alt_unit",
+			global_alt_unit,
+			NULL);
 }
 
 
@@ -1997,16 +1921,13 @@ void
 on_radiobutton18_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_alt_unit = (gtk_toggle_button_get_active(togglebutton)) ? 1 : global_alt_unit;
 
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/alt_unit",
-				global_alt_unit,
-				error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/alt_unit",
+			global_alt_unit,
+			NULL);
 }
 
 
@@ -2014,16 +1935,13 @@ void
 on_radiobutton19_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_latlon_unit = (gtk_toggle_button_get_active(togglebutton)) ? 0 : global_latlon_unit;
 	
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/latlon_unit",
-				global_latlon_unit,
-				error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/latlon_unit",
+			global_latlon_unit,
+			NULL);
 }
 
 
@@ -2031,32 +1949,26 @@ void
 on_radiobutton20_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-	
 	global_latlon_unit = (gtk_toggle_button_get_active(togglebutton)) ? 1 : global_latlon_unit;
 
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/latlon_unit",
-				global_latlon_unit,
-				error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/latlon_unit",
+			global_latlon_unit,
+			NULL);
 }
 
 void
 on_radiobutton21_toggled               (GtkToggleButton *togglebutton,
                                         gpointer         user_data)
 {
-	gboolean success = FALSE;
-	GError **error = NULL;
-
 	global_latlon_unit = (gtk_toggle_button_get_active(togglebutton)) ? 2 : global_latlon_unit;
 	
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/latlon_unit",
-				global_latlon_unit,
-				error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/latlon_unit",
+			global_latlon_unit,
+			NULL);
 }
 
 
@@ -2619,10 +2531,6 @@ void
 on_cancelbutton7_clicked               (GtkButton       *button,
                                         gpointer         user_data)
 {
-	GtkWidget	*widget;
-
-	widget = lookup_widget(GTK_WIDGET(button), "dialog8");
-	
 	gtk_widget_hide(dialog8);
 }
 
@@ -2868,12 +2776,6 @@ on_eventbox1_button_release_event      (GtkWidget       *widget,
                                         GdkEventButton  *event,
                                         gpointer         user_data)
 {
-	GtkWidget	*window;
-	
-	window = lookup_widget(widget, "drawingarea2");
-
-	
-		
 	gdk_draw_rectangle (
 		pixmap_photo,
 		widget->style->white_gc,
@@ -3834,19 +3736,14 @@ set_map_detail_menuitem_sensitivity (GtkMenuItem *zoomout, GtkMenuItem *menu)
 void
 activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
 {
-	GError *error = NULL;
-	gboolean success = FALSE;
-
-	if (global_detail_zoom > 0) {
+	if (global_detail_zoom > 0)
 		global_detail_zoom--;
 
-	}
-
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/global_detail_zoom",
-				global_detail_zoom,
-				&error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/global_detail_zoom",
+			global_detail_zoom,
+			NULL);
 
 	repaint_all ();
 }
@@ -3854,16 +3751,13 @@ activate_more_map_details (GtkMenuItem *menu_item, gpointer user_data)
 void
 activate_larger_map_details (GtkMenuItem *larger_item, GtkMenuItem *more_item)
 {
-	GError *error = NULL;
-	gboolean success = FALSE;
-
 	global_detail_zoom++;
 
-	success = gconf_client_set_int(
-				global_gconfclient, 
-				GCONF"/global_detail_zoom",
-				global_detail_zoom,
-				&error);
+	gconf_client_set_int(
+			global_gconfclient,
+			GCONF"/global_detail_zoom",
+			global_detail_zoom,
+			NULL);
 
 	repaint_all ();
 }

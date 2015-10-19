@@ -356,10 +356,7 @@ gconf_set_repolist()
 	GSList	*list;
 	GSList	*gconf_list = NULL;
 	GError **error = NULL;
-	gboolean success = FALSE;
-	
-	
-	
+
 	for(list = global_repo_list; list != NULL; list = list->next)
 	{
 		repo_t *repo;
@@ -375,11 +372,11 @@ gconf_set_repolist()
 		gconf_list = g_slist_append(gconf_list, g_strdup(gconf_str));
 	}
 	
-	success = gconf_client_set_list(	global_gconfclient, 
-						GCONF"/repos",
-						GCONF_VALUE_STRING,
-						gconf_list,
-						error);
+	gconf_client_set_list(global_gconfclient,
+			GCONF"/repos",
+			GCONF_VALUE_STRING,
+			gconf_list,
+			error);
 }
 
 
@@ -387,12 +384,9 @@ gconf_set_repolist()
 void
 repoconfig__set_current_list_pointer()
 {
-	
-	
 	GSList		*list;
 	const gchar	*reponame;
-	int unused;
-	
+
 	for(list = global_repo_list; list != NULL; list = list->next)
 	{
 		repo_t *repo;
@@ -412,7 +406,7 @@ repoconfig__set_current_list_pointer()
 		printf("Resetting repo_name and exiting now.\n\n");
 		printf("If problem persists after restart, \n");
 		printf("execute in a terminal: gconftool-2 -u " GCONF "/repos\n");
-		unused = system("gconftool-2 -u " GCONF "/repo_name");
+		system("gconftool-2 -u " GCONF "/repo_name");
 		exit(EXIT_FAILURE);		
 	}
 }

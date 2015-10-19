@@ -112,10 +112,10 @@ void *
 update_position_thread(void *ptr)
 {
 	int i=1;
-	
-	GtkEntry *nick, *pass, *email, *msg;
+
+	GtkEntry *nick, *pass, *msg;
 	GtkLabel *label_msg;
-	const gchar *n, *p, *e, *m;	
+	const gchar *n, *p, *m;
 	gchar *ff_mode;
 	static gchar lat[64], lon[64], mode[64];
 	static gchar alt[16] = "0", speed[16] = "0", head[16]="0";
@@ -139,10 +139,8 @@ gdk_threads_enter();
 	
 	label_msg = (GtkLabel *)lookup_widget(window1, "label51");
 
-	
 	nick  = (GtkEntry *)lookup_widget(window1, "entry7");
 	pass  = (GtkEntry *)lookup_widget(window1, "entry8");
-	email = (GtkEntry *)lookup_widget(window1, "entry9");
 	msg   = (GtkEntry *)lookup_widget(window1, "entry29");
 
 	switch (global_ff_mode) {
@@ -161,7 +159,6 @@ gdk_threads_enter();
 	
 	n = gtk_entry_get_text(nick);
 	p = gtk_entry_get_text(pass);
-	e = gtk_entry_get_text(email);
 	m = gtk_entry_get_text(msg);
 
 gdk_threads_leave();
@@ -440,19 +437,15 @@ void
 update_position0()
 {
 	CURL *curl;
-	CURLcode res;
 
 	curl = curl_easy_init();
-	
-	if(curl)
-	{
-		curl_easy_setopt(curl, CURLOPT_URL, 
-				"127.0.0.1/friends/update_position.php?lat=1&lon=1");
-		res = curl_easy_perform(curl);
-		
-		curl_easy_cleanup(curl);
-	}
-	
+	if (!curl)
+		return;
+
+	curl_easy_setopt(curl, CURLOPT_URL,
+			"127.0.0.1/friends/update_position.php?lat=1&lon=1");
+	curl_easy_perform(curl);
+	curl_easy_cleanup(curl);
 }
 
 
