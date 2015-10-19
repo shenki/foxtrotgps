@@ -24,6 +24,7 @@
 #include "support.h"
 #include "callbacks.h"
 #include "wp.h"
+#include "tracks.h"
 
 
 GSList *gconf_get_repolist();

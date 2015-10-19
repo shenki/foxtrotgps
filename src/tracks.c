@@ -30,6 +30,7 @@
 #include "tile_management.h"
 #include "tracks.h"
 #include "util.h"
+#include "callbacks.h"
 
 GSList *loaded_track = NULL;
 GtkWidget *window12;

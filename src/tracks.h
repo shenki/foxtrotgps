@@ -3,6 +3,8 @@
 
 #include <gtk/gtk.h>
 
+#include "tile_management.h"
+
 void
 reset_loaded_track();
 
