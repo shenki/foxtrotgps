@@ -224,16 +224,11 @@ init()
 	else
 		g_sprintf(buffer, "%.0f", global_ffupdate_interval_minutes);
 
-	widget = lookup_widget(window1, "entry16");
-	// gtk_entry_set_text( GTK_ENTRY(widget), buffer );
-	
 	if(gconf_fftimer_running)
 	{
 		widget = lookup_widget(menu1, "item19");
 		gtk_check_menu_item_set_active(GTK_CHECK_MENU_ITEM(widget), TRUE);
 	}
-		
-	
 
 	str = gconf_client_get_string(global_gconfclient, GCONF"/gpsd_host",&err);
 	widget = lookup_widget(window1, "entry3");
