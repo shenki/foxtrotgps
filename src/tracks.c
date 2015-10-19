@@ -1138,7 +1138,7 @@ void *udp_load_track_listener_thread(void* p) {
 
 			printf("log file to load: %s\n", file);
                         loaded_track = load_log_file_into_list(file);
-                        if(!loaded_track)
+                        if(!loaded_track) {
                            printf("couldn't load track: %s\n", file);
                         }
 
